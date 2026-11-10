@@ -1,12 +1,12 @@
 # IMPULSO — Manual completo do usuário
 
-**Motor de Produtividade Pessoal · PWA offline-first · Manual da versão 1**
+**Motor de Produtividade Pessoal · PWA offline-first · Manual revisado para a atualização v11 (10/11/2026)**
 
 **Aplicativo:** https://magpe-stack.github.io/Impulso/  
 **Código-fonte:** https://github.com/magpe-stack/Impulso  
 **Manual:** https://github.com/magpe-stack/Impulso/blob/main/README.md
 
-> Este manual descreve o comportamento do código da versão 1 fornecida com `app.js`, `index.html`, `styles.css`, `sw.js` e `manifest.json`. Recursos não implementados não são apresentados como disponíveis. O software não substitui um sistema oficial de controle de jornada trabalhista.
+> Este manual foi revisado com base nos arquivos locais da atualização v11 (`app.js`, `index.html`, `styles.css`, `sw.js` e `manifest.json`). Descreve o comportamento previsto pelo código, não uma certificação de testes em todos os dispositivos. Recursos não implementados não são apresentados como disponíveis. O software não substitui um sistema oficial de controle de jornada trabalhista.
 
 ## Sumário
 
@@ -62,9 +62,18 @@ No computador, um navegador compatível pode oferecer um ícone de instalação 
 
 Depois de um carregamento bem-sucedido, o Service Worker tenta armazenar os arquivos essenciais para acessos sem conexão. A disponibilidade offline depende de o cache ter sido instalado corretamente e de o navegador não o ter removido. **Teste o acesso em modo avião antes de depender dele.**
 
+
+### 2.4 Identidade visual e splash de quatro segundos
+
+A identidade atual usa o **foguete vermelho**. O splash apresenta o foguete imóvel sobre fundo branco, um **anel circular de progresso** que avança durante aproximadamente **4 segundos** e a **revelação gradual** do nome **IMPULSO** e do subtítulo **Motor de Produtividade Pessoal**. O preenchimento do anel e a revelação são controlados pelo JavaScript, e não apenas por animações CSS.
+
+Os ícones de instalação atuais são `rocket-192-v11.png` e `rocket-512-v11.png`, referenciados em `manifest.json`. O ícone da tela inicial do Android pode continuar antigo após uma atualização, porque o sistema operacional mantém recursos da instalação anterior. **Faça backup antes de desinstalar**; se necessário, reinstale o PWA após publicar e confirmar os novos arquivos. Não confunda o ícone instalado com o logotipo exibido dentro do aplicativo.
+
 ## 3. Primeiro acesso e navegação
 
 Na primeira utilização, a página **Início** oferece o botão **+ Novo Projeto**. Sem projeto ativo, os módulos dependentes de projeto não exibem dados operacionais.
+
+No celular e no computador, o botão **☰ (menu hambúrguer)** no canto superior esquerdo abre o painel de navegação e ferramentas. O logotipo do foguete no cabeçalho leva ao início. No menu estão também **Novo Projeto**, **Registrar Ponto**, **Entrada Manual**, **Backup**, **Importar / Restaurar**, **Imprimir**, **Alternar tema**, **Tela cheia**, **Sobre** e os links do projeto.
 
 A navegação principal apresenta:
 
@@ -110,11 +119,11 @@ O botão **Imprimir lista** gera uma apresentação imprimível com nome, data d
 
 **Meu Dia** organiza os registros em cartões por data, com títulos no formato `Meu Dia DD-MM-AAAA`, por exemplo `Meu Dia 09-11-2026`. Cada cartão apresenta o total trabalhado naquela data.
 
-A tabela mostra **Tipo**, **Horário**, **Observação** e uma **lixeira**. Os tipos são **▶ Início**, **■ Término** e **✓ Hábito**. A observação é opcional e limitada a 50 caracteres.
+A tabela mostra **Tipo**, **Horário**, **Observação** e uma **lixeira**. Os tipos são **▶ Início**, **■ Término**, **✓ Hábito** e **✎ Atividade**. A observação é opcional e limitada a 50 caracteres.
 
 ### 5.1 Registrar ponto imediatamente
 
-1. Abra **Meu Dia** e clique em **Ponto**; o atalho também está disponível na página inicial.
+1. Abra **Meu Dia** e clique em **Ponto**; também é possível usar **Registrar Ponto** no menu hambúrguer ou na página inicial.
 2. Na janela **Registrar ponto**, confira a data e a hora apresentadas.
 3. Verifique o tipo pré-selecionado.
 4. Digite uma observação, se desejar.
@@ -148,18 +157,20 @@ Cada linha possui um botão de exclusão. Ao clicar, confirme a operação. O re
 
 ## 6. Entrada manual retroativa
 
-Use **Entrada manual** para acrescentar um ponto ocorrido anteriormente.
+Use **Entrada Manual** para acrescentar uma **atividade completa**, com horário de início e término, inclusive retroativamente. Este comando não abre o formulário de Novo Projeto.
 
-1. Clique em **Entrada manual**.
-2. Informe **Dia**, **Mês** por extenso e **Ano**.
-3. Informe **Hora** (0 a 23) e **Minuto** (0 a 59).
-4. Selecione **▶ Início** ou **■ Término**.
-5. Adicione uma observação opcional, de até 50 caracteres.
-6. Clique em **Lançar entrada**.
+1. Abra **Entrada Manual** no menu hambúrguer ou na área **Meu Dia**.
+2. Informe **Dia**, **Mês** e **Ano**.
+3. Digite o **título da atividade** (até 50 caracteres).
+4. Escolha a **hora e o minuto de início** e a **hora e o minuto de término**, no formato de 24 horas.
+5. Adicione uma **observação opcional** (até 50 caracteres), quando disponível.
+6. Confirme o lançamento e confira a atividade em **Meu Dia** e no **Histórico**.
 
-O sistema rejeita datas impossíveis e horários futuros. O formulário manual trabalha com precisão de **minutos**; o registro salvo fica com os segundos em zero. Não há edição direta de registros existentes: para corrigir um lançamento, exclua o incorreto e crie outro.
+A atividade é salva como um intervalo único, do tipo **Atividade**, e entra no cálculo de tempo sem duplicar minutos sobrepostos. O formulário usa precisão de minutos. Não há edição direta de registros: para corrigir um lançamento, exclua o incorreto e crie outro.
 
-**Exemplo:** para lançar trabalho das 14h00 às 15h30 em 10/09/2027, crie uma entrada **Início** às 14h00 e outra **Término** às 15h30, ambas em 10/09/2027. Confira depois o cartão do dia.
+**Exemplo:** para registrar trabalho em 10/09/2027, das 14h00 às 15h30, crie **uma atividade** com essa data, título e horários. Não é necessário criar dois pontos separados.
+
+**Sem projeto ativo:** o botão abre uma mensagem específica de **Entrada manual (retroativa)**, solicitando que você selecione um projeto; não deve abrir **Novo Projeto**.
 
 ## 7. Hábitos
 
@@ -175,9 +186,16 @@ A lista de hábitos começa vazia em cada projeto.
 
 ### 7.2 Concluir
 
-Clique em **Concluir hábito** e, se desejar, adicione uma observação. Ao confirmar, o sistema cria um registro de execução com término no instante da confirmação e início calculado subtraindo a duração estipulada.
+Cada hábito possui um **Pomodoro** com contador regressivo e barra de progresso. Os controles permitem **Iniciar**, **Pausar**, **Retomar**, **Concluir** e **Reiniciar**, conforme o estado do cronômetro.
 
-**Importante:** o aplicativo **não cronometra a execução do hábito**. Ele registra retroativamente o período declarado. Confirme a conclusão somente se o hábito tiver sido realizado naquele intervalo. Cada execução aparece em **Meu Dia** e no **Histórico**, com início, término e observação.
+1. Clique em **Iniciar** para começar a contar o tempo.
+2. Use **Pausar** e **Retomar** quando necessário.
+3. Clique em **Concluir** e confirme para registrar o tempo efetivamente executado. O sistema guarda os segmentos de execução, excluindo os períodos de pausa.
+4. Use **Reiniciar** para descartar a sessão de Pomodoro em andamento, após confirmação.
+
+A execução concluída aparece em **Meu Dia** e no **Histórico**. A contagem de tempo combina intervalos sobrepostos para evitar dupla contabilização com os registros de ponto. O contador depende do relógio do dispositivo e da execução do aplicativo; não é um cronômetro de precisão metrológica.
+
+**Observação técnica:** o código também mantém uma rotina interna de conclusão retroativa de hábitos, mas a interface principal atual apresenta os controles do Pomodoro.
 
 ### 7.3 Excluir um hábito
 
@@ -185,9 +203,9 @@ Clique na lixeira ao lado do hábito. A definição do hábito é excluída, mas
 
 ## 8. Histórico e exclusões
 
-O **Histórico** reúne os registros do projeto ativo em ordem decrescente de data/hora. Exibe o tipo, a data e hora do registro, um campo de término e a observação.
+O **Histórico** reúne pontos, execuções de hábitos e atividades manuais entre os registros do projeto ativo em ordem decrescente de data/hora. Exibe o tipo, a data e hora do registro, um campo de término e a observação.
 
-Para os eventos de ponto, cada linha é um evento isolado: **Início** ou **Término**. O Histórico não apresenta automaticamente os dois eventos como uma única linha de sessão. Para hábitos, a linha contém início e término da execução.
+Para os eventos de ponto, cada linha é um evento isolado: **Início** ou **Término**. O Histórico não apresenta automaticamente os dois eventos como uma única linha de sessão. Para hábitos e atividades manuais, a linha contém início e término da execução.
 
 Todos os registros exibidos têm lixeira individual. Excluir um registro altera, conforme o caso, o total trabalhado, o progresso da meta, o radar e o dano na Arena.
 
@@ -204,7 +222,7 @@ O **Radar Espacial do Tempo** representa o tempo contabilizado do projeto em cic
 | 45 minutos | 270° |
 | 60 minutos | 360° — ciclo completo |
 
-A fórmula é **6 graus por minuto**. Na implementação, ao completar uma hora o indicador angular retorna a **0°** para iniciar o próximo ciclo, enquanto o contador de horas completas aumenta. Portanto, 60 minutos aparecem como **0° no novo ciclo**, não como um arco permanente de 360°.
+No **anel externo**, a fórmula atual é **1 grau a cada 10 segundos** (6 graus por minuto). No **anel interno**, o ponteiro percorre **60 segundos** por volta. Ao completar uma hora o indicador angular externo retorna a **0°** para iniciar o próximo ciclo, enquanto o contador de horas completas aumenta. Portanto, 60 minutos aparecem como **0° no novo ciclo**, não como um arco permanente de 360°.
 
 O módulo também exibe o tempo total, a meta de **10.000 horas**, as horas restantes e o percentual de maestria. A meta é calculada por projeto, sem somar outros projetos.
 
@@ -215,7 +233,7 @@ A **Arena** possui 50 adversários nomeados, do **Sentinela das Cinzas** ao **Ar
 O dano total é calculado a partir de:
 
 - **1 ponto de dano por minuto inteiro** de tempo contabilizado no projeto;
-- **5 pontos adicionais** por registro do tipo **Término** ou execução de **Hábito**.
+- **5 pontos adicionais** por registro do tipo **Término**, execução de **Hábito** ou **Atividade** manual concluída.
 
 A vida máxima de cada adversário aumenta conforme a fórmula `HP = 100 + 75 × n + 12 × n²`, em que `n` começa em zero para o primeiro chefão. O dano acumulado é aplicado sequencialmente: ao esgotar a vida de um adversário, o restante passa ao seguinte.
 
@@ -231,7 +249,7 @@ Clique em **Backup**. O navegador inicia o download de um arquivo JSON com nome 
 
 `impulso-backup-09-11-2026.json`
 
-O backup reúne **todos os projetos**, seus nomes, datas de criação, registros, hábitos e a identificação do projeto ativo. O arquivo contém datas e horários dos registros, mas **não cria documentos individuais de Meu Dia**. O tema visual não faz parte desse JSON, pois é armazenado em outra chave local.
+O backup reúne **todos os projetos**, seus nomes, datas de criação, registros, hábitos e a identificação do projeto ativo. O arquivo contém datas e horários dos registros, mas **não cria documentos individuais de Meu Dia**. O tema visual não faz parte desse JSON, pois é armazenado em outra chave local. Os registros de **Atividade**, incluindo título, início, término e observação, também são preservados no JSON.
 
 ### 11.2 Restaurar
 
@@ -259,7 +277,7 @@ No módulo **Meu Dia**, clique em **Imprimir** para gerar o relatório do projet
 
 A impressão é aberta pelo mecanismo do navegador. Você pode escolher impressora física ou **Salvar como PDF**, se o sistema oferecer essa opção. O aplicativo não possui um gerador independente de PDF.
 
-A opção **Imprimir lista**, em **Meus Projetos**, produz um relatório simplificado de todos os projetos.
+A opção **Imprimir lista**, em **Meus Projetos**, produz um relatório simplificado de todos os projetos. **Nota de revisão:** o código atual da impressão possui uma condição que pode rotular incorretamente uma **Atividade** manual como **Término**; a documentação não deve tratar essa identificação como corrigida antes de uma atualização do `app.js`.
 
 **Atenção à apresentação:** nos registros de ponto, o relatório lista Início e Término separadamente; a coluna de término não constitui um pareamento automático de sessões. Para uma execução de hábito, há início e término na mesma linha. A qualidade final da paginação depende também do navegador e das configurações de impressão.
 
@@ -267,23 +285,23 @@ A opção **Imprimir lista**, em **Meus Projetos**, produz um relatório simplif
 
 ### 13.1 Tema claro e escuro
 
-Use o botão **◐** no cabeçalho para alternar entre os modos. O tema claro é o padrão na primeira utilização; a escolha fica guardada no navegador.
+Abra o menu hambúrguer e use **◐ Alternar tema** para alternar entre os modos. O tema claro é o padrão na primeira utilização; a escolha fica guardada no navegador.
 
 A identidade cromática usa cores vermelhas, rosas e alaranjadas derivadas do estudo Itten. A aparência efetiva depende das regras do `styles.css` e da renderização do navegador.
 
 ### 13.2 Tela cheia
 
-O botão **⛶** solicita o modo de tela cheia. O navegador pode bloquear a operação ou não disponibilizá-la, especialmente em alguns dispositivos móveis. Use o mesmo botão ou o comando do sistema para sair.
+O botão **⛶ Tela cheia**, no menu hambúrguer, solicita o modo de tela cheia. O navegador pode bloquear a operação ou não disponibilizá-la, especialmente em alguns dispositivos móveis. Use o mesmo botão ou o comando do sistema para sair.
 
 ### 13.3 Rodapé
 
-O rodapé apresenta os links para o **PWA oficial**, o **repositório GitHub**, o **Manual** e o botão **Sobre**, que explica o significado do nome Impulso e alerta sobre a necessidade de backups.
+O menu hambúrguer apresenta os links para o **PWA oficial**, o **repositório GitHub**, o **Manual** e o botão **Sobre**, que explica o significado do nome Impulso e alerta sobre a necessidade de backups.
 
 ## 14. Como o tempo é calculado
 
 ### 14.1 Pares de ponto
 
-Os registros são ordenados cronologicamente. Um **Início** abre um intervalo; um **Término** posterior fecha esse intervalo. Intervalos sem término não são adicionados ao total acumulado.
+Os registros de ponto são ordenados cronologicamente. Um **Início** abre um intervalo; um **Término** posterior fecha esse intervalo. Intervalos sem término não são adicionados ao total acumulado.
 
 Se houver um novo Início antes do Término do intervalo aberto, a implementação mantém o primeiro início. Um Término sem Início aberto não produz duração. Isso reforça a importância de corrigir duplicações e lançamentos incorretos.
 
@@ -303,11 +321,11 @@ Os registros imediatos guardam data/hora com precisão de milissegundos internam
 
 ## 15. Armazenamento, privacidade e funcionamento offline
 
-A versão 1 guarda o estado dos projetos em **localStorage**, na chave `impulso-data-v1`. A preferência visual fica na chave `impulso-theme`. **Não há IndexedDB implementado nesta versão.**
+A atualização v11 continua guardando o estado dos projetos em **localStorage**, na chave `impulso-data-v1`. A preferência visual fica na chave `impulso-theme`. **Não há IndexedDB implementado nesta versão.**
 
 Os dados não são enviados pelo código do aplicativo a uma API de sincronização. O site é hospedado no GitHub Pages, e o navegador realiza requisições normais para obter seus arquivos. Links externos do rodapé abrem seus respectivos destinos.
 
-O Service Worker usa um cache chamado `impulso-v1` para os arquivos essenciais e tenta atualizar os recursos pela rede antes de usar versões armazenadas. O cache de arquivos **não é o mesmo que o armazenamento dos projetos**.
+Na atualização v11, o Service Worker usa o cache `impulso-v11-rocket-form-splash`. Para navegação, tenta a rede e recorre ao HTML em cache quando necessário; para outros recursos locais, prioriza a cópia em cache quando existente. O cache de arquivos **não é o mesmo que o armazenamento dos projetos**.
 
 **Riscos:** limpar os dados do site, usar navegação privada, trocar de navegador/aparelho, desinstalar com remoção dos dados, atingir limites de armazenamento ou sofrer falha do dispositivo pode provocar perda de informações. Não existe sincronização automática entre dispositivos.
 
@@ -317,12 +335,15 @@ O Service Worker usa um cache chamado `impulso-v1` para os arquivos essenciais e
 |---|---|---|
 | Página 404 | Arquivo ou caminho incorreto no GitHub Pages | Confira a URL, a publicação e a presença de `index.html` na raiz |
 | Tela presa no splash | Erro de JavaScript ou versão antiga em cache | Recarregue, abra o console do navegador e confira se `app.js` foi publicado corretamente; faça backup antes de limpar dados |
+| Registrar Ponto ou Entrada Manual abre Novo Projeto | Pode haver arquivos antigos misturados ou cache desatualizado | Publique `index.html`, `app.js`, `manifest.json`, `sw.js` e os ícones da mesma versão; confira os comandos em janela atualizada e preserve o backup antes de limpar dados |
+| Ícone antigo no Android | O atalho instalado conserva o ícone anterior | Confira o manifesto v11 e os novos PNG; faça backup antes de reinstalar o PWA |
+| Splash sem anel ou sem revelação | HTML, CSS e JS de versões diferentes ou erro de script | Confira o anel SVG no `index.html`, o `startSplash()` no `app.js` e as requisições de recursos |
 | Novo Projeto não responde | Falha de script ou elemento de interface ausente | Verifique o console, `index.html` e `app.js`; teste em aba normal atualizada |
 | Dados sumiram | Limpeza ou troca de armazenamento/perfil | Procure backup JSON; não há recuperação automática |
 | Total de horas menor que o esperado | Início sem Término ou intervalos sobrepostos | Revise o Histórico e os pares de ponto |
 | Total inesperado após entrada retroativa | Registro duplicado ou sequência cronológica inconsistente | Revise datas, horas e tipos; exclua e recrie o lançamento incorreto |
 | Botão Ponto sugere tipo inesperado | Último evento cronológico do projeto determina a sugestão | Confira registros manuais e eventos de dias anteriores |
-| Hábito parece ter sido realizado antes | O período é lançado retroativamente | Use Concluir hábito apenas após realmente executar o período estipulado |
+| Pomodoro não avança em segundo plano | Restrições de execução do navegador ou aplicativo suspenso | Mantenha o aplicativo aberto durante o uso e confira o registro ao concluir |
 | Instalação PWA não aparece | Critérios do navegador ou configuração da publicação | Abra via HTTPS, verifique manifest e Service Worker, e use o navegador compatível |
 | Não abre offline | Cache inicial incompleto ou removido | Conecte à internet, carregue novamente e teste antes de desconectar |
 | Importação recusada | JSON incompatível, inválido ou acima de 40 MB | Selecione um backup exportado pela versão compatível do Impulso |
@@ -346,7 +367,7 @@ Não, desde que os arquivos necessários estejam disponíveis no navegador e o a
 Não. Cada projeto tem registros e progresso independentes.
 
 **O tempo continua aumentando enquanto um Início está aberto?**  
-Não no total acumulado apresentado. A duração é incorporada quando um Término válido fecha o intervalo.
+Sim, no contador ao vivo da página inicial e no Radar. O total consolidado dos relatórios considera os intervalos encerrados.
 
 **Posso lançar registros de meses anteriores?**  
 Sim, pela Entrada manual, respeitando a validação de datas e horários.
@@ -378,8 +399,8 @@ A versão descrita neste manual possui limitações relevantes:
 
 1. **Sem sincronização em nuvem** ou conta de usuário.
 2. **Sem edição direta** de registros ou hábitos já cadastrados.
-3. **Sem cronômetro de hábito**: a conclusão registra a duração estipulada retroativamente.
-4. **Sem pareamento visual de sessões** no Histórico ou no relatório de impressão.
+3. **Pomodoro local**: existe cronômetro com pausa e retomada, mas não há garantia de execução ininterrupta em segundo plano ou de precisão absoluta.
+4. **Sem pareamento visual automático de sessões de ponto** no Histórico ou no relatório de impressão (atividades manuais e hábitos já são intervalos únicos).
 5. **Sem validação rigorosa de todas as sequências de ponto**: o usuário pode confirmar uma sequência atípica.
 6. **Sem desfazer exclusões** nem mesclagem de backups.
 7. **Sem garantia de armazenamento permanente** pelo navegador.
@@ -398,8 +419,10 @@ Impulso/
 ├── app.js           # Estado, registros, hábitos, Arena e relatórios
 ├── sw.js            # Cache offline de recursos
 ├── manifest.json    # Metadados de instalação do PWA
-├── icon-192.png     # Ícone PWA de 192 × 192
-├── icon-512.png     # Ícone PWA de 512 × 512
+├── rocket-192-v11.png  # Ícone do foguete, 192 × 192
+├── rocket-512-v11.png  # Ícone do foguete, 512 × 512
+├── logo.png            # Foguete do splash
+├── logo.svg            # Foguete do cabeçalho
 └── README.md        # Este manual
 ```
 
@@ -434,6 +457,10 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 - [ ] Exportar um backup e confirmar o arquivo no dispositivo.
 - [ ] Restaurar um backup de teste, sabendo que substituirá os dados atuais.
 - [ ] Abrir a impressão do projeto e da lista de projetos.
+- [ ] Confirmar que **Ponto** abre **Registrar ponto** e **Entrada Manual** abre **Entrada manual**, nunca **Novo Projeto**.
+- [ ] Verificar o anel de progresso e a revelação do nome no splash de 4 segundos.
+- [ ] Conferir o foguete como ícone de instalação no Android, com backup prévio se for reinstalar.
+- [ ] Testar o Pomodoro (iniciar, pausar, retomar, concluir e reiniciar).
 - [ ] Testar o tema claro/escuro e a tela cheia.
 - [ ] Verificar a abertura offline após o primeiro carregamento completo.
 - [ ] Verificar o comportamento em celular e computador.
@@ -443,4 +470,4 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 **Impulso — Motor de Produtividade Pessoal**  
 *O progresso nasce da ação, ganha força na constância e se revela no tempo.*
 
-**Manual correspondente à implementação v1.** Antes de atualizar o aplicativo, preserve uma cópia de seus dados.
+**Manual revisado para a atualização v11.** Antes de atualizar ou reinstalar o aplicativo, preserve uma cópia de seus dados.
