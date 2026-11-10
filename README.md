@@ -8,11 +8,6 @@
 
 > Este manual foi revisado com base nos arquivos locais da atualização v11 (`app.js`, `index.html`, `styles.css`, `sw.js` e `manifest.json`). Descreve o comportamento previsto pelo código, não uma certificação de testes em todos os dispositivos. Recursos não implementados não são apresentados como disponíveis. O software não substitui um sistema oficial de controle de jornada trabalhista.
 
-
-<p align="center">
-  <img src="ImpulsoCover.png" alt="Impulso — Motor de Produtividade Pessoal" width="100%">
-</p>
-
 ## Sumário
 
 1. [Apresentação e conceito](#1-apresentação-e-conceito)
@@ -71,10 +66,6 @@ Depois de um carregamento bem-sucedido, o Service Worker tenta armazenar os arqu
 ### 2.4 Identidade visual e splash de quatro segundos
 
 A identidade atual usa o **foguete vermelho**. O splash apresenta o foguete imóvel sobre fundo branco, um **anel circular de progresso** que avança durante aproximadamente **4 segundos** e a **revelação gradual** do nome **IMPULSO** e do subtítulo **Motor de Produtividade Pessoal**. O preenchimento do anel e a revelação são controlados pelo JavaScript, e não apenas por animações CSS.
-
-<p align="center">
-  <img src="logo.svg" alt="Impulso Logo" width="200">
-</p>
 
 Os ícones de instalação atuais são `rocket-192-v11.png` e `rocket-512-v11.png`, referenciados em `manifest.json`. O ícone da tela inicial do Android pode continuar antigo após uma atualização, porque o sistema operacional mantém recursos da instalação anterior. **Faça backup antes de desinstalar**; se necessário, reinstale o PWA após publicar e confirmar os novos arquivos. Não confunda o ícone instalado com o logotipo exibido dentro do aplicativo.
 
