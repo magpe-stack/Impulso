@@ -265,11 +265,20 @@ Os tempos sobrepostos são contabilizados uma única vez, conforme a regra de te
 
 **Exportar (página inicial e páginas do projeto):** baixa um JSON contendo **somente o projeto ativo**, incluindo seus registros, hábitos e sessões. Exemplo: `impulso-projeto-meu-livro-10-11-2026.json`. Antes de exportar, abra o projeto desejado. Se não houver projeto ativo, o aplicativo solicitará que você abra um.
 
-Os arquivos individuais usam a identificação `kind: "project"` e guardam o projeto em `project`. **Não são backups gerais e não podem ser restaurados pelo comando Restaurar Backup desta versão.** Guarde um Backup Geral para recuperar os dados pelo próprio aplicativo. A exportação individual é útil para arquivamento ou processamento externo.
+Os arquivos individuais usam a identificação `kind: "project"` e guardam o projeto em `project`. **Não são backups gerais:** para recuperá-los, use **Importar**, ao lado de Exportar. O comando Restaurar Backup aceita apenas backups gerais.
 
 As exportações contêm datas e horários dos registros, mas não criam documentos separados de Meu Dia. O tema visual não é incluído, pois fica em outra chave de armazenamento local.
 
-### 11.2 Restaurar
+### 11.2 Importar um projeto individual
+
+1. Na página inicial, clique em **⬆ Importar**, ao lado de **⬇ Exportar**.
+2. Selecione um arquivo `.json` produzido por **Exportar**.
+3. Confirme a importação. O projeto será acrescentado aos projetos existentes e se tornará o projeto ativo.
+4. Caso o arquivo já tenha sido importado, uma nova cópia independente será criada, sem sobrescrever o projeto existente.
+
+**Importar** não apaga outros projetos e não aceita arquivos de Backup Geral. A importação conserva os registros, hábitos e sessões presentes no arquivo. Verifique a integridade do arquivo antes de importar; o limite é de 40 MB.
+
+### 11.3 Restaurar
 
 1. Clique em **Restaurar Backup** no menu ou na página inicial.
 2. Escolha um arquivo JSON criado por **Backup Geral** (não por **Exportar**).
@@ -395,7 +404,7 @@ Há lixeira para projetos, definições de hábitos e registros de ponto/hábito
 Não. As execuções anteriores permanecem até serem removidas individualmente.
 
 **O backup contém todos os projetos?**  
-**Backup Geral**, sim. **Exportar** contém apenas o projeto ativo. Restaurar Backup aceita apenas o Backup Geral e substitui o conjunto completo existente.
+**Backup Geral**, sim. **Exportar** contém apenas o projeto ativo. Importar aceita o arquivo individual e adiciona um projeto sem apagar os demais. Restaurar Backup aceita apenas o Backup Geral e substitui o conjunto completo existente.
 
 **O backup contém as preferências de tema?**  
 Não. O tema é armazenado separadamente.
@@ -456,7 +465,9 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 **PWA:** aplicação web que pode oferecer instalação e funcionamento offline.  
 **Backup Geral:** cópia JSON de todos os projetos, compatível com Restaurar Backup.
 
-**Exportar:** cópia JSON somente do projeto ativo, não restaurável pelo comando Restaurar Backup nesta versão.
+**Exportar:** cópia JSON somente do projeto ativo, recuperável pelo botão Importar.
+
+**Importar:** acrescenta um projeto individual aos projetos existentes, sem substituí-los.
 
 ### Roteiro de teste recomendado após publicar
 
@@ -472,6 +483,7 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 - [ ] Conferir o radar, a Arena e o progresso do projeto.
 - [ ] Excluir um registro de teste e verificar o recálculo.
 - [ ] Exportar um projeto individual e confirmar que o JSON contém somente o projeto ativo.
+- [ ] Importar o JSON individual e confirmar que o projeto é acrescentado sem apagar os demais.
 - [ ] Criar um Backup Geral e confirmar que o JSON contém todos os projetos.
 - [ ] Restaurar um backup de teste, sabendo que substituirá os dados atuais.
 - [ ] Abrir a impressão do projeto e da lista de projetos.
