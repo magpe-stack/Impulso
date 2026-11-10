@@ -52,7 +52,7 @@ A gamificação da Arena transforma minutos e conclusões registrados em dano co
 1. Acesse https://magpe-stack.github.io/Impulso/.
 2. Aguarde o carregamento inicial com conexão à internet.
 3. Verifique se a página inicial e os comandos estão disponíveis.
-4. Faça um registro de teste e exporte um backup para conhecer o funcionamento.
+4. Faça um registro de teste, use **Exportar** para salvar o projeto individual e **Backup Geral** para salvar todos os projetos.
 
 O aplicativo foi construído com HTML, CSS e JavaScript nativos. Não exige conta, senha, servidor de dados nem assinatura.
 
@@ -81,7 +81,7 @@ Os ícones de instalação atuais são `rocket-192-v11.png` e `rocket-512-v11.pn
 
 Na primeira utilização, a página **Início** oferece o botão **+ Novo Projeto**. Sem projeto ativo, os módulos dependentes de projeto não exibem dados operacionais.
 
-No celular e no computador, o botão **☰ (menu hambúrguer)** no canto superior esquerdo abre o painel de navegação e ferramentas. O logotipo do foguete no cabeçalho leva ao início. No menu estão também **Novo Projeto**, **Registrar Ponto**, **Entrada Manual**, **Backup**, **Importar / Restaurar**, **Imprimir**, **Alternar tema**, **Tela cheia**, **Sobre** e os links do projeto.
+No celular e no computador, o botão **☰ (menu hambúrguer)** no canto superior esquerdo abre o painel de navegação e ferramentas. O logotipo do foguete no cabeçalho leva ao início. No menu estão também **Novo Projeto**, **Registrar Ponto**, **Entrada Manual**, **Backup Geral**, **Restaurar Backup**, **Imprimir**, **Alternar tema**, **Tela cheia**, **Sobre** e os links do projeto.
 
 A navegação principal apresenta:
 
@@ -243,7 +243,7 @@ O **Radar Espacial do Tempo** representa o tempo contabilizado do projeto em cic
 | 45 minutos | 270° |
 | 60 minutos | 360° — ciclo completo |
 
-No **anel externo**, a fórmula atual é **1 grau a cada 10 segundos** (6 graus por minuto). No **anel interno**, o ponteiro percorre **60 segundos** por volta. Ao completar uma hora o indicador angular externo retorna a **0°** para iniciar o próximo ciclo, enquanto o contador de horas completas aumenta. Portanto, 60 minutos aparecem como **0° no novo ciclo**, não como um arco permanente de 360°.
+No **anel externo**, a fórmula atual é **1 grau a cada 10 segundos** (6 graus por minuto). No **anel interno**, o ponteiro percorre **60 segundos** por volta. Ao completar uma hora o indicador angular externo retorna a **0°** para iniciar o próximo ciclo, enquanto o tempo acumulado continua aumentando no indicador **Tempo total**. Portanto, 60 minutos aparecem como **0° no novo ciclo**, não como um arco permanente de 360°.
 
 O módulo também exibe o tempo total, a meta de **10.000 horas**, as horas restantes e o percentual de maestria. A meta é calculada por projeto, sem somar outros projetos.
 
@@ -259,22 +259,24 @@ Os tempos sobrepostos são contabilizados uma única vez, conforme a regra de te
 
 ## 11. Backup e restauração
 
-### 11.1 Criar backup
+### 11.1 Backup Geral e Exportar são operações diferentes
 
-Clique em **Backup**. O navegador inicia o download de um arquivo JSON com nome semelhante a:
+**Backup Geral (menu hambúrguer):** baixa um arquivo JSON com **todos os projetos** e seus registros, hábitos, sessões e identificação do projeto ativo. Exemplo: `impulso-backup-10-11-2026.json`. Use esta opção para proteger ou transferir o conjunto completo de dados.
 
-`impulso-backup-09-11-2026.json`
+**Exportar (página inicial e páginas do projeto):** baixa um JSON contendo **somente o projeto ativo**, incluindo seus registros, hábitos e sessões. Exemplo: `impulso-projeto-meu-livro-10-11-2026.json`. Antes de exportar, abra o projeto desejado. Se não houver projeto ativo, o aplicativo solicitará que você abra um.
 
-O backup reúne **todos os projetos**, seus nomes, datas de criação, registros, hábitos e a identificação do projeto ativo. O arquivo contém datas e horários dos registros, mas **não cria documentos individuais de Meu Dia**. O tema visual não faz parte desse JSON, pois é armazenado em outra chave local. Os registros de **Atividade**, incluindo título, início, término e observação, também são preservados no JSON.
+Os arquivos individuais usam a identificação `kind: "project"` e guardam o projeto em `project`. **Não são backups gerais e não podem ser restaurados pelo comando Restaurar Backup desta versão.** Guarde um Backup Geral para recuperar os dados pelo próprio aplicativo. A exportação individual é útil para arquivamento ou processamento externo.
+
+As exportações contêm datas e horários dos registros, mas não criam documentos separados de Meu Dia. O tema visual não é incluído, pois fica em outra chave de armazenamento local.
 
 ### 11.2 Restaurar
 
-1. Clique em **Importar / Restaurar**.
-2. Escolha um arquivo JSON previamente exportado pelo Impulso.
+1. Clique em **Restaurar Backup** no menu ou na página inicial.
+2. Escolha um arquivo JSON criado por **Backup Geral** (não por **Exportar**).
 3. Leia a confirmação.
 4. Confirme somente se deseja substituir os dados atuais.
 
-**A restauração substitui todos os projetos existentes; não mescla dados.** O arquivo é submetido a verificações básicas de estrutura e tamanho (limite de 40 MB). Arquivos de outros aplicativos ou formatos incompatíveis são recusados.
+**A restauração substitui todos os projetos existentes; não mescla dados.** Apenas arquivos produzidos por **Backup Geral** podem ser restaurados. Arquivos de **Exportar** contêm somente um projeto e são rejeitados por este comando. O arquivo é submetido a verificações básicas de estrutura e tamanho (limite de 40 MB). Arquivos de outros aplicativos ou formatos incompatíveis são recusados.
 
 ### 11.3 Política recomendada de cópias
 
@@ -393,7 +395,7 @@ Há lixeira para projetos, definições de hábitos e registros de ponto/hábito
 Não. As execuções anteriores permanecem até serem removidas individualmente.
 
 **O backup contém todos os projetos?**  
-Sim. A restauração substitui o conjunto completo existente.
+**Backup Geral**, sim. **Exportar** contém apenas o projeto ativo. Restaurar Backup aceita apenas o Backup Geral e substitui o conjunto completo existente.
 
 **O backup contém as preferências de tema?**  
 Não. O tema é armazenado separadamente.
@@ -452,7 +454,9 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 **Dano:** pontos de progresso derivados dos registros.  
 **Radar:** representação angular do tempo dentro de um ciclo de 60 minutos.  
 **PWA:** aplicação web que pode oferecer instalação e funcionamento offline.  
-**Backup:** cópia exportada dos dados em JSON.
+**Backup Geral:** cópia JSON de todos os projetos, compatível com Restaurar Backup.
+
+**Exportar:** cópia JSON somente do projeto ativo, não restaurável pelo comando Restaurar Backup nesta versão.
 
 ### Roteiro de teste recomendado após publicar
 
@@ -467,7 +471,8 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 - [ ] Criar e concluir um hábito e verificar Meu Dia e Histórico.
 - [ ] Conferir o radar, a Arena e o progresso do projeto.
 - [ ] Excluir um registro de teste e verificar o recálculo.
-- [ ] Exportar um backup e confirmar o arquivo no dispositivo.
+- [ ] Exportar um projeto individual e confirmar que o JSON contém somente o projeto ativo.
+- [ ] Criar um Backup Geral e confirmar que o JSON contém todos os projetos.
 - [ ] Restaurar um backup de teste, sabendo que substituirá os dados atuais.
 - [ ] Abrir a impressão do projeto e da lista de projetos.
 - [ ] Confirmar que **Ponto** abre sua página própria e **Entrada Manual** abre o formulário correspondente, nunca **Novo Projeto**.
