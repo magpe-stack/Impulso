@@ -19,7 +19,7 @@
 7. [Hábitos](#7-hábitos)
 8. [Histórico e exclusões](#8-histórico-e-exclusões)
 9. [Radar do Tempo e maestria](#9-radar-do-tempo-e-maestria)
-10. [Arena de 50 Chefões](#10-arena-de-50-chefões)
+10. [Arena de 100 Chefões](#10-arena-de-50-chefões)
 11. [Backup e restauração](#11-backup-e-restauração)
 12. [Impressão e relatórios](#12-impressão-e-relatórios)
 13. [Tema, tela cheia e rodapé](#13-tema-tela-cheia-e-rodapé)
@@ -84,7 +84,7 @@ A navegação principal apresenta:
 | Meu Dia | Registrar ponto e consultar cartões diários |
 | Hábitos | Criar hábitos e confirmar execuções |
 | Histórico | Consultar os registros do projeto |
-| Arena de Chefões | Acompanhar os 50 adversários e o dano acumulado |
+| Arena de Chefões | Acompanhar os 100 adversários e o dano acumulado |
 | Radar do Tempo | Visualizar o ciclo angular e a meta de 10.000 horas |
 
 O projeto ativo é aquele aberto mais recentemente ou criado por último. A seleção é mantida no armazenamento local.
@@ -226,20 +226,15 @@ No **anel externo**, a fórmula atual é **1 grau a cada 10 segundos** (6 graus 
 
 O módulo também exibe o tempo total, a meta de **10.000 horas**, as horas restantes e o percentual de maestria. A meta é calculada por projeto, sem somar outros projetos.
 
-## 10. Arena de 50 Chefões
+## 10. Arena de 100 Chefões
 
-A **Arena** possui 50 adversários nomeados, do **Sentinela das Cinzas** ao **Arquichefão do Impulso**. Cada projeto tem progressão independente.
+A Arena possui **100 adversários**, começando pela **Sentinela das Cinzas** e terminando no **Arquichefão do Impulso**. Os 50 adversários originais foram mantidos; outros 50 foram adicionados. Cada projeto possui sua própria Arena.
 
-O dano total é calculado a partir de:
+A progressão está distribuída ao longo de **10.000 horas de trabalho efetivamente acumuladas**. Cada minuto equivale a **1 HP** de dano. Os chefões têm resistências progressivamente maiores, e o último é derrotado ao alcançar 600.000 minutos (10.000 horas). Não há bônus de dano por simplesmente encerrar uma atividade, pois isso anteciparia a meta.
 
-- **1 ponto de dano por minuto inteiro** de tempo contabilizado no projeto;
-- **5 pontos adicionais** por registro do tipo **Término**, execução de **Hábito** ou **Atividade** manual concluída.
+Os tempos sobrepostos são contabilizados uma única vez, conforme a regra de tempo acumulado do projeto. A Arena mostra o adversário atual, sua barra de resistência, o total de chefões derrotados e os 100 níveis com os respectivos limites em horas.
 
-A vida máxima de cada adversário aumenta conforme a fórmula `HP = 100 + 75 × n + 12 × n²`, em que `n` começa em zero para o primeiro chefão. O dano acumulado é aplicado sequencialmente: ao esgotar a vida de um adversário, o restante passa ao seguinte.
-
-A Arena apresenta o adversário atual, sua barra de vida, os chefões derrotados e a lista dos 50 níveis. O tamanho do símbolo visual aumenta progressivamente até o limite definido no layout. Os chefões são representados por emojis, não por animações de combate.
-
-Não existe botão separado de ataque: o progresso deriva dos registros. Excluir registros pode reduzir o dano total e até fazer o projeto voltar a um chefão anterior.
+**Atualização de versões anteriores:** os registros não são modificados. Como a distribuição dos níveis mudou, o número de chefões derrotados pode ser recalculado de acordo com o tempo total do projeto. A meta de 10.000 horas permanece inalterada.
 
 ## 11. Backup e restauração
 
@@ -309,7 +304,7 @@ Se houver um novo Início antes do Término do intervalo aberto, a implementaç�
 
 Cada hábito concluído cria um intervalo com início e término. O aplicativo une os intervalos que se sobrepõem para não contar o mesmo período duas vezes na soma de tempo.
 
-Exemplo: ponto das 10h às 11h e hábito das 10h30 às 11h geram **1 hora**, não 1h30, no tempo total. A conclusão do hábito ainda conta como evento adicional para o bônus de dano da Arena.
+Exemplo: ponto das 10h às 11h e hábito das 10h30 às 11h geram **1 hora**, não 1h30, no tempo total. A Arena considera somente os minutos efetivamente acumulados, sem bônus por conclusão.
 
 ### 14.3 Virada de dia
 
