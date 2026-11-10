@@ -7,3 +7,15 @@
 
 /* Menu hambúrguer fixo, acessível e responsivo */
 .top{justify-content:flex-start;gap:12px;z-index:40}.brand{margin-right:auto}.menu-toggle{width:46px;height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:var(--soft);color:var(--text);border:1px solid var(--line);border-radius:12px;flex-shrink:0}.menu-toggle span{display:block;width:23px;height:3px;border-radius:3px;background:currentColor}.menu-backdrop{position:fixed;inset:0;background:#10141db3;z-index:48}.menu-backdrop[hidden]{display:none}.menu-drawer{position:fixed;top:0;left:0;bottom:0;width:min(350px,88vw);background:var(--panel);color:var(--text);z-index:49;overflow-y:auto;overscroll-behavior:contain;box-shadow:12px 0 36px #0003;padding:16px;transform:translateX(-110%);visibility:hidden;transition:transform .22s ease,visibility .22s}.menu-drawer.open{transform:translateX(0);visibility:visible}.menu-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;font-size:1.2rem}.menu-heading button{border:1px solid var(--line);border-radius:10px;background:var(--soft);color:var(--text);padding:8px 13px}.menu-drawer nav{display:flex;flex-direction:column;gap:5px;overflow:visible;white-space:normal;margin:0;padding:0}.menu-drawer nav button,.menu-section button,.menu-section a{display:block;width:100%;text-align:left;padding:11px 13px;background:transparent;border:0;border-radius:10px;color:var(--text);font-weight:650;text-decoration:none}.menu-drawer nav button.active{background:var(--soft);box-shadow:none;border-left:4px solid var(--color-4)}.menu-section{border-top:1px solid var(--line);margin-top:15px;padding-top:12px}.menu-section>strong{display:block;font-size:.85rem;color:var(--muted);padding:0 12px 7px}.menu-section button:hover,.menu-section a:hover,.menu-drawer nav button:hover{background:var(--soft)}.shell{display:block;max-width:1120px}.menu-open{overflow:hidden}@media(max-width:780px){.menu-drawer nav{flex-direction:column;overflow:visible;white-space:normal;margin:0;padding:0}}@media(prefers-reduced-motion:reduce){.menu-drawer{transition:none}}@media print{.menu-toggle,.menu-drawer,.menu-backdrop{display:none!important}}
+
+/* Identidade visual Impulso: ícones fornecidos pelo autor */
+.brand-logo{display:block;width:40px;height:40px;object-fit:contain;flex-shrink:0}
+#splash{background:#fff;color:#10141d}
+#splash .splash-icon{position:relative;width:min(58vw,260px);aspect-ratio:1;flex:none}
+#splash .splash-icon img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:contain}
+#splash .splash-gear{animation:impulso-gear-spin .7s linear infinite;transform-origin:50% 50%}
+#splash .splash-clock{animation:none}
+#splash strong{color:#940000}
+#splash small{color:#475569;text-align:center;padding:0 12px}
+@keyframes impulso-gear-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#splash .splash-gear{animation:none}}
