@@ -8,6 +8,11 @@
 
 > Este manual foi revisado com base nos arquivos locais da atualização v11 (`app.js`, `index.html`, `styles.css`, `sw.js` e `manifest.json`). Descreve o comportamento previsto pelo código, não uma certificação de testes em todos os dispositivos. Recursos não implementados não são apresentados como disponíveis. O software não substitui um sistema oficial de controle de jornada trabalhista.
 
+
+<p align="center">
+  <img src="ImpulsoCover.png" alt="Impulso — Motor de Produtividade Pessoal" width="100%">
+</p>
+
 ## Sumário
 
 1. [Apresentação e conceito](#1-apresentação-e-conceito)
