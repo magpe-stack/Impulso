@@ -19,3 +19,11 @@
 #splash small{color:#475569;text-align:center;padding:0 12px}
 @keyframes impulso-gear-spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){#splash .splash-gear{animation:none}}
+
+/* Splash v7: anima a camada contêiner (Edge/Chrome/Android) */
+#splash{background:#fff!important;color:#10141d!important}
+#splash .splash-icon{position:relative;display:block;width:min(58vw,260px);height:auto;aspect-ratio:1;transform-origin:center center;animation:impulso-spin-fast 100ms linear infinite!important;will-change:transform}
+#splash .splash-gear{display:block;position:static;width:100%;height:100%;object-fit:contain;animation:none!important;transform:none!important}
+#splash strong{color:#940000}
+@keyframes impulso-spin-fast{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#splash .splash-icon{animation-duration:100ms!important}}
