@@ -280,7 +280,7 @@ As exportações contêm datas e horários dos registros, mas não criam documen
 
 ### 11.3 Restaurar
 
-1. Clique em **Restaurar Backup** no menu ou na página inicial.
+1. Abra o **menu Hambúrguer (☰)** e clique em **Restaurar Backup**. Esse comando fica disponível exclusivamente no menu, não nas páginas do aplicativo.
 2. Escolha um arquivo JSON criado por **Backup Geral** (não por **Exportar**).
 3. Leia a confirmação.
 4. Confirme somente se deseja substituir os dados atuais.
