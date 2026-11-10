@@ -1,12 +1,12 @@
 # IMPULSO — Manual completo do usuário
 
-**Motor de Produtividade Pessoal · PWA offline-first · Manual revisado para a atualização v11 (10/11/2026)**
+**Motor de Produtividade Pessoal · PWA offline-first · Manual atualizado para a versão v16 (10/11/2026)**
 
 **Aplicativo:** https://magpe-stack.github.io/Impulso/  
 **Código-fonte:** https://github.com/magpe-stack/Impulso  
 **Manual:** https://github.com/magpe-stack/Impulso/blob/main/README.md
 
-> Este manual foi revisado com base nos arquivos locais da atualização v11 (`app.js`, `index.html`, `styles.css`, `sw.js` e `manifest.json`). Descreve o comportamento previsto pelo código, não uma certificação de testes em todos os dispositivos. Recursos não implementados não são apresentados como disponíveis. O software não substitui um sistema oficial de controle de jornada trabalhista.
+> Este manual foi atualizado a partir do README fornecido e confrontado com os arquivos locais da versão v16 (`app.js`, `index.html`, `styles.css`, `sw.js` e `manifest.json`). As funcionalidades descritas refletem o código disponível, não testes certificados em todos os dispositivos. O Impulso não substitui um sistema oficial de controle de jornada trabalhista.
 
 ## Sumário
 
@@ -19,7 +19,7 @@
 7. [Hábitos](#7-hábitos)
 8. [Histórico e exclusões](#8-histórico-e-exclusões)
 9. [Radar do Tempo e maestria](#9-radar-do-tempo-e-maestria)
-10. [Arena de 100 Chefões](#10-arena-de-50-chefões)
+10. [Arena de 100 Chefões](#10-arena-de-100-chefões)
 11. [Backup e restauração](#11-backup-e-restauração)
 12. [Impressão e relatórios](#12-impressão-e-relatórios)
 13. [Tema, tela cheia e rodapé](#13-tema-tela-cheia-e-rodapé)
@@ -37,7 +37,7 @@
 
 O **Impulso** é um aplicativo pessoal para registrar períodos de atividade, organizar hábitos e visualizar o avanço de projetos. Seu nome representa o movimento inicial que transforma uma intenção em ação, seguido da constância necessária para construir resultados.
 
-O sistema reúne sete áreas: **Início**, **Meus Projetos**, **Meu Dia**, **Hábitos**, **Histórico**, **Arena de Chefões** e **Radar do Tempo**. Cada projeto possui registros, hábitos e progresso próprios. O painel de maestria usa a meta simbólica de **10.000 horas**; essa quantidade não é garantia científica de domínio de qualquer habilidade.
+O sistema reúne oito áreas: **Início**, **Ponto**, **Meus Projetos**, **Meu Dia**, **Hábitos**, **Histórico**, **Arena de Chefões** e **Radar do Tempo**. Cada projeto possui registros, hábitos e progresso próprios. O painel de maestria usa a meta simbólica de **10.000 horas**; essa quantidade não é garantia científica de domínio de qualquer habilidade.
 
 A gamificação da Arena transforma minutos e conclusões registrados em dano contra adversários. Ela é um recurso motivacional, não uma medida de qualidade do trabalho.
 
@@ -80,14 +80,15 @@ A navegação principal apresenta:
 | Área | Finalidade |
 |---|---|
 | Início | Resumo do projeto ativo e atalhos |
+| Ponto | Iniciar, acompanhar e terminar trabalhos cronometrados |
 | Meus Projetos | Criar, abrir, renomear, excluir e imprimir projetos |
-| Meu Dia | Registrar ponto e consultar cartões diários |
+| Meu Dia | Consultar registros organizados por dia e seus totais |
 | Hábitos | Criar hábitos e confirmar execuções |
 | Histórico | Consultar os registros do projeto |
 | Arena de Chefões | Acompanhar os 100 adversários e o dano acumulado |
 | Radar do Tempo | Visualizar o ciclo angular e a meta de 10.000 horas |
 
-O projeto ativo é aquele aberto mais recentemente ou criado por último. A seleção é mantida no armazenamento local.
+O projeto ativo é aquele selecionado mais recentemente ou criado por último. A seleção é mantida no armazenamento local.
 
 ## 4. Projetos
 
@@ -117,60 +118,59 @@ O botão **Imprimir lista** gera uma apresentação imprimível com nome, data d
 
 ## 5. Meu Dia e registro de ponto
 
-**Meu Dia** organiza os registros em cartões por data, com títulos no formato `Meu Dia DD-MM-AAAA`, por exemplo `Meu Dia 09-11-2026`. Cada cartão apresenta o total trabalhado naquela data.
+### 5.1 Ponto: registrar um trabalho em tempo real
 
-A tabela mostra **Tipo**, **Horário**, **Observação** e uma **lixeira**. Os tipos são **▶ Início**, **■ Término**, **✓ Hábito** e **✎ Atividade**. A observação é opcional e limitada a 50 caracteres.
+A página **Ponto** possui um painel próprio, integrado à navegação, **sem janela modal bloqueante**.
 
-### 5.1 Registrar ponto imediatamente
+1. Abra **Ponto** pelo menu ou pelo botão de atalho.
+2. No campo **Nome do trabalho**, informe o que será realizado (até **50 caracteres**).
+3. Clique em **Iniciar**. O aplicativo grava automaticamente a **data e a hora de início**.
+4. Continue trabalhando. Você pode visitar outras páginas do Impulso ou fechar e reabrir o aplicativo no mesmo navegador: o início fica salvo no armazenamento local.
+5. Retorne à página **Ponto** e clique em **Terminar e salvar**. Confirme a ação.
+6. O aplicativo registra a **data e a hora de término** e lança automaticamente a atividade no **Histórico** e no **Meu Dia**.
 
-1. Abra **Meu Dia** e clique em **Ponto**; também é possível usar **Registrar Ponto** no menu hambúrguer ou na página inicial.
-2. Na janela **Registrar ponto**, confira a data e a hora apresentadas.
-3. Verifique o tipo pré-selecionado.
-4. Digite uma observação, se desejar.
-5. Clique em **Registrar agora**.
+Enquanto o trabalho está aberto, o painel mostra o nome, o horário inicial e um contador de duração. A contagem é calculada pela diferença entre horários, e não pela quantidade de atualizações visuais; por isso, a duração pode ser recuperada quando o aplicativo volta a ser aberto. **O trabalho não é encerrado automaticamente** quando a página é fechada.
 
-O horário efetivamente salvo é capturado no momento da confirmação. A data/hora exibida ao abrir a janela é uma referência inicial e **não é atualizada continuamente** enquanto a janela permanece aberta.
+Não é necessário clicar em um terceiro botão **Concluir**: na versão atual, **Terminar e salvar** encerra e grava a atividade. Um botão adicional de gravação só aparece para recuperar sessões encerradas em versões anteriores.
 
-### 5.2 Alternância automática
+### 5.2 Trabalhos que atravessam a meia-noite
 
-O sistema consulta o último registro de ponto do projeto, em ordem cronológica:
+O Ponto suporta naturalmente trabalhos que começam em um dia e terminam no seguinte. Exemplo:
 
-- Sem registros de ponto, sugere **Início**.
-- Se o último registro é **Início**, sugere **Término**.
-- Se o último registro é **Término**, sugere **Início**.
+| Campo | Valor |
+|---|---|
+| Nome | Desenvolvimento do aplicativo |
+| Início | 10/11/2026 — 23:00 |
+| Término | 11/11/2026 — 01:00 |
+| Duração | 2 horas |
 
-É possível alterar manualmente a opção. Quando a escolha diverge da sequência esperada, o aplicativo pede confirmação. Entradas manuais também participam da sequência, e os registros de hábitos não a alteram.
+A atividade permanece **em uma única linha**, associada à data em que começou. O cálculo dos totais diários divide o tempo pelo calendário: nesse exemplo, **1 hora no dia 10** e **1 hora no dia 11**.
 
-**Atenção:** a alternância não é reiniciada automaticamente à meia-noite. Ela considera o último ponto cronológico do projeto, inclusive em dias anteriores. Registros duplicados ou fora de ordem podem prejudicar o cálculo de períodos; revise o histórico após correções retroativas.
+### 5.3 Meu Dia
 
-### 5.3 Observações e contador
+**Meu Dia** organiza as atividades do projeto em cartões intitulados `Meu Dia DD-MM-AAAA`. Cada atividade aparece no cartão de sua **data de início**. Os cartões podem ser ordenados dos mais antigos aos mais recentes ou vice-versa.
 
-O campo aceita até 50 caracteres e mostra a contagem, como `0/50`. Clique em **Cancelar** para fechar sem registrar. O texto da observação não altera a duração contabilizada.
+As colunas são exatamente **Atividade | Nome | Início | Término | 🗑**, nessa ordem. Os tipos de atividade são **Ponto**, **Hábito** e **Entrada Manual**. O campo **Nome** exibe o nome do trabalho ou do hábito, e os horários apresentam data e hora completas.
 
-### 5.4 Ordem dos cartões
+O **total trabalhado** de cada dia considera a parte de todos os intervalos que realmente ocorreu naquela data, inclusive quando uma atividade começou no dia anterior. Por isso, um dia pode ter tempo contabilizado mesmo sem possuir uma atividade iniciada nele.
 
-O filtro permite escolher **Mais antigos primeiro** ou **Mais recentes primeiro**. A ordenação afeta a apresentação, não as datas nem o cálculo do tempo.
-
-### 5.5 Lixeira de registro
-
-Cada linha possui um botão de exclusão. Ao clicar, confirme a operação. O registro é removido do projeto e os indicadores são recalculados. Excluir um Início ou Término pode modificar o pareamento dos demais pontos.
+A lixeira exclui o registro, após confirmação, e recalcula os totais e a Arena. Não há desfazer.
 
 ## 6. Entrada manual retroativa
 
-Use **Entrada Manual** para acrescentar uma **atividade completa**, com horário de início e término, inclusive retroativamente. Este comando não abre o formulário de Novo Projeto.
+A **Entrada Manual** serve para registrar um trabalho que já aconteceu, sem usar o cronômetro do Ponto. Seu formulário é independente.
 
-1. Abra **Entrada Manual** no menu hambúrguer ou na área **Meu Dia**.
-2. Informe **Dia**, **Mês** e **Ano**.
-3. Digite o **título da atividade** (até 50 caracteres).
-4. Escolha a **hora e o minuto de início** e a **hora e o minuto de término**, no formato de 24 horas.
-5. Adicione uma **observação opcional** (até 50 caracteres), quando disponível.
-6. Confirme o lançamento e confira a atividade em **Meu Dia** e no **Histórico**.
+1. Abra **Entrada Manual** pelo menu ou pelos atalhos.
+2. Informe a **data** (dia, mês e ano).
+3. Digite o **nome da atividade**, com até **50 caracteres**.
+4. Selecione as horas e os minutos de **início** e **término**.
+5. Clique em **Lançar entrada**.
 
-A atividade é salva como um intervalo único, do tipo **Atividade**, e entra no cálculo de tempo sem duplicar minutos sobrepostos. O formulário usa precisão de minutos. Não há edição direta de registros: para corrigir um lançamento, exclua o incorreto e crie outro.
+O formulário atual **não possui campo Observação**. O nome informado aparece na coluna **Nome**, e a coluna **Atividade** exibe **Entrada Manual**.
 
-**Exemplo:** para registrar trabalho em 10/09/2027, das 14h00 às 15h30, crie **uma atividade** com essa data, título e horários. Não é necessário criar dois pontos separados.
+**Limitação importante:** o formulário manual atual exige início e término **na mesma data** e não permite um término futuro. Para trabalhos que cruzam a meia-noite, use o **Ponto** em tempo real ou faça lançamentos manuais separados por dia. Os horários manuais têm precisão de minutos.
 
-**Sem projeto ativo:** o botão abre uma mensagem específica de **Entrada manual (retroativa)**, solicitando que você selecione um projeto; não deve abrir **Novo Projeto**.
+O aplicativo impede um intervalo manual cujo término não seja posterior ao início. Não há edição direta: para corrigir, exclua o registro incorreto e crie outro.
 
 ## 7. Hábitos
 
@@ -193,7 +193,7 @@ Cada hábito possui um **Pomodoro** com contador regressivo e barra de progresso
 3. Clique em **Concluir** e confirme para registrar o tempo efetivamente executado. O sistema guarda os segmentos de execução, excluindo os períodos de pausa.
 4. Use **Reiniciar** para descartar a sessão de Pomodoro em andamento, após confirmação.
 
-A execução concluída aparece em **Meu Dia** e no **Histórico**. A contagem de tempo combina intervalos sobrepostos para evitar dupla contabilização com os registros de ponto. O contador depende do relógio do dispositivo e da execução do aplicativo; não é um cronômetro de precisão metrológica.
+A execução concluída aparece em **Meu Dia** e no **Histórico**, com **Hábito** na coluna Atividade e o nome cadastrado na coluna Nome. A contagem de tempo combina intervalos sobrepostos para evitar dupla contabilização com os registros de ponto. O contador depende do relógio do dispositivo e da execução do aplicativo; não é um cronômetro de precisão metrológica.
 
 **Observação técnica:** o código também mantém uma rotina interna de conclusão retroativa de hábitos, mas a interface principal atual apresenta os controles do Pomodoro.
 
@@ -203,13 +203,26 @@ Clique na lixeira ao lado do hábito. A definição do hábito é excluída, mas
 
 ## 8. Histórico e exclusões
 
-O **Histórico** reúne pontos, execuções de hábitos e atividades manuais entre os registros do projeto ativo em ordem decrescente de data/hora. Exibe o tipo, a data e hora do registro, um campo de término e a observação.
+O **Histórico** reúne **todos os registros do projeto ativo desde sua criação**, independentemente do dia, ordenados do mais recente ao mais antigo.
 
-Para os eventos de ponto, cada linha é um evento isolado: **Início** ou **Término**. O Histórico não apresenta automaticamente os dois eventos como uma única linha de sessão. Para hábitos e atividades manuais, a linha contém início e término da execução.
+O Histórico e o Meu Dia utilizam as mesmas colunas, nesta ordem:
 
-Todos os registros exibidos têm lixeira individual. Excluir um registro altera, conforme o caso, o total trabalhado, o progresso da meta, o radar e o dano na Arena.
+| Atividade | Nome | Início | Término | 🗑 |
+|---|---|---|---|---|
+| Ponto | Desenvolvimento | 10/11/2026 23:00 | 11/11/2026 01:00 | 🗑 |
+| Hábito | Leitura | 11/11/2026 09:00 | 11/11/2026 09:30 | 🗑 |
+| Entrada Manual | Revisão | 11/11/2026 10:00 | 11/11/2026 11:00 | 🗑 |
 
-Não existe recuperação automática de exclusões, controle de versões nem auditoria imutável. Faça backup antes de operações importantes.
+*Os dados acima são exemplos ilustrativos.*
+
+- **Atividade:** apenas **Ponto**, **Hábito** ou **Entrada Manual**.
+- **Nome:** o nome cadastrado no respectivo formulário, limitado a 50 caracteres.
+- **Início e Término:** datas e horários completos; registros antigos incompletos podem exibir um traço.
+- **Lixeira:** remove a atividade, após confirmação, e recalcula as métricas.
+
+**Compatibilidade histórica:** pares antigos de eventos **Início/Término** são apresentados juntos quando o aplicativo encontra um par correspondente. Um evento antigo sem par permanece visível, sem inventar o horário ausente. A exclusão de um par antigo remove os dois eventos associados.
+
+A diferença essencial é que **Histórico** mostra todos os dias em uma lista única, enquanto **Meu Dia** separa os registros por data de início.
 
 ## 9. Radar do Tempo e maestria
 
@@ -263,18 +276,13 @@ Faça backup ao final de sessões importantes e antes de limpar dados do navegad
 
 ## 12. Impressão e relatórios
 
-No módulo **Meu Dia**, clique em **Imprimir** para gerar o relatório do projeto ativo. Ele inclui:
+Em **Meu Dia** ou no menu, use **Imprimir** para abrir a impressão do projeto ativo. O relatório contém o nome do projeto, a data de emissão, indicadores de tempo, hábitos, chefões e progresso, além de cartões `Meu Dia DD-MM-AAAA`.
 
-- nome do projeto e data/hora de emissão;
-- resumo de tempo, hábitos, chefões e progresso de maestria;
-- cartões `Meu Dia DD-MM-AAAA` com total trabalhado;
-- tabela com tipo de registro, horário, término quando aplicável e observação.
+As tabelas impressas usam **Atividade | Nome | Início | Término**, sem lixeira (exclusão não se aplica ao papel). A apresentação de **Meu Dia** e **Histórico** na tela acrescenta a lixeira como quinta coluna.
 
-A impressão é aberta pelo mecanismo do navegador. Você pode escolher impressora física ou **Salvar como PDF**, se o sistema oferecer essa opção. O aplicativo não possui um gerador independente de PDF.
+A impressão é realizada pelo próprio navegador. É possível selecionar uma impressora ou **Salvar como PDF**, quando essa opção estiver disponível. O Impulso não gera PDF nativamente.
 
-A opção **Imprimir lista**, em **Meus Projetos**, produz um relatório simplificado de todos os projetos. **Nota de revisão:** o código atual da impressão possui uma condição que pode rotular incorretamente uma **Atividade** manual como **Término**; a documentação não deve tratar essa identificação como corrigida antes de uma atualização do `app.js`.
-
-**Atenção à apresentação:** nos registros de ponto, o relatório lista Início e Término separadamente; a coluna de término não constitui um pareamento automático de sessões. Para uma execução de hábito, há início e término na mesma linha. A qualidade final da paginação depende também do navegador e das configurações de impressão.
+Em **Meus Projetos**, o comando **Imprimir lista** apresenta nomes, datas de criação e tempo acumulado dos projetos. A paginação final depende do navegador e das configurações de papel, escala e margens.
 
 ## 13. Tema, tela cheia e rodapé
 
@@ -294,33 +302,33 @@ O menu hambúrguer apresenta os links para o **PWA oficial**, o **repositório G
 
 ## 14. Como o tempo é calculado
 
-### 14.1 Pares de ponto
+### 14.1 Intervalos de trabalho
 
-Os registros de ponto são ordenados cronologicamente. Um **Início** abre um intervalo; um **Término** posterior fecha esse intervalo. Intervalos sem término não são adicionados ao total acumulado.
+Cada novo registro de **Ponto** salvo contém início e término automáticos. Uma **Entrada Manual** contém o intervalo informado pelo usuário. Uma execução de **Hábito** registra os intervalos de execução do Pomodoro.
 
-Se houver um novo Início antes do Término do intervalo aberto, a implementação mantém o primeiro início. Um Término sem Início aberto não produz duração. Isso reforça a importância de corrigir duplicações e lançamentos incorretos.
+Para compatibilidade, o código também interpreta pares antigos de eventos de ponto (`start`/`end`). Um início antigo sem término não entra no total consolidado; a duração de um **Ponto atual em andamento** pode aparecer nos indicadores ao vivo.
 
-### 14.2 Hábitos e sobreposição
+### 14.2 Sobreposição
 
-Cada hábito concluído cria um intervalo com início e término. O aplicativo une os intervalos que se sobrepõem para não contar o mesmo período duas vezes na soma de tempo.
+Os intervalos válidos são combinados antes de calcular o total, evitando contar duas vezes o mesmo período.
 
-Exemplo: ponto das 10h às 11h e hábito das 10h30 às 11h geram **1 hora**, não 1h30, no tempo total. A Arena considera somente os minutos efetivamente acumulados, sem bônus por conclusão.
+Exemplo: Ponto das 10h às 11h e Hábito das 10h30 às 11h representam **1 hora total**, não 1h30. Pausas do Pomodoro não são incluídas nos segmentos efetivamente trabalhados.
 
-### 14.3 Virada de dia
+### 14.3 Virada da meia-noite
 
-Se um intervalo vai de 23h30 até 00h30 do dia seguinte, o tempo é dividido por dia civil: **30 minutos para cada dia**. Entretanto, os eventos individuais aparecem nos cartões correspondentes às suas próprias datas de registro. Um dia pode apresentar tempo contabilizado mesmo sem ter uma linha de Início ou Término própria.
+Um trabalho iniciado às 23h30 e terminado às 00h30 dura **1 hora**, mas contribui com **30 minutos para cada dia civil**. A atividade completa aparece no cartão de **Meu Dia** correspondente à data de início, com os dois horários.
 
-### 14.4 Precisão e arredondamento
+### 14.4 Precisão
 
-Os registros imediatos guardam data/hora com precisão de milissegundos internamente e são exibidos com segundos. As entradas manuais usam minutos. A apresentação `0h 04min` trunca os segundos restantes; o dano por tempo também considera apenas minutos inteiros no total acumulado.
+O Ponto usa os horários do relógio do dispositivo, com precisão interna em milissegundos; o cronômetro apresenta segundos. A Entrada Manual seleciona horas e minutos. Os totais exibidos em horas/minutos descartam os segundos residuais na apresentação. O dano da Arena considera **minutos inteiros efetivamente acumulados**.
 
 ## 15. Armazenamento, privacidade e funcionamento offline
 
-A atualização v11 continua guardando o estado dos projetos em **localStorage**, na chave `impulso-data-v1`. A preferência visual fica na chave `impulso-theme`. **Não há IndexedDB implementado nesta versão.**
+A versão v16 continua guardando o estado dos projetos em **localStorage**, na chave `impulso-data-v1`. A preferência visual fica na chave `impulso-theme`. **Não há IndexedDB implementado nesta versão.**
 
 Os dados não são enviados pelo código do aplicativo a uma API de sincronização. O site é hospedado no GitHub Pages, e o navegador realiza requisições normais para obter seus arquivos. Links externos do rodapé abrem seus respectivos destinos.
 
-Na atualização v11, o Service Worker usa o cache `impulso-v11-rocket-form-splash`. Para navegação, tenta a rede e recorre ao HTML em cache quando necessário; para outros recursos locais, prioriza a cópia em cache quando existente. O cache de arquivos **não é o mesmo que o armazenamento dos projetos**.
+Na versão v16, o Service Worker usa o cache `impulso-v16-arena-100`. Para navegação, tenta a rede e recorre ao HTML em cache quando necessário; para outros recursos locais, prioriza a cópia em cache quando existente. O cache de arquivos **não é o mesmo que o armazenamento dos projetos**.
 
 **Riscos:** limpar os dados do site, usar navegação privada, trocar de navegador/aparelho, desinstalar com remoção dos dados, atingir limites de armazenamento ou sofrer falha do dispositivo pode provocar perda de informações. Não existe sincronização automática entre dispositivos.
 
@@ -330,14 +338,14 @@ Na atualização v11, o Service Worker usa o cache `impulso-v11-rocket-form-spla
 |---|---|---|
 | Página 404 | Arquivo ou caminho incorreto no GitHub Pages | Confira a URL, a publicação e a presença de `index.html` na raiz |
 | Tela presa no splash | Erro de JavaScript ou versão antiga em cache | Recarregue, abra o console do navegador e confira se `app.js` foi publicado corretamente; faça backup antes de limpar dados |
-| Registrar Ponto ou Entrada Manual abre Novo Projeto | Pode haver arquivos antigos misturados ou cache desatualizado | Publique `index.html`, `app.js`, `manifest.json`, `sw.js` e os ícones da mesma versão; confira os comandos em janela atualizada e preserve o backup antes de limpar dados |
-| Ícone antigo no Android | O atalho instalado conserva o ícone anterior | Confira o manifesto v11 e os novos PNG; faça backup antes de reinstalar o PWA |
-| Splash sem anel ou sem revelação | HTML, CSS e JS de versões diferentes ou erro de script | Confira o anel SVG no `index.html`, o `startSplash()` no `app.js` e as requisições de recursos |
+| Registrar Ponto ou Entrada Manual abre Novo Projeto | Pode haver arquivos antigos misturados ou cache desatualizado | Publique `index.html`, `app.js`, `styles.css`, `manifest.json`, `sw.js` e os ícones compatíveis; confira os comandos em janela atualizada e preserve o backup antes de limpar dados |
+| Ícone antigo no Android | O atalho instalado conserva o ícone anterior | Confira o manifesto e os PNG do foguete; faça backup antes de reinstalar o PWA |
+| Splash sem anel ou sem revelação | HTML, CSS e JS de versões diferentes ou erro de script | Confira o anel SVG no `index.html`, a rotina `startSplash()` no `app.js` e as requisições de recursos |
 | Novo Projeto não responde | Falha de script ou elemento de interface ausente | Verifique o console, `index.html` e `app.js`; teste em aba normal atualizada |
 | Dados sumiram | Limpeza ou troca de armazenamento/perfil | Procure backup JSON; não há recuperação automática |
-| Total de horas menor que o esperado | Início sem Término ou intervalos sobrepostos | Revise o Histórico e os pares de ponto |
+| Total de horas menor que o esperado | Ponto ainda em andamento, intervalos sobrepostos ou dados antigos incompletos | Revise o Ponto e o Histórico |
 | Total inesperado após entrada retroativa | Registro duplicado ou sequência cronológica inconsistente | Revise datas, horas e tipos; exclua e recrie o lançamento incorreto |
-| Botão Ponto sugere tipo inesperado | Último evento cronológico do projeto determina a sugestão | Confira registros manuais e eventos de dias anteriores |
+| Ponto parece não estar contando | Projeto ativo diferente ou sessão não iniciada | Abra a página Ponto do projeto correto e confira o horário inicial |
 | Pomodoro não avança em segundo plano | Restrições de execução do navegador ou aplicativo suspenso | Mantenha o aplicativo aberto durante o uso e confira o registro ao concluir |
 | Instalação PWA não aparece | Critérios do navegador ou configuração da publicação | Abra via HTTPS, verifique manifest e Service Worker, e use o navegador compatível |
 | Não abre offline | Cache inicial incompleto ou removido | Conecte à internet, carregue novamente e teste antes de desconectar |
@@ -361,11 +369,11 @@ Não, desde que os arquivos necessários estejam disponíveis no navegador e o a
 **Os projetos compartilham horas?**  
 Não. Cada projeto tem registros e progresso independentes.
 
-**O tempo continua aumentando enquanto um Início está aberto?**  
-Sim, no contador ao vivo da página inicial e no Radar. O total consolidado dos relatórios considera os intervalos encerrados.
+**O tempo continua aumentando enquanto um Ponto está aberto?**  
+Sim, o painel de Ponto e os indicadores ao vivo usam o horário de início salvo. O total consolidado dos relatórios considera os intervalos encerrados e salvos.
 
 **Posso lançar registros de meses anteriores?**  
-Sim, pela Entrada manual, respeitando a validação de datas e horários.
+Sim, pela Entrada Manual, respeitando a validação de datas e horários. Para atravessar a meia-noite em um único registro, use o Ponto.
 
 **Posso editar um registro?**  
 Não diretamente nesta versão. Exclua e lance novamente.
@@ -395,8 +403,8 @@ A versão descrita neste manual possui limitações relevantes:
 1. **Sem sincronização em nuvem** ou conta de usuário.
 2. **Sem edição direta** de registros ou hábitos já cadastrados.
 3. **Pomodoro local**: existe cronômetro com pausa e retomada, mas não há garantia de execução ininterrupta em segundo plano ou de precisão absoluta.
-4. **Sem pareamento visual automático de sessões de ponto** no Histórico ou no relatório de impressão (atividades manuais e hábitos já são intervalos únicos).
-5. **Sem validação rigorosa de todas as sequências de ponto**: o usuário pode confirmar uma sequência atípica.
+4. **Compatibilidade com pontos antigos:** pares de eventos antigos são agrupados quando possível; registros sem par podem aparecer incompletos.
+5. **Entrada Manual em um único dia:** o formulário atual não permite informar uma data de término diferente da data de início.
 6. **Sem desfazer exclusões** nem mesclagem de backups.
 7. **Sem garantia de armazenamento permanente** pelo navegador.
 8. **Sem PDF nativo**: a exportação em PDF depende da impressão do navegador.
@@ -428,9 +436,9 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 ## 20. Glossário e roteiro de verificação
 
 **Projeto ativo:** projeto cujos dados aparecem nos módulos operacionais.  
-**Ponto:** evento de início ou término de uma atividade.  
+**Ponto:** atividade cronometrada com início automático e término automático ao salvar.  
 **Intervalo:** duração entre um início e um término válidos.  
-**Entrada retroativa:** evento criado com data/hora anterior.  
+**Entrada Manual:** atividade cadastrada posteriormente com data e horários informados pelo usuário.  
 **Hábito:** atividade recorrente definida com duração estipulada.  
 **HP:** pontos de vida de um chefão.  
 **Dano:** pontos de progresso derivados dos registros.  
@@ -443,16 +451,18 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 - [ ] Abrir o site sem erro e concluir a tela inicial.
 - [ ] Criar um projeto com nome válido.
 - [ ] Criar outro projeto e confirmar que os dados ficam separados.
-- [ ] Registrar Início e conferir se o próximo Ponto sugere Término.
-- [ ] Registrar Término e conferir se o próximo Ponto sugere Início.
-- [ ] Criar um par de entradas retroativas e conferir o total do dia.
+- [ ] Abrir Ponto, informar o nome do trabalho e clicar em Iniciar.
+- [ ] Navegar por outras páginas e retornar ao Ponto sem perder a sessão.
+- [ ] Clicar em Terminar e salvar e conferir início e término no Histórico e Meu Dia.
+- [ ] Testar um Ponto atravessando a meia-noite, conferindo a divisão dos totais diários.
+- [ ] Criar uma Entrada Manual com nome e intervalo no mesmo dia e conferir o total.
 - [ ] Criar e concluir um hábito e verificar Meu Dia e Histórico.
 - [ ] Conferir o radar, a Arena e o progresso do projeto.
 - [ ] Excluir um registro de teste e verificar o recálculo.
 - [ ] Exportar um backup e confirmar o arquivo no dispositivo.
 - [ ] Restaurar um backup de teste, sabendo que substituirá os dados atuais.
 - [ ] Abrir a impressão do projeto e da lista de projetos.
-- [ ] Confirmar que **Ponto** abre **Registrar ponto** e **Entrada Manual** abre **Entrada manual**, nunca **Novo Projeto**.
+- [ ] Confirmar que **Ponto** abre sua página própria e **Entrada Manual** abre o formulário correspondente, nunca **Novo Projeto**.
 - [ ] Verificar o anel de progresso e a revelação do nome no splash de 4 segundos.
 - [ ] Conferir o foguete como ícone de instalação no Android, com backup prévio se for reinstalar.
 - [ ] Testar o Pomodoro (iniciar, pausar, retomar, concluir e reiniciar).
@@ -465,4 +475,4 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 **Impulso — Motor de Produtividade Pessoal**  
 *O progresso nasce da ação, ganha força na constância e se revela no tempo.*
 
-**Manual revisado para a atualização v11.** Antes de atualizar ou reinstalar o aplicativo, preserve uma cópia de seus dados.
+**Manual revisado para a atualização v16.** Antes de atualizar ou reinstalar o aplicativo, preserve uma cópia de seus dados.
