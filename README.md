@@ -21,7 +21,7 @@
 5. [Meu Dia e registro de ponto](#5-meu-dia-e-registro-de-ponto)
 6. [Entrada manual retroativa](#6-entrada-manual-retroativa)
 7. [Hábitos](#7-hábitos)
-8. [Histórico e exclusões](#8-histórico-e-exclusões)
+8. [Registros e exclusões em Meu Dia](#8-registros-e-exclusões-em-meu-dia)
 9. [Radar do Tempo e maestria](#9-radar-do-tempo-e-maestria)
 10. [Arena de 100 Chefões](#10-arena-de-100-chefões)
 11. [Backup e restauração](#11-backup-e-restauração)
@@ -41,7 +41,7 @@
 
 O **Impulso** é um aplicativo pessoal para registrar períodos de atividade, organizar hábitos e visualizar o avanço de projetos. Seu nome representa o movimento inicial que transforma uma intenção em ação, seguido da constância necessária para construir resultados.
 
-O sistema reúne oito áreas: **Início**, **Ponto**, **Meus Projetos**, **Meu Dia**, **Hábitos**, **Histórico**, **Arena de Chefões** e **Radar do Tempo**. Cada projeto possui registros, hábitos e progresso próprios. O painel de maestria usa a meta simbólica de **10.000 horas**; essa quantidade não é garantia científica de domínio de qualquer habilidade.
+O sistema reúne sete áreas: **Início**, **Ponto**, **Meus Projetos**, **Meu Dia**, **Hábitos**, **Arena de Chefões** e **Radar do Tempo**. Cada projeto possui registros, hábitos e progresso próprios. O painel de maestria usa a meta simbólica de **10.000 horas**; essa quantidade não é garantia científica de domínio de qualquer habilidade.
 
 A gamificação da Arena transforma minutos e conclusões registrados em dano contra adversários. Ela é um recurso motivacional, não uma medida de qualidade do trabalho.
 
@@ -92,7 +92,7 @@ A navegação principal apresenta:
 | Meus Projetos | Criar, abrir, renomear, excluir e imprimir projetos |
 | Meu Dia | Consultar registros organizados por dia e seus totais |
 | Hábitos | Criar hábitos e confirmar execuções |
-| Histórico | Consultar os registros do projeto |
+
 | Arena de Chefões | Acompanhar os 100 adversários e o dano acumulado |
 | Radar do Tempo | Visualizar o ciclo angular e a meta de 10.000 horas |
 
@@ -110,7 +110,7 @@ O sistema registra automaticamente a data e a hora da criação. O novo projeto 
 
 ### 4.2 Abrir outro projeto
 
-Acesse **Meus Projetos** e clique em **Abrir** no projeto desejado. As informações de Meu Dia, Hábitos, Histórico, Arena e Radar passam a corresponder ao projeto selecionado.
+Acesse **Meus Projetos** e clique em **Abrir** no projeto desejado. As informações de Meu Dia, Hábitos, Arena e Radar passam a corresponder ao projeto selecionado.
 
 ### 4.3 Renomear
 
@@ -135,7 +135,7 @@ A página **Ponto** possui um painel próprio, integrado à navegação, **sem j
 3. Clique em **Iniciar**. O aplicativo grava automaticamente a **data e a hora de início**.
 4. Continue trabalhando. Você pode visitar outras páginas do Impulso ou fechar e reabrir o aplicativo no mesmo navegador: o início fica salvo no armazenamento local.
 5. Retorne à página **Ponto** e clique em **Terminar e salvar**. Confirme a ação.
-6. O aplicativo registra a **data e a hora de término** e lança automaticamente a atividade no **Histórico** e no **Meu Dia**.
+6. O aplicativo registra a **data e a hora de término** e lança automaticamente a atividade no **Meu Dia**.
 
 Enquanto o trabalho está aberto, o painel mostra o nome, o horário inicial e um contador de duração. A contagem é calculada pela diferença entre horários, e não pela quantidade de atualizações visuais; por isso, a duração pode ser recuperada quando o aplicativo volta a ser aberto. **O trabalho não é encerrado automaticamente** quando a página é fechada.
 
@@ -201,7 +201,7 @@ Cada hábito possui um **Pomodoro** com contador regressivo e barra de progresso
 3. Clique em **Concluir** e confirme para registrar o tempo efetivamente executado. O sistema guarda os segmentos de execução, excluindo os períodos de pausa.
 4. Use **Reiniciar** para descartar a sessão de Pomodoro em andamento, após confirmação.
 
-A execução concluída aparece em **Meu Dia** e no **Histórico**, com **Hábito** na coluna Atividade e o nome cadastrado na coluna Nome. A contagem de tempo combina intervalos sobrepostos para evitar dupla contabilização com os registros de ponto. O contador depende do relógio do dispositivo e da execução do aplicativo; não é um cronômetro de precisão metrológica.
+A execução concluída aparece em **Meu Dia**, com **Hábito** na coluna Atividade e o nome cadastrado na coluna Nome. A contagem de tempo combina intervalos sobrepostos para evitar dupla contabilização com os registros de ponto. O contador depende do relógio do dispositivo e da execução do aplicativo; não é um cronômetro de precisão metrológica.
 
 **Observação técnica:** o código também mantém uma rotina interna de conclusão retroativa de hábitos, mas a interface principal atual apresenta os controles do Pomodoro.
 
@@ -209,11 +209,11 @@ A execução concluída aparece em **Meu Dia** e no **Histórico**, com **Hábit
 
 Clique na lixeira ao lado do hábito. A definição do hábito é excluída, mas **as execuções já registradas permanecem** no histórico e nas métricas até serem excluídas individualmente. Não há comando para editar um hábito já criado; exclua-o e crie outro com a configuração desejada.
 
-## 8. Histórico e exclusões
+## 8. Registros e exclusões em Meu Dia
 
-O **Histórico** reúne **todos os registros do projeto ativo desde sua criação**, independentemente do dia, ordenados do mais recente ao mais antigo.
+O **Meu Dia** reúne **todos os registros do projeto ativo desde sua criação**, separados em cartões por data de início. É possível alterar a ordem dos dias.
 
-O Histórico e o Meu Dia utilizam as mesmas colunas, nesta ordem:
+Meu Dia utiliza as seguintes colunas:
 
 | Atividade | Nome | Início | Término | 🗑 |
 |---|---|---|---|---|
@@ -230,7 +230,7 @@ O Histórico e o Meu Dia utilizam as mesmas colunas, nesta ordem:
 
 **Compatibilidade histórica:** pares antigos de eventos **Início/Término** são apresentados juntos quando o aplicativo encontra um par correspondente. Um evento antigo sem par permanece visível, sem inventar o horário ausente. A exclusão de um par antigo remove os dois eventos associados.
 
-A diferença essencial é que **Histórico** mostra todos os dias em uma lista única, enquanto **Meu Dia** separa os registros por data de início.
+Cada cartão possui seu próprio botão **Imprimir**, que imprime apenas os registros e o total trabalhado daquela data.
 
 ## 9. Radar do Tempo e maestria
 
@@ -295,9 +295,9 @@ Faça backup ao final de sessões importantes e antes de limpar dados do navegad
 
 ## 12. Impressão e relatórios
 
-Em **Meu Dia** ou no menu, use **Imprimir** para abrir a impressão do projeto ativo. O relatório contém o nome do projeto, a data de emissão, indicadores de tempo, hábitos, chefões e progresso, além de cartões `Meu Dia DD-MM-AAAA`.
+Em **Meu Dia**, o botão **Imprimir** da barra superior (ou o comando **Imprimir** do menu) abre o relatório completo do projeto ativo. O relatório contém o nome do projeto, a data de emissão, indicadores de tempo, hábitos, chefões e progresso, além de cartões `Meu Dia DD-MM-AAAA`.
 
-As tabelas impressas usam **Atividade | Nome | Início | Término**, sem lixeira (exclusão não se aplica ao papel). A apresentação de **Meu Dia** e **Histórico** na tela acrescenta a lixeira como quinta coluna.
+Cada cartão **Meu Dia DD-MM-AAAA** também oferece um botão **Imprimir** próprio, que gera um relatório exclusivamente daquele dia, incluindo nome do projeto, data de emissão, total diário e registros correspondentes. As tabelas impressas usam **Atividade | Nome | Início | Término**, sem lixeira; na tela, Meu Dia inclui a lixeira como quinta coluna.
 
 A impressão é realizada pelo próprio navegador. É possível selecionar uma impressora ou **Salvar como PDF**, quando essa opção estiver disponível. O Impulso não gera PDF nativamente.
 
@@ -362,7 +362,7 @@ Na versão v16, o Service Worker usa o cache `impulso-v16-arena-100`. Para naveg
 | Splash sem anel ou sem revelação | HTML, CSS e JS de versões diferentes ou erro de script | Confira o anel SVG no `index.html`, a rotina `startSplash()` no `app.js` e as requisições de recursos |
 | Novo Projeto não responde | Falha de script ou elemento de interface ausente | Verifique o console, `index.html` e `app.js`; teste em aba normal atualizada |
 | Dados sumiram | Limpeza ou troca de armazenamento/perfil | Procure backup JSON; não há recuperação automática |
-| Total de horas menor que o esperado | Ponto ainda em andamento, intervalos sobrepostos ou dados antigos incompletos | Revise o Ponto e o Histórico |
+| Total de horas menor que o esperado | Ponto ainda em andamento, intervalos sobrepostos ou dados antigos incompletos | Revise o Ponto e Meu Dia |
 | Total inesperado após entrada retroativa | Registro duplicado ou sequência cronológica inconsistente | Revise datas, horas e tipos; exclua e recrie o lançamento incorreto |
 | Ponto parece não estar contando | Projeto ativo diferente ou sessão não iniciada | Abra a página Ponto do projeto correto e confira o horário inicial |
 | Pomodoro não avança em segundo plano | Restrições de execução do navegador ou aplicativo suspenso | Mantenha o aplicativo aberto durante o uso e confira o registro ao concluir |
@@ -398,7 +398,7 @@ Sim, pela Entrada Manual, respeitando a validação de datas e horários. Para a
 Não diretamente nesta versão. Exclua e lance novamente.
 
 **O botão de lixeira existe em todos os registros?**  
-Há lixeira para projetos, definições de hábitos e registros de ponto/hábitos exibidos em Meu Dia e Histórico. A exclusão não é reversível no aplicativo.
+Há lixeira para projetos, definições de hábitos e registros de ponto/hábitos exibidos em Meu Dia. A exclusão não é reversível no aplicativo.
 
 **Apagar a definição de um hábito apaga suas execuções?**  
 Não. As execuções anteriores permanecem até serem removidas individualmente.
@@ -476,10 +476,10 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 - [ ] Criar outro projeto e confirmar que os dados ficam separados.
 - [ ] Abrir Ponto, informar o nome do trabalho e clicar em Iniciar.
 - [ ] Navegar por outras páginas e retornar ao Ponto sem perder a sessão.
-- [ ] Clicar em Terminar e salvar e conferir início e término no Histórico e Meu Dia.
+- [ ] Clicar em Terminar e salvar e conferir início e término no Meu Dia.
 - [ ] Testar um Ponto atravessando a meia-noite, conferindo a divisão dos totais diários.
 - [ ] Criar uma Entrada Manual com nome e intervalo no mesmo dia e conferir o total.
-- [ ] Criar e concluir um hábito e verificar Meu Dia e Histórico.
+- [ ] Criar e concluir um hábito e verificar Meu Dia.
 - [ ] Conferir o radar, a Arena e o progresso do projeto.
 - [ ] Excluir um registro de teste e verificar o recálculo.
 - [ ] Exportar um projeto individual e confirmar que o JSON contém somente o projeto ativo.
