@@ -501,3 +501,18 @@ O armazenamento JSON usa o campo `version: 1`. Alterações futuras no formato d
 *O progresso nasce da ação, ganha força na constância e se revela no tempo.*
 
 **Manual revisado para a atualização v16.** Antes de atualizar ou reinstalar o aplicativo, preserve uma cópia de seus dados.
+
+
+## Navegação compacta (v22)
+
+O menu lateral apresenta, nesta ordem: **Início**, **Novo**, **Projetos**, **Arena**, **Radar**, **Meu Dia**; **Ponto**, **Hábitos**, **Entrada**; **Guardar**, **Restaurar**, **Imprimir**.
+
+- **Novo** cria um projeto; **Projetos** permite selecionar os projetos existentes.
+- **Ponto** inicia ou conclui sessões de trabalho; **Hábitos** abre a gestão de hábitos; **Entrada** abre o formulário de entrada manual.
+- **Guardar** produz um **Backup Geral** de todos os projetos; **Restaurar** restaura esse backup geral, substituindo os dados atuais após confirmação.
+- **Imprimir** gera o relatório completo do projeto ativo. Na página **Meu Dia**, cada data continua com seu botão de impressão individual.
+- Os botões **Exportar** e **Importar**, disponíveis nas páginas do projeto, continuam servindo aos arquivos de **projeto individual**; não se confundem com Guardar/Restaurar.
+- No canto superior direito, os ícones de **Tema** e **Tela cheia** não possuem texto visível, mas têm nomes acessíveis.
+- No rodapé, quatro ícones dão acesso ao **site oficial**, **GitHub**, **Ajuda/Manual** e **Sobre**. A opção Sobre apresenta uma breve descrição do aplicativo.
+
+As referências HTML originais às imagens `ImpulsoCover.png` e `logo.svg` permanecem preservadas neste Manual.
