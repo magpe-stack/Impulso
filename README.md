@@ -261,3 +261,13 @@ Ao ativar, o aplicativo apresenta uma caixa a cada 15 minutos de uso com a recom
 ### Alerta de hábitos e Elixires (versão 35)
 
 Na página **Alertas!**, ative ou desative independentemente o **Alerta de hábitos e Elixires**. Quando ligado, o aplicativo mostra um lembrete a cada 15 minutos enquanto estiver aberto e visível, com o botão **Ir para Hábitos**. Registrar trabalho por Ponto ou Entrada Manual derrota chefões; para abrir cada cofre, é necessário concluir um hábito cadastrado. Cada conclusão libera no máximo um Elixir de chefão já derrotado. A configuração é salva localmente e os avisos não são notificações do sistema.
+
+
+### Atualização 36 — Painel de Alertas!
+
+A página **Alertas!** é dedicada exclusivamente à configuração de lembretes. O botão **Guardar backup agora** foi retirado dessa página, pois ela reúne alertas de diferentes categorias. Para realizar um backup, use **Guardar** no menu lateral. Os alertas de backup e de hábitos/Elixires permanecem independentes e opcionais.
+
+
+### Atualização 37 — controles de alertas
+
+Os controles da página **Alertas!** agora usam caixas de seleção nativas, com posição fixa e rótulos Ligado/Desligado. A configuração e o intervalo de 15 minutos permanecem inalterados.
