@@ -11,31 +11,33 @@
 
 ## Sumário
 
-1. [Apresentação e filosofia](#1-apresentação-e-filosofia)
-2. [Primeiro acesso, instalação e uso offline](#2-primeiro-acesso-instalação-e-uso-offline)
-3. [Interface, navegação e menu](#3-interface-navegação-e-menu)
-4. [Projetos independentes](#4-projetos-independentes)
-5. [Início e indicadores](#5-início-e-indicadores)
-6. [Ponto: cronometrar trabalho](#6-ponto-cronometrar-trabalho)
-7. [Entrada Manual](#7-entrada-manual)
-8. [Meu Dia, Histórico e cálculo do tempo](#8-meu-dia-histórico-e-cálculo-do-tempo)
-9. [Hábitos e Inventário de Elixires](#9-hábitos-e-inventário-de-elixires)
-10. [Pomodoro e conclusão de hábitos](#10-pomodoro-e-conclusão-de-hábitos)
-11. [Radar e meta de 10.000 horas](#11-radar-e-meta-de-10000-horas)
-12. [Arena: 200 chefões](#12-arena-200-chefões)
-13. [Codex de Monstros](#13-codex-de-monstros)
-14. [Elixires, cofres e recompensas](#14-elixires-cofres-e-recompensas)
-15. [Guardar, exportar, importar e restaurar](#15-guardar-exportar-importar-e-restaurar)
-16. [Impressão e relatórios](#16-impressão-e-relatórios)
-17. [Alertar: lembretes opcionais](#17-alertar-lembretes-opcionais)
-18. [Armazenamento: saúde dos dados](#18-armazenamento-saúde-dos-dados)
-19. [Configuração: paletas e aparência](#19-configuração-paletas-e-aparência)
-20. [Privacidade, integridade e limites técnicos](#20-privacidade-integridade-e-limites-técnicos)
-21. [Solução de problemas](#21-solução-de-problemas)
-22. [Perguntas frequentes](#22-perguntas-frequentes)
-23. [Roteiro de testes](#23-roteiro-de-testes)
-24. [Arquivos do projeto](#24-arquivos-do-projeto)
-25. [Glossário](#25-glossário)
+1. [Apresentação e filosofia](#1-apresentacao-e-filosofia)
+2. [Primeiro acesso, instalação e uso offline](#2-primeiro-acesso-instalacao-e-uso-offline)
+3. [Ignição: a abertura cinematográfica](#3-ignicao-a-abertura-cinematografica)
+4. [Interface, navegação e menu](#4-interface-navegacao-e-menu)
+5. [Projetos independentes](#5-projetos-independentes)
+6. [Início e indicadores](#6-inicio-e-indicadores)
+7. [Ponto: cronometrar trabalho](#7-ponto-cronometrar-trabalho)
+8. [Entrada Manual](#8-entrada-manual)
+9. [Meu Dia, Histórico e cálculo do tempo](#9-meu-dia-historico-e-calculo-do-tempo)
+10. [Estatísticas: central de análise e desempenho](#10-estatisticas-central-de-analise-e-desempenho)
+11. [Hábitos e Inventário de Elixires](#11-habitos-e-inventario-de-elixires)
+12. [Pomodoro e conclusão de hábitos](#12-pomodoro-e-conclusao-de-habitos)
+13. [Radar e meta de 10.000 horas](#13-radar-e-meta-de-10000-horas)
+14. [Arena: 200 chefões](#14-arena-200-chefoes)
+15. [Codex de Monstros](#15-codex-de-monstros)
+16. [Elixires, cofres e recompensas](#16-elixires-cofres-e-recompensas)
+17. [Guardar, exportar, importar e restaurar](#17-guardar-exportar-importar-e-restaurar)
+18. [Impressão e relatórios](#18-impressao-e-relatorios)
+19. [Alertar: lembretes opcionais](#19-alertar-lembretes-opcionais)
+20. [Armazenamento: saúde dos dados](#20-armazenamento-saude-dos-dados)
+21. [Configuração: paletas e aparência](#21-configuracao-paletas-e-aparencia)
+22. [Privacidade, integridade e limites técnicos](#22-privacidade-integridade-e-limites-tecnicos)
+23. [Solução de problemas](#23-solucao-de-problemas)
+24. [Perguntas frequentes](#24-perguntas-frequentes)
+25. [Roteiro de testes](#25-roteiro-de-testes)
+26. [Arquivos do projeto](#26-arquivos-do-projeto)
+27. [Glossário](#27-glossario)
 
 ---
 
@@ -52,7 +54,7 @@ O aplicativo é **PWA, mobile-first, offline-first e executado no próprio naveg
 ### Abrir e instalar
 
 1. Acesse **https://magpe-stack.github.io/Impulso/** com conexão à internet.
-2. Aguarde o carregamento inicial, incluindo a animação de abertura com o foguete e o anel de progresso.
+2. Aguarde a apresentação cinematográfica **Ignição**, com o foguete e o anel de progresso (aproximadamente 3,7 segundos; consulte o capítulo dedicado).
 3. Crie seu primeiro projeto em **Novo**.
 4. Se o navegador oferecer instalação, escolha **Instalar aplicativo** ou **Adicionar à tela inicial**. No Chrome Android, a opção costuma estar no menu do navegador; em navegadores de desktop, pode aparecer na barra de endereço.
 5. Abra o aplicativo novamente pelo atalho, se criado.
@@ -65,7 +67,33 @@ O **service worker** guarda os arquivos essenciais do aplicativo em cache para p
 
 **Importante:** instalar o PWA **não** significa que os dados foram copiados para uma nuvem. A instalação e o armazenamento de projetos são coisas distintas.
 
-## 3. Interface, navegação e menu
+## 3. Ignição: a abertura cinematográfica
+
+Ao iniciar o Impulso, o usuário encontra **Ignição — O Despertar do Impulso**, uma apresentação visual que antecede a interface principal. Em vez de uma tela branca com logotipo estático, a abertura usa um **fundo escuro**, iluminação radial, o foguete oficial, um **anel energético**, partículas luminosas, a revelação progressiva do nome **IMPULSO** e uma barra de inicialização.
+
+### Como a sequência funciona
+
+1. **Preparação e energia:** a tela escura apresenta a atmosfera de propulsão e o brilho inicial.
+2. **Ignição:** o foguete e os efeitos luminosos ganham destaque, acompanhados pelo anel energético.
+3. **Revelação:** o nome do aplicativo aparece enquanto o anel e a barra avançam.
+4. **Transição:** a apresentação desaparece suavemente e a interface fica disponível.
+
+A apresentação tem **duração programada de aproximadamente 3,7 segundos**, seguida por uma transição de cerca de **0,4 segundo**. A duração não é um teste de velocidade da conexão: **a barra é um elemento visual sincronizado com a animação, não uma medição do carregamento real de arquivos ou dados**.
+
+### Cores e acessibilidade
+
+A iluminação acompanha a identidade visual escolhida em **Configuração**: **Impulso Original**, **Impulso Vinho**, **Impulso Blue Sky** ou **Impulso Trinity**. Isso independe do modo claro ou escuro escolhido para a interface. A abertura utiliza animações CSS nativas, sem vídeos, serviços externos ou bibliotecas de animação.
+
+Se o dispositivo ou navegador solicitar **movimento reduzido** (`prefers-reduced-motion`), os efeitos são simplificados para respeitar essa preferência, **mas a duração programada continua aproximadamente 3,7 segundos**. A apresentação dispõe de um mecanismo de segurança que a encerra se algo impedir a conclusão normal; em condições excepcionais, como a aba ficar em segundo plano, o tempo observado pode variar. O objetivo é impedir que a abertura bloqueie o uso do aplicativo.
+
+### Se a abertura não aparecer corretamente
+
+- Se ela desaparecer rápido demais, atualize o aplicativo com conexão à internet e reabra-o, para que o navegador obtenha os arquivos mais recentes do cache offline.
+- Se ficar presa, feche e reabra o aplicativo; confira se o navegador concluiu a atualização do PWA. **Não apague os dados do site sem antes guardar um backup.**
+- Se os efeitos parecerem estáticos, verifique a configuração de redução de movimento do sistema. Isso não deve impedir o acesso ao aplicativo.
+- Em aparelhos mais lentos, os quadros da animação podem não ser uniformes; isso não afeta a contagem das sessões de trabalho.
+
+## 4. Interface, navegação e menu
 
 O menu lateral é aberto pelo botão no cabeçalho. Ele está organizado em quatro grupos, nesta ordem:
 
@@ -82,7 +110,7 @@ No cabeçalho também há controle de **modo claro/escuro** e, conforme o navega
 
 **Navegação não encerra automaticamente um Ponto ativo.** Você pode iniciar um trabalho, consultar outras páginas e voltar para finalizá-lo.
 
-## 4. Projetos independentes
+## 5. Projetos independentes
 
 ### Criar
 
@@ -98,13 +126,13 @@ Em **Projetos**, consulte a lista, selecione um projeto para trabalhar nele e ut
 
 Cada projeto mantém seus próprios dados: atividades, sessões, hábitos equipados, progresso, coleções e registros. A preferência visual, por outro lado, é uma configuração do aplicativo **neste navegador**, não uma paleta diferente para cada projeto.
 
-## 5. Início e indicadores
+## 6. Início e indicadores
 
 A página **Início** é o ponto de entrada para criar ou abrir projetos e acompanhar a evolução do projeto ativo. Ela apresenta indicadores de tempo e progresso, incluindo o caminho até as 10.000 horas, além de atalhos para ações frequentes.
 
 Os números refletem os dados armazenados. Se você excluir um registro, o tempo e os marcos de progresso poderão diminuir. Indicadores de hábitos e chefões não devem ser confundidos com horas de trabalho: são medidas diferentes.
 
-## 6. Ponto: cronometrar trabalho
+## 7. Ponto: cronometrar trabalho
 
 Use **Ponto** para registrar uma atividade enquanto ela acontece.
 
@@ -119,7 +147,7 @@ O formulário permanece na própria página, sem uma janela modal que impeça a 
 
 **Boas práticas:** não abra simultaneamente várias instâncias do aplicativo para controlar a mesma atividade; confira o nome e os horários antes de concluir; não limpe os dados do site com uma sessão aberta. A continuidade após fechamento forçado, reinício ou suspensão do navegador deve ser conferida antes de confiar no resultado.
 
-## 7. Entrada Manual
+## 8. Entrada Manual
 
 Use **Entrada** para lançar um trabalho já realizado ou corrigir a ausência de um registro cronológico, sem iniciar um cronômetro.
 
@@ -134,7 +162,7 @@ O término precisa ser posterior ao início e não pode estar no futuro, conform
 
 **Evite duplicidade:** não registre manualmente o mesmo trabalho que já foi lançado pelo Ponto. O cálculo consolidado trata intervalos coincidentes, mas registros repetidos podem poluir o histórico.
 
-## 8. Meu Dia, Histórico e cálculo do tempo
+## 9. Meu Dia, Histórico e cálculo do tempo
 
 ### Meu Dia
 
@@ -156,7 +184,43 @@ O cálculo de tempo consolidado reúne intervalos coincidentes para evitar dupla
 
 Use a lixeira da linha correspondente para excluir um registro. A exclusão altera os totais, os marcos da Arena e, quando aplicável, a validade de Elixires relacionados. **Faça backup antes de excluir informações importantes.**
 
-## 9. Hábitos e Inventário de Elixires
+## 10. Estatísticas: central de análise e desempenho
+
+A página **Estatísticas** fica no menu depois de **Meu Dia**. Ela reúne medições calculadas a partir dos dados reais do Impulso, sem enviar informações a servidores.
+
+### Escolher o alcance da análise
+
+- **Projeto atual:** examina exclusivamente o projeto aberto. Use essa opção para avaliar sua rotina, seus hábitos e sua progressão individual.
+- **Todos os projetos:** agrega os indicadores para oferecer uma visão global. A agregação **não mistura, move nem modifica** os registros originais de cada projeto.
+
+### Selecionar o período
+
+Escolha **Hoje**, **Últimos 7 dias**, **Mês atual**, **Ano atual** ou **Todo o histórico**. Os períodos usam datas locais do navegador. O mesmo indicador pode variar de acordo com o intervalo escolhido.
+
+### Oito grupos de medições
+
+| Grupo | O que você encontra |
+|---|---|
+| **Produtividade** | Tempo produtivo, frequência de trabalho, sessões, médias diárias, maior e menor sessão e regularidade observável. |
+| **Hábitos** | Hábitos equipados, conclusões registradas, tempo dedicado, ranking, frequência e sequências de dias com conclusão. |
+| **Desempenho temporal** | Distribuição do trabalho por horário, dia da semana, duração e tipo de atividade. |
+| **Evolução dos projetos** | Progresso da meta de 10.000 horas, horas restantes, evolução histórica, comparação entre projetos e projeções matemáticas. |
+| **Arena e RPG** | Chefões derrotados e pendentes, avanço na campanha, Codex, Elixires resgatados e cofres pendentes. |
+| **Concentração e sessões** | Quantidade, duração e distribuição das sessões registradas; não mede atenção psicológica nem distrações não registradas. |
+| **Armazenamento e integridade** | Tamanho estimado dos dados por projeto, contagens e possíveis inconsistências de registros. |
+| **Tendências** | Evolução diária, comparações entre períodos, médias e tendências derivadas do histórico disponível. |
+
+### Ler os resultados corretamente
+
+**Atividades que atravessam a meia-noite** têm sua duração atribuída aos dias correspondentes. **Intervalos sobrepostos dentro de um mesmo projeto** são unidos para evitar dupla contagem do tempo produtivo. Na visão global, porém, os tempos de **projetos diferentes** são somados, mesmo que tenham ocorrido ao mesmo tempo: o resultado representa horas contabilizadas por projeto, e não necessariamente horas cronológicas exclusivas.
+
+A **taxa de conclusão de tentativas** não pode ser calculada com confiança se o aplicativo só registra hábitos concluídos, sem histórico completo de tentativas canceladas. Da mesma forma, não se deve inferir quantas vezes um Pomodoro foi interrompido se esse evento não foi registrado. Projeções de chegada às 10.000 horas são **estimativas**, não promessas. Indicadores sem base suficiente devem aparecer como indisponíveis ou acompanhados de explicação.
+
+### Atualizar, exportar e imprimir
+
+Use **Atualizar** para recalcular os indicadores. **Exportar JSON** gera um relatório estatístico para consulta externa; **Imprimir** produz uma apresentação para papel ou PDF, conforme o navegador. Esses comandos não alteram os registros. Para medir a cota do navegador, a persistência e o cache offline, consulte a página separada **Armazenamento**.
+
+## 11. Hábitos e Inventário de Elixires
 
 A página **Hábitos** possui duas áreas complementares:
 
@@ -176,7 +240,7 @@ O novo hábito é salvo no projeto ativo. Para criar ou equipar outro quando já
 
 **Dica:** comece com poucos hábitos que realmente possa executar. O catálogo é uma biblioteca de sugestões, não uma lista de obrigações.
 
-## 10. Pomodoro e conclusão de hábitos
+## 12. Pomodoro e conclusão de hábitos
 
 Cada hábito equipado oferece um temporizador de duração configurada e controles para **iniciar, pausar, retomar, concluir e reiniciar**, conforme o estado exibido.
 
@@ -192,7 +256,7 @@ O aplicativo também oferece um fluxo de conclusão que solicita confirmação e
 
 **Relação com os Elixires:** uma conclusão de hábito pode abrir **no máximo um cofre** de um chefão já derrotado. A regra completa está na seção 14.
 
-## 11. Radar e meta de 10.000 horas
+## 13. Radar e meta de 10.000 horas
 
 O **Radar** é a representação visual do avanço temporal. Ele possui:
 
@@ -204,7 +268,7 @@ O **Radar** é a representação visual do avanço temporal. Ele possui:
 
 O Radar acompanha o tempo do projeto e pode atualizar sua indicação durante um Ponto em andamento. A animação é uma representação; os registros salvos e seus horários são a base para o cálculo. O percentual de maestria não representa uma avaliação de habilidade profissional.
 
-## 12. Arena: 200 chefões
+## 14. Arena: 200 chefões
 
 A **Arena** transforma o progresso em uma campanha contra **200 chefões**, organizados em **10 fases de 20 adversários**, com dificuldade crescente e marcos distribuídos ao longo das 10.000 horas.
 
@@ -214,13 +278,13 @@ Os efeitos narrativos — como dispersão, sono, adiamento ou distração — re
 
 **Se o tempo cair:** excluir registros pode reduzir a progressão e fazer com que um chefão deixe de constar como derrotado. Isso também pode afetar cofres e recompensas vinculados à vitória.
 
-## 13. Codex de Monstros
+## 15. Codex de Monstros
 
 O **Codex** funciona como uma enciclopédia da campanha. Nele, você acompanha os adversários e abre as fichas disponíveis dos chefões derrotados, com informações como nome, descrição e efeito narrativo.
 
 As fichas dos chefões vencidos recebem indicação explícita de **VENCIDO**. Os ainda não conquistados permanecem bloqueados. O Codex e a Arena consultam os mesmos marcos de tempo: não são sistemas de pontuação independentes.
 
-## 14. Elixires, cofres e recompensas
+## 16. Elixires, cofres e recompensas
 
 A seção **Elixires** é o espaço de coleção e recompensa. O sistema contém **200 frases exclusivas**, associadas aos 200 chefões. O processo tem duas etapas distintas: **vencer o chefão trabalhando** e **abrir o cofre concluindo um hábito**.
 
@@ -247,7 +311,7 @@ A seção **Elixires** é o espaço de coleção e recompensa. O sistema contém
 
 **Atenção:** os **Elixires Ativos** da página Hábitos são os hábitos equipados; os **Elixires colecionáveis** são as frases obtidas com os cofres. São recursos relacionados, mas não idênticos.
 
-## 15. Guardar, exportar, importar e restaurar
+## 17. Guardar, exportar, importar e restaurar
 
 Os arquivos de segurança utilizam o formato **JSON**. O Impulso oferece operações diferentes, que não devem ser confundidas.
 
@@ -282,7 +346,7 @@ Os arquivos de segurança utilizam o formato **JSON**. O Impulso oferece operaç
 
 Recomenda-se guardar uma cópia **ao final de sessões importantes**, antes de atualizar ou reinstalar o PWA, antes de excluir registros ou projetos, antes de limpar dados do navegador e antes de trocar de dispositivo. O alerta opcional pode ajudar, mas não faz backup automaticamente.
 
-## 16. Impressão e relatórios
+## 18. Impressão e relatórios
 
 A opção **Imprimir** prepara um relatório do projeto ativo e abre a função de impressão do navegador. Conforme o fluxo, é possível imprimir a **lista de projetos** e relatórios de um **dia específico**.
 
@@ -294,7 +358,7 @@ Na janela de impressão, escolha **Salvar como PDF** se o navegador oferecer ess
 
 **Importante:** imprimir não cria backup restaurável. O PDF serve para consulta e documentação; o **JSON** serve para restaurar os dados no aplicativo.
 
-## 17. Alertar: lembretes opcionais
+## 19. Alertar: lembretes opcionais
 
 A página **Alertar** (painel de alertas) oferece dois lembretes independentes, inicialmente desativados:
 
@@ -304,7 +368,7 @@ A página **Alertar** (painel de alertas) oferece dois lembretes independentes, 
 
 As opções são controladas por **caixas de seleção** e ficam salvas no navegador. Os alertas são **locais**, não são notificações push do sistema e dependem de a página estar aberta e visível. Se o navegador suspender a aba, o aviso poderá atrasar. Não há backup automático nem execução de hábitos em segundo plano.
 
-## 18. Armazenamento: saúde dos dados
+## 20. Armazenamento: saúde dos dados
 
 A página **Armazenamento** é um **Monitor de Armazenamento Local**, não um medidor de RAM. Ela consulta informações que o navegador permite acessar e apresenta estimativas úteis para acompanhar o crescimento dos projetos.
 
@@ -331,7 +395,7 @@ O navegador pode permitir solicitar armazenamento persistente. Se concedido, iss
 - A data do último backup significa **download solicitado**, não confirmação de arquivo salvo.
 - O painel não exclui registros nem executa limpeza automática.
 
-## 19. Configuração: paletas e aparência
+## 21. Configuração: paletas e aparência
 
 A página **Configuração** permite escolher a **identidade visual** e, independentemente, a **aparência clara ou escura**. Existem quatro identidades, totalizando **oito combinações**:
 
@@ -357,7 +421,7 @@ A escolha é salva **neste navegador** e não altera os dados dos projetos. Para
 
 As paletas buscam empregar pares de contraste adequados a textos e controles. Cores vibrantes não devem receber texto branco quando o contraste for insuficiente. Estados importantes, como vitória, erro, cofre aberto e cofre fechado, devem ser comunicados também por **rótulos e símbolos**, não apenas por cor. A conformidade de toda a interface deve ser verificada nas telas reais e nos dispositivos utilizados.
 
-## 20. Privacidade, integridade e limites técnicos
+## 22. Privacidade, integridade e limites técnicos
 
 - **Armazenamento local:** os projetos são salvos no navegador, principalmente em `localStorage`.
 - **Sem sincronização automática:** abrir o aplicativo em outro navegador, perfil ou aparelho não transfere os dados anteriores.
@@ -369,7 +433,7 @@ As paletas buscam empregar pares de contraste adequados a textos e controles. Co
 - **Não é sistema de ponto oficial:** os relatórios são instrumentos de organização pessoal, não comprovantes certificados.
 - **A meta de 10.000 horas é simbólica:** não mede competência nem substitui avaliação de resultados.
 
-## 21. Solução de problemas
+## 23. Solução de problemas
 
 | Sintoma | O que verificar ou fazer |
 |---|---|
@@ -391,7 +455,7 @@ As paletas buscam empregar pares de contraste adequados a textos e controles. Co
 | **Tema não ficou como esperado** | Abra **Configuração**, escolha outra identidade e alterne claro/escuro. Se necessário, atualize a página após o cache ser renovado. |
 | **Impressão cortada** | Use a pré-visualização, ajuste margens, escala e orientação ou salve em PDF. |
 
-## 22. Perguntas frequentes
+## 24. Perguntas frequentes
 
 **Preciso criar uma conta?** Não. O uso descrito neste manual é local ao navegador.
 
@@ -429,13 +493,15 @@ As paletas buscam empregar pares de contraste adequados a textos e controles. Co
 
 **Se instalar em outro celular, os projetos aparecem?** Não automaticamente. É necessário transferir e importar/restaurar um arquivo compatível.
 
-## 23. Roteiro de testes
+## 25. Roteiro de testes
 
 Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de teste e **faça backup antes de testar exclusões ou restaurações**.
 
 ### Navegação e projetos
 
-- [ ] Abrir o site e passar da tela de abertura.
+- [ ] Abrir o site, observar a Ignição por aproximadamente 3,7 segundos e passar à interface.
+- [ ] Testar a abertura com movimento reduzido, com as quatro paletas e após atualizar o cache.
+- [ ] Conferir Estatísticas no projeto atual e na visão global, com diferentes períodos, exportação JSON e impressão.
 - [ ] Abrir e fechar o menu; conferir os quatro grupos e a ordem dos itens.
 - [ ] Criar dois projetos, renomear um e confirmar que os dados são independentes.
 - [ ] Abrir **Sobre** e conferir os links.
@@ -473,7 +539,7 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 - [ ] Conferir legibilidade, foco de teclado, controles, ícones e rótulos em cada tema.
 - [ ] Testar no celular, no desktop e sem internet após o cache inicial.
 
-## 24. Arquivos do projeto
+## 26. Arquivos do projeto
 
 | Arquivo | Finalidade |
 |---|---|
@@ -493,7 +559,7 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 | `icon-192.png`, `icon-512.png` | Ícones do aplicativo. |
 | `rocket-192-v11.png`, `rocket-512-v11.png` | Recursos gráficos do foguete. |
 
-## 25. Glossário
+## 27. Glossário
 
 **Arena:** campanha gamificada de desafios associados ao tempo trabalhado.  
 **Backup Geral:** arquivo JSON com todos os projetos.  
@@ -512,25 +578,11 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 **PWA:** aplicativo web com recursos de instalação e funcionamento offline, conforme suporte do navegador.  
 **Radar:** visualização do tempo acumulado e da meta de longo prazo.  
 **Service worker:** recurso do navegador que gerencia o cache offline do aplicativo.  
-**Tema:** combinação entre identidade cromática e aparência clara ou escura.
+**Tema:** combinação entre identidade cromática e aparência clara ou escura.  
+**Ignição:** abertura cinematográfica com foguete, anel energético e revelação do nome.  
+**Estatísticas:** central de indicadores por projeto ou consolidados globalmente.
 
 ---
 
 **Impulso — Motor de Produtividade Pessoal.**  
 *A constância começa com um pequeno impulso.*
-
-
-## Estatísticas — Central de análise e desempenho
-
-A página **Estatísticas**, no menu depois de **Meu Dia**, reúne indicadores do **Projeto atual** ou de **Todos os projetos**. A visão global apenas agrega dados para leitura: os registros e hábitos continuam isolados em cada projeto. Selecione o período **Hoje**, **Últimos 7 dias**, **Mês atual**, **Ano atual** ou **Todo o histórico**. Use **Atualizar**, **Exportar JSON** e **Imprimir** para consultar ou compartilhar o relatório.
-
-A central mostra: horas produtivas e frequência por dia; média por dia com atividade e por dia do período; sessões e durações; horas por tipo de registro; atividades por faixa horária e dia da semana; evolução acumulada, séries diárias e tendências; comparação entre projetos; progresso de 10.000 horas; chefões derrotados e pendentes; Elixires resgatados e cofres pendentes; hábitos equipados, concluídos, ranking, dias consecutivos com conclusão e maior sequência; estimativa de tamanho dos projetos e indicadores de consistência dos registros.
-
-**Critérios importantes:** períodos são calculados no fuso horário local e atividades que cruzam a meia-noite são divididas corretamente entre os dias. Intervalos simultâneos de um mesmo projeto são unidos antes de somar o tempo produtivo para evitar dupla contagem. Na visão global, as horas de projetos distintos são somadas, mesmo quando ocorreram simultaneamente: isso representa esforço contabilizado por projeto, não tempo cronológico único. Os indicadores de conclusão de hábitos contam somente conclusões registradas; sem registro explícito de tentativas e cancelamentos não existe uma taxa confiável de conclusão de tentativas. As previsões de chegada à meta são estimativas baseadas na média recente, não garantias. As análises de Pomodoro interrompido ou pausado não são inventadas se o histórico não registra esses eventos.
-
-O relatório em JSON contém apenas dados estatísticos agregados, sem alterar o armazenamento. A impressão usa uma folha de estilo própria. Quando não existem dados suficientes, a página mostra mensagens explicativas em vez de números fictícios. O monitoramento de armazenamento detalhado continua disponível na página **Armazenamento**.
-
-
-## Abertura cinematográfica
-
-O Impulso apresenta uma sequência de ignição com fundo escuro, anel energético, logotipo, partículas e barra de inicialização. A iluminação acompanha a identidade visual selecionada (Original, Vinho, Blue Sky ou Trinity). A animação dura aproximadamente três segundos e respeita a preferência do sistema por movimento reduzido. Se a aba ficar em segundo plano, um mecanismo de segurança remove a tela de abertura para não impedir o uso. A barra indica o tempo da apresentação, não a porcentagem de carregamento dos dados.
