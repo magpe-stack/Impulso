@@ -339,7 +339,24 @@ function printReport(projectsOnly=false,selectedDay=null){
  setTimeout(()=>{if(main.innerHTML!==previous)restore()},1500);
 }
 function about(){
- show(`<div class="about-content"><h2>Sobre o Impulso</h2><p><strong>Impulso — Motor de Produtividade Pessoal</strong></p><p>Versão 31 · PWA offline-first para acompanhar projetos independentes, trabalho, hábitos e a jornada simbólica de 10.000 horas.</p><p>Os registros são armazenados neste navegador. Para preservar seus dados, utilize regularmente <strong>Guardar</strong> (backup geral) e exporte seus projetos.</p><p>Em <strong>Meu Dia</strong>, atividades que atravessam a meia-noite aparecem em todos os dias envolvidos. O tempo de cada dia é calculado separadamente, enquanto o Histórico mantém o registro original.</p><p>O aplicativo inclui Ponto, Entrada Manual, Hábitos, Radar, Arena com 200 chefões e Altar dos Elixires colecionáveis. O progresso não é uma garantia de domínio profissional.</p><p><a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">Repositório GitHub</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual de uso</a></p><div class="actions"><button class="btn primary" type="button" data-cancel>Fechar</button></div></div>`);
+ show(`<div class="about-content"><h2>Sobre o Impulso</h2>
+ <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
+ <p><strong>Versão:</strong> 31<br><strong>Atualização:</strong> 12 de novembro de 2026</p>
+ <p>Aplicativo PWA offline-first para organizar projetos independentes, acompanhar trabalho e hábitos e transformar o progresso em uma jornada gamificada de <strong>10.000 horas</strong>.</p>
+ <h3>Principais características</h3>
+ <ul><li><strong>Projetos independentes:</strong> registros e conquistas separados por projeto.</li>
+ <li><strong>Ponto e Entrada Manual:</strong> acompanhamento de atividades, inclusive quando atravessam a meia-noite.</li>
+ <li><strong>Meu Dia e relatórios:</strong> tempo distribuído corretamente entre as datas.</li>
+ <li><strong>Hábitos:</strong> temporizador Pomodoro e registro de conclusões.</li>
+ <li><strong>Radar:</strong> acompanhamento visual do tempo e da meta.</li>
+ <li><strong>Arena:</strong> 200 chefões em 10 fases, com HP e efeitos temáticos.</li>
+ <li><strong>Codex:</strong> enciclopédia de monstros e fichas de chefões vencidos.</li>
+ <li><strong>Altar dos Elixires:</strong> cofres abertos ao concluir hábitos após derrotar chefões; 200 frases colecionáveis para copiar e compartilhar.</li>
+ <li><strong>Backup e exportação:</strong> arquivos JSON e impressão de relatórios.</li></ul>
+ <p><strong>Privacidade:</strong> os registros ficam neste navegador. Faça backups regularmente; limpar os dados do site pode apagar seus projetos.</p>
+ <p>A meta de 10.000 horas é simbólica e não garante domínio profissional.</p>
+ <p><a href="https://magpe-stack.github.io/Impulso/" target="_blank" rel="noopener noreferrer">Abrir aplicativo</a> · <a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual completo</a></p>
+ <div class="actions"><button class="btn primary" type="button" data-cancel>Fechar</button></div></div>`);
 }
 function action(name){switch(name){case 'new':newProject();break;case 'projects':page='projetos';render();break;case 'day':page='dia';render();break;case 'radar':page='radar';render();break;case 'point':point();break;case 'manual':manual();break;case 'habitPage':page='habitos';render();break;case 'backup':backup();break;case 'export':exportProject();break;case 'import':$('#importFile').click();break;case 'importProject':$('#importProjectFile').click();break;case 'print':printReport();break;case 'printProjects':printReport(true);break;case 'newHabit':newHabit();break;case 'cancel':close();break}}
 const menuToggle=$('#menuToggle'),menuDrawer=$('#menuDrawer'),menuBackdrop=$('#menuBackdrop'),menuClose=$('#menuClose');
