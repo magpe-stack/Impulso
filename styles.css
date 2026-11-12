@@ -56,3 +56,9 @@
 
 /* v29 — largura compacta do menu lateral; sem alterar navegação */
 .menu-drawer{width:min(240px,calc(100vw - 24px));box-sizing:border-box}
+
+/* v30 — menu compacto sem botão X e sem painel até o rodapé */
+.menu-drawer{width:min(210px,calc(100vw - 28px));top:12px;bottom:auto;height:auto;max-height:calc(100dvh - 24px);overflow-y:auto;border-radius:14px;padding:12px 10px;box-shadow:8px 10px 30px #0003}
+.menu-heading{justify-content:flex-start;font-size:1rem;margin:2px 5px 10px;white-space:nowrap}
+.menu-drawer nav button,.menu-section button{padding:7px 10px}
+@media(max-width:480px){.menu-drawer{top:8px;max-height:calc(100dvh - 16px)}}
