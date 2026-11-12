@@ -226,7 +226,7 @@ A página **Hábitos** possui duas áreas complementares:
 
 **Elixires Ativos:** os hábitos equipados aparecem primeiro, em cartões compactos com o temporizador e controles. É possível manter **até 6 hábitos ativos por projeto**. No desktop, a grade procura organizar os cartões em três colunas; em telas menores, adapta-se ao espaço disponível.
 
-**Inventário de Elixires:** catálogo offline com **200 sugestões de hábitos distribuídas em 25 categorias**, definido no arquivo `habitos_elixires_v2.json`. Use a **pesquisa** e os filtros por **categoria** para encontrar opções. Clique em **Equipar** para incluir um hábito na rotina e em **Desequipar** para liberar uma vaga. Equipar **não** significa concluir.
+**Inventário de Elixires:** catálogo offline com **200 sugestões de hábitos distribuídas em 25 categorias**, definido no arquivo `habitos_elixires_v2.json`. Use a **pesquisa global em tempo real**, independente da categoria selecionada, e as **25 categorias em abas horizontais roláveis** para encontrar opções. Os cartões exibem nome, categoria e ação textual com indicação explícita de estado. Clique em **Equipar** para incluir um hábito na rotina e em **Desequipar** para liberar uma vaga. Equipar **não** significa concluir.
 
 ### Criar hábito personalizado
 
@@ -236,7 +236,7 @@ Clique em **+ Novo Hábito** e informe:
 - **Categoria**.
 - **Duração estipulada** em minutos, de **1 a 1.440**.
 
-O novo hábito é salvo no projeto ativo. Para criar ou equipar outro quando já existem seis ativos, primeiro desequipe um. Projetos antigos que já contenham mais hábitos podem conservar os dados existentes; o limite impede novas equipagens até haver espaço.
+O formulário de criação apresenta campos de nome, categoria (inclusive **Personalizado**) e duração. O novo hábito é salvo no projeto ativo em armazenamento local, passa a integrar imediatamente o inventário e fica disponível para equipagem. Para criar ou equipar outro quando já existem seis ativos, primeiro desequipe um. Projetos antigos que já contenham mais hábitos podem conservar os dados existentes; o limite impede novas equipagens até haver espaço.
 
 **Dica:** comece com poucos hábitos que realmente possa executar. O catálogo é uma biblioteca de sugestões, não uma lista de obrigações.
 
@@ -395,7 +395,7 @@ O navegador pode permitir solicitar armazenamento persistente. Se concedido, iss
 - A data do último backup significa **download solicitado**, não confirmação de arquivo salvo.
 - O painel não exclui registros nem executa limpeza automática.
 
-## Sair do aplicativo
+### Sair do aplicativo
 
 O botão **Sair** aparece no final do menu lateral, imediatamente abaixo de **Configuração**. Ao selecioná-lo, o Impulso solicita confirmação. **Cancelar** mantém a navegação normalmente; **Sair do aplicativo** apresenta uma tela de despedida com a opção **Voltar ao Impulso**.
 
@@ -403,7 +403,7 @@ Em aplicativos instalados, o Impulso tenta fechar a janela, quando o navegador p
 
 ## 21. Configuração: paletas e aparência
 
-A página **Configuração** permite escolher a **identidade visual** e, independentemente, a **aparência clara ou escura**. Existem quatro identidades, totalizando **oito combinações**:
+A página **Configuração** permite escolher a **identidade visual** e, independentemente, a **aparência clara ou escura**. Existem seis identidades, totalizando **doze combinações**:
 
 | Identidade | Característica | Cores de referência |
 |---|---|---|
@@ -411,21 +411,31 @@ A página **Configuração** permite escolher a **identidade visual** e, indepen
 | **Impulso Vinho** | Harmonia Itten com magenta, roxo e rosa | `#940065`, `#87008A`, `#FF3377`. |
 | **Impulso Blue Sky** | Harmonia análoga turquesa–azul | `#00C7B0`, `#007BC7`, `#0018C7`. |
 | **Impulso Trinity** | Harmonia triádica laranja–verde–roxo | `#FF6B00`, `#00FF6B`, `#6B00FF`. |
+| **Impulso Granfino** | Grafite, prata e neutros elegantes | `#1F1F1F`, `#3E3E3E`, `#ADBFC2`. |
+| **Impulso Ecológico** | Harmonia análoga verde, com acentos luminosos | `#628000`, `#228000`, `#00801E`, `#C7FF10`. |
 
-As superfícies de referência das paletas novas são **branco `#FFFFFF`** no modo claro e **azul-escuro `#10141D`** no modo escuro. As folhas de estilo próprias de cada identidade contêm tokens cromáticos e regras de contraste.
+As paletas possuem superfícies próprias para cada modo de aparência. Granfino combina grafite e prata; Ecológico utiliza fundos verde-escuros profundos e tons de verde-limão para realces. As folhas de estilo específicas definem tokens cromáticos, contrastes e a identidade do splash.
 
 ### Alterar o visual
 
 1. Abra **Configuração**.
-2. Escolha **Impulso Original**, **Impulso Vinho**, **Impulso Blue Sky** ou **Impulso Trinity**.
+2. Escolha uma das seis identidades: **Original**, **Vinho**, **Blue Sky**, **Trinity**, **Granfino** ou **Ecológico**.
 3. Selecione **Claro** ou **Escuro**, ou use o controle correspondente no cabeçalho.
 4. Navegue pelas páginas para conferir a aparência escolhida.
 
 A escolha é salva **neste navegador** e não altera os dados dos projetos. Para voltar à identidade anterior, basta selecioná-la novamente; não é necessário restaurar um backup.
 
+### Tokens de Itten — Granfino e Ecológico
+
+**Granfino:** `--itten-primary: #1F1F1F`; `--itten-secondary: #3E3E3E`; `--itten-accent: #616161`. A extensão cromática inclui `#808080`, `#3B2B2B`, `#48614F`, `#786487`, `#A6A287`, `#ADBFC2`, `#3B2B34`, `#4E6148` e `#656487`.
+
+**Ecológico:** `--itten-primary: #628000`; `--itten-secondary: #228000`; `--itten-accent: #00801E`. Os tokens `--itten-color-4` a `--itten-color-12` correspondem, respectivamente, a `#2F3D00`, `#103D00`, `#003D0E`, `#99C700`, `#35C700`, `#00C72F`, `#C7FF10`, `#4FFF10` e `#10FF48`.
+
+Os tokens de cada paleta são definidos em suas folhas CSS e aplicados quando a identidade correspondente está selecionada. O splash **Ignição** também acompanha a escolha: prata no Granfino, verde-limão no Ecológico, mantendo aproximadamente 3,7 segundos de apresentação.
+
 ### Acessibilidade das cores
 
-As paletas buscam empregar pares de contraste adequados a textos e controles. Cores vibrantes não devem receber texto branco quando o contraste for insuficiente. Estados importantes, como vitória, erro, cofre aberto e cofre fechado, devem ser comunicados também por **rótulos e símbolos**, não apenas por cor. A conformidade de toda a interface deve ser verificada nas telas reais e nos dispositivos utilizados.
+As paletas buscam empregar pares de contraste adequados a textos e controles. Cores vibrantes não devem receber texto branco quando o contraste for insuficiente. Estados importantes, como vitória, erro, cofre aberto e cofre fechado, devem ser comunicados também por **rótulos e símbolos**, não apenas por cor. No Ecológico, superfícies profundas (`#003D0E`, `#103D00`, `#2F3D00`) usam texto branco; superfícies muito luminosas (`#C7FF10`, `#4FFF10`, `#10FF48`) exigem texto preto ou escuro. A interface utiliza rótulos como **Equipar**, **✓ Equipado**, e indicadores textuais de cofres para não depender exclusivamente do verde. A conformidade de toda a interface deve ser verificada nas telas reais e nos dispositivos utilizados.
 
 ## 22. Privacidade, integridade e limites técnicos
 
@@ -506,7 +516,7 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 ### Navegação e projetos
 
 - [ ] Abrir o site, observar a Ignição por aproximadamente 3,7 segundos e passar à interface.
-- [ ] Testar a abertura com movimento reduzido, com as quatro paletas e após atualizar o cache.
+- [ ] Testar a abertura com movimento reduzido, com as seis paletas e após atualizar o cache.
 - [ ] Conferir Estatísticas no projeto atual e na visão global, com diferentes períodos, exportação JSON e impressão.
 - [ ] Abrir e fechar o menu; conferir os quatro grupos e a ordem dos itens.
 - [ ] Criar dois projetos, renomear um e confirmar que os dados são independentes.
@@ -565,6 +575,8 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 | `icon-192.png`, `icon-512.png` | Ícones do aplicativo. |
 | `rocket-192-v11.png`, `rocket-512-v11.png` | Recursos gráficos do foguete. |
 
+Os temas adicionais são definidos em `theme-impulso-granfino.css` e `theme-impulso-ecologico.css`.
+
 ## 27. Glossário
 
 **Arena:** campanha gamificada de desafios associados ao tempo trabalhado.  
@@ -593,9 +605,3 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 **Impulso — Motor de Produtividade Pessoal.**  
 *A constância começa com um pequeno impulso.*
 
-
-## Impulso Granfino e Inventário de Elixires
-
-A quinta paleta, **Impulso Granfino**, oferece uma identidade grafite, prata e neutros inspirados em Itten, com modos claro e escuro e adaptação cromática do splash cinematográfico. Escolha-a em **Configuração → Identidade visual**.
-
-Em **Hábitos**, o inventário reúne 200 hábitos predefinidos em 25 categorias, busca global por palavra-chave, cartões com Equipar/Equipado e um máximo de seis elixires simultaneamente ativos por projeto. O botão **+ Novo Hábito** cria hábitos personalizados com categoria e duração. Se as seis vagas estiverem ocupadas, o novo hábito permanece salvo e desequipado para uso posterior. Os dados são preservados nos projetos e backups locais.
