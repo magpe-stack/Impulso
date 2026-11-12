@@ -546,3 +546,8 @@ As dez fases são:
 - **Fase 8 — O Abismo da Inércia Crônica**: O jogador enfrenta a paralisia profunda, onde o corpo e a mente parecem de pedra, incapazes de iniciar qualquer movimento.
 - **Fase 9 — A Véspera do Colapso**: A fase final de crise. O prazo final estourou ou está prestes a estourar de forma catastrófica. O pânico produtivo supremo.
 - **Fase 10 — Os Chefes Supremos do Domínio da Procrastinação**: As divindades primordiais da inércia, do tempo perdido e da auto-sabotagem em escala cósmica.
+
+
+### Arena v26 — Efeitos dos 200 chefões
+
+Os 200 chefões mantêm a ordem, as dez fases e seus resumos, as notas descritivas e a distribuição de resistência da versão 25. Cada nome exibe agora, após um travessão, o efeito temático correspondente à lista fornecida. Esses efeitos são descrições narrativas e não alteram o cálculo de HP, tempo, dados ou progressão.
