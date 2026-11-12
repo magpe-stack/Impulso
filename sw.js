@@ -1,5 +1,5 @@
-const CACHE='impulso-v26-arena-efeitos';
-const ASSETS=['./','./index.html','./styles.css?v=26','./app.js?v=26','./manifest.json?v=13','./rocket-192-v11.png','./rocket-512-v11.png','./logo.svg','./logo.png'];
+const CACHE='impulso-v27-codex';
+const ASSETS=['./','./index.html','./styles.css?v=27','./app.js?v=27','./manifest.json?v=13','./rocket-192-v11.png','./rocket-512-v11.png','./logo.svg','./logo.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('impulso-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{

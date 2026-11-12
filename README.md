@@ -551,3 +551,12 @@ As dez fases são:
 ### Arena v26 — Efeitos dos 200 chefões
 
 Os 200 chefões mantêm a ordem, as dez fases e seus resumos, as notas descritivas e a distribuição de resistência da versão 25. Cada nome exibe agora, após um travessão, o efeito temático correspondente à lista fornecida. Esses efeitos são descrições narrativas e não alteram o cálculo de HP, tempo, dados ou progressão.
+
+
+## Codex de Monstros Desbloqueáveis (v27)
+
+Na Arena, use **Abrir Codex de Monstros**, ou escolha **Codex** no menu principal. A enciclopédia reúne os 200 chefões em 10 fases, preservando os títulos e resumos. Cada chefão derrotado revela seu nome e uma ficha com o carimbo **VENCIDO**, o efeito de dano mental e a descrição integral da lista JSON fornecida. Os chefões não derrotados ficam ocultos.
+
+O **XP de Foco** é uma representação dos minutos de trabalho registrados: 1 minuto = 1 XP. Não há pontuação artificial ou moeda independente. A derrota de cada chefão utiliza exatamente os limites de HP da Arena, de modo que a progressão total continua em 10.000 horas. O Codex é individual por projeto e recalculado a partir dos registros locais; excluir registros pode reverter desbloqueios. As descrições dos efeitos são ficcionais e não representam diagnóstico ou dano real.
+
+Os arquivos de imagem existentes, inclusive `ImpulsoCover.png` e `logo.svg`, foram mantidos.
