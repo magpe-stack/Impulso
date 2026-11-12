@@ -560,3 +560,8 @@ Na Arena, use **Abrir Codex de Monstros**, ou escolha **Codex** no menu principa
 O **XP de Foco** é uma representação dos minutos de trabalho registrados: 1 minuto = 1 XP. Não há pontuação artificial ou moeda independente. A derrota de cada chefão utiliza exatamente os limites de HP da Arena, de modo que a progressão total continua em 10.000 horas. O Codex é individual por projeto e recalculado a partir dos registros locais; excluir registros pode reverter desbloqueios. As descrições dos efeitos são ficcionais e não representam diagnóstico ou dano real.
 
 Os arquivos de imagem existentes, inclusive `ImpulsoCover.png` e `logo.svg`, foram mantidos.
+
+
+## Correção do Radar — v28
+
+A função `radarMarks()` foi restaurada para desenhar as 360 marcações externas e 60 marcações internas do Radar. A correção evita o erro de JavaScript que impedia a abertura da tela. O Codex de 200 monstros e os dados de cada projeto permanecem inalterados.
