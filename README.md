@@ -1,321 +1,520 @@
 # IMPULSO — Manual completo do usuário
 
-**Motor de Produtividade Pessoal | Versão 31 | Atualizado em 12 de novembro de 2026**
-
+**Motor de Produtividade Pessoal**  
 **Aplicativo:** https://magpe-stack.github.io/Impulso/  
-**Repositório:** https://github.com/magpe-stack/Impulso  
+**Código-fonte:** https://github.com/magpe-stack/Impulso  
 **Manual online:** https://github.com/magpe-stack/Impulso/blob/main/README.md
 
 <p align="center"><img src="ImpulsoCover.png" alt="Capa do Impulso — Motor de Produtividade Pessoal" width="100%"></p>
 
-> Este manual descreve as funcionalidades presentes no código da versão 31. O Impulso é uma ferramenta pessoal de produtividade, não um sistema homologado de ponto, nem uma garantia de domínio profissional. As funções dependentes de recursos do navegador podem variar conforme o dispositivo.
+> **Leia antes de começar:** o Impulso é um aplicativo pessoal de registro de tempo, hábitos e progressão gamificada. Não é um relógio de ponto homologado, não oferece sincronização entre dispositivos e não garante que os dados do navegador sejam permanentes. **Faça backups e guarde os arquivos fora do navegador.**
 
 ## Sumário
 
-1. [O que é o Impulso](#1-o-que-é-o-impulso)
-2. [Instalação e uso offline](#2-instalação-e-uso-offline)
-3. [Navegação e projetos](#3-navegação-e-projetos)
-4. [Ponto](#4-ponto)
-5. [Entrada Manual](#5-entrada-manual)
-6. [Meu Dia e Histórico](#6-meu-dia-e-histórico)
-7. [Hábitos](#7-hábitos)
-8. [Radar e meta de 10000 horas](#8-radar-e-meta-de-10000-horas)
-9. [Arena e 200 chefões](#9-arena-e-200-chefões)
-10. [Codex de Monstros](#10-codex-de-monstros)
-11. [Altar dos Elixires](#11-altar-dos-elixires)
-12. [Exportação, backup e restauração](#12-exportação-backup-e-restauração)
-13. [Impressão e relatórios](#13-impressão-e-relatórios)
-14. [Personalização e Sobre](#14-personalização-e-sobre)
-15. [Privacidade e segurança dos dados](#15-privacidade-e-segurança-dos-dados)
-16. [Solução de problemas](#16-solução-de-problemas)
-17. [Perguntas frequentes](#17-perguntas-frequentes)
-18. [Testes de aceitação](#18-testes-de-aceitação)
-19. [Arquivos do projeto](#19-arquivos-do-projeto)
-20. [Histórico da versão](#20-histórico-da-versão)
+1. [Apresentação e filosofia](#1-apresentação-e-filosofia)
+2. [Primeiro acesso, instalação e uso offline](#2-primeiro-acesso-instalação-e-uso-offline)
+3. [Interface, navegação e menu](#3-interface-navegação-e-menu)
+4. [Projetos independentes](#4-projetos-independentes)
+5. [Início e indicadores](#5-início-e-indicadores)
+6. [Ponto: cronometrar trabalho](#6-ponto-cronometrar-trabalho)
+7. [Entrada Manual](#7-entrada-manual)
+8. [Meu Dia, Histórico e cálculo do tempo](#8-meu-dia-histórico-e-cálculo-do-tempo)
+9. [Hábitos e Inventário de Elixires](#9-hábitos-e-inventário-de-elixires)
+10. [Pomodoro e conclusão de hábitos](#10-pomodoro-e-conclusão-de-hábitos)
+11. [Radar e meta de 10.000 horas](#11-radar-e-meta-de-10000-horas)
+12. [Arena: 200 chefões](#12-arena-200-chefões)
+13. [Codex de Monstros](#13-codex-de-monstros)
+14. [Elixires, cofres e recompensas](#14-elixires-cofres-e-recompensas)
+15. [Guardar, exportar, importar e restaurar](#15-guardar-exportar-importar-e-restaurar)
+16. [Impressão e relatórios](#16-impressão-e-relatórios)
+17. [Alertar: lembretes opcionais](#17-alertar-lembretes-opcionais)
+18. [Armazenamento: saúde dos dados](#18-armazenamento-saúde-dos-dados)
+19. [Configuração: paletas e aparência](#19-configuração-paletas-e-aparência)
+20. [Privacidade, integridade e limites técnicos](#20-privacidade-integridade-e-limites-técnicos)
+21. [Solução de problemas](#21-solução-de-problemas)
+22. [Perguntas frequentes](#22-perguntas-frequentes)
+23. [Roteiro de testes](#23-roteiro-de-testes)
+24. [Arquivos do projeto](#24-arquivos-do-projeto)
+25. [Glossário](#25-glossário)
 
 ---
 
-## 1. O que é o Impulso
+## 1. Apresentação e filosofia
 
-O **Impulso** transforma o registro de trabalho e a prática de hábitos em uma jornada de progresso. Cada projeto mantém seus próprios dados; a Arena representa desafios contra a procrastinação, o Codex registra as vitórias e o Altar dos Elixires oferece frases colecionáveis quando o usuário combina trabalho com hábitos concluídos.
+O **Impulso — Motor de Produtividade Pessoal** reúne quatro dimensões em um mesmo ambiente: **trabalho efetivamente registrado**, **hábitos executados**, **acompanhamento do progresso** e **recompensas narrativas inspiradas em RPG**. O objetivo é tornar visível o esforço contínuo sem transformar a ferramenta em uma competição entre usuários.
 
-A meta de **10.000 horas** é uma referência simbólica de constância. Não equivale a certificação de competência, qualidade ou experiência profissional. O tempo trabalhado é registrado em milissegundos e apresentado em horas, minutos e segundos.
+A jornada simbólica possui **10.000 horas**. É uma referência de longo prazo, **não uma certificação de maestria**, uma medida da qualidade do trabalho ou uma promessa de sucesso. A Arena transforma marcos de tempo em batalhas contra chefões; o Codex documenta adversários derrotados; os Elixires recompensam a combinação de progresso e hábitos concluídos.
 
-## 2. Instalação e uso offline
+O aplicativo é **PWA, mobile-first, offline-first e executado no próprio navegador**, sem conta obrigatória, servidor de registros ou bibliotecas externas de interface. Projetos diferentes mantêm seus próprios registros e conquistas.
 
-1. Acesse **https://magpe-stack.github.io/Impulso/** com internet.
-2. Aguarde o carregamento inicial e verifique se a tela Início aparece.
-3. No Chrome Android ou em outro navegador compatível, use **Instalar aplicativo** ou **Adicionar à tela inicial**; no desktop, procure a opção de instalação do navegador.
-4. Após carregar os arquivos essenciais, teste a abertura sem internet. O cache pode ser removido pelo navegador; por isso o funcionamento offline deve ser confirmado no próprio dispositivo.
+## 2. Primeiro acesso, instalação e uso offline
 
-O aplicativo utiliza HTML, CSS e JavaScript nativos. Não exige cadastro ou servidor para armazenar os registros. A tela de abertura apresenta a identidade visual do foguete e um anel de progresso.
+### Abrir e instalar
+
+1. Acesse **https://magpe-stack.github.io/Impulso/** com conexão à internet.
+2. Aguarde o carregamento inicial, incluindo a animação de abertura com o foguete e o anel de progresso.
+3. Crie seu primeiro projeto em **Novo**.
+4. Se o navegador oferecer instalação, escolha **Instalar aplicativo** ou **Adicionar à tela inicial**. No Chrome Android, a opção costuma estar no menu do navegador; em navegadores de desktop, pode aparecer na barra de endereço.
+5. Abra o aplicativo novamente pelo atalho, se criado.
 
 <p align="center"><img src="logo.svg" alt="Logotipo do Impulso" width="180"></p>
 
-## 3. Navegação e projetos
+### Trabalhar sem internet
 
-O botão de menu no cabeçalho abre um **painel lateral compacto**. Selecione uma opção para navegar; clique fora do painel ou pressione **Esc** para fechá-lo. O menu contém **Início, Novo, Projetos, Arena, Codex, Elixires, Radar, Meu Dia, Ponto, Hábitos, Entrada, Guardar, Restaurar e Imprimir**.
+O **service worker** guarda os arquivos essenciais do aplicativo em cache para permitir a abertura posterior sem conexão, desde que a instalação do cache tenha sido concluída. Faça um teste: abra o aplicativo conectado, feche-o, desligue a conexão e tente abri-lo novamente. A disponibilidade offline depende do navegador, das políticas de armazenamento e de o cache não ter sido removido.
 
-Para começar, selecione **Novo** e dê ao projeto um nome de até **50 caracteres**. Em **Projetos**, é possível abrir, renomear, excluir e consultar projetos. Cada projeto tem registros, hábitos, progresso da Arena e coleção de Elixires independentes. **Excluir um projeto é uma ação destrutiva**: exporte um backup antes.
+**Importante:** instalar o PWA **não** significa que os dados foram copiados para uma nuvem. A instalação e o armazenamento de projetos são coisas distintas.
 
-A página **Início** apresenta o projeto ativo, tempo acumulado, quantidade de hábitos executados, chefões derrotados e percentual da meta de 10.000 horas.
+## 3. Interface, navegação e menu
 
-## 4. Ponto
+O menu lateral é aberto pelo botão no cabeçalho. Ele está organizado em quatro grupos, nesta ordem:
 
-A seção **Ponto** permite cronometrar um trabalho real sem bloquear a navegação. Informe o nome da atividade (até 50 caracteres), inicie a sessão, continue utilizando outras telas e volte para terminar e concluir o registro. O tempo e as datas de início e término são preservados. Uma sessão pode atravessar a meia-noite.
-
-O ponto em andamento pode continuar ativo enquanto você navega pelo aplicativo. Evite limpar os dados do navegador ou fechar a sessão sem concluir o trabalho. Se uma sessão for interrompida inesperadamente, confira o estado exibido antes de iniciar outra.
-
-## 5. Entrada Manual
-
-Use **Entrada** para registrar trabalho já realizado. Informe o nome e os campos independentes de **data e horário de início** e **data e horário de término**. O término deve ser posterior ao início. Assim, são aceitas tanto atividades realizadas no mesmo dia quanto trabalhos que atravessem uma ou várias datas.
-
-A Entrada Manual e o Ponto contribuem para o tempo real do projeto e, consequentemente, para a Arena. Não cadastre o mesmo intervalo duas vezes: o sistema reúne intervalos sobrepostos para calcular o total de tempo, mas registros duplicados ainda podem confundir o Histórico.
-
-## 6. Meu Dia e Histórico
-
-**Meu Dia** agrupa as atividades por data e mostra o tempo correspondente a cada dia. Os registros exibem tipo de atividade (**Ponto**, **Entrada Manual** ou **Hábito**), nome, início e término, com opção de exclusão.
-
-**Exemplo:** uma atividade iniciada em 11/11 às 23h46 e encerrada em 12/11 às 00h59 dura **1h13min**. O dia 11 recebe **14 minutos** e o dia 12 recebe **59 minutos**. A atividade pode aparecer em ambos os dias, mas permanece **um único registro** e contribui **uma única vez** para o total do projeto.
-
-Atividades inteiramente contidas em um dia continuam sendo atribuídas integralmente a esse dia. A divisão entre dias afeta a apresentação e o cálculo diário, não duplica a duração da atividade.
-
-A exclusão de um registro altera os totais e pode modificar o número de chefões derrotados. Se o registro excluído for o hábito que concedeu um Elixir, a recompensa correspondente deixa de ser válida.
-
-## 7. Hábitos
-
-Em **Hábitos**, cadastre um hábito com nome e duração em minutos. O aplicativo apresenta um temporizador no estilo Pomodoro, com controles para iniciar, pausar, retomar e concluir. Uma conclusão gera um registro com datas e horários, que também aparece em Meu Dia.
-
-A conclusão de um hábito pode liberar **no máximo um Elixir** de um chefão já derrotado. O hábito não substitui a etapa de trabalho: primeiro é necessário vencer o chefão na Arena. A duração configurada é uma meta do temporizador; confirme a conclusão no aplicativo para gerar o registro.
-
-## 8. Radar e meta de 10000 horas
-
-O **Radar** apresenta o avanço temporal do projeto por meio de anéis concêntricos: **360 marcações externas** e **60 marcações internas**, com indicação visual do tempo. A meta de **10.000 horas** corresponde a 600.000 minutos acumulados. O Radar usa o mesmo tempo consolidado do projeto e não deve somar duas vezes intervalos coincidentes.
-
-## 9. Arena e 200 chefões
-
-A **Arena** contém **200 chefões** distribuídos em **10 fases de 20 adversários**, em ordem crescente de resistência. Cada fase preserva título e resumo temático. Os chefões têm nome, efeito narrativo (como “Sono leve”, “Dispersão” ou “Não-ser”), pontos de resistência (**HP**) e um marco de conclusão acumulada.
-
-Cada minuto contabilizado equivale a um ponto de dano para a progressão da Arena. Os limiares dos chefões estão distribuídos até a meta final de **600.000 minutos / 10.000 horas**. A derrota de um chefão é calculada pelo tempo total do projeto, não pelo número de cliques ou registros.
-
-Os efeitos são descrições temáticas dos hábitos de procrastinação: **não retiram horas, não causam punições reais e não alteram os dados do usuário**.
-
-## 10. Codex de Monstros
-
-O **Codex** é uma enciclopédia interativa dos 200 adversários. Ele permite consultar a progressão por fase e abrir fichas de chefões derrotados, incluindo seu nome, descrição narrativa e efeito. As fichas vencidas recebem o destaque **VENCIDO**. Os adversários ainda não derrotados permanecem bloqueados.
-
-O desbloqueio depende do tempo acumulado no projeto. O Codex não mantém um contador de progresso paralelo à Arena: ambos usam os mesmos marcos de vitória.
-
-## 11. Altar dos Elixires
-
-O **Altar dos Elixires** conecta o trabalho registrado ao uso real de Hábitos e adiciona **200 frases motivacionais exclusivas**, uma para cada chefão.
-
-### Etapas da recompensa
-
-1. **Combate:** trabalhe e registre o período pelo **Ponto** ou pela **Entrada Manual**.
-2. **Vitória:** quando o tempo acumulado ultrapassa o limiar de um chefão, ele é considerado derrotado.
-3. **Cofre aguardando Elixir:** o chefão vencido passa a ter um cofre que ainda precisa ser aberto.
-4. **Hábito:** conclua um hábito cadastrado. Uma conclusão pode abrir **somente um** cofre de chefão já derrotado, respeitando a ordem dos chefões.
-5. **Coleção:** a frase exclusiva é liberada na seção **Elixires**, com recursos para **copiar** e **compartilhar**.
-
-### Regras importantes
-
-- A recompensa é vinculada ao **projeto** e ao **registro de hábito** que a concedeu.
-- Um único hábito concluído **não abre vários cofres**.
-- Um hábito concluído antes da derrota não libera automaticamente um cofre conquistado depois.
-- Registros de hábitos antigos não geram recompensas retroativas automaticamente.
-- Excluir o registro de hábito que liberou o Elixir **revoga** a recompensa correspondente.
-- Se a progressão da Arena retroceder após exclusões, apenas Elixires de chefões ainda considerados derrotados continuam válidos.
-- As frases e os vínculos de recompensa são incluídos nos dados exportados/restaurados quando presentes no projeto.
-
-**Compartilhamento:** em dispositivos compatíveis, o botão pode utilizar o compartilhamento nativo. Se o recurso não estiver disponível, o aplicativo pode oferecer cópia do texto. O compartilhamento é uma ação voluntária do usuário.
-
-## 12. Exportação, backup e restauração
-
-O Impulso oferece duas operações distintas:
-
-- **Exportar projeto:** salva um arquivo JSON com os dados do projeto ativo. **Importar projeto** recupera um projeto individual.
-- **Guardar:** produz um **backup geral** dos projetos. **Restaurar** lê um backup geral e pode **substituir todos os projetos atuais**, após confirmação.
-
-Os backups são arquivos JSON, não imagens do aplicativo. Faça cópias regulares e guarde-as fora do navegador. **Antes de restaurar, exporte o estado atual** para evitar perda de informações. Não confunda um arquivo de projeto individual com um backup geral: os formatos têm finalidades diferentes.
-
-A coleção de Elixires é armazenada junto dos dados de cada projeto; por isso, para preservar conquistas, mantenha também os registros de hábitos associados.
-
-## 13. Impressão e relatórios
-
-Use **Imprimir** para produzir relatórios do projeto. Os relatórios incluem identificação do projeto, registros com início e término, totais e agrupamentos por dia. Para atividades que atravessam datas, o relatório apresenta o tempo correspondente ao dia e a duração total da atividade.
-
-A aparência final depende das configurações de impressão do navegador. Para guardar em PDF, selecione **Salvar como PDF** na janela de impressão, quando disponível.
-
-## 14. Personalização e Sobre
-
-O cabeçalho oferece alternância entre **tema claro/escuro** e **tela cheia** quando suportada pelo navegador. O rodapé disponibiliza acesso ao aplicativo, repositório, manual e ao botão **i — Sobre o Impulso**.
-
-A janela **Sobre** informa **versão 31**, **data de atualização: 12/11/2026**, resumo das funcionalidades, funcionamento local, cuidados com backup e links úteis.
-
-## 15. Privacidade e segurança dos dados
-
-O Impulso mantém os dados no armazenamento local do navegador. Em condições normais, os registros não precisam ser enviados a um servidor para que o aplicativo funcione. Isso também significa que os dados podem ser perdidos se você limpar o armazenamento do site, trocar de navegador/dispositivo sem restaurar backup, utilizar navegação privada ou sofrer uma falha de armazenamento.
-
-**Boas práticas:** exporte backups periodicamente; confira o arquivo baixado; evite armazenar informações sensíveis nos nomes das atividades; não presuma sincronização automática entre dispositivos.
-
-## 16. Solução de problemas
-
-| Problema | O que verificar |
+| Grupo | Opções |
 |---|---|
-| Tela antiga após atualizar | Recarregue a página com internet e aguarde o Service Worker atualizar; feche e abra o PWA novamente. |
-| Menu não fecha | Clique fora do painel ou pressione Esc. |
-| Radar não aparece | Confirme se todos os arquivos publicados pertencem à mesma versão e se o JavaScript foi atualizado. |
-| Registro não aparece no dia esperado | Verifique as datas completas; trabalhos que atravessam a meia-noite aparecem nos dias envolvidos. |
-| Total diário menor que a duração do trabalho | Confira se parte do intervalo pertence ao dia seguinte. |
-| Chefão não foi derrotado | Verifique o tempo total consolidado do projeto e o limiar de HP. |
-| Cofre continua trancado | É necessário derrotar o chefão **e depois concluir** um hábito cadastrado. |
-| Elixir desapareceu | Verifique se o registro de hábito que o concedeu foi excluído ou se o tempo acumulado diminuiu. |
-| Não consigo compartilhar | Use a opção de copiar, quando disponível; o compartilhamento nativo depende do navegador. |
-| Não consigo restaurar | Confirme se escolheu o JSON correto: projeto individual ou backup geral. |
-| App offline não abre | Abra online primeiro, aguarde o cache e teste novamente; não apague os dados antes de fazer backup. |
+| Jornada e projetos | **Início · Novo · Projetos · Arena · Codex · Elixires · Radar · Meu Dia** |
+| Trabalho e rotina | **Ponto · Hábitos · Entrada** |
+| Segurança e documentos | **Guardar · Restaurar · Imprimir** |
+| Preferências e diagnóstico | **Alertar · Armazenamento · Configuração** |
 
-Para investigar problemas no desktop, abra as ferramentas de desenvolvedor do navegador e examine o **Console**. Anote a mensagem exata de erro. **Não limpe armazenamento ou cache indiscriminadamente antes de guardar seus dados.**
+O nome **Impulso** fica destacado no alto do menu. Os itens têm espaçamento compacto para aproveitar melhor a altura disponível; em telas muito baixas, pode ser necessário rolar o painel. Para fechá-lo, utilize o botão correspondente, toque fora dele ou pressione **Esc**, quando disponível.
 
-## 17. Perguntas frequentes
+No cabeçalho também há controle de **modo claro/escuro** e, conforme o navegador, um controle de **tela cheia**. A tela cheia pode não estar disponível em todos os dispositivos. A seção **Sobre** apresenta informações gerais e links do projeto.
 
-**Posso ter vários projetos?** Sim. Cada projeto mantém sua própria progressão e registros.
+**Navegação não encerra automaticamente um Ponto ativo.** Você pode iniciar um trabalho, consultar outras páginas e voltar para finalizá-lo.
 
-**Os chefões são derrotados por tarefas ou por horas?** Pela soma de tempo válido registrado; a quantidade de tarefas não determina diretamente a vitória.
+## 4. Projetos independentes
 
-**Um hábito sozinho derrota um chefão?** Não. Hábitos podem contribuir para o tempo contabilizado, mas o cofre exige que o chefão já esteja derrotado antes da conclusão que libera o Elixir.
+### Criar
 
-**Uma atividade de duas datas vira dois registros?** Não. É um registro original exibido em todos os dias envolvidos.
+Abra **Novo**, digite um nome com até **50 caracteres** e confirme. O novo projeto passa a ser o ativo.
 
-**Posso recuperar dados apagados?** Apenas se houver uma cópia de segurança compatível.
+### Abrir, renomear e excluir
 
-**O aplicativo funciona sem internet?** Pode funcionar após a instalação correta do cache, sujeito às limitações do navegador.
+Em **Projetos**, consulte a lista, selecione um projeto para trabalhar nele e utilize as ações de renomear ou excluir quando necessário. A lista também pode ser impressa. Ao mudar de projeto, os registros, hábitos, tempo, chefões e Elixires exibidos passam a ser os do projeto selecionado.
 
-**O que significa HP?** *Hit Points*, ou pontos de resistência do chefão.
+**Atenção à exclusão:** excluir um projeto é uma ação destrutiva. Antes de excluir, faça **Guardar** e verifique que o arquivo JSON foi salvo em local seguro. Um backup individual permite preservar ou transferir um projeto sem substituir toda a coleção.
 
-**O que é XP de Foco?** Uma representação gamificada do tempo acumulado; não é moeda, nem substitui os registros reais.
+### Isolamento
 
-## 18. Testes de aceitação
+Cada projeto mantém seus próprios dados: atividades, sessões, hábitos equipados, progresso, coleções e registros. A preferência visual, por outro lado, é uma configuração do aplicativo **neste navegador**, não uma paleta diferente para cada projeto.
 
-Depois de publicar uma nova versão, confira:
+## 5. Início e indicadores
 
-- [ ] Abrir o aplicativo sem erros e criar um projeto.
-- [ ] Criar outro projeto e confirmar que os dados são independentes.
-- [ ] Iniciar Ponto, navegar pelo menu, retornar e concluir a atividade.
-- [ ] Registrar Entrada Manual no mesmo dia.
-- [ ] Registrar Entrada Manual atravessando a meia-noite e conferir os dois totais diários.
-- [ ] Confirmar que o tempo do projeto não foi duplicado.
-- [ ] Criar, iniciar, pausar, retomar e concluir um Hábito.
-- [ ] Abrir Radar e conferir as marcações e o tempo acumulado.
-- [ ] Consultar Arena, as 10 fases e os 200 chefões.
-- [ ] Abrir Codex e visualizar uma ficha VENCIDO.
-- [ ] Derrotar um chefão, confirmar cofre pendente, concluir hábito e receber a frase.
-- [ ] Copiar e, se disponível, compartilhar um Elixir.
-- [ ] Excluir o registro que concedeu o Elixir e verificar a revogação.
-- [ ] Exportar projeto e realizar backup geral; conferir os arquivos baixados.
-- [ ] Testar importação/restauração em ambiente seguro, sem arriscar dados reais.
-- [ ] Imprimir um relatório e verificar os horários e totais.
-- [ ] Abrir **Sobre**, conferir versão, data e links.
-- [ ] Testar menu compacto, tema claro/escuro, mobile e uso offline.
+A página **Início** é o ponto de entrada para criar ou abrir projetos e acompanhar a evolução do projeto ativo. Ela apresenta indicadores de tempo e progresso, incluindo o caminho até as 10.000 horas, além de atalhos para ações frequentes.
 
-## 19. Arquivos do projeto
+Os números refletem os dados armazenados. Se você excluir um registro, o tempo e os marcos de progresso poderão diminuir. Indicadores de hábitos e chefões não devem ser confundidos com horas de trabalho: são medidas diferentes.
+
+## 6. Ponto: cronometrar trabalho
+
+Use **Ponto** para registrar uma atividade enquanto ela acontece.
+
+1. Abra um projeto e entre em **Ponto**.
+2. Informe o **nome do trabalho** (até 50 caracteres).
+3. Clique em **Iniciar** para marcar a data e a hora inicial.
+4. Trabalhe normalmente. Você pode visitar outras telas do Impulso enquanto a sessão permanece ativa.
+5. Retorne a **Ponto** e utilize **Terminar** para marcar o fim da sessão.
+6. Quando o formulário oferecer **Concluir**, confirme o lançamento definitivo no histórico.
+
+O formulário permanece na própria página, sem uma janela modal que impeça a navegação. O Ponto utiliza horários reais de início e término. Uma sessão pode começar antes da meia-noite e terminar no dia seguinte; o cálculo diário é dividido por data.
+
+**Boas práticas:** não abra simultaneamente várias instâncias do aplicativo para controlar a mesma atividade; confira o nome e os horários antes de concluir; não limpe os dados do site com uma sessão aberta. A continuidade após fechamento forçado, reinício ou suspensão do navegador deve ser conferida antes de confiar no resultado.
+
+## 7. Entrada Manual
+
+Use **Entrada** para lançar um trabalho já realizado ou corrigir a ausência de um registro cronológico, sem iniciar um cronômetro.
+
+1. Abra o projeto correto.
+2. Acesse **Entrada**.
+3. Preencha o **nome da atividade** (até 50 caracteres).
+4. Informe **data e horário de início**.
+5. Informe **data e horário de término**.
+6. Revise e clique em **Lançar Entrada**; use **Cancelar** para desistir.
+
+O término precisa ser posterior ao início e não pode estar no futuro, conforme a validação do aplicativo. Como as duas datas são independentes, é possível registrar trabalhos que atravessam a meia-noite ou mais de um dia.
+
+**Evite duplicidade:** não registre manualmente o mesmo trabalho que já foi lançado pelo Ponto. O cálculo consolidado trata intervalos coincidentes, mas registros repetidos podem poluir o histórico.
+
+## 8. Meu Dia, Histórico e cálculo do tempo
+
+### Meu Dia
+
+A página **Meu Dia** organiza os registros pela data, com títulos no formato **Meu Dia dd-mm-aaaa**. Cada atividade apresenta **Atividade**, **Nome**, **Início**, **Término** e opção de exclusão. Os tipos mostrados são **Ponto**, **Entrada Manual** e **Hábito**. Hábitos concluídos também aparecem nesse acompanhamento.
+
+### Histórico
+
+O Histórico reúne os registros do projeto ao longo das datas. A visualização diária e os relatórios partem dos mesmos registros; um trabalho que cruza dias não se transforma em dois trabalhos diferentes.
+
+### Exemplo de divisão entre dias
+
+Uma tarefa começa em **11/11, às 23h46**, e termina em **12/11, às 00h59**. Duração total: **1h13min**. O dia 11 recebe **14 minutos**; o dia 12 recebe **59 minutos**. A atividade pode aparecer nas duas datas para fins de consulta, mas permanece um único registro e não deve ser somada duas vezes ao total do projeto.
+
+### Sobreposição de horários
+
+O cálculo de tempo consolidado reúne intervalos coincidentes para evitar dupla contagem. Por isso, duas atividades que aconteceram simultaneamente não significam necessariamente a soma simples das durações de ambas. Isso é particularmente importante quando se combinam Ponto, Entrada Manual e hábitos.
+
+### Exclusão
+
+Use a lixeira da linha correspondente para excluir um registro. A exclusão altera os totais, os marcos da Arena e, quando aplicável, a validade de Elixires relacionados. **Faça backup antes de excluir informações importantes.**
+
+## 9. Hábitos e Inventário de Elixires
+
+A página **Hábitos** possui duas áreas complementares:
+
+**Elixires Ativos:** os hábitos equipados aparecem primeiro, em cartões compactos com o temporizador e controles. É possível manter **até 6 hábitos ativos por projeto**. No desktop, a grade procura organizar os cartões em três colunas; em telas menores, adapta-se ao espaço disponível.
+
+**Inventário de Elixires:** catálogo offline com **200 sugestões de hábitos distribuídas em 25 categorias**, definido no arquivo `habitos_elixires_v2.json`. Use a **pesquisa** e os filtros por **categoria** para encontrar opções. Clique em **Equipar** para incluir um hábito na rotina e em **Desequipar** para liberar uma vaga. Equipar **não** significa concluir.
+
+### Criar hábito personalizado
+
+Clique em **+ Novo Hábito** e informe:
+
+- **Nome** com até 50 caracteres.
+- **Categoria**.
+- **Duração estipulada** em minutos, de **1 a 1.440**.
+
+O novo hábito é salvo no projeto ativo. Para criar ou equipar outro quando já existem seis ativos, primeiro desequipe um. Projetos antigos que já contenham mais hábitos podem conservar os dados existentes; o limite impede novas equipagens até haver espaço.
+
+**Dica:** comece com poucos hábitos que realmente possa executar. O catálogo é uma biblioteca de sugestões, não uma lista de obrigações.
+
+## 10. Pomodoro e conclusão de hábitos
+
+Cada hábito equipado oferece um temporizador de duração configurada e controles para **iniciar, pausar, retomar, concluir e reiniciar**, conforme o estado exibido.
+
+1. Escolha um hábito equipado.
+2. Inicie o Pomodoro e execute a atividade.
+3. Pause se precisar interromper; retome quando voltar.
+4. Ao finalizar, use o comando de **conclusão** e confira a confirmação apresentada.
+5. Verifique o registro em **Meu Dia** e no histórico do projeto.
+
+A conclusão é uma **ação explícita**: deixar o relógio chegar ao fim, por si só, não deve ser interpretado como registro definitivo sem confirmação. A duração configurada é a referência do temporizador; registre somente hábitos realmente realizados.
+
+O aplicativo também oferece um fluxo de conclusão que solicita confirmação e, opcionalmente, uma observação curta. Quando utilizado, o período é registrado retroativamente, terminando no momento da confirmação; por isso, confirme apenas se de fato executou o hábito nesse intervalo.
+
+**Relação com os Elixires:** uma conclusão de hábito pode abrir **no máximo um cofre** de um chefão já derrotado. A regra completa está na seção 14.
+
+## 11. Radar e meta de 10.000 horas
+
+O **Radar** é a representação visual do avanço temporal. Ele possui:
+
+- **Anel interno:** 60 marcações correspondentes aos segundos, com ponteiro.
+- **Anel externo:** 360 graus; a representação avança **1 grau a cada 10 segundos**.
+- **Tempo total:** duração consolidada do projeto.
+- **Meta:** 10.000 horas, equivalentes a **600.000 minutos**.
+- **Horas restantes e percentual de maestria:** indicadores de quanto falta para o marco simbólico.
+
+O Radar acompanha o tempo do projeto e pode atualizar sua indicação durante um Ponto em andamento. A animação é uma representação; os registros salvos e seus horários são a base para o cálculo. O percentual de maestria não representa uma avaliação de habilidade profissional.
+
+## 12. Arena: 200 chefões
+
+A **Arena** transforma o progresso em uma campanha contra **200 chefões**, organizados em **10 fases de 20 adversários**, com dificuldade crescente e marcos distribuídos ao longo das 10.000 horas.
+
+Cada chefão possui **nome**, **descrição narrativa**, **efeito temático**, **HP (pontos de resistência)** e um marco de tempo acumulado. O tempo efetivamente contabilizado provoca o avanço da campanha: **cada minuto equivale a um ponto de dano** na progressão.
+
+Os efeitos narrativos — como dispersão, sono, adiamento ou distração — representam obstáculos simbólicos. **Não descontam tempo, não aplicam penalidades reais e não alteram registros.** A derrota é determinada pelo tempo acumulado, não por cliques ou ações repetitivas.
+
+**Se o tempo cair:** excluir registros pode reduzir a progressão e fazer com que um chefão deixe de constar como derrotado. Isso também pode afetar cofres e recompensas vinculados à vitória.
+
+## 13. Codex de Monstros
+
+O **Codex** funciona como uma enciclopédia da campanha. Nele, você acompanha os adversários e abre as fichas disponíveis dos chefões derrotados, com informações como nome, descrição e efeito narrativo.
+
+As fichas dos chefões vencidos recebem indicação explícita de **VENCIDO**. Os ainda não conquistados permanecem bloqueados. O Codex e a Arena consultam os mesmos marcos de tempo: não são sistemas de pontuação independentes.
+
+## 14. Elixires, cofres e recompensas
+
+A seção **Elixires** é o espaço de coleção e recompensa. O sistema contém **200 frases exclusivas**, associadas aos 200 chefões. O processo tem duas etapas distintas: **vencer o chefão trabalhando** e **abrir o cofre concluindo um hábito**.
+
+### Passo a passo
+
+1. Registre trabalho pelo **Ponto** ou pela **Entrada Manual**.
+2. Acumule tempo suficiente para derrotar um chefão na **Arena**.
+3. O cofre correspondente passa a aguardar um hábito concluído.
+4. **Conclua um hábito** do projeto depois dessa vitória.
+5. Se houver cofre elegível, a conclusão libera **um único Elixir**, seguindo a ordem dos chefões.
+6. Consulte a frase na coleção e utilize as opções de **copiar** ou **compartilhar**, quando disponíveis.
+
+### Regras da coleção
+
+- **Um hábito concluído libera, no máximo, um Elixir.**
+- **Derrotar um chefão não abre automaticamente seu cofre.**
+- Conclusões anteriores à vitória não são reaproveitadas automaticamente para liberar cofres futuros.
+- O vínculo entre recompensa e registro é mantido no projeto.
+- Excluir o registro que concedeu a recompensa pode **revogá-la**.
+- Se o chefão deixar de estar derrotado após alterações no tempo, a recompensa correspondente poderá deixar de ser válida.
+- Projetos diferentes possuem coleções diferentes.
+
+**Compartilhar:** quando o dispositivo oferecer a API de compartilhamento, o aplicativo pode abrir o menu nativo. Em outros contextos, use a opção de copiar a frase. O suporte depende do navegador.
+
+**Atenção:** os **Elixires Ativos** da página Hábitos são os hábitos equipados; os **Elixires colecionáveis** são as frases obtidas com os cofres. São recursos relacionados, mas não idênticos.
+
+## 15. Guardar, exportar, importar e restaurar
+
+Os arquivos de segurança utilizam o formato **JSON**. O Impulso oferece operações diferentes, que não devem ser confundidas.
+
+| Operação | Abrangência | Efeito |
+|---|---|---|
+| **Guardar / Backup Geral** | Todos os projetos | Solicita download de um JSON com o conjunto de dados do aplicativo. |
+| **Exportar projeto** | Um projeto | Gera um JSON contendo somente o projeto selecionado. |
+| **Importar projeto** | Um projeto | Lê um arquivo de projeto e o incorpora conforme o fluxo de importação. |
+| **Restaurar** | Todos os projetos | **Substitui os projetos atuais** pelos dados do Backup Geral após confirmação. |
+
+### Como fazer um Backup Geral
+
+1. Abra **Guardar** no menu.
+2. Aguarde a solicitação de download.
+3. Confira se o arquivo `impulso-backup-...json` realmente apareceu na pasta de downloads.
+4. Copie o arquivo para outro local confiável, preferencialmente fora do aparelho.
+5. Mantenha mais de uma cópia datada.
+
+**O botão Guardar não envia nada automaticamente para a nuvem.** O navegador controla o download; o aplicativo não consegue garantir que você guardou o arquivo.
+
+### Como restaurar
+
+1. **Faça primeiro um backup dos dados atuais.**
+2. Escolha **Restaurar** e selecione um arquivo de **Backup Geral** compatível.
+3. Leia o aviso de substituição integral.
+4. Confirme somente se deseja trocar os projetos atuais pelo conteúdo do arquivo.
+5. Verifique os projetos, registros e hábitos após a operação.
+
+**Nunca use Restaurar para importar um único projeto.** A restauração geral rejeita arquivos de projeto individual. Os arquivos passam por validações de estrutura e tamanho; isso não dispensa verificar o conteúdo após importar.
+
+### Quando fazer backup
+
+Recomenda-se guardar uma cópia **ao final de sessões importantes**, antes de atualizar ou reinstalar o PWA, antes de excluir registros ou projetos, antes de limpar dados do navegador e antes de trocar de dispositivo. O alerta opcional pode ajudar, mas não faz backup automaticamente.
+
+## 16. Impressão e relatórios
+
+A opção **Imprimir** prepara um relatório do projeto ativo e abre a função de impressão do navegador. Conforme o fluxo, é possível imprimir a **lista de projetos** e relatórios de um **dia específico**.
+
+Os relatórios apresentam dados como **nome do projeto**, **data de emissão**, **tempo acumulado**, **registros**, **início**, **término** e **totais por dia**. Os títulos diários seguem **Meu Dia dd-mm-aaaa**. Atividades que atravessam a meia-noite são distribuídas entre as datas sem duplicar o tempo total.
+
+### Salvar em PDF
+
+Na janela de impressão, escolha **Salvar como PDF** se o navegador oferecer essa opção. Confira margens, orientação, quebras de página e horários na pré-visualização antes de salvar ou imprimir.
+
+**Importante:** imprimir não cria backup restaurável. O PDF serve para consulta e documentação; o **JSON** serve para restaurar os dados no aplicativo.
+
+## 17. Alertar: lembretes opcionais
+
+A página **Alertar** (painel de alertas) oferece dois lembretes independentes, inicialmente desativados:
+
+**Alerta de backup:** a cada **15 minutos de uso**, quando habilitado, recomenda guardar uma cópia dos projetos. A mensagem explica que o armazenamento do navegador pode ser perdido. É possível iniciar o backup pelo aviso ou dispensá-lo.
+
+**Alerta de hábitos e Elixires:** também em intervalos de **15 minutos**, quando habilitado, lembra o usuário de praticar hábitos e oferece acesso à página **Hábitos**.
+
+As opções são controladas por **caixas de seleção** e ficam salvas no navegador. Os alertas são **locais**, não são notificações push do sistema e dependem de a página estar aberta e visível. Se o navegador suspender a aba, o aviso poderá atrasar. Não há backup automático nem execução de hábitos em segundo plano.
+
+## 18. Armazenamento: saúde dos dados
+
+A página **Armazenamento** é um **Monitor de Armazenamento Local**, não um medidor de RAM. Ela consulta informações que o navegador permite acessar e apresenta estimativas úteis para acompanhar o crescimento dos projetos.
+
+### Indicadores
+
+1. **Uso estimado da origem:** quantidade aproximada de armazenamento ocupada pelo site, informada por `navigator.storage.estimate()`.
+2. **Cota estimada:** limite de armazenamento indicado pelo navegador para a origem; não representa o espaço livre físico do aparelho.
+3. **Dados do Impulso:** tamanho estimado dos dados principais do aplicativo em `localStorage`.
+4. **Armazenamento local total:** soma aproximada das chaves e valores do `localStorage` da origem.
+5. **Cache offline:** tamanho aproximado dos recursos presentes no Cache Storage acessível ao aplicativo.
+6. **Backup Geral estimado:** tamanho aproximado do JSON que seria produzido naquele momento.
+
+O painel também pode exibir **distribuição por projeto**, **porcentagem estimada de uso da cota**, **estado da persistência**, **última solicitação de download de Backup Geral** e **botão Atualizar medições**.
+
+### Persistência
+
+O navegador pode permitir solicitar armazenamento persistente. Se concedido, isso **reduz alguns riscos de remoção automática**, mas não protege contra limpeza manual dos dados, desinstalação, troca de aparelho ou outros eventos. A solicitação pode ser negada sem indicar defeito no aplicativo.
+
+### Como interpretar corretamente
+
+- O uso total estimado pode **já incluir** cache e armazenamento local; **não some** os indicadores como se fossem parcelas independentes.
+- Alguns navegadores não oferecem todas as APIs; nesses casos, a informação pode aparecer como **Não disponível**.
+- O tamanho de um projeto é uma aproximação baseada na serialização de seus dados.
+- A data do último backup significa **download solicitado**, não confirmação de arquivo salvo.
+- O painel não exclui registros nem executa limpeza automática.
+
+## 19. Configuração: paletas e aparência
+
+A página **Configuração** permite escolher a **identidade visual** e, independentemente, a **aparência clara ou escura**. Existem quatro identidades, totalizando **oito combinações**:
+
+| Identidade | Característica | Cores de referência |
+|---|---|---|
+| **Impulso Original** | Aparência clássica do aplicativo | Cores tradicionais do projeto. |
+| **Impulso Vinho** | Harmonia Itten com magenta, roxo e rosa | `#940065`, `#87008A`, `#FF3377`. |
+| **Impulso Blue Sky** | Harmonia análoga turquesa–azul | `#00C7B0`, `#007BC7`, `#0018C7`. |
+| **Impulso Trinity** | Harmonia triádica laranja–verde–roxo | `#FF6B00`, `#00FF6B`, `#6B00FF`. |
+
+As superfícies de referência das paletas novas são **branco `#FFFFFF`** no modo claro e **azul-escuro `#10141D`** no modo escuro. As folhas de estilo próprias de cada identidade contêm tokens cromáticos e regras de contraste.
+
+### Alterar o visual
+
+1. Abra **Configuração**.
+2. Escolha **Impulso Original**, **Impulso Vinho**, **Impulso Blue Sky** ou **Impulso Trinity**.
+3. Selecione **Claro** ou **Escuro**, ou use o controle correspondente no cabeçalho.
+4. Navegue pelas páginas para conferir a aparência escolhida.
+
+A escolha é salva **neste navegador** e não altera os dados dos projetos. Para voltar à identidade anterior, basta selecioná-la novamente; não é necessário restaurar um backup.
+
+### Acessibilidade das cores
+
+As paletas buscam empregar pares de contraste adequados a textos e controles. Cores vibrantes não devem receber texto branco quando o contraste for insuficiente. Estados importantes, como vitória, erro, cofre aberto e cofre fechado, devem ser comunicados também por **rótulos e símbolos**, não apenas por cor. A conformidade de toda a interface deve ser verificada nas telas reais e nos dispositivos utilizados.
+
+## 20. Privacidade, integridade e limites técnicos
+
+- **Armazenamento local:** os projetos são salvos no navegador, principalmente em `localStorage`.
+- **Sem sincronização automática:** abrir o aplicativo em outro navegador, perfil ou aparelho não transfere os dados anteriores.
+- **Dados sujeitos à remoção:** limpar dados do site, usar navegação privada ou políticas de limpeza do navegador pode apagar projetos e preferências.
+- **Sem conta e sem servidor de registros:** o aplicativo não exige autenticação para os recursos locais descritos.
+- **Backups são responsabilidade do usuário:** arquivos JSON guardados externamente são a principal proteção contra perdas.
+- **Horário do dispositivo:** registros dependem do relógio e do fuso configurados no aparelho. Se estiverem incorretos, os horários e totais por data também podem ficar incorretos.
+- **Limites de armazenamento:** projetos extensos podem esgotar a capacidade disponível; acompanhe o monitor e exporte backups.
+- **Não é sistema de ponto oficial:** os relatórios são instrumentos de organização pessoal, não comprovantes certificados.
+- **A meta de 10.000 horas é simbólica:** não mede competência nem substitui avaliação de resultados.
+
+## 21. Solução de problemas
+
+| Sintoma | O que verificar ou fazer |
+|---|---|
+| **O aplicativo não abre ou permanece na abertura** | Atualize a página conectado; feche e reabra; confira o console do navegador se souber utilizá-lo. Evite limpar os dados antes de garantir um backup. |
+| **Mudanças não aparecem após publicar** | O service worker pode estar servindo arquivos antigos. Recarregue conectado e aguarde a atualização; teste novamente. Não apague o armazenamento local indiscriminadamente. |
+| **Projeto desapareceu** | Confirme se está no mesmo navegador, perfil e endereço do site; consulte **Projetos**. Se os dados foram removidos, use um Backup Geral confiável. |
+| **Ponto não parece contar** | Verifique se a sessão está iniciada, se o relógio do aparelho está correto e se há um projeto ativo. Volte à página Ponto para conferir o estado. |
+| **Tempo total parece menor que a soma das linhas** | Intervalos sobrepostos são consolidados para evitar dupla contagem. Confira as datas e os horários. |
+| **Atividade aparece em dois dias** | É esperado quando atravessa a meia-noite; o tempo é dividido, mas o registro não é duplicado. |
+| **Não consigo equipar outro hábito** | O limite é de **6 Elixires Ativos**. Desequipe um hábito para liberar vaga. |
+| **Hábito não aparece no Inventário** | Revise a pesquisa e o filtro de categoria. O catálogo precisa ter sido carregado no cache para funcionar offline. |
+| **Chefão derrotado, mas cofre fechado** | Conclua um hábito **depois** da vitória; derrotar o chefão sozinho não libera a frase. |
+| **Elixir desapareceu** | Confira se o registro de hábito foi excluído ou se o tempo acumulado diminuiu após alterações. |
+| **Alerta não apareceu** | Confira se foi habilitado, se já se passaram 15 minutos e se a página estava aberta e visível. |
+| **Medição de armazenamento indisponível** | O navegador pode não oferecer a API necessária ou pode restringi-la. Não é uma leitura simulada. |
+| **Persistência negada** | A decisão é do navegador. Continue guardando backups externos. |
+| **Backup não está na pasta de downloads** | Verifique permissões e bloqueios de download. O aplicativo registra apenas a solicitação; repita a exportação e confirme o arquivo. |
+| **Restaurar apagaria projetos atuais** | Cancele. Faça primeiro um backup atual e só restaure quando desejar substituir a coleção inteira. |
+| **Tema não ficou como esperado** | Abra **Configuração**, escolha outra identidade e alterne claro/escuro. Se necessário, atualize a página após o cache ser renovado. |
+| **Impressão cortada** | Use a pré-visualização, ajuste margens, escala e orientação ou salve em PDF. |
+
+## 22. Perguntas frequentes
+
+**Preciso criar uma conta?** Não. O uso descrito neste manual é local ao navegador.
+
+**Posso trabalhar em vários projetos?** Sim. Cada projeto tem registros, hábitos, chefões e recompensas próprios.
+
+**O Ponto continua quando abro outra tela?** A sessão permanece registrada e pode ser retomada na página Ponto. Confira seu estado após interrupções do navegador.
+
+**Posso registrar trabalho de ontem?** Sim, pela Entrada Manual, com data e horário corretos.
+
+**O que acontece quando trabalho atravessa a meia-noite?** O registro é mantido, e o tempo é distribuído entre os dias correspondentes.
+
+**Os hábitos contam como registros?** Sim, hábitos concluídos geram registros próprios e aparecem em Meu Dia.
+
+**Quantos hábitos posso equipar?** Até **seis** por projeto.
+
+**O catálogo precisa de internet?** Depois que o arquivo do catálogo estiver armazenado no cache offline, pode ser consultado sem conexão.
+
+**Como ganho um Elixir?** Derrote um chefão com tempo de trabalho e, depois, conclua um hábito para abrir um cofre elegível.
+
+**Uma conclusão abre todos os cofres disponíveis?** Não. No máximo um cofre por conclusão.
+
+**Posso perder um Elixir?** Sim, se excluir o registro que o concedeu ou reduzir a progressão que sustentava a vitória.
+
+**O que significa HP?** *Hit Points*: pontos de resistência do chefão na representação RPG.
+
+**O que é a meta de maestria?** Um marco simbólico de 10.000 horas acumuladas, sem certificação profissional.
+
+**Guardar é igual a Restaurar?** Não. Guardar gera um arquivo; Restaurar lê um Backup Geral e substitui os projetos atuais após confirmação.
+
+**O monitor mostra memória RAM?** Não. Mostra estimativas de armazenamento do site.
+
+**A paleta muda meus dados?** Não. A identidade visual é uma preferência independente dos projetos.
+
+**Posso usar sem internet?** Sim, quando os recursos essenciais já estiverem no cache e o navegador os conservar.
+
+**Se instalar em outro celular, os projetos aparecem?** Não automaticamente. É necessário transferir e importar/restaurar um arquivo compatível.
+
+## 23. Roteiro de testes
+
+Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de teste e **faça backup antes de testar exclusões ou restaurações**.
+
+### Navegação e projetos
+
+- [ ] Abrir o site e passar da tela de abertura.
+- [ ] Abrir e fechar o menu; conferir os quatro grupos e a ordem dos itens.
+- [ ] Criar dois projetos, renomear um e confirmar que os dados são independentes.
+- [ ] Abrir **Sobre** e conferir os links.
+
+### Trabalho e registros
+
+- [ ] Iniciar um Ponto, navegar por outras páginas, voltar e concluí-lo.
+- [ ] Lançar uma Entrada Manual com início e término no mesmo dia.
+- [ ] Lançar outra Entrada Manual atravessando a meia-noite.
+- [ ] Conferir os títulos **Meu Dia dd-mm-aaaa**, os horários e a divisão dos totais.
+- [ ] Conferir o Histórico e o comportamento de intervalos sobrepostos.
+
+### Hábitos, Arena e Elixires
+
+- [ ] Pesquisar hábitos, filtrar categorias e equipar até seis.
+- [ ] Desequipar e criar um hábito personalizado.
+- [ ] Iniciar, pausar, retomar e concluir um Pomodoro.
+- [ ] Conferir o registro de hábito em Meu Dia.
+- [ ] Abrir Radar e verificar o tempo e a meta.
+- [ ] Consultar as 10 fases e os 200 chefões da Arena.
+- [ ] Consultar uma ficha de chefão vencido no Codex.
+- [ ] Derrotar um chefão, concluir um hábito e verificar o cofre e a frase.
+- [ ] Testar copiar/compartilhar, conforme o suporte do navegador.
+- [ ] Em projeto de teste, excluir um registro associado a um Elixir e verificar a consequência.
+
+### Segurança, aparência e documentos
+
+- [ ] Gerar Backup Geral e confirmar o arquivo JSON salvo.
+- [ ] Exportar e importar um projeto individual.
+- [ ] Restaurar um Backup Geral **somente em ambiente de teste**.
+- [ ] Imprimir relatório de projeto, de dia e lista de projetos.
+- [ ] Ativar e desativar os dois alertas; conferir seu comportamento com a página visível.
+- [ ] Abrir Armazenamento, atualizar medições e verificar a indicação de persistência.
+- [ ] Testar **Impulso Original, Vinho, Blue Sky e Trinity**, em claro e escuro.
+- [ ] Conferir legibilidade, foco de teclado, controles, ícones e rótulos em cada tema.
+- [ ] Testar no celular, no desktop e sem internet após o cache inicial.
+
+## 24. Arquivos do projeto
 
 | Arquivo | Finalidade |
 |---|---|
-| `index.html` | Estrutura da interface, cabeçalho, menu, rodapé e splash. |
-| `styles.css` | Layout responsivo, temas, Arena, Codex e Altar. |
-| `app.js` | Regras de negócio, registros, cálculo de tempo, progressão, armazenamento e navegação. |
-| `manifest.json` | Metadados para instalação do PWA. |
-| `sw.js` | Cache de arquivos essenciais para uso offline. |
-| `README.md` | Este manual. |
+| `index.html` | Estrutura principal, navegação, controles e tela de abertura. |
+| `styles.css` | Estilos gerais, responsividade e aparência Original. |
+| `theme-impulso.css` | Identidade **Impulso Vinho**. |
+| `theme-impulso-analogo.css` | Identidade **Impulso Blue Sky**. |
+| `theme-impulso-triadico.css` | Identidade **Impulso Trinity**. |
+| `app.js` | Navegação, projetos, cronômetros, registros, progressão, Elixires, armazenamento, backups e configurações. |
+| `habitos_elixires_v2.json` | Catálogo offline de 200 sugestões de hábitos. |
+| `manifest.json` | Metadados de instalação do PWA. |
+| `sw.js` | Registro de recursos essenciais para cache e uso offline. |
+| `README.md` | Este manual do usuário. |
 | `LICENSE` | Licença do projeto. |
-| `logo.svg` e `logo.png` | Identidade visual do aplicativo. |
-| `ImpulsoCover.png` e `ImpulsoApp.png` | Imagens de apresentação/documentação. |
-| `icon-192.png`, `icon-512.png`, `rocket-192-v11.png`, `rocket-512-v11.png` | Ícones distribuídos com o projeto. |
+| `logo.svg`, `logo.png` | Identidade visual e documentação. |
+| `ImpulsoCover.png`, `ImpulsoApp.png` | Imagens de apresentação do projeto. |
+| `icon-192.png`, `icon-512.png` | Ícones do aplicativo. |
+| `rocket-192-v11.png`, `rocket-512-v11.png` | Recursos gráficos do foguete. |
 
-## 20. Histórico da versão
+## 25. Glossário
 
-**Versão 31 — 12/11/2026:** Altar dos Elixires, com 200 frases exclusivas, cofres vinculados à derrota de chefões e desbloqueio por conclusão de hábito. Preserva a Arena com 200 chefões, os 10 tiers, o Codex, o Radar, o Ponto, a Entrada Manual com datas independentes, Meu Dia, relatórios, backups e menu lateral compacto.
-
-**Revisão documental — 12/11/2026:** manual reescrito e janela Sobre ampliada com versão, data e resumo de recursos. A revisão não altera a mecânica de progressão nem os dados dos projetos.
+**Arena:** campanha gamificada de desafios associados ao tempo trabalhado.  
+**Backup Geral:** arquivo JSON com todos os projetos.  
+**Cache offline:** cópias de arquivos do aplicativo mantidas pelo navegador para uso sem rede.  
+**Chefão:** adversário simbólico derrotado ao atingir um marco de tempo.  
+**Codex:** coleção de fichas dos adversários da Arena.  
+**Cofre:** recompensa associada a um chefão derrotado, aberta mediante conclusão de hábito elegível.  
+**Elixir:** frase colecionável liberada pelo sistema de recompensas.  
+**Elixir Ativo:** hábito equipado para execução na página Hábitos.  
+**HP:** pontos de resistência do chefão.  
+**Inventário de Elixires:** catálogo de sugestões de hábitos.  
+**JSON:** formato de arquivo usado para exportação, importação e backups.  
+**LocalStorage:** armazenamento local do navegador utilizado para dados do aplicativo.  
+**Ponto:** ferramenta de cronometragem de uma atividade real.  
+**Pomodoro:** temporizador associado à prática de um hábito.  
+**PWA:** aplicativo web com recursos de instalação e funcionamento offline, conforme suporte do navegador.  
+**Radar:** visualização do tempo acumulado e da meta de longo prazo.  
+**Service worker:** recurso do navegador que gerencia o cache offline do aplicativo.  
+**Tema:** combinação entre identidade cromática e aparência clara ou escura.
 
 ---
 
-**Impulso — Motor de Produtividade Pessoal.** A constância começa com um pequeno impulso.
-
-
-## Alertas! — lembrete de backup (versão 34)
-
-No menu lateral, abaixo de **Imprimir**, há um separador e o botão **Alertas!**. Ele abre uma página de configurações com uma chave para **Alerta de backup**. Por padrão, o alerta fica desligado.
-
-Ao ativar, o aplicativo apresenta uma caixa a cada 15 minutos de uso com a recomendação de guardar uma cópia dos projetos. A caixa oferece **Guardar backup** (exportação JSON) e **Entendi** (dispensar aviso). A preferência é salva neste navegador e pode ser desligada a qualquer momento.
-
-**Limitações:** o lembrete é local, não é notificação push e só aparece enquanto a página está aberta e visível. Se o navegador suspender a página, o lembrete poderá atrasar e aparecer quando o usuário voltar. O alerta não executa backups automaticamente. O armazenamento local não substitui backups externos.
-
-
-### Texto do alerta de backup (versão 34)
-
-> Este PWA armazena os dados dos seus projetos no navegador. Entretanto, esse armazenamento não é permanente nem garantido: as informações podem ser apagadas ao limpar os dados do site, trocar de aparelho ou por políticas de armazenamento do navegador. Por isso, faça backups regularmente para evitar a perda dos seus projetos e registros.
-
-
-### Alerta de hábitos e Elixires (versão 35)
-
-Na página **Alertas!**, ative ou desative independentemente o **Alerta de hábitos e Elixires**. Quando ligado, o aplicativo mostra um lembrete a cada 15 minutos enquanto estiver aberto e visível, com o botão **Ir para Hábitos**. Registrar trabalho por Ponto ou Entrada Manual derrota chefões; para abrir cada cofre, é necessário concluir um hábito cadastrado. Cada conclusão libera no máximo um Elixir de chefão já derrotado. A configuração é salva localmente e os avisos não são notificações do sistema.
-
-
-### Atualização 36 — Painel de Alertas!
-
-A página **Alertas!** é dedicada exclusivamente à configuração de lembretes. O botão **Guardar backup agora** foi retirado dessa página, pois ela reúne alertas de diferentes categorias. Para realizar um backup, use **Guardar** no menu lateral. Os alertas de backup e de hábitos/Elixires permanecem independentes e opcionais.
-
-
-### Atualização 37 — controles de alertas
-
-Os controles da página **Alertas!** agora usam caixas de seleção nativas, com posição fixa e rótulos Ligado/Desligado. A configuração e o intervalo de 15 minutos permanecem inalterados.
-
-
-## Inventário de Elixires — versão 38 (12/11/2026)
-
-A página **Hábitos** apresenta um catálogo offline com **200 sugestões em 25 categorias**, conforme `habitos_elixires_v2.json`. Use a pesquisa global e as categorias horizontais para localizar hábitos. Clique em **Equipar** para adicioná-los à rotina do projeto; o limite é de **6 hábitos ativos**. Os hábitos já existentes são preservados, mesmo que um projeto antigo ultrapasse esse limite; nesse caso, desequipe hábitos antes de adicionar novos.
-
-O botão **+ Novo Hábito** permanece disponível para criar hábitos personalizados, com título (até 50 caracteres), categoria e duração. Os hábitos são salvos com os dados do projeto em `localStorage`, participam do backup geral e do backup individual e funcionam offline. A execução continua sendo feita pelo Pomodoro; concluir um hábito pode desbloquear um Elixir de um chefão já derrotado, respeitando as regras do Altar.
-
-**Observação:** equipar um hábito não equivale a concluí-lo. É necessário executar e finalizar o Pomodoro para registrar a conclusão.
-
-
-### Versão 40 — Seis Elixires Ativos e cartões alinhados
-
-Na página Hábitos, os Elixires Ativos aparecem antes do catálogo, em cartões compactos e responsivos. O Inventário de Elixires permanece abaixo, com busca, categorias e equipagem. O Pomodoro e as recompensas funcionam como antes.
-
-
-### Ajustes da versão 40
-
-A rotina aceita até **6 Elixires Ativos** por projeto. No desktop, os cartões são distribuídos em três colunas, com alturas e controles alinhados; em telas menores, a grade se adapta.
-
-
-### Versão 41 — Monitor de Armazenamento Local (12/11/2026)
-
-A página **Armazenamento**, acessível pelo menu lateral, apresenta seis medidores: uso e cota estimados da origem (`navigator.storage.estimate()`), dados do Impulso em `localStorage`, tamanho total do `localStorage` da origem, tamanho aproximado do Cache Storage e tamanho previsto do arquivo JSON do Backup Geral. Abaixo, há distribuição aproximada por projeto, estado de persistência (`navigator.storage.persisted()`), solicitação de persistência (`navigator.storage.persist()`), data da última solicitação de download de Backup Geral e botão para atualizar medições.
-
-**Atenção:** as estimativas de armazenamento não medem RAM ou espaço livre do aparelho. O tamanho do cache e do localStorage pode estar incluído no uso total estimado; não some esses valores. A data registrada para backup significa que o aplicativo solicitou o download, não que o arquivo foi efetivamente salvo. Persistência não impede limpeza manual ou troca de dispositivo. Continue fazendo backups externos. Nenhuma exclusão automática é executada pelo monitor.
-
-
-## Impulso 42 — Identidades visuais
-
-O menu permite escolher **Impulso Original** (cores anteriores preservadas) ou **Impulso Vinho** (paleta Itten). O botão de tema do cabeçalho alterna claro/escuro independentemente da identidade escolhida. A preferência é armazenada localmente e não altera os projetos. O arquivo `theme-impulso.css` contém os tokens da paleta Vinho e regras de compatibilidade; o tema Original permanece em `styles.css`.
-
-
-## Versão 43 — Menu e Configuração
-
-O menu lateral agora apresenta os grupos Início–Meu Dia, Ponto–Entrada, Guardar–Imprimir e Alertar–Configuração, com espaçamento reduzido. A página **Configuração** permite selecionar **Impulso Original** ou **Impulso Vinho**, além do modo claro ou escuro. As preferências são salvas localmente e não alteram os projetos.
-
-
-## Versão 44 — Impulso Blue Sky
-
-A página **Configuração** oferece três identidades visuais independentes do modo claro/escuro: **Impulso Original**, **Impulso Vinho** e **Impulso Blue Sky**. A Blue Sky utiliza a harmonia análoga Itten (turquesa e azuis), com os 12 tokens cromáticos oficiais definidos em `theme-impulso-analogo.css`. A seleção é salva no `localStorage` e não altera projetos, hábitos ou registros.
-
-Os temas são carregados localmente e incluídos no cache offline. Acessibilidade deve ser conferida nas telas reais em ambos os modos; cores de estados não devem ser a única indicação de significado.
-
-
-## Impulso 45 — Impulso Trinity
-
-A página **Configuração** passa a oferecer quatro identidades: **Impulso Original**, **Impulso Vinho**, **Impulso Blue Sky** e **Impulso Trinity**, cada uma com modos claro e escuro. A Trinity usa harmonia triádica Itten (laranja `#FF6B00`, verde `#00FF6B` e roxo `#6B00FF`) e tokens estendidos no arquivo `theme-impulso-triadico.css`. A seleção fica no armazenamento local do navegador e não altera projetos ou dados. A paleta é independente das demais, e seu CSS está incluído no cache offline.
+**Impulso — Motor de Produtividade Pessoal.**  
+*A constância começa com um pequeno impulso.*
