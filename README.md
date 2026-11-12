@@ -518,3 +518,14 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 
 **Impulso — Motor de Produtividade Pessoal.**  
 *A constância começa com um pequeno impulso.*
+
+
+## Estatísticas — Central de análise e desempenho
+
+A página **Estatísticas**, no menu depois de **Meu Dia**, reúne indicadores do **Projeto atual** ou de **Todos os projetos**. A visão global apenas agrega dados para leitura: os registros e hábitos continuam isolados em cada projeto. Selecione o período **Hoje**, **Últimos 7 dias**, **Mês atual**, **Ano atual** ou **Todo o histórico**. Use **Atualizar**, **Exportar JSON** e **Imprimir** para consultar ou compartilhar o relatório.
+
+A central mostra: horas produtivas e frequência por dia; média por dia com atividade e por dia do período; sessões e durações; horas por tipo de registro; atividades por faixa horária e dia da semana; evolução acumulada, séries diárias e tendências; comparação entre projetos; progresso de 10.000 horas; chefões derrotados e pendentes; Elixires resgatados e cofres pendentes; hábitos equipados, concluídos, ranking, dias consecutivos com conclusão e maior sequência; estimativa de tamanho dos projetos e indicadores de consistência dos registros.
+
+**Critérios importantes:** períodos são calculados no fuso horário local e atividades que cruzam a meia-noite são divididas corretamente entre os dias. Intervalos simultâneos de um mesmo projeto são unidos antes de somar o tempo produtivo para evitar dupla contagem. Na visão global, as horas de projetos distintos são somadas, mesmo quando ocorreram simultaneamente: isso representa esforço contabilizado por projeto, não tempo cronológico único. Os indicadores de conclusão de hábitos contam somente conclusões registradas; sem registro explícito de tentativas e cancelamentos não existe uma taxa confiável de conclusão de tentativas. As previsões de chegada à meta são estimativas baseadas na média recente, não garantias. As análises de Pomodoro interrompido ou pausado não são inventadas se o histórico não registra esses eventos.
+
+O relatório em JSON contém apenas dados estatísticos agregados, sem alterar o armazenamento. A impressão usa uma folha de estilo própria. Quando não existem dados suficientes, a página mostra mensagens explicativas em vez de números fictícios. O monitoramento de armazenamento detalhado continua disponível na página **Armazenamento**.
