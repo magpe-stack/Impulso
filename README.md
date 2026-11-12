@@ -23,7 +23,7 @@
 7. [Hábitos](#7-hábitos)
 8. [Registros e exclusões em Meu Dia](#8-registros-e-exclusões-em-meu-dia)
 9. [Radar do Tempo e maestria](#9-radar-do-tempo-e-maestria)
-10. [Arena de 100 Chefões](#10-arena-de-100-chefões)
+10. [Arena de 200 Chefões](#10-arena-de-100-chefões)
 11. [Backup e restauração](#11-backup-e-restauração)
 12. [Impressão e relatórios](#12-impressão-e-relatórios)
 13. [Tema, tela cheia e rodapé](#13-tema-tela-cheia-e-rodapé)
@@ -247,7 +247,7 @@ No **anel externo**, a fórmula atual é **1 grau a cada 10 segundos** (6 graus 
 
 O módulo também exibe o tempo total, a meta de **10.000 horas**, as horas restantes e o percentual de maestria. A meta é calculada por projeto, sem somar outros projetos.
 
-## 10. Arena de 100 Chefões
+## 10. Arena de 200 Chefões
 
 A Arena possui **100 adversários**, começando pela **Sentinela das Cinzas** e terminando no **Arquichefão do Impulso**. Os 50 adversários originais foram mantidos; outros 50 foram adicionados. Cada projeto possui sua própria Arena.
 
@@ -526,3 +526,23 @@ A Entrada Manual permite escolher separadamente dia, mês, ano, hora e minuto do
 ## Atualização v24 — Distribuição diária e Sobre o app
 
 Atividades iniciadas e concluídas no mesmo dia mantêm o comportamento anterior. Atividades que atravessam datas aparecem em cada cartão **Meu Dia** envolvido, com a duração daquele dia e a duração total; o Histórico, o armazenamento, os backups e a progressão preservam um único registro original. O botão **i** no rodapé abre a janela **Sobre o Impulso**, com informações do aplicativo, armazenamento local e links para o manual e repositório.
+
+
+### Arena v25 — 200 chefões em 10 fases
+
+A Arena foi substituída pelos 200 adversários do catálogo fornecido para o projeto. Cada fase apresenta seu título, descrição temática, 20 chefões e as observações originais de cada adversário quando disponíveis. Os nomes foram preservados conforme o catálogo, inclusive peculiaridades de redação.
+
+A dificuldade cresce ao longo das 10.000 horas: cada minuto de trabalho registrado corresponde a 1 HP. Os chefões são distribuídos por uma curva crescente, e o último é concluído ao atingir 10.000 horas. A Arena calcula o progresso a partir do tempo acumulado do projeto; nenhum registro existente é apagado. Com a mudança de 100 para 200 adversários, a posição atual na Arena será recalculada automaticamente, sem alterar as horas registradas.
+
+As dez fases são:
+
+- **Fase 1 — Os Hábitos Menores**: Monstros que representam as micro-hesitações do dia a dia, fáceis de ignorar, mas que drenam os primeiros minutos.
+- **Fase 2 — As Distrações Cotidianas**: Criaturas que se alimentam de pequenos desvios de atenção e rituais de adiamento.
+- **Fase 3 — Os Bloqueios Mentais Leves**: Inimigos que começam a atacar a autoconfiança e a clareza mental do jogador.
+- **Fase 4 — A Erosão do Tempo**: Chefes que aceleram a percepção de perda temporal e geram os primeiros sinais de pânico leve.
+- **Fase 5 — O Labirinto da Fuga**: Entidades que constroem labirintos psicológicos onde o jogador se perde em rationalizações.
+- **Fase 6 — A Ansiedade Antecipatória**: O peso emocional começa a esmagar. O medo do fracasso e o medo do esforço se materializam.
+- **Fase 7 — A Saturação Digital e Mental**: Inimigos colossais alimentados pelo excesso de informação, dopamina barata e colapso de atenção.
+- **Fase 8 — O Abismo da Inércia Crônica**: O jogador enfrenta a paralisia profunda, onde o corpo e a mente parecem de pedra, incapazes de iniciar qualquer movimento.
+- **Fase 9 — A Véspera do Colapso**: A fase final de crise. O prazo final estourou ou está prestes a estourar de forma catastrófica. O pânico produtivo supremo.
+- **Fase 10 — Os Chefes Supremos do Domínio da Procrastinação**: As divindades primordiais da inércia, do tempo perdido e da auto-sabotagem em escala cósmica.

@@ -27,3 +27,19 @@
 
 /* v22 — menu compacto e controles somente com ícones */
 .header-icons{display:flex;align-items:center;gap:8px;margin-left:auto}.icon-button{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-width:44px;border:1px solid var(--line);border-radius:12px;background:var(--soft);color:var(--text);text-decoration:none;cursor:pointer}.icon-button svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.icon-button:hover{background:var(--line)}.app-footer{display:flex;justify-content:center;align-items:center;gap:12px;border-top:1px solid var(--line);padding:16px;margin:30px auto 0}.app-footer .icon-button{padding:0;text-decoration:none}.app-footer img{width:25px;height:25px;object-fit:contain}.menu-drawer nav{gap:1px}.menu-drawer nav button,.menu-section button{padding:7px 12px;min-height:36px;line-height:1.2}.menu-section{margin-top:8px;padding-top:7px}.menu-heading{margin-bottom:7px}.menu-drawer{padding:12px 14px}.menu-operations{display:flex;flex-direction:column;gap:1px}.menu-drawer nav button.active{border-left-width:3px}@media(max-width:480px){.top{padding:9px 12px}.brand{font-size:1.15rem}.brand-logo{width:34px;height:34px}.header-icons{gap:5px}.icon-button{width:40px;height:40px;min-width:40px}}@media print{.app-footer{display:none!important}}
+
+/* Arena v25 — fases e descrições */
+.arena-tier{border:1px solid var(--line);border-radius:14px;margin:12px 0;background:var(--soft);overflow:hidden}
+.arena-tier>summary{cursor:pointer;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:16px;font-weight:800;list-style-position:inside}
+.arena-tier>summary small{font-weight:600;color:var(--muted)}
+.arena-tier[open]>summary{border-bottom:1px solid var(--line)}
+.arena-tier-desc{margin:14px 16px;color:var(--muted);font-style:italic}
+.arena-list{padding:0 12px 12px;display:grid;gap:8px}
+.arena-enemy{border:1px solid var(--line);border-radius:11px;background:var(--panel);padding:12px}
+.arena-current{border:2px solid var(--color-4)}
+.arena-enemy-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.arena-enemy-heading span{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700}
+.arena-enemy small{color:var(--muted)}
+.arena-note{margin:7px 0;color:var(--muted)}
+.arena-phase{font-weight:800;color:var(--text)}
+@media(max-width:600px){.arena-tier>summary{display:block}.arena-tier>summary small{display:block;margin-top:5px}.arena-enemy-heading{display:block}.arena-enemy-heading span{display:block;margin-top:5px}}
