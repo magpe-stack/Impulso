@@ -516,3 +516,8 @@ O menu lateral apresenta, nesta ordem: **Início**, **Novo**, **Projetos**, **Ar
 - No rodapé, quatro ícones dão acesso ao **site oficial**, **GitHub**, **Ajuda/Manual** e **Sobre**. A opção Sobre apresenta uma breve descrição do aplicativo.
 
 As referências HTML originais às imagens `ImpulsoCover.png` e `logo.svg` permanecem preservadas neste Manual.
+
+
+## Atualização v23 — Entrada manual com datas independentes
+
+A Entrada Manual permite escolher separadamente dia, mês, ano, hora e minuto do início e do término. É possível registrar atividades que começam e terminam no mesmo dia ou atravessam a meia-noite. O término deve ser posterior ao início e não pode estar no futuro. O título permanece limitado a 50 caracteres. Os registros conservam timestamps completos no Histórico, nos backups e nas exportações. O total diário é distribuído conforme o tempo efetivamente trabalhado em cada data; o registro é listado em Meu Dia correspondente à data de início.
