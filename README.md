@@ -314,3 +314,8 @@ O menu lateral agora apresenta os grupos Início–Meu Dia, Ponto–Entrada, Gua
 A página **Configuração** oferece três identidades visuais independentes do modo claro/escuro: **Impulso Original**, **Impulso Vinho** e **Impulso Blue Sky**. A Blue Sky utiliza a harmonia análoga Itten (turquesa e azuis), com os 12 tokens cromáticos oficiais definidos em `theme-impulso-analogo.css`. A seleção é salva no `localStorage` e não altera projetos, hábitos ou registros.
 
 Os temas são carregados localmente e incluídos no cache offline. Acessibilidade deve ser conferida nas telas reais em ambos os modos; cores de estados não devem ser a única indicação de significado.
+
+
+## Impulso 45 — Impulso Trinity
+
+A página **Configuração** passa a oferecer quatro identidades: **Impulso Original**, **Impulso Vinho**, **Impulso Blue Sky** e **Impulso Trinity**, cada uma com modos claro e escuro. A Trinity usa harmonia triádica Itten (laranja `#FF6B00`, verde `#00FF6B` e roxo `#6B00FF`) e tokens estendidos no arquivo `theme-impulso-triadico.css`. A seleção fica no armazenamento local do navegador e não altera projetos ou dados. A paleta é independente das demais, e seu CSS está incluído no cache offline.
