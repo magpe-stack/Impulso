@@ -256,3 +256,8 @@ Ao ativar, o aplicativo apresenta uma caixa a cada 15 minutos de uso com a recom
 ### Texto do alerta de backup (versão 34)
 
 > Este PWA armazena os dados dos seus projetos no navegador. Entretanto, esse armazenamento não é permanente nem garantido: as informações podem ser apagadas ao limpar os dados do site, trocar de aparelho ou por políticas de armazenamento do navegador. Por isso, faça backups regularmente para evitar a perda dos seus projetos e registros.
+
+
+### Alerta de hábitos e Elixires (versão 35)
+
+Na página **Alertas!**, ative ou desative independentemente o **Alerta de hábitos e Elixires**. Quando ligado, o aplicativo mostra um lembrete a cada 15 minutos enquanto estiver aberto e visível, com o botão **Ir para Hábitos**. Registrar trabalho por Ponto ou Entrada Manual derrota chefões; para abrir cada cofre, é necessário concluir um hábito cadastrado. Cada conclusão libera no máximo um Elixir de chefão já derrotado. A configuração é salva localmente e os avisos não são notificações do sistema.
