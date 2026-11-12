@@ -242,3 +242,17 @@ Depois de publicar uma nova versão, confira:
 ---
 
 **Impulso — Motor de Produtividade Pessoal.** A constância começa com um pequeno impulso.
+
+
+## Alertas! — lembrete de backup (versão 34)
+
+No menu lateral, abaixo de **Imprimir**, há um separador e o botão **Alertas!**. Ele abre uma página de configurações com uma chave para **Alerta de backup**. Por padrão, o alerta fica desligado.
+
+Ao ativar, o aplicativo apresenta uma caixa a cada 15 minutos de uso com a recomendação de guardar uma cópia dos projetos. A caixa oferece **Guardar backup** (exportação JSON) e **Entendi** (dispensar aviso). A preferência é salva neste navegador e pode ser desligada a qualquer momento.
+
+**Limitações:** o lembrete é local, não é notificação push e só aparece enquanto a página está aberta e visível. Se o navegador suspender a página, o lembrete poderá atrasar e aparecer quando o usuário voltar. O alerta não executa backups automaticamente. O armazenamento local não substitui backups externos.
+
+
+### Texto do alerta de backup (versão 34)
+
+> Este PWA armazena os dados dos seus projetos no navegador. Entretanto, esse armazenamento não é permanente nem garantido: as informações podem ser apagadas ao limpar os dados do site, trocar de aparelho ou por políticas de armazenamento do navegador. Por isso, faça backups regularmente para evitar a perda dos seus projetos e registros.
