@@ -290,3 +290,10 @@ Na página Hábitos, os Elixires Ativos aparecem antes do catálogo, em cartões
 ### Ajustes da versão 40
 
 A rotina aceita até **6 Elixires Ativos** por projeto. No desktop, os cartões são distribuídos em três colunas, com alturas e controles alinhados; em telas menores, a grade se adapta.
+
+
+### Versão 41 — Monitor de Armazenamento Local (12/11/2026)
+
+A página **Armazenamento**, acessível pelo menu lateral, apresenta seis medidores: uso e cota estimados da origem (`navigator.storage.estimate()`), dados do Impulso em `localStorage`, tamanho total do `localStorage` da origem, tamanho aproximado do Cache Storage e tamanho previsto do arquivo JSON do Backup Geral. Abaixo, há distribuição aproximada por projeto, estado de persistência (`navigator.storage.persisted()`), solicitação de persistência (`navigator.storage.persist()`), data da última solicitação de download de Backup Geral e botão para atualizar medições.
+
+**Atenção:** as estimativas de armazenamento não medem RAM ou espaço livre do aparelho. O tamanho do cache e do localStorage pode estar incluído no uso total estimado; não some esses valores. A data registrada para backup significa que o aplicativo solicitou o download, não que o arquivo foi efetivamente salvo. Persistência não impede limpeza manual ou troca de dispositivo. Continue fazendo backups externos. Nenhuma exclusão automática é executada pelo monitor.
