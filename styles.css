@@ -53,3 +53,6 @@
 .codex-entry{position:relative;max-width:600px;padding-top:8px}.codex-stamp{display:inline-block;color:#b42318;border:4px double #b42318;border-radius:8px;padding:5px 16px;font-size:1.5rem;font-weight:900;letter-spacing:.13em;transform:rotate(-7deg);margin:12px 0 20px}
 .codex-effect{padding:12px;border-left:4px solid #b42318;background:var(--soft);border-radius:6px}.codex-wiki{line-height:1.7;white-space:pre-line}
 @media(max-width:420px){.codex-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:8px}.codex-monster{padding:10px;min-height:145px}}
+
+/* v29 — largura compacta do menu lateral; sem alterar navegação */
+.menu-drawer{width:min(240px,calc(100vw - 24px));box-sizing:border-box}
