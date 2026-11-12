@@ -297,3 +297,8 @@ A rotina aceita até **6 Elixires Ativos** por projeto. No desktop, os cartões 
 A página **Armazenamento**, acessível pelo menu lateral, apresenta seis medidores: uso e cota estimados da origem (`navigator.storage.estimate()`), dados do Impulso em `localStorage`, tamanho total do `localStorage` da origem, tamanho aproximado do Cache Storage e tamanho previsto do arquivo JSON do Backup Geral. Abaixo, há distribuição aproximada por projeto, estado de persistência (`navigator.storage.persisted()`), solicitação de persistência (`navigator.storage.persist()`), data da última solicitação de download de Backup Geral e botão para atualizar medições.
 
 **Atenção:** as estimativas de armazenamento não medem RAM ou espaço livre do aparelho. O tamanho do cache e do localStorage pode estar incluído no uso total estimado; não some esses valores. A data registrada para backup significa que o aplicativo solicitou o download, não que o arquivo foi efetivamente salvo. Persistência não impede limpeza manual ou troca de dispositivo. Continue fazendo backups externos. Nenhuma exclusão automática é executada pelo monitor.
+
+
+## Impulso 42 — Identidades visuais
+
+O menu permite escolher **Impulso Original** (cores anteriores preservadas) ou **Impulso Vinho** (paleta Itten). O botão de tema do cabeçalho alterna claro/escuro independentemente da identidade escolhida. A preferência é armazenada localmente e não altera os projetos. O arquivo `theme-impulso.css` contém os tokens da paleta Vinho e regras de compatibilidade; o tema Original permanece em `styles.css`.
