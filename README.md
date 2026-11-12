@@ -592,3 +592,10 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 
 **Impulso — Motor de Produtividade Pessoal.**  
 *A constância começa com um pequeno impulso.*
+
+
+## Impulso Granfino e Inventário de Elixires
+
+A quinta paleta, **Impulso Granfino**, oferece uma identidade grafite, prata e neutros inspirados em Itten, com modos claro e escuro e adaptação cromática do splash cinematográfico. Escolha-a em **Configuração → Identidade visual**.
+
+Em **Hábitos**, o inventário reúne 200 hábitos predefinidos em 25 categorias, busca global por palavra-chave, cartões com Equipar/Equipado e um máximo de seis elixires simultaneamente ativos por projeto. O botão **+ Novo Hábito** cria hábitos personalizados com categoria e duração. Se as seis vagas estiverem ocupadas, o novo hábito permanece salvo e desequipado para uso posterior. Os dados são preservados nos projetos e backups locais.
