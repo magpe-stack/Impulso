@@ -307,3 +307,10 @@ O menu permite escolher **Impulso Original** (cores anteriores preservadas) ou *
 ## Versão 43 — Menu e Configuração
 
 O menu lateral agora apresenta os grupos Início–Meu Dia, Ponto–Entrada, Guardar–Imprimir e Alertar–Configuração, com espaçamento reduzido. A página **Configuração** permite selecionar **Impulso Original** ou **Impulso Vinho**, além do modo claro ou escuro. As preferências são salvas localmente e não alteram os projetos.
+
+
+## Versão 44 — Impulso Blue Sky
+
+A página **Configuração** oferece três identidades visuais independentes do modo claro/escuro: **Impulso Original**, **Impulso Vinho** e **Impulso Blue Sky**. A Blue Sky utiliza a harmonia análoga Itten (turquesa e azuis), com os 12 tokens cromáticos oficiais definidos em `theme-impulso-analogo.css`. A seleção é salva no `localStorage` e não altera projetos, hábitos ou registros.
+
+Os temas são carregados localmente e incluídos no cache offline. Acessibilidade deve ser conferida nas telas reais em ambos os modos; cores de estados não devem ser a única indicação de significado.
