@@ -109,3 +109,13 @@
 .active-elixirs-grid .trash{padding:2px 4px;font-size:1rem}
 .active-elixirs>.help{margin:12px 0 0;font-size:.8rem}
 @media(max-width:680px){.active-elixirs{padding:13px}.active-elixirs-grid{grid-template-columns:1fr}}
+
+/* v40 — seis Elixires Ativos e cartões alinhados */
+@media(min-width:1024px){.active-elixirs-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.active-elixirs-grid{align-items:stretch;grid-auto-rows:1fr}
+.active-elixirs-grid>.list-card{height:100%;display:flex;flex-direction:column;min-height:210px}
+.active-elixirs-grid>.list-card>.row.between{min-height:92px;align-content:start}
+.active-elixirs-grid>.list-card>.pomodoro{margin-top:auto}
+.active-elixirs-grid>.list-card>.pomodoro .row{min-height:32px;align-items:center}
+@media(min-width:681px) and (max-width:1023px){.active-elixirs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.active-elixirs-grid{grid-template-columns:1fr;grid-auto-rows:auto}.active-elixirs-grid>.list-card{min-height:0}.active-elixirs-grid>.list-card>.row.between{min-height:0;margin-bottom:12px}}

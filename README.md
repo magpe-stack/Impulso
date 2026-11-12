@@ -275,13 +275,18 @@ Os controles da página **Alertas!** agora usam caixas de seleção nativas, com
 
 ## Inventário de Elixires — versão 38 (12/11/2026)
 
-A página **Hábitos** apresenta um catálogo offline com **200 sugestões em 25 categorias**, conforme `habitos_elixires_v2.json`. Use a pesquisa global e as categorias horizontais para localizar hábitos. Clique em **Equipar** para adicioná-los à rotina do projeto; o limite é de **5 hábitos ativos**. Os hábitos já existentes são preservados, mesmo que um projeto antigo ultrapasse esse limite; nesse caso, desequipe hábitos antes de adicionar novos.
+A página **Hábitos** apresenta um catálogo offline com **200 sugestões em 25 categorias**, conforme `habitos_elixires_v2.json`. Use a pesquisa global e as categorias horizontais para localizar hábitos. Clique em **Equipar** para adicioná-los à rotina do projeto; o limite é de **6 hábitos ativos**. Os hábitos já existentes são preservados, mesmo que um projeto antigo ultrapasse esse limite; nesse caso, desequipe hábitos antes de adicionar novos.
 
 O botão **+ Novo Hábito** permanece disponível para criar hábitos personalizados, com título (até 50 caracteres), categoria e duração. Os hábitos são salvos com os dados do projeto em `localStorage`, participam do backup geral e do backup individual e funcionam offline. A execução continua sendo feita pelo Pomodoro; concluir um hábito pode desbloquear um Elixir de um chefão já derrotado, respeitando as regras do Altar.
 
 **Observação:** equipar um hábito não equivale a concluí-lo. É necessário executar e finalizar o Pomodoro para registrar a conclusão.
 
 
-### Versão 39 — Elixires Ativos em destaque
+### Versão 40 — Seis Elixires Ativos e cartões alinhados
 
 Na página Hábitos, os Elixires Ativos aparecem antes do catálogo, em cartões compactos e responsivos. O Inventário de Elixires permanece abaixo, com busca, categorias e equipagem. O Pomodoro e as recompensas funcionam como antes.
+
+
+### Ajustes da versão 40
+
+A rotina aceita até **6 Elixires Ativos** por projeto. No desktop, os cartões são distribuídos em três colunas, com alturas e controles alinhados; em telas menores, a grade se adapta.
