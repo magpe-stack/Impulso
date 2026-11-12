@@ -565,3 +565,10 @@ Os arquivos de imagem existentes, inclusive `ImpulsoCover.png` e `logo.svg`, for
 ## Correção do Radar — v28
 
 A função `radarMarks()` foi restaurada para desenhar as 360 marcações externas e 60 marcações internas do Radar. A correção evita o erro de JavaScript que impedia a abertura da tela. O Codex de 200 monstros e os dados de cada projeto permanecem inalterados.
+
+
+## Altar dos Elixires — versão 31
+
+A Arena e o Codex mantêm os 200 chefões e as 10 fases. Ao derrotar um chefão por meio do progresso de trabalho, o seu cofre passa a aguardar um Elixir. Para abrir um cofre, conclua um hábito previamente cadastrado em **Hábitos**. Cada execução concluída abre, no máximo, um cofre já vencido, na ordem dos chefões, revelando uma das 200 frases motivacionais exclusivas fornecidas no catálogo.
+
+As frases ficam na seção **Elixires**, por projeto, com opções de copiar e compartilhar. Os dados ficam no armazenamento local e nos backups. O registro de hábito que concedeu a recompensa deve permanecer no Histórico; sua exclusão revoga o Elixir correspondente. Registros de hábitos anteriores à atualização não liberam recompensas automaticamente. A mecânica não altera a contagem de tempo, XP ou HP da Arena.

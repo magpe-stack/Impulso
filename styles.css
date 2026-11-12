@@ -62,3 +62,12 @@
 .menu-heading{justify-content:flex-start;font-size:1rem;margin:2px 5px 10px;white-space:nowrap}
 .menu-drawer nav button,.menu-section button{padding:7px 10px}
 @media(max-width:480px){.menu-drawer{top:8px;max-height:calc(100dvh - 16px)}}
+
+/* v31 — Altar dos Elixires */
+.elixir-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;margin:14px 0}
+.elixir-card{border:1px solid var(--line,#d5d9e1);border-radius:12px;padding:14px;min-width:0;background:var(--surface,#fff)}
+.elixir-card h3{font-size:1rem;line-height:1.35;margin:8px 0;overflow-wrap:anywhere}
+.elixir-card.elixir-open{border:2px solid #939D4F}
+.elixir-stamp{font-weight:900;letter-spacing:.07em;color:#2e7d32;border:3px solid currentColor;display:inline-block;transform:rotate(-4deg);padding:8px 12px;border-radius:8px;margin:10px 0}
+.elixir-quote{font-size:1.12rem;line-height:1.65;padding:18px;border-left:4px solid #B051B8;background:rgba(176,81,184,.08);border-radius:8px;margin:18px 0;overflow-wrap:anywhere}
+.elixir-reveal{max-width:650px}
