@@ -500,13 +500,13 @@ $('#backupAlertDismiss').addEventListener('click',hideBackupAlert);$('#backupAle
  if(!splash)return;
  const ring=splash.querySelector('.splash-fill');
  const word=splash.querySelector('.splash-wordmark');
- const duration=4000;
+ const duration=window.matchMedia('(prefers-reduced-motion: reduce)').matches?400:3000;
  const started=performance.now();
  function frame(time){
   if(!splash.isConnected)return;
   const progress=Math.max(0,Math.min(1,(time-started)/duration));
   if(ring){ring.style.animation='none';ring.style.strokeDasharray='100';ring.style.strokeDashoffset=String(100-100*progress)}
-  if(word){word.style.animation='none';word.style.opacity=String(Math.min(1,Math.max(0,(progress-.12)/.28)));}
+  // A revelação do nome é controlada pelo CSS para manter a sequência cinematográfica.
   if(progress<1){requestAnimationFrame(frame)}else{
    splash.classList.add('hide');
    setTimeout(()=>splash.remove(),400);
@@ -514,7 +514,7 @@ $('#backupAlertDismiss').addEventListener('click',hideBackupAlert);$('#backupAle
  }
  requestAnimationFrame(frame);
  // Evita splash preso caso a aba fique em segundo plano durante a inicialização.
- setTimeout(()=>{if(splash.isConnected){splash.classList.add('hide');setTimeout(()=>splash.remove(),400)}},5000);
+ setTimeout(()=>{if(splash.isConnected){splash.classList.add('hide');setTimeout(()=>splash.remove(),400)}},4200);
 })();
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 })();
