@@ -180,3 +180,14 @@ body[data-palette="trinity"] #splash{--ignite:#ff9447;--ignite-soft:#00ff6b;--ig
 @media(prefers-reduced-motion:reduce){#splash *,#splash *::before,#splash *::after{animation:none!important;transition:none!important}#splash .splash-wordmark,#splash .splash-core,#splash .splash-logo{opacity:1!important;transform:none!important}#splash .splash-loading-bar{transform:scaleX(1)}#splash .splash-spark,#splash .splash-burst{display:none}}
 @media(max-height:530px){#splash{gap:7px}#splash .splash-progress{width:min(31vh,180px)}#splash .splash-kicker{font-size:.6rem}#splash .splash-wordmark strong{font-size:1.6rem}}
 @media print{#splash{display:none!important}}
+
+/* Saída acessível: página web não pode garantir o fechamento da janela. */
+.menu-drawer .menu-exit{font-weight:750;border-top:1px solid var(--line);border-radius:0;margin-top:4px;padding-top:8px}
+#impulsoExitScreen{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;background:var(--bg,#10141d);color:var(--text,#fff);padding:24px;text-align:center;overflow:auto}
+#impulsoExitScreen[hidden]{display:none!important}
+#impulsoExitScreen .exit-content{width:min(100%,420px);display:grid;justify-items:center;gap:14px}
+#impulsoExitScreen img{object-fit:contain}
+#impulsoExitScreen h1,#impulsoExitScreen h2,#impulsoExitScreen p{margin:0}
+#impulsoExitScreen p{line-height:1.6}
+#impulsoExitScreen button{margin-top:12px}
+@media print{#impulsoExitScreen{display:none!important}}

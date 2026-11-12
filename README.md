@@ -102,7 +102,7 @@ O menu lateral é aberto pelo botão no cabeçalho. Ele está organizado em quat
 | Jornada e projetos | **Início · Novo · Projetos · Arena · Codex · Elixires · Radar · Meu Dia** |
 | Trabalho e rotina | **Ponto · Hábitos · Entrada** |
 | Segurança e documentos | **Guardar · Restaurar · Imprimir** |
-| Preferências e diagnóstico | **Alertar · Armazenamento · Configuração** |
+| Preferências e diagnóstico | **Alertar · Armazenamento · Configuração · Sair** |
 
 O nome **Impulso** fica destacado no alto do menu. Os itens têm espaçamento compacto para aproveitar melhor a altura disponível; em telas muito baixas, pode ser necessário rolar o painel. Para fechá-lo, utilize o botão correspondente, toque fora dele ou pressione **Esc**, quando disponível.
 
@@ -394,6 +394,12 @@ O navegador pode permitir solicitar armazenamento persistente. Se concedido, iss
 - O tamanho de um projeto é uma aproximação baseada na serialização de seus dados.
 - A data do último backup significa **download solicitado**, não confirmação de arquivo salvo.
 - O painel não exclui registros nem executa limpeza automática.
+
+## Sair do aplicativo
+
+O botão **Sair** aparece no final do menu lateral, imediatamente abaixo de **Configuração**. Ao selecioná-lo, o Impulso solicita confirmação. **Cancelar** mantém a navegação normalmente; **Sair do aplicativo** apresenta uma tela de despedida com a opção **Voltar ao Impulso**.
+
+Em aplicativos instalados, o Impulso tenta fechar a janela, quando o navegador permite. Em abas comuns, os navegadores geralmente proíbem o fechamento programático; nesse caso, feche a aba manualmente. A tela de saída não apaga projetos, hábitos ou registros. Se houver um Ponto em andamento, ele não será automaticamente encerrado: volte e finalize-o quando desejar.
 
 ## 21. Configuração: paletas e aparência
 
