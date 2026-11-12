@@ -500,7 +500,7 @@ $('#backupAlertDismiss').addEventListener('click',hideBackupAlert);$('#backupAle
  if(!splash)return;
  const ring=splash.querySelector('.splash-fill');
  const word=splash.querySelector('.splash-wordmark');
- const duration=window.matchMedia('(prefers-reduced-motion: reduce)').matches?400:3000;
+ const duration=3700; // Duração mínima uniforme, inclusive com movimento reduzido.
  const started=performance.now();
  function frame(time){
   if(!splash.isConnected)return;
@@ -514,7 +514,7 @@ $('#backupAlertDismiss').addEventListener('click',hideBackupAlert);$('#backupAle
  }
  requestAnimationFrame(frame);
  // Evita splash preso caso a aba fique em segundo plano durante a inicialização.
- setTimeout(()=>{if(splash.isConnected){splash.classList.add('hide');setTimeout(()=>splash.remove(),400)}},4200);
+ setTimeout(()=>{if(splash.isConnected){splash.classList.add('hide');setTimeout(()=>splash.remove(),400)}},5200);
 })();
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 })();

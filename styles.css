@@ -146,7 +146,7 @@ body[data-palette="original"] #splash{--ignite:#ff4747;--ignite-soft:#ff9b47;--i
 body[data-palette="vinho"] #splash{--ignite:#ff33dd;--ignite-soft:#ff8bdc;--ignite-glow:rgba(255,51,221,.27)}
 body[data-palette="blue-sky"] #splash{--ignite:#0fffe3;--ignite-soft:#0fa3ff;--ignite-glow:rgba(15,255,227,.26)}
 body[data-palette="trinity"] #splash{--ignite:#ff9447;--ignite-soft:#00ff6b;--ignite-glow:rgba(255,148,71,.3)}
-#splash .splash-stars{position:absolute;inset:0;pointer-events:none;opacity:.4;background-image:radial-gradient(circle at 16% 28%,#fff 0 1px,transparent 2px),radial-gradient(circle at 81% 22%,#fff 0 1px,transparent 2px),radial-gradient(circle at 72% 78%,#fff 0 1px,transparent 2px),radial-gradient(circle at 29% 83%,#fff 0 1px,transparent 2px);background-size:100% 100%;animation:ignite-stars 3s ease-out both}
+#splash .splash-stars{position:absolute;inset:0;pointer-events:none;opacity:.4;background-image:radial-gradient(circle at 16% 28%,#fff 0 1px,transparent 2px),radial-gradient(circle at 81% 22%,#fff 0 1px,transparent 2px),radial-gradient(circle at 72% 78%,#fff 0 1px,transparent 2px),radial-gradient(circle at 29% 83%,#fff 0 1px,transparent 2px);background-size:100% 100%;animation:ignite-stars 3.7s ease-out both}
 #splash .splash-kicker{font-size:clamp(.64rem,2.3vw,.8rem);font-weight:800;letter-spacing:.22em;color:var(--ignite-soft);text-align:center;animation:ignite-kicker .7s both}
 #splash .splash-progress{width:min(62vw,240px);height:auto;aspect-ratio:1;flex:none;position:relative;display:grid;place-items:center;filter:drop-shadow(0 0 14px var(--ignite-glow))}
 #splash .splash-halo{position:absolute;inset:-17%;border-radius:50%;background:radial-gradient(circle,var(--ignite-glow) 0%,transparent 70%);animation:ignite-halo 2s ease-in-out infinite alternate}
@@ -164,7 +164,7 @@ body[data-palette="trinity"] #splash{--ignite:#ff9447;--ignite-soft:#00ff6b;--ig
 #splash .splash-wordmark strong{font-size:clamp(2rem,8vw,3rem);color:#fff!important;text-shadow:0 0 22px var(--ignite-glow);letter-spacing:.16em}
 #splash .splash-wordmark small{font-size:clamp(.72rem,2.8vw,.94rem);color:var(--ignite-soft)!important;letter-spacing:.13em;font-weight:750}
 #splash .splash-loading{width:min(66vw,270px);height:5px;border-radius:10px;background:#3b4558;overflow:hidden;z-index:1}
-#splash .splash-loading-bar{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--ignite),var(--ignite-soft));animation:ignite-load 3s linear both}
+#splash .splash-loading-bar{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--ignite),var(--ignite-soft));animation:ignite-load 3.7s linear both}
 #splash .splash-caption{color:#d0d9e6;font-size:.65rem;font-weight:750;letter-spacing:.15em;z-index:1}
 @keyframes ignite-kicker{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
 @keyframes ignite-stars{from{opacity:0;transform:scale(1.08)}to{opacity:.4;transform:scale(1)}}
