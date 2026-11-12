@@ -280,3 +280,8 @@ A página **Hábitos** apresenta um catálogo offline com **200 sugestões em 25
 O botão **+ Novo Hábito** permanece disponível para criar hábitos personalizados, com título (até 50 caracteres), categoria e duração. Os hábitos são salvos com os dados do projeto em `localStorage`, participam do backup geral e do backup individual e funcionam offline. A execução continua sendo feita pelo Pomodoro; concluir um hábito pode desbloquear um Elixir de um chefão já derrotado, respeitando as regras do Altar.
 
 **Observação:** equipar um hábito não equivale a concluí-lo. É necessário executar e finalizar o Pomodoro para registrar a conclusão.
+
+
+### Versão 39 — Elixires Ativos em destaque
+
+Na página Hábitos, os Elixires Ativos aparecem antes do catálogo, em cartões compactos e responsivos. O Inventário de Elixires permanece abaixo, com busca, categorias e equipagem. O Pomodoro e as recompensas funcionam como antes.

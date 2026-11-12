@@ -157,7 +157,12 @@ function renderHabits(p){
  const pos=old.indexOf('<div class="list-card">');
  const empty=old.indexOf('<section class="panel">Nenhum hábito');
  const at=pos>=0?pos:empty>=0?empty:old.length;
- main.innerHTML=old.slice(0,at)+filters+`<section class="panel"><h2>Elixires Ativos</h2><p class="muted">Use o Pomodoro para registrar cada conclusão. Hábitos antigos permanecem preservados.</p></section>`+old.slice(at);
+ const activeContent=old.slice(at);
+ const helpAt=activeContent.indexOf('<p class="help">');
+ const activeCards=helpAt>=0?activeContent.slice(0,helpAt):activeContent;
+ const activeHelp=helpAt>=0?activeContent.slice(helpAt):'';
+ const activeSection=`<section class="panel active-elixirs"><div class="active-elixirs-head"><div><h2>Elixires Ativos</h2><p class="muted">Execute seus hábitos com o Pomodoro para liberar recompensas.</p></div><strong class="inventory-count">${count}/${MAX_EQUIPPED} Equipados</strong></div><div class="active-elixirs-grid">${activeCards}</div>${activeHelp}</section>`;
+ main.innerHTML=old.slice(0,at)+activeSection+filters;
  renderCatalogResults(p);
  const inactive=p.habits.filter(h=>h.equipped===false&&!h.catalogId);
  if(inactive.length){const section=document.createElement('section');section.className='panel';section.innerHTML='<h2>Hábitos personalizados desequipados</h2>'+inactive.map(h=>`<div class="inventory-inactive"><span>${esc(h.name)} · ${esc(h.category||'Personalizado')}</span><button class="btn small" data-toggle-custom="${h.id}">Reequipar</button></div>`).join('');main.append(section)}
