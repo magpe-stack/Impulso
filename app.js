@@ -39,8 +39,47 @@ function renderHome(p){main.innerHTML=header('Seu próximo impulso começa agora
 function renderProjects(){main.innerHTML=header('Meus Projetos','Cada projeto possui seus próprios registros, hábitos e Arena.')+`<div class="actions">${btn('+ Novo Projeto','new','primary')}${btn('▣ Imprimir lista','printProjects')}</div>`+(state.projects.length?state.projects.map(p=>`<article class="list-card"><div class="row between"><div><h3>${esc(p.name)} ${p.id===state.active?'· Ativo':''}</h3><div class="muted">Criado em ${stamp(p.created)} · ${mins(total(p))}</div></div><div class="row"><button class="btn small" data-open="${p.id}">Abrir</button><button class="btn small" data-rename="${p.id}">Renomear</button><button class="trash" title="Excluir projeto" aria-label="Excluir projeto" data-delete-project="${p.id}">🗑</button></div></div></article>`).join(''):'<p>Nenhum projeto cadastrado.</p>')}
 function recordKind(r){return r.type==='habit'?'Hábito':r.type==='activity'?(r.source==='point'?'Ponto':'Entrada Manual'):'Ponto'}
 function recordName(r){return String(r.name||r.note||'—').slice(0,50)}
-function recordTable(rows){return `<div class="table-wrap"><table><thead><tr><th>Atividade</th><th>Nome</th><th>Início</th><th>Término</th><th aria-label="Excluir"></th></tr></thead><tbody>${rows.map(r=>`<tr><td>${recordKind(r)}</td><td>${esc(recordName(r))}</td><td>${r.type==='legacyEnd'?'—':stamp(r.start)}</td><td>${r.end?stamp(r.end):r.type==='legacyEnd'?stamp(r.start):'—'}</td><td><button class="trash" ${r.pairId?`data-delete-pair="${r.id}|${r.pairId}"`:`data-delete-record="${r.id}"`} title="Excluir registro" aria-label="Excluir registro">🗑</button></td></tr>`).join('')}</tbody></table></div>`}
-function renderDay(p){const groups=new Map;for(const r of historyRows(p)){const k=dateKey(r.start);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r)}const days=[...groups.keys()].sort((a,b)=>{const parse=s=>s.split('-').reverse().join('-');return order==='asc'?parse(a).localeCompare(parse(b)):parse(b).localeCompare(parse(a))});main.innerHTML=header('Meu Dia',esc(p.name))+actions()+`<div class="row between"><p class="muted">Cada atividade aparece no dia em que começou, inclusive quando termina após a meia-noite.</p><label>Ordem <select class="filter" id="order"><option value="asc" ${order==='asc'?'selected':''}>Mais antigos primeiro</option><option value="desc" ${order==='desc'?'selected':''}>Mais recentes primeiro</option></select></label></div>`+(days.length?days.map(day=>`<section class="day"><div class="day-head"><h2>Meu Dia ${day}</h2><div class="row"><strong>Total trabalhado: ${mins(dayTotal(p,day))}</strong><button class="btn small" type="button" data-print-day="${day}" aria-label="Imprimir somente Meu Dia ${day}">▣ Imprimir</button></div></div>${recordTable(groups.get(day).sort((a,b)=>order==='asc'?a.start-b.start:b.start-a.start))}</section>`).join(''):'<section class="panel">Nenhum registro neste projeto. Utilize Ponto ou Entrada Manual.</section>')}
+function recordTable(rows,day=null){return `<div class="table-wrap"><table><thead><tr><th>Atividade</th><th>Nome</th><th>Início</th><th>Término</th><th aria-label="Excluir"></th></tr></thead><tbody>${rows.map(r=>`<tr><td>${recordKind(r)}</td><td>${esc(recordName(r))}${day&&r.end>r.start&&dateKey(r.start)!==dateKey(r.end)?`<div class="muted" style="font-size:.82rem">Neste dia: ${mins(dayPart(r,day))} · Atividade completa: ${duration(r.end-r.start)}</div>`:""}</td><td>${r.type==='legacyEnd'?'—':stamp(r.start)}</td><td>${r.end?stamp(r.end):r.type==='legacyEnd'?stamp(r.start):'—'}</td><td><button class="trash" ${r.pairId?`data-delete-pair="${r.id}|${r.pairId}"`:`data-delete-record="${r.id}"`} title="Excluir registro" aria-label="Excluir registro">🗑</button></td></tr>`).join('')}</tbody></table></div>`}
+function dayGroups(p){
+ const groups=new Map();
+ for(const r of historyRows(p)){
+  const start=Number(r.start),end=Number(r.end);
+  if(!Number.isFinite(start))continue;
+  const add=day=>{if(!groups.has(day))groups.set(day,[]);groups.get(day).push(r)};
+  if(!Number.isFinite(end)||end<=start){add(dateKey(start));continue}
+  let cursor=start;
+  while(cursor<end){
+   add(dateKey(cursor));
+   const d=new Date(cursor),next=new Date(d.getFullYear(),d.getMonth(),d.getDate()+1).getTime();
+   if(next<=cursor)break;
+   cursor=Math.min(end,next);
+  }
+ }
+ return groups;
+}
+function dayPart(r,day){
+ const start=Number(r.start),end=Number(r.end);
+ if(!Number.isFinite(start)||!Number.isFinite(end)||end<=start)return 0;
+ let cursor=start,ms=0;
+ const segments=Array.isArray(r.segments)?r.segments:[[start,end]];
+ for(const segment of segments){
+  if(!Array.isArray(segment)||segment.length!==2)continue;
+  let a=Number(segment[0]),b=Number(segment[1]);
+  while(Number.isFinite(a)&&Number.isFinite(b)&&a<b){
+   const d=new Date(a),next=new Date(d.getFullYear(),d.getMonth(),d.getDate()+1).getTime();
+   const stop=Math.min(b,next);
+   if(dateKey(a)===day)ms+=stop-a;
+   if(stop<=a)break;
+   a=stop;
+  }
+ }
+ return ms;
+}
+function renderDay(p){
+ const groups=dayGroups(p);
+ const days=[...groups.keys()].sort((a,b)=>{const parse=s=>s.split('-').reverse().join('-');return order==='asc'?parse(a).localeCompare(parse(b)):parse(b).localeCompare(parse(a))});
+ main.innerHTML=header('Meu Dia',esc(p.name))+actions()+`<div class="row between"><p class="muted">Atividades que atravessam datas aparecem em cada dia trabalhado. O Histórico mantém um único registro.</p><label>Ordem <select class="filter" id="order"><option value="asc" ${order==='asc'?'selected':''}>Mais antigos primeiro</option><option value="desc" ${order==='desc'?'selected':''}>Mais recentes primeiro</option></select></label></div>`+(days.length?days.map(day=>`<section class="day"><div class="day-head"><h2>Meu Dia ${day}</h2><div class="row"><strong>Total trabalhado: ${mins(dayTotal(p,day))}</strong><button class="btn small" type="button" data-print-day="${day}" aria-label="Imprimir somente Meu Dia ${day}">▣ Imprimir</button></div></div>${recordTable(groups.get(day).sort((a,b)=>order==='asc'?a.start-b.start:b.start-a.start),day)}</section>`).join(''):'<section class="panel">Nenhum registro neste projeto. Utilize Ponto ou Entrada Manual.</section>');
+}
 
 function renderHabits(p){main.innerHTML=header('Hábitos',esc(p.name))+`<div class="actions">${btn('+ Criar hábito','newHabit','primary')}${btn('⏵ Ponto','point')}</div>`+(p.habits.length?p.habits.map(h=>{const t=h.timer,elapsed=t?Math.min(h.minutes*60000,(t.elapsed||0)+(t.runningSince?Math.max(0,now()-t.runningSince):0)):0,remaining=Math.max(0,h.minutes*60000-elapsed);return `<div class="list-card"><div class="row between"><div><h3>${esc(h.name)}</h3><span class="muted">${h.minutes} minutos estipulados · ${p.records.filter(r=>r.habitId===h.id).length} execuções</span></div><button class="trash" title="Excluir hábito" data-delete-habit="${h.id}">🗑</button></div><div class="pomodoro" aria-label="Pomodoro de ${h.minutes} minutos"><strong data-pomodoro="${h.id}">${duration(remaining)}</strong><div class="progress"><span data-pomodoro-progress="${h.id}" style="width:${elapsed/(h.minutes*60000)*100}%"></span></div><div class="row"><button class="btn small" data-habit-control="${h.id}" data-mode="${!t?'start':t.runningSince?'pause':'resume'}">${!t?'▶ Iniciar':t.runningSince?'⏸ Pausar':'▶ Retomar'}</button>${t?`<button class="btn small" data-habit-control="${h.id}" data-mode="finish">✓ Concluir</button><button class="btn small" data-habit-control="${h.id}" data-mode="reset">↺ Reiniciar</button>`:''}</div></div></div>`}).join(''):'<section class="panel">Nenhum hábito criado. Comece adicionando um hábito.</section>')+`<p class="help">O Pomodoro conta o tempo real em execução, com pausa e retomada. Ao concluir, registra somente o tempo efetivamente decorrido (até o limite estipulado), sem duplicar intervalos já contabilizados pelo ponto.</p>`}
 function habitControl(id,mode){const p=project(),h=p?.habits.find(x=>x.id===id);if(!h)return;const t=h.timer;const elapsed=t?(t.elapsed||0)+(t.runningSince?Math.max(0,now()-t.runningSince):0):0;if(mode==='start')h.timer={startedAt:now(),elapsed:0,runningSince:now(),segments:[]};else if(mode==='pause'&&t?.runningSince){t.segments??=[];t.segments.push([t.runningSince,now()]);t.elapsed=elapsed;t.runningSince=null}else if(mode==='resume'&&t&&!t.runningSince)t.runningSince=now();else if(mode==='reset'){if(!ask('Reiniciar o Pomodoro e descartar o tempo desta sessão?'))return;delete h.timer}else if(mode==='finish'&&t){if(t.runningSince){t.segments??=[];t.segments.push([t.runningSince,now()])}const seg=(t.segments||[]).filter(([a,b])=>b>a);const measured=seg.reduce((sum,[a,b])=>sum+b-a,0);if(!measured){alert('Inicie o Pomodoro antes de concluir.');return}if(!ask('Concluir este hábito e registrar o tempo efetivamente executado?'))return;const end=now();p.records.push({id:uid(),type:'habit',habitId:h.id,name:h.name,start:seg[0][0],end,segments:seg,note:'',source:'pomodoro'});delete h.timer}save();render()}
@@ -176,18 +215,20 @@ function printReport(projectsOnly=false,selectedDay=null){
  const previous=main.innerHTML,p=project();
  if(projectsOnly){main.innerHTML=header('Lista de projetos',`Emitido em ${stamp(now())}`)+`<section class="panel">${state.projects.map(x=>`<p><strong>${esc(x.name)}</strong> — ${stamp(x.created)} — ${mins(total(x))}</p>`).join('')}</section>`}
  else if(p){
-  const groups=new Map;
-  for(const r of historyRows(p)){const k=dateKey(r.start);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r)}
+  const groups=dayGroups(p);
   if(selectedDay&&!/^\d{2}-\d{2}-\d{4}$/.test(selectedDay))return;
   if(selectedDay&&!groups.has(selectedDay)){toast('Nenhum registro para imprimir nesta data.');return}
   const days=[...groups.keys()].filter(d=>!selectedDay||d===selectedDay).sort((a,b)=>a.split('-').reverse().join('-').localeCompare(b.split('-').reverse().join('-')));
   const summary=selectedDay?`<section class="panel"><h2>Resumo do dia</h2><div class="grid">${metric(mins(dayTotal(p,selectedDay)),'Tempo trabalhado no dia')}${metric(groups.get(selectedDay).length,'Registros do dia')}</div></section>`:`<section class="panel"><h2>Resumo do projeto</h2><div class="grid">${metric(mins(total(p)),'Tempo acumulado')}${metric(p.records.filter(r=>r.type==='habit').length,'Hábitos realizados')}${metric(bossStatus(p).done+'/'+BOSS_COUNT,'Chefões derrotados')}${metric((total(p)/36000000000).toFixed(3)+'%','Maestria')}</div></section>`;
-  main.innerHTML=header(selectedDay?`Meu Dia ${selectedDay} — ${esc(p.name)}`:`Relatório — ${esc(p.name)}`,`Emitido em ${stamp(now())}`)+summary+days.map(day=>`<section class="day"><div class="day-head"><h2>Meu Dia ${day}</h2><strong>Total trabalhado: ${mins(dayTotal(p,day))}</strong></div><table><thead><tr><th>Atividade</th><th>Nome</th><th>Início</th><th>Término</th></tr></thead><tbody>${groups.get(day).sort((a,b)=>a.start-b.start).map(r=>`<tr><td>${recordKind(r)}</td><td>${esc(recordName(r))}</td><td>${r.type==='legacyEnd'?'—':stamp(r.start)}</td><td>${r.end?stamp(r.end):r.type==='legacyEnd'?stamp(r.start):'—'}</td></tr>`).join('')}</tbody></table></section>`).join('');
+  main.innerHTML=header(selectedDay?`Meu Dia ${selectedDay} — ${esc(p.name)}`:`Relatório — ${esc(p.name)}`,`Emitido em ${stamp(now())}`)+summary+days.map(day=>`<section class="day"><div class="day-head"><h2>Meu Dia ${day}</h2><strong>Total trabalhado: ${mins(dayTotal(p,day))}</strong></div><table><thead><tr><th>Atividade</th><th>Nome</th><th>Início</th><th>Término</th></tr></thead><tbody>${groups.get(day).sort((a,b)=>a.start-b.start).map(r=>`<tr><td>${recordKind(r)}</td><td>${esc(recordName(r))}${r.end>r.start&&dateKey(r.start)!==dateKey(r.end)?`<div class="muted">Neste dia: ${mins(dayPart(r,day))} · Total da atividade: ${duration(r.end-r.start)}</div>`:""}</td><td>${r.type==='legacyEnd'?'—':stamp(r.start)}</td><td>${r.end?stamp(r.end):r.type==='legacyEnd'?stamp(r.start):'—'}</td></tr>`).join('')}</tbody></table></section>`).join('');
  }else return;
  const restore=()=>{window.removeEventListener('afterprint',restore);render()};
  window.addEventListener('afterprint',restore);
  window.print();
  setTimeout(()=>{if(main.innerHTML!==previous)restore()},1500);
+}
+function about(){
+ show(`<div class="about-content"><h2>Sobre o Impulso</h2><p><strong>Impulso — Motor de Produtividade Pessoal</strong></p><p>Versão 24 · PWA offline-first para acompanhar projetos independentes, trabalho, hábitos e a jornada simbólica de 10.000 horas.</p><p>Os registros são armazenados neste navegador. Para preservar seus dados, utilize regularmente <strong>Guardar</strong> (backup geral) e exporte seus projetos.</p><p>Em <strong>Meu Dia</strong>, atividades que atravessam a meia-noite aparecem em todos os dias envolvidos. O tempo de cada dia é calculado separadamente, enquanto o Histórico mantém o registro original.</p><p>O aplicativo inclui Ponto, Entrada Manual, Hábitos, Radar e Arena com 100 chefões. O progresso não é uma garantia de domínio profissional.</p><p><a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">Repositório GitHub</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual de uso</a></p><div class="actions"><button class="btn primary" type="button" data-cancel>Fechar</button></div></div>`);
 }
 function action(name){switch(name){case 'new':newProject();break;case 'projects':page='projetos';render();break;case 'day':page='dia';render();break;case 'radar':page='radar';render();break;case 'point':point();break;case 'manual':manual();break;case 'habitPage':page='habitos';render();break;case 'backup':backup();break;case 'export':exportProject();break;case 'import':$('#importFile').click();break;case 'importProject':$('#importProjectFile').click();break;case 'print':printReport();break;case 'printProjects':printReport(true);break;case 'newHabit':newHabit();break;case 'cancel':close();break}}
 const menuToggle=$('#menuToggle'),menuDrawer=$('#menuDrawer'),menuBackdrop=$('#menuBackdrop'),menuClose=$('#menuClose');

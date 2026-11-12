@@ -152,15 +152,15 @@ O Ponto suporta naturalmente trabalhos que começam em um dia e terminam no segu
 | Término | 11/11/2026 — 01:00 |
 | Duração | 2 horas |
 
-A atividade permanece **em uma única linha**, associada à data em que começou. O cálculo dos totais diários divide o tempo pelo calendário: nesse exemplo, **1 hora no dia 10** e **1 hora no dia 11**.
+A atividade permanece **em um único registro original**, mas é exibida nos cartões de todos os dias envolvidos. O cálculo dos totais diários divide o tempo pelo calendário: nesse exemplo, **1 hora no dia 10** e **1 hora no dia 11**.
 
 ### 5.3 Meu Dia
 
-**Meu Dia** organiza as atividades do projeto em cartões intitulados `Meu Dia DD-MM-AAAA`. Cada atividade aparece no cartão de sua **data de início**. Os cartões podem ser ordenados dos mais antigos aos mais recentes ou vice-versa.
+**Meu Dia** organiza as atividades do projeto em cartões intitulados `Meu Dia DD-MM-AAAA`. Cada atividade aparece em todos os cartões dos dias em que houve trabalho, sem duplicar o registro original. Os cartões podem ser ordenados dos mais antigos aos mais recentes ou vice-versa.
 
 As colunas são exatamente **Atividade | Nome | Início | Término | 🗑**, nessa ordem. Os tipos de atividade são **Ponto**, **Hábito** e **Entrada Manual**. O campo **Nome** exibe o nome do trabalho ou do hábito, e os horários apresentam data e hora completas.
 
-O **total trabalhado** de cada dia considera a parte de todos os intervalos que realmente ocorreu naquela data, inclusive quando uma atividade começou no dia anterior. Por isso, um dia pode ter tempo contabilizado mesmo sem possuir uma atividade iniciada nele.
+O **total trabalhado** de cada dia considera a parte de todos os intervalos que realmente ocorreu naquela data, inclusive quando uma atividade começou no dia anterior. Uma atividade iniciada no dia anterior também aparece no cartão do dia seguinte, com a duração correspondente àquele dia.
 
 A lixeira exclui o registro, após confirmação, e recalcula os totais e a Arena. Não há desfazer.
 
@@ -169,14 +169,14 @@ A lixeira exclui o registro, após confirmação, e recalcula os totais e a Aren
 A **Entrada Manual** serve para registrar um trabalho que já aconteceu, sem usar o cronômetro do Ponto. Seu formulário é independente.
 
 1. Abra **Entrada Manual** pelo menu ou pelos atalhos.
-2. Informe a **data** (dia, mês e ano).
+2. Informe a **data de início** (dia, mês e ano).
 3. Digite o **nome da atividade**, com até **50 caracteres**.
-4. Selecione as horas e os minutos de **início** e **término**.
+4. Selecione a **hora de início**, a **data de término** e a **hora de término**.
 5. Clique em **Lançar entrada**.
 
 O formulário atual **não possui campo Observação**. O nome informado aparece na coluna **Nome**, e a coluna **Atividade** exibe **Entrada Manual**.
 
-**Limitação importante:** o formulário manual atual exige início e término **na mesma data** e não permite um término futuro. Para trabalhos que cruzam a meia-noite, use o **Ponto** em tempo real ou faça lançamentos manuais separados por dia. Os horários manuais têm precisão de minutos.
+**Na versão 24**, o formulário manual permite selecionar separadamente a data de início e a data de término, inclusive quando a atividade atravessa a meia-noite. Os horários manuais têm precisão de minutos; o término precisa ser posterior ao início e não pode estar no futuro.
 
 O aplicativo impede um intervalo manual cujo término não seja posterior ao início. Não há edição direta: para corrigir, exclua o registro incorreto e crie outro.
 
@@ -211,7 +211,7 @@ Clique na lixeira ao lado do hábito. A definição do hábito é excluída, mas
 
 ## 8. Registros e exclusões em Meu Dia
 
-O **Meu Dia** reúne **todos os registros do projeto ativo desde sua criação**, separados em cartões por data de início. É possível alterar a ordem dos dias.
+O **Meu Dia** reúne **todos os registros do projeto ativo desde sua criação**, separados em cartões por dia efetivamente trabalhado. É possível alterar a ordem dos dias.
 
 Meu Dia utiliza as seguintes colunas:
 
@@ -335,7 +335,7 @@ Exemplo: Ponto das 10h às 11h e Hábito das 10h30 às 11h representam **1 hora 
 
 ### 14.3 Virada da meia-noite
 
-Um trabalho iniciado às 23h30 e terminado às 00h30 dura **1 hora**, mas contribui com **30 minutos para cada dia civil**. A atividade completa aparece no cartão de **Meu Dia** correspondente à data de início, com os dois horários.
+Um trabalho iniciado às 23h30 e terminado às 00h30 dura **1 hora**, mas contribui com **30 minutos para cada dia civil**. A atividade aparece nos cartões de **Meu Dia** de ambas as datas, com os dois horários completos e a parcela diária correspondente.
 
 ### 14.4 Precisão
 
@@ -521,3 +521,8 @@ As referências HTML originais às imagens `ImpulsoCover.png` e `logo.svg` perma
 ## Atualização v23 — Entrada manual com datas independentes
 
 A Entrada Manual permite escolher separadamente dia, mês, ano, hora e minuto do início e do término. É possível registrar atividades que começam e terminam no mesmo dia ou atravessam a meia-noite. O término deve ser posterior ao início e não pode estar no futuro. O título permanece limitado a 50 caracteres. Os registros conservam timestamps completos no Histórico, nos backups e nas exportações. O total diário é distribuído conforme o tempo efetivamente trabalhado em cada data; o registro é listado em Meu Dia correspondente à data de início.
+
+
+## Atualização v24 — Distribuição diária e Sobre o app
+
+Atividades iniciadas e concluídas no mesmo dia mantêm o comportamento anterior. Atividades que atravessam datas aparecem em cada cartão **Meu Dia** envolvido, com a duração daquele dia e a duração total; o Histórico, o armazenamento, os backups e a progressão preservam um único registro original. O botão **i** no rodapé abre a janela **Sobre o Impulso**, com informações do aplicativo, armazenamento local e links para o manual e repositório.
