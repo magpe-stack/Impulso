@@ -122,3 +122,17 @@
 
 /* v41 — Monitor de Armazenamento Local */
 .storage-toolbar{align-items:center;gap:12px;flex-wrap:wrap}.storage-toolbar h2{margin:0}.storage-toolbar p{margin:4px 0 0}.storage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.storage-card{min-width:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface,#f8fafc)}.storage-card h3{font-size:.88rem;margin:0 0 12px;overflow-wrap:anywhere}.storage-card strong{display:block;font-size:clamp(1.15rem,2.6vw,1.7rem);overflow-wrap:anywhere}.storage-card p{font-size:.78rem;line-height:1.45;color:var(--muted);margin:8px 0 0}.storage-usage{margin-top:16px}.storage-track{height:12px;border-radius:999px;overflow:hidden;background:var(--line,#dbe2ed);margin:10px 0}.storage-track span{display:block;height:100%;background:var(--color-4,#f08);border-radius:inherit}.storage-projects{display:grid;gap:6px}.storage-project{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}.storage-project span{min-width:0;overflow-wrap:anywhere}.storage-project strong{white-space:nowrap}@media(max-width:850px){.storage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.storage-grid{grid-template-columns:1fr}.storage-card{padding:12px}}
+
+/* Impulso 43 — menu compacto e configuração de paletas */
+.menu-drawer{display:flex;flex-direction:column;gap:0;padding:8px 11px;max-height:calc(100dvh - 12px);overflow-y:auto;scrollbar-width:thin}
+.menu-heading{margin:0 0 3px;padding:2px 9px 6px;border-bottom:1px solid var(--line);font-size:1.15rem;line-height:1.2}
+.menu-heading strong{color:#940065;letter-spacing:.035em}
+body.dark .menu-heading strong{color:#FF3377}
+body[data-palette="vinho"] .menu-heading strong{color:#940065}
+body[data-palette="vinho"].dark .menu-heading strong{color:#33FFBB}
+.menu-drawer nav{gap:0!important}
+.menu-drawer nav button,.menu-drawer .menu-section button{min-height:30px;padding:4px 9px;line-height:1.15;font-size:.86rem;border-radius:6px}
+.menu-drawer .menu-section{margin-top:4px;padding-top:4px;gap:0}
+.menu-drawer .menu-section:last-child{padding-bottom:2px}
+@media(max-height:650px){.menu-drawer{padding:5px 9px}.menu-drawer nav button,.menu-drawer .menu-section button{min-height:26px;padding:3px 8px;font-size:.82rem}.menu-drawer .menu-section{margin-top:2px;padding-top:2px}}
+.settings-palette{max-width:760px}.settings-palette h2{margin:12px 0}.palette-options,.appearance-options{border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:10px}.palette-options legend,.appearance-options legend{padding:0 5px;font-weight:650}.palette-option{display:flex;align-items:flex-start;gap:12px;padding:12px;border:1px solid var(--line);border-radius:10px;cursor:pointer}.palette-option:has(input:checked){outline:2px solid var(--focus);outline-offset:1px}.palette-option>span{display:grid;gap:5px}.palette-option small{color:var(--muted)}.palette-swatches{display:flex;gap:5px}.palette-swatches i{width:30px;height:16px;border-radius:4px}.palette-swatches.original i:nth-child(1){background:#ff0000}.palette-swatches.original i:nth-child(2){background:#10141d}.palette-swatches.original i:nth-child(3){background:#ffffff;border:1px solid #888}.palette-swatches.vinho i:nth-child(1){background:#940065}.palette-swatches.vinho i:nth-child(2){background:#87008A}.palette-swatches.vinho i:nth-child(3){background:#FF3377}.appearance-options{grid-template-columns:1fr 1fr}.appearance-options legend{grid-column:1/-1}

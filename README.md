@@ -302,3 +302,8 @@ A página **Armazenamento**, acessível pelo menu lateral, apresenta seis medido
 ## Impulso 42 — Identidades visuais
 
 O menu permite escolher **Impulso Original** (cores anteriores preservadas) ou **Impulso Vinho** (paleta Itten). O botão de tema do cabeçalho alterna claro/escuro independentemente da identidade escolhida. A preferência é armazenada localmente e não altera os projetos. O arquivo `theme-impulso.css` contém os tokens da paleta Vinho e regras de compatibilidade; o tema Original permanece em `styles.css`.
+
+
+## Versão 43 — Menu e Configuração
+
+O menu lateral agora apresenta os grupos Início–Meu Dia, Ponto–Entrada, Guardar–Imprimir e Alertar–Configuração, com espaçamento reduzido. A página **Configuração** permite selecionar **Impulso Original** ou **Impulso Vinho**, além do modo claro ou escuro. As preferências são salvas localmente e não alteram os projetos.

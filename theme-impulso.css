@@ -13,8 +13,4 @@ body[data-palette="vinho"] .tag.end{background:#FF5533;color:#10141D}
 body[data-palette="vinho"] .tag.habit{background:#038A00;color:#FFFFFF}
 body[data-palette="vinho"] .storage-track span{background:#87008A}
 body[data-palette="vinho"] :is(button,a,input,select,textarea):focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-.palette-picker{display:grid;gap:6px;padding:12px 10px;margin:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.palette-picker label{font-size:.86rem;font-weight:700;color:var(--text)}
-.palette-picker select{width:100%;min-height:44px;padding:8px 10px;border:2px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);font:inherit}
-.palette-picker small{color:var(--muted);line-height:1.4}
 @media(prefers-reduced-motion:reduce){body[data-palette="vinho"] *,body[data-palette="vinho"] *::before,body[data-palette="vinho"] *::after{scroll-behavior:auto}}
