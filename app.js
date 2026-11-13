@@ -347,8 +347,17 @@ function dashboardActivityMap(p){
 function renderDashboard(p){
  const status=currentActionStatus(p);
  const metricCard=(value,label,target,cls='')=>`<button type="button" class="dash-metric ${cls}" data-page="${target}" title="Abrir ${label}"><span class="dash-number">${esc(value)}</span><span class="dash-label">${esc(label)}</span></button>`;
- const commands=[['point','Ponto','◉','Registrar trabalho'],['foco','Foco','◎','Planejar concentração'],['habitPage','Hábitos','◈','Executar hábitos'],['manual','Entradas','✎','Lançar atividade']];
- const commandsHtml=commands.map(([action,label,icon,desc])=>`<button type="button" class="dash-command" data-action="${action}" ${p?'':'disabled'} aria-label="${desc}"><span class="dash-command-icon" aria-hidden="true">${icon}</span><span>${label}</span></button>`).join('');
+ const commands=[
+ ['action','point','Ponto','◉','Registrar trabalho'],
+ ['page','foco','Foco','◎','Abrir sessões de Foco'],
+ ['action','habitPage','Hábitos','◈','Executar hábitos'],
+ ['action','manual','Entradas','✎','Lançar atividade'],
+ ['page','projetos','Projetos','▦','Abrir lista de projetos'],
+ ['action','new','Novo','＋','Criar um novo projeto'],
+ ['page','calendario','Calendário','▣','Abrir calendário'],
+ ['page','configuracao','Configurações','⚙','Abrir configurações']
+ ];
+ const commandsHtml=commands.map(([kind,target,label,icon,desc])=>`<button type="button" class="dash-command" data-${kind}="${target}" aria-label="${desc}"><span class="dash-command-icon" aria-hidden="true">${icon}</span><span>${label}</span></button>`).join('');
  if(!p){main.innerHTML=`<section class="dashboard" aria-label="Central de Comando"><div class="dash-heading"><div><span class="dash-eyebrow">IMPULSO · CENTRAL DE COMANDO</span><h1>Dashboard</h1></div><span class="dash-signal">SEM PROJETO</span></div><div class="dash-empty"><strong>Pronto para a próxima missão?</strong><p>Crie ou abra um projeto para ativar os instrumentos da cabine.</p><div class="dash-empty-actions"><button class="dash-command" data-action="new">Novo projeto</button><button class="dash-command" data-page="projetos">Projetos</button></div></div></section>`;return}
  const ms=total(p,true),today=dayTotalLive(p,dateKey(now())),streak=productivityStreaks(p),completed=milestoneCount(ms);
  const hrs=ms/3600000,next=completed<100?MILESTONES[completed]:null;
@@ -818,25 +827,27 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão:</strong> 58<br><strong>Atualização:</strong> 13 de novembro de 2026</p>
- <p>PWA pessoal, offline-first e sem conta obrigatória. Organize projetos independentes, registre tempo e hábitos e acompanhe uma jornada simbólica de <strong>10.000 horas</strong>.</p>
- <h3>Recursos do aplicativo</h3>
+ <p><strong>Versão:</strong> 87<br><strong>Atualização:</strong> 13 de novembro de 2026</p>
+ <p>Aplicativo progressivo (PWA), offline-first, para organizar projetos independentes, registrar trabalho e hábitos e acompanhar a jornada simbólica de 10.000 horas.</p>
+ <h3>Central de Comando</h3>
+ <p>O <strong>Dashboard</strong> apresenta seis indicadores do projeto, atividade em andamento, progresso da próxima meta e um <strong>Mapa de Atividade</strong> dos últimos 365 dias. Cada quadradinho corresponde a um dia; a intensidade da cor indica o tempo efetivamente registrado, sem duplicar intervalos simultâneos. O painel oferece oito atalhos: Ponto, Foco, Hábitos, Entradas, Projetos, Novo, Calendário e Configurações.</p>
+ <h3>Principais recursos</h3>
  <ul>
- <li><strong>Projetos:</strong> espaços independentes, com registros, hábitos e conquistas próprios.</li>
- <li><strong>Ponto e Entradas retroativas:</strong> registro de trabalhos e hábitos anteriores, inclusive períodos que atravessam a meia-noite.</li>
- <li><strong>Meu Dia:</strong> registros por data e histórico, com impressão.</li>
- <li><strong>Hábitos:</strong> Pomodoro, inventário com 200 sugestões em 25 categorias, pesquisa e hábitos personalizados; até seis equipados.</li>
- <li><strong>Arena e Codex:</strong> campanha de 200 chefões e enciclopédia de adversários.</li>
- <li><strong>Elixires:</strong> 200 recompensas colecionáveis liberadas por cofres associados a chefões e conclusões de hábitos.</li>
- <li><strong>Visão:</strong> foguete revelado em 200 quadradinhos escolhidos pelo usuário, com créditos obtidos dos Elixires colecionáveis.</li>
- <li><strong>Radar e Estatísticas:</strong> progresso temporal, análises por projeto e globais, gráficos e relatórios.</li>
- <li><strong>Armazenamento e backups:</strong> diagnóstico local, exportação e restauração em JSON.</li>
- <li><strong>Alertas:</strong> lembretes opcionais enquanto o aplicativo está aberto.</li>
- <li><strong>Configuração:</strong> sete identidades cromáticas, modos claro/escuro e splash cinematográfico Ignição.</li>
+ <li><strong>Ponto:</strong> registra o início e o término de trabalhos, inclusive atividades que atravessam a meia-noite.</li>
+ <li><strong>Foco:</strong> sessões planejadas com objetivo, pausas, duração efetiva e avaliação da entrega.</li>
+ <li><strong>Hábitos:</strong> temporizadores, hábitos personalizados, catálogo e progresso individual.</li>
+ <li><strong>Entradas:</strong> lançamento manual de atividades anteriores.</li>
+ <li><strong>Meu Dia e Calendário:</strong> consulta diária e navegação pelo histórico de trabalho.</li>
+ <li><strong>Motor de Propulsão:</strong> graus acumulados, Giros e reprodução visual pela Ignição.</li>
+ <li><strong>Arena, Codex, Elixires, Cerimônias e Visão:</strong> conquistas e progressão gamificada.</li>
+ <li><strong>Estatísticas:</strong> análises e relatórios de produtividade.</li>
+ <li><strong>Configurações:</strong> sete identidades cromáticas, tema claro/escuro e alertas opcionais.</li>
+ <li><strong>Armazenamento e backups:</strong> informações locais, exportação e restauração em JSON.</li>
  </ul>
- <p><strong>Privacidade:</strong> os registros permanecem neste navegador, sem sincronização automática. Faça backups e guarde cópias externas; limpar os dados do site pode apagar seus projetos.</p>
- <p><strong>Atenção:</strong> a meta de 10.000 horas é simbólica, não certifica maestria. O Impulso não é um relógio de ponto homologado.</p>
- <p><a href="https://magpe-stack.github.io/Impulso/" target="_blank" rel="noopener noreferrer">Abrir aplicativo</a> · <a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">Código-fonte</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual completo</a></p>
+ <h3>Privacidade e segurança dos dados</h3>
+ <p>Os dados permanecem no armazenamento deste navegador, sem sincronização automática. Limpar os dados do site, trocar de aparelho ou reinstalar o navegador pode causar perda dos projetos. <strong>Faça backups regularmente e guarde cópias em local seguro.</strong></p>
+ <p><strong>Importante:</strong> a jornada de 10.000 horas é uma referência motivacional; não comprova maestria profissional. O aplicativo não substitui um sistema oficial de controle de jornada.</p>
+ <p><a href="https://magpe-stack.github.io/Impulso/" target="_blank" rel="noopener noreferrer">Site do Impulso</a> · <a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">Código-fonte</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual completo</a></p>
  <div class="actions"><button class="btn primary" type="button" data-cancel>Fechar</button></div></div>`);
 }
 function requestAppExit(){

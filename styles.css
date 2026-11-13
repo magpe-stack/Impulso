@@ -476,3 +476,36 @@ body.dashboard-mode>.app-footer{display:none!important}
 @media(max-width:600px){.dashboard{gap:4px;padding:5px}.dash-metrics{height:clamp(98px,19vh,136px)}.dash-number{font-size:clamp(.91rem,2.25vh,1.2rem)}.dash-label{font-size:clamp(.7rem,1.65vh,.85rem)}.dash-heat-weekdays{width:16px;font-size:.53rem}.dash-heat-cells{gap:1px}.dash-activity{padding:5px 4px}.dash-heat-months{font-size:.5rem}.dash-heat-month:nth-child(2n){font-size:.45rem}}
 @media(max-height:570px){.dashboard{gap:3px;padding:4px}.dash-metrics{height:clamp(74px,17vh,105px)}.dash-number{font-size:clamp(.86rem,2.35vh,1.05rem)}.dash-label{font-size:clamp(.67rem,1.65vh,.79rem)}.dash-activity{gap:2px;padding:3px 5px}.dash-heat-months{height:11px}.dash-heat-weekdays{padding-top:11px}.dash-heat-legend{font-size:.54rem}}
 @media(max-height:420px){.dash-metrics{height:68px}.dash-heat-weekdays{display:none}.dash-heat-months{height:9px}.dash-heat-legend{display:none}}
+
+
+/* Impulso 87 — mapa com células quadradas e oito atalhos operacionais.
+   As 53 colunas compartilham a largura disponível; a altura de cada célula
+   é sempre igual à largura, evitando retângulos esticados. */
+.dash-heat-layout{flex:0 1 auto;align-items:flex-start;justify-content:center;width:100%}
+.dash-heat-main{flex:0 1 auto;width:100%;max-width:calc(53 * 15px + 52 * 3px)}
+.dash-heat-cells{
+  display:grid;
+  grid-template-columns:repeat(53,minmax(0,1fr));
+  grid-template-rows:repeat(7,auto);
+  grid-auto-flow:column;
+  gap:clamp(1px,.18vw,3px);
+  flex:none;
+  align-content:start;
+}
+.dash-heat-cells>.dash-heat-cell{aspect-ratio:1/1;width:100%;height:auto;min-height:0}
+.dash-heat-weekdays{flex:0 0 22px;justify-content:space-between;align-self:stretch;max-height:105px}
+.dash-activity{justify-content:center;gap:clamp(3px,.5vh,7px)}
+.dash-command-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(3px,.5vh,7px)}
+.dash-command{padding:clamp(4px,.65vh,8px) 2px;min-height:0}
+@media(max-width:600px){
+ .dash-heat-weekdays{flex-basis:16px}
+ .dash-heat-main{max-width:100%}
+ .dash-heat-cells{gap:1px}
+ .dash-command{font-size:clamp(.66rem,1.6vh,.85rem);padding:clamp(3px,.5vh,6px) 1px}
+ .dash-command-icon{font-size:clamp(.9rem,1.9vh,1.15rem)}
+}
+@media(max-height:570px){
+ .dash-command{padding:2px 1px}
+ .dash-command-grid{gap:3px}
+ .dash-activity{padding:3px 5px}
+}
