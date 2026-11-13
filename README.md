@@ -802,3 +802,12 @@ A velocidade do rotor foi ajustada para **um Giro completo (360 graus) a cada 0,
 O botão **Motor** substitui o nome Radar no menu Dados. A página chama-se **Motor de Propulsão**, sem o antigo estado “Motor em atividade/repouso” acima do rotor. Abaixo de **Ignição**, a instrução convida a visualizar os giros acumulados.
 
 Um indicador no cabeçalho, junto aos controles de tema e tela cheia, mostra **● Ponto**, **● Foco** ou **● Hábitos** enquanto uma dessas atividades está em execução, independentemente da página aberta. Quando a sessão de Foco ou o hábito está pausado, mostra **⏸ Foco** ou **⏸ Hábitos**; o indicador é clicável e leva à atividade correspondente. Sem atividade pendente, permanece oculto. A indicação é derivada do estado salvo do projeto ativo e não acrescenta contagem de horas.
+
+
+## Dashboard — Central de Comando (versão 84)
+
+O Impulso abre sempre na página **Dashboard**, primeira opção do grupo **Dados**. A tela utiliza a altura disponível do navegador, sem rolagem, e oculta o rodapé apenas nessa página. Os dados exibidos são calculados dos registros do projeto ativo, sem criar armazenamento paralelo.
+
+A cabine apresenta seis indicadores: tempo total, tempo de hoje, sequência de dias, Giros completos, percentual de Propulsão (10.080 horas) e metas concluídas (100 metas da jornada original). O painel mostra também a atividade atual ou pausada, quatro controles para Ponto, Foco, Hábitos e Entradas e uma faixa da próxima meta. Os indicadores são atalhos para páginas detalhadas.
+
+A apresentação adapta tamanhos, espaços e informações auxiliares à altura e largura disponíveis; em condições extremas de zoom ou acessibilidade, prioriza a leitura dos comandos essenciais. Os controles seguem a paleta ativa. Nenhum desenho de rotor ou foguete é duplicado.

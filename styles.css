@@ -406,3 +406,33 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 .action-indicator.is-paused{border-color:var(--line);opacity:.8}
 .ignition-invitation{margin:4px auto 0;font-size:.9rem;font-weight:650;color:var(--text);max-width:32rem;text-align:center}
 @media(max-width:480px){.action-indicator{font-size:.72rem;padding:5px 7px;max-width:88px}.header-icons{gap:4px}}
+
+/* v84 — Dashboard: uma única área visível, sem rolagem e sem gráficos redundantes. */
+body.dashboard-mode{height:100dvh;overflow:hidden;display:flex;flex-direction:column}
+body.dashboard-mode>.top{flex:0 0 auto}
+body.dashboard-mode>.shell{flex:1 1 auto;min-height:0;width:100%;max-width:1120px;margin:0 auto;overflow:hidden;display:flex;flex-direction:column;padding:clamp(5px,1.1vh,12px) clamp(7px,1.4vw,16px)!important}
+body.dashboard-mode #main{flex:1 1 auto;min-height:0;overflow:hidden;padding:0!important;margin:0!important}
+body.dashboard-mode>.app-footer{display:none!important}
+.dashboard{height:100%;min-height:0;box-sizing:border-box;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto auto;gap:clamp(5px,1.15vh,13px);padding:clamp(7px,1.1vh,14px);background:var(--panel);border:1px solid var(--line);border-radius:clamp(10px,1.5vw,18px);color:var(--text);overflow:hidden}
+.dashboard *{box-sizing:border-box;min-width:0}
+.dash-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:0}
+.dash-heading h1{font-size:clamp(1.08rem,2.4vh,1.7rem);line-height:1.05;margin:1px 0 0}
+.dash-eyebrow,.dash-section-heading span{font-size:clamp(.58rem,1.25vh,.72rem);font-weight:750;letter-spacing:.09em;color:var(--muted)}
+.dash-project{display:flex;flex-direction:column;align-items:flex-end;gap:2px;max-width:55%}
+.dash-project-name{font-weight:800;font-size:clamp(.78rem,1.7vh,1rem);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.dash-signal{font-size:.6rem;letter-spacing:.08em;font-weight:750;color:var(--color-4)}
+.dash-status{border:1px solid var(--line);background:var(--soft);border-radius:10px;padding:clamp(5px,1vh,11px) clamp(8px,1.3vw,15px);display:flex;align-items:center;gap:8px;min-height:0;font-size:clamp(.72rem,1.5vh,.88rem)}
+.dash-status[data-page]{cursor:pointer}.dash-status-led{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}.dash-status-led.on{background:var(--color-4);box-shadow:0 0 0 3px var(--line)}.dash-status-text{font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dash-status-return{margin-left:auto;color:var(--muted);font-size:.67rem;white-space:nowrap}
+.dash-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:clamp(5px,1vh,12px);min-height:0}
+.dash-metric{background:var(--soft);border:1px solid var(--line);border-radius:12px;color:var(--text);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(1px,.6vh,7px);padding:clamp(3px,.9vh,12px);cursor:pointer;min-height:0;overflow:hidden}
+.dash-metric:hover,.dash-command:hover{border-color:var(--color-4)}.dash-metric:focus-visible,.dash-command:focus-visible,.dash-status:focus-visible{outline:3px solid var(--color-4);outline-offset:2px}
+.dash-number{font-size:clamp(.86rem,2.75vh,1.9rem);line-height:1.05;font-weight:850;letter-spacing:-.035em;font-variant-numeric:tabular-nums;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}.dash-label{font-size:clamp(.61rem,1.4vh,.82rem);color:var(--muted);text-align:center;line-height:1.15}
+.dash-controls{display:flex;flex-direction:column;gap:clamp(4px,.8vh,9px);min-height:0}.dash-section-heading{display:flex;justify-content:space-between;align-items:center;gap:6px}.dash-section-heading strong{font-size:clamp(.7rem,1.55vh,.9rem);letter-spacing:.045em}
+.dash-command-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(5px,1vw,12px)}
+.dash-command{display:flex;align-items:center;justify-content:center;gap:clamp(4px,.7vw,10px);border:1px solid var(--line);border-bottom:3px solid var(--color-4);border-radius:11px;background:var(--soft);color:var(--text);font-weight:800;font-size:clamp(.7rem,1.65vh,.94rem);padding:clamp(7px,1.4vh,16px) 3px;cursor:pointer;min-height:0}.dash-command:disabled{opacity:.5;cursor:not-allowed}.dash-command-icon{color:var(--color-4);font-size:clamp(1rem,2.5vh,1.45rem)}
+.dash-milestone{display:grid;gap:clamp(4px,.7vh,9px);padding:clamp(5px,1vh,12px);border:1px solid var(--line);border-radius:10px;background:var(--soft)}.dash-milestone-top{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:clamp(.62rem,1.4vh,.8rem)}.dash-milestone-top span{color:var(--muted);text-align:right}.dash-progress{height:clamp(5px,.85vh,9px);border-radius:20px;background:var(--line);overflow:hidden}.dash-progress span{display:block;height:100%;background:var(--color-4);border-radius:20px}
+.dash-empty{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;grid-row:2/-1;text-align:center}.dash-empty p{color:var(--muted)}.dash-empty-actions{display:flex;gap:10px}
+@media(max-width:600px){.dashboard{border-radius:11px}.dash-project{max-width:47%}.dash-status-return{font-size:.57rem}.dash-command{flex-direction:column;gap:2px;padding:clamp(5px,1vh,10px) 2px}.dash-milestone-top{font-size:.63rem}}
+@media(max-height:570px){.dashboard{gap:4px;padding:5px}.dash-heading h1{font-size:1rem}.dash-eyebrow,.dash-section-heading span{font-size:.56rem}.dash-status{padding:3px 7px}.dash-metric{padding:2px}.dash-number{font-size:clamp(.78rem,2.5vh,1.1rem)}.dash-command{padding:4px 2px}.dash-milestone{padding:4px}.dash-command-icon{font-size:1rem}}
+@media(max-height:420px){.dash-section-heading span,.dash-status-return,.dash-eyebrow{display:none}.dash-heading h1{font-size:.92rem}.dash-command-icon{display:none}.dash-command{padding:3px 1px}.dash-milestone-top{font-size:.57rem}.dash-label{font-size:.56rem}}
+@media print{body.dashboard-mode{height:auto;overflow:visible}body.dashboard-mode>.shell,body.dashboard-mode #main,.dashboard{height:auto;overflow:visible}}
