@@ -320,3 +320,11 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 .menu-drawer nav .menu-standalone{margin-top:8px;padding-top:8px}
 .menu-drawer nav .menu-standalone button{min-height:42px;font-size:.98rem;font-weight:750}
 @media(prefers-reduced-motion:reduce){.menu-drawer nav .menu-accordion *{transition:none}}
+
+/* Impulso 67 — Diário das Revelações */
+.vision-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px}
+.vision-history-list{list-style:decimal;padding-left:1.7rem;display:grid;gap:10px;margin:18px 0}
+.vision-history-item{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface,transparent);overflow-wrap:anywhere}
+.vision-history-item span{display:block;margin-top:5px}
+.vision-legacy{margin-top:20px;padding:14px;border:1px solid var(--line);border-radius:12px}
+.vision-old-tile{display:inline-block;padding:4px 7px;margin:3px;border:1px solid var(--line);border-radius:6px;font-variant-numeric:tabular-nums}
