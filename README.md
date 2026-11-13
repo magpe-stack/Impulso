@@ -780,3 +780,8 @@ A rotação das pás agora utiliza `style.transform` no grupo SVG, evitando conf
 ### Correção da Ignição — versão 79
 
 A rotação do rotor é comandada pelo botão **Ignição**, com velocidade de três segundos por Giro e contador de voltas. Foi removida uma regra CSS (`transform: none !important`) que bloqueava visualmente o movimento das pás, embora o contador avançasse. O botão **Parar** permanece disponível e a Ignição não modifica os registros.
+
+
+### Ignição do Radar — versão 80
+
+Removida a bolinha de referência das pás do rotor. A velocidade de reprodução foi duplicada: **cada Giro (360 graus) leva 1,5 segundo**, em vez de 3 segundos. O contador, os botões Ignição/Parar e as cores do tema permanecem inalterados. As versões anteriores são descritas acima como histórico de desenvolvimento.
