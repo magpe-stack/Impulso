@@ -111,7 +111,7 @@ O menu lateral é aberto pelo botão no cabeçalho. Seus grupos são expansívei
 | **Início** | Novo · Projetos · Guardar · Restaurar · Imprimir |
 | **Ações** | Ponto · Hábitos · Entradas |
 | **Vitórias** | Arena · Codex · Elixires · Cerimônias · Visão |
-| **Dados** | Meu Dia · **Calendário** · Radar · Estatísticas · Armazenamento |
+| **Dados** | Meu Dia · **Calendário** · Motor · Estatísticas · Armazenamento |
 | **Configurações** | Página com Temas e Alertas |
 | **Sair** | Encerramento com confirmação |
 
@@ -233,7 +233,7 @@ Use a lixeira da linha correspondente para excluir um registro. A exclusão alte
 
 ## 10. Estatísticas: central de análise e desempenho
 
-A página **Estatísticas** fica no menu depois de **Radar**. Ela reúne medições calculadas a partir dos dados reais do Impulso, sem enviar informações a servidores.
+A página **Estatísticas** fica no menu depois de **Motor**. Ela reúne medições calculadas a partir dos dados reais do Impulso, sem enviar informações a servidores.
 
 ### Escolher o alcance da análise
 
@@ -309,11 +309,11 @@ O aplicativo também oferece um fluxo de conclusão que solicita confirmação e
 
 <a id="13-radar-e-meta-de-10000-horas"></a>
 
-## 13. Radar — Motor de Propulsão
+## 13. Motor de Propulsão
 
 Na versão 73, os cinco cartões de unidades do motor aparecem em **uma única linha em telas largas**, com dimensões compactas. Em telas menores, a grade se adapta para manter os números e as descrições legíveis, sem rolagem horizontal.
 
-O **Radar — Motor de Propulsão** representa o tempo efetivo de trabalho como rotação simbólica de um motor de foguete. Os graus são uma medida de tempo, **não uma moeda, um indicador de qualidade ou uma simulação física de motor real**. O rotor SVG usa exclusivamente as cores do tema ativo, inclusive no modo escuro. As pás ficam paradas até o usuário clicar em **Ignição**. A animação respeita a preferência do sistema por redução de movimento.
+O **Motor de Propulsão** representa o tempo efetivo de trabalho como rotação simbólica de um motor de foguete. Os graus são uma medida de tempo, **não uma moeda, um indicador de qualidade ou uma simulação física de motor real**. O rotor SVG usa exclusivamente as cores do tema ativo, inclusive no modo escuro. As pás ficam paradas até o usuário clicar em **Ignição**. A animação respeita a preferência do sistema por redução de movimento.
 
 ### Hierarquia oficial do motor
 
@@ -751,7 +751,7 @@ O menu principal apresenta **Início**, **Ações**, **Vitórias**, **Dados**, *
 - **Início:** Novo, Projetos, Guardar, Restaurar e Imprimir. O painel inicial permanece disponível ao abrir um projeto.
 - **Ações:** Ponto, Hábitos e Entradas.
 - **Vitórias:** Arena, Codex, Elixires, Cerimônias e Visão.
-- **Dados:** Meu Dia, Radar, Estatísticas e Armazenamento.
+- **Dados:** Meu Dia, Motor, Estatísticas e Armazenamento.
 - **Configurações:** reúne os **Temas** (sete identidades cromáticas e luminosidade) e os **Alertas** (backup e hábitos/Elixires) na mesma página. O botão Alertas foi retirado do menu, mas seus controles e preferências foram preservados.
 - **Sair:** mantém a confirmação e o comportamento anteriores.
 
@@ -795,3 +795,10 @@ A velocidade do rotor foi triplicada em relação à versão 80: cada Giro (360 
 ### Ignição do Radar — versão 82
 
 A velocidade do rotor foi ajustada para **um Giro completo (360 graus) a cada 0,3 segundo**. Sete Giros levam aproximadamente 2,1 segundos e 288 Giros aproximadamente 1 minuto e 26,4 segundos. Mantidos os botões Ignição e Parar, o contador, a contagem de graus e as cores do tema.
+
+
+### Motor e indicador global — versão 83
+
+O botão **Motor** substitui o nome Radar no menu Dados. A página chama-se **Motor de Propulsão**, sem o antigo estado “Motor em atividade/repouso” acima do rotor. Abaixo de **Ignição**, a instrução convida a visualizar os giros acumulados.
+
+Um indicador no cabeçalho, junto aos controles de tema e tela cheia, mostra **● Ponto**, **● Foco** ou **● Hábitos** enquanto uma dessas atividades está em execução, independentemente da página aberta. Quando a sessão de Foco ou o hábito está pausado, mostra **⏸ Foco** ou **⏸ Hábitos**; o indicador é clicável e leva à atividade correspondente. Sem atividade pendente, permanece oculto. A indicação é derivada do estado salvo do projeto ativo e não acrescenta contagem de horas.

@@ -399,3 +399,10 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 /* v79: não sobrescrever a transformação inline aplicada pelo JavaScript.
    A regra anterior transform:none!important impedia TODA a rotação das pás. */
 #propRotor{transform-origin:120px 120px;transform-box:view-box;transition:none;will-change:transform}
+
+/* v83: indicador global de atividade, integrado ao cabeçalho. */
+.action-indicator{display:inline-flex;align-items:center;justify-content:center;min-height:36px;max-width:140px;padding:5px 10px;border:1px solid var(--color-4);border-radius:999px;background:var(--soft);color:var(--text);font:inherit;font-size:.78rem;font-weight:750;white-space:nowrap;cursor:pointer}
+.action-indicator[hidden]{display:none!important}
+.action-indicator.is-paused{border-color:var(--line);opacity:.8}
+.ignition-invitation{margin:4px auto 0;font-size:.9rem;font-weight:650;color:var(--text);max-width:32rem;text-align:center}
+@media(max-width:480px){.action-indicator{font-size:.72rem;padding:5px 7px;max-width:88px}.header-icons{gap:4px}}
