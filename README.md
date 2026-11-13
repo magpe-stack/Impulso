@@ -104,20 +104,18 @@ Se o dispositivo ou navegador solicitar **movimento reduzido** (`prefers-reduced
 
 ## 4. Interface, navegação e menu
 
-O menu lateral é aberto pelo botão no cabeçalho. A navegação está dividida em seis grupos, separados visualmente, nesta ordem:
+O menu lateral é aberto pelo botão no cabeçalho. Seus grupos são expansíveis e aparecem nesta ordem:
 
 | Grupo | Opções |
 |---|---|
-| Início, projetos e documentos | **Início · Novo · Projetos · Guardar · Restaurar · Imprimir** |
-| Registro de atividades | **Ponto · Hábitos · Entradas · Meu Dia** |
-| Jornada e conquistas | **Arena · Codex · Elixires · Visão** |
-| Acompanhamento e diagnóstico | **Radar · Cerimônias · Estatísticas · Armazenamento** |
-| Preferências | **Alertas · Configuração** |
-| Encerramento | **Sair** |
+| **Início** | Novo · Projetos · Guardar · Restaurar · Imprimir |
+| **Ações** | Ponto · Hábitos · Entradas |
+| **Vitórias** | Arena · Codex · Elixires · Cerimônias · Visão |
+| **Dados** | Meu Dia · **Calendário** · Radar · Estatísticas · Armazenamento |
+| **Configurações** | Página com Temas e Alertas |
+| **Sair** | Encerramento com confirmação |
 
-**Entradas** abre a página *Entradas retroativas*, com as fichas *Entrada de Ponto* e *Entrada de Hábito*. **Alertas** abre as opções de lembretes. Os nomes foram padronizados sem alterar suas funções.
-
-O nome **Impulso** fica destacado no alto do menu. Os itens têm espaçamento compacto para aproveitar melhor a altura disponível; em telas muito baixas, pode ser necessário rolar o painel. Para fechá-lo, utilize o botão correspondente, toque fora dele ou pressione **Esc**, quando disponível.
+Selecione o nome de um grupo para expandir ou recolher seu submenu. **Entradas** permite registrar atividades retroativas. O botão **Calendário** abre a visualização mensal da produtividade.
 
 No cabeçalho também há controle de **modo claro/escuro** e, conforme o navegador, um controle de **tela cheia**. A tela cheia pode não estar disponível em todos os dispositivos. O botão **Sobre** apresenta a finalidade do Impulso, um resumo atualizado dos principais recursos e links para o aplicativo, o repositório e o manual completo. Os links externos precisam de conexão para abrir, mas não são necessários para utilizar os recursos locais.
 
@@ -198,6 +196,12 @@ As fichas verificam datas de calendário válidas, horário de término posterio
 <a id="9-meu-dia-historico-e-calculo-do-tempo"></a>
 
 ## 9. Meu Dia, Histórico e cálculo do tempo
+
+### Calendário de produtividade (versão 69)
+
+Abra **Dados → Calendário** para consultar um mês de cada vez. Os botões **Anterior** e **Próximo** mudam o mês, sem alterar registros. Cada data mostra a duração efetivamente trabalhada; os indicadores resumem dias trabalhados e tempo acumulado no mês. Selecione um dia para consultar as atividades, nomes e horários de início e término, com acesso a **Meu Dia** e à impressão daquele dia. Dias sem registros permanecem disponíveis para consulta e são identificados explicitamente.
+
+A contagem utiliza os mesmos intervalos consolidados de produtividade do aplicativo: atividades simultâneas não duplicam o tempo, e registros que atravessam a meia-noite são distribuídos entre as datas corretas. O calendário é exclusivo do projeto ativo, funciona offline e não precisa de armazenamento adicional.
 
 ### Meu Dia
 
