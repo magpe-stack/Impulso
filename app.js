@@ -245,7 +245,7 @@ function renderMenu(){
   return `<div class="menu-section menu-accordion"><button type="button" class="menu-parent${open?' expanded':''}${isActive(items)?' current-group':''}" data-menu-group="${id}" aria-expanded="${open}" aria-controls="menu-sub-${id}"><span>${label}</span><span class="menu-chevron" aria-hidden="true">${open?'▾':'▸'}</span></button><div class="menu-sub" id="menu-sub-${id}" ${open?'':'hidden'}>${items.map(([key,text])=>`<button type="button" ${actions.has(key)?`data-action="${key}"`:`data-page="${key}"`} ${key==='backup'?'title="Guardar backup de todos os projetos"':''} ${key==='import'?'title="Restaurar backup de todos os projetos"':''} class="${(key===page || (key==='point'&&page==='ponto') || (key==='habitPage'&&page==='habitos') || (key==='manual'&&page==='entradas'))?'active':''}">${text}</button>`).join('')}</div></div>`;
  }).join('')+`<div class="menu-section menu-standalone"><button type="button" data-page="configuracao" class="${page==='configuracao'?'active':''}">Configurações</button></div><div class="menu-section menu-standalone"><button type="button" data-action="exit" class="menu-exit">Sair</button></div>`;
 }
-function render(){const p=project();renderMenu();if(!p&& !['inicio','projetos','alertas','armazenamento','configuracao','estatisticas','entradas','visao','cerimonias','calendario','foco'].includes(page))page='inicio';if(page==='entradas')renderRetroactiveEntries(p);if(page==='inicio')renderHome(p);if(page==='ponto')renderPoint(p);if(page==='foco')renderFocus(p);if(page==='projetos')renderProjects();if(page==='dia')renderDay(p);if(page==='calendario')renderCalendar(p);if(page==='habitos')renderHabits(p);if(page==='arena')renderArena(p);if(page==='codex')renderCodex(p);if(page==='altar')renderAltar(p);if(page==='visao')renderVision(p);if(page==='radar')renderRadar(p);if(page==='cerimonias')renderCeremonies(p);if(page==='alertas')renderConfiguracao();if(page==='armazenamento')renderStorage();if(page==='configuracao')renderConfiguracao();if(page==='estatisticas')renderEstatisticas();}
+function render(){if(page!=='radar'&&ignitionRun)stopIgnition();const p=project();renderMenu();if(!p&& !['inicio','projetos','alertas','armazenamento','configuracao','estatisticas','entradas','visao','cerimonias','calendario','foco'].includes(page))page='inicio';if(page==='entradas')renderRetroactiveEntries(p);if(page==='inicio')renderHome(p);if(page==='ponto')renderPoint(p);if(page==='foco')renderFocus(p);if(page==='projetos')renderProjects();if(page==='dia')renderDay(p);if(page==='calendario')renderCalendar(p);if(page==='habitos')renderHabits(p);if(page==='arena')renderArena(p);if(page==='codex')renderCodex(p);if(page==='altar')renderAltar(p);if(page==='visao')renderVision(p);if(page==='radar')renderRadar(p);if(page==='cerimonias')renderCeremonies(p);if(page==='alertas')renderConfiguracao();if(page==='armazenamento')renderStorage();if(page==='configuracao')renderConfiguracao();if(page==='estatisticas')renderEstatisticas();}
 // Alertas locais: preferências globais, independentes dos dados dos projetos.
 const ALERTS_KEY='impulso-alertas-v1', BACKUP_INTERVAL=15*60*1000;
 let alertSettings={backup:false,nextBackup:0,habits:false,nextHabits:0};
@@ -516,72 +516,71 @@ function propulsionActive(p){return running(p)||!!p.focusSession?.runningSince||
 function renderRadar(p){
  const ms=total(p,true),data=propulsionStats(ms),active=propulsionActive(p),second=(ms/1000)%60,c=2*Math.PI*94;
  const rotor=Array.from({length:6},(_,i)=>`<path d="M120 120 Q100 95 113 74 Q137 82 137 104 Z" transform="rotate(${i*60} 120 120)" fill="var(--color-4)" fill-opacity=".76" stroke="var(--color-5)" stroke-width=".8"/>`).join('');
- main.innerHTML=header('Radar — Motor de Propulsão',esc(p.name))+`<section class="panel"><p class="radar-status" id="radarStatus">${active?'● Motor em atividade':'○ Motor em repouso'}</p><svg class="radar" viewBox="0 0 240 240" role="img" aria-label="Motor de propulsão, 360 graus por giro e 60 marcações de segundos"><circle cx="120" cy="120" r="96" fill="none" stroke="var(--line)" stroke-width="1.5"/><circle cx="120" cy="120" r="70" fill="none" stroke="var(--line)" stroke-width="1.5"/>${radarMarks()}<circle id="radarArc" cx="120" cy="120" r="94" fill="none" stroke="var(--color-4)" stroke-width="3" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-data.angle/360)}" transform="rotate(-90 120 120)"/><g id="propRotor" class="propulsion-rotor">${rotor}</g><g id="radarHand" transform="rotate(${second*6} 120 120)"><line x1="120" y1="137" x2="120" y2="52" stroke="var(--color-3)" stroke-width="2" stroke-linecap="round"/></g><circle cx="120" cy="120" r="8" fill="var(--color-5)" stroke="var(--color-4)" stroke-width="2"/><text id="radarAngle" x="120" y="157" text-anchor="middle" font-size="13" font-weight="800">${Math.floor(data.angle)}°</text></svg><div class="ignition-controls"><button class="btn primary" type="button" id="radarIgnition">Ignição</button><button class="btn" type="button" id="radarStop" hidden>Parar</button><p class="help" id="ignitionFeedback" role="status" aria-live="polite">Acione a ignição para reproduzir os graus acumulados no rotor.</p></div><p class="muted" style="text-align:center">O rotor representa a propulsão do projeto. 10 segundos = 1 grau; 180 graus = 1 Pulso; 360 graus = 1 Giro (1 hora). A rotação visual é simbólica, não uma simulação física de um foguete.</p><div class="grid">${metric(`<span id="radarTotal">${duration(ms)}</span>`,'Tempo efetivo acumulado')}${metric(`<span id="propDegrees">${fmtNumber(data.degrees)}</span>°`,'Graus acumulados')}${metric('10.080 h','1 Propulsão completa')}</div><h2 style="margin-top:20px">Unidades do motor</h2><div class="propulsion-grid">${propulsionMetrics(ms)}</div><h3 style="margin-top:20px">Propulsão: <span id="propPercent">${(Math.min(100,ms/PROPULSION_TARGET*100)).toFixed(4).replace('.',',')}%</span></h3><div class="progress"><span id="propProgress" style="width:${Math.min(100,ms/PROPULSION_TARGET*100)}%"></span></div><p class="help">${'A primeira Propulsão completa exige 42 Fases = 10.080 horas. Os contadores de cada unidade são acumulativos e não devem ser somados entre si. Depois de 10.080 horas, a contagem continua.'}</p></section>${milestonePanel(p)}`;
+ main.innerHTML=header('Radar — Motor de Propulsão',esc(p.name))+`<section class="panel"><p class="radar-status" id="radarStatus">${active?'● Motor em atividade':'○ Motor em repouso'}</p><svg class="radar" viewBox="0 0 240 240" role="img" aria-label="Motor de propulsão, 360 graus por giro e 60 marcações de segundos"><circle cx="120" cy="120" r="96" fill="none" stroke="var(--line)" stroke-width="1.5"/><circle cx="120" cy="120" r="70" fill="none" stroke="var(--line)" stroke-width="1.5"/>${radarMarks()}<circle id="radarArc" cx="120" cy="120" r="94" fill="none" stroke="var(--color-4)" stroke-width="3" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-data.angle/360)}" transform="rotate(-90 120 120)"/><g id="propRotor" class="propulsion-rotor">${rotor}<circle cx="120" cy="81" r="5" fill="var(--color-3)" stroke="var(--text)" stroke-width="1.4"/></g><g id="radarHand" transform="rotate(${second*6} 120 120)"><line x1="120" y1="137" x2="120" y2="52" stroke="var(--color-3)" stroke-width="2" stroke-linecap="round"/></g><circle cx="120" cy="120" r="8" fill="var(--color-5)" stroke="var(--color-4)" stroke-width="2"/><text id="radarAngle" x="120" y="157" text-anchor="middle" font-size="13" font-weight="800">${Math.floor(data.angle)}°</text></svg><div class="ignition-controls"><button class="btn primary" type="button" id="radarIgnition">Ignição</button><button class="btn" type="button" id="radarStop" hidden>Parar</button><p class="help" id="ignitionFeedback" role="status" aria-live="polite">Acione a ignição para reproduzir os graus acumulados no rotor.</p></div><p class="muted" style="text-align:center">O rotor representa a propulsão do projeto. 10 segundos = 1 grau; 180 graus = 1 Pulso; 360 graus = 1 Giro (1 hora). A rotação visual é simbólica, não uma simulação física de um foguete.</p><div class="grid">${metric(`<span id="radarTotal">${duration(ms)}</span>`,'Tempo efetivo acumulado')}${metric(`<span id="propDegrees">${fmtNumber(data.degrees)}</span>°`,'Graus acumulados')}${metric('10.080 h','1 Propulsão completa')}</div><h2 style="margin-top:20px">Unidades do motor</h2><div class="propulsion-grid">${propulsionMetrics(ms)}</div><h3 style="margin-top:20px">Propulsão: <span id="propPercent">${(Math.min(100,ms/PROPULSION_TARGET*100)).toFixed(4).replace('.',',')}%</span></h3><div class="progress"><span id="propProgress" style="width:${Math.min(100,ms/PROPULSION_TARGET*100)}%"></span></div><p class="help">${'A primeira Propulsão completa exige 42 Fases = 10.080 horas. Os contadores de cada unidade são acumulativos e não devem ser somados entre si. Depois de 10.080 horas, a contagem continua.'}</p></section>${milestonePanel(p)}`;
  $('#radarIgnition')?.addEventListener('click', igniteRadar);
  $('#radarStop')?.addEventListener('click', stopIgnition);
 }
-// v76: cada giro é reproduzido individualmente para permanecer perceptível.
-// 288 giros duram mais que 8 giros; não comprimir a contagem em 18 segundos.
-let ignitionAnimation=null,ignitionRun=null;
+// v77: rotação SVG explícita, sem interpolação ambígua entre 0° e 360°.
+// Uma marca assimétrica acompanha uma das pás para tornar cada volta perceptível.
+const IGNITION_MS_PER_TURN=3000;
+let ignitionRun=null;
+function ignitionAngle(rotor,degrees){
+ if(rotor)rotor.setAttribute('transform',`rotate(${degrees%360} 120 120)`);
+}
 function stopIgnition(){
  const run=ignitionRun;if(!run)return;
  ignitionRun=null;
- if(ignitionAnimation){const anim=ignitionAnimation;ignitionAnimation=null;anim.cancel();}
+ if(run.frame!=null)cancelAnimationFrame(run.frame);
  const rotor=$('#propRotor'),start=$('#radarIgnition'),stop=$('#radarStop'),feedback=$('#ignitionFeedback');
- if(rotor)rotor.style.transform=`rotate(${run.completedAngle%360}deg)`;
+ ignitionAngle(rotor,run.angle);
  if(start){start.disabled=false;start.textContent='Ignição';}
  if(stop)stop.hidden=true;
- if(feedback)feedback.textContent=`Ignição interrompida: ${fmtNumber(run.completedTurns)} de ${fmtNumber(run.turns)} giros completos reproduzidos.`;
+ if(feedback)feedback.textContent=`Ignição interrompida: ${fmtNumber(Math.floor(run.angle/360))} de ${fmtNumber(run.turns)} giros completos reproduzidos.`;
 }
 function igniteRadar(){
  const p=project(),rotor=$('#propRotor'),button=$('#radarIgnition'),stop=$('#radarStop'),feedback=$('#ignitionFeedback');
  if(!p||!rotor||!button||!stop||!feedback)return;
  if(ignitionRun)stopIgnition();
  const degrees=propulsionStats(total(p,true)).degrees;
- rotor.style.transform='rotate(0deg)';
+ ignitionAngle(rotor,0);
  if(!degrees){feedback.textContent='Nenhum grau acumulado ainda. Registre trabalho para alimentar o motor.';return;}
  const turns=Math.floor(degrees/360),rest=degrees%360;
  const summary=`${fmtNumber(degrees)} graus: ${fmtNumber(turns)} giro${turns===1?'':'s'} completo${turns===1?'':'s'} e ${rest} grau${rest===1?'':'s'}.`;
- if(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches||typeof rotor.animate!=='function'){
-   rotor.style.transform=`rotate(${rest}deg)`;
-   feedback.textContent=`Ignição concluída sem animação. ${summary}`;
+ if(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches){
+   ignitionAngle(rotor,degrees);
+   feedback.textContent=`Ignição concluída sem animação (preferência por movimento reduzido). ${summary}`;
    return;
  }
- const run={turns,rest,completedTurns:0,completedAngle:0};
+ const run={turns,angle:0,frame:null,last:null,shown:-1};
  ignitionRun=run;
  button.disabled=true;button.textContent='Em ignição…';stop.hidden=false;
  const finish=()=>{
    if(ignitionRun!==run)return;
-   ignitionRun=null;ignitionAnimation=null;
-   rotor.style.transform=`rotate(${rest}deg)`;
+   ignitionRun=null;run.frame=null;
+   ignitionAngle(rotor,degrees);
    if(button.isConnected){button.disabled=false;button.textContent='Ignição';}
    if(stop.isConnected)stop.hidden=true;
    if(feedback.isConnected)feedback.textContent=`Ignição concluída. ${summary}`;
  };
- const step=()=>{
-   if(ignitionRun!==run||!rotor.isConnected)return;
-   const full=run.completedTurns<run.turns;
-   const stepDegrees=full?360:run.rest;
-   if(!stepDegrees){finish();return;}
-   const from=run.completedAngle%360;
-   // Um giro por segundo, sem aceleração que faça as pás parecerem imóveis.
-   const anim=rotor.animate([{transform:`rotate(${from}deg)`},{transform:`rotate(${from+stepDegrees}deg)`}],{
-     duration:full?1000:Math.max(250,Math.round(stepDegrees/360*1000)),easing:'linear',fill:'forwards'
-   });
-   ignitionAnimation=anim;
-   anim.onfinish=()=>{
-     if(ignitionRun!==run)return;
-     ignitionAnimation=null;
-     anim.cancel();
-     run.completedAngle+=stepDegrees;
-     if(full)run.completedTurns++;
-     rotor.style.transform=`rotate(${run.completedAngle%360}deg)`;
-     if(feedback.isConnected)feedback.textContent=`Ignição: ${fmtNumber(run.completedTurns)} de ${fmtNumber(run.turns)} giros completos. ${fmtNumber(degrees)} graus acumulados. Use Parar para interromper.`;
-     if(!full)finish();else step();
-   };
+ const tick=(stamp)=>{
+   if(ignitionRun!==run)return;
+   if(!rotor.isConnected){ignitionRun=null;return;}
+   if(run.last!==null && !document.hidden){
+     // Limita saltos após suspensão de aba ou lentidão do aparelho.
+     run.angle=Math.min(degrees,run.angle+Math.min(80,Math.max(0,stamp-run.last))*360/IGNITION_MS_PER_TURN);
+   }
+   run.last=stamp;
+   ignitionAngle(rotor,run.angle);
+   const completed=Math.min(turns,Math.floor(run.angle/360));
+   if(completed!==run.shown){
+     run.shown=completed;
+     feedback.textContent=`Ignição: ${fmtNumber(completed)} de ${fmtNumber(turns)} giros completos. Uma volta leva 3 segundos. Use Parar para interromper.`;
+   }
+   if(run.angle>=degrees){finish();return;}
+   run.frame=requestAnimationFrame(tick);
  };
- feedback.textContent=`Iniciando ${summary} Cada giro leva 1 segundo; use Parar para interromper.`;
- step();
+ feedback.textContent=`Iniciando ${summary} Cada giro leva 3 segundos; use Parar para interromper.`;
+ run.frame=requestAnimationFrame(tick);
 }
 function liveTick(){const p=project();if(!p)return;if(page==='foco'&&p.focusSession?.runningSince){const f=p.focusSession,el=$('#focusElapsed');if(el)el.textContent=duration(focusMs(f));const dev=$('#focusDeviation');if(dev)dev.textContent=focusDeviation(focusMs(f),f.plannedMs)}if(page==='ponto'&&p.pointSession?.status==='running'){const el=$('#pointElapsed');if(el)el.textContent=duration(now()-p.pointSession.start)}const ms=total(p,true);if(page==='habitos'){document.querySelectorAll('[data-pomodoro]').forEach(el=>{const h=p.habits.find(x=>x.id===el.dataset.pomodoro);if(!h?.timer)return;const t=h.timer,elapsed=Math.min(h.minutes*60000,(t.elapsed||0)+(t.runningSince?Math.max(0,now()-t.runningSince):0));el.textContent=duration(Math.max(0,h.minutes*60000-elapsed));const bar=document.querySelector(`[data-pomodoro-progress="${h.id}"]`);if(bar)bar.style.width=`${100*elapsed/(h.minutes*60000)}%`})}if(page==='radar'){
  const arc=$('#radarArc');if(!arc)return;const data=propulsionStats(ms),c=2*Math.PI*94;

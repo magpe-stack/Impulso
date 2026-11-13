@@ -395,3 +395,6 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 .ignition-controls .help{margin:0;max-width:40rem}
 /* v76: o botão Parar só aparece durante a reprodução da Ignição. */
 .ignition-controls .btn[hidden]{display:none!important}
+
+/* v77: o rotor é posicionado pelo atributo SVG transform, não por CSS. */
+#propRotor{transform:none!important;transform-origin:initial!important}

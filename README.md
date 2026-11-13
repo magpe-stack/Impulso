@@ -765,3 +765,8 @@ No menu **Ações → Foco**, configure uma atividade (até 50 caracteres), um o
 O tempo efetivo é calculado pelos intervalos de atividade, excluindo pausas. A sessão permanece salva no projeto ao navegar entre páginas ou reabrir o PWA. Ao concluir, os intervalos entram no motor de tempo do projeto, no Meu Dia, no Calendário e no Histórico, sem duplicação de intervalos sobrepostos. O histórico específico de Foco mostra as 50 sessões mais recentes, com duração planejada, efetiva e avaliação. Os backups gerais e individuais preservam os registros e sessões em andamento.
 
 **Interpretação:** ultrapassar a duração prevista não é considerado vitória automática. O aplicativo apresenta o desvio de tempo e a avaliação do objetivo separadamente. Sessões de Foco e Ponto não podem ser iniciadas simultaneamente; conclua a sessão ativa antes de iniciar outra. Como o funcionamento é local, mantenha backups regulares.
+
+
+### Ignição do Radar — versão 77
+
+O botão **Ignição** reproduz os graus acumulados do projeto em velocidade de **uma volta completa a cada três segundos**. Sete Giros correspondem a sete voltas completas (2.520 graus), em aproximadamente 21 segundos. Uma marca colorida assimétrica em uma pá permite acompanhar visualmente cada volta. O contador mostra giros concluídos e o botão **Parar** interrompe a reprodução sem alterar os registros. Em dispositivos com preferência por movimento reduzido, a posição final é apresentada sem animação. A reprodução não adiciona horas nem graus.
