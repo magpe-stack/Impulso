@@ -712,3 +712,8 @@ A janela de Cerimônias usa um único diálogo. Os botões **Fechar cerimônia**
 ### Cerimônias — reprodução e acessibilidade (versão 64)
 
 As cerimônias são animações CSS executadas no próprio navegador. Ao abrir uma cerimônia, a sequência inicia automaticamente, salvo quando o sistema solicita **movimento reduzido**. Nesse caso, a apresentação permanece estática e aparece o botão **Ativar animação nesta cerimônia**, que permite consentir com os efeitos somente naquela visualização. **Reproduzir novamente** reinicia os efeitos sem fechar o diálogo. **Fechar cerimônia** permanece disponível.
+
+
+### Cerimônias — janela sem barras de rolagem (versão 65)
+
+A janela de cerimônia agora utiliza dimensões limitadas pela área visível do navegador e não exibe barras de rolagem internas. O conteúdo é organizado com espaçamentos compactos e, quando necessário, reduzido proporcionalmente para caber na tela, incluindo o aviso de movimento reduzido e os três controles. A animação e a opção de reprodução voluntária são preservadas. Em telas extremamente pequenas, o conteúdo pode ficar menor para permanecer integralmente visível.

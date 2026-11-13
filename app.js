@@ -133,6 +133,23 @@ function renderCeremonies(p){
 }
 modal.addEventListener('close',()=>modal.classList.remove('ceremony-dialog'));
 function ceremonyAnimations(stage){return [stage,...stage.querySelectorAll('*')].flatMap(el=>typeof el.getAnimations==='function'?el.getAnimations({subtree:false}):[])}
+// Ajusta a composição ao espaço real da tela sem permitir rolagem interna.
+function fitCeremonyViewport(){
+ const stage=modal.querySelector('.ceremony-cinema'),content=stage?.querySelector('.cinema-content');
+ if(!stage||!content||!modal.open)return;
+ content.style.zoom='1';
+ const cs=getComputedStyle(stage);
+ const available=stage.clientHeight-(parseFloat(cs.paddingTop)||0)-(parseFloat(cs.paddingBottom)||0)-4;
+ if(available<=0)return;
+ // O zoom altera quebras de linha; reavaliar após cada ajuste.
+ for(let i=0;i<5;i++){
+  const actual=content.getBoundingClientRect().height;
+  if(actual<=available+1)break;
+  const current=parseFloat(content.style.zoom)||1;
+  content.style.zoom=String(Math.max(.45,current*Math.min(.98,available/actual)));
+ }
+}
+window.addEventListener('resize',()=>{if(modal.open&&modal.classList.contains('ceremony-dialog'))fitCeremonyViewport()});
 function restartCeremony(){
  const stage=modal.querySelector('.ceremony-cinema');if(!stage||!modal.open)return;
  // Replay the existing Web Animations/CSS animations in-place: no dialog rebuild.
@@ -140,12 +157,14 @@ function restartCeremony(){
  for(const animation of animations){try{animation.cancel();animation.play()}catch(e){}}
  const status=stage.querySelector('[data-ceremony-motion-status]');
  if(status)status.textContent=stage.classList.contains('ceremony-motion-opt-in')?'Animação reiniciada.':'Reprodução solicitada.';
+ fitCeremonyViewport();
 }
 function enableCeremonyMotion(){
  const stage=modal.querySelector('.ceremony-cinema');if(!stage)return;
  stage.classList.add('ceremony-motion-opt-in');
  const toggle=stage.querySelector('[data-enable-ceremony-motion]');if(toggle)toggle.hidden=true;
  restartCeremony();
+ fitCeremonyViewport();
 }
 
 function openCeremony(n){
@@ -157,6 +176,8 @@ function openCeremony(n){
  const particles=Array.from({length:42},(_,i)=>`<i style="--i:${i};--x:${(i*67+11)%100};--delay:${(i*7)%23/10}s;--drift:${((i*37)%180)-90}px;--duration:${2.4+(i%6)*.3}s"></i>`).join('');
  modal.classList.add('ceremony-dialog');
  show(`<div class="ceremony-stage ceremony-cinema ${final?'ceremony-finale':special?'ceremony-cycle':'ceremony-standard'}" role="region" aria-label="Cerimônia ${n}: ${esc(title)}"><div class="cinema-sky" aria-hidden="true"><span class="cinema-starfield"></span><span class="cinema-beam"></span><span class="cinema-orbit orbit-one"></span><span class="cinema-orbit orbit-two"></span><span class="cinema-flash"></span><span class="cinema-confetti">${particles}</span></div><div class="cinema-content"><p class="cinema-intro">IMPULSO · JORNADA DAS 10.000 HORAS</p><div class="cinema-emblem" aria-hidden="true">${emblem}</div><p class="ceremony-kicker">${final?'CERIMÔNIA SUPREMA':special?`CERIMÔNIA ESPECIAL · CICLO ${cycle}`:`CONQUISTA ${n} DE 100`}</p><h2>${esc(title)}</h2><p class="ceremony-hours">${hoursNeeded.toLocaleString('pt-BR')} ${hoursNeeded===1?'hora conquistada':'horas conquistadas'}</p><p class="ceremony-story">${esc(story)}</p><p class="ceremony-footnote">${n}ª meta · ${2*n-1} ${(2*n-1)===1?'hora':'horas'} nesta etapa</p><p class="ceremony-motion-note" data-ceremony-motion-status aria-live="polite">${reducedMotion?'Seu sistema solicita movimento reduzido. Você pode ativar os efeitos voluntariamente.':'A cerimônia inicia automaticamente. Você pode reproduzi-la novamente.'}</p>${reducedMotion?'<button class="btn ceremony-motion-enable" type="button" data-enable-ceremony-motion>✦ Ativar animação nesta cerimônia</button>':''}<div class="ceremony-controls"><button class="btn" type="button" data-replay-ceremony="${n}">↻ Reproduzir novamente</button><button class="btn primary" type="button" data-cancel>Fechar cerimônia</button></div></div></div>`);
+ fitCeremonyViewport();
+ requestAnimationFrame(fitCeremonyViewport);
 
 }
 function addRecord(p,r){const previousTotal=total(p),before=bossStatus(p).done,record={id:uid(),...r};p.records.push(record);const reward=awardElixir(p,record,before);if(save()){render();toast(reward?`Elixir ${reward} conquistado!`:'Registro salvo');if(reward)openElixir(reward);/* Cerimônias disponíveis na galeria */} }

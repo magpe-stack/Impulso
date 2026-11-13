@@ -288,3 +288,21 @@ dialog.ceremony-dialog .ceremony-controls button{position:relative;z-index:11;po
 
 /* Impulso 64: diagnostic of reduced-motion preferences, explicit opt-in, stable replay */
 .ceremony-motion-note{font-size:.8rem;color:#f4dfff;max-width:48ch;margin:12px auto 8px;line-height:1.5}.ceremony-motion-enable{position:relative;z-index:12;cursor:pointer;margin:6px auto 8px;min-height:44px}.ceremony-motion-enable[hidden]{display:none!important}
+
+/* IMPULSO 65 — Cerimônias sem barras: viewport fixo, conteúdo ajustado proporcionalmente. */
+dialog.ceremony-dialog{position:fixed;inset:0;box-sizing:border-box;width:min(760px,calc(100vw - 20px));max-width:calc(100vw - 20px);height:min(720px,calc(100dvh - 20px));max-height:calc(100dvh - 20px);padding:0;margin:auto;overflow:hidden!important;border-radius:20px}
+dialog.ceremony-dialog .ceremony-cinema{box-sizing:border-box;display:grid;place-items:center;width:100%;height:100%;min-height:0!important;max-height:100%;margin:0;padding:clamp(12px,2.2vh,24px) clamp(12px,3vw,30px);border:0;border-radius:18px;overflow:hidden!important}
+dialog.ceremony-dialog .cinema-content{box-sizing:border-box;flex-shrink:0;width:100%;max-width:100%;min-width:0;transform-origin:center center}
+dialog.ceremony-dialog .cinema-content > *{flex-shrink:0}
+dialog.ceremony-dialog .cinema-intro{margin:0 0 8px}
+dialog.ceremony-dialog .cinema-emblem{font-size:clamp(3.5rem,10vh,7rem);line-height:1.1}
+dialog.ceremony-dialog .ceremony-kicker{margin:7px 0}
+dialog.ceremony-dialog .ceremony-cinema h2{margin:8px 0;font-size:clamp(1.25rem,3.4vh,2.2rem)}
+dialog.ceremony-dialog .ceremony-hours{margin:9px 0}
+dialog.ceremony-dialog .ceremony-story{margin:9px 0;line-height:1.45}
+dialog.ceremony-dialog .ceremony-footnote{margin:7px 0}
+dialog.ceremony-dialog .ceremony-motion-note{margin:6px auto 4px;line-height:1.35}
+dialog.ceremony-dialog .ceremony-motion-enable{margin:4px auto;min-height:40px}
+dialog.ceremony-dialog .ceremony-controls{margin-top:9px;gap:8px}
+dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
+@media(max-width:600px){dialog.ceremony-dialog .ceremony-cinema{padding:12px 10px}dialog.ceremony-dialog .ceremony-controls{gap:6px}dialog.ceremony-dialog .ceremony-controls button{font-size:.85rem;padding:9px 11px}}
