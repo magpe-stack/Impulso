@@ -269,7 +269,7 @@ dialog.ceremony-dialog{width:min(760px,calc(100vw - 20px));max-width:760px;max-h
 @keyframes cinema-ascend{0%{opacity:0;transform:translateY(90px) scale(.2) rotate(-30deg)}65%{opacity:1;transform:translateY(-12px) scale(1.15) rotate(8deg)}100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
 @keyframes cinema-hover{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 @keyframes cinema-reveal{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){.ceremony-cinema *, .ceremony-cinema *::before,.ceremony-cinema *::after{animation:none!important;transition:none!important}.cinema-intro,.cinema-emblem,.ceremony-cinema .ceremony-kicker,.ceremony-cinema h2,.ceremony-cinema .ceremony-hours,.ceremony-cinema .ceremony-story,.ceremony-cinema .ceremony-footnote,.ceremony-cinema .ceremony-controls{opacity:1!important;transform:none!important}.cinema-confetti,.cinema-flash,.cinema-orbit,.cinema-beam{display:none!important}}
+@media(prefers-reduced-motion:reduce){.ceremony-cinema:not(.ceremony-motion-opt-in) *, .ceremony-cinema:not(.ceremony-motion-opt-in) *::before,.ceremony-cinema:not(.ceremony-motion-opt-in) *::after{animation:none!important;transition:none!important}.ceremony-cinema:not(.ceremony-motion-opt-in) .cinema-intro,.ceremony-cinema:not(.ceremony-motion-opt-in) .cinema-emblem,.ceremony-cinema:not(.ceremony-motion-opt-in) .ceremony-kicker,.ceremony-cinema:not(.ceremony-motion-opt-in) h2,.ceremony-cinema:not(.ceremony-motion-opt-in) .ceremony-hours,.ceremony-cinema:not(.ceremony-motion-opt-in) .ceremony-story,.ceremony-cinema:not(.ceremony-motion-opt-in) .ceremony-footnote,.ceremony-cinema:not(.ceremony-motion-opt-in) .ceremony-controls{opacity:1!important;transform:none!important}.ceremony-cinema:not(.ceremony-motion-opt-in) .cinema-confetti,.ceremony-cinema:not(.ceremony-motion-opt-in) .cinema-flash,.ceremony-cinema:not(.ceremony-motion-opt-in) .cinema-orbit,.ceremony-cinema:not(.ceremony-motion-opt-in) .cinema-beam{display:none!important}}
 @media print{dialog.ceremony-dialog{display:none!important}}
 
 /* IMPULSO 62 — diálogo de cerimônias: dimensões estáveis e replay sem reabertura */
@@ -285,3 +285,6 @@ dialog.ceremony-dialog .ceremony-cinema{box-sizing:border-box;width:100%;max-wid
 dialog.ceremony-dialog .ceremony-controls{position:relative;z-index:10;pointer-events:auto}
 dialog.ceremony-dialog .ceremony-controls button{position:relative;z-index:11;pointer-events:auto;cursor:pointer;min-height:44px}
 @media(max-width:600px){dialog.ceremony-dialog .ceremony-cinema{min-height:calc(100dvh - 32px)}}
+
+/* Impulso 64: diagnostic of reduced-motion preferences, explicit opt-in, stable replay */
+.ceremony-motion-note{font-size:.8rem;color:#f4dfff;max-width:48ch;margin:12px auto 8px;line-height:1.5}.ceremony-motion-enable{position:relative;z-index:12;cursor:pointer;margin:6px auto 8px;min-height:44px}.ceremony-motion-enable[hidden]{display:none!important}
