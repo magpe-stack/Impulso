@@ -770,3 +770,8 @@ O tempo efetivo é calculado pelos intervalos de atividade, excluindo pausas. A 
 ### Ignição do Radar — versão 77
 
 O botão **Ignição** reproduz os graus acumulados do projeto em velocidade de **uma volta completa a cada três segundos**. Sete Giros correspondem a sete voltas completas (2.520 graus), em aproximadamente 21 segundos. Uma marca colorida assimétrica em uma pá permite acompanhar visualmente cada volta. O contador mostra giros concluídos e o botão **Parar** interrompe a reprodução sem alterar os registros. Em dispositivos com preferência por movimento reduzido, a posição final é apresentada sem animação. A reprodução não adiciona horas nem graus.
+
+
+### Ignição — correção da versão 78
+
+A rotação das pás agora utiliza `style.transform` no grupo SVG, evitando conflitos entre o atributo `transform` do SVG e as regras CSS. O usuário inicia explicitamente a animação por **Ignição**, pode interrompê-la por **Parar**, e acompanha os giros concluídos. A velocidade é de três segundos por giro. A reprodução é apenas visual e não altera os registros.

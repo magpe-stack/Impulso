@@ -520,12 +520,12 @@ function renderRadar(p){
  $('#radarIgnition')?.addEventListener('click', igniteRadar);
  $('#radarStop')?.addEventListener('click', stopIgnition);
 }
-// v77: rotação SVG explícita, sem interpolação ambígua entre 0° e 360°.
+// v78: rotação aplicada via CSSStyleDeclaration ao grupo SVG; evita conflito com CSS transform.
 // Uma marca assimétrica acompanha uma das pás para tornar cada volta perceptível.
 const IGNITION_MS_PER_TURN=3000;
 let ignitionRun=null;
 function ignitionAngle(rotor,degrees){
- if(rotor)rotor.setAttribute('transform',`rotate(${degrees%360} 120 120)`);
+ if(rotor)rotor.style.transform=`rotate(${degrees}deg)`;
 }
 function stopIgnition(){
  const run=ignitionRun;if(!run)return;
@@ -546,11 +546,9 @@ function igniteRadar(){
  if(!degrees){feedback.textContent='Nenhum grau acumulado ainda. Registre trabalho para alimentar o motor.';return;}
  const turns=Math.floor(degrees/360),rest=degrees%360;
  const summary=`${fmtNumber(degrees)} graus: ${fmtNumber(turns)} giro${turns===1?'':'s'} completo${turns===1?'':'s'} e ${rest} grau${rest===1?'':'s'}.`;
- if(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches){
-   ignitionAngle(rotor,degrees);
-   feedback.textContent=`Ignição concluída sem animação (preferência por movimento reduzido). ${summary}`;
-   return;
- }
+ // A Ignição é acionada expressamente pelo usuário: não suprimir silenciosamente
+ // a animação em dispositivos configurados para movimento reduzido.
+ // O botão Parar permanece disponível em qualquer momento.
  const run={turns,angle:0,frame:null,last:null,shown:-1};
  ignitionRun=run;
  button.disabled=true;button.textContent='Em ignição…';stop.hidden=false;

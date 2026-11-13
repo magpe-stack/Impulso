@@ -398,3 +398,6 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 
 /* v77: o rotor é posicionado pelo atributo SVG transform, não por CSS. */
 #propRotor{transform:none!important;transform-origin:initial!important}
+
+/* v78: a rotação do SVG é definida em tempo real por style.transform (não por atributo SVG). */
+#propRotor{transform-origin:120px 120px;transform-box:view-box;transition:none!important;will-change:transform}
