@@ -27,6 +27,7 @@
 14. [Arena: 200 chefões](#14-arena-200-chefoes)
 15. [Codex de Monstros](#15-codex-de-monstros)
 16. [Elixires, cofres e recompensas](#16-elixires-cofres-e-recompensas)
+   - [Visão: o foguete revelado por Elixires](#visao-o-foguete-revelado-por-elixires)
 17. [Guardar, exportar, importar e restaurar](#17-guardar-exportar-importar-e-restaurar)
 18. [Impressão e relatórios](#18-impressao-e-relatorios)
 19. [Alertas: lembretes opcionais](#19-alertas-lembretes-opcionais)
@@ -100,8 +101,8 @@ O menu lateral é aberto pelo botão no cabeçalho. A navegação está dividida
 | Grupo | Opções |
 |---|---|
 | Início, projetos e documentos | **Início · Novo · Projetos · Guardar · Restaurar · Imprimir** |
-| Registro de atividades | **Ponto · Hábitos · Entradas** |
-| Jornada e conquistas | **Arena · Codex · Elixires · Meu Dia** |
+| Registro de atividades | **Ponto · Hábitos · Entradas · Meu Dia** |
+| Jornada e conquistas | **Arena · Codex · Elixires · Visão** |
 | Acompanhamento e diagnóstico | **Radar · Estatísticas · Armazenamento** |
 | Preferências | **Alertas · Configuração** |
 | Encerramento | **Sair** |
@@ -319,6 +320,16 @@ A seção **Elixires** é o espaço de coleção e recompensa. O sistema contém
 **Compartilhar:** quando o dispositivo oferecer a API de compartilhamento, o aplicativo pode abrir o menu nativo. Em outros contextos, use a opção de copiar a frase. O suporte depende do navegador.
 
 **Atenção:** os **Elixires Ativos** da página Hábitos são os hábitos equipados; os **Elixires colecionáveis** são as frases obtidas com os cofres. São recursos relacionados, mas não idênticos.
+
+### Visão: o foguete revelado por Elixires
+
+A página **Visão**, logo abaixo de **Elixires** no menu, apresenta a imagem `ImpulsoVision.svg` de um foguete decolando. A imagem é dividida em **200 quadradinhos (20 colunas por 10 linhas)**, inicialmente ocultos.
+
+Cada Elixir conquistado e válido no **Altar dos Elixires** concede **uma revelação disponível**. O usuário decide quando utilizá-la: basta abrir **Visão**, tocar em um quadradinho ainda oculto e confirmar. A parte correspondente da imagem fica visível permanentemente. É possível acumular revelações sem gastá-las imediatamente.
+
+A página mostra o número de Elixires conquistados, o saldo de revelações, os quadradinhos já revelados e a porcentagem descoberta. O progresso pertence exclusivamente ao projeto atual e é salvo em `localStorage`, incluído nos backups e restaurações do projeto. A imagem SVG faz parte do cache offline do PWA.
+
+**Importante:** a concessão de uma revelação segue a mecânica real dos Elixires do Impulso: é necessário derrotar o chefão correspondente e concluir um hábito para abrir o cofre. Equipar um hábito, por si só, não concede revelação. Se um registro for excluído e seu Elixir deixar de ser válido, as partes já reveladas continuam visíveis, mas o saldo para novas escolhas é recalculado a partir dos Elixires válidos.
 
 ## 17. Guardar, exportar, importar e restaurar
 
