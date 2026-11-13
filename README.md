@@ -313,6 +313,14 @@ O Radar acompanha o tempo do projeto e pode atualizar sua indicação durante um
 
 <a id="14-arena-200-chefoes"></a>
 
+### Marcos progressivos e cerimônias
+
+Além da meta simbólica de 10.000 horas, cada projeto acompanha **100 metas progressivas**. A primeira etapa exige **1 hora**, a segunda exige **3 horas adicionais**, a terceira **5 horas adicionais**, e assim por diante, aumentando **2 horas por etapa**. A meta de número *n* exige `2n − 1` horas adicionais, e o total acumulado ao concluí-la é `n²` horas. Portanto, a **99ª meta** termina em **9.801 horas**, e a **100ª**, a mais difícil, exige **199 horas adicionais** para alcançar **exatamente 10.000 horas**.
+
+O painel da jornada, na página **Início**, mostra metas conquistadas, próximo objetivo, tempo restante, barra de progresso e a lista completa de metas. Cada nova meta atingida ao salvar uma atividade de Ponto ou Hábito desencadeia uma **cerimônia de conclusão**, com mensagem e emblema. As metas **10, 20, 30, ... 100** recebem cerimônias especiais, uma por ciclo de dez metas; a última é **A Consagração**. Se um registro ultrapassar vários marcos, o aplicativo apresenta uma cerimônia resumida, sem interromper o registro.
+
+A contagem usa o tempo produtivo efetivo do projeto, evitando somar períodos sobrepostos duas vezes. As metas são recalculadas a partir dos registros, inclusive após exclusões. A lista de cerimônias já apresentadas fica no armazenamento do projeto e integra o backup. Registros antigos contam para os indicadores; não há disparo retroativo em massa de cerimônias ao atualizar o aplicativo. As cerimônias não alteram o tempo nem concedem Elixires adicionais.
+
 ## 14. Arena: 200 chefões
 
 A **Arena** transforma o progresso em uma campanha contra **200 chefões**, organizados em **10 fases de 20 adversários**, com dificuldade crescente e marcos distribuídos ao longo das 10.000 horas.
