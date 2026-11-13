@@ -811,3 +811,8 @@ O Impulso abre sempre na página **Dashboard**, primeira opção do grupo **Dado
 A cabine apresenta seis indicadores: tempo total, tempo de hoje, sequência de dias, Giros completos, percentual de Propulsão (10.080 horas) e metas concluídas (100 metas da jornada original). O painel mostra também a atividade atual ou pausada, quatro controles para Ponto, Foco, Hábitos e Entradas e uma faixa da próxima meta. Os indicadores são atalhos para páginas detalhadas.
 
 A apresentação adapta tamanhos, espaços e informações auxiliares à altura e largura disponíveis; em condições extremas de zoom ou acessibilidade, prioriza a leitura dos comandos essenciais. Os controles seguem a paleta ativa. Nenhum desenho de rotor ou foguete é duplicado.
+
+
+### Ajustes da versão 85 — Dashboard
+
+Os seis indicadores do Dashboard usam cartões mais compactos e fontes maiores, preservando a apresentação sem rolagem. O atalho **Foco** da Central de Comando agora abre diretamente a página Foco.

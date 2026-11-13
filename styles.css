@@ -436,3 +436,18 @@ body.dashboard-mode>.app-footer{display:none!important}
 @media(max-height:570px){.dashboard{gap:4px;padding:5px}.dash-heading h1{font-size:1rem}.dash-eyebrow,.dash-section-heading span{font-size:.56rem}.dash-status{padding:3px 7px}.dash-metric{padding:2px}.dash-number{font-size:clamp(.78rem,2.5vh,1.1rem)}.dash-command{padding:4px 2px}.dash-milestone{padding:4px}.dash-command-icon{font-size:1rem}}
 @media(max-height:420px){.dash-section-heading span,.dash-status-return,.dash-eyebrow{display:none}.dash-heading h1{font-size:.92rem}.dash-command-icon{display:none}.dash-command{padding:3px 1px}.dash-milestone-top{font-size:.57rem}.dash-label{font-size:.56rem}}
 @media print{body.dashboard-mode{height:auto;overflow:visible}body.dashboard-mode>.shell,body.dashboard-mode #main,.dashboard{height:auto;overflow:visible}}
+
+/* v85 — Dashboard: instrumentos compactos, tipografia legível e controles proporcionais. */
+.dashboard{grid-template-rows:auto auto minmax(0,1fr) auto auto;gap:clamp(4px,.65vh,8px);padding:clamp(6px,.85vh,10px)}
+.dash-metrics{gap:clamp(4px,.65vh,8px)}
+.dash-metric{border-radius:8px;padding:clamp(3px,.5vh,7px);gap:2px}
+.dash-number{font-size:clamp(1rem,2.5vh,1.55rem);line-height:1.15}
+.dash-label{font-size:clamp(.78rem,1.75vh,.95rem);line-height:1.15}
+.dash-command{font-size:clamp(.84rem,1.8vh,1.05rem);padding:clamp(5px,.8vh,10px) 3px;border-radius:8px}
+.dash-command-icon{font-size:clamp(1.05rem,2.15vh,1.3rem)}
+.dash-status{padding:clamp(4px,.65vh,8px) 9px;font-size:clamp(.82rem,1.65vh,.98rem)}
+.dash-section-heading strong{font-size:clamp(.85rem,1.7vh,1rem)}
+.dash-milestone{padding:clamp(5px,.65vh,8px)}
+.dash-milestone-top{font-size:clamp(.76rem,1.6vh,.92rem)}
+@media(max-height:570px){.dash-number{font-size:clamp(.9rem,2.45vh,1.12rem)}.dash-label{font-size:clamp(.72rem,1.7vh,.83rem)}.dash-command{font-size:clamp(.77rem,1.7vh,.91rem);padding:3px 2px}.dash-milestone-top{font-size:.72rem}}
+@media(max-height:420px){.dash-label{font-size:.69rem}.dash-command{font-size:.73rem}.dash-milestone-top{font-size:.68rem}}
