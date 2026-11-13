@@ -278,3 +278,10 @@ dialog.ceremony-dialog .ceremony-cinema{box-sizing:border-box;min-height:min(680
 dialog.ceremony-dialog .cinema-content{min-width:0;max-width:100%;box-sizing:border-box}
 dialog.ceremony-dialog .cinema-content h2{overflow-wrap:anywhere}
 @media(max-width:600px){dialog.ceremony-dialog .ceremony-cinema{min-height:calc(100dvh - 32px);padding:20px 14px}.cinema-emblem{font-size:5.5rem}.ceremony-cinema .ceremony-story{margin:12px 0}}
+
+/* IMPULSO 63 — fixed ceremony viewport, reliable pointer controls and replay */
+dialog.ceremony-dialog{position:fixed;inset:0;box-sizing:border-box;width:min(760px,calc(100vw - 24px));max-width:calc(100vw - 24px);height:auto;max-height:calc(100dvh - 24px);margin:auto;padding:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}
+dialog.ceremony-dialog .ceremony-cinema{box-sizing:border-box;width:100%;max-width:100%;min-height:min(680px,calc(100dvh - 28px));margin:0;border-radius:18px}
+dialog.ceremony-dialog .ceremony-controls{position:relative;z-index:10;pointer-events:auto}
+dialog.ceremony-dialog .ceremony-controls button{position:relative;z-index:11;pointer-events:auto;cursor:pointer;min-height:44px}
+@media(max-width:600px){dialog.ceremony-dialog .ceremony-cinema{min-height:calc(100dvh - 32px)}}

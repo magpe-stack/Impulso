@@ -702,3 +702,8 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 ### Correção de reprodução — Impulso 62
 
 A reprodução de uma cerimônia agora reinicia as animações dentro do mesmo diálogo, sem fechar e reabrir a janela. A apresentação mantém suas dimensões ao repetir. Se o dispositivo estiver configurado para reduzir movimento, a animação é suprimida por acessibilidade, mas os textos e a conquista permanecem visíveis.
+
+
+### Correção de controles — Impulso 63
+
+A janela de Cerimônias usa um único diálogo. Os botões **Fechar cerimônia** e **Reproduzir novamente** são atendidos por eventos delegados no próprio diálogo, inclusive após qualquer atualização do conteúdo. A reprodução reinicia as animações CSS sem substituir os elementos nem alterar as dimensões da janela. O sistema respeita a preferência de acessibilidade **reduzir movimento**, que pode tornar a apresentação estática.
