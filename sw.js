@@ -1,5 +1,5 @@
-const CACHE='impulso-v69-calendario';
-const ASSETS=['./','./index.html','./styles.css?v=69','./theme-impulso.css?v=69','./theme-impulso-analogo.css?v=69','./theme-impulso-triadico.css?v=69','./theme-impulso-granfino.css?v=69','./theme-impulso-ecologico.css?v=69','./theme-impulso-mistico.css?v=69','./app.js?v=69','./manifest.json?v=13','./rocket-192-v11.png','./rocket-512-v11.png','./logo.svg','./logo.png','./habitos_elixires_v2.json','./ImpulsoVision.svg'];
+const CACHE='impulso-v71-foco';
+const ASSETS=['./','./index.html','./styles.css?v=71','./theme-impulso.css?v=71','./theme-impulso-analogo.css?v=71','./theme-impulso-triadico.css?v=71','./theme-impulso-granfino.css?v=71','./theme-impulso-ecologico.css?v=71','./theme-impulso-mistico.css?v=71','./app.js?v=71','./manifest.json?v=13','./rocket-192-v11.png','./rocket-512-v11.png','./logo.svg','./logo.png','./habitos_elixires_v2.json','./ImpulsoVision.svg'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('impulso-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{

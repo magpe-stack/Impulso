@@ -743,3 +743,12 @@ O menu principal apresenta **Início**, **Ações**, **Vitórias**, **Dados**, *
 - **Sair:** mantém a confirmação e o comportamento anteriores.
 
 O submenu é expansível, compatível com teclado e indica se está aberto. Os registros, as conquistas e os backups não são modificados pela reorganização.
+
+
+## Sessões de Foco (versão 71)
+
+No menu **Ações → Foco**, configure uma atividade (até 50 caracteres), um objetivo (até 200), o tipo de compromisso (**Entrega** ou **Dedicação**) e a duração planejada (1–1440 minutos). Inicie a sessão, pause e retome quando necessário e, ao concluir, avalie se o objetivo foi alcançado integralmente, parcialmente ou não alcançado. Uma observação opcional de até 200 caracteres pode registrar o aprendizado.
+
+O tempo efetivo é calculado pelos intervalos de atividade, excluindo pausas. A sessão permanece salva no projeto ao navegar entre páginas ou reabrir o PWA. Ao concluir, os intervalos entram no motor de tempo do projeto, no Meu Dia, no Calendário e no Histórico, sem duplicação de intervalos sobrepostos. O histórico específico de Foco mostra as 50 sessões mais recentes, com duração planejada, efetiva e avaliação. Os backups gerais e individuais preservam os registros e sessões em andamento.
+
+**Interpretação:** ultrapassar a duração prevista não é considerado vitória automática. O aplicativo apresenta o desvio de tempo e a avaliação do objetivo separadamente. Sessões de Foco e Ponto não podem ser iniciadas simultaneamente; conclua a sessão ativa antes de iniciar outra. Como o funcionamento é local, mantenha backups regulares.
