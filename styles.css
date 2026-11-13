@@ -271,3 +271,10 @@ dialog.ceremony-dialog{width:min(760px,calc(100vw - 20px));max-width:760px;max-h
 @keyframes cinema-reveal{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.ceremony-cinema *, .ceremony-cinema *::before,.ceremony-cinema *::after{animation:none!important;transition:none!important}.cinema-intro,.cinema-emblem,.ceremony-cinema .ceremony-kicker,.ceremony-cinema h2,.ceremony-cinema .ceremony-hours,.ceremony-cinema .ceremony-story,.ceremony-cinema .ceremony-footnote,.ceremony-cinema .ceremony-controls{opacity:1!important;transform:none!important}.cinema-confetti,.cinema-flash,.cinema-orbit,.cinema-beam{display:none!important}}
 @media print{dialog.ceremony-dialog{display:none!important}}
+
+/* IMPULSO 62 — diálogo de cerimônias: dimensões estáveis e replay sem reabertura */
+dialog.ceremony-dialog{box-sizing:border-box;width:min(760px,calc(100vw - 24px));max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);margin:auto;padding:0;overflow:auto;border-radius:20px}
+dialog.ceremony-dialog .ceremony-cinema{box-sizing:border-box;min-height:min(680px,calc(100dvh - 28px));width:100%;max-width:100%;margin:0;border-radius:18px;overflow:hidden}
+dialog.ceremony-dialog .cinema-content{min-width:0;max-width:100%;box-sizing:border-box}
+dialog.ceremony-dialog .cinema-content h2{overflow-wrap:anywhere}
+@media(max-width:600px){dialog.ceremony-dialog .ceremony-cinema{min-height:calc(100dvh - 32px);padding:20px 14px}.cinema-emblem{font-size:5.5rem}.ceremony-cinema .ceremony-story{margin:12px 0}}

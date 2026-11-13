@@ -697,3 +697,8 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 **Impulso — Motor de Produtividade Pessoal.**  
 *A constância começa com um pequeno impulso.*
 
+
+
+### Correção de reprodução — Impulso 62
+
+A reprodução de uma cerimônia agora reinicia as animações dentro do mesmo diálogo, sem fechar e reabrir a janela. A apresentação mantém suas dimensões ao repetir. Se o dispositivo estiver configurado para reduzir movimento, a animação é suprimida por acessibilidade, mas os textos e a conquista permanecem visíveis.
