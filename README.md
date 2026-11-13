@@ -726,9 +726,9 @@ A janela de cerimônia agora utiliza dimensões limitadas pela área visível do
 O menu principal apresenta **Início**, **Ações**, **Vitórias**, **Dados**, **Configurações** e **Sair**. Ao selecionar um dos quatro primeiros grupos, abre-se o respectivo submenu:
 
 - **Início:** Novo, Projetos, Guardar, Restaurar e Imprimir. O painel inicial permanece disponível ao abrir um projeto.
-- **Ações:** Ponto, Hábitos, Entradas e Meu Dia.
+- **Ações:** Ponto, Hábitos e Entradas.
 - **Vitórias:** Arena, Codex, Elixires, Cerimônias e Visão.
-- **Dados:** Radar, Estatísticas e Armazenamento.
+- **Dados:** Meu Dia, Radar, Estatísticas e Armazenamento.
 - **Configurações:** reúne os **Temas** (sete identidades cromáticas e luminosidade) e os **Alertas** (backup e hábitos/Elixires) na mesma página. O botão Alertas foi retirado do menu, mas seus controles e preferências foram preservados.
 - **Sair:** mantém a confirmação e o comportamento anteriores.
 

@@ -328,3 +328,6 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 .vision-history-item span{display:block;margin-top:5px}
 .vision-legacy{margin-top:20px;padding:14px;border:1px solid var(--line);border-radius:12px}
 .vision-old-tile{display:inline-block;padding:4px 7px;margin:3px;border:1px solid var(--line);border-radius:6px;font-variant-numeric:tabular-nums}
+
+/* v68: uma única linha divisória entre Configurações e Sair. */
+.menu-drawer .menu-exit{border-top:0;margin-top:0;padding-top:4px;border-radius:6px}

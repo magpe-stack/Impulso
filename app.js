@@ -233,9 +233,9 @@ let expandedMenuGroup=null;
 function renderMenu(){
  const groups=[
   ['inicio','Início',[['new','Novo'],['projetos','Projetos'],['backup','Guardar'],['import','Restaurar'],['print','Imprimir']]],
-  ['acoes','Ações',[['point','Ponto'],['habitPage','Hábitos'],['manual','Entradas'],['dia','Meu Dia']]],
+  ['acoes','Ações',[['point','Ponto'],['habitPage','Hábitos'],['manual','Entradas']]],
   ['vitorias','Vitórias',[['arena','Arena'],['codex','Codex'],['altar','Elixires'],['cerimonias','Cerimônias'],['visao','Visão']]],
-  ['dados','Dados',[['radar','Radar'],['estatisticas','Estatísticas'],['armazenamento','Armazenamento']]]
+  ['dados','Dados',[['dia','Meu Dia'],['radar','Radar'],['estatisticas','Estatísticas'],['armazenamento','Armazenamento']]]
  ];
  const actions=new Set(['new','backup','import','print','point','habitPage','manual']);
  const isActive=items=>items.some(([id])=>id===page || (id==='point'&&page==='ponto') || (id==='habitPage'&&page==='habitos') || (id==='manual'&&page==='entradas'));
