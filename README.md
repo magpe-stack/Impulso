@@ -18,7 +18,7 @@
 5. [Projetos independentes](#5-projetos-independentes)
 6. [Início e indicadores](#6-inicio-e-indicadores)
 7. [Ponto: cronometrar trabalho](#7-ponto-cronometrar-trabalho)
-8. [Entrada Manual](#8-entrada-manual)
+8. [Entradas retroativas](#8-entradas-retroativas)
 9. [Meu Dia, Histórico e cálculo do tempo](#9-meu-dia-historico-e-calculo-do-tempo)
 10. [Estatísticas: central de análise e desempenho](#10-estatisticas-central-de-analise-e-desempenho)
 11. [Hábitos e Inventário de Elixires](#11-habitos-e-inventario-de-elixires)
@@ -147,20 +147,25 @@ O formulário permanece na própria página, sem uma janela modal que impeça a 
 
 **Boas práticas:** não abra simultaneamente várias instâncias do aplicativo para controlar a mesma atividade; confira o nome e os horários antes de concluir; não limpe os dados do site com uma sessão aberta. A continuidade após fechamento forçado, reinício ou suspensão do navegador deve ser conferida antes de confiar no resultado.
 
-## 8. Entrada Manual
+## 8. Entradas retroativas
 
-Use **Entrada** para lançar um trabalho já realizado ou corrigir a ausência de um registro cronológico, sem iniciar um cronômetro.
+A opção **Entrada**, no menu esquerdo, abre uma página própria chamada **Entradas retroativas**. Nela há duas opções: **Entrada de Ponto** e **Entrada de Hábito**. Ambas registram atividades que já ocorreram, sem iniciar cronômetros, e exigem um projeto aberto.
 
-1. Abra o projeto correto.
-2. Acesse **Entrada**.
-3. Preencha o **nome da atividade** (até 50 caracteres).
-4. Informe **data e horário de início**.
-5. Informe **data e horário de término**.
-6. Revise e clique em **Lançar Entrada**; use **Cancelar** para desistir.
+### Entrada de Ponto
 
-O término precisa ser posterior ao início e não pode estar no futuro, conforme a validação do aplicativo. Como as duas datas são independentes, é possível registrar trabalhos que atravessam a meia-noite ou mais de um dia.
+Clique em **Entrada de Ponto** para abrir a ficha de entrada manual de trabalho já existente. Informe o nome da atividade (até 50 caracteres), as datas e os horários de início e término, confira os dados e selecione **Lançar entrada**. O registro aparece no Histórico e no Meu Dia como **Entrada Manual**. É possível informar início e término em dias diferentes.
 
-**Evite duplicidade:** não registre manualmente o mesmo trabalho que já foi lançado pelo Ponto. O cálculo consolidado trata intervalos coincidentes, mas registros repetidos podem poluir o histórico.
+### Entrada de Hábito
+
+Clique em **Entrada de Hábito** para abrir a ficha específica de hábitos. Selecione um hábito já cadastrado no projeto, informe as datas e os horários reais de início e término e escolha **Lançar hábito**. A execução fica vinculada ao hábito escolhido e aparece como **Hábito** no Histórico e no Meu Dia. Ela também participa das estatísticas e da lógica de recompensas aplicável a registros de hábitos.
+
+Se ainda não houver hábitos cadastrados, abra a página **Hábitos** e crie um primeiro. Não é necessário que o hábito esteja equipado para registrar uma execução anterior.
+
+### Validação e cuidados
+
+As fichas verificam datas de calendário válidas, horário de término posterior ao início e término não situado no futuro. Atividades que atravessam a meia-noite são permitidas. O sistema preserva os registros no armazenamento local do projeto, sujeitos às mesmas condições de backup e restauração dos demais dados.
+
+**Evite duplicidade:** não lance retroativamente o mesmo trabalho ou hábito já registrado por Ponto ou Pomodoro. Use a entrada retroativa somente para atividades efetivamente realizadas.
 
 ## 9. Meu Dia, Histórico e cálculo do tempo
 
