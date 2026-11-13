@@ -42,6 +42,8 @@
 
 ---
 
+<a id="1-apresentacao-e-filosofia"></a>
+
 ## 1. Apresentação e filosofia
 
 O **Impulso — Motor de Produtividade Pessoal** reúne quatro dimensões em um mesmo ambiente: **trabalho efetivamente registrado**, **hábitos executados**, **acompanhamento do progresso** e **recompensas narrativas inspiradas em RPG**. O objetivo é tornar visível o esforço contínuo sem transformar a ferramenta em uma competição entre usuários.
@@ -49,6 +51,8 @@ O **Impulso — Motor de Produtividade Pessoal** reúne quatro dimensões em um 
 A jornada simbólica possui **10.000 horas**. É uma referência de longo prazo, **não uma certificação de maestria**, uma medida da qualidade do trabalho ou uma promessa de sucesso. A Arena transforma marcos de tempo em batalhas contra chefões; o Codex documenta adversários derrotados; os Elixires recompensam a combinação de progresso e hábitos concluídos.
 
 O aplicativo é **PWA, mobile-first, offline-first e executado no próprio navegador**, sem conta obrigatória, servidor de registros ou bibliotecas externas de interface. Projetos diferentes mantêm seus próprios registros e conquistas.
+
+<a id="2-primeiro-acesso-instalacao-e-uso-offline"></a>
 
 ## 2. Primeiro acesso, instalação e uso offline
 
@@ -68,6 +72,8 @@ O **service worker** guarda os arquivos essenciais do aplicativo em cache para p
 
 **Importante:** instalar o PWA **não** significa que os dados foram copiados para uma nuvem. A instalação e o armazenamento de projetos são coisas distintas.
 
+<a id="3-ignicao-a-abertura-cinematografica"></a>
+
 ## 3. Ignição: a abertura cinematográfica
 
 Ao iniciar o Impulso, o usuário encontra **Ignição — O Despertar do Impulso**, uma apresentação visual que antecede a interface principal. Em vez de uma tela branca com logotipo estático, a abertura usa um **fundo escuro**, iluminação radial, o foguete oficial, um **anel energético**, partículas luminosas, a revelação progressiva do nome **IMPULSO** e uma barra de inicialização.
@@ -83,7 +89,7 @@ A apresentação tem **duração programada de aproximadamente 3,7 segundos**, s
 
 ### Cores e acessibilidade
 
-A iluminação acompanha a identidade visual escolhida em **Configuração**: **Impulso Original**, **Impulso Vinho**, **Impulso Blue Sky** ou **Impulso Trinity**. Isso independe do modo claro ou escuro escolhido para a interface. A abertura utiliza animações CSS nativas, sem vídeos, serviços externos ou bibliotecas de animação.
+A iluminação acompanha a identidade visual escolhida em **Configuração**: **Impulso Original**, **Impulso Vinho**, **Impulso Blue Sky**, **Impulso Trinity**, **Impulso Granfino** ou **Impulso Ecológico**. Isso independe do modo claro ou escuro escolhido para a interface. A abertura utiliza animações CSS nativas, sem vídeos, serviços externos ou bibliotecas de animação.
 
 Se o dispositivo ou navegador solicitar **movimento reduzido** (`prefers-reduced-motion`), os efeitos são simplificados para respeitar essa preferência, **mas a duração programada continua aproximadamente 3,7 segundos**. A apresentação dispõe de um mecanismo de segurança que a encerra se algo impedir a conclusão normal; em condições excepcionais, como a aba ficar em segundo plano, o tempo observado pode variar. O objetivo é impedir que a abertura bloqueie o uso do aplicativo.
 
@@ -93,6 +99,8 @@ Se o dispositivo ou navegador solicitar **movimento reduzido** (`prefers-reduced
 - Se ficar presa, feche e reabra o aplicativo; confira se o navegador concluiu a atualização do PWA. **Não apague os dados do site sem antes guardar um backup.**
 - Se os efeitos parecerem estáticos, verifique a configuração de redução de movimento do sistema. Isso não deve impedir o acesso ao aplicativo.
 - Em aparelhos mais lentos, os quadros da animação podem não ser uniformes; isso não afeta a contagem das sessões de trabalho.
+
+<a id="4-interface-navegacao-e-menu"></a>
 
 ## 4. Interface, navegação e menu
 
@@ -111,9 +119,18 @@ O menu lateral é aberto pelo botão no cabeçalho. A navegação está dividida
 
 O nome **Impulso** fica destacado no alto do menu. Os itens têm espaçamento compacto para aproveitar melhor a altura disponível; em telas muito baixas, pode ser necessário rolar o painel. Para fechá-lo, utilize o botão correspondente, toque fora dele ou pressione **Esc**, quando disponível.
 
-No cabeçalho também há controle de **modo claro/escuro** e, conforme o navegador, um controle de **tela cheia**. A tela cheia pode não estar disponível em todos os dispositivos. A seção **Sobre** apresenta informações gerais e links do projeto.
+No cabeçalho também há controle de **modo claro/escuro** e, conforme o navegador, um controle de **tela cheia**. A tela cheia pode não estar disponível em todos os dispositivos. O botão **Sobre** apresenta a finalidade do Impulso, um resumo atualizado dos principais recursos e links para o aplicativo, o repositório e o manual completo. Os links externos precisam de conexão para abrir, mas não são necessários para utilizar os recursos locais.
 
 **Navegação não encerra automaticamente um Ponto ativo.** Você pode iniciar um trabalho, consultar outras páginas e voltar para finalizá-lo.
+
+### Sair do aplicativo
+
+O botão **Sair** aparece no final do menu lateral, imediatamente abaixo de **Configuração**. Ao selecioná-lo, o Impulso solicita confirmação. **Cancelar** mantém a navegação normalmente; **Sair do aplicativo** apresenta uma tela de despedida com a opção **Voltar ao Impulso**.
+
+Em aplicativos instalados, o Impulso tenta fechar a janela, quando o navegador permite. Em abas comuns, os navegadores geralmente proíbem o fechamento programático; nesse caso, feche a aba manualmente. A tela de saída não apaga projetos, hábitos ou registros. Se houver um Ponto em andamento, ele não será automaticamente encerrado: volte e finalize-o quando desejar.
+
+
+<a id="5-projetos-independentes"></a>
 
 ## 5. Projetos independentes
 
@@ -131,11 +148,15 @@ Em **Projetos**, consulte a lista, selecione um projeto para trabalhar nele e ut
 
 Cada projeto mantém seus próprios dados: atividades, sessões, hábitos equipados, progresso, coleções e registros. A preferência visual, por outro lado, é uma configuração do aplicativo **neste navegador**, não uma paleta diferente para cada projeto.
 
+<a id="6-inicio-e-indicadores"></a>
+
 ## 6. Início e indicadores
 
 A página **Início** é o ponto de entrada para criar ou abrir projetos e acompanhar a evolução do projeto ativo. Ela apresenta indicadores de tempo e progresso, incluindo o caminho até as 10.000 horas, além de atalhos para ações frequentes.
 
 Os números refletem os dados armazenados. Se você excluir um registro, o tempo e os marcos de progresso poderão diminuir. Indicadores de hábitos e chefões não devem ser confundidos com horas de trabalho: são medidas diferentes.
+
+<a id="7-ponto-cronometrar-trabalho"></a>
 
 ## 7. Ponto: cronometrar trabalho
 
@@ -151,6 +172,8 @@ Use **Ponto** para registrar uma atividade enquanto ela acontece.
 O formulário permanece na própria página, sem uma janela modal que impeça a navegação. O Ponto utiliza horários reais de início e término. Uma sessão pode começar antes da meia-noite e terminar no dia seguinte; o cálculo diário é dividido por data.
 
 **Boas práticas:** não abra simultaneamente várias instâncias do aplicativo para controlar a mesma atividade; confira o nome e os horários antes de concluir; não limpe os dados do site com uma sessão aberta. A continuidade após fechamento forçado, reinício ou suspensão do navegador deve ser conferida antes de confiar no resultado.
+
+<a id="8-entradas-retroativas"></a>
 
 ## 8. Entradas retroativas
 
@@ -171,6 +194,8 @@ Se ainda não houver hábitos cadastrados, abra a página **Hábitos** e crie um
 As fichas verificam datas de calendário válidas, horário de término posterior ao início e término não situado no futuro. Atividades que atravessam a meia-noite são permitidas. O sistema preserva os registros no armazenamento local do projeto, sujeitos às mesmas condições de backup e restauração dos demais dados.
 
 **Evite duplicidade:** não lance retroativamente o mesmo trabalho ou hábito já registrado por Ponto ou Pomodoro. Use a entrada retroativa somente para atividades efetivamente realizadas.
+
+<a id="9-meu-dia-historico-e-calculo-do-tempo"></a>
 
 ## 9. Meu Dia, Histórico e cálculo do tempo
 
@@ -193,6 +218,8 @@ O cálculo de tempo consolidado reúne intervalos coincidentes para evitar dupla
 ### Exclusão
 
 Use a lixeira da linha correspondente para excluir um registro. A exclusão altera os totais, os marcos da Arena e, quando aplicável, a validade de Elixires relacionados. **Faça backup antes de excluir informações importantes.**
+
+<a id="10-estatisticas-central-de-analise-e-desempenho"></a>
 
 ## 10. Estatísticas: central de análise e desempenho
 
@@ -230,6 +257,8 @@ A **taxa de conclusão de tentativas** não pode ser calculada com confiança se
 
 Use **Atualizar** para recalcular os indicadores. **Exportar JSON** gera um relatório estatístico para consulta externa; **Imprimir** produz uma apresentação para papel ou PDF, conforme o navegador. Esses comandos não alteram os registros. Para medir a cota do navegador, a persistência e o cache offline, consulte a página separada **Armazenamento**.
 
+<a id="11-habitos-e-inventario-de-elixires"></a>
+
 ## 11. Hábitos e Inventário de Elixires
 
 A página **Hábitos** possui duas áreas complementares:
@@ -250,6 +279,8 @@ O formulário de criação apresenta campos de nome, categoria (inclusive **Pers
 
 **Dica:** comece com poucos hábitos que realmente possa executar. O catálogo é uma biblioteca de sugestões, não uma lista de obrigações.
 
+<a id="12-pomodoro-e-conclusao-de-habitos"></a>
+
 ## 12. Pomodoro e conclusão de hábitos
 
 Cada hábito equipado oferece um temporizador de duração configurada e controles para **iniciar, pausar, retomar, concluir e reiniciar**, conforme o estado exibido.
@@ -264,7 +295,9 @@ A conclusão é uma **ação explícita**: deixar o relógio chegar ao fim, por 
 
 O aplicativo também oferece um fluxo de conclusão que solicita confirmação e, opcionalmente, uma observação curta. Quando utilizado, o período é registrado retroativamente, terminando no momento da confirmação; por isso, confirme apenas se de fato executou o hábito nesse intervalo.
 
-**Relação com os Elixires:** uma conclusão de hábito pode abrir **no máximo um cofre** de um chefão já derrotado. A regra completa está na seção 14.
+**Relação com os Elixires:** uma conclusão de hábito pode abrir **no máximo um cofre** de um chefão já derrotado. Consulte o capítulo 16, que explica as recompensas e a página Visão.
+
+<a id="13-radar-e-meta-de-10000-horas"></a>
 
 ## 13. Radar e meta de 10.000 horas
 
@@ -278,6 +311,8 @@ O **Radar** é a representação visual do avanço temporal. Ele possui:
 
 O Radar acompanha o tempo do projeto e pode atualizar sua indicação durante um Ponto em andamento. A animação é uma representação; os registros salvos e seus horários são a base para o cálculo. O percentual de maestria não representa uma avaliação de habilidade profissional.
 
+<a id="14-arena-200-chefoes"></a>
+
 ## 14. Arena: 200 chefões
 
 A **Arena** transforma o progresso em uma campanha contra **200 chefões**, organizados em **10 fases de 20 adversários**, com dificuldade crescente e marcos distribuídos ao longo das 10.000 horas.
@@ -288,11 +323,15 @@ Os efeitos narrativos — como dispersão, sono, adiamento ou distração — re
 
 **Se o tempo cair:** excluir registros pode reduzir a progressão e fazer com que um chefão deixe de constar como derrotado. Isso também pode afetar cofres e recompensas vinculados à vitória.
 
+<a id="15-codex-de-monstros"></a>
+
 ## 15. Codex de Monstros
 
 O **Codex** funciona como uma enciclopédia da campanha. Nele, você acompanha os adversários e abre as fichas disponíveis dos chefões derrotados, com informações como nome, descrição e efeito narrativo.
 
 As fichas dos chefões vencidos recebem indicação explícita de **VENCIDO**. Os ainda não conquistados permanecem bloqueados. O Codex e a Arena consultam os mesmos marcos de tempo: não são sistemas de pontuação independentes.
+
+<a id="16-elixires-cofres-e-recompensas"></a>
 
 ## 16. Elixires, cofres e recompensas
 
@@ -321,15 +360,19 @@ A seção **Elixires** é o espaço de coleção e recompensa. O sistema contém
 
 **Atenção:** os **Elixires Ativos** da página Hábitos são os hábitos equipados; os **Elixires colecionáveis** são as frases obtidas com os cofres. São recursos relacionados, mas não idênticos.
 
+<a id="visao-o-foguete-revelado-por-elixires"></a>
+
 ### Visão: o foguete revelado por Elixires
 
 A página **Visão**, logo abaixo de **Elixires** no menu, apresenta a imagem `ImpulsoVision.svg` de um foguete decolando. A imagem é dividida em **200 quadradinhos (20 colunas por 10 linhas)**, inicialmente ocultos.
 
-Cada Elixir conquistado e válido no **Altar dos Elixires** concede **uma revelação disponível**. O usuário decide quando utilizá-la: basta abrir **Visão**, tocar em um quadradinho ainda oculto e confirmar. A parte correspondente da imagem fica visível permanentemente. É possível acumular revelações sem gastá-las imediatamente.
+Cada **Elixir colecionável** conquistado e válido no **Altar dos Elixires** concede **uma revelação disponível**. Os 200 Elixires colecionáveis estão vinculados aos cofres dos chefões; não se confundem com os 200 hábitos sugeridos no inventário. O usuário decide quando utilizá-la: basta abrir **Visão**, tocar em um quadradinho ainda oculto e confirmar. A parte correspondente da imagem fica visível permanentemente. É possível acumular revelações sem gastá-las imediatamente.
 
-A página mostra o número de Elixires conquistados, o saldo de revelações, os quadradinhos já revelados e a porcentagem descoberta. O progresso pertence exclusivamente ao projeto atual e é salvo em `localStorage`, incluído nos backups e restaurações do projeto. A imagem SVG faz parte do cache offline do PWA.
+A página mostra o número de Elixires conquistados, o saldo de revelações, os quadradinhos já revelados e a porcentagem descoberta. O progresso pertence exclusivamente ao projeto atual e é salvo em `localStorage`, incluído nos backups e restaurações do projeto. A imagem SVG faz parte do cache offline do PWA. Como os dados são locais, recomenda-se fazer um **Backup Geral** após conquistar ou revelar novas partes da Visão.
 
 **Importante:** a concessão de uma revelação segue a mecânica real dos Elixires do Impulso: é necessário derrotar o chefão correspondente e concluir um hábito para abrir o cofre. Equipar um hábito, por si só, não concede revelação. Se um registro for excluído e seu Elixir deixar de ser válido, as partes já reveladas continuam visíveis, mas o saldo para novas escolhas é recalculado a partir dos Elixires válidos.
+
+<a id="17-guardar-exportar-importar-e-restaurar"></a>
 
 ## 17. Guardar, exportar, importar e restaurar
 
@@ -366,6 +409,8 @@ Os arquivos de segurança utilizam o formato **JSON**. O Impulso oferece operaç
 
 Recomenda-se guardar uma cópia **ao final de sessões importantes**, antes de atualizar ou reinstalar o PWA, antes de excluir registros ou projetos, antes de limpar dados do navegador e antes de trocar de dispositivo. O alerta opcional pode ajudar, mas não faz backup automaticamente.
 
+<a id="18-impressao-e-relatorios"></a>
+
 ## 18. Impressão e relatórios
 
 A opção **Imprimir** prepara um relatório do projeto ativo e abre a função de impressão do navegador. Conforme o fluxo, é possível imprimir a **lista de projetos** e relatórios de um **dia específico**.
@@ -378,6 +423,8 @@ Na janela de impressão, escolha **Salvar como PDF** se o navegador oferecer ess
 
 **Importante:** imprimir não cria backup restaurável. O PDF serve para consulta e documentação; o **JSON** serve para restaurar os dados no aplicativo.
 
+<a id="19-alertas-lembretes-opcionais"></a>
+
 ## 19. Alertas: lembretes opcionais
 
 A página **Alertas** (painel de alertas) oferece dois lembretes independentes, inicialmente desativados:
@@ -387,6 +434,8 @@ A página **Alertas** (painel de alertas) oferece dois lembretes independentes, 
 **Alerta de hábitos e Elixires:** também em intervalos de **15 minutos**, quando habilitado, lembra o usuário de praticar hábitos e oferece acesso à página **Hábitos**.
 
 As opções são controladas por **caixas de seleção** e ficam salvas no navegador. Os alertas são **locais**, não são notificações push do sistema e dependem de a página estar aberta e visível. Se o navegador suspender a aba, o aviso poderá atrasar. Não há backup automático nem execução de hábitos em segundo plano.
+
+<a id="20-armazenamento-saude-dos-dados"></a>
 
 ## 20. Armazenamento: saúde dos dados
 
@@ -415,11 +464,7 @@ O navegador pode permitir solicitar armazenamento persistente. Se concedido, iss
 - A data do último backup significa **download solicitado**, não confirmação de arquivo salvo.
 - O painel não exclui registros nem executa limpeza automática.
 
-### Sair do aplicativo
-
-O botão **Sair** aparece no final do menu lateral, imediatamente abaixo de **Configuração**. Ao selecioná-lo, o Impulso solicita confirmação. **Cancelar** mantém a navegação normalmente; **Sair do aplicativo** apresenta uma tela de despedida com a opção **Voltar ao Impulso**.
-
-Em aplicativos instalados, o Impulso tenta fechar a janela, quando o navegador permite. Em abas comuns, os navegadores geralmente proíbem o fechamento programático; nesse caso, feche a aba manualmente. A tela de saída não apaga projetos, hábitos ou registros. Se houver um Ponto em andamento, ele não será automaticamente encerrado: volte e finalize-o quando desejar.
+<a id="21-configuracao-paletas-e-aparencia"></a>
 
 ## 21. Configuração: paletas e aparência
 
@@ -457,6 +502,8 @@ Os tokens de cada paleta são definidos em suas folhas CSS e aplicados quando a 
 
 As paletas buscam empregar pares de contraste adequados a textos e controles. Cores vibrantes não devem receber texto branco quando o contraste for insuficiente. Estados importantes, como vitória, erro, cofre aberto e cofre fechado, devem ser comunicados também por **rótulos e símbolos**, não apenas por cor. No Ecológico, superfícies profundas (`#003D0E`, `#103D00`, `#2F3D00`) usam texto branco; superfícies muito luminosas (`#C7FF10`, `#4FFF10`, `#10FF48`) exigem texto preto ou escuro. A interface utiliza rótulos como **Equipar**, **✓ Equipado**, e indicadores textuais de cofres para não depender exclusivamente do verde. A conformidade de toda a interface deve ser verificada nas telas reais e nos dispositivos utilizados.
 
+<a id="22-privacidade-integridade-e-limites-tecnicos"></a>
+
 ## 22. Privacidade, integridade e limites técnicos
 
 - **Armazenamento local:** os projetos são salvos no navegador, principalmente em `localStorage`.
@@ -468,6 +515,8 @@ As paletas buscam empregar pares de contraste adequados a textos e controles. Co
 - **Limites de armazenamento:** projetos extensos podem esgotar a capacidade disponível; acompanhe o monitor e exporte backups.
 - **Não é sistema de ponto oficial:** os relatórios são instrumentos de organização pessoal, não comprovantes certificados.
 - **A meta de 10.000 horas é simbólica:** não mede competência nem substitui avaliação de resultados.
+
+<a id="23-solucao-de-problemas"></a>
 
 ## 23. Solução de problemas
 
@@ -490,6 +539,8 @@ As paletas buscam empregar pares de contraste adequados a textos e controles. Co
 | **Restaurar apagaria projetos atuais** | Cancele. Faça primeiro um backup atual e só restaure quando desejar substituir a coleção inteira. |
 | **Tema não ficou como esperado** | Abra **Configuração**, escolha outra identidade e alterne claro/escuro. Se necessário, atualize a página após o cache ser renovado. |
 | **Impressão cortada** | Use a pré-visualização, ajuste margens, escala e orientação ou salve em PDF. |
+
+<a id="24-perguntas-frequentes"></a>
 
 ## 24. Perguntas frequentes
 
@@ -528,6 +579,8 @@ As paletas buscam empregar pares de contraste adequados a textos e controles. Co
 **Posso usar sem internet?** Sim, quando os recursos essenciais já estiverem no cache e o navegador os conservar.
 
 **Se instalar em outro celular, os projetos aparecem?** Não automaticamente. É necessário transferir e importar/restaurar um arquivo compatível.
+
+<a id="25-roteiro-de-testes"></a>
 
 ## 25. Roteiro de testes
 
@@ -575,6 +628,8 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 - [ ] Conferir legibilidade, foco de teclado, controles, ícones e rótulos em cada tema.
 - [ ] Testar no celular, no desktop e sem internet após o cache inicial.
 
+<a id="26-arquivos-do-projeto"></a>
+
 ## 26. Arquivos do projeto
 
 | Arquivo | Finalidade |
@@ -595,7 +650,11 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 | `icon-192.png`, `icon-512.png` | Ícones do aplicativo. |
 | `rocket-192-v11.png`, `rocket-512-v11.png` | Recursos gráficos do foguete. |
 
-Os temas adicionais são definidos em `theme-impulso-granfino.css` e `theme-impulso-ecologico.css`.
+| `theme-impulso-granfino.css` | Identidade **Impulso Granfino**. |
+| `theme-impulso-ecologico.css` | Identidade **Impulso Ecológico**. |
+| `ImpulsoVision.svg` | Imagem da página Visão, revelada em 200 quadradinhos. |
+
+<a id="27-glossario"></a>
 
 ## 27. Glossário
 
@@ -607,6 +666,7 @@ Os temas adicionais são definidos em `theme-impulso-granfino.css` e `theme-impu
 **Cofre:** recompensa associada a um chefão derrotado, aberta mediante conclusão de hábito elegível.  
 **Elixir:** frase colecionável liberada pelo sistema de recompensas.  
 **Elixir Ativo:** hábito equipado para execução na página Hábitos.  
+**Visão:** imagem do foguete, descoberta por escolhas do usuário com créditos obtidos de Elixires colecionáveis.  
 **HP:** pontos de resistência do chefão.  
 **Inventário de Elixires:** catálogo de sugestões de hábitos.  
 **JSON:** formato de arquivo usado para exportação, importação e backups.  

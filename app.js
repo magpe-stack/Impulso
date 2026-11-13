@@ -452,21 +452,25 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão:</strong> 41<br><strong>Atualização:</strong> 12 de novembro de 2026</p>
- <p>Aplicativo PWA offline-first para organizar projetos independentes, acompanhar trabalho e hábitos e transformar o progresso em uma jornada gamificada de <strong>10.000 horas</strong>.</p>
- <h3>Principais características</h3>
- <ul><li><strong>Projetos independentes:</strong> registros e conquistas separados por projeto.</li>
- <li><strong>Ponto e Entrada Manual:</strong> acompanhamento de atividades, inclusive quando atravessam a meia-noite.</li>
- <li><strong>Meu Dia e relatórios:</strong> tempo distribuído corretamente entre as datas.</li>
- <li><strong>Hábitos:</strong> temporizador Pomodoro e registro de conclusões.</li>
- <li><strong>Radar:</strong> acompanhamento visual do tempo e da meta.</li>
- <li><strong>Arena:</strong> 200 chefões em 10 fases, com HP e efeitos temáticos.</li>
- <li><strong>Codex:</strong> enciclopédia de monstros e fichas de chefões vencidos.</li>
- <li><strong>Altar dos Elixires:</strong> cofres abertos ao concluir hábitos após derrotar chefões; 200 frases colecionáveis para copiar e compartilhar.</li>
- <li><strong>Armazenamento:</strong> medidores de dados locais, cache offline, cota estimada, persistência e tamanho de backup.</li><li><strong>Backup e exportação:</strong> arquivos JSON e impressão de relatórios.</li><li><strong>Alertas!:</strong> lembretes opcionais de backup e de hábitos/Elixires a cada 15 minutos enquanto o aplicativo está aberto.</li></ul>
- <p><strong>Privacidade:</strong> os registros ficam neste navegador. Faça backups regularmente; limpar os dados do site pode apagar seus projetos.</p>
- <p>A meta de 10.000 horas é simbólica e não garante domínio profissional.</p>
- <p><a href="https://magpe-stack.github.io/Impulso/" target="_blank" rel="noopener noreferrer">Abrir aplicativo</a> · <a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual completo</a></p>
+ <p><strong>Versão:</strong> 56<br><strong>Atualização:</strong> 13 de novembro de 2026</p>
+ <p>PWA pessoal, offline-first e sem conta obrigatória. Organize projetos independentes, registre tempo e hábitos e acompanhe uma jornada simbólica de <strong>10.000 horas</strong>.</p>
+ <h3>Recursos do aplicativo</h3>
+ <ul>
+ <li><strong>Projetos:</strong> espaços independentes, com registros, hábitos e conquistas próprios.</li>
+ <li><strong>Ponto e Entradas retroativas:</strong> registro de trabalhos e hábitos anteriores, inclusive períodos que atravessam a meia-noite.</li>
+ <li><strong>Meu Dia:</strong> registros por data e histórico, com impressão.</li>
+ <li><strong>Hábitos:</strong> Pomodoro, inventário com 200 sugestões em 25 categorias, pesquisa e hábitos personalizados; até seis equipados.</li>
+ <li><strong>Arena e Codex:</strong> campanha de 200 chefões e enciclopédia de adversários.</li>
+ <li><strong>Elixires:</strong> 200 recompensas colecionáveis liberadas por cofres associados a chefões e conclusões de hábitos.</li>
+ <li><strong>Visão:</strong> foguete revelado em 200 quadradinhos escolhidos pelo usuário, com créditos obtidos dos Elixires colecionáveis.</li>
+ <li><strong>Radar e Estatísticas:</strong> progresso temporal, análises por projeto e globais, gráficos e relatórios.</li>
+ <li><strong>Armazenamento e backups:</strong> diagnóstico local, exportação e restauração em JSON.</li>
+ <li><strong>Alertas:</strong> lembretes opcionais enquanto o aplicativo está aberto.</li>
+ <li><strong>Configuração:</strong> seis identidades cromáticas, modos claro/escuro e splash cinematográfico Ignição.</li>
+ </ul>
+ <p><strong>Privacidade:</strong> os registros permanecem neste navegador, sem sincronização automática. Faça backups e guarde cópias externas; limpar os dados do site pode apagar seus projetos.</p>
+ <p><strong>Atenção:</strong> a meta de 10.000 horas é simbólica, não certifica maestria. O Impulso não é um relógio de ponto homologado.</p>
+ <p><a href="https://magpe-stack.github.io/Impulso/" target="_blank" rel="noopener noreferrer">Abrir aplicativo</a> · <a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">Código-fonte</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual completo</a></p>
  <div class="actions"><button class="btn primary" type="button" data-cancel>Fechar</button></div></div>`);
 }
 function requestAppExit(){
