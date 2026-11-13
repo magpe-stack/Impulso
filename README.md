@@ -816,3 +816,8 @@ A apresentação adapta tamanhos, espaços e informações auxiliares à altura 
 ### Ajustes da versão 85 — Dashboard
 
 Os seis indicadores do Dashboard usam cartões mais compactos e fontes maiores, preservando a apresentação sem rolagem. O atalho **Foco** da Central de Comando agora abre diretamente a página Foco.
+
+
+### Versão 86 — Mapa de atividade no Dashboard
+
+Os seis indicadores foram redimensionados para cartões de altura proporcional ao conteúdo. O espaço liberado apresenta um mapa de atividade dos últimos 365 dias, inspirado no calendário de contribuições do GitHub, com 53 colunas semanais e sete linhas correspondentes aos dias da semana. A escala visual corresponde a: nenhum registro; até 30 minutos; mais de 30 minutos até 2 horas; mais de 2 até 4 horas; mais de 4 horas. O cálculo considera os intervalos reais registrados no projeto, incluindo Ponto, Foco, Hábitos e Entradas, dividindo sessões que cruzam a meia-noite e unindo intervalos simultâneos para evitar dupla contagem. As cores seguem a paleta ativa, sem bibliotecas ou armazenamento extra. Posicionar o ponteiro sobre um dia apresenta sua data e duração; cada célula possui rótulo acessível. O Dashboard continua limitado à área útil da tela, sem rolagem.

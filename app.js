@@ -309,7 +309,41 @@ async function renderStorage(){const id=++storageRequestId;main.innerHTML=header
 async function requestStoragePersistence(){if(!navigator.storage?.persist){toast('Persistência não disponível neste navegador.');return}try{const granted=await navigator.storage.persist();toast(granted?'Persistência concedida.':'O navegador não concedeu persistência.');renderStorage()}catch(e){toast('Não foi possível solicitar persistência.')}}
 
 function renderAlerts(){main.innerHTML=header('Alertas!','Configure lembretes locais durante o uso do Impulso.')+`<section class="panel"><div class="alert-setting"><div><h2>Alerta de backup</h2><p>Quando ativado, apresenta um lembrete a cada 15 minutos para guardar um backup dos projetos e evitar a perda de dados armazenados no navegador.</p></div><label class="alert-switch"><input id="backupAlertToggle" type="checkbox" role="switch" ${alertSettings.backup?'checked':''} aria-label="Ativar alerta de backup"><span class="alert-switch-label">${alertSettings.backup?'Ligado':'Desligado'}</span></label></div><div class="alert-setting"><div><h2>Alerta de hábitos e Elixires</h2><p>Quando ativado, lembra a cada 15 minutos que é preciso criar e concluir hábitos para liberar os Elixires dos chefões derrotados.</p></div><label class="alert-switch"><input id="habitsAlertToggle" type="checkbox" role="switch" ${alertSettings.habits?'checked':''} aria-label="Ativar alerta de hábitos e Elixires"><span class="alert-switch-label">${alertSettings.habits?'Ligado':'Desligado'}</span></label></div><p class="help">O aviso aparece enquanto o aplicativo está aberto e visível. Não é uma notificação do sistema e não funciona com o aplicativo fechado. Os alertas não fazem backup automaticamente.</p></section>`}
-// v84 — Central de Comando: informações derivadas dos registros; nenhum contador paralelo.
+
+// Mapa de atividade: duração real por dia civil, sem persistência adicional.
+// A união de intervalos impede que sessões simultâneas sejam contadas duas vezes.
+function dashboardActivityMap(p){
+ const nowDate=new Date(),today=new Date(nowDate.getFullYear(),nowDate.getMonth(),nowDate.getDate());
+ const first=new Date(today.getFullYear(),today.getMonth(),today.getDate()-today.getDay()-52*7);
+ const last=new Date(today.getFullYear(),today.getMonth(),today.getDate()+1);
+ const byDay=new Map();
+ for(const [start,end] of intervals(p,true)){
+  let cursor=Math.max(start,first.getTime());const limit=Math.min(end,last.getTime());
+  while(cursor<limit){
+   const date=new Date(cursor),midnight=new Date(date.getFullYear(),date.getMonth(),date.getDate()+1).getTime();
+   const until=Math.min(midnight,limit),key=dateKey(cursor);
+   byDay.set(key,(byDay.get(key)||0)+(until-cursor));cursor=until;
+  }
+ }
+ const cells=[],monthLabels=[];const fmtDate=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
+ const monthFmt=new Intl.DateTimeFormat('pt-BR',{month:'short'});
+ for(let week=0;week<53;week++){
+  const weekDate=new Date(first.getFullYear(),first.getMonth(),first.getDate()+week*7);
+  const prevDate=new Date(weekDate.getFullYear(),weekDate.getMonth(),weekDate.getDate()-7);
+  const monthStart=week===0||weekDate.getMonth()!==prevDate.getMonth();
+  monthLabels.push(`<span class="dash-heat-month" ${monthStart?'':'aria-hidden="true"'}>${monthStart?esc(monthFmt.format(weekDate).replace('.','')):''}</span>`);
+  for(let dow=0;dow<7;dow++){
+   const day=new Date(weekDate.getFullYear(),weekDate.getMonth(),weekDate.getDate()+dow),ts=day.getTime();
+   const future=ts>today.getTime(),outside=ts<new Date(today.getFullYear(),today.getMonth(),today.getDate()-364).getTime();
+   const minutes=(byDay.get(dateKey(ts))||0)/60000;
+   const level=future||outside||minutes===0?0:minutes<=30?1:minutes<=120?2:minutes<=240?3:4;
+   const time=minutes?mins(minutes*60000):'sem atividade';
+   cells.push(`<span class="dash-heat-cell level-${level}${future||outside?' outside':''}" role="img" aria-label="${esc(fmtDate.format(day))}: ${esc(time)}" title="${esc(fmtDate.format(day))} · ${esc(time)}"></span>`);
+  }
+ }
+ return `<section class="dash-activity" aria-label="Mapa de atividade dos últimos 365 dias"><div class="dash-section-heading"><strong>MAPA DE ATIVIDADE</strong><span>ÚLTIMOS 365 DIAS</span></div><div class="dash-heat-layout"><div class="dash-heat-weekdays" aria-hidden="true"><span>Seg</span><span>Qua</span><span>Sex</span></div><div class="dash-heat-main"><div class="dash-heat-months" aria-hidden="true">${monthLabels.join('')}</div><div class="dash-heat-cells">${cells.join('')}</div></div></div><div class="dash-heat-legend" aria-label="Intensidade: sem atividade, até 30 minutos, até 2 horas, até 4 horas, mais de 4 horas"><span>Menos</span>${[0,1,2,3,4].map(n=>`<span class="dash-heat-cell level-${n}" aria-hidden="true"></span>`).join('')}<span>Mais</span></div></section>`;
+}
+// v86 — Central de Comando: informações derivadas dos registros; nenhum contador paralelo.
 function renderDashboard(p){
  const status=currentActionStatus(p);
  const metricCard=(value,label,target,cls='')=>`<button type="button" class="dash-metric ${cls}" data-page="${target}" title="Abrir ${label}"><span class="dash-number">${esc(value)}</span><span class="dash-label">${esc(label)}</span></button>`;
@@ -331,6 +365,7 @@ function renderDashboard(p){
  ${metricCard(`${(hrs/10080*100).toLocaleString('pt-BR',{maximumFractionDigits:2})}%`,'Propulsão','radar')}
  ${metricCard(`${completed}/100`,'Metas','inicio')}
  </div>
+ ${dashboardActivityMap(p)}
  <div class="dash-controls"><div class="dash-section-heading"><strong>CONTROLES DE OPERAÇÃO</strong><span>SELECIONE UMA AÇÃO</span></div><div class="dash-command-grid">${commandsHtml}</div></div>
  <div class="dash-milestone" ${next===null?'data-complete="true"':''}><div class="dash-milestone-top"><strong>${next===null?'100 METAS CONCLUÍDAS':`PRÓXIMA META · ${completed+1}/100`}</strong><span>${next===null?'Jornada concluída':`${next.toLocaleString('pt-BR')} h · faltam ${mins(Math.max(0,next*3600000-ms))}`}</span></div><div class="dash-progress" role="progressbar" aria-label="Progresso até a próxima meta" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${nextPct.toFixed(2)}"><span style="width:${nextPct}%"></span></div></div>
  </section>`;
