@@ -366,3 +366,30 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 .propulsion-rotor.is-running{animation:propulsion-spin 2.4s linear infinite}
 @keyframes propulsion-spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.propulsion-rotor.is-running{animation:none}}
+
+/* v73 — cinco unidades do motor na mesma linha em telas largas.
+   Em telas estreitas, preservar leitura e evitar rolagem horizontal. */
+@media (min-width: 900px){
+  .propulsion-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+  .propulsion-unit{padding:11px 10px;border-radius:12px}
+  .propulsion-unit-head{gap:5px;margin-bottom:8px}
+  .propulsion-unit-head strong{font-size:clamp(1.1rem,1.6vw,1.45rem)}
+  .propulsion-unit-head span{font-size:.76rem}
+  .propulsion-unit small{font-size:.72rem;line-height:1.35}
+}
+@media (min-width: 600px) and (max-width: 899px){
+  .propulsion-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width: 599px){
+  .propulsion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .propulsion-unit{padding:10px}
+  .propulsion-unit-head strong{font-size:1.2rem}
+  .propulsion-unit-head span{font-size:.78rem}
+  .propulsion-unit small{font-size:.73rem}
+}
+
+/* v75: ignição manual; pás em repouso até o comando do usuário. */
+.propulsion-rotor,.propulsion-rotor.is-running{animation:none!important;transform-origin:120px 120px;transform-box:view-box}
+.ignition-controls{display:flex;flex-direction:column;align-items:center;gap:7px;margin:10px auto 16px;text-align:center}
+.ignition-controls .btn{min-width:150px}
+.ignition-controls .help{margin:0;max-width:40rem}
