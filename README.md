@@ -111,7 +111,7 @@ O menu lateral é aberto pelo botão no cabeçalho. A navegação está dividida
 | Início, projetos e documentos | **Início · Novo · Projetos · Guardar · Restaurar · Imprimir** |
 | Registro de atividades | **Ponto · Hábitos · Entradas · Meu Dia** |
 | Jornada e conquistas | **Arena · Codex · Elixires · Visão** |
-| Acompanhamento e diagnóstico | **Radar · Estatísticas · Armazenamento** |
+| Acompanhamento e diagnóstico | **Radar · Cerimônias · Estatísticas · Armazenamento** |
 | Preferências | **Alertas · Configuração** |
 | Encerramento | **Sair** |
 
@@ -317,9 +317,9 @@ O Radar acompanha o tempo do projeto e pode atualizar sua indicação durante um
 
 Além da meta simbólica de 10.000 horas, cada projeto acompanha **100 metas progressivas**. A primeira etapa exige **1 hora**, a segunda exige **3 horas adicionais**, a terceira **5 horas adicionais**, e assim por diante, aumentando **2 horas por etapa**. A meta de número *n* exige `2n − 1` horas adicionais, e o total acumulado ao concluí-la é `n²` horas. Portanto, a **99ª meta** termina em **9.801 horas**, e a **100ª**, a mais difícil, exige **199 horas adicionais** para alcançar **exatamente 10.000 horas**.
 
-O painel da jornada, na página **Início**, mostra metas conquistadas, próximo objetivo, tempo restante, barra de progresso e a lista completa de metas. Cada nova meta atingida ao salvar uma atividade de Ponto ou Hábito desencadeia uma **cerimônia de conclusão**, com mensagem e emblema. As metas **10, 20, 30, ... 100** recebem cerimônias especiais, uma por ciclo de dez metas; a última é **A Consagração**. Se um registro ultrapassar vários marcos, o aplicativo apresenta uma cerimônia resumida, sem interromper o registro.
+O painel da jornada, na página **Início**, mostra metas conquistadas, próximo objetivo, tempo restante, barra de progresso e a lista completa de metas. As **100 cerimônias** estão disponíveis na página **Cerimônias**, logo abaixo de **Radar** no menu. Elas são desbloqueadas pelo tempo acumulado efetivamente registrado, inclusive por registros antigos. A galeria permite rever ilimitadamente qualquer cerimônia já liberada. As bloqueadas exibem cadeado e o número de horas necessário, sem revelar a história. As metas **10, 20, 30, ... 100** recebem cerimônias especiais, uma por ciclo de dez metas; a última é **A Consagração**. As cerimônias são reproduzidas somente quando o usuário clica em **Rever cerimônia**: não existem janelas automáticas.
 
-A contagem usa o tempo produtivo efetivo do projeto, evitando somar períodos sobrepostos duas vezes. As metas são recalculadas a partir dos registros, inclusive após exclusões. A lista de cerimônias já apresentadas fica no armazenamento do projeto e integra o backup. Registros antigos contam para os indicadores; não há disparo retroativo em massa de cerimônias ao atualizar o aplicativo. As cerimônias não alteram o tempo nem concedem Elixires adicionais.
+A contagem usa o tempo produtivo efetivo do projeto, evitando somar períodos sobrepostos duas vezes. As metas são recalculadas a partir dos registros, inclusive após exclusões. A disponibilidade das cerimônias é calculada a partir do tempo salvo, sem depender de um histórico separado de apresentações. A galeria é individual por projeto e não altera os registros, não concede Elixires nem modifica as regras dos Chefões. Se os registros forem excluídos e o total cair, cerimônias antes disponíveis podem voltar a ficar bloqueadas. As animações respeitam a preferência do sistema por movimento reduzido; podem ser fechadas pelo botão **Fechar cerimônia** ou pela tecla Esc.
 
 ## 14. Arena: 200 chefões
 
@@ -621,6 +621,7 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 - [ ] Iniciar, pausar, retomar e concluir um Pomodoro.
 - [ ] Conferir o registro de hábito em Meu Dia.
 - [ ] Abrir Radar e verificar o tempo e a meta.
+- [ ] Abrir Cerimônias, conferir o desbloqueio por horas reais, rever uma conquista, fechar com Esc, verificar os bloqueios e o modo de movimento reduzido.
 - [ ] Consultar as 10 fases e os 200 chefões da Arena.
 - [ ] Consultar uma ficha de chefão vencido no Codex.
 - [ ] Derrotar um chefão, concluir um hábito e verificar o cofre e a frase.
