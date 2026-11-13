@@ -29,7 +29,7 @@
 16. [Elixires, cofres e recompensas](#16-elixires-cofres-e-recompensas)
 17. [Guardar, exportar, importar e restaurar](#17-guardar-exportar-importar-e-restaurar)
 18. [Impressão e relatórios](#18-impressao-e-relatorios)
-19. [Alertar: lembretes opcionais](#19-alertar-lembretes-opcionais)
+19. [Alertas: lembretes opcionais](#19-alertas-lembretes-opcionais)
 20. [Armazenamento: saúde dos dados](#20-armazenamento-saude-dos-dados)
 21. [Configuração: paletas e aparência](#21-configuracao-paletas-e-aparencia)
 22. [Privacidade, integridade e limites técnicos](#22-privacidade-integridade-e-limites-tecnicos)
@@ -95,14 +95,18 @@ Se o dispositivo ou navegador solicitar **movimento reduzido** (`prefers-reduced
 
 ## 4. Interface, navegação e menu
 
-O menu lateral é aberto pelo botão no cabeçalho. Ele está organizado em quatro grupos, nesta ordem:
+O menu lateral é aberto pelo botão no cabeçalho. A navegação está dividida em seis grupos, separados visualmente, nesta ordem:
 
 | Grupo | Opções |
 |---|---|
-| Jornada e projetos | **Início · Novo · Projetos · Arena · Codex · Elixires · Radar · Meu Dia** |
-| Trabalho e rotina | **Ponto · Hábitos · Entrada** |
-| Segurança e documentos | **Guardar · Restaurar · Imprimir** |
-| Preferências e diagnóstico | **Alertar · Armazenamento · Configuração · Sair** |
+| Início, projetos e documentos | **Início · Novo · Projetos · Guardar · Restaurar · Imprimir** |
+| Registro de atividades | **Ponto · Hábitos · Entradas** |
+| Jornada e conquistas | **Arena · Codex · Elixires · Meu Dia** |
+| Acompanhamento e diagnóstico | **Radar · Estatísticas · Armazenamento** |
+| Preferências | **Alertas · Configuração** |
+| Encerramento | **Sair** |
+
+**Entradas** abre a página *Entradas retroativas*, com as fichas *Entrada de Ponto* e *Entrada de Hábito*. **Alertas** abre as opções de lembretes. Os nomes foram padronizados sem alterar suas funções.
 
 O nome **Impulso** fica destacado no alto do menu. Os itens têm espaçamento compacto para aproveitar melhor a altura disponível; em telas muito baixas, pode ser necessário rolar o painel. Para fechá-lo, utilize o botão correspondente, toque fora dele ou pressione **Esc**, quando disponível.
 
@@ -149,7 +153,7 @@ O formulário permanece na própria página, sem uma janela modal que impeça a 
 
 ## 8. Entradas retroativas
 
-A opção **Entrada**, no menu esquerdo, abre uma página própria chamada **Entradas retroativas**. Nela há duas opções: **Entrada de Ponto** e **Entrada de Hábito**. Ambas registram atividades que já ocorreram, sem iniciar cronômetros, e exigem um projeto aberto.
+A opção **Entradas**, no menu esquerdo, abre uma página própria chamada **Entradas retroativas**. Nela há duas opções: **Entrada de Ponto** e **Entrada de Hábito**. Ambas registram atividades que já ocorreram, sem iniciar cronômetros, e exigem um projeto aberto.
 
 ### Entrada de Ponto
 
@@ -191,7 +195,7 @@ Use a lixeira da linha correspondente para excluir um registro. A exclusão alte
 
 ## 10. Estatísticas: central de análise e desempenho
 
-A página **Estatísticas** fica no menu depois de **Meu Dia**. Ela reúne medições calculadas a partir dos dados reais do Impulso, sem enviar informações a servidores.
+A página **Estatísticas** fica no menu depois de **Radar**. Ela reúne medições calculadas a partir dos dados reais do Impulso, sem enviar informações a servidores.
 
 ### Escolher o alcance da análise
 
@@ -363,9 +367,9 @@ Na janela de impressão, escolha **Salvar como PDF** se o navegador oferecer ess
 
 **Importante:** imprimir não cria backup restaurável. O PDF serve para consulta e documentação; o **JSON** serve para restaurar os dados no aplicativo.
 
-## 19. Alertar: lembretes opcionais
+## 19. Alertas: lembretes opcionais
 
-A página **Alertar** (painel de alertas) oferece dois lembretes independentes, inicialmente desativados:
+A página **Alertas** (painel de alertas) oferece dois lembretes independentes, inicialmente desativados:
 
 **Alerta de backup:** a cada **15 minutos de uso**, quando habilitado, recomenda guardar uma cópia dos projetos. A mensagem explica que o armazenamento do navegador pode ser perdido. É possível iniciar o backup pelo aviso ou dispensá-lo.
 
@@ -523,7 +527,7 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 - [ ] Abrir o site, observar a Ignição por aproximadamente 3,7 segundos e passar à interface.
 - [ ] Testar a abertura com movimento reduzido, com as seis paletas e após atualizar o cache.
 - [ ] Conferir Estatísticas no projeto atual e na visão global, com diferentes períodos, exportação JSON e impressão.
-- [ ] Abrir e fechar o menu; conferir os quatro grupos e a ordem dos itens.
+- [ ] Abrir e fechar o menu; conferir os seis grupos e a ordem dos itens.
 - [ ] Criar dois projetos, renomear um e confirmar que os dados são independentes.
 - [ ] Abrir **Sobre** e conferir os links.
 

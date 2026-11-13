@@ -191,3 +191,11 @@ body[data-palette="trinity"] #splash{--ignite:#ff9447;--ignite-soft:#00ff6b;--ig
 #impulsoExitScreen p{line-height:1.6}
 #impulsoExitScreen button{margin-top:12px}
 @media print{#impulsoExitScreen{display:none!important}}
+
+/* Menu lateral: seis grupos na ordem editorial definida. */
+.menu-drawer nav{display:flex;flex-direction:column;gap:0}
+.menu-drawer nav .menu-group{display:flex;flex-direction:column;gap:0;margin-top:5px;padding-top:5px}
+.menu-drawer nav .menu-group:first-child{border-top:0;margin-top:0;padding-top:0}
+.menu-drawer nav .menu-group button{width:100%;text-align:left;min-height:30px;padding:4px 9px;border:0;border-radius:6px;background:transparent;color:var(--text);font-size:.86rem;font-weight:650;line-height:1.15;cursor:pointer}
+.menu-drawer nav .menu-group button:hover{background:var(--soft)}
+.menu-drawer nav .menu-group button.active{background:var(--soft);border-left:3px solid var(--color-4)}
