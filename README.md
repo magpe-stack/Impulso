@@ -89,7 +89,7 @@ A apresentação tem **duração programada de aproximadamente 3,7 segundos**, s
 
 ### Cores e acessibilidade
 
-A iluminação acompanha a identidade visual escolhida em **Configuração**: **Impulso Original**, **Impulso Vinho**, **Impulso Blue Sky**, **Impulso Trinity**, **Impulso Granfino** ou **Impulso Ecológico**. Isso independe do modo claro ou escuro escolhido para a interface. A abertura utiliza animações CSS nativas, sem vídeos, serviços externos ou bibliotecas de animação.
+A iluminação acompanha a identidade visual escolhida em **Configuração**: **Impulso Original**, **Impulso Vinho**, **Impulso Blue Sky**, **Impulso Trinity**, **Impulso Granfino** ou **Impulso Ecológico** e **Impulso Místico**. Isso independe do modo claro ou escuro escolhido para a interface. A abertura utiliza animações CSS nativas, sem vídeos, serviços externos ou bibliotecas de animação.
 
 Se o dispositivo ou navegador solicitar **movimento reduzido** (`prefers-reduced-motion`), os efeitos são simplificados para respeitar essa preferência, **mas a duração programada continua aproximadamente 3,7 segundos**. A apresentação dispõe de um mecanismo de segurança que a encerra se algo impedir a conclusão normal; em condições excepcionais, como a aba ficar em segundo plano, o tempo observado pode variar. O objetivo é impedir que a abertura bloqueie o uso do aplicativo.
 
@@ -468,7 +468,7 @@ O navegador pode permitir solicitar armazenamento persistente. Se concedido, iss
 
 ## 22. Configuração: paletas e aparência
 
-A página **Configuração** permite escolher a **identidade visual** e, independentemente, a **aparência clara ou escura**. Existem seis identidades, totalizando **doze combinações**:
+A página **Configuração** permite escolher a **identidade visual** e, independentemente, a **aparência clara ou escura**. Existem sete identidades, totalizando **quatorze combinações**:
 
 | Identidade | Característica | Cores de referência |
 |---|---|---|
@@ -478,29 +478,32 @@ A página **Configuração** permite escolher a **identidade visual** e, indepen
 | **Impulso Trinity** | Harmonia triádica laranja–verde–roxo | `#FF6B00`, `#00FF6B`, `#6B00FF`. |
 | **Impulso Granfino** | Grafite, prata e neutros elegantes | `#1F1F1F`, `#3E3E3E`, `#ADBFC2`. |
 | **Impulso Ecológico** | Harmonia análoga verde, com acentos luminosos | `#628000`, `#228000`, `#00801E`, `#C7FF10`. |
+| **Impulso Místico** | Harmonia análoga roxo–magenta, com superfícies profundas | `#34187C`, `#66187C`, `#7C1860`, `#160A33`. |
 
 As paletas possuem superfícies próprias para cada modo de aparência. Granfino combina grafite e prata; Ecológico utiliza fundos verde-escuros profundos e tons de verde-limão para realces. As folhas de estilo específicas definem tokens cromáticos, contrastes e a identidade do splash.
 
 ### Alterar o visual
 
 1. Abra **Configuração**.
-2. Escolha uma das seis identidades: **Original**, **Vinho**, **Blue Sky**, **Trinity**, **Granfino** ou **Ecológico**.
+2. Escolha uma das sete identidades: **Original**, **Vinho**, **Blue Sky**, **Trinity**, **Granfino**, **Ecológico** ou **Místico**.
 3. Selecione **Claro** ou **Escuro**, ou use o controle correspondente no cabeçalho.
 4. Navegue pelas páginas para conferir a aparência escolhida.
 
 A escolha é salva **neste navegador** e não altera os dados dos projetos. Para voltar à identidade anterior, basta selecioná-la novamente; não é necessário restaurar um backup.
 
-### Tokens de Itten — Granfino e Ecológico
+### Tokens de Itten — Granfino, Ecológico e Místico
 
 **Granfino:** `--itten-primary: #1F1F1F`; `--itten-secondary: #3E3E3E`; `--itten-accent: #616161`. A extensão cromática inclui `#808080`, `#3B2B2B`, `#48614F`, `#786487`, `#A6A287`, `#ADBFC2`, `#3B2B34`, `#4E6148` e `#656487`.
 
 **Ecológico:** `--itten-primary: #628000`; `--itten-secondary: #228000`; `--itten-accent: #00801E`. Os tokens `--itten-color-4` a `--itten-color-12` correspondem, respectivamente, a `#2F3D00`, `#103D00`, `#003D0E`, `#99C700`, `#35C700`, `#00C72F`, `#C7FF10`, `#4FFF10` e `#10FF48`.
 
-Os tokens de cada paleta são definidos em suas folhas CSS e aplicados quando a identidade correspondente está selecionada. O splash **Ignição** também acompanha a escolha: prata no Granfino, verde-limão no Ecológico, mantendo aproximadamente 3,7 segundos de apresentação.
+**Místico:** `--itten-primary: #34187C`; `--itten-secondary: #66187C`; `--itten-accent: #7C1860`. Os tokens `--itten-color-4` a `--itten-color-12` correspondem a `#1B0C40`, `#350C40`, `#400C32`, `#4D24B8`, `#9724B8`, `#B8248E`, `#160A33`, `#2A0A33` e `#330A28`. A interface usa texto branco sobre os cards escuros do inventário, e o splash apresenta iluminação roxo–magenta.
+
+Os tokens de cada paleta são definidos em suas folhas CSS e aplicados quando a identidade correspondente está selecionada. O splash **Ignição** também acompanha a escolha: prata no Granfino, verde-limão no Ecológico e roxo–magenta no Místico, mantendo aproximadamente 3,7 segundos de apresentação.
 
 ### Acessibilidade das cores
 
-As paletas buscam empregar pares de contraste adequados a textos e controles. Cores vibrantes não devem receber texto branco quando o contraste for insuficiente. Estados importantes, como vitória, erro, cofre aberto e cofre fechado, devem ser comunicados também por **rótulos e símbolos**, não apenas por cor. No Ecológico, superfícies profundas (`#003D0E`, `#103D00`, `#2F3D00`) usam texto branco; superfícies muito luminosas (`#C7FF10`, `#4FFF10`, `#10FF48`) exigem texto preto ou escuro. A interface utiliza rótulos como **Equipar**, **✓ Equipado**, e indicadores textuais de cofres para não depender exclusivamente do verde. A conformidade de toda a interface deve ser verificada nas telas reais e nos dispositivos utilizados.
+As paletas buscam empregar pares de contraste adequados a textos e controles. Cores vibrantes não devem receber texto branco quando o contraste for insuficiente. Estados importantes, como vitória, erro, cofre aberto e cofre fechado, devem ser comunicados também por **rótulos e símbolos**, não apenas por cor. No Ecológico, superfícies profundas (`#003D0E`, `#103D00`, `#2F3D00`) usam texto branco; superfícies muito luminosas (`#C7FF10`, `#4FFF10`, `#10FF48`) exigem texto preto ou escuro. A interface utiliza rótulos como **Equipar**, **✓ Equipado**, e indicadores textuais de cofres para não depender exclusivamente do verde. No Místico, as superfícies escuras da paleta usam texto branco e estados de Elixires e cofres mantêm rótulos e símbolos além da cor. A conformidade de toda a interface deve ser verificada nas telas reais e nos dispositivos utilizados.
 
 <a id="23-privacidade-integridade-e-limites-tecnicos"></a>
 
@@ -589,7 +592,7 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 ### Navegação e projetos
 
 - [ ] Abrir o site, observar a Ignição por aproximadamente 3,7 segundos e passar à interface.
-- [ ] Testar a abertura com movimento reduzido, com as seis paletas e após atualizar o cache.
+- [ ] Testar a abertura com movimento reduzido, com as sete paletas e após atualizar o cache.
 - [ ] Conferir Estatísticas no projeto atual e na visão global, com diferentes períodos, exportação JSON e impressão.
 - [ ] Abrir e fechar o menu; conferir os seis grupos e a ordem dos itens.
 - [ ] Criar dois projetos, renomear um e confirmar que os dados são independentes.
