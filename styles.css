@@ -348,3 +348,8 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 .calendar-time{font-size:.73rem;overflow-wrap:anywhere;line-height:1.2}
 .calendar-legend{font-size:.85rem;margin-top:12px}
 @media(max-width:600px){.calendar-date,.calendar-empty{min-height:58px}.calendar-date{padding:6px 3px}.calendar-time{font-size:.61rem}.calendar-weekdays,.calendar-grid{gap:3px}.calendar-stats{gap:5px}.calendar-toolbar .btn{font-size:.8rem;padding:8px}}
+
+/* Impulso 70 — Sequências de produtividade */
+.calendar-streaks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 12px}
+.calendar-streaks .metric{min-width:0}
+@media(max-width:600px){.calendar-streaks{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.calendar-streaks .metric:last-child{grid-column:1/-1}}

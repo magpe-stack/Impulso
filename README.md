@@ -203,6 +203,12 @@ Abra **Dados → Calendário** para consultar um mês de cada vez. Os botões **
 
 A contagem utiliza os mesmos intervalos consolidados de produtividade do aplicativo: atividades simultâneas não duplicam o tempo, e registros que atravessam a meia-noite são distribuídos entre as datas corretas. O calendário é exclusivo do projeto ativo, funciona offline e não precisa de armazenamento adicional.
 
+### Sequências de produtividade (versão 70)
+
+Em **Dados → Calendário**, três indicadores acompanham a regularidade de cada projeto: **Sequência atual**, **Recorde pessoal** e **Última sequência encerrada**. Um dia conta como ativo quando existe ao menos um intervalo de trabalho com duração positiva; várias atividades no mesmo dia contam apenas uma vez. A sequência atual permanece válida se o último dia ativo for hoje ou ontem, pois o dia de hoje ainda pode receber registros. Se um dia inteiro passar sem atividade, a sequência termina.
+
+Os cálculos são derivados dos registros reais do projeto, sem criar pontos, horas ou recompensas extras. Entradas retroativas, exclusões e restaurações são refletidas automaticamente. Atividades que atravessam a meia-noite contam nos dois dias quando houver duração positiva em ambos. O recorde inclui toda a história do projeto, e os indicadores são independentes do mês exibido no calendário. O recurso funciona offline, sem armazenamento adicional e sem modificar os backups existentes.
+
 ### Meu Dia
 
 A página **Meu Dia** organiza os registros pela data, com títulos no formato **Meu Dia dd-mm-aaaa**. Cada atividade apresenta **Atividade**, **Nome**, **Início**, **Término** e opção de exclusão. Os tipos mostrados são **Ponto**, **Entrada Manual** e **Hábito**. Hábitos concluídos também aparecem nesse acompanhamento.

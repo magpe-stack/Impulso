@@ -339,13 +339,37 @@ function calendarTotals(p,year,month){
  }
  return totals;
 }
+// Sequências: derivadas dos intervalos reais, sem estado duplicado ou metas artificiais.
+// O dia corrente só encerra uma sequência quando termina; ontem permanece válido hoje.
+function productivityStreaks(p,reference=new Date()){
+ const active=new Set(),today=new Date(reference.getFullYear(),reference.getMonth(),reference.getDate());
+ const tomorrow=new Date(today.getFullYear(),today.getMonth(),today.getDate()+1).getTime();
+ if(p)for(const [start,end] of intervals(p)){
+  let cursor=start,limit=Math.min(end,tomorrow);
+  while(Number.isFinite(cursor)&&Number.isFinite(limit)&&cursor<limit){
+   const d=new Date(cursor),next=new Date(d.getFullYear(),d.getMonth(),d.getDate()+1).getTime();
+   const stop=Math.min(limit,next);
+   if(stop>cursor)active.add(dateKey(cursor));
+   cursor=stop;
+  }
+ }
+ const dates=[...active].map(key=>{const [day,month,year]=key.split('-').map(Number);return Math.round(Date.UTC(year,month-1,day)/86400000)}).sort((a,b)=>a-b);
+ const runs=[];
+ for(const day of dates){const last=runs.at(-1);if(last&&day===last.end+1){last.end=day;last.days++}else runs.push({start:day,end:day,days:1})}
+ const todayOrdinal=Math.round(Date.UTC(today.getFullYear(),today.getMonth(),today.getDate())/86400000);
+ const latest=runs.at(-1);
+ const current=latest&&(latest.end===todayOrdinal||latest.end===todayOrdinal-1)?latest.days:0;
+ const best=runs.reduce((max,run)=>Math.max(max,run.days),0);
+ const lastEnded=[...runs].reverse().find(run=>run!==latest||current===0);
+ return {current,best,lastEnded:lastEnded?.days||0,active};
+}
 function renderCalendar(p){
  const year=calendarMonth.getFullYear(),month=calendarMonth.getMonth();
  const monthName=calendarMonth.toLocaleDateString('pt-BR',{month:'long',year:'numeric'});
  const today=new Date(),todayMonth=today.getFullYear()===year&&today.getMonth()===month;
  const totals=p?calendarTotals(p,year,month):new Map(),groups=p?dayGroups(p):new Map();
  const count=new Date(year,month+1,0).getDate(),offset=new Date(year,month,1).getDay();
- const worked=[...totals.values()].filter(ms=>ms>0),sum=worked.reduce((a,b)=>a+b,0);
+ const worked=[...totals.values()].filter(ms=>ms>0),sum=worked.reduce((a,b)=>a+b,0),streaks=productivityStreaks(p);
  const cells=Array.from({length:Math.ceil((offset+count)/7)*7},(_,i)=>{
   const day=i-offset+1;if(day<1||day>count)return '<span class="calendar-empty" aria-hidden="true"></span>';
   const key=`${pad(day)}-${pad(month+1)}-${year}`,ms=totals.get(key)||0;
@@ -354,7 +378,7 @@ function renderCalendar(p){
  }).join('');
  const selected=calendarSelectedDay&&calendarSelectedDay.endsWith(`-${pad(month+1)}-${year}`)?calendarSelectedDay:null;
  const rows=selected?(groups.get(selected)||[]).slice().sort((a,b)=>a.start-b.start):[];
- main.innerHTML=header('Calendário de produtividade',p?esc(p.name):'Abra um projeto para consultar os registros mensais.')+`<section class="panel"><div class="calendar-toolbar"><button class="btn" type="button" data-calendar-move="-1" aria-label="Mês anterior">‹ Anterior</button><h2 id="calendarMonthTitle">${esc(monthName)}</h2><button class="btn" type="button" data-calendar-move="1" aria-label="Próximo mês">Próximo ›</button></div><div class="calendar-stats">${metric(worked.length,'Dias trabalhados')}${metric(mins(sum),'Tempo no mês')}${metric(count,'Dias do mês')}</div><p class="help">O tempo é calculado por dia, sem duplicar períodos simultâneos. Atividades que atravessam a meia-noite são distribuídas pelas datas correspondentes.</p><div class="calendar-weekdays" aria-hidden="true">${['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'].map(x=>`<span>${x}</span>`).join('')}</div><div class="calendar-grid" role="group" aria-label="Dias de ${esc(monthName)}">${cells}</div><p class="calendar-legend"><span aria-hidden="true">●</span> Dias com trabalho registrado · Selecione uma data para consultar os registros.</p></section>`+
+ main.innerHTML=header('Calendário de produtividade',p?esc(p.name):'Abra um projeto para consultar os registros mensais.')+`<section class="panel"><div class="calendar-toolbar"><button class="btn" type="button" data-calendar-move="-1" aria-label="Mês anterior">‹ Anterior</button><h2 id="calendarMonthTitle">${esc(monthName)}</h2><button class="btn" type="button" data-calendar-move="1" aria-label="Próximo mês">Próximo ›</button></div><div class="calendar-stats">${metric(worked.length,'Dias trabalhados')}${metric(mins(sum),'Tempo no mês')}${metric(count,'Dias do mês')}</div><div class="calendar-streaks" aria-label="Sequências de produtividade">${metric(streaks.current+' '+(streaks.current===1?'dia':'dias'),'🔥 Sequência atual')}${metric(streaks.best+' '+(streaks.best===1?'dia':'dias'),'🏆 Recorde pessoal')}${metric(streaks.lastEnded+' '+(streaks.lastEnded===1?'dia':'dias'),'Última sequência encerrada')}</div><p class="help">Sequências são dias consecutivos com trabalho registrado neste projeto. Hoje não interrompe uma sequência iniciada ontem. Entradas retroativas e exclusões atualizam os resultados automaticamente.</p><p class="help">O tempo é calculado por dia, sem duplicar períodos simultâneos. Atividades que atravessam a meia-noite são distribuídas pelas datas correspondentes.</p><div class="calendar-weekdays" aria-hidden="true">${['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'].map(x=>`<span>${x}</span>`).join('')}</div><div class="calendar-grid" role="group" aria-label="Dias de ${esc(monthName)}">${cells}</div><p class="calendar-legend"><span aria-hidden="true">●</span> Dias com trabalho registrado · Selecione uma data para consultar os registros.</p></section>`+
  (selected?`<section class="panel" id="calendarDetails"><div class="row between"><h2>Meu Dia ${selected}</h2><strong>${mins(totals.get(selected)||0)}</strong></div>${rows.length?recordTable(rows,selected):'<p class="muted">Nenhum registro nesta data.</p>'}<div class="actions"><button type="button" class="btn" data-page="dia">Ver Meu Dia completo</button>${rows.length?`<button type="button" class="btn" data-print-day="${selected}">Imprimir este dia</button>`:''}</div></section>`:'<section class="panel"><p class="muted">Selecione um dia do calendário para ver suas atividades e horários.</p></section>');
 }
 function renderDay(p){
