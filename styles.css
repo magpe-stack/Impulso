@@ -353,3 +353,16 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 .calendar-streaks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 12px}
 .calendar-streaks .metric{min-width:0}
 @media(max-width:600px){.calendar-streaks{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.calendar-streaks .metric:last-child{grid-column:1/-1}}
+
+/* v72: motor desenhado em SVG, com cores exclusivamente herdadas do tema Itten ativo. */
+.propulsion-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;margin:12px 0 20px}
+.propulsion-unit{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:14px;min-width:0}
+.propulsion-unit-head{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px}
+.propulsion-unit-head strong{font-size:1.5rem;color:var(--text);font-variant-numeric:tabular-nums}
+.propulsion-unit-head span{color:var(--muted);font-size:.88rem}
+.propulsion-unit small{display:block;color:var(--muted);margin-top:7px;overflow-wrap:anywhere}
+.propulsion-progress{height:9px}
+.propulsion-rotor{transform-origin:120px 120px;transform-box:view-box}
+.propulsion-rotor.is-running{animation:propulsion-spin 2.4s linear infinite}
+@keyframes propulsion-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.propulsion-rotor.is-running{animation:none}}

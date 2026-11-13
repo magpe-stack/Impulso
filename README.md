@@ -311,15 +311,24 @@ O aplicativo também oferece um fluxo de conclusão que solicita confirmação e
 
 ## 13. Radar e meta de 10.000 horas
 
-O **Radar** é a representação visual do avanço temporal. Ele possui:
+O **Radar — Motor de Propulsão** representa o tempo efetivo de trabalho como rotação simbólica de um motor de foguete. Os graus são uma medida de tempo, **não uma moeda, um indicador de qualidade ou uma simulação física de motor real**. O rotor SVG usa exclusivamente as cores do tema ativo, inclusive no modo escuro; sua animação é desativada quando o sistema solicita redução de movimento.
 
-- **Anel interno:** 60 marcações correspondentes aos segundos, com ponteiro.
-- **Anel externo:** 360 graus; a representação avança **1 grau a cada 10 segundos**.
-- **Tempo total:** duração consolidada do projeto.
-- **Meta:** 10.000 horas, equivalentes a **600.000 minutos**.
-- **Horas restantes e percentual de maestria:** indicadores de quanto falta para o marco simbólico.
+### Hierarquia oficial do motor
 
-O Radar acompanha o tempo do projeto e pode atualizar sua indicação durante um Ponto em andamento. A animação é uma representação; os registros salvos e seus horários são a base para o cálculo. O percentual de maestria não representa uma avaliação de habilidade profissional.
+| Unidade | Equivalência | Graus | Minutos | Horas |
+| --- | --- | ---: | ---: | ---: |
+| Pulso | 30 minutos | 180 | 30 | 0,5 |
+| Giro | 2 Pulsos | 360 | 60 | 1 |
+| Turno | 8 Giros | 2.880 | 480 | 8 |
+| Fase | 30 Turnos | 86.400 | 14.400 | 240 |
+| Propulsão | 42 Fases | 3.628.800 | 604.800 | 10.080 |
+
+**Conversão:** 10 segundos = 1 grau; 30 minutos = 1 Pulso; 1 hora = 1 Giro. O Radar exibe graus acumulados, ângulo da volta atual, contadores completos de Pulsos, Giros, Turnos, Fases e Propulsões e progresso até a próxima unidade. Os contadores são **totais independentes**, não quantidades a somar entre si. Por exemplo, 8 horas = 16 Pulsos = 8 Giros = 1 Turno.
+
+O tempo deriva dos intervalos de trabalho efetivo do projeto, inclusive atividades antigas e sessões de Foco. Sobreposições não são contadas em duplicidade; pausas do Foco não são trabalho. A rotação decorativa ocorre durante atividades em andamento e para quando não há atividade, respeitando `prefers-reduced-motion`. O anel externo indica o Giro atual, com 360 marcações; o ponteiro interno indica os 60 segundos. Os indicadores são atualizados enquanto a página está aberta e recalculados a partir dos registros ao retornar.
+
+A primeira Propulsão é concluída com **10.080 horas**. Se houver mais trabalho, a contagem continua em direção à próxima Propulsão. **As 100 metas progressivas, as 200 batalhas, os Elixires e as 100 Cerimônias permanecem vinculados às 10.000 horas**, sem alteração de suas regras. A primeira Propulsão completa é um marco adicional de medição, 80 horas depois da Consagração, sem concessão automática de Elixir ou Cerimônia.
+
 
 <a id="14-arena-200-chefoes"></a>
 
