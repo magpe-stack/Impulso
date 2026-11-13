@@ -775,3 +775,8 @@ O botão **Ignição** reproduz os graus acumulados do projeto em velocidade de 
 ### Ignição — correção da versão 78
 
 A rotação das pás agora utiliza `style.transform` no grupo SVG, evitando conflitos entre o atributo `transform` do SVG e as regras CSS. O usuário inicia explicitamente a animação por **Ignição**, pode interrompê-la por **Parar**, e acompanha os giros concluídos. A velocidade é de três segundos por giro. A reprodução é apenas visual e não altera os registros.
+
+
+### Correção da Ignição — versão 79
+
+A rotação do rotor é comandada pelo botão **Ignição**, com velocidade de três segundos por Giro e contador de voltas. Foi removida uma regra CSS (`transform: none !important`) que bloqueava visualmente o movimento das pás, embora o contador avançasse. O botão **Parar** permanece disponível e a Ignição não modifica os registros.

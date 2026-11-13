@@ -363,7 +363,7 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 .propulsion-unit small{display:block;color:var(--muted);margin-top:7px;overflow-wrap:anywhere}
 .propulsion-progress{height:9px}
 .propulsion-rotor{transform-origin:120px 120px;transform-box:view-box}
-.propulsion-rotor.is-running{animation:propulsion-spin 2.4s linear infinite}
+.propulsion-rotor.is-running{animation:none}
 @keyframes propulsion-spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.propulsion-rotor.is-running{animation:none}}
 
@@ -396,8 +396,6 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 /* v76: o botão Parar só aparece durante a reprodução da Ignição. */
 .ignition-controls .btn[hidden]{display:none!important}
 
-/* v77: o rotor é posicionado pelo atributo SVG transform, não por CSS. */
-#propRotor{transform:none!important;transform-origin:initial!important}
-
-/* v78: a rotação do SVG é definida em tempo real por style.transform (não por atributo SVG). */
-#propRotor{transform-origin:120px 120px;transform-box:view-box;transition:none!important;will-change:transform}
+/* v79: não sobrescrever a transformação inline aplicada pelo JavaScript.
+   A regra anterior transform:none!important impedia TODA a rotação das pás. */
+#propRotor{transform-origin:120px 120px;transform-box:view-box;transition:none;will-change:transform}

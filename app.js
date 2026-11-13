@@ -520,7 +520,7 @@ function renderRadar(p){
  $('#radarIgnition')?.addEventListener('click', igniteRadar);
  $('#radarStop')?.addEventListener('click', stopIgnition);
 }
-// v78: rotação aplicada via CSSStyleDeclaration ao grupo SVG; evita conflito com CSS transform.
+// v79: rotação aplicada ao grupo SVG sem conflito com regras CSS !important.
 // Uma marca assimétrica acompanha uma das pás para tornar cada volta perceptível.
 const IGNITION_MS_PER_TURN=3000;
 let ignitionRun=null;
