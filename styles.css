@@ -234,3 +234,40 @@ body[data-palette="trinity"] #splash{--ignite:#ff9447;--ignite-soft:#00ff6b;--ig
 @media print{.ceremony-particles,.ceremony-aura,.ceremony-controls{display:none!important}}
 
 .ceremony-stage{background:linear-gradient(150deg,#34187c,#160a33);color:#fff}.ceremony-stage .btn{color:var(--text)}
+
+/* IMPULSO 61 — Cerimônia cinematográfica: sequência de abertura, ascensão e revelação */
+dialog.ceremony-dialog{width:min(760px,calc(100vw - 20px));max-width:760px;max-height:calc(100dvh - 20px);padding:0;border:1px solid #8054d7;background:#110b2b;overflow:auto}
+.ceremony-cinema{--cinema-gold:#ffdf91;min-height:min(720px,calc(100dvh - 26px));width:100%;max-width:none;border:0;border-radius:18px;padding:clamp(22px,5vw,45px) clamp(15px,4vw,35px);display:grid;place-items:center;isolation:isolate;background:radial-gradient(ellipse at 50% 30%,#4e2b83 0%,#221344 45%,#0c1026 100%);color:#fff!important}
+.ceremony-cinema.ceremony-cycle{background:radial-gradient(ellipse at 50% 30%,#6c346d 0%,#2b174e 45%,#0b0c23 100%)}
+.ceremony-cinema.ceremony-finale{background:radial-gradient(ellipse at 50% 30%,#62418c 0%,#32173f 48%,#0b0b21 100%)}
+.cinema-sky{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.cinema-starfield{position:absolute;inset:0;background-image:radial-gradient(circle,#fff9 1px,transparent 2px),radial-gradient(circle,#f9caffaa 1px,transparent 2px);background-size:71px 83px,109px 117px;background-position:11px 13px,37px 49px;opacity:0;animation:cinema-stars 7s linear both}
+.cinema-beam{position:absolute;left:50%;top:40%;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#f7d8ffbb, #a968ff55 30%,transparent 70%);transform:translate(-50%,-50%) scale(.2);opacity:0;animation:cinema-beam 5s ease-out both}
+.cinema-orbit{position:absolute;left:50%;top:37%;width:210px;height:210px;border:2px solid #f8d89d99;border-radius:50%;opacity:0;animation:cinema-orbit 3.6s ease-out .5s both}
+.cinema-orbit.orbit-two{border-color:#e8b8ff99;animation-delay:.95s}
+.cinema-flash{position:absolute;inset:0;background:#fff;opacity:0;animation:cinema-flash 4.8s ease-out both}
+.cinema-confetti{position:absolute;inset:0;overflow:hidden}
+.cinema-confetti i{position:absolute;left:calc(var(--x)*1%);top:-15px;width:7px;height:15px;border-radius:2px;background:hsl(calc(var(--i)*37) 90% 75%);opacity:0;animation:cinema-fall var(--duration) ease-in calc(2.1s + var(--delay)) both}
+.cinema-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%}
+.cinema-intro{font-size:clamp(.67rem,2vw,.83rem);letter-spacing:.16em;font-weight:800;color:#f9dba6;opacity:0;animation:cinema-intro 1.5s ease-out both}
+.cinema-emblem{font-size:clamp(5rem,18vw,9rem);line-height:1.25;filter:drop-shadow(0 0 18px #f3d1ff88);opacity:0;transform:translateY(90px) scale(.2);animation:cinema-ascend 2.3s cubic-bezier(.16,.85,.25,1) .65s both,cinema-hover 3s ease-in-out 3s infinite}
+.ceremony-cinema .ceremony-kicker,.ceremony-cinema h2,.ceremony-cinema .ceremony-hours,.ceremony-cinema .ceremony-story,.ceremony-cinema .ceremony-footnote{opacity:0;animation:cinema-reveal .8s ease-out both}
+.ceremony-cinema .ceremony-kicker{animation-delay:2.1s;color:#ffdf91}
+.ceremony-cinema h2{animation-delay:2.45s;color:#fff;text-shadow:0 2px 20px #0008}
+.ceremony-cinema .ceremony-hours{animation-delay:2.8s;color:#ffdf91;font-size:clamp(1.2rem,4vw,1.65rem)}
+.ceremony-cinema .ceremony-story{animation-delay:3.2s;max-width:52ch;color:#fff;line-height:1.6}
+.ceremony-cinema .ceremony-footnote{animation-delay:3.5s;color:#f4dfff}
+.ceremony-cinema .ceremony-controls{opacity:0;animation:cinema-reveal .7s ease-out 3.7s both}
+.ceremony-cinema .btn{background:#f7e8ff;color:#241338;border-color:#f7e8ff}
+.ceremony-cinema .btn.primary{background:#f9dba6;color:#26113a;border-color:#f9dba6}
+@keyframes cinema-stars{0%{opacity:0;transform:translateY(30px)}25%,100%{opacity:.8;transform:translateY(0)}}
+@keyframes cinema-beam{0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}40%{opacity:.9}100%{opacity:.45;transform:translate(-50%,-50%) scale(2.6)}}
+@keyframes cinema-orbit{0%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(0)}25%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(2.5) rotate(180deg)}}
+@keyframes cinema-flash{0%,38%,49%,100%{opacity:0}44%{opacity:.3}}
+@keyframes cinema-fall{0%{opacity:0;transform:translateY(-20px) rotate(0)}12%{opacity:1}85%{opacity:.85}100%{opacity:0;transform:translate(var(--drift),750px) rotate(660deg)}}
+@keyframes cinema-intro{0%{opacity:0;transform:translateY(-15px)}50%,100%{opacity:1;transform:translateY(0)}}
+@keyframes cinema-ascend{0%{opacity:0;transform:translateY(90px) scale(.2) rotate(-30deg)}65%{opacity:1;transform:translateY(-12px) scale(1.15) rotate(8deg)}100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+@keyframes cinema-hover{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes cinema-reveal{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.ceremony-cinema *, .ceremony-cinema *::before,.ceremony-cinema *::after{animation:none!important;transition:none!important}.cinema-intro,.cinema-emblem,.ceremony-cinema .ceremony-kicker,.ceremony-cinema h2,.ceremony-cinema .ceremony-hours,.ceremony-cinema .ceremony-story,.ceremony-cinema .ceremony-footnote,.ceremony-cinema .ceremony-controls{opacity:1!important;transform:none!important}.cinema-confetti,.cinema-flash,.cinema-orbit,.cinema-beam{display:none!important}}
+@media print{dialog.ceremony-dialog{display:none!important}}
