@@ -27,18 +27,18 @@
 14. [Arena: 200 chefões](#14-arena-200-chefoes)
 15. [Codex de Monstros](#15-codex-de-monstros)
 16. [Elixires, cofres e recompensas](#16-elixires-cofres-e-recompensas)
-   - [Visão: o foguete revelado por Elixires](#visao-o-foguete-revelado-por-elixires)
-17. [Guardar, exportar, importar e restaurar](#17-guardar-exportar-importar-e-restaurar)
-18. [Impressão e relatórios](#18-impressao-e-relatorios)
-19. [Alertas: lembretes opcionais](#19-alertas-lembretes-opcionais)
-20. [Armazenamento: saúde dos dados](#20-armazenamento-saude-dos-dados)
-21. [Configuração: paletas e aparência](#21-configuracao-paletas-e-aparencia)
-22. [Privacidade, integridade e limites técnicos](#22-privacidade-integridade-e-limites-tecnicos)
-23. [Solução de problemas](#23-solucao-de-problemas)
-24. [Perguntas frequentes](#24-perguntas-frequentes)
-25. [Roteiro de testes](#25-roteiro-de-testes)
-26. [Arquivos do projeto](#26-arquivos-do-projeto)
-27. [Glossário](#27-glossario)
+17. [Visão: o foguete revelado por Elixires](#17-visao-o-foguete-revelado-por-elixires)
+18. [Guardar, exportar, importar e restaurar](#18-guardar-exportar-importar-e-restaurar)
+19. [Impressão e relatórios](#19-impressao-e-relatorios)
+20. [Alertas: lembretes opcionais](#20-alertas-lembretes-opcionais)
+21. [Armazenamento: saúde dos dados](#21-armazenamento-saude-dos-dados)
+22. [Configuração: paletas e aparência](#22-configuracao-paletas-e-aparencia)
+23. [Privacidade, integridade e limites técnicos](#23-privacidade-integridade-e-limites-tecnicos)
+24. [Solução de problemas](#24-solucao-de-problemas)
+25. [Perguntas frequentes](#25-perguntas-frequentes)
+26. [Roteiro de testes](#26-roteiro-de-testes)
+27. [Arquivos do projeto](#27-arquivos-do-projeto)
+28. [Glossário](#28-glossario)
 
 ---
 
@@ -360,9 +360,9 @@ A seção **Elixires** é o espaço de coleção e recompensa. O sistema contém
 
 **Atenção:** os **Elixires Ativos** da página Hábitos são os hábitos equipados; os **Elixires colecionáveis** são as frases obtidas com os cofres. São recursos relacionados, mas não idênticos.
 
-<a id="visao-o-foguete-revelado-por-elixires"></a>
+<a id="17-visao-o-foguete-revelado-por-elixires"></a>
 
-### Visão: o foguete revelado por Elixires
+## 17. Visão: o foguete revelado por Elixires
 
 A página **Visão**, logo abaixo de **Elixires** no menu, apresenta a imagem `ImpulsoVision.svg` de um foguete decolando. A imagem é dividida em **200 quadradinhos (20 colunas por 10 linhas)**, inicialmente ocultos.
 
@@ -372,9 +372,9 @@ A página mostra o número de Elixires conquistados, o saldo de revelações, os
 
 **Importante:** a concessão de uma revelação segue a mecânica real dos Elixires do Impulso: é necessário derrotar o chefão correspondente e concluir um hábito para abrir o cofre. Equipar um hábito, por si só, não concede revelação. Se um registro for excluído e seu Elixir deixar de ser válido, as partes já reveladas continuam visíveis, mas o saldo para novas escolhas é recalculado a partir dos Elixires válidos.
 
-<a id="17-guardar-exportar-importar-e-restaurar"></a>
+<a id="18-guardar-exportar-importar-e-restaurar"></a>
 
-## 17. Guardar, exportar, importar e restaurar
+## 18. Guardar, exportar, importar e restaurar
 
 Os arquivos de segurança utilizam o formato **JSON**. O Impulso oferece operações diferentes, que não devem ser confundidas.
 
@@ -409,9 +409,9 @@ Os arquivos de segurança utilizam o formato **JSON**. O Impulso oferece operaç
 
 Recomenda-se guardar uma cópia **ao final de sessões importantes**, antes de atualizar ou reinstalar o PWA, antes de excluir registros ou projetos, antes de limpar dados do navegador e antes de trocar de dispositivo. O alerta opcional pode ajudar, mas não faz backup automaticamente.
 
-<a id="18-impressao-e-relatorios"></a>
+<a id="19-impressao-e-relatorios"></a>
 
-## 18. Impressão e relatórios
+## 19. Impressão e relatórios
 
 A opção **Imprimir** prepara um relatório do projeto ativo e abre a função de impressão do navegador. Conforme o fluxo, é possível imprimir a **lista de projetos** e relatórios de um **dia específico**.
 
@@ -423,9 +423,9 @@ Na janela de impressão, escolha **Salvar como PDF** se o navegador oferecer ess
 
 **Importante:** imprimir não cria backup restaurável. O PDF serve para consulta e documentação; o **JSON** serve para restaurar os dados no aplicativo.
 
-<a id="19-alertas-lembretes-opcionais"></a>
+<a id="20-alertas-lembretes-opcionais"></a>
 
-## 19. Alertas: lembretes opcionais
+## 20. Alertas: lembretes opcionais
 
 A página **Alertas** (painel de alertas) oferece dois lembretes independentes, inicialmente desativados:
 
@@ -435,9 +435,9 @@ A página **Alertas** (painel de alertas) oferece dois lembretes independentes, 
 
 As opções são controladas por **caixas de seleção** e ficam salvas no navegador. Os alertas são **locais**, não são notificações push do sistema e dependem de a página estar aberta e visível. Se o navegador suspender a aba, o aviso poderá atrasar. Não há backup automático nem execução de hábitos em segundo plano.
 
-<a id="20-armazenamento-saude-dos-dados"></a>
+<a id="21-armazenamento-saude-dos-dados"></a>
 
-## 20. Armazenamento: saúde dos dados
+## 21. Armazenamento: saúde dos dados
 
 A página **Armazenamento** é um **Monitor de Armazenamento Local**, não um medidor de RAM. Ela consulta informações que o navegador permite acessar e apresenta estimativas úteis para acompanhar o crescimento dos projetos.
 
@@ -464,9 +464,9 @@ O navegador pode permitir solicitar armazenamento persistente. Se concedido, iss
 - A data do último backup significa **download solicitado**, não confirmação de arquivo salvo.
 - O painel não exclui registros nem executa limpeza automática.
 
-<a id="21-configuracao-paletas-e-aparencia"></a>
+<a id="22-configuracao-paletas-e-aparencia"></a>
 
-## 21. Configuração: paletas e aparência
+## 22. Configuração: paletas e aparência
 
 A página **Configuração** permite escolher a **identidade visual** e, independentemente, a **aparência clara ou escura**. Existem seis identidades, totalizando **doze combinações**:
 
@@ -502,9 +502,9 @@ Os tokens de cada paleta são definidos em suas folhas CSS e aplicados quando a 
 
 As paletas buscam empregar pares de contraste adequados a textos e controles. Cores vibrantes não devem receber texto branco quando o contraste for insuficiente. Estados importantes, como vitória, erro, cofre aberto e cofre fechado, devem ser comunicados também por **rótulos e símbolos**, não apenas por cor. No Ecológico, superfícies profundas (`#003D0E`, `#103D00`, `#2F3D00`) usam texto branco; superfícies muito luminosas (`#C7FF10`, `#4FFF10`, `#10FF48`) exigem texto preto ou escuro. A interface utiliza rótulos como **Equipar**, **✓ Equipado**, e indicadores textuais de cofres para não depender exclusivamente do verde. A conformidade de toda a interface deve ser verificada nas telas reais e nos dispositivos utilizados.
 
-<a id="22-privacidade-integridade-e-limites-tecnicos"></a>
+<a id="23-privacidade-integridade-e-limites-tecnicos"></a>
 
-## 22. Privacidade, integridade e limites técnicos
+## 23. Privacidade, integridade e limites técnicos
 
 - **Armazenamento local:** os projetos são salvos no navegador, principalmente em `localStorage`.
 - **Sem sincronização automática:** abrir o aplicativo em outro navegador, perfil ou aparelho não transfere os dados anteriores.
@@ -516,9 +516,9 @@ As paletas buscam empregar pares de contraste adequados a textos e controles. Co
 - **Não é sistema de ponto oficial:** os relatórios são instrumentos de organização pessoal, não comprovantes certificados.
 - **A meta de 10.000 horas é simbólica:** não mede competência nem substitui avaliação de resultados.
 
-<a id="23-solucao-de-problemas"></a>
+<a id="24-solucao-de-problemas"></a>
 
-## 23. Solução de problemas
+## 24. Solução de problemas
 
 | Sintoma | O que verificar ou fazer |
 |---|---|
@@ -540,9 +540,9 @@ As paletas buscam empregar pares de contraste adequados a textos e controles. Co
 | **Tema não ficou como esperado** | Abra **Configuração**, escolha outra identidade e alterne claro/escuro. Se necessário, atualize a página após o cache ser renovado. |
 | **Impressão cortada** | Use a pré-visualização, ajuste margens, escala e orientação ou salve em PDF. |
 
-<a id="24-perguntas-frequentes"></a>
+<a id="25-perguntas-frequentes"></a>
 
-## 24. Perguntas frequentes
+## 25. Perguntas frequentes
 
 **Preciso criar uma conta?** Não. O uso descrito neste manual é local ao navegador.
 
@@ -580,9 +580,9 @@ As paletas buscam empregar pares de contraste adequados a textos e controles. Co
 
 **Se instalar em outro celular, os projetos aparecem?** Não automaticamente. É necessário transferir e importar/restaurar um arquivo compatível.
 
-<a id="25-roteiro-de-testes"></a>
+<a id="26-roteiro-de-testes"></a>
 
-## 25. Roteiro de testes
+## 26. Roteiro de testes
 
 Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de teste e **faça backup antes de testar exclusões ou restaurações**.
 
@@ -628,9 +628,9 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 - [ ] Conferir legibilidade, foco de teclado, controles, ícones e rótulos em cada tema.
 - [ ] Testar no celular, no desktop e sem internet após o cache inicial.
 
-<a id="26-arquivos-do-projeto"></a>
+<a id="27-arquivos-do-projeto"></a>
 
-## 26. Arquivos do projeto
+## 27. Arquivos do projeto
 
 | Arquivo | Finalidade |
 |---|---|
@@ -654,9 +654,9 @@ Use esta lista após publicar ou atualizar o aplicativo. Prefira um projeto de t
 | `theme-impulso-ecologico.css` | Identidade **Impulso Ecológico**. |
 | `ImpulsoVision.svg` | Imagem da página Visão, revelada em 200 quadradinhos. |
 
-<a id="27-glossario"></a>
+<a id="28-glossario"></a>
 
-## 27. Glossário
+## 28. Glossário
 
 **Arena:** campanha gamificada de desafios associados ao tempo trabalhado.  
 **Backup Geral:** arquivo JSON com todos os projetos.  
