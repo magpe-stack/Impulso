@@ -393,3 +393,5 @@ dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 .ignition-controls{display:flex;flex-direction:column;align-items:center;gap:7px;margin:10px auto 16px;text-align:center}
 .ignition-controls .btn{min-width:150px}
 .ignition-controls .help{margin:0;max-width:40rem}
+/* v76: o botão Parar só aparece durante a reprodução da Ignição. */
+.ignition-controls .btn[hidden]{display:none!important}
