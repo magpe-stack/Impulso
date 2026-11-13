@@ -717,3 +717,17 @@ As cerimônias são animações CSS executadas no próprio navegador. Ao abrir u
 ### Cerimônias — janela sem barras de rolagem (versão 65)
 
 A janela de cerimônia agora utiliza dimensões limitadas pela área visível do navegador e não exibe barras de rolagem internas. O conteúdo é organizado com espaçamentos compactos e, quando necessário, reduzido proporcionalmente para caber na tela, incluindo o aviso de movimento reduzido e os três controles. A animação e a opção de reprodução voluntária são preservadas. Em telas extremamente pequenas, o conteúdo pode ficar menor para permanecer integralmente visível.
+
+
+### Navegação hierárquica — Impulso 66
+
+O menu principal apresenta **Início**, **Ações**, **Vitórias**, **Dados**, **Configurações** e **Sair**. Ao selecionar um dos quatro primeiros grupos, abre-se o respectivo submenu:
+
+- **Início:** Novo, Projetos, Guardar, Restaurar e Imprimir. O painel inicial permanece disponível ao abrir um projeto.
+- **Ações:** Ponto, Hábitos, Entradas e Meu Dia.
+- **Vitórias:** Arena, Codex, Elixires, Cerimônias e Visão.
+- **Dados:** Radar, Estatísticas e Armazenamento.
+- **Configurações:** reúne os **Temas** (sete identidades cromáticas e luminosidade) e os **Alertas** (backup e hábitos/Elixires) na mesma página. O botão Alertas foi retirado do menu, mas seus controles e preferências foram preservados.
+- **Sair:** mantém a confirmação e o comportamento anteriores.
+
+O submenu é expansível, compatível com teclado e indica se está aberto. Os registros, as conquistas e os backups não são modificados pela reorganização.

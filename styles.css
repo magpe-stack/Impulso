@@ -306,3 +306,17 @@ dialog.ceremony-dialog .ceremony-motion-enable{margin:4px auto;min-height:40px}
 dialog.ceremony-dialog .ceremony-controls{margin-top:9px;gap:8px}
 dialog.ceremony-dialog .ceremony-controls button{min-height:40px}
 @media(max-width:600px){dialog.ceremony-dialog .ceremony-cinema{padding:12px 10px}dialog.ceremony-dialog .ceremony-controls{gap:6px}dialog.ceremony-dialog .ceremony-controls button{font-size:.85rem;padding:9px 11px}}
+
+/* Impulso 66 — navegação hierárquica, sem rolagem horizontal */
+.menu-drawer nav .menu-accordion{margin-top:5px;padding-top:5px}
+.menu-drawer nav .menu-accordion:first-child{border-top:0;margin-top:0;padding-top:0}
+.menu-drawer nav .menu-accordion .menu-parent{display:flex;align-items:center;justify-content:space-between;width:100%;font-size:.98rem;font-weight:750;padding:11px 10px;min-height:42px}
+.menu-drawer nav .menu-accordion .menu-parent.current-group{border-left:3px solid var(--color-4)}
+.menu-drawer nav .menu-accordion .menu-parent.expanded{background:var(--soft)}
+.menu-chevron{font-size:1rem;margin-left:12px}
+.menu-drawer nav .menu-accordion .menu-sub{display:flex;flex-direction:column;gap:3px;padding:4px 0 7px 13px}
+.menu-drawer nav .menu-accordion .menu-sub[hidden]{display:none!important}
+.menu-drawer nav .menu-accordion .menu-sub button{min-height:36px;padding:7px 12px;font-size:.9rem;font-weight:550}
+.menu-drawer nav .menu-standalone{margin-top:8px;padding-top:8px}
+.menu-drawer nav .menu-standalone button{min-height:42px;font-size:.98rem;font-weight:750}
+@media(prefers-reduced-motion:reduce){.menu-drawer nav .menu-accordion *{transition:none}}
