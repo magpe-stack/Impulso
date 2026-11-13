@@ -785,3 +785,13 @@ A rotação do rotor é comandada pelo botão **Ignição**, com velocidade de t
 ### Ignição do Radar — versão 80
 
 Removida a bolinha de referência das pás do rotor. A velocidade de reprodução foi duplicada: **cada Giro (360 graus) leva 1,5 segundo**, em vez de 3 segundos. O contador, os botões Ignição/Parar e as cores do tema permanecem inalterados. As versões anteriores são descritas acima como histórico de desenvolvimento.
+
+
+### Ignição do Radar — versão 81
+
+A velocidade do rotor foi triplicada em relação à versão 80: cada Giro (360 graus) leva **0,5 segundo**, em vez de 1,5 segundo. Sete Giros levam aproximadamente 3,5 segundos; 288 Giros, 2 minutos e 24 segundos. O contador, o botão Parar, os graus contabilizados e as cores associadas ao tema permanecem inalterados.
+
+
+### Ignição do Radar — versão 82
+
+A velocidade do rotor foi ajustada para **um Giro completo (360 graus) a cada 0,3 segundo**. Sete Giros levam aproximadamente 2,1 segundos e 288 Giros aproximadamente 1 minuto e 26,4 segundos. Mantidos os botões Ignição e Parar, o contador, a contagem de graus e as cores do tema.

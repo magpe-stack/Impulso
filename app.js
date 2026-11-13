@@ -522,7 +522,7 @@ function renderRadar(p){
 }
 // v79: rotação aplicada ao grupo SVG sem conflito com regras CSS !important.
 // Uma marca assimétrica acompanha uma das pás para tornar cada volta perceptível.
-const IGNITION_MS_PER_TURN=1500;
+const IGNITION_MS_PER_TURN=300;
 let ignitionRun=null;
 function ignitionAngle(rotor,degrees){
  if(rotor)rotor.style.transform=`rotate(${degrees}deg)`;
@@ -572,12 +572,12 @@ function igniteRadar(){
    const completed=Math.min(turns,Math.floor(run.angle/360));
    if(completed!==run.shown){
      run.shown=completed;
-     feedback.textContent=`Ignição: ${fmtNumber(completed)} de ${fmtNumber(turns)} giros completos. Uma volta leva 1,5 segundo. Use Parar para interromper.`;
+     feedback.textContent=`Ignição: ${fmtNumber(completed)} de ${fmtNumber(turns)} giros completos. Uma volta leva 0,3 segundo. Use Parar para interromper.`;
    }
    if(run.angle>=degrees){finish();return;}
    run.frame=requestAnimationFrame(tick);
  };
- feedback.textContent=`Iniciando ${summary} Cada giro leva 1,5 segundo; use Parar para interromper.`;
+ feedback.textContent=`Iniciando ${summary} Cada giro leva 0,3 segundo; use Parar para interromper.`;
  run.frame=requestAnimationFrame(tick);
 }
 function liveTick(){const p=project();if(!p)return;if(page==='foco'&&p.focusSession?.runningSince){const f=p.focusSession,el=$('#focusElapsed');if(el)el.textContent=duration(focusMs(f));const dev=$('#focusDeviation');if(dev)dev.textContent=focusDeviation(focusMs(f),f.plannedMs)}if(page==='ponto'&&p.pointSession?.status==='running'){const el=$('#pointElapsed');if(el)el.textContent=duration(now()-p.pointSession.start)}const ms=total(p,true);if(page==='habitos'){document.querySelectorAll('[data-pomodoro]').forEach(el=>{const h=p.habits.find(x=>x.id===el.dataset.pomodoro);if(!h?.timer)return;const t=h.timer,elapsed=Math.min(h.minutes*60000,(t.elapsed||0)+(t.runningSince?Math.max(0,now()-t.runningSince):0));el.textContent=duration(Math.max(0,h.minutes*60000-elapsed));const bar=document.querySelector(`[data-pomodoro-progress="${h.id}"]`);if(bar)bar.style.width=`${100*elapsed/(h.minutes*60000)}%`})}if(page==='radar'){
