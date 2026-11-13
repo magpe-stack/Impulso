@@ -1,5 +1,5 @@
-const CACHE='impulso-v53-menu-reorganizado-20261113';
-const ASSETS=['./','./index.html','./styles.css?v=53','./theme-impulso.css?v=53','./theme-impulso-analogo.css?v=53','./theme-impulso-triadico.css?v=53','./theme-impulso-granfino.css?v=53','./theme-impulso-ecologico.css?v=53','./app.js?v=53','./manifest.json?v=13','./rocket-192-v11.png','./rocket-512-v11.png','./logo.svg','./logo.png','./habitos_elixires_v2.json'];
+const CACHE='impulso-v54-configuracao-largura-20261113';
+const ASSETS=['./','./index.html','./styles.css?v=54','./theme-impulso.css?v=54','./theme-impulso-analogo.css?v=54','./theme-impulso-triadico.css?v=54','./theme-impulso-granfino.css?v=54','./theme-impulso-ecologico.css?v=54','./app.js?v=54','./manifest.json?v=13','./rocket-192-v11.png','./rocket-512-v11.png','./logo.svg','./logo.png','./habitos_elixires_v2.json'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('impulso-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
