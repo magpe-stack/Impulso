@@ -509,3 +509,33 @@ body.dashboard-mode>.app-footer{display:none!important}
  .dash-command-grid{gap:3px}
  .dash-activity{padding:3px 5px}
 }
+
+/* Impulso 88 — cerimônias: legibilidade independente da animação. */
+.ceremony-cinema .cinema-intro,.ceremony-cinema .cinema-emblem,
+.ceremony-cinema .ceremony-kicker,.ceremony-cinema h2,
+.ceremony-cinema .ceremony-hours,.ceremony-cinema .ceremony-story,
+.ceremony-cinema .ceremony-footnote,.ceremony-cinema .ceremony-controls{
+ opacity:1; /* conteúdo nunca depende de um keyframe para aparecer */
+}
+.ceremony-cinema.ceremony-restarting *,
+.ceremony-cinema.ceremony-restarting *::before,
+.ceremony-cinema.ceremony-restarting *::after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){
+ .ceremony-cinema.ceremony-motion-opt-in .cinema-intro,
+ .ceremony-cinema.ceremony-motion-opt-in .cinema-emblem,
+ .ceremony-cinema.ceremony-motion-opt-in .ceremony-kicker,
+ .ceremony-cinema.ceremony-motion-opt-in h2,
+ .ceremony-cinema.ceremony-motion-opt-in .ceremony-hours,
+ .ceremony-cinema.ceremony-motion-opt-in .ceremony-story,
+ .ceremony-cinema.ceremony-motion-opt-in .ceremony-footnote,
+ .ceremony-cinema.ceremony-motion-opt-in .ceremony-controls{opacity:1}
+}
+/* Cards com botões de mesma largura, altura e texto estável. */
+.ceremony-card{box-sizing:border-box;min-width:0}
+.ceremony-card .btn{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:0;width:100%;min-height:48px;padding:8px 7px;line-height:1.25;font-size:clamp(.78rem,1.15vw,.94rem);white-space:normal;overflow-wrap:normal;word-break:normal;text-align:center}
+.ceremony-gallery{grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr))}
+.insignia-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+.insignia-card{min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:15px 12px;border:1px solid var(--line);border-radius:14px;background:var(--soft);color:var(--text)}
+.insignia-card.locked{opacity:.68}.insignia-card.earned{border-color:var(--color-4)}
+.insignia-card small{font-size:.82rem;line-height:1.4}.insignia-card .btn{margin-top:auto;width:100%;min-height:40px}
+.insignia-icon{font-size:2rem;line-height:1.4}

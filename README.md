@@ -826,3 +826,14 @@ Os seis indicadores foram redimensionados para cartões de altura proporcional a
 ### Dashboard — mapa quadrado e atalhos
 
 O Mapa de Atividade exibe 365 dias com células quadradas de largura e altura iguais. Os oito atalhos da Central de Comando são Ponto, Foco, Hábitos, Entradas, Projetos, Novo, Calendário e Configurações. O botão **Sobre o Impulso**, no rodapé das demais páginas, descreve os recursos atuais do aplicativo, a privacidade e os cuidados com backups.
+
+
+## Insígnias — títulos e medalhas
+
+No menu **Vitórias → Insígnias**, consulte os títulos e medalhas do projeto. Os dez títulos são liberados por horas efetivamente acumuladas: Iniciante (inicial), Aprendiz (10h), Explorador (30h), Persistente (100h), Estrategista (250h), Especialista (500h), Veterano (1.000h), Mentor (2.500h), Sábio (5.000h) e Mestre (10.000h). Você pode equipar qualquer título já desbloqueado. O título Mestre é simbólico, não uma certificação profissional.
+
+As medalhas reconhecem a primeira atividade, marcos de 10 a 1.000 horas, sequências de 7 a 365 dias, conclusões de hábitos e vitórias sobre Chefões. A coleção é independente para cada projeto. A data da conquista é registrada quando o aplicativo reconhece o marco; para conquistas antigas, é a data de reconhecimento, não necessariamente a data histórica exata. Medalhas conquistadas permanecem na coleção mesmo que o progresso atual diminua após exclusões. Os backups preservam a coleção e o título equipado.
+
+## Cerimônias — reprodução
+
+A galeria exibe os 100 marcos progressivos da jornada. **Rever cerimônia** abre uma apresentação visual que não modifica os registros. **Reproduzir novamente** reinicia os efeitos no mesmo diálogo; **Fechar cerimônia** encerra a apresentação. Se o sistema solicitar redução de movimento, o conteúdo continua visível e o botão **Ativar animação nesta cerimônia** permite iniciar os efeitos apenas na apresentação aberta. Os controles mantêm dimensões uniformes em telas estreitas.
