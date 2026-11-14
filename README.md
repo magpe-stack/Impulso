@@ -1,4 +1,4 @@
-# IMPULSO — Manual do usuário
+# Impulso — Manual completo do usuário
 
 **Motor de Produtividade Pessoal**  
 **Aplicativo:** https://magpe-stack.github.io/Impulso/  
@@ -7,11 +7,14 @@
 
 <p align="center"><img src="ImpulsoCover.png" alt="Capa do Impulso — Motor de Produtividade Pessoal" width="100%"></p>
 
-O **Impulso** é um aplicativo progressivo (PWA) para registrar o tempo dedicado a projetos, desenvolver hábitos e acompanhar uma jornada pessoal de produtividade. Ele reúne instrumentos de trabalho, estatísticas e uma experiência de conquistas inspirada em jogos. O progresso é baseado no **tempo efetivamente registrado**, não em pontos fictícios ou promessas de desempenho.
+O **Impulso** é um aplicativo web progressivo (PWA) de produtividade pessoal. Nele, você cria projetos independentes, registra o tempo dedicado a trabalhos e hábitos, analisa sua constância e acompanha uma jornada de conquistas. O aplicativo combina ferramentas práticas de organização com uma linguagem visual inspirada em jogos. **O tempo registrado é real; as metáforas de propulsão, chefões e cerimônias são motivacionais.**
 
 > **Antes de começar:** seus projetos ficam armazenados neste navegador e dispositivo, sem sincronização automática com uma conta ou nuvem. Faça **backups regulares** e conserve cópias fora do navegador. A jornada de 10.000 horas é uma referência motivacional, não uma certificação de domínio profissional. O Impulso não substitui um sistema oficial de controle de jornada.
 
-## Sumário
+<a id="sumario-e-navegacao"></a>
+## Sumário e navegação
+
+Selecione um capítulo para ir diretamente ao assunto. Ao terminar a leitura, utilize o link **Voltar ao sumário** para retornar a esta lista. As âncoras têm identificadores explícitos, estáveis e sem acentos, para funcionar no GitHub mesmo quando o título exibido mudar.
 
 1. [Conheça o Impulso](#1-conheca-o-impulso)
 2. [Primeiro acesso e instalação](#2-primeiro-acesso-e-instalacao)
@@ -34,6 +37,11 @@ O **Impulso** é um aplicativo progressivo (PWA) para registrar o tempo dedicado
 
 ---
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="1-conheca-o-impulso"></a>
 ## 1. Conheça o Impulso
 
 O Impulso ajuda a transformar esforço disperso em um histórico consultável. Você pode registrar trabalhos, organizar sessões de concentração, praticar hábitos, consultar dias anteriores, acompanhar metas e visualizar conquistas. Tudo é separado por **projeto**, para que uma atividade não se misture às demais.
@@ -48,10 +56,28 @@ O aplicativo combina cinco dimensões:
 
 A proposta não é vigiar o usuário, mas ajudá-lo a perceber a continuidade de seus próprios esforços. Um projeto pode ser um livro, uma formação, um empreendimento, uma pesquisa ou qualquer objetivo que demande dedicação consistente.
 
+<a id="roteiro-rapido-do-primeiro-registro-ao-primeiro-backup"></a>
+### Roteiro rápido: do primeiro registro ao primeiro backup
+
+1. Abra o aplicativo e escolha **Arquivo → Novo**. Dê um nome ao seu projeto.
+2. Vá a **Ações → Ponto**, informe o nome de uma tarefa e inicie o registro.
+3. Ao terminar, volte a **Ponto** e conclua a atividade.
+4. Consulte **Dados → Meu Dia** para conferir horários e duração.
+5. Acompanhe o progresso em **Dados → Dashboard** e **Dados → Motor**.
+6. Escolha **Arquivo → Guardar** e salve uma cópia de segurança.
+
+**Dica:** não é necessário conhecer a Arena ou as Cerimônias para começar. Elas acompanham naturalmente o tempo que você registra.
+
 <p align="center"><img src="logo.svg" alt="Logotipo do Impulso" width="160"></p>
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="2-primeiro-acesso-e-instalacao"></a>
 ## 2. Primeiro acesso e instalação
 
+<a id="abrir-pela-primeira-vez"></a>
 ### Abrir pela primeira vez
 
 1. Acesse **https://magpe-stack.github.io/Impulso/** com conexão à internet.
@@ -61,6 +87,7 @@ A proposta não é vigiar o usuário, mas ajudá-lo a perceber a continuidade de
 
 A abertura Ignição é uma apresentação visual, não um indicador real da velocidade de carregamento. Os efeitos podem ser simplificados quando o sistema solicita redução de movimento.
 
+<a id="instalar-como-aplicativo"></a>
 ### Instalar como aplicativo
 
 Abra **Sistema → Instalar**. Quando o navegador disponibilizar `beforeinstallprompt`, o Impulso pode mostrar um convite com a identidade visual do aplicativo e encaminhar o pedido à confirmação **nativa** do navegador. A instalação depende da plataforma: o Impulso não instala a si mesmo.
@@ -69,14 +96,21 @@ O convite oferece **Instalar**, **Agora não** (adiamento de novos convites auto
 
 No Windows, Chrome e Edge podem permitir a instalação como aplicativo. No Android, use a opção de instalação ou adição à tela inicial oferecida pelo navegador. A apresentação varia entre plataformas.
 
+<a id="usar-offline"></a>
 ### Usar offline
 
 O **Service Worker** armazena os arquivos essenciais do PWA para permitir novas aberturas sem internet, depois que o cache tiver sido preenchido. Registros e consultas locais também podem funcionar offline. A disponibilidade depende das políticas de armazenamento do navegador; **offline não significa backup**.
 
+<a id="desinstalar"></a>
 ### Desinstalar
 
 Em **Sistema → Desinstalar**, consulte as orientações para remover o PWA pelo navegador ou sistema operacional. Uma página web não pode desinstalar a si mesma. Antes de remover o aplicativo ou apagar seus dados, **guarde um backup**.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="3-navegacao-e-organizacao-do-aplicativo"></a>
 ## 3. Navegação e organização do aplicativo
 
 O menu lateral é organizado em seis grupos recolhíveis:
@@ -96,14 +130,21 @@ Clique ou toque no nome de um grupo para expandi-lo ou recolhê-lo. O menu pode 
 
 O rodapé acompanha as cores do tema selecionado e permanece no fim da janela nas páginas curtas. Nas páginas longas, aparece depois do conteúdo. O **Dashboard** é uma exceção deliberada: foi desenhado como uma Central de Comando de tela única, sem rodapé.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="4-projetos-e-central-de-comando"></a>
 ## 4. Projetos e Central de Comando
 
+<a id="criar-e-administrar-projetos"></a>
 ### Criar e administrar projetos
 
 Escolha **Arquivo → Novo**, informe um nome e confirme. Em **Arquivo → Projetos**, abra outro projeto, altere seu nome ou exclua um projeto quando necessário. A exclusão exige confirmação e pode apagar definitivamente seus registros, hábitos e conquistas; exporte um backup antes.
 
 Cada projeto possui seus próprios registros, hábitos, metas, chefões, Elixires e Insígnias. O aplicativo mantém um **projeto ativo**, utilizado pelas ferramentas de registro. Alternar entre projetos não transfere automaticamente o tempo de um para outro.
 
+<a id="dashboard-central-de-comando"></a>
 ### Dashboard — Central de Comando
 
 O Dashboard é a página inicial do Impulso. Ele reúne:
@@ -118,8 +159,14 @@ O Dashboard é a página inicial do Impulso. Ele reúne:
 
 Os indicadores usam os registros reais do projeto. Intervalos simultâneos não devem ser somados duas vezes no total produtivo. O botão **Copiar resumo** permite levar os principais números para a área de transferência.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="5-acoes-ponto-foco-habitos-e-entradas"></a>
 ## 5. Ações: Ponto, Foco, Hábitos e Entradas
 
+<a id="ponto-registrar-trabalho-em-andamento"></a>
 ### Ponto — registrar trabalho em andamento
 
 Em **Ações → Ponto**, informe o nome do trabalho e utilize os controles de início e término da atividade. O formulário fica na própria página, permitindo navegar por outras áreas enquanto o trabalho continua sendo contabilizado. Ao concluir, o registro passa a integrar as consultas diárias e estatísticas.
@@ -129,12 +176,14 @@ Em **Ações → Ponto**, informe o nome do trabalho e utilize os controles de i
 - Uma atividade pode atravessar a meia-noite; o tempo é atribuído aos dias correspondentes.
 - Antes de encerrar ou apagar dados, confira se há uma atividade ativa.
 
+<a id="foco-sessoes-planejadas"></a>
 ### Foco — sessões planejadas
 
 Em **Ações → Foco**, configure uma atividade de até **50 caracteres**, um objetivo de até **200 caracteres**, o tipo de compromisso (**Entrega** ou **Dedicação**) e a duração planejada, de **1 a 1.440 minutos**. Inicie a sessão e, quando necessário, utilize **Pausar** e **Retomar**.
 
 Ao concluir, avalie o resultado como **alcançado integralmente**, **parcialmente** ou **não alcançado**. Uma observação opcional de até **200 caracteres** permite registrar o aprendizado. As pausas são excluídas do tempo efetivo. A sessão pertence ao projeto ativo e é considerada nos indicadores correspondentes.
 
+<a id="habitos-pratica-recorrente"></a>
 ### Hábitos — prática recorrente
 
 Em **Ações → Hábitos**, escolha hábitos do catálogo ou crie hábitos personalizados. Os hábitos podem ter uma duração configurada e ser executados por temporizador. A conclusão gera um registro com o nome do hábito e os horários correspondentes.
@@ -143,30 +192,40 @@ O aplicativo permite manter até **seis hábitos equipados** simultaneamente. O 
 
 A área de Hábitos também se relaciona com o sistema de Elixires: concluir um hábito pode abrir um cofre de Chefão previamente derrotado, de acordo com as regras da coleção.
 
+<a id="entradas-registrar-trabalho-anterior"></a>
 ### Entradas — registrar trabalho anterior
 
 Em **Ações → Entradas**, informe a data, o nome da atividade, o horário de início e o horário de término. O formulário valida a ordem dos horários e permite atividades que terminam em outro dia. Utilize essa função quando o trabalho já tiver ocorrido e não tiver sido registrado pelo temporizador.
 
 Entradas retroativas contribuem para o histórico, o Motor e as estatísticas conforme o tempo efetivamente registrado. Evite lançar novamente um intervalo que já exista, para não criar registros redundantes.
 
+<a id="como-o-impulso-calcula-o-tempo"></a>
 ### Como o Impulso calcula o tempo
 
 O aplicativo trabalha com intervalos de tempo. Ao somar a produtividade, **une intervalos sobrepostos** dentro do mesmo projeto, evitando contagem dupla. Para a apresentação diária, divide intervalos que atravessam a meia-noite. Por exemplo, uma atividade das 23h às 1h distribui uma hora para cada dia.
 
 O tempo registrado não deve ser confundido com qualidade, resultado profissional ou presença formal no trabalho.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="6-dados-meu-dia-calendario-e-estatisticas"></a>
 ## 6. Dados: Meu Dia, Calendário e Estatísticas
 
+<a id="meu-dia"></a>
 ### Meu Dia
 
-Em **Dados → Meu Dia**, consulte as atividades do dia, com nome, tipo, horários de início e término e duração. O título identifica a data no formato **dd-mm-aaaa**. Hábitos concluídos e atividades de Ponto, Foco ou Entradas aparecem conforme os registros existentes. Utilize os controles de exclusão com atenção: apagar um registro pode modificar totais e conquistas.
+Em **Dados → Meu Dia**, consulte as atividades do dia, com nome, tipo, horários de início e término e duração. O título identifica a data no formato **dd-mm-aaaa**, por exemplo **Meu Dia 10-09-2027**. Hábitos concluídos e atividades de Ponto, Foco ou Entradas aparecem conforme os registros existentes. Utilize os controles de exclusão com atenção: apagar um registro pode modificar totais e conquistas.
 
 O comando **Copiar resumo** gera texto com os registros e totais disponíveis, sem alterar os dados.
 
+<a id="calendario"></a>
 ### Calendário
 
 Em **Dados → Calendário**, navegue entre meses e selecione datas para consultar a produtividade. A visualização ajuda a identificar dias ativos, lacunas e distribuição do trabalho. O calendário utiliza as datas locais dos registros; uma sessão que atravessa a meia-noite pode contribuir para dois dias.
 
+<a id="estatisticas"></a>
 ### Estatísticas
 
 Em **Dados → Estatísticas**, escolha o **alcance** da análise (projeto ativo ou conjunto de projetos, quando disponível) e o **período**: hoje, últimos sete dias, mês atual, ano atual ou todo o histórico. A página apresenta medidas como tempo produtivo, dias ativos, médias, quantidade de sessões, maior intervalo contínuo e frequência de atividade, além de indicadores complementares de progresso.
@@ -175,10 +234,16 @@ Use **Atualizar** para recalcular a apresentação, **Exportar** para obter os d
 
 A média por dia ativo é diferente da média por dia do período: a primeira considera apenas os dias com atividade; a segunda considera todos os dias do intervalo escolhido. Registros simultâneos são tratados para não duplicar o tempo produtivo.
 
+<a id="armazenamento"></a>
 ### Armazenamento
 
 Em **Dados → Armazenamento**, acompanhe informações sobre os dados locais e, quando disponível, solicite armazenamento persistente ao navegador. O navegador pode negar a solicitação; persistência reduz alguns riscos de remoção automática, mas **não substitui um backup**.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="7-motor-de-propulsao-e-metas"></a>
 ## 7. Motor de Propulsão e metas
 
 O **Motor** transforma tempo produtivo em uma linguagem simbólica de movimento. Cada **10 segundos equivalem a 1 grau**. O rotor e os indicadores representam progresso acumulado; não são uma simulação física de motor nem produzem tempo adicional.
@@ -193,26 +258,36 @@ O **Motor** transforma tempo produtivo em uma linguagem simbólica de movimento.
 
 Os contadores de unidades são diferentes maneiras de representar o mesmo tempo: **não devem ser somados entre si**. Por exemplo, 8 horas correspondem a 16 Pulsos, 8 Giros ou 1 Turno.
 
+<a id="ignicao-do-motor"></a>
 ### Ignição do Motor
 
 O botão **Ignição** reproduz visualmente a rotação correspondente aos graus acumulados. **Parar** interrompe a animação; reiniciá-la não acrescenta horas, Giros ou recompensas. Em sistemas com preferência por movimento reduzido, a representação pode ser simplificada. O Motor também exibe indicadores de rotação e tempo em escalas de 360 graus e 60 segundos.
 
+<a id="as-100-metas"></a>
 ### As 100 metas
 
 A jornada simbólica possui **100 metas progressivas**, culminando em **10.000 horas**. O total necessário para a meta de número *n* é **n² horas**: a primeira exige 1 hora acumulada; a segunda, 4; a terceira, 9; e a centésima, 10.000. Cada etapa exige mais horas adicionais que a anterior.
 
 A **primeira Propulsão completa**, com 10.080 horas, é um marco próprio do Motor, posterior à centésima meta. A referência de 10.000 horas não certifica competência nem garante resultados.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="8-vitorias-arena-codex-elixires-insignias-cerimonias-e-visao"></a>
 ## 8. Vitórias: Arena, Codex, Elixires, Insígnias, Cerimônias e Visão
 
+<a id="arena-200-chefoes"></a>
 ### Arena — 200 Chefões
 
 A **Arena** transforma a trajetória de 10.000 horas em **200 batalhas progressivas**. Os Chefões representam obstáculos simbólicos à constância. O avanço é calculado a partir do tempo produtivo registrado, com resistência crescente. Não existe botão para declarar uma vitória sem cumprir o tempo exigido. Excluir registros pode alterar a situação das batalhas.
 
+<a id="codex-bestiario-da-jornada"></a>
 ### Codex — bestiário da jornada
 
 O **Codex** apresenta os Chefões, seus nomes, descrições e informações associadas. É uma área de consulta narrativa: ajuda a dar significado à progressão, mas não altera os registros de tempo.
 
+<a id="elixires-recompensas-por-trabalho-e-habito"></a>
 ### Elixires — recompensas por trabalho e hábito
 
 Existem **200 Elixires colecionáveis**, vinculados aos Chefões. O processo tem duas condições:
@@ -224,58 +299,77 @@ Cada hábito concluído libera **no máximo um Elixir**; vencer um Chefão não 
 
 **Não confunda:** os hábitos equipados, por vezes chamados de Elixires Ativos, não são as mesmas coisas que os Elixires colecionáveis.
 
+<a id="insignias-titulos-e-medalhas"></a>
 ### Insígnias — títulos e medalhas
 
 Cada projeto pode conquistar **50 títulos automáticos** relacionados à evolução e **60 medalhas permanentes**, distribuídas entre produtividade, regularidade, hábitos e Chefões. O título atual é atribuído automaticamente: não há necessidade de equipá-lo manualmente. A coleção distingue itens desbloqueados e bloqueados. O Dashboard apresenta o título atual e a medalha mais recente.
 
 O botão **Copiar resumo** permite copiar as conquistas registradas. A coleção é individual por projeto.
 
+<a id="cerimonias-marcos-narrativos"></a>
 ### Cerimônias — marcos narrativos
 
 Existem **100 Cerimônias**, correspondentes às metas da jornada. Elas são liberadas pelo tempo acumulado; marcos de dez em dez metas recebem apresentações especiais, culminando na **Consagração**. Na galeria, escolha uma cerimônia disponível para abrir sua apresentação e, quando oferecido, reproduzi-la novamente. Cerimônias bloqueadas indicam o requisito de horas.
 
 A apresentação é visual e não concede tempo ou recompensas extras. A disponibilidade depende do progresso real; se registros forem excluídos, uma cerimônia poderá voltar a ficar bloqueada. O usuário pode fechar a apresentação; preferências de movimento reduzido devem ser respeitadas.
 
+<a id="visao-acompanhar-a-revelacao-do-foguete"></a>
 ### Visão — acompanhar a revelação do foguete
 
 A página **Visão** apresenta uma composição visual relacionada aos Elixires conquistados. À medida que a coleção evolui, partes da imagem do foguete são reveladas. É um recurso de acompanhamento simbólico, não um cálculo adicional de produtividade.
 
 <p align="center"><img src="ImpulsoVision.svg" alt="Ilustração de referência da Visão do Impulso" width="320"></p>
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="9-arquivo-guardar-atualizar-abrir-e-imprimir"></a>
 ## 9. Arquivo: guardar, atualizar, abrir e imprimir
 
 **O armazenamento principal do Impulso continua sendo local, no navegador.** Os arquivos JSON são cópias para segurança e transferência; não substituem automaticamente o estado salvo enquanto você trabalha.
 
+<a id="guardar-salvar-um-backup-geral"></a>
 ### Guardar — salvar um Backup Geral
 
 Abra **Arquivo → Guardar**. Em navegadores compatíveis com a **File System Access API**, escolha o nome e o destino do arquivo. Nos demais, o navegador utiliza o download convencional. Confira se o arquivo foi efetivamente salvo e mantenha uma cópia fora do dispositivo.
 
 O Backup Geral contém o conjunto de projetos e seus registros. A função não envia dados para uma nuvem e não garante, por si só, que o arquivo tenha sido copiado para outro local.
 
+<a id="atualizar-sobrescrever-um-backup-existente"></a>
 ### Atualizar — sobrescrever um backup existente
 
 Em **Arquivo → Atualizar**, selecione um arquivo de Backup Geral existente ou utilize o arquivo selecionado na sessão, quando aplicável. O Impulso verifica se ele é compatível e **solicita confirmação antes de sobrescrevê-lo** com os dados atuais. A operação depende do suporte do navegador à gravação direta. Se não houver suporte, utilize **Guardar** para gerar um novo arquivo.
 
 **Boa prática:** mantenha pelo menos uma cópia anterior em vez de sobrescrever sua única cópia de segurança.
 
+<a id="abrir-restaurar-um-backup-geral"></a>
 ### Abrir — restaurar um Backup Geral
 
 Em **Arquivo → Abrir**, escolha o arquivo e leia a confirmação. **A restauração geral substitui os projetos atuais** pelos contidos no backup. Faça um backup do estado atual antes de confirmar. O arquivo é validado, mas ainda é necessário conferir os dados depois da restauração.
 
+<a id="projeto-individual-exportar-e-importar"></a>
 ### Projeto individual: exportar e importar
 
-A exportação e a importação de um projeto individual são operações distintas do Backup Geral. Utilize os controles de projeto disponibilizados pelo aplicativo para transportar apenas o projeto desejado. **Não utilize a restauração geral para importar um único projeto**.
+O **Backup Geral** reúne todos os projetos; um arquivo de **projeto individual** contém somente o projeto escolhido. Se o aplicativo oferecer controles de exportação ou importação individual na área de projetos, use-os para transportar apenas esse projeto. Antes de importar, confira o tipo do arquivo e leia a confirmação apresentada. **Não utilize a restauração geral para importar um único projeto.**
 
+<a id="abrir-pelo-explorador-de-arquivos"></a>
 ### Abrir pelo explorador de arquivos
 
 Em versões compatíveis do Chrome e Edge para desktop, o PWA instalado pode receber arquivos `.json` e `.impulso` por meio da **File Handling API**. O sistema pode oferecer **Abrir com → Impulso**. O aplicativo identifica se o arquivo contém um projeto individual ou um Backup Geral e encaminha para o fluxo apropriado, sempre com confirmação. A associação não é universal e pode exigir reinstalar o PWA após mudanças no manifesto.
 
 No Android e em navegadores sem suporte, use os seletores de arquivos dentro do Impulso.
 
+<a id="imprimir-e-salvar-em-pdf"></a>
 ### Imprimir e salvar em PDF
 
 Em **Arquivo → Imprimir**, prepare o relatório disponibilizado pelo aplicativo. Na janela de impressão do navegador, escolha uma impressora ou **Salvar como PDF**, quando disponível. Revise datas, nomes e totais antes de compartilhar. Os relatórios não são sincronizados automaticamente com serviços externos.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="10-sistema-configuracoes-instalacao-e-saida"></a>
 ## 10. Sistema: configurações, instalação e saída
 
 Acesse **Sistema → Configurações**. A página contém **cinco seções recolhíveis**, para facilitar a navegação:
@@ -290,8 +384,14 @@ Clique no título de uma seção para abri-la ou recolhê-la. A página permite 
 
 **Sistema → Instalar** e **Sistema → Desinstalar** são explicados no capítulo 2. **Sistema → Fechar** solicita confirmação e apresenta a saída do aplicativo; o navegador pode impedir que uma página feche a própria janela. Nesse caso, feche a aba ou janela manualmente. Os dados já salvos permanecem no armazenamento local, a menos que sejam removidos por outra operação.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="11-atalhos-de-teclado-e-de-aplicativo"></a>
 ## 11. Atalhos de teclado e de aplicativo
 
+<a id="atalhos-de-teclado"></a>
 ### Atalhos de teclado
 
 Em **Configurações → Atalhos de Teclado**, ative ou desative os comandos globalmente ou de forma individual. Cada atalho possui um comando para **alterar a combinação de teclas** e outro para **restaurar o padrão**. O aplicativo verifica conflitos entre combinações cadastradas.
@@ -300,36 +400,52 @@ Os comandos disponíveis incluem **Novo Projeto, Projetos, Ponto, Foco, Hábitos
 
 Os atalhos só atuam quando o Impulso está aberto e recebe eventos do teclado. Não devem interromper a digitação em campos de formulário. Algumas combinações podem ser reservadas pelo sistema operacional, pelo idioma do teclado ou pelo navegador; nesses casos, escolha outra combinação.
 
+<a id="atalhos-do-aplicativo"></a>
 ### Atalhos do aplicativo
 
 Em **Configurações → Atalhos do Aplicativo**, configure as chaves dos **13 acessos rápidos internos**. Os mesmos destinos são declarados no manifesto para sistemas que oferecem **App Shortcuts** ao pressionar o ícone instalado.
 
 **Limitação:** o sistema operacional decide quais atalhos do manifesto exibir. As chaves internas não conseguem remover individualmente entradas do menu de contexto do sistema. Nenhum atalho deve iniciar um temporizador ou modificar dados sem uma ação posterior do usuário.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="12-alertas-distintivos-e-area-de-transferencia"></a>
 ## 12. Alertas, distintivos e área de transferência
 
+<a id="alertas-locais"></a>
 ### Alertas locais
 
 Em **Configurações → Alertas**, ative ou desative os lembretes disponíveis, como avisos relacionados a backups e hábitos. Eles são **avisos locais enquanto o aplicativo executa**: não são notificações push garantidas com o PWA fechado, nem realizam backups automaticamente.
 
+<a id="distintivos-de-conquistas-badging-api"></a>
 ### Distintivos de conquistas — Badging API
 
 A opção **Distintivos de conquistas** solicita ao sistema operacional, quando compatível, a apresentação de um contador no ícone do PWA instalado. O número representa **novidades ainda não visualizadas**, como títulos, medalhas, Chefões e Cerimônias.
 
 O Impulso também apresenta um contador interno como alternativa. Consultar as áreas correspondentes marca as novidades como visualizadas. As conquistas existentes antes da ativação inicial não devem aparecer como novidades artificiais. A Badging API não é uma notificação push e não garante atualização enquanto o aplicativo estiver fechado.
 
+<a id="copiar-resumos-clipboard-api"></a>
 ### Copiar resumos — Clipboard API
 
 O comando **Copiar resumo** aparece em **Dashboard, Meu Dia, Estatísticas e Insígnias**. Ele copia texto com os dados reais disponíveis; em Estatísticas, respeita os filtros ativos. A cópia não modifica registros e pode ser colada em documentos, mensagens e editores. A disponibilidade depende das permissões e do suporte do navegador.
 
 Elixires também podem oferecer ações de copiar e compartilhar. A cópia de resumos **não gera imagens nem arquivos**.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="13-armazenamento-e-limpeza"></a>
 ## 13. Armazenamento e limpeza
 
+<a id="onde-ficam-os-dados"></a>
 ### Onde ficam os dados
 
 Os projetos são mantidos no armazenamento local do navegador, associados à origem e ao contexto do aplicativo. Isso não equivale a um banco de dados em nuvem. Apagar os dados do site, usar outro perfil de navegador ou trocar de dispositivo pode fazer os projetos desaparecerem naquele ambiente.
 
+<a id="limpeza-seletiva"></a>
 ### Limpeza seletiva
 
 Em **Configurações → Limpeza**, escolha os componentes que deseja remover:
@@ -345,6 +461,7 @@ Use **Limpar selecionados** para executar apenas as opções marcadas. **Limpar 
 
 **Atenção:** o domínio GitHub Pages pode hospedar outros aplicativos. A limpeza foi projetada para atuar sobre chaves, caches e registro identificados como pertencentes ao Impulso, **não como uma limpeza indiscriminada de todos os dados do domínio**. Não apaga arquivos JSON já baixados nem garante remover bancos desconhecidos de outros aplicativos.
 
+<a id="antes-de-limpar"></a>
 ### Antes de limpar
 
 1. Faça **Arquivo → Guardar**.
@@ -352,24 +469,37 @@ Use **Limpar selecionados** para executar apenas as opções marcadas. **Limpar 
 3. Guarde outra cópia em local seguro.
 4. Confirme se realmente deseja excluir dados ou apenas atualizar o cache.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="14-temas-acessibilidade-e-privacidade"></a>
 ## 14. Temas, acessibilidade e privacidade
 
+<a id="as-sete-identidades-cromaticas"></a>
 ### As sete identidades cromáticas
 
-O Impulso oferece **Original, Vinho, Blue Sky, Trinity, Granfino, Ecológico e Místico**, cada uma com modo **claro** e **escuro**. As paletas oficiais servem de base para tokens de superfícies, textos, bordas, botões, cabeçalho, rodapé e componentes especiais, incluindo o Motor.
+O Impulso oferece **Original, Vinho, Blue Sky, Triádico, Granfino, Ecológico e Místico**, cada uma com modo **claro** e **escuro**. As paletas oficiais servem de base para tokens de superfícies, textos, bordas, botões, cabeçalho, rodapé e componentes especiais, incluindo o Motor.
 
 As amostras de cores em Configurações representam a identidade da paleta. As tonalidades auxiliares são ajustadas para diferentes funções, pois uma cor de destaque nem sempre pode ser usada diretamente como fundo de texto. O objetivo é manter coerência visual sem sacrificar a legibilidade.
 
+<a id="acessibilidade"></a>
 ### Acessibilidade
 
 A interface utiliza controles com rótulos, navegação por teclado, indicadores de foco e layouts adaptáveis. Para contraste, o projeto busca os critérios **WCAG 2.2 AA**: em geral, **4,5:1 para texto normal**, **3:1 para texto grande** e **3:1 para elementos visuais essenciais de interface**, quando aplicável. Os contrastes calculados de pares de cores não equivalem, por si só, à certificação integral de todas as telas e estados.
 
 Animações devem respeitar `prefers-reduced-motion`. A informação importante não deve depender apenas de cor ou movimento. Caso encontre uma tela difícil de ler, experimente outro tema e informe o componente afetado.
 
+<a id="privacidade"></a>
 ### Privacidade
 
 O Impulso não exige conta nem envia automaticamente os registros a um servidor de produtividade. Arquivos exportados, compartilhamentos e links externos só saem do contexto local por uma ação do usuário ou pelas funções do navegador. O aplicativo não promete sincronização automática entre dispositivos, backup remoto ou recuperação de dados apagados.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="15-solucao-de-problemas"></a>
 ## 15. Solução de problemas
 
 | Problema | O que verificar |
@@ -392,6 +522,11 @@ O Impulso não exige conta nem envia automaticamente os registros a um servidor 
 
 **Evite usar a limpeza completa como primeira tentativa de corrigir um problema visual.** Ela pode apagar seus projetos. Prefira primeiro atualizar a página e conferir as configurações.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="16-perguntas-frequentes"></a>
 ## 16. Perguntas frequentes
 
 **Preciso de internet para registrar trabalho?**  
@@ -427,6 +562,11 @@ Não. A Badging API solicita um indicador visual no ícone, quando suportada; n�
 **As 10.000 horas garantem maestria?**  
 Não. A meta é simbólica e motivacional. A qualidade e o resultado dependem de fatores que o tempo sozinho não mede.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="17-verificacao-de-funcionamento"></a>
 ## 17. Verificação de funcionamento
 
 Após publicar ou atualizar o aplicativo, recomenda-se testar:
@@ -449,8 +589,14 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 - [ ] Testar funcionamento offline após o primeiro carregamento.
 - [ ] Testar a limpeza **somente com dados descartáveis e backup prévio**.
 
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="18-estrutura-do-projeto-e-glossario"></a>
 ## 18. Estrutura do projeto e glossário
 
+<a id="arquivos-principais"></a>
 ### Arquivos principais
 
 | Arquivo | Função |
@@ -471,6 +617,7 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 | `LICENSE` | Termos de licenciamento do repositório. |
 | `README.md` | Este Manual. |
 
+<a id="glossario"></a>
 ### Glossário
 
 **Backup Geral:** cópia de segurança que reúne todos os projetos.  
@@ -488,6 +635,8 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 **WCAG:** diretrizes de acessibilidade para conteúdo web.
 
 ---
+
+[↑ Voltar ao sumário](#sumario-e-navegacao)
 
 **Impulso — Motor de Produtividade Pessoal**  
 Uma ferramenta para transformar dedicação em registros, continuidade em progresso e objetivos em uma jornada visível.
