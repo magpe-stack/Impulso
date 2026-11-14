@@ -922,3 +922,12 @@ O evento não é universal nem garantido; a decisão e a confirmação pertencem
 O menu **Sistema → Atalhos** oferece 13 acessos rápidos: Novo Projeto, Projetos, Ponto, Foco, Hábitos, Entradas, Dashboard, Meu Dia, Calendário, Motor, Estatísticas, Insígnias e Configurações. Cada opção abre a página correspondente, sem iniciar atividades ou alterar registros automaticamente.
 
 O manifesto PWA declara os mesmos 13 atalhos para sistemas operacionais e navegadores que oferecem suporte a *App Shortcuts*. A quantidade exibida pelo menu de contexto do ícone é determinada pelo sistema operacional e pode ser inferior a 13. Em dispositivos sem suporte, a página Atalhos permanece funcional. Atualizações do manifesto podem exigir reinstalação do PWA.
+
+
+## Configurações — Atalhos (versão 97)
+
+A página Configurações apresenta quatro painéis recolhíveis: Temas, Atalhos de Teclado, Atalhos do Aplicativo e Alertas. Existem 13 atalhos de teclado, cada um com chave liga/desliga, opção de redefinir teclas e restauração da combinação padrão. O usuário pode desligar os atalhos de teclado globalmente. Os atalhos não são executados enquanto o usuário digita em formulários. As preferências são armazenadas localmente.
+
+Os atalhos internos do aplicativo também possuem chaves individuais. A lista de atalhos exposta pelo ícone do PWA é estática no manifesto: o sistema operacional controla sua exibição, portanto as chaves internas não conseguem desabilitar esses atalhos no sistema.
+
+Algumas combinações de teclado podem ser interceptadas pelo sistema operacional ou navegador. A navegação via menu continua disponível.

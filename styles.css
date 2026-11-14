@@ -631,3 +631,20 @@ body>.app-footer .icon-button:first-child:hover{background:#F1F2F5}
 .app-shortcut>span:last-child{grid-column:2;grid-row:1 / span 2;font-size:1.2rem}
 .app-shortcut:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 @media(max-width:480px){.app-shortcuts-grid{grid-template-columns:1fr}}
+
+/* Configurações v97: painéis recolhíveis e atalhos individuais */
+.settings-accordion{border:1px solid var(--line);border-radius:14px;margin:0 0 12px;overflow:hidden;background:var(--panel)}
+.settings-accordion>summary{cursor:pointer;padding:17px 18px;font-weight:800;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:52px}
+.settings-accordion>summary::-webkit-details-marker{display:none}
+.settings-accordion>summary:after{content:'▸';font-size:1.2rem;transition:transform .15s ease}
+.settings-accordion[open]>summary:after{transform:rotate(90deg)}
+.settings-accordion>summary:focus-visible{outline:3px solid var(--color-3, #008ad1);outline-offset:-3px}
+.settings-accordion-body{padding:0 14px 14px}
+.settings-accordion-body>.panel{margin:0}
+.settings-shortcuts .alert-setting{gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:14px 3px}
+.settings-shortcuts .alert-setting>div:first-child{min-width:0;flex:1}
+.settings-shortcuts .alert-setting p{margin:5px 0;font-size:.9rem}
+.shortcut-key-line{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:8px}
+.shortcut-key-line kbd{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:6px 8px;font-weight:700;font-size:.83rem}
+.shortcut-key-line .btn{padding:6px 10px;font-size:.83rem}
+@media(max-width:550px){.settings-accordion-body{padding:0 8px 8px}.settings-shortcuts .alert-setting{align-items:flex-start}.settings-shortcuts .alert-switch{flex-shrink:0}}
