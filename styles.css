@@ -622,3 +622,12 @@ body>.app-footer .icon-button:first-child:hover{background:#F1F2F5}
 .install-invite-actions .btn{min-height:44px}
 @media(max-width:500px){.install-invite-actions{display:grid;grid-template-columns:1fr 1fr}.install-invite-actions [data-action="installConfirm"]{grid-column:1/-1;grid-row:1}}
 @media(prefers-reduced-motion:reduce){.install-invite *{animation:none!important;transition:none!important}}
+
+/* v96 — Atalhos acessíveis, responsivos e integrados aos temas */
+.app-shortcuts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin:18px 0}
+.app-shortcut{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;text-align:left;align-items:center;min-height:76px;width:100%;white-space:normal}
+.app-shortcut-name{font-size:1rem;font-weight:800;grid-column:1}
+.app-shortcut-description{font-size:.85rem;color:var(--muted);font-weight:400;grid-column:1}
+.app-shortcut>span:last-child{grid-column:2;grid-row:1 / span 2;font-size:1.2rem}
+.app-shortcut:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:480px){.app-shortcuts-grid{grid-template-columns:1fr}}

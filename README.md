@@ -915,3 +915,10 @@ O Impulso utiliza o evento `beforeinstallprompt` quando oferecido pelo navegador
 - **Instalação concluída:** o evento `appinstalled` atualiza o estado e apresenta confirmação quando disparado pelo navegador.
 
 O evento não é universal nem garantido; a decisão e a confirmação pertencem ao navegador e ao usuário. A preferência do convite é armazenada localmente e não altera os dados dos projetos.
+
+
+## Atalhos de aplicativo (versão 96)
+
+O menu **Sistema → Atalhos** oferece 13 acessos rápidos: Novo Projeto, Projetos, Ponto, Foco, Hábitos, Entradas, Dashboard, Meu Dia, Calendário, Motor, Estatísticas, Insígnias e Configurações. Cada opção abre a página correspondente, sem iniciar atividades ou alterar registros automaticamente.
+
+O manifesto PWA declara os mesmos 13 atalhos para sistemas operacionais e navegadores que oferecem suporte a *App Shortcuts*. A quantidade exibida pelo menu de contexto do ícone é determinada pelo sistema operacional e pode ser inferior a 13. Em dispositivos sem suporte, a página Atalhos permanece funcional. Atualizações do manifesto podem exigir reinstalação do PWA.
