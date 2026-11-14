@@ -862,3 +862,20 @@ Ao receber um arquivo, o Impulso verifica sua extensão, tamanho (até 40 MB), f
 A associação de `.json` é ampla, pois outros aplicativos também usam essa extensão. O Impulso não assume exclusividade: selecione-o apenas para arquivos exportados pelo próprio aplicativo. A extensão `.impulso` também é reconhecida pela associação, desde que seu conteúdo seja um JSON de backup válido do Impulso. As exportações continuam em `.json` para manter compatibilidade com os arquivos existentes.
 
 **No Android e em navegadores sem suporte**, utilize normalmente **Importar** ou **Restaurar** dentro do Impulso. A leitura e validação do arquivo são locais e não exigem servidor nem internet.
+
+
+## Menu e arquivos locais — versão 92
+
+O menu lateral agora apresenta cinco grupos:
+
+- **Arquivo:** Novo, Projetos, Guardar, Atualizar, Abrir e Imprimir.
+- **Ações:** Ponto, Foco, Hábitos e Entradas.
+- **Vitórias:** Arena, Codex, Elixires, Insígnias, Cerimônias e Visão.
+- **Dados:** Dashboard, Meu Dia, Calendário, Motor, Estatísticas e Armazenamento.
+- **Sistema:** Configurações, Instalar, Desinstalar e Fechar.
+
+**Guardar** usa o seletor nativo de destino (File System Access API) nos navegadores compatíveis, permitindo salvar um Backup Geral JSON em uma pasta escolhida. Em navegadores sem suporte, realiza o download convencional. **Atualizar** seleciona um backup existente (ou usa o arquivo salvo na sessão atual), valida que se trata de um Backup Geral do Impulso, pede confirmação explícita e sobrescreve esse arquivo com os dados atuais. Em navegadores sem suporte a acesso direto, a atualização do mesmo arquivo não é possível; use Guardar. **Abrir** permite escolher um Backup Geral e o encaminha à restauração com confirmação de substituição dos projetos. Para importar apenas um projeto, use a importação individual já disponível no aplicativo.
+
+**Instalar** solicita a instalação quando o navegador disponibiliza o evento `beforeinstallprompt`; caso contrário, apresenta instruções para instalação pelo menu do navegador. **Desinstalar** apresenta instruções do sistema: navegadores não oferecem uma API web para desinstalar o próprio PWA. **Fechar** mantém a saída já existente, sujeita às restrições do navegador.
+
+Os arquivos são processados localmente. O backup só é sobrescrito após seleção e confirmação. O aplicativo não grava automaticamente em arquivos do usuário e não altera seu armazenamento principal de projetos. A File System Access API tem suporte limitado no Android; os caminhos tradicionais continuam disponíveis.

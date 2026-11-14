@@ -298,17 +298,18 @@ function updateActionIndicator(){
 }
 function renderMenu(){
  const groups=[
-  ['inicio','Início',[['new','Novo'],['projetos','Projetos'],['backup','Guardar'],['import','Restaurar'],['print','Imprimir']]],
+  ['arquivo','Arquivo',[['new','Novo'],['projetos','Projetos'],['guardar','Guardar'],['atualizarBackup','Atualizar'],['abrirBackup','Abrir'],['print','Imprimir']]],
   ['acoes','Ações',[['point','Ponto'],['foco','Foco'],['habitPage','Hábitos'],['manual','Entradas']]],
   ['vitorias','Vitórias',[['arena','Arena'],['codex','Codex'],['altar','Elixires'],['insignias','Insígnias'],['cerimonias','Cerimônias'],['visao','Visão']]],
-  ['dados','Dados',[['dashboard','Dashboard'],['dia','Meu Dia'],['calendario','Calendário'],['radar','Motor'],['estatisticas','Estatísticas'],['armazenamento','Armazenamento']]]
+  ['dados','Dados',[['dashboard','Dashboard'],['dia','Meu Dia'],['calendario','Calendário'],['radar','Motor'],['estatisticas','Estatísticas'],['armazenamento','Armazenamento']]],
+  ['sistema','Sistema',[['configuracao','Configurações'],['installApp','Instalar'],['uninstallApp','Desinstalar'],['exit','Fechar']]]
  ];
- const actions=new Set(['new','backup','import','print','point','habitPage','manual']);
+ const actions=new Set(['new','guardar','atualizarBackup','abrirBackup','print','point','habitPage','manual','installApp','uninstallApp','exit']);
  const isActive=items=>items.some(([id])=>id===page || (id==='point'&&page==='ponto') || (id==='habitPage'&&page==='habitos') || (id==='manual'&&page==='entradas'));
  nav.innerHTML=groups.map(([id,label,items])=>{
   const open=expandedMenuGroup===id;
-  return `<div class="menu-section menu-accordion"><button type="button" class="menu-parent${open?' expanded':''}${isActive(items)?' current-group':''}" data-menu-group="${id}" aria-expanded="${open}" aria-controls="menu-sub-${id}"><span>${label}</span><span class="menu-chevron" aria-hidden="true">${open?'▾':'▸'}</span></button><div class="menu-sub" id="menu-sub-${id}" ${open?'':'hidden'}>${items.map(([key,text])=>`<button type="button" ${actions.has(key)?`data-action="${key}"`:`data-page="${key}"`} ${key==='backup'?'title="Guardar backup de todos os projetos"':''} ${key==='import'?'title="Restaurar backup de todos os projetos"':''} class="${(key===page || (key==='point'&&page==='ponto') || (key==='habitPage'&&page==='habitos') || (key==='manual'&&page==='entradas'))?'active':''}">${text}</button>`).join('')}</div></div>`;
- }).join('')+`<div class="menu-section menu-standalone"><button type="button" data-page="configuracao" class="${page==='configuracao'?'active':''}">Configurações</button></div><div class="menu-section menu-standalone"><button type="button" data-action="exit" class="menu-exit">Sair</button></div>`;
+  return `<div class="menu-section menu-accordion"><button type="button" class="menu-parent${open?' expanded':''}${isActive(items)?' current-group':''}" data-menu-group="${id}" aria-expanded="${open}" aria-controls="menu-sub-${id}"><span>${label}</span><span class="menu-chevron" aria-hidden="true">${open?'▾':'▸'}</span></button><div class="menu-sub" id="menu-sub-${id}" ${open?'':'hidden'}>${items.map(([key,text])=>`<button type="button" ${actions.has(key)?`data-action="${key}"`:`data-page="${key}"`} class="${(key===page || (key==='point'&&page==='ponto') || (key==='habitPage'&&page==='habitos') || (key==='manual'&&page==='entradas'))?'active':''}">${text}</button>`).join('')}</div></div>`;
+ }).join('');
 }
 function render(){document.body.classList.toggle('dashboard-mode',page==='dashboard');if(page!=='radar'&&ignitionRun)stopIgnition();const p=project();renderMenu();updateActionIndicator();if(!p&& !['inicio','projetos','alertas','armazenamento','configuracao','estatisticas','entradas','visao','cerimonias','insignias','calendario','foco','dashboard'].includes(page))page='inicio';if(page==='entradas')renderRetroactiveEntries(p);if(page==='inicio')renderHome(p);if(page==='dashboard')renderDashboard(p);if(page==='ponto')renderPoint(p);if(page==='foco')renderFocus(p);if(page==='projetos')renderProjects();if(page==='dia')renderDay(p);if(page==='calendario')renderCalendar(p);if(page==='habitos')renderHabits(p);if(page==='arena')renderArena(p);if(page==='codex')renderCodex(p);if(page==='altar')renderAltar(p);if(page==='visao')renderVision(p);if(page==='radar')renderRadar(p);if(page==='cerimonias')renderCeremonies(p);if(page==='insignias')renderInsignias(p);if(page==='alertas')renderConfiguracao();if(page==='armazenamento')renderStorage();if(page==='configuracao')renderConfiguracao();if(page==='estatisticas')renderEstatisticas();}
 // Alertas locais: preferências globais, independentes dos dados dos projetos.
@@ -826,6 +827,72 @@ function manual(){
 }
 function newHabit(){const p=project();show(`<h2>Criar hábito</h2><form id="habitForm"><label class="field">Nome do hábito<input name="name" maxlength="50" required></label><label class="field">Categoria<select name="category">${[...HABIT_CATEGORIES,"Personalizado"].map(c=>`<option value="${esc(c)}" ${c==="Personalizado"?"selected":""}>${esc(c)}</option>`).join("")}</select></label><label class="field">Duração estipulada (minutos)<input name="minutes" type="number" min="1" max="1440" value="30" required></label><div class="modal-actions">${btn('Cancelar','cancel')}<button class="btn primary" type="submit">Criar hábito</button></div></form>`);$('#habitForm').onsubmit=e=>{e.preventDefault();const x=e.target.elements,name=x.name.value.trim(),minutes=+x.minutes.value;if(!name||!Number.isInteger(minutes)||minutes<1||minutes>1440)return;const canEquip=equippedCount(p)<MAX_EQUIPPED;p.habits.push({id:uid(),name:name.slice(0,50),minutes,category:x.category.value,custom:true,equipped:canEquip});if(!canEquip)toast('Hábito criado no inventário. Desequipe outro para ativá-lo.');save();close();render()}}
 function runHabit(id){const p=project(),h=p.habits.find(h=>h.id===id);if(!h)return;show(`<h2>Concluir hábito</h2><p><strong>${esc(h.name)}</strong> · ${h.minutes} minutos</p><p class="help">O intervalo será registrado retroativamente, terminando no momento da confirmação. Confirme apenas se realizou o hábito durante esse período.</p><form id="runForm"><label class="field">Observação (opcional)<textarea name="note" maxlength="50"></textarea><small id="count">0/50</small></label><div class="modal-actions">${btn('Cancelar','cancel')}<button class="btn primary" type="submit">Confirmar conclusão</button></div></form>`);const f=$('#runForm');f.elements.note.oninput=()=>$('#count').textContent=`${f.elements.note.value.length}/50`;f.onsubmit=e=>{e.preventDefault();const end=now();close();addRecord(p,{type:'habit',habitId:h.id,name:h.name,start:end-h.minutes*60000,end,note:f.elements.note.value.slice(0,50),source:'habit'})}}
+// File System Access API: backups gerais locais, com consentimento explícito.
+// O armazenamento principal do Impulso permanece no navegador.
+let selectedBackupHandle=null;
+let deferredInstallPrompt=null;
+window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event});
+window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;toast('Impulso instalado com sucesso')});
+const backupFileOptions={types:[{description:'Backup Geral do Impulso (JSON)',accept:{'application/json':['.json','.impulso']}}],excludeAcceptAllOption:true};
+function backupPayload(){return {app:'Impulso',version:1,exportedAt:new Date().toISOString(),data:state}}
+function markBackupSaved(){try{localStorage.setItem(STORAGE_BACKUP_DATE,new Date().toISOString())}catch{}}
+async function writeBackupHandle(handle){
+ const writable=await handle.createWritable();
+ try{await writable.write(JSON.stringify(backupPayload(),null,2));await writable.close();markBackupSaved()}
+ catch(error){try{await writable.abort()}catch{}throw error}
+}
+async function guardarBackup(){
+ if(typeof window.showSaveFilePicker!=='function'){
+  backup();toast('Backup enviado para downloads. O seletor direto não está disponível neste navegador.');return;
+ }
+ try{
+  const handle=await window.showSaveFilePicker({...backupFileOptions,suggestedName:`impulso-backup-${dateKey(now())}.json`});
+  await writeBackupHandle(handle);selectedBackupHandle=handle;toast('Backup salvo no arquivo escolhido');
+ }catch(error){if(error.name!=='AbortError')alert('Não foi possível guardar o backup: '+error.message)}
+}
+async function atualizarBackup(){
+ if(typeof window.showOpenFilePicker!=='function'){
+  alert('Atualizar um arquivo existente não está disponível neste navegador. Use Guardar para baixar um novo backup.');return;
+ }
+ try{
+  let handle=selectedBackupHandle;
+  if(!handle){
+   const handles=await window.showOpenFilePicker({...backupFileOptions,multiple:false});
+   handle=handles[0];
+  }
+  if(!handle)return;
+  const file=await handle.getFile();
+  if(file.size>40*1024*1024)throw Error('O arquivo existente ultrapassa 40 MB.');
+  const old=JSON.parse(await file.text());
+  validate(old);
+  if(!ask(`Substituir o conteúdo de "${file.name}" por um NOVO Backup Geral de todos os projetos atuais? O backup anterior nesse arquivo será perdido.`))return;
+  await writeBackupHandle(handle);selectedBackupHandle=handle;toast('Backup existente atualizado');
+ }catch(error){if(error.name!=='AbortError')alert('Não foi possível atualizar o backup: '+error.message)}
+}
+async function abrirBackup(){
+ if(typeof window.showOpenFilePicker!=='function'){$('#importFile').click();return}
+ try{
+  const handles=await window.showOpenFilePicker({...backupFileOptions,multiple:false});
+  if(!handles.length)return;
+  const file=await handles[0].getFile();
+  if(file.size>40*1024*1024)throw Error('Arquivo maior que 40 MB.');
+  const payload=JSON.parse(await file.text());
+  validate(payload);
+  importBackup(file); // Confirmação de restauração no fluxo existente.
+ }catch(error){if(error.name!=='AbortError')alert('Não foi possível abrir o backup: '+error.message)}
+}
+async function installImpulso(){
+ if(window.matchMedia?.('(display-mode: standalone)').matches||navigator.standalone===true){toast('O Impulso já está aberto como aplicativo instalado');return}
+ if(deferredInstallPrompt){
+  const prompt=deferredInstallPrompt;deferredInstallPrompt=null;
+  try{await prompt.prompt();await prompt.userChoice}catch(error){alert('Não foi possível solicitar a instalação: '+error.message)}
+  return;
+ }
+ show(`<h2>Instalar o Impulso</h2><p>O navegador não disponibilizou a solicitação de instalação neste momento.</p><p>No <strong>Edge</strong>, procure <strong>Aplicativos → Instalar este site como aplicativo</strong>. No <strong>Chrome</strong>, use o ícone de instalação na barra de endereços ou o menu do navegador. No Android, procure <strong>Instalar aplicativo</strong> ou <strong>Adicionar à tela inicial</strong>.</p><p class="help">A disponibilidade depende do navegador e dos critérios de instalação. Seus dados permanecem locais.</p><div class="modal-actions"><button class="btn primary" data-action="cancel">Entendi</button></div>`);
+}
+function uninstallImpulso(){
+ show(`<h2>Desinstalar o Impulso</h2><p>Por segurança, páginas web <strong>não podem desinstalar PWAs automaticamente</strong>. A remoção deve ser feita pelo sistema ou navegador.</p><p><strong>Windows:</strong> abra o menu do aplicativo instalado e escolha Desinstalar, ou use Configurações → Aplicativos → Aplicativos instalados.</p><p><strong>Android:</strong> mantenha pressionado o ícone do Impulso e selecione Desinstalar ou Remover, conforme o navegador.</p><p class="help"><strong>Antes de desinstalar:</strong> use Arquivo → Guardar para preservar seus projetos. Dependendo do navegador, a remoção ou limpeza dos dados pode apagar os registros locais.</p><div class="modal-actions"><button class="btn primary" data-action="cancel">Entendi</button></div>`);
+}
 function backup(){const payload={app:'Impulso',version:1,exportedAt:new Date().toISOString(),data:state};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`impulso-backup-${dateKey(now())}.json`;a.click();try{localStorage.setItem(STORAGE_BACKUP_DATE,new Date().toISOString())}catch{}setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function exportProject(){
  const p=project();
@@ -884,7 +951,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão:</strong> 88<br><strong>Atualização:</strong> 13 de novembro de 2026</p>
+ <p><strong>Versão:</strong> 92<br><strong>Atualização:</strong> 14 de novembro de 2026</p>
  <p>Aplicativo progressivo (PWA), offline-first, para organizar projetos independentes, registrar trabalho e hábitos e acompanhar a jornada simbólica de 10.000 horas.</p>
  <h3>Central de Comando</h3>
  <p>O <strong>Dashboard</strong> apresenta seis indicadores do projeto, atividade em andamento, progresso da próxima meta e um <strong>Mapa de Atividade</strong> dos últimos 365 dias. Cada quadradinho corresponde a um dia; a intensidade da cor indica o tempo efetivamente registrado, sem duplicar intervalos simultâneos. O painel oferece oito atalhos: Ponto, Foco, Hábitos, Entradas, Projetos, Novo, Calendário e Configurações.</p>
@@ -899,7 +966,7 @@ function about(){
  <li><strong>Arena, Codex, Elixires, Insígnias, Cerimônias e Visão:</strong> conquistas e progressão gamificada.</li>
  <li><strong>Insígnias:</strong> 50 títulos automáticos e 60 medalhas permanentes, por projeto.</li><li><strong>Estatísticas:</strong> análises e relatórios de produtividade.</li>
  <li><strong>Configurações:</strong> sete identidades cromáticas, tema claro/escuro e alertas opcionais.</li>
- <li><strong>Armazenamento e backups:</strong> informações locais, exportação e restauração em JSON.</li>
+ <li><strong>Arquivo:</strong> Guardar (Salvar como), Atualizar backup existente e Abrir backup com validação e confirmação.</li><li><strong>Sistema:</strong> Instalar quando disponível, instruções de desinstalação e Fechar.</li><li><strong>Armazenamento e backups:</strong> informações locais, exportação e restauração em JSON.</li>
  </ul>
  <h3>Privacidade e segurança dos dados</h3>
  <p>Os dados permanecem no armazenamento deste navegador, sem sincronização automática. Limpar os dados do site, trocar de aparelho ou reinstalar o navegador pode causar perda dos projetos. <strong>Faça backups regularmente e guarde cópias em local seguro.</strong></p>
@@ -920,7 +987,7 @@ function confirmAppExit(){
  if(standalone){try{window.close()}catch(e){/* O navegador pode impedir o fechamento. */}}
 }
 function returnFromExit(){const screen=document.getElementById('impulsoExitScreen');if(screen)screen.hidden=true;document.body.classList.remove('impulso-exited');page='dashboard';render();document.querySelector('#main')?.focus()}
-function action(name){switch(name){case 'exit':requestAppExit();break;case 'exit-confirm':confirmAppExit();break;case 'exit-return':returnFromExit();break;case 'alerts':page='alertas';render();break;case 'storage':page='armazenamento';render();break;case 'statistics':page='estatisticas';render();break;case 'new':newProject();break;case 'projects':page='projetos';render();break;case 'day':page='dia';render();break;case 'radar':page='radar';render();break;case 'point':point();break;case 'foco':page='foco';render();break;case 'manual':page='entradas';render();break;case 'manualPoint':manual();break;case 'manualHabit':manualHabit();break;case 'habitPage':page='habitos';render();break;case 'backup':backup();break;case 'export':exportProject();break;case 'import':$('#importFile').click();break;case 'importProject':$('#importProjectFile').click();break;case 'print':printReport();break;case 'printProjects':printReport(true);break;case 'newHabit':newHabit();break;case 'cancel':close();break}}
+function action(name){switch(name){case 'exit':requestAppExit();break;case 'exit-confirm':confirmAppExit();break;case 'exit-return':returnFromExit();break;case 'alerts':page='alertas';render();break;case 'storage':page='armazenamento';render();break;case 'statistics':page='estatisticas';render();break;case 'new':newProject();break;case 'projects':page='projetos';render();break;case 'day':page='dia';render();break;case 'radar':page='radar';render();break;case 'point':point();break;case 'foco':page='foco';render();break;case 'manual':page='entradas';render();break;case 'manualPoint':manual();break;case 'manualHabit':manualHabit();break;case 'habitPage':page='habitos';render();break;case 'guardar':guardarBackup();break;case 'atualizarBackup':atualizarBackup();break;case 'abrirBackup':abrirBackup();break;case 'installApp':installImpulso();break;case 'uninstallApp':uninstallImpulso();break;case 'backup':backup();break;case 'export':exportProject();break;case 'import':$('#importFile').click();break;case 'importProject':$('#importProjectFile').click();break;case 'print':printReport();break;case 'printProjects':printReport(true);break;case 'newHabit':newHabit();break;case 'cancel':close();break}}
 const menuToggle=$('#menuToggle'),menuDrawer=$('#menuDrawer'),menuBackdrop=$('#menuBackdrop'),menuClose=$('#menuClose');
 function setMenu(open){menuDrawer.classList.toggle('open',open);menuDrawer.setAttribute('aria-hidden',String(!open));menuDrawer.inert=!open;menuBackdrop.hidden=!open;menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');document.body.classList.toggle('menu-open',open);if(open){menuDrawer.querySelector('nav button, .menu-section button')?.focus()}else if(menuDrawer.contains(document.activeElement))menuToggle.focus()}
 menuToggle.addEventListener('click',()=>setMenu(!menuDrawer.classList.contains('open')));menuBackdrop.addEventListener('click',()=>setMenu(false));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menuDrawer.classList.contains('open')){e.preventDefault();setMenu(false)}if(e.key==='Tab'&&menuDrawer.classList.contains('open')){const focusable=[...menuDrawer.querySelectorAll('button:not([disabled]),a[href]')];const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
