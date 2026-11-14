@@ -846,3 +846,8 @@ O projeto oferece **50 títulos** progressivos atribuídos automaticamente confo
 ## Cerimônias
 
 A reprodução usa a mesma janela. Ao ativar voluntariamente os efeitos, o aplicativo reinicia as animações em quadros distintos do navegador, sem substituir o diálogo. A preferência por movimento reduzido permanece respeitada até a autorização do usuário.
+
+
+## Dashboard — controles e conquistas
+
+Os oito atalhos do Dashboard utilizam o mesmo estilo de botão do restante do aplicativo, sem bordas inferiores decorativas nem sombras próprias. A Central de Comando exibe ainda o **título atual** (atribuído automaticamente pelas horas acumuladas) e a **medalha conquistada mais recentemente** no projeto ativo. Quando não há medalhas, a indicação informa que nenhuma foi conquistada. Selecionar qualquer uma das duas insígnias abre **Vitórias → Insígnias**. As informações vêm da coleção do projeto, não de dados demonstrativos.

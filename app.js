@@ -400,15 +400,29 @@ function renderDashboard(p){
  ['page','calendario','Calendário','▣','Abrir calendário'],
  ['page','configuracao','Configurações','⚙','Abrir configurações']
  ];
- const commandsHtml=commands.map(([kind,target,label,icon,desc])=>`<button type="button" class="dash-command" data-${kind}="${target}" aria-label="${desc}"><span class="dash-command-icon" aria-hidden="true">${icon}</span><span>${label}</span></button>`).join('');
- if(!p){main.innerHTML=`<section class="dashboard" aria-label="Central de Comando"><div class="dash-heading"><div><span class="dash-eyebrow">IMPULSO · CENTRAL DE COMANDO</span><h1>Dashboard</h1></div><span class="dash-signal">SEM PROJETO</span></div><div class="dash-empty"><strong>Pronto para a próxima missão?</strong><p>Crie ou abra um projeto para ativar os instrumentos da cabine.</p><div class="dash-empty-actions"><button class="dash-command" data-action="new">Novo projeto</button><button class="dash-command" data-page="projetos">Projetos</button></div></div></section>`;return}
+ const commandsHtml=commands.map(([kind,target,label,icon,desc])=>`<button type="button" class="btn dash-command" data-${kind}="${target}" aria-label="${desc}"><span class="dash-command-icon" aria-hidden="true">${icon}</span><span>${label}</span></button>`).join('');
+ if(!p){main.innerHTML=`<section class="dashboard" aria-label="Central de Comando"><div class="dash-heading"><div><span class="dash-eyebrow">IMPULSO · CENTRAL DE COMANDO</span><h1>Dashboard</h1></div><span class="dash-signal">SEM PROJETO</span></div><div class="dash-empty"><strong>Pronto para a próxima missão?</strong><p>Crie ou abra um projeto para ativar os instrumentos da cabine.</p><div class="dash-empty-actions"><button class="btn dash-command" data-action="new">Novo projeto</button><button class="btn dash-command" data-page="projetos">Projetos</button></div></div></section>`;return}
  const ms=total(p,true),today=dayTotalLive(p,dateKey(now())),streak=productivityStreaks(p),completed=milestoneCount(ms);
  const hrs=ms/3600000,next=completed<100?MILESTONES[completed]:null;
  const nextPct=next===null?100:Math.min(100,Math.max(0,(hrs-(completed?MILESTONES[completed-1]:0))/(next-(completed?MILESTONES[completed-1]:0))*100));
  const active=status?`${status.paused?'Pausado':'Em andamento'} · ${status.label}`:'Nenhuma atividade em andamento';
+ // As insígnias exibidas são exclusivas do projeto ativo.
+ // O título é automático; a medalha é a conquista mais recente registrada.
+ syncInsignias(p);
+ const ins=p.insignias;
+ const currentTitle=ins.equipped||'Iniciante';
+ const latestMedal=INSIGNIA_MEDALS
+  .filter(([id])=>Boolean(ins.medals[id]))
+  .sort((a,b)=>Date.parse(ins.medals[b[0]])-Date.parse(ins.medals[a[0]]))[0];
+ const currentMedal=latestMedal?latestMedal[1]:'Nenhuma medalha';
+ const achievementsHtml=`<div class="dash-achievements" aria-label="Conquistas atuais do projeto">
+  <button class="btn dash-achievement" type="button" data-page="insignias" title="Abrir títulos e medalhas"><span aria-hidden="true">🛡️</span><span><small>TÍTULO</small><strong>${esc(currentTitle)}</strong></span></button>
+  <button class="btn dash-achievement" type="button" data-page="insignias" title="Abrir medalhas conquistadas"><span aria-hidden="true">${latestMedal?'🏅':'🔒'}</span><span><small>MEDALHA RECENTE</small><strong>${esc(currentMedal)}</strong></span></button>
+ </div>`;
  main.innerHTML=`<section class="dashboard" aria-label="Dashboard — Central de Comando">
  <div class="dash-heading"><div class="dash-heading-title"><span class="dash-eyebrow">CENTRAL DE COMANDO</span><h1>Dashboard</h1></div><div class="dash-project"><span class="dash-project-name" title="${esc(p.name)}">${esc(p.name)}</span><span class="dash-signal">PROJETO ATIVO</span></div></div>
  <div class="dash-status" ${status?`data-page="${status.page}" role="button" tabindex="0" aria-label="${esc(active)} — retornar à atividade"`:''}><span class="dash-status-led ${status&&!status.paused?'on':''}"></span><span class="dash-status-text">${esc(active)}</span>${status?'<span class="dash-status-return">Retornar ↗</span>':'<span class="dash-status-return">SISTEMA PRONTO</span>'}</div>
+ ${achievementsHtml}
  <div class="dash-metrics" aria-label="Indicadores do projeto">
  ${metricCard(mins(ms),'Tempo total','estatisticas')}
  ${metricCard(mins(today),'Hoje','dia')}
