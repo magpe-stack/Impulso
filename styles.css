@@ -593,3 +593,20 @@ body.dashboard-mode>.app-footer{display:none!important}
 .dashboard .clipboard-report-btn{font-size:.72rem;padding:5px 8px;white-space:nowrap;align-self:center;flex-shrink:0;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--text);box-shadow:none}
 .hero .clipboard-report-btn{margin-top:8px}
 @media(max-width:540px){.dashboard .clipboard-report-btn{font-size:.65rem;padding:4px 6px}.dash-heading{gap:5px;flex-wrap:wrap}}
+
+/* Impulso 94 — rodapé cromático acessível, independente do modo claro/escuro.
+   Cada identidade recebe fundo próprio de tonalidade escura para contraste WCAG AA. */
+:root{--footer-bg:#700038;--footer-fg:#FFFFFF;--footer-border:#FFFFFF8C;--footer-hover:#FFFFFF24}
+body[data-palette="vinho"]{--footer-bg:#42008A}
+body[data-palette="blue-sky"]{--footer-bg:#00263D}
+body[data-palette="trinity"]{--footer-bg:#702F00}
+body[data-palette="granfino"]{--footer-bg:#3E3E3E}
+body[data-palette="ecologico"]{--footer-bg:#103D00}
+body[data-palette="mistico"]{--footer-bg:#1B0C40}
+body>.app-footer{background:var(--footer-bg);color:var(--footer-fg);border-top:2px solid var(--footer-border);margin:30px 0 0;padding:16px max(16px,env(safe-area-inset-right))  max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));gap:12px}
+body>.app-footer .icon-button{color:var(--footer-fg);background:transparent;border:1px solid var(--footer-border);border-radius:12px;min-width:44px;min-height:44px}
+body>.app-footer .icon-button:hover,body>.app-footer .icon-button:focus-visible{background:var(--footer-hover)}
+body>.app-footer .icon-button:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
+body>.app-footer .icon-button:first-child{background:#FFFFFF}
+body>.app-footer .icon-button:first-child:hover{background:#F1F2F5}
+@media print{body>.app-footer{display:none!important}}

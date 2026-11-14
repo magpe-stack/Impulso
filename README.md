@@ -891,3 +891,14 @@ O Impulso permite copiar resumos textuais dos dados reais por meio do botão **�
 - **Insígnias:** título atual e lista de títulos e medalhas efetivamente conquistados.
 
 A cópia usa `navigator.clipboard.writeText` em navegadores compatíveis e uma alternativa de cópia de texto quando disponível. O navegador pode restringir a operação por permissões ou contexto de segurança. O conteúdo é copiado localmente, sem servidor, e pode ser colado em editores ou aplicativos de mensagens. Não é gerado arquivo nem imagem.
+
+
+## Menu Ajuda e rodapé cromático (v94)
+
+O menu lateral está organizado em seis grupos: **Arquivo**, **Ações**, **Vitórias**, **Dados**, **Sistema** e **Ajuda**. O grupo **Ajuda** contém três comandos:
+
+- **GitHub:** abre o repositório oficial `https://github.com/magpe-stack/Impulso` em uma nova aba.
+- **Manual:** abre o `README.md` do repositório oficial.
+- **Sobre:** abre a mesma ficha informativa disponibilizada pelo botão Sobre do rodapé, sem duplicar seu conteúdo.
+
+O rodapé mantém seus quatro atalhos originais e agora utiliza uma cor de fundo própria de cada identidade cromática, incluindo o tema original. O texto e os ícones permanecem claros, com contraste elevado e estados de foco visíveis. A cor acompanha a identidade selecionada, tanto no modo claro quanto no escuro. A página Dashboard continua sem rodapé, preservando seu layout de tela única.
