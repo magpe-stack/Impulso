@@ -931,3 +931,10 @@ A página Configurações apresenta quatro painéis recolhíveis: Temas, Atalhos
 Os atalhos internos do aplicativo também possuem chaves individuais. A lista de atalhos exposta pelo ícone do PWA é estática no manifesto: o sistema operacional controla sua exibição, portanto as chaves internas não conseguem desabilitar esses atalhos no sistema.
 
 Algumas combinações de teclado podem ser interceptadas pelo sistema operacional ou navegador. A navegação via menu continua disponível.
+
+
+## Rodapé fixado à base e distintivos de conquistas (v98)
+
+Em páginas com conteúdo curto, o rodapé cromático permanece na base da janela; em páginas longas, aparece depois do conteúdo, sem sobreposição. O Dashboard conserva o modo de tela única sem rodapé.
+
+A Badging API, quando disponível no navegador e sistema operacional, apresenta no ícone do PWA instalado o total de conquistas ainda não visualizadas: novos títulos, medalhas, Chefões e Cerimônias. O Impulso mantém um contador equivalente no cabeçalho como alternativa interna. Na primeira utilização, as conquistas já existentes são consideradas visualizadas, para evitar números artificiais. Abrir Insígnias, Arena/Codex ou Cerimônias marca como vistas as novidades correspondentes. A preferência é individual deste navegador e pode ser alterada em Configurações → Alertas → Distintivos de conquistas. O recurso não exige servidor nem envia notificações push; o contador é atualizado quando o PWA executa. O sistema operacional pode não exibir distintivos ou pode usar uma apresentação diferente.

@@ -19,7 +19,7 @@ const uid=()=>crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.random
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pad=n=>String(n).padStart(2,'0'),dateKey=t=>{const d=new Date(t);return `${pad(d.getDate())}-${pad(d.getMonth()+1)}-${d.getFullYear()}`},clock=t=>new Date(t).toLocaleTimeString('pt-BR',{hour12:false}),stamp=t=>`${dateKey(t)} · ${clock(t)}`,mins=ms=>`${Math.floor(ms/3600000)}h ${pad(Math.floor(ms%3600000/60000))}min`,hours=ms=>(ms/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2}),now=()=>Date.now();
 let state;try{state=JSON.parse(localStorage.getItem(KEY)||'null')}catch{}if(!state||!Array.isArray(state.projects))state={version:1,projects:[],active:null};let page='dashboard',order='asc';
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state));return true}catch(e){alert('Não foi possível salvar. Verifique o armazenamento do navegador e exporte um backup.');return false}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));queueMicrotask(()=>updateBadges());return true}catch(e){alert('Não foi possível salvar. Verifique o armazenamento do navegador e exporte um backup.');return false}}
 function project(){return state.projects.find(p=>p.id===state.active)||null}function normalize(p){p.records??=[];p.habits??=[];p.elixirs??=[];p.created??=now();return p}
 state.projects.forEach(normalize);if(!project())state.active=state.projects[0]?.id||null;
 function toast(s){const t=$('#toast');t.textContent=s;t.style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.style.display='none',3000)}
@@ -171,6 +171,46 @@ function syncInsignias(p){
  const current=[...INSIGNIA_TITLES].reverse().find(([name])=>a.titles[name])?.[0]||'Iniciante';if(a.equipped!==current){a.equipped=current;changed=true}
  if(changed)save();
 }
+// Badging API: somente novidades desde a primeira observação neste dispositivo.
+// Contadores locais são independentes dos backups e não geram conquistas fictícias.
+const BADGE_KEY='impulso-badging-v1';
+let badgeData={enabled:true,projects:{}};
+try{const stored=JSON.parse(localStorage.getItem(BADGE_KEY)||'null');if(stored&&typeof stored==='object'){
+ badgeData.enabled=stored.enabled!==false;
+ badgeData.projects=stored.projects&&typeof stored.projects==='object'?stored.projects:{};
+}}catch{}
+const badgeKinds=['titles','medals','bosses','ceremonies'];
+function badgeCounts(p){return {
+ titles:Object.keys(p.insignias?.titles||{}).length,
+ medals:Object.keys(p.insignias?.medals||{}).length,
+ bosses:bossStatus(p).done,
+ ceremonies:milestoneCount(total(p))
+}}
+function persistBadgeData(){try{localStorage.setItem(BADGE_KEY,JSON.stringify(badgeData))}catch{}}
+function updateBadges(viewed=[]){
+ let changed=false,unread=0;
+ for(const p of state.projects){
+  const counts=badgeCounts(p);let entry=badgeData.projects[p.id];
+  if(!entry){entry=badgeData.projects[p.id]={seen:{...counts},high:{...counts}};changed=true}
+  for(const kind of badgeKinds){
+   const value=counts[kind];
+   if(!Number.isFinite(entry.high?.[kind])){entry.high??={};entry.high[kind]=value;changed=true}
+   if(!Number.isFinite(entry.seen?.[kind])){entry.seen??={};entry.seen[kind]=value;changed=true}
+   if(value>entry.high[kind]){entry.high[kind]=value;changed=true}
+   if(p.id===state.active&&viewed.includes(kind)&&entry.seen[kind]<entry.high[kind]){entry.seen[kind]=entry.high[kind];changed=true}
+   unread+=Math.max(0,entry.high[kind]-entry.seen[kind]);
+  }
+ }
+ for(const id of Object.keys(badgeData.projects))if(!state.projects.some(p=>p.id===id)){delete badgeData.projects[id];changed=true}
+ if(changed)persistBadgeData();
+ const count=badgeData.enabled?Math.min(unread,999):0;
+ const supported='setAppBadge' in navigator&&'clearAppBadge' in navigator;
+ if(supported){try{const operation=count?navigator.setAppBadge(count):navigator.clearAppBadge();Promise.resolve(operation).catch(()=>{});}catch{}}
+ const indicator=document.getElementById('impulsoBadgeIndicator');
+ if(indicator){indicator.hidden=!count;indicator.textContent=count?String(count):'';indicator.setAttribute('aria-label',count+ ' conquistas ainda não visualizadas')}
+ return count;
+}
+function setBadgeEnabled(enabled){badgeData.enabled=Boolean(enabled);persistBadgeData();updateBadges()}
 function renderInsignias(p){
  if(!p){main.innerHTML=header('Insígnias','Títulos e medalhas')+'<section class="panel"><p>Abra um projeto para consultar suas conquistas.</p><button class="btn primary" data-page="projetos">Projetos</button></section>';return}
  syncInsignias(p);const a=p.insignias;const unlocked=INSIGNIA_MEDALS.filter(([id])=>a.medals[id]).length;
@@ -313,7 +353,7 @@ const APP_SHORTCUTS=[
   {"id": "configuracoes", "name": "Configurações", "description": "Personalizar o Impulso", "kind": "page", "target": "configuracao"}
 ];
 // Preferências locais: atalhos de teclado e links internos são independentes do manifesto do SO.
-const SHORTCUT_PREF_KEY='impulso-atalhos-v97';
+const SHORTCUT_PREF_KEY='impulso-atalhos-v98';
 const DEFAULT_KEYS=['Ctrl+Alt+N','Ctrl+Alt+P','Ctrl+Alt+2','Ctrl+Alt+3','Ctrl+Alt+4','Ctrl+Alt+5','Ctrl+Alt+1','Ctrl+Alt+6','Ctrl+Alt+7','Ctrl+Alt+8','Ctrl+Alt+9','Ctrl+Alt+I','Ctrl+Alt+H'];
 let shortcutPrefs=loadShortcutPrefs(),shortcutRecording=null;
 function loadShortcutPrefs(){let data={};try{data=JSON.parse(localStorage.getItem(SHORTCUT_PREF_KEY)||'{}')||{}}catch(e){}return {keyboardEnabled:data.keyboardEnabled!==false,appEnabled:data.appEnabled!==false,keyboard:data.keyboard||{},app:data.app||{},keys:data.keys||{}};}
@@ -373,7 +413,7 @@ function renderMenu(){
   return `<div class="menu-section menu-accordion"><button type="button" class="menu-parent${open?' expanded':''}${isActive(items)?' current-group':''}" data-menu-group="${id}" aria-expanded="${open}" aria-controls="menu-sub-${id}"><span>${label}</span><span class="menu-chevron" aria-hidden="true">${open?'▾':'▸'}</span></button><div class="menu-sub" id="menu-sub-${id}" ${open?'':'hidden'}>${items.map(([key,text])=>`<button type="button" ${actions.has(key)?`data-action="${key}"`:`data-page="${key}"`} class="${(key===page || (key==='point'&&page==='ponto') || (key==='habitPage'&&page==='habitos') || (key==='manual'&&page==='entradas'))?'active':''}">${text}</button>`).join('')}</div></div>`;
  }).join('');
 }
-function render(){document.body.classList.toggle('dashboard-mode',page==='dashboard');if(page!=='radar'&&ignitionRun)stopIgnition();const p=project();renderMenu();updateActionIndicator();if(!p&& !['inicio','projetos','alertas','armazenamento','configuracao','estatisticas','entradas','visao','cerimonias','insignias','calendario','foco','dashboard'].includes(page))page='inicio';if(page==='entradas')renderRetroactiveEntries(p);if(page==='inicio')renderHome(p);if(page==='dashboard')renderDashboard(p);if(page==='ponto')renderPoint(p);if(page==='foco')renderFocus(p);if(page==='projetos')renderProjects();if(page==='dia')renderDay(p);if(page==='calendario')renderCalendar(p);if(page==='habitos')renderHabits(p);if(page==='arena')renderArena(p);if(page==='codex')renderCodex(p);if(page==='altar')renderAltar(p);if(page==='visao')renderVision(p);if(page==='radar')renderRadar(p);if(page==='cerimonias')renderCeremonies(p);if(page==='insignias')renderInsignias(p);if(page==='alertas')renderConfiguracao();if(page==='armazenamento')renderStorage();if(page==='configuracao')renderConfiguracao();if(page==='estatisticas')renderEstatisticas();}
+function render(){document.body.classList.toggle('dashboard-mode',page==='dashboard');if(page!=='radar'&&ignitionRun)stopIgnition();const p=project();renderMenu();updateActionIndicator();if(!p&& !['inicio','projetos','alertas','armazenamento','configuracao','estatisticas','entradas','visao','cerimonias','insignias','calendario','foco','dashboard'].includes(page))page='inicio';if(page==='entradas')renderRetroactiveEntries(p);if(page==='inicio')renderHome(p);if(page==='dashboard')renderDashboard(p);if(page==='ponto')renderPoint(p);if(page==='foco')renderFocus(p);if(page==='projetos')renderProjects();if(page==='dia')renderDay(p);if(page==='calendario')renderCalendar(p);if(page==='habitos')renderHabits(p);if(page==='arena')renderArena(p);if(page==='codex')renderCodex(p);if(page==='altar')renderAltar(p);if(page==='visao')renderVision(p);if(page==='radar')renderRadar(p);if(page==='cerimonias')renderCeremonies(p);if(page==='insignias')renderInsignias(p);if(page==='alertas')renderConfiguracao();if(page==='armazenamento')renderStorage();if(page==='configuracao')renderConfiguracao();if(page==='estatisticas')renderEstatisticas();const viewed=page==='insignias'?['titles','medals']:page==='arena'||page==='codex'?['bosses']:page==='cerimonias'?['ceremonies']:[];updateBadges(viewed);}
 // Alertas locais: preferências globais, independentes dos dados dos projetos.
 const ALERTS_KEY='impulso-alertas-v1', BACKUP_INTERVAL=15*60*1000;
 let alertSettings={backup:false,nextBackup:0,habits:false,nextHabits:0};
@@ -1230,7 +1270,8 @@ function renderConfiguracao(){
  renderAlerts();
  const alertPanel=main.querySelector('.panel');
  if(alertPanel){alertPanel.querySelectorAll('h2').forEach(h=>{});alertPanel.insertAdjacentHTML('afterbegin','<h2>Alertas</h2>');}
- const alertContent=alertPanel?alertPanel.outerHTML:'';
+ const badgeSetting=`<div class="badge-setting"><label class="shortcut-switch"><input type="checkbox" id="badgeEnabledToggle" ${badgeData.enabled?'checked':''}><span>Distintivos de conquistas no ícone do aplicativo</span></label><p class="help">Mostra novidades ainda não consultadas em títulos, medalhas, Chefões e Cerimônias. A aparência depende do sistema operacional. O contador é mantido localmente, sem notificações push.</p></div>`;
+ const alertContent=alertPanel?alertPanel.outerHTML.replace('</section>',badgeSetting+'</section>'):'';
  const shortcutSections=renderShortcutPreferences();
  const [keyboardContent,appContent]=shortcutSections.split('</section><section class="settings-shortcuts">');
  const accordion=(id,title,body)=>`<details class="settings-accordion" data-settings-section="${id}" ${settingsOpenSection===id?'open':''}><summary>${title}</summary><div class="settings-accordion-body">${body}</div></details>`;
@@ -1241,7 +1282,7 @@ function setImpulsoPalette(value){const chosen=['original','vinho','blue-sky','t
 setImpulsoPalette(localStorage.getItem(PALETTE_KEY));
 
 document.addEventListener('click',e=>{const record=e.target.closest('[data-key-record]'),reset=e.target.closest('[data-key-reset]');if(record){shortcutRecording=record.dataset.keyRecord;toast('Pressione a nova combinação. Escape cancela.');record.textContent='Pressione as teclas…';record.focus();return}if(reset){delete shortcutPrefs.keys[reset.dataset.keyReset];saveShortcutPrefs();renderConfiguracao();toast('Atalho padrão restaurado.')}});
-document.addEventListener('change',e=>{const t=e.target;if(t.matches('[data-shortcut-key-toggle]')){shortcutPrefs.keyboard[t.dataset.shortcutKeyToggle]=t.checked;saveShortcutPrefs();t.nextElementSibling.textContent=t.checked?'Ligado':'Desligado'}if(t.matches('[data-shortcut-app-toggle]')){shortcutPrefs.app[t.dataset.shortcutAppToggle]=t.checked;saveShortcutPrefs();renderConfiguracao()}if(t.matches('[data-shortcut-global]')){shortcutPrefs[t.dataset.shortcutGlobal+'Enabled']=t.checked;saveShortcutPrefs();renderConfiguracao()}if(t.matches('[data-settings-section]'))settingsOpenSection=t.dataset.settingsSection});
+document.addEventListener('change',e=>{const t=e.target;if(t.id==='badgeEnabledToggle'){setBadgeEnabled(t.checked);toast(t.checked?'Distintivos ativados':'Distintivos desativados');return}if(t.matches('[data-shortcut-key-toggle]')){shortcutPrefs.keyboard[t.dataset.shortcutKeyToggle]=t.checked;saveShortcutPrefs();t.nextElementSibling.textContent=t.checked?'Ligado':'Desligado'}if(t.matches('[data-shortcut-app-toggle]')){shortcutPrefs.app[t.dataset.shortcutAppToggle]=t.checked;saveShortcutPrefs();renderConfiguracao()}if(t.matches('[data-shortcut-global]')){shortcutPrefs[t.dataset.shortcutGlobal+'Enabled']=t.checked;saveShortcutPrefs();renderConfiguracao()}if(t.matches('[data-settings-section]'))settingsOpenSection=t.dataset.settingsSection});
 document.addEventListener('toggle',e=>{const d=e.target;if(d.matches?.('details[data-settings-section]')&&d.open){settingsOpenSection=d.dataset.settingsSection;document.querySelectorAll('details[data-settings-section]').forEach(other=>{if(other!==d)other.open=false})}},true);
 $('#theme').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem(THEME,document.body.classList.contains('dark')?'dark':'light');$('#theme').setAttribute('aria-pressed',String(document.body.classList.contains('dark')));if(page==='configuracao')renderConfiguracao()};$('#fullscreen').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen?.();else document.documentElement.requestFullscreen?.().catch(()=>toast('Tela cheia indisponível neste navegador'))};if(localStorage.getItem(THEME)==='dark')document.body.classList.add('dark');$('#theme').setAttribute('aria-pressed',String(document.body.classList.contains('dark')));document.addEventListener('fullscreenchange',()=>$('#fullscreen').setAttribute('aria-label',document.fullscreenElement?'Sair da tela cheia':'Entrar em tela cheia'));modal.addEventListener('click',e=>{const btn=e.target.closest('button');if(btn?.hasAttribute('data-cancel')){e.preventDefault();e.stopPropagation();close();return}if(btn?.hasAttribute('data-replay-ceremony')){e.preventDefault();e.stopPropagation();restartCeremony();return}if(btn?.hasAttribute('data-enable-ceremony-motion')){e.preventDefault();e.stopPropagation();enableCeremonyMotion();return}if(e.target===modal)close()});$('#habitsAlertDismiss').addEventListener('click',hideHabitsAlert);
 $('#habitsAlertOpen').addEventListener('click',()=>{hideHabitsAlert();page=project()?'habitos':'projetos';render()});
