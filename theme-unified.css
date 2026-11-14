@@ -69,3 +69,32 @@ body .menu-drawer{background:var(--theme-panel);color:var(--theme-text)}
 .palette-swatches.mistico i:nth-child(3){background:#B8248E!important;}
 
 @media print{body .hero{background:#FFFFFF!important;color:#111111!important;border:1px solid #777!important}body>.app-footer{display:none!important}}
+
+/* Cerimônias: contraste próprio, independente dos tokens globais de cada tema.
+   A cena cinematográfica é sempre escura; os controles usam fundos claros
+   e textos escuros, inclusive quando o aplicativo está no modo escuro. */
+body dialog.ceremony-dialog .ceremony-cinema .btn:not(.danger),
+body dialog.ceremony-dialog .ceremony-cinema .ceremony-motion-enable {
+  background:#F7E8FF !important;
+  color:#241338 !important;
+  border:2px solid #F7E8FF !important;
+  opacity:1;
+  -webkit-text-fill-color:#241338;
+}
+body dialog.ceremony-dialog .ceremony-cinema .btn.primary {
+  background:#F9DBA6 !important;
+  color:#26113A !important;
+  border-color:#F9DBA6 !important;
+  -webkit-text-fill-color:#26113A;
+}
+body dialog.ceremony-dialog .ceremony-cinema .btn:hover:not(:disabled) {
+  filter:brightness(.94);
+}
+body dialog.ceremony-dialog .ceremony-cinema .btn:focus-visible {
+  outline:3px solid #FFFFFF !important;
+  outline-offset:3px;
+}
+body dialog.ceremony-dialog .ceremony-cinema .btn:disabled {
+  opacity:.7;
+  cursor:not-allowed;
+}

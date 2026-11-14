@@ -1094,27 +1094,25 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão:</strong> 92<br><strong>Atualização:</strong> 14 de novembro de 2026</p>
- <p>Aplicativo progressivo (PWA), offline-first, para organizar projetos independentes, registrar trabalho e hábitos e acompanhar a jornada simbólica de 10.000 horas.</p>
- <h3>Central de Comando</h3>
- <p>O <strong>Dashboard</strong> apresenta seis indicadores do projeto, atividade em andamento, progresso da próxima meta e um <strong>Mapa de Atividade</strong> dos últimos 365 dias. Cada quadradinho corresponde a um dia; a intensidade da cor indica o tempo efetivamente registrado, sem duplicar intervalos simultâneos. O painel oferece oito atalhos: Ponto, Foco, Hábitos, Entradas, Projetos, Novo, Calendário e Configurações.</p>
- <h3>Principais recursos</h3>
+ <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
+ <h3>Como o Impulso pode ajudar você?</h3>
+ <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
+ <h3>Ferramentas para trabalhar e evoluir</h3>
  <ul>
- <li><strong>Ponto:</strong> registra o início e o término de trabalhos, inclusive atividades que atravessam a meia-noite.</li>
- <li><strong>Foco:</strong> sessões planejadas com objetivo, pausas, duração efetiva e avaliação da entrega.</li>
- <li><strong>Hábitos:</strong> temporizadores, hábitos personalizados, catálogo e progresso individual.</li>
- <li><strong>Entradas:</strong> lançamento manual de atividades anteriores.</li>
- <li><strong>Meu Dia e Calendário:</strong> consulta diária e navegação pelo histórico de trabalho.</li>
- <li><strong>Motor de Propulsão:</strong> graus acumulados, Giros e reprodução visual pela Ignição.</li>
- <li><strong>Arena, Codex, Elixires, Insígnias, Cerimônias e Visão:</strong> conquistas e progressão gamificada.</li>
- <li><strong>Insígnias:</strong> 50 títulos automáticos e 60 medalhas permanentes, por projeto.</li><li><strong>Estatísticas:</strong> análises e relatórios de produtividade.</li>
- <li><strong>Configurações:</strong> sete identidades cromáticas, tema claro/escuro e alertas opcionais.</li>
- <li><strong>Arquivo:</strong> Guardar (Salvar como), Atualizar backup existente e Abrir backup com validação e confirmação.</li><li><strong>Sistema:</strong> Instalar quando disponível, instruções de desinstalação e Fechar.</li><li><strong>Armazenamento e backups:</strong> informações locais, exportação e restauração em JSON.</li>
+ <li><strong>Projetos e Dashboard:</strong> organização independente de objetivos, indicadores, mapa de atividade de 365 dias, progresso e atalhos rápidos.</li>
+ <li><strong>Ponto:</strong> registro de início e término de trabalhos, inclusive quando atravessam a meia-noite.</li>
+ <li><strong>Foco:</strong> sessões planejadas com objetivo, pausas, tempo efetivo e avaliação do resultado.</li>
+ <li><strong>Hábitos e Entradas:</strong> prática recorrente com temporizadores e lançamento de atividades anteriores.</li>
+ <li><strong>Meu Dia, Calendário e Estatísticas:</strong> consulta dos registros, análise de períodos e acompanhamento da produtividade.</li>
+ <li><strong>Motor de Propulsão:</strong> representação do tempo em graus, Pulsos, Giros, Turnos, Fases e Propulsões.</li>
+ <li><strong>Vitórias:</strong> 100 metas, 200 Chefões, Codex, Elixires, 50 títulos, 60 medalhas, Cerimônias e Visão.</li>
+ <li><strong>Arquivo e segurança:</strong> backups gerais, abertura e atualização de arquivos, importação, impressão e controle de armazenamento.</li>
+ <li><strong>Personalização:</strong> sete identidades cromáticas, modos claro e escuro, atalhos de teclado configuráveis, alertas, distintivos e limpeza seletiva.</li>
  </ul>
- <h3>Privacidade e segurança dos dados</h3>
- <p>Os dados permanecem no armazenamento deste navegador, sem sincronização automática. Limpar os dados do site, trocar de aparelho ou reinstalar o navegador pode causar perda dos projetos. <strong>Faça backups regularmente e guarde cópias em local seguro.</strong></p>
- <p><strong>Importante:</strong> a jornada de 10.000 horas é uma referência motivacional; não comprova maestria profissional. O aplicativo não substitui um sistema oficial de controle de jornada.</p>
- <p><a href="https://magpe-stack.github.io/Impulso/" target="_blank" rel="noopener noreferrer">Site do Impulso</a> · <a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">Código-fonte</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual completo</a></p>
+ <h3>Privacidade, autonomia e limites</h3>
+ <p>O Impulso funciona prioritariamente no próprio dispositivo, pode trabalhar offline após o carregamento dos arquivos necessários e não exige uma conta para registrar projetos. Os dados não são sincronizados automaticamente com uma nuvem. <strong>Guarde backups regularmente e mantenha cópias fora do navegador.</strong></p>
+ <p>A jornada de 10.000 horas é uma referência motivacional, não uma certificação de maestria. O Impulso não substitui sistemas oficiais de controle de jornada.</p>
+ <p><strong>Saiba mais:</strong> <a href="https://magpe-stack.github.io/Impulso/" target="_blank" rel="noopener noreferrer">Aplicativo</a> · <a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual completo</a></p>
  <div class="actions"><button class="btn primary" type="button" data-cancel>Fechar</button></div></div>`);
 }
 function requestAppExit(){
