@@ -879,3 +879,15 @@ O menu lateral agora apresenta cinco grupos:
 **Instalar** solicita a instalação quando o navegador disponibiliza o evento `beforeinstallprompt`; caso contrário, apresenta instruções para instalação pelo menu do navegador. **Desinstalar** apresenta instruções do sistema: navegadores não oferecem uma API web para desinstalar o próprio PWA. **Fechar** mantém a saída já existente, sujeita às restrições do navegador.
 
 Os arquivos são processados localmente. O backup só é sobrescrito após seleção e confirmação. O aplicativo não grava automaticamente em arquivos do usuário e não altera seu armazenamento principal de projetos. A File System Access API tem suporte limitado no Android; os caminhos tradicionais continuam disponíveis.
+
+
+## Área de transferência — Clipboard API
+
+O Impulso permite copiar resumos textuais dos dados reais por meio do botão **⧉ Copiar resumo** nas páginas Dashboard, Meu Dia, Estatísticas e Insígnias. O botão não modifica nem exclui registros.
+
+- **Dashboard:** tempo total, tempo de hoje, sequência, Giros, metas, título atual e medalha recente do projeto ativo.
+- **Meu Dia:** relação de dias com atividades, horários de início e término e totais por dia.
+- **Estatísticas:** resumo dos indicadores reais, respeitando o projeto e o período selecionados.
+- **Insígnias:** título atual e lista de títulos e medalhas efetivamente conquistados.
+
+A cópia usa `navigator.clipboard.writeText` em navegadores compatíveis e uma alternativa de cópia de texto quando disponível. O navegador pode restringir a operação por permissões ou contexto de segurança. O conteúdo é copiado localmente, sem servidor, e pode ser colado em editores ou aplicativos de mensagens. Não é gerado arquivo nem imagem.

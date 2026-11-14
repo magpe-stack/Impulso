@@ -587,3 +587,9 @@ body.dashboard-mode>.app-footer{display:none!important}
  .dashboard .dash-achievement{padding:2px 4px}
  .dash-achievement small{font-size:.51rem}
 }
+
+/* Impulso 93: copiar relatórios sem aumentar a altura do Dashboard. */
+.dash-heading{position:relative}
+.dashboard .clipboard-report-btn{font-size:.72rem;padding:5px 8px;white-space:nowrap;align-self:center;flex-shrink:0;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--text);box-shadow:none}
+.hero .clipboard-report-btn{margin-top:8px}
+@media(max-width:540px){.dashboard .clipboard-report-btn{font-size:.65rem;padding:4px 6px}.dash-heading{gap:5px;flex-wrap:wrap}}
