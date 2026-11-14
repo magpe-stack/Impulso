@@ -947,3 +947,10 @@ Em **Sistema → Configurações → Limpeza**, selecione quais componentes do I
 **Atenção:** excluir projetos e registros é irreversível sem um backup. Antes de limpar, use **Arquivo → Guardar** e confira se o arquivo foi salvo. A exclusão de projetos exige digitar `APAGAR`. Limpar cache e cancelar o Service Worker podem afetar o funcionamento offline até a próxima instalação do cache. O navegador pode recriar o cache após o recarregamento.
 
 **Limite de segurança:** como vários PWAs podem usar `https://magpe-stack.github.io/`, a limpeza é restrita às chaves conhecidas do Impulso, aos caches com prefixo `impulso-` e ao registro de Service Worker do escopo do Impulso. Não é equivalente a **Limpar dados do site** nas ferramentas do navegador: não remove cookies do domínio, dados de outros projetos, IndexedDB desconhecido nem arquivos do dispositivo.
+
+
+## Identidade cromática integrada — versão 100
+
+Os sete temas (Original, Vinho, Blue Sky, Trinity, Granfino, Ecológico e Místico) agora compartilham regras de aplicação cromática: o cabeçalho de cada página e o rodapé utilizam a mesma superfície institucional do tema; um acento harmônico distingue bordas, foco e indicadores. O esquema é aplicado tanto no modo claro quanto no escuro. O Motor mantém seus SVGs e tokens temáticos próprios, com acabamento harmonizado dos cartões. A folha `theme-unified.css` é carregada por último e deve permanecer no cache offline.
+
+**Acessibilidade:** as superfícies institucionais foram escolhidas para permitir texto branco de alto contraste. O restante dos componentes deve continuar sendo auditado visualmente em cada combinação de tema, aparência, dispositivo e estado de interação; esta atualização não constitui certificação WCAG integral.

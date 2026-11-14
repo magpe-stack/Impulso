@@ -1,0 +1,28 @@
+/* Impulso 100 — identidade cromática integrada. Carregar após os sete temas. */
+/* Cada paleta define uma superfície institucional escura e uma cor de acento. */
+body{--identity-surface:#700038;--identity-accent:#FF80BD;--identity-on:#fff;--identity-focus:#fff;--identity-tint:color-mix(in srgb,var(--identity-accent) 12%,var(--panel));}
+body[data-palette="vinho"]{--identity-surface:#42008A;--identity-accent:#D4A0FF}
+body[data-palette="blue-sky"]{--identity-surface:#00263D;--identity-accent:#00C7B0}
+body[data-palette="trinity"]{--identity-surface:#702F00;--identity-accent:#FFB16B}
+body[data-palette="granfino"]{--identity-surface:#3E3E3E;--identity-accent:#ADBFC2}
+body[data-palette="ecologico"]{--identity-surface:#103D00;--identity-accent:#A3DF77}
+body[data-palette="mistico"]{--identity-surface:#1B0C40;--identity-accent:#C9A0FF}
+/* Cabeçalho da página e rodapé formam a mesma moldura cromática, em claro e escuro. */
+body .hero,body[data-palette] .hero{background:var(--identity-surface);color:var(--identity-on);border:1px solid color-mix(in srgb,var(--identity-accent) 45%,var(--identity-surface));border-inline-start:5px solid var(--identity-accent)}
+body .hero :is(h1,h2,h3,p,small){color:inherit}
+body>.app-footer{background:var(--identity-surface);color:var(--identity-on);border-top:3px solid var(--identity-accent)}
+body>.app-footer .icon-button{border-color:#FFFFFFA8;color:#fff;background:transparent}
+body>.app-footer .icon-button:hover{background:#FFFFFF2B}
+body>.app-footer .icon-button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+/* Controles e indicadores compartilham o acento do tema. */
+body :is(.settings-accordion>summary,.propulsion-unit,.dash-metric,.dash-command,.insignia-card){accent-color:var(--identity-accent)}
+body .settings-accordion>summary:hover{background:var(--identity-tint)}
+body .settings-accordion>summary:focus-visible{outline:3px solid var(--focus);outline-offset:-3px}
+body .propulsion-unit{border-top:3px solid var(--identity-accent)}
+body .propulsion-progress>span,body .dash-progress>span{background:var(--identity-accent)}
+body .propulsion-unit-head strong{color:var(--text)}
+body .dashboard .dash-command-icon{color:var(--text)}
+body .dash-metric:hover,body .dash-command:hover{border-color:var(--identity-accent)}
+body .insignia-card.earned{border-color:var(--identity-accent)}
+/* O Motor SVG já herda tokens de cada paleta: preservá-los, sem impor cores externas. */
+@media print{body .hero,body[data-palette] .hero{background:#fff!important;color:#111!important;border:1px solid #777!important}}
