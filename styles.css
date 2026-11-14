@@ -661,3 +661,12 @@ body:not(.dashboard-mode)>.app-footer{flex:0 0 auto;margin-top:auto!important;wi
 .badge-setting label{display:flex;gap:12px;align-items:center;font-weight:700}
 .badge-setting input{width:22px;height:22px;accent-color:var(--btn);flex:none}
 @media print{body:not(.dashboard-mode){display:block;min-height:0}.impulso-badge-indicator{display:none!important}}
+
+/* v99 — Limpeza de dados do próprio aplicativo */
+.cleanup-options{display:grid;gap:10px;margin:18px 0}
+.cleanup-option{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;background:var(--panel)}
+.cleanup-option input{width:19px;height:19px;flex-shrink:0;margin-top:3px;accent-color:var(--color-3)}
+.cleanup-option span{display:grid;gap:5px}.cleanup-option small{font-size:.88rem;color:var(--muted);line-height:1.5}
+.cleanup-actions{display:flex;flex-wrap:wrap;gap:10px}.cleanup-danger{border:2px solid #b3261e!important;color:#b3261e!important;font-weight:800}
+body.dark .cleanup-danger{color:#ffb4ab!important;border-color:#ffb4ab!important}
+.cleanup-option:focus-within{outline:2px solid var(--color-3);outline-offset:2px}

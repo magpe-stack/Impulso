@@ -938,3 +938,12 @@ Algumas combinações de teclado podem ser interceptadas pelo sistema operaciona
 Em páginas com conteúdo curto, o rodapé cromático permanece na base da janela; em páginas longas, aparece depois do conteúdo, sem sobreposição. O Dashboard conserva o modo de tela única sem rodapé.
 
 A Badging API, quando disponível no navegador e sistema operacional, apresenta no ícone do PWA instalado o total de conquistas ainda não visualizadas: novos títulos, medalhas, Chefões e Cerimônias. O Impulso mantém um contador equivalente no cabeçalho como alternativa interna. Na primeira utilização, as conquistas já existentes são consideradas visualizadas, para evitar números artificiais. Abrir Insígnias, Arena/Codex ou Cerimônias marca como vistas as novidades correspondentes. A preferência é individual deste navegador e pode ser alterada em Configurações → Alertas → Distintivos de conquistas. O recurso não exige servidor nem envia notificações push; o contador é atualizado quando o PWA executa. O sistema operacional pode não exibir distintivos ou pode usar uma apresentação diferente.
+
+
+## Limpeza — Configurações (versão 99)
+
+Em **Sistema → Configurações → Limpeza**, selecione quais componentes do Impulso deseja remover: **Projetos e registros**, **Preferências e alertas**, **Cache offline do Impulso** ou **Service Worker do Impulso**. Pressione **Limpar selecionados** para executar apenas as opções marcadas. **Limpar tudo do Impulso** executa as quatro operações, após confirmação.
+
+**Atenção:** excluir projetos e registros é irreversível sem um backup. Antes de limpar, use **Arquivo → Guardar** e confira se o arquivo foi salvo. A exclusão de projetos exige digitar `APAGAR`. Limpar cache e cancelar o Service Worker podem afetar o funcionamento offline até a próxima instalação do cache. O navegador pode recriar o cache após o recarregamento.
+
+**Limite de segurança:** como vários PWAs podem usar `https://magpe-stack.github.io/`, a limpeza é restrita às chaves conhecidas do Impulso, aos caches com prefixo `impulso-` e ao registro de Service Worker do escopo do Impulso. Não é equivalente a **Limpar dados do site** nas ferramentas do navegador: não remove cookies do domínio, dados de outros projetos, IndexedDB desconhecido nem arquivos do dispositivo.

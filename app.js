@@ -1275,9 +1275,43 @@ function renderConfiguracao(){
  const shortcutSections=renderShortcutPreferences();
  const [keyboardContent,appContent]=shortcutSections.split('</section><section class="settings-shortcuts">');
  const accordion=(id,title,body)=>`<details class="settings-accordion" data-settings-section="${id}" ${settingsOpenSection===id?'open':''}><summary>${title}</summary><div class="settings-accordion-body">${body}</div></details>`;
- main.innerHTML=header('Configurações','Personalize o Impulso.')+accordion('temas','Temas',settingsHtml.replace(/^.*?<section class="panel settings-palette">/s,'<section class="panel settings-palette">'))+accordion('teclado','Atalhos de Teclado',keyboardContent.replace('<section class="settings-shortcuts">','')+'</section>')+accordion('aplicativo','Atalhos do Aplicativo','<section class="settings-shortcuts">'+appContent)+accordion('alertas','Alertas',alertContent);
+ main.innerHTML=header('Configurações','Personalize o Impulso.')+accordion('temas','Temas',settingsHtml.replace(/^.*?<section class="panel settings-palette">/s,'<section class="panel settings-palette">'))+accordion('teclado','Atalhos de Teclado',keyboardContent.replace('<section class="settings-shortcuts">','')+'</section>')+accordion('aplicativo','Atalhos do Aplicativo','<section class="settings-shortcuts">'+appContent)+accordion('alertas','Alertas',alertContent)+accordion('limpeza','Limpeza',renderLimpeza());
 
 }
+
+// Limpeza restrita ao Impulso: não apagar dados de outros PWAs do mesmo domínio.
+const IMPULSO_STORAGE_KEYS=[KEY,THEME,PALETTE_KEY,ALERTS_KEY,BADGE_KEY,SHORTCUT_PREF_KEY,INSTALL_PREF,STORAGE_BACKUP_DATE];
+const IMPULSO_STORAGE_OPTIONS=[
+ ['projects','Projetos e registros','Apaga todos os projetos, atividades, hábitos e conquistas. IRREVERSÍVEL sem backup.'],
+ ['preferences','Preferências e alertas','Restaura temas, atalhos, avisos, distintivos e preferências de instalação.'],
+ ['cache','Cache offline do Impulso','Remove somente os caches com prefixo impulso-. O navegador pode recriar o cache ao recarregar.'],
+ ['worker','Service Worker do Impulso','Cancela apenas o registro do Service Worker com escopo deste aplicativo. O funcionamento offline pode parar até o novo registro.']
+];
+function renderLimpeza(){
+ const rows=IMPULSO_STORAGE_OPTIONS.map(([id,label,description])=>`<label class="cleanup-option"><input type="checkbox" data-clean-option="${id}"><span><strong>${label}</strong><small>${description}</small></span></label>`).join('');
+ return `<section class="panel cleanup-panel"><h2>Limpeza do aplicativo</h2><p>Apague componentes separadamente ou reinicialize os dados do Impulso. <strong>Antes de apagar projetos, faça um Backup Geral em Arquivo → Guardar.</strong></p><p class="help">O GitHub Pages hospeda outros aplicativos no mesmo domínio. Por segurança, esta ferramenta remove apenas dados identificados como pertencentes ao Impulso. Não apaga cookies, dados de outros aplicativos, arquivos baixados ou bancos de dados desconhecidos.</p><div class="cleanup-options">${rows}</div><div class="cleanup-actions"><button type="button" class="btn" data-clean-selected>Limpar selecionados</button><button type="button" class="btn cleanup-danger" data-clean-all>Limpar tudo do Impulso</button></div><p id="cleanupResult" class="help" role="status" aria-live="polite">A limpeza exige confirmação e não pode ser desfeita sem um backup.</p></section>`;
+}
+async function cleanImpulso(parts,all=false){
+ const wantsData=parts.includes('projects');
+ const list=parts.map(id=>IMPULSO_STORAGE_OPTIONS.find(x=>x[0]===id)?.[1]).filter(Boolean).join(', ');
+ if(!parts.length){toast('Selecione pelo menos um componente');return}
+ if(wantsData&&currentActionStatus(project())&&!confirm('Há uma atividade em andamento. A limpeza dos dados pode apagar seu registro. Deseja continuar?'))return;
+ if(!confirm(`ATENÇÃO: a limpeza removerá: ${list}. ${wantsData?'TODOS os projetos e registros serão perdidos sem um backup. ':''}Deseja continuar?`))return;
+ if(wantsData){const answer=prompt('Para confirmar a exclusão de todos os projetos e registros, digite APAGAR:');if(answer!=='APAGAR'){toast('Limpeza cancelada');return}}
+ const failures=[];
+ if(parts.includes('projects')){try{localStorage.removeItem(KEY)}catch(e){failures.push('Projetos: '+e.message)}}
+ if(parts.includes('preferences')){for(const key of IMPULSO_STORAGE_KEYS.filter(x=>x!==KEY)){try{localStorage.removeItem(key)}catch(e){failures.push(key+': '+e.message)}}}
+ if(parts.includes('cache')){try{if('caches'in window){const keys=await caches.keys();for(const key of keys.filter(k=>k.startsWith('impulso-')))if(!await caches.delete(key))failures.push('Cache '+key)}}catch(e){failures.push('Cache: '+e.message)}}
+ if(parts.includes('worker')){try{if('serviceWorker'in navigator){const regs=await navigator.serviceWorker.getRegistrations();const expected=new URL('./',location.href).href;for(const reg of regs){if(reg.scope===expected&&!await reg.unregister())failures.push('Service Worker não cancelado')}}}catch(e){failures.push('Service Worker: '+e.message)}}
+ const result=document.querySelector('#cleanupResult');if(result)result.textContent=failures.length?'Limpeza parcial: '+failures.join('; '):'Limpeza concluída. Recarregue para aplicar as mudanças.';
+ if(parts.includes('projects')||parts.includes('preferences')){alert((failures.length?'Limpeza parcialmente concluída. ':'Limpeza concluída. ')+'O Impulso será recarregado para atualizar a memória.');location.reload();return}
+ toast(failures.length?'Alguns itens não puderam ser limpos':'Limpeza concluída');
+}
+document.addEventListener('click',e=>{
+ if(e.target.closest('[data-clean-selected]')){cleanImpulso([...document.querySelectorAll('[data-clean-option]:checked')].map(el=>el.dataset.cleanOption));return}
+ if(e.target.closest('[data-clean-all]')){cleanImpulso(IMPULSO_STORAGE_OPTIONS.map(x=>x[0]),true)}
+});
+
 function setImpulsoPalette(value){const chosen=['original','vinho','blue-sky','trinity','granfino','ecologico','mistico'].includes(value)?value:'original';document.body.dataset.palette=chosen;try{localStorage.setItem(PALETTE_KEY,chosen)}catch(e){toast('Não foi possível salvar a preferência de paleta.')}document.querySelectorAll('input[name="impulsoPalette"]').forEach(el=>el.checked=el.value===chosen);}
 setImpulsoPalette(localStorage.getItem(PALETTE_KEY));
 
