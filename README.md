@@ -851,3 +851,14 @@ A reprodução usa a mesma janela. Ao ativar voluntariamente os efeitos, o aplic
 ## Dashboard — controles e conquistas
 
 Os oito atalhos do Dashboard utilizam o mesmo estilo de botão do restante do aplicativo, sem bordas inferiores decorativas nem sombras próprias. A Central de Comando exibe ainda o **título atual** (atribuído automaticamente pelas horas acumuladas) e a **medalha conquistada mais recentemente** no projeto ativo. Quando não há medalhas, a indicação informa que nenhuma foi conquistada. Selecionar qualquer uma das duas insígnias abre **Vitórias → Insígnias**. As informações vêm da coleção do projeto, não de dados demonstrativos.
+
+
+### Abrir backups diretamente pelo explorador de arquivos (File Handling API)
+
+Em versões compatíveis do **Chrome e Edge para desktop**, o Impulso **instalado como aplicativo** pode ser associado a arquivos `.json` e `.impulso` por meio da File Handling API. Após instalar ou atualizar o PWA, o sistema operacional pode oferecer **Abrir com → Impulso** ao selecionar um arquivo; a disponibilidade da associação depende do navegador e do sistema operacional e pode exigir reinstalar o PWA após uma atualização do manifesto. Não é garantido que o duplo clique seja associado automaticamente.
+
+Ao receber um arquivo, o Impulso verifica sua extensão, tamanho (até 40 MB), formato JSON e identificação do aplicativo. Arquivos de **projeto individual** seguem o fluxo de importação de projeto, preservando os projetos existentes; arquivos de **backup geral** seguem o fluxo de restauração, com aviso de que a operação substitui todos os projetos atuais. **Nada é importado ou restaurado sem confirmação do usuário.**
+
+A associação de `.json` é ampla, pois outros aplicativos também usam essa extensão. O Impulso não assume exclusividade: selecione-o apenas para arquivos exportados pelo próprio aplicativo. A extensão `.impulso` também é reconhecida pela associação, desde que seu conteúdo seja um JSON de backup válido do Impulso. As exportações continuam em `.json` para manter compatibilidade com os arquivos existentes.
+
+**No Android e em navegadores sem suporte**, utilize normalmente **Importar** ou **Restaurar** dentro do Impulso. A leitura e validação do arquivo são locais e não exigem servidor nem internet.
