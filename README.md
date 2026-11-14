@@ -954,3 +954,10 @@ Em **Sistema → Configurações → Limpeza**, selecione quais componentes do I
 Os sete temas (Original, Vinho, Blue Sky, Trinity, Granfino, Ecológico e Místico) agora compartilham regras de aplicação cromática: o cabeçalho de cada página e o rodapé utilizam a mesma superfície institucional do tema; um acento harmônico distingue bordas, foco e indicadores. O esquema é aplicado tanto no modo claro quanto no escuro. O Motor mantém seus SVGs e tokens temáticos próprios, com acabamento harmonizado dos cartões. A folha `theme-unified.css` é carregada por último e deve permanecer no cache offline.
 
 **Acessibilidade:** as superfícies institucionais foram escolhidas para permitir texto branco de alto contraste. O restante dos componentes deve continuar sendo auditado visualmente em cada combinação de tema, aparência, dispositivo e estado de interação; esta atualização não constitui certificação WCAG integral.
+
+
+## Sistema cromático unificado — Impulso 101
+
+As sete paletas oficiais são mantidas, com três cores-base por identidade. Cada paleta dispõe de tokens semânticos separados para os modos claro e escuro, centralizados em `theme-unified.css` e carregados após as folhas de tema existentes. Cabeçalhos, rodapés, botões, painéis, bordas, indicadores, progresso e amostras passam a consumir as cores da identidade ativa. As amostras em Configurações correspondem às cores-base oficiais.
+
+A verificação automática de contraste cobre texto, texto secundário, botões primários, cabeçalhos e foco nas 14 combinações. A verificação visual e a auditoria completa WCAG 2.2 AA de todas as telas e estados interativos ainda devem ser realizadas em navegador.
