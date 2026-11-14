@@ -831,9 +831,38 @@ function runHabit(id){const p=project(),h=p.habits.find(h=>h.id===id);if(!h)retu
 // File System Access API: backups gerais locais, com consentimento explícito.
 // O armazenamento principal do Impulso permanece no navegador.
 let selectedBackupHandle=null;
-let deferredInstallPrompt=null;
-window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event});
-window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;toast('Impulso instalado com sucesso')});
+// Convite de instalação: a decisão e a instalação pertencem sempre ao usuário.
+const INSTALL_PREF='impulso-install-invite-v1';
+let deferredInstallPrompt=null,installInviteShownThisVisit=false,installInvitePending=false;
+const isInstalledImpulso=()=>window.matchMedia?.('(display-mode: standalone)').matches||navigator.standalone===true||window.matchMedia?.('(display-mode: minimal-ui)').matches;
+function installPreference(){try{return JSON.parse(localStorage.getItem(INSTALL_PREF)||'{}')}catch{return {}}}
+function saveInstallPreference(value){try{localStorage.setItem(INSTALL_PREF,JSON.stringify(value))}catch{}}
+function mayInviteInstall(){
+ const pref=installPreference();
+ return !isInstalledImpulso()&&!installInviteShownThisVisit&&!pref.never&&(!pref.laterUntil||Date.now()>pref.laterUntil);
+}
+function installInviteHtml(){
+ return `<section class="install-invite" aria-labelledby="installInviteTitle" aria-describedby="installInviteDesc">
+ <div class="install-invite-heading"><img src="rocket-192-v11.png" alt="" width="64" height="64"><div><h2 id="installInviteTitle">Instale o Impulso</h2><p class="muted">Motor de Produtividade Pessoal</p></div></div>
+ <p id="installInviteDesc">Acesse seus projetos diretamente pela tela inicial ou pelo menu de aplicativos, com uma janela própria e recursos offline após o primeiro carregamento.</p>
+ <ul class="install-invite-benefits"><li>Acesso rápido ao aplicativo</li><li>Seus projetos continuam armazenados localmente</li><li>Sem criar conta ou contratar serviços</li></ul>
+ <p class="help">A instalação será confirmada pelo navegador. Seus dados não serão enviados a servidores.</p>
+ <div class="modal-actions install-invite-actions"><button class="btn" type="button" data-action="installLater">Agora não</button><button class="btn" type="button" data-action="installNever">Não mostrar novamente</button><button class="btn primary" type="button" data-action="installConfirm">Instalar</button></div></section>`;
+}
+function showInstallInvite(automatic=false){
+ if(isInstalledImpulso()){if(!automatic)toast('O Impulso já está aberto como aplicativo instalado');return}
+ if(!deferredInstallPrompt){if(!automatic)showInstallInstructions();return}
+ if(automatic){if(!mayInviteInstall()||modal.open||document.getElementById('splash')||document.hidden||currentActionStatus(project()))return;installInviteShownThisVisit=true}
+ if(modal.open)return;
+ installInvitePending=true;
+ show(installInviteHtml());
+ modal.querySelector('[data-action="installConfirm"]')?.focus();
+}
+function scheduleInstallInvite(){if(!mayInviteInstall())return;setTimeout(()=>showInstallInvite(true),1600)}
+window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event;scheduleInstallInvite()});
+window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;installInvitePending=false;saveInstallPreference({installedAt:Date.now()});if(modal.open&&modal.querySelector('.install-invite'))close();toast('Impulso instalado com sucesso')});
+modal.addEventListener('close',()=>{installInvitePending=false});
+
 const backupFileOptions={types:[{description:'Backup Geral do Impulso (JSON)',accept:{'application/json':['.json','.impulso']}}],excludeAcceptAllOption:true};
 function backupPayload(){return {app:'Impulso',version:1,exportedAt:new Date().toISOString(),data:state}}
 function markBackupSaved(){try{localStorage.setItem(STORAGE_BACKUP_DATE,new Date().toISOString())}catch{}}
@@ -882,14 +911,26 @@ async function abrirBackup(){
   importBackup(file); // Confirmação de restauração no fluxo existente.
  }catch(error){if(error.name!=='AbortError')alert('Não foi possível abrir o backup: '+error.message)}
 }
-async function installImpulso(){
- if(window.matchMedia?.('(display-mode: standalone)').matches||navigator.standalone===true){toast('O Impulso já está aberto como aplicativo instalado');return}
- if(deferredInstallPrompt){
-  const prompt=deferredInstallPrompt;deferredInstallPrompt=null;
-  try{await prompt.prompt();await prompt.userChoice}catch(error){alert('Não foi possível solicitar a instalação: '+error.message)}
-  return;
- }
- show(`<h2>Instalar o Impulso</h2><p>O navegador não disponibilizou a solicitação de instalação neste momento.</p><p>No <strong>Edge</strong>, procure <strong>Aplicativos → Instalar este site como aplicativo</strong>. No <strong>Chrome</strong>, use o ícone de instalação na barra de endereços ou o menu do navegador. No Android, procure <strong>Instalar aplicativo</strong> ou <strong>Adicionar à tela inicial</strong>.</p><p class="help">A disponibilidade depende do navegador e dos critérios de instalação. Seus dados permanecem locais.</p><div class="modal-actions"><button class="btn primary" data-action="cancel">Entendi</button></div>`);
+function showInstallInstructions(){
+ show(`<h2>Instalar o Impulso</h2><p>O navegador não disponibilizou a solicitação de instalação neste momento.</p><p>No <strong>Edge</strong>, procure <strong>Aplicativos → Instalar este site como aplicativo</strong>. No <strong>Chrome</strong>, use o ícone de instalação na barra de endereços ou o menu do navegador. No Android, procure <strong>Instalar aplicativo</strong> ou <strong>Adicionar à tela inicial</strong>. No iPhone, use <strong>Compartilhar → Adicionar à Tela de Início</strong>.</p><p class="help">A disponibilidade depende do navegador e dos critérios de instalação. Seus dados permanecem locais.</p><div class="modal-actions"><button class="btn primary" data-action="cancel">Entendi</button></div>`);
+}
+function installImpulso(){showInstallInvite(false)}
+function installLater(){saveInstallPreference({laterUntil:Date.now()+14*24*60*60*1000});installInvitePending=false;close()}
+function installNever(){saveInstallPreference({never:true});installInvitePending=false;close()}
+async function installConfirm(){
+ const prompt=deferredInstallPrompt;
+ if(!prompt){installInvitePending=false;close();showInstallInstructions();return}
+ deferredInstallPrompt=null;installInvitePending=false;
+ // A chamada a prompt() ocorre diretamente no gesto do usuário.
+ let result;
+ try{result=prompt.prompt()}catch(error){close();toast('Instalação indisponível: '+error.message);return}
+ close();
+ try{
+  await result;
+  const choice=await prompt.userChoice;
+  if(choice?.outcome==='accepted'){saveInstallPreference({installedAt:Date.now()});toast('Solicitação de instalação aceita')}
+  else{saveInstallPreference({laterUntil:Date.now()+14*24*60*60*1000});toast('Instalação não realizada. Você poderá tentar novamente pelo menu Sistema.')}
+ }catch(error){toast('Não foi possível concluir a solicitação de instalação')}
 }
 function uninstallImpulso(){
  show(`<h2>Desinstalar o Impulso</h2><p>Por segurança, páginas web <strong>não podem desinstalar PWAs automaticamente</strong>. A remoção deve ser feita pelo sistema ou navegador.</p><p><strong>Windows:</strong> abra o menu do aplicativo instalado e escolha Desinstalar, ou use Configurações → Aplicativos → Aplicativos instalados.</p><p><strong>Android:</strong> mantenha pressionado o ícone do Impulso e selecione Desinstalar ou Remover, conforme o navegador.</p><p class="help"><strong>Antes de desinstalar:</strong> use Arquivo → Guardar para preservar seus projetos. Dependendo do navegador, a remoção ou limpeza dos dados pode apagar os registros locais.</p><div class="modal-actions"><button class="btn primary" data-action="cancel">Entendi</button></div>`);
@@ -988,7 +1029,7 @@ function confirmAppExit(){
  if(standalone){try{window.close()}catch(e){/* O navegador pode impedir o fechamento. */}}
 }
 function returnFromExit(){const screen=document.getElementById('impulsoExitScreen');if(screen)screen.hidden=true;document.body.classList.remove('impulso-exited');page='dashboard';render();document.querySelector('#main')?.focus()}
-function action(name){switch(name){case 'helpGithub':window.open('https://github.com/magpe-stack/Impulso','_blank','noopener,noreferrer');break;case 'helpManual':window.open('https://github.com/magpe-stack/Impulso/blob/main/README.md','_blank','noopener,noreferrer');break;case 'helpAbout':about();break;case 'exit':requestAppExit();break;case 'exit-confirm':confirmAppExit();break;case 'exit-return':returnFromExit();break;case 'alerts':page='alertas';render();break;case 'storage':page='armazenamento';render();break;case 'statistics':page='estatisticas';render();break;case 'new':newProject();break;case 'projects':page='projetos';render();break;case 'day':page='dia';render();break;case 'radar':page='radar';render();break;case 'point':point();break;case 'foco':page='foco';render();break;case 'manual':page='entradas';render();break;case 'manualPoint':manual();break;case 'manualHabit':manualHabit();break;case 'habitPage':page='habitos';render();break;case 'guardar':guardarBackup();break;case 'atualizarBackup':atualizarBackup();break;case 'abrirBackup':abrirBackup();break;case 'installApp':installImpulso();break;case 'uninstallApp':uninstallImpulso();break;case 'backup':backup();break;case 'export':exportProject();break;case 'import':$('#importFile').click();break;case 'importProject':$('#importProjectFile').click();break;case 'print':printReport();break;case 'printProjects':printReport(true);break;case 'newHabit':newHabit();break;case 'cancel':close();break}}
+function action(name){switch(name){case 'helpGithub':window.open('https://github.com/magpe-stack/Impulso','_blank','noopener,noreferrer');break;case 'helpManual':window.open('https://github.com/magpe-stack/Impulso/blob/main/README.md','_blank','noopener,noreferrer');break;case 'helpAbout':about();break;case 'exit':requestAppExit();break;case 'exit-confirm':confirmAppExit();break;case 'exit-return':returnFromExit();break;case 'alerts':page='alertas';render();break;case 'storage':page='armazenamento';render();break;case 'statistics':page='estatisticas';render();break;case 'new':newProject();break;case 'projects':page='projetos';render();break;case 'day':page='dia';render();break;case 'radar':page='radar';render();break;case 'point':point();break;case 'foco':page='foco';render();break;case 'manual':page='entradas';render();break;case 'manualPoint':manual();break;case 'manualHabit':manualHabit();break;case 'habitPage':page='habitos';render();break;case 'guardar':guardarBackup();break;case 'atualizarBackup':atualizarBackup();break;case 'abrirBackup':abrirBackup();break;case 'installApp':installImpulso();break;case 'installConfirm':installConfirm();break;case 'installLater':installLater();break;case 'installNever':installNever();break;case 'uninstallApp':uninstallImpulso();break;case 'backup':backup();break;case 'export':exportProject();break;case 'import':$('#importFile').click();break;case 'importProject':$('#importProjectFile').click();break;case 'print':printReport();break;case 'printProjects':printReport(true);break;case 'newHabit':newHabit();break;case 'cancel':close();break}}
 const menuToggle=$('#menuToggle'),menuDrawer=$('#menuDrawer'),menuBackdrop=$('#menuBackdrop'),menuClose=$('#menuClose');
 function setMenu(open){menuDrawer.classList.toggle('open',open);menuDrawer.setAttribute('aria-hidden',String(!open));menuDrawer.inert=!open;menuBackdrop.hidden=!open;menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');document.body.classList.toggle('menu-open',open);if(open){menuDrawer.querySelector('nav button, .menu-section button')?.focus()}else if(menuDrawer.contains(document.activeElement))menuToggle.focus()}
 menuToggle.addEventListener('click',()=>setMenu(!menuDrawer.classList.contains('open')));menuBackdrop.addEventListener('click',()=>setMenu(false));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menuDrawer.classList.contains('open')){e.preventDefault();setMenu(false)}if(e.key==='Tab'&&menuDrawer.classList.contains('open')){const focusable=[...menuDrawer.querySelectorAll('button:not([disabled]),a[href]')];const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
@@ -1151,12 +1192,12 @@ $('#backupAlertDismiss').addEventListener('click',hideBackupAlert);$('#backupAle
   // A revelação do nome é controlada pelo CSS para manter a sequência cinematográfica.
   if(progress<1){requestAnimationFrame(frame)}else{
    splash.classList.add('hide');
-   setTimeout(()=>splash.remove(),400);
+   setTimeout(()=>{splash.remove();if(deferredInstallPrompt)scheduleInstallInvite()},400);
   }
  }
  requestAnimationFrame(frame);
  // Evita splash preso caso a aba fique em segundo plano durante a inicialização.
- setTimeout(()=>{if(splash.isConnected){splash.classList.add('hide');setTimeout(()=>splash.remove(),400)}},5200);
+ setTimeout(()=>{if(splash.isConnected){splash.classList.add('hide');setTimeout(()=>{splash.remove();if(deferredInstallPrompt)scheduleInstallInvite()},400)}},5200);
 })();
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 })();

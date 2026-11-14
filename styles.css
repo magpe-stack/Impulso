@@ -610,3 +610,15 @@ body>.app-footer .icon-button:focus-visible{outline:3px solid #FFFFFF;outline-of
 body>.app-footer .icon-button:first-child{background:#FFFFFF}
 body>.app-footer .icon-button:first-child:hover{background:#F1F2F5}
 @media print{body>.app-footer{display:none!important}}
+
+/* Impulso v95: convite de instalação, cores herdadas dos sete temas. */
+.install-invite{color:var(--text)}
+.install-invite-heading{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.install-invite-heading img{flex:none;width:64px;height:64px;object-fit:contain;border-radius:14px;background:var(--soft);padding:5px}
+.install-invite-heading h2{margin:0}
+.install-invite-heading p{margin:2px 0 0}
+.install-invite-benefits{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 18px 12px 36px;line-height:1.7}
+.install-invite-actions{flex-wrap:wrap;gap:8px}
+.install-invite-actions .btn{min-height:44px}
+@media(max-width:500px){.install-invite-actions{display:grid;grid-template-columns:1fr 1fr}.install-invite-actions [data-action="installConfirm"]{grid-column:1/-1;grid-row:1}}
+@media(prefers-reduced-motion:reduce){.install-invite *{animation:none!important;transition:none!important}}

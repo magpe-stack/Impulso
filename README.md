@@ -902,3 +902,16 @@ O menu lateral está organizado em seis grupos: **Arquivo**, **Ações**, **Vit�
 - **Sobre:** abre a mesma ficha informativa disponibilizada pelo botão Sobre do rodapé, sem duplicar seu conteúdo.
 
 O rodapé mantém seus quatro atalhos originais e agora utiliza uma cor de fundo própria de cada identidade cromática, incluindo o tema original. O texto e os ícones permanecem claros, com contraste elevado e estados de foco visíveis. A cor acompanha a identidade selecionada, tanto no modo claro quanto no escuro. A página Dashboard continua sem rodapé, preservando seu layout de tela única.
+
+
+## Instalação personalizada (v95)
+
+O Impulso utiliza o evento `beforeinstallprompt` quando oferecido pelo navegador para exibir um convite de instalação com a identidade visual do aplicativo, após o splash, sem interromper sessões ativas. O convite é opcional e não aparece se o aplicativo já estiver executando em modo instalado.
+
+- **Instalar:** abre a confirmação nativa do navegador, quando disponível. O Impulso não instala a si mesmo.
+- **Agora não:** adia convites automáticos por 14 dias. O comando **Sistema → Instalar** continua disponível.
+- **Não mostrar novamente:** desativa os convites automáticos neste navegador, sem remover o comando manual.
+- **Sistema → Instalar:** abre o mesmo convite se o evento estiver disponível ou apresenta instruções de instalação manual para Edge, Chrome, Android e iPhone.
+- **Instalação concluída:** o evento `appinstalled` atualiza o estado e apresenta confirmação quando disparado pelo navegador.
+
+O evento não é universal nem garantido; a decisão e a confirmação pertencem ao navegador e ao usuário. A preferência do convite é armazenada localmente e não altera os dados dos projetos.
