@@ -837,3 +837,12 @@ As medalhas reconhecem a primeira atividade, marcos de 10 a 1.000 horas, sequên
 ## Cerimônias — reprodução
 
 A galeria exibe os 100 marcos progressivos da jornada. **Rever cerimônia** abre uma apresentação visual que não modifica os registros. **Reproduzir novamente** reinicia os efeitos no mesmo diálogo; **Fechar cerimônia** encerra a apresentação. Se o sistema solicitar redução de movimento, o conteúdo continua visível e o botão **Ativar animação nesta cerimônia** permite iniciar os efeitos apenas na apresentação aberta. Os controles mantêm dimensões uniformes em telas estreitas.
+
+
+## Insígnias
+
+O projeto oferece **50 títulos** progressivos atribuídos automaticamente conforme o tempo acumulado, sem botão Equipar, e **60 medalhas permanentes**: 15 de horas, 15 de sequência de dias, 15 de hábitos e 15 de Chefões. As conquistas são individuais por projeto e preservadas nos backups.
+
+## Cerimônias
+
+A reprodução usa a mesma janela. Ao ativar voluntariamente os efeitos, o aplicativo reinicia as animações em quadros distintos do navegador, sem substituir o diálogo. A preferência por movimento reduzido permanece respeitada até a autorização do usuário.

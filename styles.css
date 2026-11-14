@@ -539,3 +539,9 @@ body.dashboard-mode>.app-footer{display:none!important}
 .insignia-card.locked{opacity:.68}.insignia-card.earned{border-color:var(--color-4)}
 .insignia-card small{font-size:.82rem;line-height:1.4}.insignia-card .btn{margin-top:auto;width:100%;min-height:40px}
 .insignia-icon{font-size:2rem;line-height:1.4}
+
+/* Impulso 89: pausa de um quadro inteiro para reiniciar CSS sem fechar diálogo. */
+.ceremony-cinema.ceremony-restarting *,
+.ceremony-cinema.ceremony-restarting *::before,
+.ceremony-cinema.ceremony-restarting *::after{animation:none!important;transition:none!important}
+.insignia-card{min-width:0;overflow-wrap:anywhere}
