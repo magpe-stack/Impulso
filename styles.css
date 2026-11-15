@@ -663,3 +663,16 @@ body:not(.dashboard-mode)>.app-footer{flex:0 0 auto;margin-top:auto!important;wi
 .cleanup-actions{display:flex;flex-wrap:wrap;gap:10px}.cleanup-danger{border:2px solid #b3261e!important;color:#b3261e!important;font-weight:800}
 body.dark .cleanup-danger{color:#ffb4ab!important;border-color:#ffb4ab!important}
 .cleanup-option:focus-within{outline:2px solid var(--color-3);outline-offset:2px}
+
+/* Aviso independente dos controles e da identidade visual do cabeçalho. */
+.file-pending-notice{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px clamp(12px,3vw,24px);background:#fff4dd;color:#563200;border-bottom:1px solid #d6a756;font-size:.875rem;position:relative;z-index:5}
+.file-pending-notice[hidden]{display:none!important}
+.file-pending-message{display:flex;align-items:center;gap:10px;min-width:0}
+.file-pending-message>span{font-size:1.3rem}
+.file-pending-message>div{display:flex;flex-direction:column;gap:2px}
+.file-pending-message strong{font-weight:700;color:#563200}
+.file-pending-message div span{color:#65420b}
+.file-pending-button{flex-shrink:0;border:1px solid #6b4106;background:#6b4106;color:#fff;font:inherit;font-weight:700;border-radius:9px;padding:9px 12px;cursor:pointer;min-height:40px}
+.file-pending-button:hover{background:#503000}
+.file-pending-button:focus-visible{outline:3px solid #174da6;outline-offset:3px}
+@media(max-width:420px){.file-pending-notice{flex-wrap:wrap}.file-pending-button{margin-left:auto}.file-pending-message div span{font-size:.78rem}}

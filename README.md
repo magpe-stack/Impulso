@@ -642,3 +642,14 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 Uma ferramenta para transformar dedicação em registros, continuidade em progresso e objetivos em uma jornada visível.
 
 **Site:** https://magpe-stack.github.io/Impulso/ · **Repositório:** https://github.com/magpe-stack/Impulso
+
+
+## Proteção do arquivo externo
+
+O Impulso salva os dados de trabalho automaticamente **no navegador**, mas o arquivo externo JSON é uma cópia separada. A faixa **Alterações pendentes no arquivo** aparece abaixo do cabeçalho quando o estado atual dos projetos difere do último arquivo gravado com sucesso pelo seletor de arquivos. A faixa não altera o logotipo, os controles de Ponto, tema ou tela cheia.
+
+Selecione **Atualizar arquivo** para gravar a versão atual. Se não houver um arquivo associado nesta sessão, o Impulso solicita **Guardar** para escolher um destino. **Arquivo → Atualizar** também permite escolher um backup existente, validá-lo e confirmar sua substituição. A faixa desaparece somente depois da conclusão confirmada da gravação; alterações realizadas durante a gravação permanecem pendentes.
+
+Em **Sistema → Fechar**, caso haja pendências, é possível cancelar, fechar sem atualizar ou atualizar antes de sair. Ao fechar pela janela do sistema, o navegador **pode** mostrar sua própria confirmação de saída, mas esse comportamento não é garantido, especialmente em dispositivos móveis. O aplicativo não pode personalizar a mensagem do navegador nem salvar automaticamente durante esse fechamento.
+
+**Importante:** quando o navegador apenas baixa um JSON, não há confirmação confiável de que o arquivo foi salvo. Nesse caso, o indicador permanece por segurança. Após reiniciar o navegador, pode ser necessário escolher novamente o arquivo, pois a associação ao arquivo externo não é mantida automaticamente.
