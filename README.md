@@ -653,3 +653,8 @@ Selecione **Atualizar arquivo** para gravar a versão atual. Se não houver um a
 Em **Sistema → Fechar**, caso haja pendências, é possível cancelar, fechar sem atualizar ou atualizar antes de sair. Ao fechar pela janela do sistema, o navegador **pode** mostrar sua própria confirmação de saída, mas esse comportamento não é garantido, especialmente em dispositivos móveis. O aplicativo não pode personalizar a mensagem do navegador nem salvar automaticamente durante esse fechamento.
 
 **Importante:** quando o navegador apenas baixa um JSON, não há confirmação confiável de que o arquivo foi salvo. Nesse caso, o indicador permanece por segurança. Após reiniciar o navegador, pode ser necessário escolher novamente o arquivo, pois a associação ao arquivo externo não é mantida automaticamente.
+
+
+### Central de novidades no cabeçalho
+
+O contador de conquistas no cabeçalho pode ser consultado com o mouse (passando sobre o número), por clique ou por toque. A lista mostra individualmente títulos, medalhas, chefões, cerimônias e elixires recém-desbloqueados, com o nome do projeto de origem. Selecione uma novidade para abrir a seção correspondente e marcá-la como consultada. Abrir a lista sem selecionar uma novidade **não** elimina os avisos. O contador e os itens consultados são armazenados localmente por projeto, independentemente do backup externo. Para acessibilidade, o indicador aceita teclado e a tecla Escape fecha a lista. A faixa de alterações pendentes do arquivo é independente da Central de novidades.

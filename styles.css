@@ -676,3 +676,21 @@ body.dark .cleanup-danger{color:#ffb4ab!important;border-color:#ffb4ab!important
 .file-pending-button:hover{background:#503000}
 .file-pending-button:focus-visible{outline:3px solid #174da6;outline-offset:3px}
 @media(max-width:420px){.file-pending-notice{flex-wrap:wrap}.file-pending-button{margin-left:auto}.file-pending-message div span{font-size:.78rem}}
+
+/* Central de novidades: isolada dos controles e da faixa de arquivo externo. */
+.impulso-notice-anchor{position:relative;display:inline-flex;align-items:center}
+button.impulso-badge-indicator{border:0;cursor:pointer;font-family:inherit}
+button.impulso-badge-indicator:focus-visible,.impulso-notice-popover button:focus-visible{outline:3px solid var(--focus,#f59e0b);outline-offset:3px}
+.impulso-notice-popover{position:absolute;z-index:1100;right:-10px;top:calc(100% + 12px);width:min(350px,calc(100vw - 24px));max-height:min(68vh,520px);overflow:auto;background:var(--surface,#fff);color:var(--text,#18212f);border:1px solid var(--border,#aaa);border-radius:14px;box-shadow:0 12px 35px #0005;padding:10px;text-align:left}
+.impulso-notice-popover[hidden]{display:none!important}
+.impulso-notice-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 6px 10px}
+.impulso-notice-heading button{border:1px solid var(--border,#999);border-radius:8px;background:transparent;color:inherit;font-size:1.35rem;min-width:36px;min-height:36px;cursor:pointer}
+.impulso-notice-list{display:grid;gap:5px}
+.impulso-notice-item{display:flex;align-items:flex-start;gap:10px;width:100%;padding:11px 9px;text-align:left;border:1px solid var(--border,#aaa);border-radius:9px;background:var(--surface-2,rgba(127,127,127,.08));color:inherit;cursor:pointer;font:inherit}
+.impulso-notice-item:hover{filter:brightness(.96)}
+.impulso-notice-item>span:first-child{font-size:1.3rem}
+.impulso-notice-item>span:last-child{display:grid;gap:3px;min-width:0}
+.impulso-notice-item small{font-size:.79rem;opacity:.85;overflow-wrap:anywhere}
+.impulso-notice-empty{padding:12px;font-size:.9rem}
+@media(max-width:400px){.impulso-notice-popover{right:-85px;width:min(310px,calc(100vw - 18px))}}
+@media print{.impulso-notice-popover{display:none!important}}

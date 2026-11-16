@@ -190,38 +190,51 @@ try{const stored=JSON.parse(localStorage.getItem(BADGE_KEY)||'null');if(stored&&
  badgeData.enabled=stored.enabled!==false;
  badgeData.projects=stored.projects&&typeof stored.projects==='object'?stored.projects:{};
 }}catch{}
-const badgeKinds=['titles','medals','bosses','ceremonies'];
-function badgeCounts(p){return {
- titles:Object.keys(p.insignias?.titles||{}).length,
- medals:Object.keys(p.insignias?.medals||{}).length,
- bosses:bossStatus(p).done,
- ceremonies:milestoneCount(total(p))
-}}
+const badgeKinds=['titles','medals','bosses','ceremonies','elixirs'];
+function badgeItems(p){
+ const titles=INSIGNIA_TITLES.filter(([name])=>p.insignias?.titles?.[name]).map(([name])=>({id:'titles:'+name,kind:'titles',title:'Título desbloqueado',detail:name,page:'insignias',icon:'🛡️'}));
+ const medals=INSIGNIA_MEDALS.filter(([id])=>p.insignias?.medals?.[id]).map(([id,name])=>({id:'medals:'+id,kind:'medals',title:'Medalha conquistada',detail:name,page:'insignias',icon:'🏅'}));
+ const bosses=Array.from({length:bossStatus(p).done},(_,i)=>({id:'bosses:'+(i+1),kind:'bosses',title:'Chefão derrotado',detail:CODEX_MONSTERS[i]?.name||'Chefão '+(i+1),page:'codex',icon:'⚔️'}));
+ const ceremonies=Array.from({length:milestoneCount(total(p))},(_,i)=>({id:'ceremonies:'+(i+1),kind:'ceremonies',title:'Cerimônia desbloqueada',detail:ceremonyTitle(i+1),page:'cerimonias',icon:'🏆'}));
+ const elixirs=elixirClaims(p).map(c=>({id:'elixirs:'+c.bossId,kind:'elixirs',title:'Elixir descoberto',detail:'Elixir do chefão '+c.bossId,page:'altar',icon:'⚗️'}));
+ return [...titles,...medals,...bosses,...ceremonies,...elixirs];
+}
 function persistBadgeData(){try{localStorage.setItem(BADGE_KEY,JSON.stringify(badgeData))}catch{}}
-function updateBadges(viewed=[]){
- let changed=false,unread=0;
- for(const p of state.projects){
-  const counts=badgeCounts(p);let entry=badgeData.projects[p.id];
-  if(!entry){entry=badgeData.projects[p.id]={seen:{...counts},high:{...counts}};changed=true}
-  for(const kind of badgeKinds){
-   const value=counts[kind];
-   if(!Number.isFinite(entry.high?.[kind])){entry.high??={};entry.high[kind]=value;changed=true}
-   if(!Number.isFinite(entry.seen?.[kind])){entry.seen??={};entry.seen[kind]=value;changed=true}
-   if(value>entry.high[kind]){entry.high[kind]=value;changed=true}
-   if(p.id===state.active&&viewed.includes(kind)&&entry.seen[kind]<entry.high[kind]){entry.seen[kind]=entry.high[kind];changed=true}
-   unread+=Math.max(0,entry.high[kind]-entry.seen[kind]);
+let noticesOpen=false;
+function unreadNotices(){
+ const result=[];for(const p of state.projects){const entry=badgeData.projects[p.id];if(!entry)continue;
+  for(const item of badgeItems(p))if(!entry.read?.includes(item.id))result.push({...item,projectId:p.id,projectName:p.name});
+ }return result;
+}
+function renderNoticePopover(){
+ const pop=document.getElementById('impulsoNoticePopover');if(!pop)return;
+ const items=unreadNotices();pop.hidden=!noticesOpen;
+ if(!noticesOpen)return;
+ pop.innerHTML='<div class="impulso-notice-heading"><strong>Novidades do Impulso</strong><button type="button" id="closeNoticePopover" aria-label="Fechar novidades">×</button></div>'+
+ (items.length?'<div class="impulso-notice-list">'+items.slice(0,100).map(item=>`<button type="button" class="impulso-notice-item" data-notice-id="${esc(item.id)}" data-notice-project="${esc(item.projectId)}"><span aria-hidden="true">${item.icon}</span><span><strong>${esc(item.title)}</strong><small>${esc(item.detail)}</small><small>Projeto: ${esc(item.projectName)} · Abrir ${esc(item.page==='altar'?'Elixires':item.page==='codex'?'Codex':item.page==='insignias'?'Insígnias':'Cerimônias')}</small></span></button>`).join('')+'</div>':'<p class="impulso-notice-empty">Nenhuma novidade pendente.</p>')+
+ (items.length>100?'<p class="impulso-notice-empty">Exibindo as primeiras 100 novidades.</p>':'');
+}
+function updateBadges(){
+ let changed=false;
+ for(const p of state.projects){const items=badgeItems(p),counts={};for(const k of badgeKinds)counts[k]=items.filter(x=>x.kind===k).length;
+  let entry=badgeData.projects[p.id];if(!entry){entry=badgeData.projects[p.id]={seen:{...counts},high:{...counts},read:items.map(x=>x.id)};changed=true}
+  if(!Array.isArray(entry.read)){
+   entry.read=[];for(const kind of badgeKinds){const oldSeen=kind==='elixirs'&&!Number.isFinite(entry.seen?.elixirs)?items.filter(x=>x.kind==='elixirs').length:Math.max(0,Number(entry.seen?.[kind])||0);entry.read.push(...items.filter(x=>x.kind===kind).slice(0,oldSeen).map(x=>x.id))}changed=true;
   }
+  // Reconcilia itens que deixaram de existir, mantendo apenas conquistas válidas.
+  const valid=new Set(items.map(x=>x.id));const next=entry.read.filter(id=>valid.has(id));if(next.length!==entry.read.length){entry.read=next;changed=true}
+  entry.high={...counts};entry.seen=Object.fromEntries(badgeKinds.map(k=>[k,items.filter(x=>x.kind===k&&entry.read.includes(x.id)).length]));
  }
  for(const id of Object.keys(badgeData.projects))if(!state.projects.some(p=>p.id===id)){delete badgeData.projects[id];changed=true}
  if(changed)persistBadgeData();
- const count=badgeData.enabled?Math.min(unread,999):0;
- const supported='setAppBadge' in navigator&&'clearAppBadge' in navigator;
- if(supported){try{const operation=count?navigator.setAppBadge(count):navigator.clearAppBadge();Promise.resolve(operation).catch(()=>{});}catch{}}
- const indicator=document.getElementById('impulsoBadgeIndicator');
- if(indicator){indicator.hidden=!count;indicator.textContent=count?String(count):'';indicator.setAttribute('aria-label',count+ ' conquistas ainda não visualizadas')}
- return count;
+ const count=badgeData.enabled?Math.min(unreadNotices().length,999):0;
+ if('setAppBadge'in navigator&&'clearAppBadge'in navigator){try{Promise.resolve(count?navigator.setAppBadge(count):navigator.clearAppBadge()).catch(()=>{})}catch{}}
+ const indicator=document.getElementById('impulsoBadgeIndicator');if(indicator){indicator.hidden=!count;indicator.textContent=count?String(count):'';indicator.setAttribute('aria-label',count+' novidades não visualizadas. Abrir lista de novidades.');indicator.setAttribute('aria-expanded',String(noticesOpen))}
+ if(noticesOpen)renderNoticePopover();return count;
 }
-function setBadgeEnabled(enabled){badgeData.enabled=Boolean(enabled);persistBadgeData();updateBadges()}
+function markNoticeRead(projectId,itemId){const entry=badgeData.projects[projectId];if(!entry)return;entry.read??=[];if(!entry.read.includes(itemId)){entry.read.push(itemId);persistBadgeData()}updateBadges()}
+function setBadgeEnabled(enabled){badgeData.enabled=Boolean(enabled);persistBadgeData();if(!enabled){noticesOpen=false;renderNoticePopover()}updateBadges()}
+function toggleNotices(force){noticesOpen=typeof force==='boolean'?force:!noticesOpen;renderNoticePopover();updateBadges()}
 function renderInsignias(p){
  if(!p){main.innerHTML=header('Insígnias','Títulos e medalhas')+'<section class="panel"><p>Abra um projeto para consultar suas conquistas.</p><button class="btn primary" data-page="projetos">Projetos</button></section>';return}
  syncInsignias(p);const a=p.insignias;const unlocked=INSIGNIA_MEDALS.filter(([id])=>a.medals[id]).length;
@@ -424,7 +437,7 @@ function renderMenu(){
   return `<div class="menu-section menu-accordion"><button type="button" class="menu-parent${open?' expanded':''}${isActive(items)?' current-group':''}" data-menu-group="${id}" aria-expanded="${open}" aria-controls="menu-sub-${id}"><span>${label}</span><span class="menu-chevron" aria-hidden="true">${open?'▾':'▸'}</span></button><div class="menu-sub" id="menu-sub-${id}" ${open?'':'hidden'}>${items.map(([key,text])=>`<button type="button" ${actions.has(key)?`data-action="${key}"`:`data-page="${key}"`} class="${(key===page || (key==='point'&&page==='ponto') || (key==='habitPage'&&page==='habitos') || (key==='manual'&&page==='entradas'))?'active':''}">${text}</button>`).join('')}</div></div>`;
  }).join('');
 }
-function render(){document.body.classList.toggle('dashboard-mode',page==='dashboard');if(page!=='radar'&&ignitionRun)stopIgnition();const p=project();renderMenu();updateActionIndicator();if(!p&& !['inicio','projetos','alertas','armazenamento','configuracao','estatisticas','entradas','visao','cerimonias','insignias','calendario','foco','dashboard'].includes(page))page='inicio';if(page==='entradas')renderRetroactiveEntries(p);if(page==='inicio')renderHome(p);if(page==='dashboard')renderDashboard(p);if(page==='ponto')renderPoint(p);if(page==='foco')renderFocus(p);if(page==='projetos')renderProjects();if(page==='dia')renderDay(p);if(page==='calendario')renderCalendar(p);if(page==='habitos')renderHabits(p);if(page==='arena')renderArena(p);if(page==='codex')renderCodex(p);if(page==='altar')renderAltar(p);if(page==='visao')renderVision(p);if(page==='radar')renderRadar(p);if(page==='cerimonias')renderCeremonies(p);if(page==='insignias')renderInsignias(p);if(page==='alertas')renderConfiguracao();if(page==='armazenamento')renderStorage();if(page==='configuracao')renderConfiguracao();if(page==='estatisticas')renderEstatisticas();const viewed=page==='insignias'?['titles','medals']:page==='arena'||page==='codex'?['bosses']:page==='cerimonias'?['ceremonies']:[];updateBadges(viewed);}
+function render(){document.body.classList.toggle('dashboard-mode',page==='dashboard');if(page!=='radar'&&ignitionRun)stopIgnition();const p=project();renderMenu();updateActionIndicator();if(!p&& !['inicio','projetos','alertas','armazenamento','configuracao','estatisticas','entradas','visao','cerimonias','insignias','calendario','foco','dashboard'].includes(page))page='inicio';if(page==='entradas')renderRetroactiveEntries(p);if(page==='inicio')renderHome(p);if(page==='dashboard')renderDashboard(p);if(page==='ponto')renderPoint(p);if(page==='foco')renderFocus(p);if(page==='projetos')renderProjects();if(page==='dia')renderDay(p);if(page==='calendario')renderCalendar(p);if(page==='habitos')renderHabits(p);if(page==='arena')renderArena(p);if(page==='codex')renderCodex(p);if(page==='altar')renderAltar(p);if(page==='visao')renderVision(p);if(page==='radar')renderRadar(p);if(page==='cerimonias')renderCeremonies(p);if(page==='insignias')renderInsignias(p);if(page==='alertas')renderConfiguracao();if(page==='armazenamento')renderStorage();if(page==='configuracao')renderConfiguracao();if(page==='estatisticas')renderEstatisticas();updateBadges();}
 // Alertas locais: preferências globais, independentes dos dados dos projetos.
 const ALERTS_KEY='impulso-alertas-v1', BACKUP_INTERVAL=15*60*1000;
 let alertSettings={backup:false,nextBackup:0,habits:false,nextHabits:0};
@@ -1283,7 +1296,7 @@ function renderConfiguracao(){
  renderAlerts();
  const alertPanel=main.querySelector('.panel');
  if(alertPanel){alertPanel.querySelectorAll('h2').forEach(h=>{});alertPanel.insertAdjacentHTML('afterbegin','<h2>Alertas</h2>');}
- const badgeSetting=`<div class="badge-setting"><label class="shortcut-switch"><input type="checkbox" id="badgeEnabledToggle" ${badgeData.enabled?'checked':''}><span>Distintivos de conquistas no ícone do aplicativo</span></label><p class="help">Mostra novidades ainda não consultadas em títulos, medalhas, Chefões e Cerimônias. A aparência depende do sistema operacional. O contador é mantido localmente, sem notificações push.</p></div>`;
+ const badgeSetting=`<div class="badge-setting"><label class="shortcut-switch"><input type="checkbox" id="badgeEnabledToggle" ${badgeData.enabled?'checked':''}><span>Distintivos de conquistas no ícone do aplicativo</span></label><p class="help">Mostra novidades ainda não consultadas em títulos, medalhas, Chefões, Cerimônias e Elixires. Abra o contador no cabeçalho para ver cada conquista e navegar até ela. A aparência depende do sistema operacional. O contador é mantido localmente, sem notificações push.</p></div>`;
  const alertContent=alertPanel?alertPanel.outerHTML.replace('</section>',badgeSetting+'</section>'):'';
  const shortcutSections=renderShortcutPreferences();
  const [keyboardContent,appContent]=shortcutSections.split('</section><section class="settings-shortcuts">');
@@ -1331,6 +1344,18 @@ setImpulsoPalette(localStorage.getItem(PALETTE_KEY));
 document.addEventListener('click',e=>{const record=e.target.closest('[data-key-record]'),reset=e.target.closest('[data-key-reset]');if(record){shortcutRecording=record.dataset.keyRecord;toast('Pressione a nova combinação. Escape cancela.');record.textContent='Pressione as teclas…';record.focus();return}if(reset){delete shortcutPrefs.keys[reset.dataset.keyReset];saveShortcutPrefs();renderConfiguracao();toast('Atalho padrão restaurado.')}});
 document.addEventListener('change',e=>{const t=e.target;if(t.id==='badgeEnabledToggle'){setBadgeEnabled(t.checked);toast(t.checked?'Distintivos ativados':'Distintivos desativados');return}if(t.matches('[data-shortcut-key-toggle]')){shortcutPrefs.keyboard[t.dataset.shortcutKeyToggle]=t.checked;saveShortcutPrefs();t.nextElementSibling.textContent=t.checked?'Ligado':'Desligado'}if(t.matches('[data-shortcut-app-toggle]')){shortcutPrefs.app[t.dataset.shortcutAppToggle]=t.checked;saveShortcutPrefs();renderConfiguracao()}if(t.matches('[data-shortcut-global]')){shortcutPrefs[t.dataset.shortcutGlobal+'Enabled']=t.checked;saveShortcutPrefs();renderConfiguracao()}if(t.matches('[data-settings-section]'))settingsOpenSection=t.dataset.settingsSection});
 document.addEventListener('toggle',e=>{const d=e.target;if(d.matches?.('details[data-settings-section]')&&d.open){settingsOpenSection=d.dataset.settingsSection;document.querySelectorAll('details[data-settings-section]').forEach(other=>{if(other!==d)other.open=false})}},true);
+// Central de novidades: hover no desktop, clique/toque e teclado em todas as plataformas.
+const noticeTrigger=document.getElementById('impulsoBadgeIndicator');
+const noticePopover=document.getElementById('impulsoNoticePopover');
+let noticeHoverClose;
+noticeTrigger.addEventListener('click',()=>toggleNotices(true));
+noticeTrigger.addEventListener('mouseenter',()=>{clearTimeout(noticeHoverClose);toggleNotices(true)});
+noticeTrigger.addEventListener('mouseleave',()=>{clearTimeout(noticeHoverClose);noticeHoverClose=setTimeout(()=>{if(!noticePopover.matches(':hover')&&!noticePopover.contains(document.activeElement))toggleNotices(false)},250)});
+noticePopover.addEventListener('mouseenter',()=>clearTimeout(noticeHoverClose));
+noticePopover.addEventListener('mouseleave',()=>{noticeHoverClose=setTimeout(()=>{if(!noticeTrigger.matches(':hover')&&!noticePopover.contains(document.activeElement))toggleNotices(false)},250)});
+noticePopover.addEventListener('click',e=>{if(e.target.closest('#closeNoticePopover')){toggleNotices(false);noticeTrigger.focus();return}const item=e.target.closest('[data-notice-id]');if(!item)return;const pid=item.dataset.noticeProject,id=item.dataset.noticeId;markNoticeRead(pid,id);if(state.projects.some(p=>p.id===pid)){state.active=pid;save();const found=badgeItems(project()).find(x=>x.id===id);page=found?.page||'dashboard';render()}toggleNotices(false)});
+document.addEventListener('pointerdown',e=>{if(noticesOpen&&!noticePopover.contains(e.target)&&!noticeTrigger.contains(e.target))toggleNotices(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&noticesOpen){toggleNotices(false);noticeTrigger.focus()}});
 $('#filePendingUpdate').addEventListener('click',()=>{if(selectedBackupHandle)atualizarBackup();else guardarBackup()});refreshFileNotice();
 $('#theme').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem(THEME,document.body.classList.contains('dark')?'dark':'light');$('#theme').setAttribute('aria-pressed',String(document.body.classList.contains('dark')));if(page==='configuracao')renderConfiguracao()};$('#fullscreen').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen?.();else document.documentElement.requestFullscreen?.().catch(()=>toast('Tela cheia indisponível neste navegador'))};if(localStorage.getItem(THEME)==='dark')document.body.classList.add('dark');$('#theme').setAttribute('aria-pressed',String(document.body.classList.contains('dark')));document.addEventListener('fullscreenchange',()=>$('#fullscreen').setAttribute('aria-label',document.fullscreenElement?'Sair da tela cheia':'Entrar em tela cheia'));modal.addEventListener('click',e=>{const btn=e.target.closest('button');if(btn?.hasAttribute('data-cancel')){e.preventDefault();e.stopPropagation();close();return}if(btn?.hasAttribute('data-replay-ceremony')){e.preventDefault();e.stopPropagation();restartCeremony();return}if(btn?.hasAttribute('data-enable-ceremony-motion')){e.preventDefault();e.stopPropagation();enableCeremonyMotion();return}if(e.target===modal)close()});$('#habitsAlertDismiss').addEventListener('click',hideHabitsAlert);
 $('#habitsAlertOpen').addEventListener('click',()=>{hideHabitsAlert();page=project()?'habitos':'projetos';render()});
