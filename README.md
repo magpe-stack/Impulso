@@ -1,6 +1,6 @@
 # Impulso — Manual completo do usuário
 
-**Motor de Produtividade Pessoal**  
+**Motor de Produtividade Pessoal — Manual integrado**  
 **Aplicativo:** https://magpe-stack.github.io/Impulso/  
 **Código-fonte:** https://github.com/magpe-stack/Impulso  
 **Manual online:** https://github.com/magpe-stack/Impulso/blob/main/README.md
@@ -9,7 +9,7 @@
 
 O **Impulso** é um aplicativo web progressivo (PWA) de produtividade pessoal. Nele, você cria projetos independentes, registra o tempo dedicado a trabalhos e hábitos, analisa sua constância e acompanha uma jornada de conquistas. O aplicativo combina ferramentas práticas de organização com uma linguagem visual inspirada em jogos. **O tempo registrado é real; as metáforas de propulsão, chefões e cerimônias são motivacionais.**
 
-> **Antes de começar:** seus projetos ficam armazenados neste navegador e dispositivo, sem sincronização automática com uma conta ou nuvem. Faça **backups regulares** e conserve cópias fora do navegador. A jornada de 10.000 horas é uma referência motivacional, não uma certificação de domínio profissional. O Impulso não substitui um sistema oficial de controle de jornada.
+> **Antes de começar:** seus projetos ficam armazenados neste navegador e dispositivo, sem sincronização automática com uma conta ou nuvem. O armazenamento local e o arquivo externo são coisas diferentes: faça **backups regulares** e conserve cópias fora do navegador. A jornada de 10.000 horas é uma referência motivacional, não uma certificação de domínio profissional. O Impulso não substitui um sistema oficial de controle de jornada.
 
 <a id="sumario-e-navegacao"></a>
 ## Sumário e navegação
@@ -25,9 +25,15 @@ Selecione um capítulo para ir diretamente ao assunto. Ao terminar a leitura, ut
 7. [Motor de Propulsão e metas](#7-motor-de-propulsao-e-metas)
 8. [Vitórias: Arena, Codex, Elixires, Insígnias, Cerimônias e Visão](#8-vitorias-arena-codex-elixires-insignias-cerimonias-e-visao)
 9. [Arquivo: guardar, atualizar, abrir e imprimir](#9-arquivo-guardar-atualizar-abrir-e-imprimir)
+   - [Guardar um Backup Geral](#guardar-salvar-um-backup-geral)
+   - [Atualizar um Backup Geral](#atualizar-sobrescrever-um-backup-existente)
+   - [Aviso de alterações pendentes](#aviso-de-alteracoes-pendentes-no-arquivo)
+   - [Abrir um backup](#abrir-restaurar-um-backup-geral)
 10. [Sistema: configurações, instalação e saída](#10-sistema-configuracoes-instalacao-e-saida)
+    - [Fechar com arquivo pendente](#fechar-o-impulso-com-arquivo-pendente)
 11. [Atalhos de teclado e de aplicativo](#11-atalhos-de-teclado-e-de-aplicativo)
 12. [Alertas, distintivos e área de transferência](#12-alertas-distintivos-e-area-de-transferencia)
+    - [Central de novidades](#distintivos-de-conquistas-badging-api)
 13. [Armazenamento e limpeza](#13-armazenamento-e-limpeza)
 14. [Temas, acessibilidade e privacidade](#14-temas-acessibilidade-e-privacidade)
 15. [Solução de problemas](#15-solucao-de-problemas)
@@ -334,14 +340,30 @@ A página **Visão** apresenta uma composição visual relacionada aos Elixires 
 
 Abra **Arquivo → Guardar**. Em navegadores compatíveis com a **File System Access API**, escolha o nome e o destino do arquivo. Nos demais, o navegador utiliza o download convencional. Confira se o arquivo foi efetivamente salvo e mantenha uma cópia fora do dispositivo.
 
-O Backup Geral contém o conjunto de projetos e seus registros. A função não envia dados para uma nuvem e não garante, por si só, que o arquivo tenha sido copiado para outro local.
+O **Backup Geral contém todos os projetos existentes no Impulso no momento da gravação**, e não somente o projeto aberto. Por exemplo: se você guardou o arquivo quando existia apenas o Projeto A e depois criou o Projeto B, a próxima atualização do Backup Geral incluirá **A e B**. Se um projeto foi excluído do aplicativo, ele poderá deixar de constar na versão atualizada do backup.
+
+A função não envia dados para uma nuvem e não garante, por si só, que o arquivo tenha sido copiado para outro local.
 
 <a id="atualizar-sobrescrever-um-backup-existente"></a>
 ### Atualizar — sobrescrever um backup existente
 
 Em **Arquivo → Atualizar**, selecione um arquivo de Backup Geral existente ou utilize o arquivo selecionado na sessão, quando aplicável. O Impulso verifica se ele é compatível e **solicita confirmação antes de sobrescrevê-lo** com os dados atuais. A operação depende do suporte do navegador à gravação direta. Se não houver suporte, utilize **Guardar** para gerar um novo arquivo.
 
-**Boa prática:** mantenha pelo menos uma cópia anterior em vez de sobrescrever sua única cópia de segurança.
+**Atenção à sobrescrita:** Atualizar substitui o conteúdo anterior do arquivo escolhido pelo **estado atual de todos os projetos**. Não significa que o projeto recém-criado apagará os demais; significa que o backup anterior será substituído por um novo retrato do conjunto. Verifique o destino e mantenha pelo menos uma cópia anterior de segurança.
+
+<a id="aviso-de-alteracoes-pendentes-no-arquivo"></a>
+### Aviso de alterações pendentes no arquivo
+
+O Impulso guarda seus registros localmente durante o uso. Separadamente, a faixa **Alterações pendentes no arquivo** aparece abaixo dos controles do cabeçalho quando os dados atuais diferem do último arquivo externo cuja gravação foi confirmada.
+
+1. Conclua ou confira a atividade em andamento, se necessário.
+2. Selecione **Atualizar arquivo** na faixa.
+3. Caso exista um arquivo associado à sessão, confira a confirmação de sobrescrita; caso contrário, use **Guardar** para escolher o destino.
+4. Aguarde a conclusão da gravação. A faixa desaparece apenas quando a gravação for confirmada e não houver novas alterações pendentes.
+
+Em navegadores que apenas iniciam um **download**, o aplicativo não consegue verificar se o usuário efetivamente guardou o JSON. Por segurança, o aviso pode permanecer. A associação ao arquivo escolhido também pode precisar ser refeita após reiniciar o navegador.
+
+**Não confunda os avisos:** esta faixa trata do **arquivo externo**; o número de novidades no cabeçalho trata de **conquistas ainda não consultadas**.
 
 <a id="abrir-restaurar-um-backup-geral"></a>
 ### Abrir — restaurar um Backup Geral
@@ -384,6 +406,15 @@ Clique no título de uma seção para abri-la ou recolhê-la. A página permite 
 
 **Sistema → Instalar** e **Sistema → Desinstalar** são explicados no capítulo 2. **Sistema → Fechar** solicita confirmação e apresenta a saída do aplicativo; o navegador pode impedir que uma página feche a própria janela. Nesse caso, feche a aba ou janela manualmente. Os dados já salvos permanecem no armazenamento local, a menos que sejam removidos por outra operação.
 
+<a id="fechar-o-impulso-com-arquivo-pendente"></a>
+### Fechar o Impulso com um arquivo pendente
+
+Ao escolher **Sistema → Fechar**, se o Backup Geral estiver desatualizado, o aplicativo oferece **Cancelar**, **Fechar sem atualizar** ou **Atualizar arquivo**. A gravação não encerra automaticamente uma sessão de trabalho em andamento.
+
+Se você clicar no **X da janela**, fechar a aba ou recarregar a página, o navegador **poderá** exibir sua confirmação nativa de saída. Esse aviso não é garantido em todas as plataformas; o Impulso não controla seu texto nem consegue aguardar uma gravação assíncrona durante o fechamento.
+
+Para evitar surpresas, confira a faixa de pendências e atualize seu backup **antes** de fechar o aplicativo.
+
 [↑ Voltar ao sumário](#sumario-e-navegacao)
 
 ---
@@ -420,11 +451,15 @@ Em **Configurações → Atalhos do Aplicativo**, configure as chaves dos **13 a
 Em **Configurações → Alertas**, ative ou desative os lembretes disponíveis, como avisos relacionados a backups e hábitos. Eles são **avisos locais enquanto o aplicativo executa**: não são notificações push garantidas com o PWA fechado, nem realizam backups automaticamente.
 
 <a id="distintivos-de-conquistas-badging-api"></a>
-### Distintivos de conquistas — Badging API
+### Central de novidades e distintivos — Badging API
 
-A opção **Distintivos de conquistas** solicita ao sistema operacional, quando compatível, a apresentação de um contador no ícone do PWA instalado. O número representa **novidades ainda não visualizadas**, como títulos, medalhas, Chefões e Cerimônias.
+A opção **Distintivos de conquistas** solicita ao sistema operacional, quando compatível, a apresentação de um contador no ícone do PWA instalado. O número representa **novidades ainda não consultadas**, como títulos, medalhas, Chefões, Cerimônias e Elixires.
 
-O Impulso também apresenta um contador interno como alternativa. Consultar as áreas correspondentes marca as novidades como visualizadas. As conquistas existentes antes da ativação inicial não devem aparecer como novidades artificiais. A Badging API não é uma notificação push e não garante atualização enquanto o aplicativo estiver fechado.
+O Impulso também apresenta um **contador interno no cabeçalho**. No computador, passe o mouse sobre ele ou clique; no celular, toque no contador. Abre-se a **Central de Novidades**, que apresenta individualmente títulos, medalhas, Chefões, Cerimônias e Elixires, incluindo o projeto de origem.
+
+Selecione uma novidade para visitar a seção correspondente e registrá-la como consultada. **Abrir a lista, por si só, não elimina as demais novidades.** A leitura é individual, e o estado consultado é mantido localmente por projeto. A lista também pode ser utilizada por teclado; **Esc** a fecha.
+
+As conquistas existentes antes da ativação inicial não devem aparecer como novidades artificiais. A Badging API não é uma notificação push e não garante atualização enquanto o aplicativo estiver fechado.
 
 <a id="copiar-resumos-clipboard-api"></a>
 ### Copiar resumos — Clipboard API
@@ -642,19 +677,3 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 Uma ferramenta para transformar dedicação em registros, continuidade em progresso e objetivos em uma jornada visível.
 
 **Site:** https://magpe-stack.github.io/Impulso/ · **Repositório:** https://github.com/magpe-stack/Impulso
-
-
-## Proteção do arquivo externo
-
-O Impulso salva os dados de trabalho automaticamente **no navegador**, mas o arquivo externo JSON é uma cópia separada. A faixa **Alterações pendentes no arquivo** aparece abaixo do cabeçalho quando o estado atual dos projetos difere do último arquivo gravado com sucesso pelo seletor de arquivos. A faixa não altera o logotipo, os controles de Ponto, tema ou tela cheia.
-
-Selecione **Atualizar arquivo** para gravar a versão atual. Se não houver um arquivo associado nesta sessão, o Impulso solicita **Guardar** para escolher um destino. **Arquivo → Atualizar** também permite escolher um backup existente, validá-lo e confirmar sua substituição. A faixa desaparece somente depois da conclusão confirmada da gravação; alterações realizadas durante a gravação permanecem pendentes.
-
-Em **Sistema → Fechar**, caso haja pendências, é possível cancelar, fechar sem atualizar ou atualizar antes de sair. Ao fechar pela janela do sistema, o navegador **pode** mostrar sua própria confirmação de saída, mas esse comportamento não é garantido, especialmente em dispositivos móveis. O aplicativo não pode personalizar a mensagem do navegador nem salvar automaticamente durante esse fechamento.
-
-**Importante:** quando o navegador apenas baixa um JSON, não há confirmação confiável de que o arquivo foi salvo. Nesse caso, o indicador permanece por segurança. Após reiniciar o navegador, pode ser necessário escolher novamente o arquivo, pois a associação ao arquivo externo não é mantida automaticamente.
-
-
-### Central de novidades no cabeçalho
-
-O contador de conquistas no cabeçalho pode ser consultado com o mouse (passando sobre o número), por clique ou por toque. A lista mostra individualmente títulos, medalhas, chefões, cerimônias e elixires recém-desbloqueados, com o nome do projeto de origem. Selecione uma novidade para abrir a seção correspondente e marcá-la como consultada. Abrir a lista sem selecionar uma novidade **não** elimina os avisos. O contador e os itens consultados são armazenados localmente por projeto, independentemente do backup externo. Para acessibilidade, o indicador aceita teclado e a tecla Escape fecha a lista. A faixa de alterações pendentes do arquivo é independente da Central de novidades.
