@@ -24,3 +24,9 @@
 #impulsinho-expressoes{border-top:1px solid var(--border,#9ba2ad);margin-top:10px;padding-top:6px}
 #impulsinho-faceta-info{font-size:12px;min-height:2em}
 #impulsinho-auto{accent-color:var(--accent,#940065)}
+
+/* v110: balões legíveis em todos os temas e modo escuro. */
+#impulsinho-root .impulsinho-balao{background:var(--theme-panel,var(--panel,#ffffff))!important;color:var(--theme-text,var(--text,#17202b))!important;border-color:var(--theme-border,var(--line,#89939d))!important}
+#impulsinho-root .impulsinho-balao :is(h2,p,label){color:inherit!important;-webkit-text-fill-color:currentColor}
+#impulsinho-root .impulsinho-balao button,#impulsinho-root .impulsinho-balao select{background:var(--theme-bg-secondary,var(--soft,#f4f5f8))!important;color:var(--theme-text,var(--text,#17202b))!important;border-color:var(--theme-border,var(--line,#89939d))!important}
+#impulsinho-root .impulsinho-reabrir{background:var(--theme-panel,var(--panel,#fff));color:var(--theme-text,var(--text,#17202b))}
