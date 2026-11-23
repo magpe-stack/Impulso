@@ -70,3 +70,12 @@
 #impulsinho-root .impulsinho-balao{max-height:min(65vh,520px);overflow-y:auto;overflow-wrap:anywhere}
 #impulsinho-root .impulsinho-balao p{white-space:pre-wrap;line-height:1.55}
 #impulsinho-root .impulsinho-perguntas #impulsinho-conquistas{display:none!important}
+
+/* v115: perguntas digitadas ficam exclusivamente no balão do usuário. */
+#impulsinho-root .impulsinho-formulario{margin-top:12px;padding-top:10px;border-top:1px solid var(--theme-border,var(--line,#89939d))}
+#impulsinho-root .impulsinho-formulario label{display:block;font-weight:650;margin-bottom:6px}
+#impulsinho-root .impulsinho-form-row{display:flex;gap:6px;align-items:stretch}
+#impulsinho-root .impulsinho-form-row input{flex:1;min-width:0;padding:9px;border-radius:9px;border:1px solid var(--theme-border,var(--line,#89939d));background:var(--theme-panel,var(--panel,#fff));color:var(--theme-text,var(--text,#17202b));font:inherit}
+#impulsinho-root .impulsinho-form-row button{flex:0 0 auto}
+#impulsinho-root .impulsinho-ajuda{font-size:12px;line-height:1.45;opacity:.85;margin:7px 0 0}
+#impulsinho-root .impulsinho-formulario input:focus-visible{outline:3px solid #ffb400;outline-offset:2px}

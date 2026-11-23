@@ -1,4 +1,4 @@
-/* Impulsinho v114 — Etapa 8: biblioteca contextual e respostas exclusivas no balão do personagem. */
+/* Impulsinho v115 — perguntas digitadas, navegação contextual e 109 facetas. */
 (()=>{'use strict';
 const KEY='impulsinho-avatar-v108',DEFAULT='impulsinho/facetas/emoji_u1f9d0_3d.webp';
 let pref={visivel:true,silenciado:false,flutuar:true,x:null,y:null};
@@ -25,13 +25,17 @@ window.addEventListener('impulsinho:navegacao',()=>queueMicrotask(mountSettings)
 const questionButton=document.createElement('button');
 questionButton.type='button';questionButton.id='impulsinho-perguntas-toggle';
 questionButton.className='impulsinho-perguntas-toggle';questionButton.textContent='☰';
-questionButton.title='Perguntar ao Impulsinho';questionButton.setAttribute('aria-label','Abrir perguntas para o Impulsinho');
+questionButton.title='Perguntas e comandos do Impulsinho';questionButton.setAttribute('aria-label','Abrir perguntas para o Impulsinho');
 questionButton.setAttribute('aria-expanded','false');questionButton.setAttribute('aria-controls','impulsinho-perguntas');
 const questions=document.createElement('section');questions.id='impulsinho-perguntas';questions.className='impulsinho-perguntas';questions.hidden=true;
 questions.setAttribute('aria-label','Perguntas e ações para o Impulsinho');
 const qTitle=document.createElement('h2');qTitle.textContent='O que você quer perguntar?';questions.append(qTitle);
 const actions=balloon.querySelector('.impulsinho-acoes');
 questions.append(actions);
+const questionForm=document.createElement('form');questionForm.className='impulsinho-formulario';questionForm.setAttribute('aria-label','Escrever pergunta ao Impulsinho');
+questionForm.innerHTML='<label for="impulsinho-pergunta-texto">Sua pergunta</label><div class="impulsinho-form-row"><input id="impulsinho-pergunta-texto" type="text" maxlength="180" autocomplete="off" placeholder="Ex.: Quanto trabalhei hoje?" required><button type="submit">Perguntar</button></div><p class="impulsinho-ajuda">Pergunte sobre Meu Dia, Motor, Arena, hábitos, conquistas, estatísticas, backup e configurações.</p>';
+questions.append(questionForm);
+
 root.append(questionButton,questions);
 // O seletor de expressões já pertence às Configurações.
 function questionsOpen(value){questions.hidden=!value;questionButton.setAttribute('aria-expanded',String(value));if(value)requestAnimationFrame(position)}
@@ -68,7 +72,28 @@ const eventQueue=[];
 let eventTimer=null;
 const DAY=86400000, MIN_GAP=90000;
 const emotionalFace={alegria:'1f973',surpresa:'1f62e',curiosidade:'1f9d0',preocupacao:'1f628',desafio:'1f620',cuidado:'1f642'};
-function express(emotion){if(!faces.length)return;const id=emotionalFace[emotion]||emotionalFace.curiosidade;const match=faces.find(f=>f.id===id);if(!match)return;const list=faceList();const i=list.indexOf(match);if(i>=0)showFace(i);else{faceImage.src=match.arquivo;avatar.setAttribute('aria-label','Conversar com o Impulsinho — '+match.emocao)}}
+// Cada uma das 109 facetas tem falas próprias em facetas-falas.json,
+// e cada família emocional percorre todas as suas expressões antes de repetir.
+const FACET_KEY='impulsinho-facetas-v115';
+let facetPhrases={},facetHistory={};
+try{facetHistory=JSON.parse(localStorage.getItem(FACET_KEY)||'{}')||{}}catch{}
+function saveFacetHistory(){try{localStorage.setItem(FACET_KEY,JSON.stringify(facetHistory))}catch{}}
+function pickFacet(emotion){
+ if(!faces.length)return null;
+ const eligible=faces.filter(f=>f.emocao===emotion||(f.contextos||[]).includes(emotion));
+ const pool=eligible.length?eligible:faces.filter(f=>f.id===emotionalFace[emotion]);
+ if(!pool.length)return faces.find(f=>f.id==='1f9d0')||faces[0];
+ const last=Number(facetHistory['index:'+emotion]??-1);const next=(last+1)%pool.length;
+ facetHistory['index:'+emotion]=next;saveFacetHistory();return pool[next];
+}
+function express(emotion){const f=pickFacet(emotion);if(!f)return;
+ const list=faceList();const i=list.indexOf(f);if(i>=0)showFace(i);else{faceImage.src=f.arquivo;faceImage.alt='';avatar.setAttribute('aria-label','Conversar com o Impulsinho — '+f.emocao)}
+ const lines=facetPhrases[f.id];if(lines?.length){const key='fala:'+f.id;const next=((Number(facetHistory[key]??-1)+1)%lines.length);facetHistory[key]=next;saveFacetHistory();
+ // A frase da faceta é um comentário adicional, nunca uma fonte de números.
+ const addition=lines[next];if(addition&&message.textContent&&!message.textContent.includes(addition))message.textContent+=' '+addition;
+ }
+}
+fetch('impulsinho/facetas-falas.json?v=115').then(r=>{if(!r.ok)throw Error('Facetas sem falas');return r.json()}).then(d=>{if(d.total!==109)throw Error('Catálogo de falas incompleto');facetPhrases=d.falas||{}}).catch(()=>{});
 function snapshot(){try{return window.Impulsinho?.consultar?.()||null}catch{return null}}
 function alertPrefs(){try{const p=JSON.parse(localStorage.getItem('impulso-alertas-v1')||'null');return {backup:p?.backup===true,habits:p?.habits===true}}catch{return {backup:false,habits:false}}}
 function isBusy(){return behavior.modo==='clique'||document.hidden||!pref.visivel||!balloon.hidden||document.querySelector('dialog[open]')!==null||document.activeElement?.matches('input,textarea,select,[contenteditable="true"]')||['foco','ponto'].includes(snapshot()?.pagina)}
@@ -121,14 +146,52 @@ function manualStats(){
  if(!p){reply('Estatísticas reais','Nenhum projeto ativo. Crie ou abra um projeto para consultar suas estatísticas.');return}
  reply('Estatísticas de '+p.nome,`${fmtHours(p.tempoMs)} horas acumuladas; ${fmtHours(p.hojeMs)} horas registradas hoje; ${fmtHours(p.horasRestantesMs)} horas restantes para a meta de 10.000 horas. ${p.chefoesDerrotados} de ${p.chefoesTotais} chefões derrotados. ${p.habitosConcluidos} execuções de hábitos registradas.`,'surpresa');
 }
+// Pede ao aplicativo que navegue; o próprio app.js valida o destino e preserva a sessão ativa.
+function goTo(topic){const pages={hoje:'dia',motor:'radar',arena:'arena',habitos:'habitos',elixires:'altar',conquistas:'insignias',estatisticas:'estatisticas',backup:'armazenamento',configuracoes:'configuracao',projetos:'projetos',ponto:'ponto',foco:'foco',calendario:'calendario',dashboard:'dashboard'};
+ const pagina=pages[topic];if(pagina)window.dispatchEvent(new CustomEvent('impulsinho:ir-para',{detail:{pagina}}));
+}
 function manualTopic(topic){
  const s=snapshot(),p=s?.projeto;
- if(!p){reply('Consulta ao Impulso','Abra um projeto para que eu possa consultar seus registros reais.');return}
- if(topic==='hoje')reply('Meu Dia',`No projeto ${p.nome}, o tempo registrado hoje é de ${fmtHours(p.hojeMs)} horas. Para conferir as atividades individualmente, abra Meu Dia.`,'curiosidade');
- if(topic==='motor')reply('Motor do Impulso',`O projeto ${p.nome} acumula ${Math.floor((Number(p.tempoMs)||0)/10000).toLocaleString('pt-BR')} Graus completos e ${fmtHours(p.tempoMs)} horas de trabalho registrado. Cada Giro equivale a 360 Graus.`,'surpresa');
- if(topic==='arena')reply('Arena',`O projeto ${p.nome} registra ${p.chefoesDerrotados} chefões derrotados, de ${p.chefoesTotais} no total. Consulte a Arena para ver o combate atual.`,'desafio');
- if(topic==='habitos')reply('Hábitos e Elixires',`Há ${p.habitosConcluidos} execuções de hábitos registradas no histórico de ${p.nome}. Consulte Hábitos e Elixires para ver as atividades e recompensas.`, 'cuidado');
+ if(topic==='conquistas'){goTo('conquistas');manualAchievements();return}
+ if(topic==='backup'){goTo('backup');manualStatus();return}
+ if(topic==='configuracoes'){goTo('configuracoes');reply('Configurações','Abri as Configurações. Aqui você escolhe temas, alertas, atalhos e como quer conversar comigo.','curiosidade');return}
+ if(topic==='projetos'){goTo('projetos');reply('Projetos','Abri a lista de projetos. Escolha um projeto para que eu possa consultar seus dados reais.','curiosidade');return}
+ if(!p){reply('Consulta ao Impulso','Ainda não existe projeto ativo. Abra um projeto para eu consultar seus registros reais.','curiosidade');return}
+ goTo(topic);
+ if(topic==='hoje')reply('Meu Dia',`Abri Meu Dia. No projeto ${p.nome}, o tempo registrado hoje é de ${fmtHours(p.hojeMs)} horas. Confira as atividades e os horários na página.`, 'curiosidade');
+ else if(topic==='motor')reply('Motor do Impulso',`Abri o Motor. ${p.nome} acumula ${Math.floor((Number(p.tempoMs)||0)/10000).toLocaleString('pt-BR')} Graus completos, equivalentes a ${fmtHours(p.tempoMs)} horas registradas. Um Giro corresponde a 360 Graus.`, 'surpresa');
+ else if(topic==='arena')reply('Arena',`Abri a Arena. ${p.nome} registra ${p.chefoesDerrotados} chefões derrotados, de ${p.chefoesTotais} no total. Confira o combate atual.`, 'desafio');
+ else if(topic==='habitos')reply('Hábitos',`Abri Hábitos. ${p.nome} registra ${p.habitosConcluidos} conclusões de hábitos. Os detalhes e os hábitos equipados estão na página.`, 'cuidado');
+ else if(topic==='elixires')reply('Elixires',`Abri o Altar dos Elixires. Você tem ${p.habitosConcluidos} execuções de hábitos registradas; confira os cofres e as recompensas na página.`, 'alegria');
+ else if(topic==='estatisticas')manualStats();
+ else if(topic==='ponto')reply('Ponto','Abri o Ponto. Você pode iniciar ou continuar o registro de trabalho por aqui. Não alterei nenhuma sessão.','curiosidade');
+ else if(topic==='foco')reply('Foco','Abri o Foco. Você pode organizar seu período de concentração. Não iniciei nenhum temporizador.','cuidado');
+ else if(topic==='calendario')reply('Calendário',`Abri o Calendário de ${p.nome}. Consulte os dias com atividades registradas.`, 'curiosidade');
+ else if(topic==='dashboard')reply('Dashboard',`Abri o Dashboard. ${p.nome} já registra ${fmtHours(p.tempoMs)} horas acumuladas.`, 'surpresa');
 }
+// Interpretador offline: intenções explícitas e variações frequentes; sem IA remota.
+function normalizeQuestion(v){return v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+function interpretQuestion(value){
+ const q=normalizeQuestion(value);if(!q)return null;
+ if(/\b(backup|copia de seguranca|guardar arquivo|arquivo externo|salvamento)\b/.test(q))return 'backup';
+ if(/\b(configurac[a-z]*|ajustes?|preferencias?|temas?|alerta ativado)\b/.test(q))return 'configuracoes';
+ if(/\b(elixir|cofre|altar)\b/.test(q))return 'elixires';
+ if(/\b(habito|habitos|rotina)\b/.test(q))return 'habitos';
+ if(/\b(chefao|chefoes|arena|monstro|combate)\b/.test(q))return 'arena';
+ if(/\b(conquista|medalha|titulo|insignia|novidade|cerimonia)\b/.test(q))return 'conquistas';
+ if(/\b(motor|grau|graus|giro|giros|pulso|propulsao)\b/.test(q))return 'motor';
+ if(/\b(hoje|meu dia|dia atual|trabalhei hoje|fiz hoje)\b/.test(q))return 'hoje';
+ if(/\b(estatistica|estatisticas|progresso|horas|tempo total|quanto tempo|meta|resumo|desempenho)\b/.test(q))return 'estatisticas';
+ if(/\b(projeto|projetos|abrir projeto)\b/.test(q))return 'projetos';
+ if(/\b(ponto|cronometro|registrar tempo)\b/.test(q))return 'ponto';
+ if(/\b(foco|pomodoro|concentracao)\b/.test(q))return 'foco';
+ if(/\b(calendario|agenda|dias trabalhados)\b/.test(q))return 'calendario';
+ if(/\b(dashboard|painel|inicio)\b/.test(q))return 'dashboard';
+ return null;
+}
+questionForm.addEventListener('submit',e=>{e.preventDefault();const field=questionForm.querySelector('input');const value=field.value.trim();if(!value)return;const topic=interpretQuestion(value);
+ if(topic){manualTopic(topic);field.value=''}else reply('Ainda estou aprendendo','Não consegui identificar essa pergunta. Experimente perguntar sobre Meu Dia, Motor, Arena, estatísticas, hábitos, conquistas, backup ou configurações.','curiosidade');
+});
 function scheduleAuto(){if(autoTimer)clearInterval(autoTimer);autoTimer=null;if(auto.checked&&pref.visivel){autoTimer=setInterval(()=>{if(!document.hidden&&balloon.hidden&&pref.visivel)randomFace()},20000)}}
 fetch('impulsinho/catalogo.json?v=109').then(res=>{if(!res.ok)throw Error('Catálogo indisponível');return res.json()}).then(data=>{faces=(data.facetas||[]).filter(f=>f.arquivo&&f.emocao);if(faces.length!==109)throw Error('Catálogo incompleto');showFace(Math.max(0,faces.findIndex(f=>f.id==='1f9d0')));info.textContent='109 expressões prontas. Use os controles para explorá-las.'}).catch(()=>{info.textContent='Não foi possível carregar o catálogo de expressões. Verifique os arquivos e atualize a página.'});
 family.addEventListener('change',()=>showFace(0));auto.addEventListener('change',()=>{try{localStorage.setItem('impulsinho-auto-v109',auto.checked?'1':'0')}catch{}scheduleAuto()});
@@ -156,7 +219,7 @@ avatar.addEventListener('pointerup',e=>{if(!drag||e.pointerId!==drag.id)return;c
 avatar.addEventListener('pointercancel',()=>{drag=null;save()});
 avatar.addEventListener('click',()=>{if(performance.now()-lastDragEnd<350)return;opened(balloon.hidden)});
 questionButton.addEventListener('click',()=>questionsOpen(questions.hidden));
-root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='avisos')manualStatus();if(action==='estatisticas')manualStats();if(['hoje','motor','arena','habitos'].includes(action))manualTopic(action);if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas')manualAchievements();if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='fechar'){questionsOpen(false);opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
+root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='avisos')manualStatus();if(action==='estatisticas')manualTopic('estatisticas');if(['hoje','motor','arena','habitos'].includes(action))manualTopic(action);if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas')manualTopic('conquistas');if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='fechar'){questionsOpen(false);opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
 reopen.addEventListener('click',()=>{visible(true);opened(true);avatar.focus()});
 
 window.addEventListener('resize',position);window.addEventListener('orientationchange',position);
