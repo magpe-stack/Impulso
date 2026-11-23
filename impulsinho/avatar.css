@@ -30,3 +30,13 @@
 #impulsinho-root .impulsinho-balao :is(h2,p,label){color:inherit!important;-webkit-text-fill-color:currentColor}
 #impulsinho-root .impulsinho-balao button,#impulsinho-root .impulsinho-balao select{background:var(--theme-bg-secondary,var(--soft,#f4f5f8))!important;color:var(--theme-text,var(--text,#17202b))!important;border-color:var(--theme-border,var(--line,#89939d))!important}
 #impulsinho-root .impulsinho-reabrir{background:var(--theme-panel,var(--panel,#fff));color:var(--theme-text,var(--text,#17202b))}
+
+/* v111: a Central de Novidades passa a ser apresentada pelo Impulsinho. */
+.impulsinho-contador{position:absolute;right:0;top:0;min-width:21px;height:21px;padding:0 4px;box-sizing:border-box;border-radius:99px;background:#9b004d;color:white;display:grid;place-items:center;font:700 12px/1 system-ui;box-shadow:0 1px 4px #0006;pointer-events:none}
+.impulsinho-contador[hidden],#impulsinho-conquistas[hidden],.impulsinho-acoes button[hidden]{display:none!important}
+#impulsinho-conquistas{margin-top:12px;border-top:1px solid currentColor;padding-top:10px}
+#impulsinho-conquistas h3{font-size:15px;margin:0 0 8px}
+.impulsinho-lista{list-style:none;padding:0;margin:0;display:grid;gap:6px;max-height:200px;overflow:auto}
+.impulsinho-lista button{display:block;width:100%;text-align:left;line-height:1.4}
+/* O cabeçalho mantém a lógica de conquistas, mas o acesso visual fica no avatar. */
+#impulsoBadgeIndicator,#impulsoNoticePopover{display:none!important}

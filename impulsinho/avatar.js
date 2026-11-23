@@ -1,4 +1,4 @@
-/* Impulsinho v110 — Etapa 4: eventos, prioridades e mensagens contextuais. */
+/* Impulsinho v111 — Etapa 5: central de conquistas e backup via avatar. */
 (()=>{'use strict';
 const KEY='impulsinho-avatar-v108',DEFAULT='impulsinho/facetas/emoji_u1f9d0_3d.webp';
 let pref={visivel:true,silenciado:false,flutuar:true,x:null,y:null};
@@ -11,6 +11,17 @@ const facePanel=root.querySelector('#impulsinho-expressoes'),family=root.querySe
 let faces=[],current=0,lastFace=-1,autoTimer=null;
 const message=root.querySelector('#impulsinho-mensagem');
 const headline=balloon.querySelector('h2');
+const achievementsButton=document.createElement('button');achievementsButton.type='button';achievementsButton.dataset.acao='conquistas';achievementsButton.textContent='Conquistas';balloon.querySelector('.impulsinho-acoes').prepend(achievementsButton);
+const achievementsPanel=document.createElement('section');achievementsPanel.id='impulsinho-conquistas';achievementsPanel.hidden=true;achievementsPanel.setAttribute('aria-label','Conquistas não consultadas');balloon.append(achievementsPanel);
+const backupAction=document.createElement('button');backupAction.type='button';backupAction.dataset.acao='backup';backupAction.textContent='Atualizar Backup Geral';backupAction.hidden=true;balloon.querySelector('.impulsinho-acoes').prepend(backupAction);
+const countIndicator=document.createElement('span');countIndicator.className='impulsinho-contador';countIndicator.hidden=true;avatar.append(countIndicator);
+function listAchievements(){try{return window.ImpulsinhoNovidades?.listar?.()||[]}catch{return []}}
+function updateAchievements(){const list=listAchievements();countIndicator.hidden=!list.length;countIndicator.textContent=list.length>99?'99+':String(list.length);avatar.setAttribute('aria-label',list.length?`Conversar com o Impulsinho; ${list.length} conquistas não consultadas`:'Conversar com o Impulsinho');if(!achievementsPanel.hidden)renderAchievements();return list}
+function renderAchievements(){const list=listAchievements();achievementsPanel.replaceChildren();const heading=document.createElement('h3');heading.textContent='Novidades e conquistas';achievementsPanel.append(heading);if(!list.length){const p=document.createElement('p');p.textContent='Nenhuma conquista pendente.';achievementsPanel.append(p);return}const ul=document.createElement('ul');ul.className='impulsinho-lista';for(const item of list.slice(0,100)){const li=document.createElement('li'),b=document.createElement('button');b.type='button';b.textContent=`${item.icon||'🏅'} ${item.title}: ${item.detail} — ${item.projectName}`;b.addEventListener('click',()=>{if(window.ImpulsinhoNovidades?.abrir?.(item.projectId,item.id)){updateAchievements();opened(false)}});li.append(b);ul.append(li)}achievementsPanel.append(ul);if(list.length>100){const p=document.createElement('p');p.textContent='Exibindo as primeiras 100 novidades.';achievementsPanel.append(p)}}
+function updateBackupAction(){backupAction.hidden=!snapshot()?.backupPendente}
+window.addEventListener('impulsinho:novidades',updateAchievements);
+window.addEventListener('impulsinho:arquivo',updateBackupAction);
+
 const faceImage=avatar.querySelector('img');
 function faceList(){return faces.filter(f=>family.value==='todas'||(f.contextos||[]).includes(family.value))}
 function showFace(index){const list=faceList();if(!list.length)return;current=(index%list.length+list.length)%list.length;const f=list[current];faceImage.src=f.arquivo;faceImage.alt='';avatar.setAttribute('aria-label','Conversar com o Impulsinho — '+f.emocao);info.textContent=`${current+1} de ${list.length} · ${f.unicode} · ${f.emocao} · intensidade ${f.intensidade}/2`;lastFace=faces.indexOf(f)}
@@ -58,7 +69,7 @@ try{auto.checked=localStorage.getItem('impulsinho-auto-v109')==='1'}catch{}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(pref))}catch{}};
 const clamp=(n,a,b)=>Math.max(a,Math.min(n,b));
 function position(){const size=avatar.getBoundingClientRect().width||78;pref.x=clamp(Number.isFinite(pref.x)?pref.x:innerWidth-size-14,8,Math.max(8,innerWidth-size-8));pref.y=clamp(Number.isFinite(pref.y)?pref.y:innerHeight-size-90,8,Math.max(8,innerHeight-size-8));avatar.style.left=pref.x+'px';avatar.style.top=pref.y+'px';if(!balloon.hidden){const width=Math.min(310,innerWidth-24),height=balloon.getBoundingClientRect().height;let left=clamp(pref.x+size/2-width/2,12,Math.max(12,innerWidth-width-12));let top=pref.y-height-10;if(top<12)top=Math.min(innerHeight-height-12,pref.y+size+10);balloon.style.left=left+'px';balloon.style.top=clamp(top,12,Math.max(12,innerHeight-height-12))+'px'}}
-function opened(v){balloon.hidden=!v;avatar.setAttribute('aria-expanded',String(v));if(v)requestAnimationFrame(position)}
+function opened(v){if(v){updateAchievements();updateBackupAction()}balloon.hidden=!v;avatar.setAttribute('aria-expanded',String(v));if(v)requestAnimationFrame(position)}
 function visible(v){pref.visivel=v;avatar.hidden=!v;avatar.style.display=v?'':'none';reopen.hidden=v;opened(false);save();scheduleAuto()}
 function sync(){silence.textContent=pref.silenciado?'Ativar áudio':'Silenciar';motion.value=pref.flutuar?'sim':'nao';avatar.querySelector('img').style.animationPlayState=pref.flutuar?'running':'paused';visible(pref.visivel);position()}
 let drag=null,lastDragEnd=0;
@@ -67,11 +78,11 @@ avatar.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return
 avatar.addEventListener('pointerup',e=>{if(!drag||e.pointerId!==drag.id)return;const moved=drag.moved;drag=null;if(moved){save();lastDragEnd=performance.now()}});
 avatar.addEventListener('pointercancel',()=>{drag=null;save()});
 avatar.addEventListener('click',()=>{if(performance.now()-lastDragEnd<350)return;opened(balloon.hidden)});
-root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='avisos')manualStatus();if(action==='fechar'){opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;silence.textContent=pref.silenciado?'Ativar áudio':'Silenciar';save()}if(action==='configurar'){config.hidden=!config.hidden;requestAnimationFrame(position)}if(action==='expressoes'){facePanel.hidden=!facePanel.hidden;requestAnimationFrame(position)}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
+root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='avisos')manualStatus();if(action==='conquistas'){achievementsPanel.hidden=!achievementsPanel.hidden;if(!achievementsPanel.hidden)renderAchievements();requestAnimationFrame(position)}if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='fechar'){opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;silence.textContent=pref.silenciado?'Ativar áudio':'Silenciar';save()}if(action==='configurar'){config.hidden=!config.hidden;requestAnimationFrame(position)}if(action==='expressoes'){facePanel.hidden=!facePanel.hidden;requestAnimationFrame(position)}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
 reopen.addEventListener('click',()=>{visible(true);opened(true);avatar.focus()});
 motion.addEventListener('change',()=>{pref.flutuar=motion.value==='sim';avatar.querySelector('img').style.animationPlayState=pref.flutuar?'running':'paused';save()});
 window.addEventListener('resize',position);window.addEventListener('orientationchange',position);
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&!balloon.hidden){opened(false);avatar.focus()}});
 window.addEventListener('impulsinho:navegacao',()=>{if(!balloon.hidden)requestAnimationFrame(position)});
-sync();scheduleAuto();setTimeout(()=>evaluate('inicio'),1500);
+sync();scheduleAuto();setTimeout(()=>{updateAchievements();updateBackupAction();evaluate('inicio')},1500);
 })();
