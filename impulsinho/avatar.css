@@ -51,3 +51,17 @@
 .impulsinho-configuracoes #impulsinho-expressoes select{width:100%;padding:8px}
 .impulsinho-configuracoes #impulsinho-expressoes .impulsinho-acoes{display:flex;gap:8px;flex-wrap:wrap}
 .impulsinho-configuracoes #impulsinho-expressoes button{border:1px solid currentColor;border-radius:8px;padding:7px;background:transparent;color:inherit}
+
+/* v113: dois balões independentes — fala e perguntas */
+#impulsinho-root .impulsinho-balao{max-width:310px}
+#impulsinho-root .impulsinho-balao .impulsinho-acoes{display:none!important}
+.impulsinho-perguntas-toggle{position:fixed;z-index:4;width:30px;height:30px;padding:0;border-radius:50%;border:1px solid var(--theme-border,var(--line,#89939d));background:var(--theme-panel,var(--panel,#fff));color:var(--theme-text,var(--text,#17202b));box-shadow:0 2px 9px #0004;cursor:pointer;font-size:17px;line-height:1}
+.impulsinho-perguntas-toggle[hidden],.impulsinho-perguntas[hidden]{display:none!important}
+.impulsinho-perguntas-toggle:focus-visible,.impulsinho-perguntas button:focus-visible{outline:3px solid #ffb400;outline-offset:3px}
+.impulsinho-perguntas{position:fixed;z-index:5;box-sizing:border-box;width:min(330px,calc(100vw - 24px));max-height:min(62vh,450px);overflow:auto;border-radius:18px;padding:14px;background:var(--theme-panel,var(--panel,#fff));color:var(--theme-text,var(--text,#17202b));border:1px solid var(--theme-border,var(--line,#89939d));box-shadow:0 10px 36px #0004;font:inherit;font-size:14px}
+.impulsinho-perguntas h2{font-size:15px;margin:0 0 12px;color:inherit}
+.impulsinho-perguntas .impulsinho-acoes{display:flex;flex-wrap:wrap;gap:8px}
+.impulsinho-perguntas button{border:1px solid var(--theme-border,var(--line,#89939d));border-radius:10px;padding:8px 10px;background:var(--theme-bg-secondary,var(--soft,#f4f5f8));color:inherit;font:inherit;cursor:pointer}
+.impulsinho-perguntas button[hidden]{display:none!important}
+.impulsinho-perguntas #impulsinho-conquistas{border-top:1px solid var(--theme-border,var(--line,#89939d));margin-top:12px;padding-top:12px}
+@media print{.impulsinho-perguntas,.impulsinho-perguntas-toggle{display:none!important}}
