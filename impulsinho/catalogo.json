@@ -1,5 +1,5 @@
 {
-  "versao": 107,
+  "versao": 109,
   "total": 109,
   "facetas": [
     {
@@ -7,763 +7,1425 @@
       "unicode": "👿",
       "arquivo": "impulsinho/facetas/emoji_u1f47f_3d.webp",
       "bytes": 38960,
-      "sha256": "bac76826c5c11d0e75a33e84b4e08f29b3632a2bd747b9e6c7bb123b7e207d6b"
+      "sha256": "bac76826c5c11d0e75a33e84b4e08f29b3632a2bd747b9e6c7bb123b7e207d6b",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio"
+      ],
+      "intensidade": 2,
+      "descricao": "imp"
     },
     {
       "id": "1f600",
       "unicode": "😀",
       "arquivo": "impulsinho/facetas/emoji_u1f600_3d.webp",
       "bytes": 41812,
-      "sha256": "9db847440b8dc5db3f1b3c06a427f195a6e95d12cbdc4021a6f2cc2eaeff6ffa"
+      "sha256": "9db847440b8dc5db3f1b3c06a427f195a6e95d12cbdc4021a6f2cc2eaeff6ffa",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "grinning rosto"
     },
     {
       "id": "1f601",
       "unicode": "😁",
       "arquivo": "impulsinho/facetas/emoji_u1f601_3d.webp",
       "bytes": 43156,
-      "sha256": "43c453f77d96829a374ccdaf4c04651841cf57522f68d1c0353ec8097480c415"
+      "sha256": "43c453f77d96829a374ccdaf4c04651841cf57522f68d1c0353ec8097480c415",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "grinning rosto with smiling eyes"
     },
     {
       "id": "1f602",
       "unicode": "😂",
       "arquivo": "impulsinho/facetas/emoji_u1f602_3d.webp",
       "bytes": 48316,
-      "sha256": "8fa5ecd7f58d2e0b475501634ec49c53824ed83b528e61e4f2031a6778468932"
+      "sha256": "8fa5ecd7f58d2e0b475501634ec49c53824ed83b528e61e4f2031a6778468932",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with tears of joy"
     },
     {
       "id": "1f603",
       "unicode": "😃",
       "arquivo": "impulsinho/facetas/emoji_u1f603_3d.webp",
       "bytes": 45132,
-      "sha256": "c0a8ebb6d5c75ac01b77f36e26266aee81976a493df67d019227dbf8022adbd1"
+      "sha256": "c0a8ebb6d5c75ac01b77f36e26266aee81976a493df67d019227dbf8022adbd1",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "smiling rosto with open mouth"
     },
     {
       "id": "1f604",
       "unicode": "😄",
       "arquivo": "impulsinho/facetas/emoji_u1f604_3d.webp",
       "bytes": 41726,
-      "sha256": "fa0e3af6fddae1c5540a3fc3604de9030fa14ff359b7804e6aa2e549f4c29cce"
+      "sha256": "fa0e3af6fddae1c5540a3fc3604de9030fa14ff359b7804e6aa2e549f4c29cce",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "smiling rosto with open mouth and smiling eyes"
     },
     {
       "id": "1f605",
       "unicode": "😅",
       "arquivo": "impulsinho/facetas/emoji_u1f605_3d.webp",
       "bytes": 45044,
-      "sha256": "36fc101c4aebf15b03d01bf1d9b39904a4d16e64de068cefa37afe870bb74728"
+      "sha256": "36fc101c4aebf15b03d01bf1d9b39904a4d16e64de068cefa37afe870bb74728",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "smiling rosto with open mouth and cold sweat"
     },
     {
       "id": "1f606",
       "unicode": "😆",
       "arquivo": "impulsinho/facetas/emoji_u1f606_3d.webp",
       "bytes": 44036,
-      "sha256": "a5d1fe342b8e54830dd33d35b2692b17392f0f099c6523fab951eaf4e147759a"
+      "sha256": "a5d1fe342b8e54830dd33d35b2692b17392f0f099c6523fab951eaf4e147759a",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "smiling rosto with open mouth and tightly-closed eyes"
     },
     {
       "id": "1f607",
       "unicode": "😇",
       "arquivo": "impulsinho/facetas/emoji_u1f607_3d.webp",
       "bytes": 50356,
-      "sha256": "80746ab51608ebbe69ff06ee4ae1599b3505175a25039549bd657d906d9a7f7c"
+      "sha256": "80746ab51608ebbe69ff06ee4ae1599b3505175a25039549bd657d906d9a7f7c",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "smiling rosto with halo"
     },
     {
       "id": "1f608",
       "unicode": "😈",
       "arquivo": "impulsinho/facetas/emoji_u1f608_3d.webp",
       "bytes": 39008,
-      "sha256": "6370d3238f9927cff088e5e76963e4e79cdb5541bd3a437d3095533da004ba31"
+      "sha256": "6370d3238f9927cff088e5e76963e4e79cdb5541bd3a437d3095533da004ba31",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio"
+      ],
+      "intensidade": 2,
+      "descricao": "smiling rosto with horns"
     },
     {
       "id": "1f609",
       "unicode": "😉",
       "arquivo": "impulsinho/facetas/emoji_u1f609_3d.webp",
       "bytes": 42348,
-      "sha256": "e804d9f35967a419275b81f53269762fc072115cefb094bbab798f821994af74"
+      "sha256": "e804d9f35967a419275b81f53269762fc072115cefb094bbab798f821994af74",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "winking rosto"
     },
     {
       "id": "1f60a",
       "unicode": "😊",
       "arquivo": "impulsinho/facetas/emoji_u1f60a_3d.webp",
       "bytes": 38546,
-      "sha256": "611324c73c4a37edf8a7ccec0d2f38ccd17b0bbd2b041c288bdfed13a68ffb19"
+      "sha256": "611324c73c4a37edf8a7ccec0d2f38ccd17b0bbd2b041c288bdfed13a68ffb19",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "smiling rosto with smiling eyes"
     },
     {
       "id": "1f60b",
       "unicode": "😋",
       "arquivo": "impulsinho/facetas/emoji_u1f60b_3d.webp",
       "bytes": 44566,
-      "sha256": "4b9901d13630ba19ca8779676373affb21ab77d9dbe0ba9c12e08f3607c84445"
+      "sha256": "4b9901d13630ba19ca8779676373affb21ab77d9dbe0ba9c12e08f3607c84445",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto savouring delicious food"
     },
     {
       "id": "1f60c",
       "unicode": "😌",
       "arquivo": "impulsinho/facetas/emoji_u1f60c_3d.webp",
       "bytes": 40126,
-      "sha256": "48a4b3703652184ad3b42f9169e83c6a41e907d6693d88eed81b6d65c365d2e4"
+      "sha256": "48a4b3703652184ad3b42f9169e83c6a41e907d6693d88eed81b6d65c365d2e4",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria",
+        "descanso"
+      ],
+      "intensidade": 1,
+      "descricao": "relieved rosto"
     },
     {
       "id": "1f60e",
       "unicode": "😎",
       "arquivo": "impulsinho/facetas/emoji_u1f60e_3d.webp",
       "bytes": 38982,
-      "sha256": "5b5a0b5e794773a5b206965be2d5b4aa7441de6a48ab4236d7d8e0cc4cd6c519"
+      "sha256": "5b5a0b5e794773a5b206965be2d5b4aa7441de6a48ab4236d7d8e0cc4cd6c519",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "smiling rosto with sunglasses"
     },
     {
       "id": "1f60f",
       "unicode": "😏",
       "arquivo": "impulsinho/facetas/emoji_u1f60f_3d.webp",
       "bytes": 42654,
-      "sha256": "b8c9b2fd5fbcf312c5eeadcf7330bf6d5ae16dba312cf66722ad2a768d43cc01"
+      "sha256": "b8c9b2fd5fbcf312c5eeadcf7330bf6d5ae16dba312cf66722ad2a768d43cc01",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "smirking rosto"
     },
     {
       "id": "1f610",
       "unicode": "😐",
       "arquivo": "impulsinho/facetas/emoji_u1f610_3d.webp",
       "bytes": 35526,
-      "sha256": "4c2bb622534e6d35a3102c6f3071f5ac36682e25876b5fb8ec3b6744c25d786f"
+      "sha256": "4c2bb622534e6d35a3102c6f3071f5ac36682e25876b5fb8ec3b6744c25d786f",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "neutral rosto"
     },
     {
       "id": "1f611",
       "unicode": "😑",
       "arquivo": "impulsinho/facetas/emoji_u1f611_3d.webp",
       "bytes": 33858,
-      "sha256": "a8ccc04914f5de124438baa553e110f1a8d1d15bd844b6c0009caaa2bb530ad2"
+      "sha256": "a8ccc04914f5de124438baa553e110f1a8d1d15bd844b6c0009caaa2bb530ad2",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "expressionless rosto"
     },
     {
       "id": "1f612",
       "unicode": "😒",
       "arquivo": "impulsinho/facetas/emoji_u1f612_3d.webp",
       "bytes": 43058,
-      "sha256": "3353ce58d04dfedd9fd3df83de140cf14396bc61d6b0e527eda2d1ed2113e299"
+      "sha256": "3353ce58d04dfedd9fd3df83de140cf14396bc61d6b0e527eda2d1ed2113e299",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "unamused rosto"
     },
     {
       "id": "1f613",
       "unicode": "😓",
       "arquivo": "impulsinho/facetas/emoji_u1f613_3d.webp",
       "bytes": 40634,
-      "sha256": "6d4476f54251dc8b6cebb6b0145298d5eea5c6b8d88dd2b1ac4a71133dafaf24"
+      "sha256": "6d4476f54251dc8b6cebb6b0145298d5eea5c6b8d88dd2b1ac4a71133dafaf24",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with cold sweat"
     },
     {
       "id": "1f614",
       "unicode": "😔",
       "arquivo": "impulsinho/facetas/emoji_u1f614_3d.webp",
       "bytes": 38872,
-      "sha256": "c3777a31171054dc816b1e9d2caa8476c6fbbd370894d7e77ace782e8858da4f"
+      "sha256": "c3777a31171054dc816b1e9d2caa8476c6fbbd370894d7e77ace782e8858da4f",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "pensive rosto"
     },
     {
       "id": "1f615",
       "unicode": "😕",
       "arquivo": "impulsinho/facetas/emoji_u1f615_3d.webp",
       "bytes": 38066,
-      "sha256": "100ad1342500de1461ce4226eee1624b08bc0b3f688f3f098899dc3281bd29b6"
+      "sha256": "100ad1342500de1461ce4226eee1624b08bc0b3f688f3f098899dc3281bd29b6",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "confused rosto"
     },
     {
       "id": "1f616",
       "unicode": "😖",
       "arquivo": "impulsinho/facetas/emoji_u1f616_3d.webp",
       "bytes": 44026,
-      "sha256": "9b34bdea0d42030976dcfb70fcefd894626eb11dee8a6d0d82ad794121552430"
+      "sha256": "9b34bdea0d42030976dcfb70fcefd894626eb11dee8a6d0d82ad794121552430",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "confounded rosto"
     },
     {
       "id": "1f617",
       "unicode": "😗",
       "arquivo": "impulsinho/facetas/emoji_u1f617_3d.webp",
       "bytes": 36946,
-      "sha256": "5fb40c3de54e6b303a98f80a3874c01bcedffd55834ffd84cb2f2f1c4cf2d01b"
+      "sha256": "5fb40c3de54e6b303a98f80a3874c01bcedffd55834ffd84cb2f2f1c4cf2d01b",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "kissing rosto"
     },
     {
       "id": "1f618",
       "unicode": "😘",
       "arquivo": "impulsinho/facetas/emoji_u1f618_3d.webp",
       "bytes": 42166,
-      "sha256": "6fcbf735a1b37b4d6b75996cd5e0306d13d1ba4acaf14e1f55e5309542a212c7"
+      "sha256": "6fcbf735a1b37b4d6b75996cd5e0306d13d1ba4acaf14e1f55e5309542a212c7",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto throwing a kiss"
     },
     {
       "id": "1f619",
       "unicode": "😙",
       "arquivo": "impulsinho/facetas/emoji_u1f619_3d.webp",
       "bytes": 37276,
-      "sha256": "e8206fa037fa9cd3634c6718d86d3d459a91ed9003c8cf542c498cb80876e5a9"
+      "sha256": "e8206fa037fa9cd3634c6718d86d3d459a91ed9003c8cf542c498cb80876e5a9",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "kissing rosto with smiling eyes"
     },
     {
       "id": "1f61a",
       "unicode": "😚",
       "arquivo": "impulsinho/facetas/emoji_u1f61a_3d.webp",
       "bytes": 40486,
-      "sha256": "9f394f4bb7bc84067339f094414d6a755e4dd6333a2934acba9b0d88324b3bb9"
+      "sha256": "9f394f4bb7bc84067339f094414d6a755e4dd6333a2934acba9b0d88324b3bb9",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "kissing rosto with closed eyes"
     },
     {
       "id": "1f61b",
       "unicode": "😛",
       "arquivo": "impulsinho/facetas/emoji_u1f61b_3d.webp",
       "bytes": 38268,
-      "sha256": "207b510e04217746b6f45f4601184038f9a20fb6621cc6f007f173a0785e63bc"
+      "sha256": "207b510e04217746b6f45f4601184038f9a20fb6621cc6f007f173a0785e63bc",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with stuck-out tongue"
     },
     {
       "id": "1f61c",
       "unicode": "😜",
       "arquivo": "impulsinho/facetas/emoji_u1f61c_3d.webp",
       "bytes": 43436,
-      "sha256": "027598de8e1be6ff5b0187192d2dd0e6c8f5c405f70f2ffaafd9865f3affcf2c"
+      "sha256": "027598de8e1be6ff5b0187192d2dd0e6c8f5c405f70f2ffaafd9865f3affcf2c",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with stuck-out tongue and winking eye"
     },
     {
       "id": "1f61d",
       "unicode": "😝",
       "arquivo": "impulsinho/facetas/emoji_u1f61d_3d.webp",
       "bytes": 43250,
-      "sha256": "b0ebba2db9b22f7ced68d64360f848f5788630e349d20eac2093e602f0698856"
+      "sha256": "b0ebba2db9b22f7ced68d64360f848f5788630e349d20eac2093e602f0698856",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with stuck-out tongue and tightly-closed eyes"
     },
     {
       "id": "1f61e",
       "unicode": "😞",
       "arquivo": "impulsinho/facetas/emoji_u1f61e_3d.webp",
       "bytes": 36868,
-      "sha256": "2f88931e90f8233cad58e146e7609e36d21574985131b0d7fae9afa34a44e492"
+      "sha256": "2f88931e90f8233cad58e146e7609e36d21574985131b0d7fae9afa34a44e492",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "disappointed rosto"
     },
     {
       "id": "1f61f",
       "unicode": "😟",
       "arquivo": "impulsinho/facetas/emoji_u1f61f_3d.webp",
       "bytes": 42622,
-      "sha256": "0e5a9341d6fc9b78067dbe302f58fc8da1bd37655a1977bc8343b1d861aa84ef"
+      "sha256": "0e5a9341d6fc9b78067dbe302f58fc8da1bd37655a1977bc8343b1d861aa84ef",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "worried rosto"
     },
     {
       "id": "1f620",
       "unicode": "😠",
       "arquivo": "impulsinho/facetas/emoji_u1f620_3d.webp",
       "bytes": 41230,
-      "sha256": "acea71b98a0950d493fbca8bec3b80562404c3a52d184054df32aadb6e4fbc99"
+      "sha256": "acea71b98a0950d493fbca8bec3b80562404c3a52d184054df32aadb6e4fbc99",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio"
+      ],
+      "intensidade": 2,
+      "descricao": "angry rosto"
     },
     {
       "id": "1f621",
       "unicode": "😡",
       "arquivo": "impulsinho/facetas/emoji_u1f621_3d.webp",
       "bytes": 38896,
-      "sha256": "1105cb9e2bf2deb54d0332709f93743b25755de3fd8145adf37295c0d6132ac7"
+      "sha256": "1105cb9e2bf2deb54d0332709f93743b25755de3fd8145adf37295c0d6132ac7",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio"
+      ],
+      "intensidade": 2,
+      "descricao": "pouting rosto"
     },
     {
       "id": "1f622",
       "unicode": "😢",
       "arquivo": "impulsinho/facetas/emoji_u1f622_3d.webp",
       "bytes": 42476,
-      "sha256": "6b73bb0d533a8da9a9017768b32d5427dddda80abd998f777a2ca712979efc06"
+      "sha256": "6b73bb0d533a8da9a9017768b32d5427dddda80abd998f777a2ca712979efc06",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "crying rosto"
     },
     {
       "id": "1f623",
       "unicode": "😣",
       "arquivo": "impulsinho/facetas/emoji_u1f623_3d.webp",
       "bytes": 45366,
-      "sha256": "b991ec6852d339b258977ed5f74ff816fe62954aa40d75b90c780e5afffcec2f"
+      "sha256": "b991ec6852d339b258977ed5f74ff816fe62954aa40d75b90c780e5afffcec2f",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "persevering rosto"
     },
     {
       "id": "1f624",
       "unicode": "😤",
       "arquivo": "impulsinho/facetas/emoji_u1f624_3d.webp",
       "bytes": 49690,
-      "sha256": "296ec7f875eb1d431a441aac11c718481d3a2a8d775b73f54b9d3ef8fc356db9"
+      "sha256": "296ec7f875eb1d431a441aac11c718481d3a2a8d775b73f54b9d3ef8fc356db9",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with look of triumph"
     },
     {
       "id": "1f625",
       "unicode": "😥",
       "arquivo": "impulsinho/facetas/emoji_u1f625_3d.webp",
       "bytes": 46376,
-      "sha256": "35a88de80670288c80ede3e6b47e106108a5a4c1f05ef53cc9450467ad18aab8"
+      "sha256": "35a88de80670288c80ede3e6b47e106108a5a4c1f05ef53cc9450467ad18aab8",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "disappointed but relieved rosto"
     },
     {
       "id": "1f626",
       "unicode": "😦",
       "arquivo": "impulsinho/facetas/emoji_u1f626_3d.webp",
       "bytes": 39984,
-      "sha256": "fd44744d9c112dcdbc367430880250d61e1340874ba617b56414a4c910062c2f"
+      "sha256": "fd44744d9c112dcdbc367430880250d61e1340874ba617b56414a4c910062c2f",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "frowning rosto with open mouth"
     },
     {
       "id": "1f627",
       "unicode": "😧",
       "arquivo": "impulsinho/facetas/emoji_u1f627_3d.webp",
       "bytes": 42118,
-      "sha256": "038a64de7f899f8868674edecff21a30412e682a399ed9c3f0170fd77379d250"
+      "sha256": "038a64de7f899f8868674edecff21a30412e682a399ed9c3f0170fd77379d250",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "anguished rosto"
     },
     {
       "id": "1f628",
       "unicode": "😨",
       "arquivo": "impulsinho/facetas/emoji_u1f628_3d.webp",
       "bytes": 44342,
-      "sha256": "19ef8e02b41747b69f0726b23f5df0e2d894045e474a5af4c77144d1b344a736"
+      "sha256": "19ef8e02b41747b69f0726b23f5df0e2d894045e474a5af4c77144d1b344a736",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "fearful rosto"
     },
     {
       "id": "1f629",
       "unicode": "😩",
       "arquivo": "impulsinho/facetas/emoji_u1f629_3d.webp",
       "bytes": 43340,
-      "sha256": "8e413d081175c541585545d2114799ecc3580c1135830cbf7477b562ce21883f"
+      "sha256": "8e413d081175c541585545d2114799ecc3580c1135830cbf7477b562ce21883f",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "weary rosto"
     },
     {
       "id": "1f62a",
       "unicode": "😪",
       "arquivo": "impulsinho/facetas/emoji_u1f62a_3d.webp",
       "bytes": 46074,
-      "sha256": "1b7ac7e052b3c1fadfc8e8ea867676744e8f1ed5184021b43aaf2c752d72d4ac"
+      "sha256": "1b7ac7e052b3c1fadfc8e8ea867676744e8f1ed5184021b43aaf2c752d72d4ac",
+      "emocao": "descanso",
+      "contextos": [
+        "descanso"
+      ],
+      "intensidade": 1,
+      "descricao": "sleepy rosto"
     },
     {
       "id": "1f62b",
       "unicode": "😫",
       "arquivo": "impulsinho/facetas/emoji_u1f62b_3d.webp",
       "bytes": 44962,
-      "sha256": "5fff2162d358fa2c339d3847a01860092ff523f680bde11de24ae68cb3837025"
+      "sha256": "5fff2162d358fa2c339d3847a01860092ff523f680bde11de24ae68cb3837025",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "tired rosto"
     },
     {
       "id": "1f62c",
       "unicode": "😬",
       "arquivo": "impulsinho/facetas/emoji_u1f62c_3d.webp",
       "bytes": 43002,
-      "sha256": "d496548d24ffa847aef715e16c629b24d4e3a99396bf98cc4357986750df7041"
+      "sha256": "d496548d24ffa847aef715e16c629b24d4e3a99396bf98cc4357986750df7041",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "grimacing rosto"
     },
     {
       "id": "1f62d",
       "unicode": "😭",
       "arquivo": "impulsinho/facetas/emoji_u1f62d_3d.webp",
       "bytes": 51044,
-      "sha256": "24c1b1f40123b910f9f6a5e09fa7359658bb3813b375a0824ab0ac6808979a60"
+      "sha256": "24c1b1f40123b910f9f6a5e09fa7359658bb3813b375a0824ab0ac6808979a60",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "loudly crying rosto"
     },
     {
       "id": "1f62e_200d_1f4a8",
       "unicode": "😮‍💨",
       "arquivo": "impulsinho/facetas/emoji_u1f62e_200d_1f4a8_3d.webp",
       "bytes": 45886,
-      "sha256": "7d900c9deeae7a25ed2a9dd14426290a6b21e41040c88aae8088b6c7fba614b4"
+      "sha256": "7d900c9deeae7a25ed2a9dd14426290a6b21e41040c88aae8088b6c7fba614b4",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with open mouth"
     },
     {
       "id": "1f62e",
       "unicode": "😮",
       "arquivo": "impulsinho/facetas/emoji_u1f62e_3d.webp",
       "bytes": 40484,
-      "sha256": "7552d2e60abdad20cc6bec7627393c6075612cbcf98825411bd44c70a8387f94"
+      "sha256": "7552d2e60abdad20cc6bec7627393c6075612cbcf98825411bd44c70a8387f94",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with open mouth"
     },
     {
       "id": "1f62f",
       "unicode": "😯",
       "arquivo": "impulsinho/facetas/emoji_u1f62f_3d.webp",
       "bytes": 42282,
-      "sha256": "62a1ed21dfaae0a70f68b675b0c11458bd12b78842da4cf03309fe0eb58ffa92"
+      "sha256": "62a1ed21dfaae0a70f68b675b0c11458bd12b78842da4cf03309fe0eb58ffa92",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "hushed rosto"
     },
     {
       "id": "1f630",
       "unicode": "😰",
       "arquivo": "impulsinho/facetas/emoji_u1f630_3d.webp",
       "bytes": 43984,
-      "sha256": "254a6ed0db2a784dd01652456189fd550482773a99fdf11c49540ddb54e908d0"
+      "sha256": "254a6ed0db2a784dd01652456189fd550482773a99fdf11c49540ddb54e908d0",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with open mouth and cold sweat"
     },
     {
       "id": "1f631",
       "unicode": "😱",
       "arquivo": "impulsinho/facetas/emoji_u1f631_3d.webp",
       "bytes": 49124,
-      "sha256": "d4925b96f37a4703ca3f112393d2b85522e2070eb36f91838052630f3937a17e"
+      "sha256": "d4925b96f37a4703ca3f112393d2b85522e2070eb36f91838052630f3937a17e",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto screaming in fear"
     },
     {
       "id": "1f632",
       "unicode": "😲",
       "arquivo": "impulsinho/facetas/emoji_u1f632_3d.webp",
       "bytes": 42936,
-      "sha256": "54d88e6f146c732a8461e3f3e37ec6dfa3dd432db2bad92cf39aa3e9f362a561"
+      "sha256": "54d88e6f146c732a8461e3f3e37ec6dfa3dd432db2bad92cf39aa3e9f362a561",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "astonished rosto"
     },
     {
       "id": "1f633",
       "unicode": "😳",
       "arquivo": "impulsinho/facetas/emoji_u1f633_3d.webp",
       "bytes": 46696,
-      "sha256": "ba852d3a0efee89e8dd0d3ba8882d687d082bea088b58931c4b34deb95bd8dab"
+      "sha256": "ba852d3a0efee89e8dd0d3ba8882d687d082bea088b58931c4b34deb95bd8dab",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "flushed rosto"
     },
     {
       "id": "1f634",
       "unicode": "😴",
       "arquivo": "impulsinho/facetas/emoji_u1f634_3d.webp",
       "bytes": 46936,
-      "sha256": "6020b1e80fa76046286f4c288b9880c9bc3179397d14370544479da9d9fb08a8"
+      "sha256": "6020b1e80fa76046286f4c288b9880c9bc3179397d14370544479da9d9fb08a8",
+      "emocao": "descanso",
+      "contextos": [
+        "descanso"
+      ],
+      "intensidade": 1,
+      "descricao": "sleeping rosto"
     },
     {
       "id": "1f635_200d_1f4ab",
       "unicode": "😵‍💫",
       "arquivo": "impulsinho/facetas/emoji_u1f635_200d_1f4ab_3d.webp",
       "bytes": 50070,
-      "sha256": "417e699fa2293c4d641380c4ea07df0e51b425305906ab4cb83e29b84486cb8f"
+      "sha256": "417e699fa2293c4d641380c4ea07df0e51b425305906ab4cb83e29b84486cb8f",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "dizzy rosto"
     },
     {
       "id": "1f635",
       "unicode": "😵",
       "arquivo": "impulsinho/facetas/emoji_u1f635_3d.webp",
       "bytes": 47000,
-      "sha256": "ad5f68b019041b80af0a6e8df5717e0e80f0f045cbc95f9c382ad9ab36630c9c"
+      "sha256": "ad5f68b019041b80af0a6e8df5717e0e80f0f045cbc95f9c382ad9ab36630c9c",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "dizzy rosto"
     },
     {
       "id": "1f636_200d_1f32b",
       "unicode": "😶‍🌫",
       "arquivo": "impulsinho/facetas/emoji_u1f636_200d_1f32b_3d.webp",
       "bytes": 74266,
-      "sha256": "a8b0512245a2190c2186da01c41141eecb17977ffe5d498cf7296e4b05d538d0"
+      "sha256": "a8b0512245a2190c2186da01c41141eecb17977ffe5d498cf7296e4b05d538d0",
+      "emocao": "descanso",
+      "contextos": [
+        "descanso"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto without mouth"
     },
     {
       "id": "1f636",
       "unicode": "😶",
       "arquivo": "impulsinho/facetas/emoji_u1f636_3d.webp",
       "bytes": 37902,
-      "sha256": "d4dd5cda7c495fd1b9355f953424aa67d7daa6ebfe634a5757979e714eb940c1"
+      "sha256": "d4dd5cda7c495fd1b9355f953424aa67d7daa6ebfe634a5757979e714eb940c1",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto without mouth"
     },
     {
       "id": "1f637",
       "unicode": "😷",
       "arquivo": "impulsinho/facetas/emoji_u1f637_3d.webp",
       "bytes": 42854,
-      "sha256": "fc516125db926f084603e7abce48b7f1e88efafd5fb38ad2a2ef7b9e1825cd70"
+      "sha256": "fc516125db926f084603e7abce48b7f1e88efafd5fb38ad2a2ef7b9e1825cd70",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with medical mask"
     },
     {
       "id": "1f641",
       "unicode": "🙁",
       "arquivo": "impulsinho/facetas/emoji_u1f641_3d.webp",
       "bytes": 41224,
-      "sha256": "9679aed80fd820c7e0993a2cc16b350caf57d3ef90d418fbfa347e633b0c7af7"
+      "sha256": "9679aed80fd820c7e0993a2cc16b350caf57d3ef90d418fbfa347e633b0c7af7",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "slightly frowning rosto"
     },
     {
       "id": "1f642_200d_2194",
       "unicode": "🙂‍↔",
       "arquivo": "impulsinho/facetas/emoji_u1f642_200d_2194_3d.webp",
       "bytes": 40474,
-      "sha256": "945c34b3381d892e5ec04c00b25d3e74f9821100b271859fb7384afefde10bd5"
+      "sha256": "945c34b3381d892e5ec04c00b25d3e74f9821100b271859fb7384afefde10bd5",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "slightly smiling rosto"
     },
     {
       "id": "1f642_200d_2195",
       "unicode": "🙂‍↕",
       "arquivo": "impulsinho/facetas/emoji_u1f642_200d_2195_3d.webp",
       "bytes": 43382,
-      "sha256": "5603bcc31502367a71683964e45cbe675622bec301851b6e940c33e40e7d69bb"
+      "sha256": "5603bcc31502367a71683964e45cbe675622bec301851b6e940c33e40e7d69bb",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "slightly smiling rosto"
     },
     {
       "id": "1f642",
       "unicode": "🙂",
       "arquivo": "impulsinho/facetas/emoji_u1f642_3d.webp",
       "bytes": 41500,
-      "sha256": "ad4d2f1ceedeaa73c6269fc222261940b31ec47f6feb8591fd05ef42e78b0a06"
+      "sha256": "ad4d2f1ceedeaa73c6269fc222261940b31ec47f6feb8591fd05ef42e78b0a06",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "slightly smiling rosto"
     },
     {
       "id": "1f643",
       "unicode": "🙃",
       "arquivo": "impulsinho/facetas/emoji_u1f643_3d (1).webp",
       "bytes": 40698,
-      "sha256": "91ce871a3c53fa3792f14ee2ad10320a6e732b8431d3d73efbf1c9ec6d98bf86"
+      "sha256": "91ce871a3c53fa3792f14ee2ad10320a6e732b8431d3d73efbf1c9ec6d98bf86",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria",
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "upside-down rosto"
     },
     {
       "id": "1f644",
       "unicode": "🙄",
       "arquivo": "impulsinho/facetas/emoji_u1f644_3d.webp",
       "bytes": 41436,
-      "sha256": "289470104be5d781be2f29de20087a63d34e0e0c3b379dd3c04d12cf19cabee5"
+      "sha256": "289470104be5d781be2f29de20087a63d34e0e0c3b379dd3c04d12cf19cabee5",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with rolling eyes"
     },
     {
       "id": "1f910",
       "unicode": "🤐",
       "arquivo": "impulsinho/facetas/emoji_u1f910_3d.webp",
       "bytes": 42224,
-      "sha256": "bb8b798347c7555bb010126816565e98582058b3f5453edcfc6780b35c14a3d2"
+      "sha256": "bb8b798347c7555bb010126816565e98582058b3f5453edcfc6780b35c14a3d2",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "zipper-mouth rosto"
     },
     {
       "id": "1f911",
       "unicode": "🤑",
       "arquivo": "impulsinho/facetas/emoji_u1f911_3d.webp",
       "bytes": 49144,
-      "sha256": "bbbd1d6c86d58232d5f786302325f521a4912ef8c26f6e38104f243b849cd87a"
+      "sha256": "bbbd1d6c86d58232d5f786302325f521a4912ef8c26f6e38104f243b849cd87a",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "money-mouth rosto"
     },
     {
       "id": "1f912",
       "unicode": "🤒",
       "arquivo": "impulsinho/facetas/emoji_u1f912_3d.webp",
       "bytes": 47678,
-      "sha256": "98ac0e33ef4403aefc124638f5b300332aa3dd51be1c02567113ce43b535d492"
+      "sha256": "98ac0e33ef4403aefc124638f5b300332aa3dd51be1c02567113ce43b535d492",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with thermometer"
     },
     {
       "id": "1f913",
       "unicode": "🤓",
       "arquivo": "impulsinho/facetas/emoji_u1f913_3d.webp",
       "bytes": 52638,
-      "sha256": "3640f773e9c28c9d204d0ac15026bd724b7ae07ddf76913f89f558d4ee93bb88"
+      "sha256": "3640f773e9c28c9d204d0ac15026bd724b7ae07ddf76913f89f558d4ee93bb88",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "nerd rosto"
     },
     {
       "id": "1f914",
       "unicode": "🤔",
       "arquivo": "impulsinho/facetas/emoji_u1f914_3d.webp",
       "bytes": 50198,
-      "sha256": "5798ec0f90f9b5b049c9a96ccb9c83f84361da17794662565e6e0dbe77f18578"
+      "sha256": "5798ec0f90f9b5b049c9a96ccb9c83f84361da17794662565e6e0dbe77f18578",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "thinking rosto"
     },
     {
       "id": "1f915",
       "unicode": "🤕",
       "arquivo": "impulsinho/facetas/emoji_u1f915_3d.webp",
       "bytes": 45554,
-      "sha256": "22f5e2456d6ffdf702aac4c87341851a7c037e06344058bc53a76f949f62f428"
+      "sha256": "22f5e2456d6ffdf702aac4c87341851a7c037e06344058bc53a76f949f62f428",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with head-bandage"
     },
     {
       "id": "1f917",
       "unicode": "🤗",
       "arquivo": "impulsinho/facetas/emoji_u1f917_3d (1).webp",
       "bytes": 55842,
-      "sha256": "427a9bd5a705e54284a8bb41518fdf85ce2f432a78647b8d82570f42219167b2"
+      "sha256": "427a9bd5a705e54284a8bb41518fdf85ce2f432a78647b8d82570f42219167b2",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "hugging rosto"
     },
     {
       "id": "1f920",
       "unicode": "🤠",
       "arquivo": "impulsinho/facetas/emoji_u1f920_3d.webp",
       "bytes": 45470,
-      "sha256": "07c4fad0a3bf2d2935356b4c322f1204154682c33c98ed6ec10e75a5a34a5322"
+      "sha256": "07c4fad0a3bf2d2935356b4c322f1204154682c33c98ed6ec10e75a5a34a5322",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with cowboy hat"
     },
     {
       "id": "1f921",
       "unicode": "🤡",
       "arquivo": "impulsinho/facetas/emoji_u1f921_3d.webp",
       "bytes": 55412,
-      "sha256": "47b7154bb2a66394aafedfd6d4a039c5abf465b660cc552d69e7a0d1e1cd439c"
+      "sha256": "47b7154bb2a66394aafedfd6d4a039c5abf465b660cc552d69e7a0d1e1cd439c",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "clown rosto"
     },
     {
       "id": "1f922",
       "unicode": "🤢",
       "arquivo": "impulsinho/facetas/emoji_u1f922_3d.webp",
       "bytes": 42134,
-      "sha256": "860e1fcfe11e72efb6340d4a6ee1bd20e53b19b9e36b51540860b6b4dc22f1b3"
+      "sha256": "860e1fcfe11e72efb6340d4a6ee1bd20e53b19b9e36b51540860b6b4dc22f1b3",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "nauseated rosto"
     },
     {
       "id": "1f923",
       "unicode": "🤣",
       "arquivo": "impulsinho/facetas/emoji_u1f923_3d.webp",
       "bytes": 53408,
-      "sha256": "1d16d8a7b05b9b2b417c7494ae906bcbbcfe75f4c8a2012e8004cbe97303bfca"
+      "sha256": "1d16d8a7b05b9b2b417c7494ae906bcbbcfe75f4c8a2012e8004cbe97303bfca",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria",
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "rolling on the floor laughing"
     },
     {
       "id": "1f924",
       "unicode": "🤤",
       "arquivo": "impulsinho/facetas/emoji_u1f924_3d.webp",
       "bytes": 40702,
-      "sha256": "473b39279e96665664c8c715d272cc730b119e390e573a81e3eede263c80d4b9"
+      "sha256": "473b39279e96665664c8c715d272cc730b119e390e573a81e3eede263c80d4b9",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "drooling rosto"
     },
     {
       "id": "1f925",
       "unicode": "🤥",
       "arquivo": "impulsinho/facetas/emoji_u1f925_3d.webp",
       "bytes": 39252,
-      "sha256": "0d3e513ed6af6734721696f867f8642f62d1b1ec60881e5b4440530b0f6f6a3f"
+      "sha256": "0d3e513ed6af6734721696f867f8642f62d1b1ec60881e5b4440530b0f6f6a3f",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio"
+      ],
+      "intensidade": 2,
+      "descricao": "lying rosto"
     },
     {
       "id": "1f927",
       "unicode": "🤧",
       "arquivo": "impulsinho/facetas/emoji_u1f927_3d.webp",
       "bytes": 46224,
-      "sha256": "f2f50add1f98186c49e4930341f60dcdc539d6cf1fd4f93c33bb0692cd79a505"
+      "sha256": "f2f50add1f98186c49e4930341f60dcdc539d6cf1fd4f93c33bb0692cd79a505",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "sneezing rosto"
     },
     {
       "id": "1f928",
       "unicode": "🤨",
       "arquivo": "impulsinho/facetas/emoji_u1f928_3d.webp",
       "bytes": 39504,
-      "sha256": "7f324776c3bf8961fc77c6013bede48f01bb5b9bda1af9d9c28ac88c236a7360"
+      "sha256": "7f324776c3bf8961fc77c6013bede48f01bb5b9bda1af9d9c28ac88c236a7360",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade",
+        "surpresa"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with one eyebrow raised"
     },
     {
       "id": "1f929",
       "unicode": "🤩",
       "arquivo": "impulsinho/facetas/emoji_u1f929_3d.webp",
       "bytes": 47948,
-      "sha256": "a4b1f961fe06d1dde72a8409840d20081560e04ffa2bbccc4dbc281b325dd0ff"
+      "sha256": "a4b1f961fe06d1dde72a8409840d20081560e04ffa2bbccc4dbc281b325dd0ff",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria",
+        "surpresa"
+      ],
+      "intensidade": 1,
+      "descricao": "grinning rosto with star eyes"
     },
     {
       "id": "1f92a",
       "unicode": "🤪",
       "arquivo": "impulsinho/facetas/emoji_u1f92a_3d.webp",
       "bytes": 47086,
-      "sha256": "2ae70b537aae6d94cbb103075c27a57d94cb1a9f5988aed675194d7df21ce3ae"
+      "sha256": "2ae70b537aae6d94cbb103075c27a57d94cb1a9f5988aed675194d7df21ce3ae",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio",
+        "humor"
+      ],
+      "intensidade": 2,
+      "descricao": "grinning rosto with one large and one small eye"
     },
     {
       "id": "1f92b",
       "unicode": "🤫",
       "arquivo": "impulsinho/facetas/emoji_u1f92b_3d (1).webp",
       "bytes": 44652,
-      "sha256": "9f4f8a77e7b81a4e0d3d2577165e98d724113a24cffb8bfec1f06b0ae112c9b1"
+      "sha256": "9f4f8a77e7b81a4e0d3d2577165e98d724113a24cffb8bfec1f06b0ae112c9b1",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with finger covering closed lips"
     },
     {
       "id": "1f92c",
       "unicode": "🤬",
       "arquivo": "impulsinho/facetas/emoji_u1f92c_3d.webp",
       "bytes": 41216,
-      "sha256": "0c14450c3a807b91771590fdf55f36973aaf925daf60b78a6a3c6336bf39b63a"
+      "sha256": "0c14450c3a807b91771590fdf55f36973aaf925daf60b78a6a3c6336bf39b63a",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio"
+      ],
+      "intensidade": 2,
+      "descricao": "serious rosto with symbols covering mouth"
     },
     {
       "id": "1f92d",
       "unicode": "🤭",
       "arquivo": "impulsinho/facetas/emoji_u1f92d_3d.webp",
       "bytes": 48036,
-      "sha256": "8bfcee0abf5339865a1186c0a5cdad984286b8da87552542c96b1c1c9e45ee63"
+      "sha256": "8bfcee0abf5339865a1186c0a5cdad984286b8da87552542c96b1c1c9e45ee63",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "smiling rosto with smiling eyes and hand covering mouth"
     },
     {
       "id": "1f92e",
       "unicode": "🤮",
       "arquivo": "impulsinho/facetas/emoji_u1f92e_3d.webp",
       "bytes": 58344,
-      "sha256": "8ae424e6c409e7b4bc288e5d2e631ec1dc543690bc5e36a5ea91430eaa6c5c63"
+      "sha256": "8ae424e6c409e7b4bc288e5d2e631ec1dc543690bc5e36a5ea91430eaa6c5c63",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with open mouth vomiting"
     },
     {
       "id": "1f92f",
       "unicode": "🤯",
       "arquivo": "impulsinho/facetas/emoji_u1f92f_3d.webp",
       "bytes": 59620,
-      "sha256": "8b9248fc8283cefff77c6d2a888caac6fd9a449d47ace1de6c70168d75631b61"
+      "sha256": "8b9248fc8283cefff77c6d2a888caac6fd9a449d47ace1de6c70168d75631b61",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "shocked rosto with exploding head"
     },
     {
       "id": "1f970",
       "unicode": "🥰",
       "arquivo": "impulsinho/facetas/emoji_u1f970_3d.webp",
       "bytes": 49398,
-      "sha256": "c69aae2856cae8e6f32ec9a437b632634e63f92b87789890702676a344f590c1"
+      "sha256": "c69aae2856cae8e6f32ec9a437b632634e63f92b87789890702676a344f590c1",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "smiling rosto with smiling eyes and three hearts"
     },
     {
       "id": "1f971",
       "unicode": "🥱",
       "arquivo": "impulsinho/facetas/emoji_u1f971_3d.webp",
       "bytes": 48268,
-      "sha256": "47cb3010177656b720a4a030b7b752e9dcb6417981cfc9c0c890b18342305485"
+      "sha256": "47cb3010177656b720a4a030b7b752e9dcb6417981cfc9c0c890b18342305485",
+      "emocao": "descanso",
+      "contextos": [
+        "descanso"
+      ],
+      "intensidade": 1,
+      "descricao": "yawning rosto"
     },
     {
       "id": "1f972",
       "unicode": "🥲",
       "arquivo": "impulsinho/facetas/emoji_u1f972_3d.webp",
       "bytes": 42998,
-      "sha256": "47a775d102c8a00f00ea8eeb0d4d95e57cda8c238a94add8eee8e7cd2a58e6cd"
+      "sha256": "47a775d102c8a00f00ea8eeb0d4d95e57cda8c238a94add8eee8e7cd2a58e6cd",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "smiling rosto with tear"
     },
     {
       "id": "1f973",
       "unicode": "🥳",
       "arquivo": "impulsinho/facetas/emoji_u1f973_3d.webp",
       "bytes": 54368,
-      "sha256": "54a03b4c619fdb55948a989a11d0a6c79027ad6a137a634ff6f6a93528909e60"
+      "sha256": "54a03b4c619fdb55948a989a11d0a6c79027ad6a137a634ff6f6a93528909e60",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with party horn and party hat"
     },
     {
       "id": "1f974",
       "unicode": "🥴",
       "arquivo": "impulsinho/facetas/emoji_u1f974_3d.webp",
       "bytes": 46850,
-      "sha256": "7887ad2f6b00e53e9ba1411502bb0f346a599ede9de0ee3a33b9be6ffff5b52b"
+      "sha256": "7887ad2f6b00e53e9ba1411502bb0f346a599ede9de0ee3a33b9be6ffff5b52b",
+      "emocao": "descanso",
+      "contextos": [
+        "descanso"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with uneven eyes and wavy mouth"
     },
     {
       "id": "1f975",
       "unicode": "🥵",
       "arquivo": "impulsinho/facetas/emoji_u1f975_3d.webp",
       "bytes": 42006,
-      "sha256": "c57a6af4d63ff15f3af79af9bcff40b1566250ceee59e5e5e047c5efb99bc1f4"
+      "sha256": "c57a6af4d63ff15f3af79af9bcff40b1566250ceee59e5e5e047c5efb99bc1f4",
+      "emocao": "cuidado",
+      "contextos": [
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "overheated rosto"
     },
     {
       "id": "1f976",
       "unicode": "🥶",
       "arquivo": "impulsinho/facetas/emoji_u1f976_3d.webp",
       "bytes": 56866,
-      "sha256": "bbb00383982cf52ab9e858db0b8904933b2dd0b22eede21e1305a8b24508d82b"
+      "sha256": "bbb00383982cf52ab9e858db0b8904933b2dd0b22eede21e1305a8b24508d82b",
+      "emocao": "descanso",
+      "contextos": [
+        "descanso",
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "freezing rosto"
     },
     {
       "id": "1f978",
       "unicode": "🥸",
       "arquivo": "impulsinho/facetas/emoji_u1f978_3d.webp",
       "bytes": 50360,
-      "sha256": "90354c10dd96dad841bdf63f3d1b2214dd15b91db78f702ac5c1b363e850ecfe"
+      "sha256": "90354c10dd96dad841bdf63f3d1b2214dd15b91db78f702ac5c1b363e850ecfe",
+      "emocao": "desafio",
+      "contextos": [
+        "desafio"
+      ],
+      "intensidade": 2,
+      "descricao": "disguised rosto"
     },
     {
       "id": "1f979",
       "unicode": "🥹",
       "arquivo": "impulsinho/facetas/emoji_u1f979_3d.webp",
       "bytes": 48140,
-      "sha256": "0ed3ca9a3dd49a79019b60b22e451cea4acf3e419321dc8ce393bf540596a40c"
+      "sha256": "0ed3ca9a3dd49a79019b60b22e451cea4acf3e419321dc8ce393bf540596a40c",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria",
+        "cuidado"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto holding back tears"
     },
     {
       "id": "1f97a",
       "unicode": "🥺",
       "arquivo": "impulsinho/facetas/emoji_u1f97a_3d.webp",
       "bytes": 45826,
-      "sha256": "b1aea6f5dd11fbab774ca55ec52f8774f9c28628187985a1f01871f96c04f40a"
+      "sha256": "b1aea6f5dd11fbab774ca55ec52f8774f9c28628187985a1f01871f96c04f40a",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with pleading eyes"
     },
     {
       "id": "1f9d0",
       "unicode": "🧐",
       "arquivo": "impulsinho/facetas/emoji_u1f9d0_3d.webp",
       "bytes": 55958,
-      "sha256": "07a9ecb61738a684a841cba037d30b773106da753f56f5e5be8cd983924a3c6c"
+      "sha256": "07a9ecb61738a684a841cba037d30b773106da753f56f5e5be8cd983924a3c6c",
+      "emocao": "curiosidade",
+      "contextos": [
+        "curiosidade"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with monocle"
     },
     {
       "id": "1fae0",
       "unicode": "🫠",
       "arquivo": "impulsinho/facetas/emoji_u1fae0_3d.webp",
       "bytes": 50010,
-      "sha256": "11562ee160fa172500efb2120707b273d7a62d371ab0101238231c9ee1084337"
+      "sha256": "11562ee160fa172500efb2120707b273d7a62d371ab0101238231c9ee1084337",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "melting rosto"
     },
     {
       "id": "1fae1",
       "unicode": "🫡",
       "arquivo": "impulsinho/facetas/emoji_u1fae1_3d.webp",
       "bytes": 47976,
-      "sha256": "d7d03841fa26e426dbc757bf37d5fa076287a52888ef8f241c8f31b1807f6ad4"
+      "sha256": "d7d03841fa26e426dbc757bf37d5fa076287a52888ef8f241c8f31b1807f6ad4",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "saluting rosto"
     },
     {
       "id": "1fae2",
       "unicode": "🫢",
       "arquivo": "impulsinho/facetas/emoji_u1fae2_3d.webp",
       "bytes": 47556,
-      "sha256": "cbf3b771e973f738fed7ac7ecc1fc895a6f8fc612514782f7542997eb08f0967"
+      "sha256": "cbf3b771e973f738fed7ac7ecc1fc895a6f8fc612514782f7542997eb08f0967",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with open eyes and hand over mouth"
     },
     {
       "id": "1fae3",
       "unicode": "🫣",
       "arquivo": "impulsinho/facetas/emoji_u1fae3_3d.webp",
       "bytes": 50306,
-      "sha256": "b51247234ec3fd4acdb21da94c55590b92485c9e046ca24f53f1b9fc9f91226c"
+      "sha256": "b51247234ec3fd4acdb21da94c55590b92485c9e046ca24f53f1b9fc9f91226c",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "rosto with peeking eye"
     },
     {
       "id": "1fae4",
       "unicode": "🫤",
       "arquivo": "impulsinho/facetas/emoji_u1fae4_3d.webp",
       "bytes": 38430,
-      "sha256": "b690adb96dd6939ec5b2045f873b17b2be4e733167bdda471a2bbfc95f458114"
+      "sha256": "b690adb96dd6939ec5b2045f873b17b2be4e733167bdda471a2bbfc95f458114",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "rosto with diagonal mouth"
     },
     {
       "id": "1fae5",
       "unicode": "🫥",
       "arquivo": "impulsinho/facetas/emoji_u1fae5_3d.webp",
       "bytes": 32000,
-      "sha256": "c499e2ad442937bad962bfeab21e2dcf87d8472d5ba982bb68df53fd349bf591"
+      "sha256": "c499e2ad442937bad962bfeab21e2dcf87d8472d5ba982bb68df53fd349bf591",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "dotted line rosto"
     },
     {
       "id": "1fae8",
       "unicode": "🫨",
       "arquivo": "impulsinho/facetas/emoji_u1fae8_3d.webp",
       "bytes": 56268,
-      "sha256": "d3b1a59836d5c2eabe3d06ee5b8741e7418067adeb3bdc8082aa581d5827995b"
+      "sha256": "d3b1a59836d5c2eabe3d06ee5b8741e7418067adeb3bdc8082aa581d5827995b",
+      "emocao": "surpresa",
+      "contextos": [
+        "surpresa"
+      ],
+      "intensidade": 2,
+      "descricao": "shaking rosto"
     },
     {
       "id": "1fae9",
       "unicode": "🫩",
       "arquivo": "impulsinho/facetas/emoji_u1fae9_3d.webp",
       "bytes": 46036,
-      "sha256": "49bf7ccd390022df2d443f2ed71d5d9d5ff1a25912b1003525348dde43bc39f3"
+      "sha256": "49bf7ccd390022df2d443f2ed71d5d9d5ff1a25912b1003525348dde43bc39f3",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "expressão"
     },
     {
       "id": "1faea",
       "unicode": "🫪",
       "arquivo": "impulsinho/facetas/emoji_u1faea_3d.webp",
       "bytes": 41800,
-      "sha256": "9e73f7c9e3d8770a81597a2e562d9fad2e17a98790f688eda6064367c16ce562"
+      "sha256": "9e73f7c9e3d8770a81597a2e562d9fad2e17a98790f688eda6064367c16ce562",
+      "emocao": "humor",
+      "contextos": [
+        "humor"
+      ],
+      "intensidade": 1,
+      "descricao": "expressão"
     },
     {
       "id": "2639",
       "unicode": "☹",
       "arquivo": "impulsinho/facetas/emoji_u2639_3d.webp",
       "bytes": 38380,
-      "sha256": "788476a0c4d0df39ec41a9df20eda4375024c02718cd656ddabe8f03304ef86f"
+      "sha256": "788476a0c4d0df39ec41a9df20eda4375024c02718cd656ddabe8f03304ef86f",
+      "emocao": "preocupacao",
+      "contextos": [
+        "preocupacao"
+      ],
+      "intensidade": 2,
+      "descricao": "white frowning rosto"
     },
     {
       "id": "263a",
       "unicode": "☺",
       "arquivo": "impulsinho/facetas/emoji_u263a_3d.webp",
       "bytes": 40298,
-      "sha256": "90c29db251b293514ce80faca4b67d463629afdde4606f429744ce08e920be6f"
+      "sha256": "90c29db251b293514ce80faca4b67d463629afdde4606f429744ce08e920be6f",
+      "emocao": "alegria",
+      "contextos": [
+        "alegria"
+      ],
+      "intensidade": 1,
+      "descricao": "white smiling rosto"
     }
   ]
 }

@@ -18,3 +18,9 @@
 @media(max-width:600px){.impulsinho-avatar{width:65px;height:65px}}
 @media(prefers-reduced-motion:reduce){.impulsinho-avatar img{animation:none!important}}
 @media print{#impulsinho-root{display:none!important}}
+
+/* v109: seletor acessível de emoções */
+#impulsinho-expressoes[hidden]{display:none!important}
+#impulsinho-expressoes{border-top:1px solid var(--border,#9ba2ad);margin-top:10px;padding-top:6px}
+#impulsinho-faceta-info{font-size:12px;min-height:2em}
+#impulsinho-auto{accent-color:var(--accent,#940065)}
