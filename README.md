@@ -651,6 +651,18 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 | `contraste-temas.json` | Referência de contrastes calculados das paletas. |
 | `LICENSE` | Termos de licenciamento do repositório. |
 | `README.md` | Este Manual. |
+| `impulsinho/catalogo.json` | Catálogo e hashes das 109 facetas. |
+| `impulsinho/facetas/` | Imagens originais do futuro personagem. |
+| `impulsinho/ARQUITETURA.md` | Auditoria e contrato técnico da versão 107. |
+
+<a id="impulsinho-v107-fundacao-tecnica"></a>
+### Impulsinho — fundação técnica da versão 107
+
+A versão 107 prepara a integração do futuro assistente emocional **Impulsinho**. Esta etapa **não exibe um personagem flutuante**, balões ou sons: esses recursos serão implementados nas etapas seguintes.
+
+O pacote inclui as 109 facetas WebP originais em `impulsinho/facetas/`, um catálogo com identificadores Unicode e verificações SHA-256 em `impulsinho/catalogo.json`, além de uma ponte de leitura (`window.Impulsinho.consultar()`) para consultar, sem alterar, estatísticas do projeto ativo. Os eventos `impulsinho:dados-alterados` e `impulsinho:navegacao` permitem que os módulos futuros reajam ao aplicativo sem criar um segundo armazenamento.
+
+Os cálculos de tempo, Meu Dia e Arena reutilizam as funções já existentes no Impulso. O sistema de backups, a Central de Novidades e os alertas atuais permanecem independentes e funcionais. Consulte `impulsinho/ARQUITETURA.md` para a especificação e os limites desta etapa.
 
 <a id="glossario"></a>
 ### Glossário

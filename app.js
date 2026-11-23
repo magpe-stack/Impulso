@@ -28,11 +28,23 @@ function fileNeedsUpdate(){return !!state.projects.length&&fileSignature(state)!
 function refreshFileNotice(){const bar=document.getElementById('filePendingNotice');if(!bar)return;bar.hidden=!fileNeedsUpdate()}
 function confirmExternalFileWrite(signature){fileSyncedSignature=signature;try{localStorage.setItem(FILE_SYNC_KEY,signature)}catch{}refreshFileNotice()}
 function invalidateExternalFileSync(){fileSyncedSignature=null;try{localStorage.removeItem(FILE_SYNC_KEY)}catch{}refreshFileNotice()}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state));queueMicrotask(()=>{updateBadges();refreshFileNotice()});return true}catch(e){alert('Não foi possível salvar. Verifique o armazenamento do navegador e exporte um backup.');return false}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));queueMicrotask(()=>{updateBadges();refreshFileNotice();window.dispatchEvent(new CustomEvent("impulsinho:dados-alterados"))});return true}catch(e){alert('Não foi possível salvar. Verifique o armazenamento do navegador e exporte um backup.');return false}}
 window.addEventListener('beforeunload',event=>{if(!fileNeedsUpdate())return;event.preventDefault();event.returnValue=''});
 
 function project(){return state.projects.find(p=>p.id===state.active)||null}function normalize(p){p.records??=[];p.habits??=[];p.elixirs??=[];p.created??=now();return p}
 state.projects.forEach(normalize);if(!project())state.active=state.projects[0]?.id||null;
+// Impulsinho v107: ponte de leitura. Não modifica projetos, registros ou backups.
+// O objeto retornado é um resumo calculado no instante da consulta, não uma cópia persistente.
+window.Impulsinho=Object.freeze({
+ versao:107,
+ consultar(){
+  const p=project();
+  if(!p)return Object.freeze({projeto:null,projetos:state.projects.length,pagina:page,backupPendente:fileNeedsUpdate()});
+  const totalMs=total(p),hojeMs=dayTotal(p,dateKey(now())),chefes=bossStatus(p).done;
+  return Object.freeze({projeto:Object.freeze({id:p.id,nome:p.name,tempoMs:totalMs,hojeMs,horasRestantesMs:Math.max(0,36000000000-totalMs),habitosConcluidos:p.records.filter(r=>r.type==='habit').length,chefoesDerrotados:chefes,chefoesTotais:BOSS_COUNT}),projetos:state.projects.length,pagina:page,backupPendente:fileNeedsUpdate()});
+ }
+});
+
 function toast(s){const t=$('#toast');t.textContent=s;t.style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.style.display='none',3000)}
 function ask(s){return confirm(s)}let pendingMilestone=null;function close(){if(modal.open)modal.close();modal.classList.remove('ceremony-dialog');if(pendingMilestone){const next=pendingMilestone;pendingMilestone=null;setTimeout(next,100)}}function show(html){modal.innerHTML=html;modal.showModal();modal.querySelector('form')?.addEventListener('submit',e=>e.preventDefault());modal.querySelector('textarea')?.focus()}
 function sorted(p){return [...p.records].sort((a,b)=>a.start-b.start||(a.type==='start'?-1:1))}
@@ -437,7 +449,7 @@ function renderMenu(){
   return `<div class="menu-section menu-accordion"><button type="button" class="menu-parent${open?' expanded':''}${isActive(items)?' current-group':''}" data-menu-group="${id}" aria-expanded="${open}" aria-controls="menu-sub-${id}"><span>${label}</span><span class="menu-chevron" aria-hidden="true">${open?'▾':'▸'}</span></button><div class="menu-sub" id="menu-sub-${id}" ${open?'':'hidden'}>${items.map(([key,text])=>`<button type="button" ${actions.has(key)?`data-action="${key}"`:`data-page="${key}"`} class="${(key===page || (key==='point'&&page==='ponto') || (key==='habitPage'&&page==='habitos') || (key==='manual'&&page==='entradas'))?'active':''}">${text}</button>`).join('')}</div></div>`;
  }).join('');
 }
-function render(){document.body.classList.toggle('dashboard-mode',page==='dashboard');if(page!=='radar'&&ignitionRun)stopIgnition();const p=project();renderMenu();updateActionIndicator();if(!p&& !['inicio','projetos','alertas','armazenamento','configuracao','estatisticas','entradas','visao','cerimonias','insignias','calendario','foco','dashboard'].includes(page))page='inicio';if(page==='entradas')renderRetroactiveEntries(p);if(page==='inicio')renderHome(p);if(page==='dashboard')renderDashboard(p);if(page==='ponto')renderPoint(p);if(page==='foco')renderFocus(p);if(page==='projetos')renderProjects();if(page==='dia')renderDay(p);if(page==='calendario')renderCalendar(p);if(page==='habitos')renderHabits(p);if(page==='arena')renderArena(p);if(page==='codex')renderCodex(p);if(page==='altar')renderAltar(p);if(page==='visao')renderVision(p);if(page==='radar')renderRadar(p);if(page==='cerimonias')renderCeremonies(p);if(page==='insignias')renderInsignias(p);if(page==='alertas')renderConfiguracao();if(page==='armazenamento')renderStorage();if(page==='configuracao')renderConfiguracao();if(page==='estatisticas')renderEstatisticas();updateBadges();}
+function render(){document.body.classList.toggle('dashboard-mode',page==='dashboard');if(page!=='radar'&&ignitionRun)stopIgnition();const p=project();renderMenu();updateActionIndicator();if(!p&& !['inicio','projetos','alertas','armazenamento','configuracao','estatisticas','entradas','visao','cerimonias','insignias','calendario','foco','dashboard'].includes(page))page='inicio';if(page==='entradas')renderRetroactiveEntries(p);if(page==='inicio')renderHome(p);if(page==='dashboard')renderDashboard(p);if(page==='ponto')renderPoint(p);if(page==='foco')renderFocus(p);if(page==='projetos')renderProjects();if(page==='dia')renderDay(p);if(page==='calendario')renderCalendar(p);if(page==='habitos')renderHabits(p);if(page==='arena')renderArena(p);if(page==='codex')renderCodex(p);if(page==='altar')renderAltar(p);if(page==='visao')renderVision(p);if(page==='radar')renderRadar(p);if(page==='cerimonias')renderCeremonies(p);if(page==='insignias')renderInsignias(p);if(page==='alertas')renderConfiguracao();if(page==='armazenamento')renderStorage();if(page==='configuracao')renderConfiguracao();if(page==='estatisticas')renderEstatisticas();updateBadges();window.dispatchEvent(new CustomEvent("impulsinho:navegacao",{detail:{pagina:page}}));}
 // Alertas locais: preferências globais, independentes dos dados dos projetos.
 const ALERTS_KEY='impulso-alertas-v1', BACKUP_INTERVAL=15*60*1000;
 let alertSettings={backup:false,nextBackup:0,habits:false,nextHabits:0};
