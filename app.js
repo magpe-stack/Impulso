@@ -1320,9 +1320,11 @@ function renderConfiguracao(){
  const shortcutSections=renderShortcutPreferences();
  const [keyboardContent,appContent]=shortcutSections.split('</section><section class="settings-shortcuts">');
  const accordion=(id,title,body)=>`<details class="settings-accordion" data-settings-section="${id}" ${settingsOpenSection===id?'open':''}><summary>${title}</summary><div class="settings-accordion-body">${body}</div></details>`;
- main.innerHTML=header('Configurações','Personalize o Impulso.')+accordion('temas','Temas',settingsHtml.replace(/^.*?<section class="panel settings-palette">/s,'<section class="panel settings-palette">'))+accordion('teclado','Atalhos de Teclado',keyboardContent.replace('<section class="settings-shortcuts">','')+'</section>')+accordion('aplicativo','Atalhos do Aplicativo','<section class="settings-shortcuts">'+appContent)+accordion('alertas','Alertas',alertContent)+accordion('limpeza','Limpeza',renderLimpeza());
+ main.innerHTML=header('Configurações','Personalize o Impulso.')+accordion('temas','Temas',settingsHtml.replace(/^.*?<section class="panel settings-palette">/s,'<section class="panel settings-palette">'))+accordion('teclado','Atalhos de Teclado',keyboardContent.replace('<section class="settings-shortcuts">','')+'</section>')+accordion('aplicativo','Atalhos do Aplicativo','<section class="settings-shortcuts">'+appContent)+accordion('alertas','Alertas',alertContent)+accordion('impulsinho','Controles do Impulsinho','<div id="impulsinho-settings-mount"></div>')+accordion('limpeza','Limpeza',renderLimpeza());
 
 }
+
+window.addEventListener('impulsinho:abrir-configuracoes',()=>{settingsOpenSection='impulsinho';page='configuracao';render()});
 
 // Limpeza restrita ao Impulso: não apagar dados de outros PWAs do mesmo domínio.
 const IMPULSO_STORAGE_KEYS=[KEY,THEME,PALETTE_KEY,ALERTS_KEY,BADGE_KEY,SHORTCUT_PREF_KEY,INSTALL_PREF,STORAGE_BACKUP_DATE];
