@@ -705,3 +705,15 @@ O controle **Silenciar** ainda não emite nem bloqueia sons, pois a síntese son
 **Limites desta etapa:** ainda não existem 1.200 falas, mudança automática das 109 expressões, consultas conversacionais ou migração de avisos. A versão 107 continua oferecendo a ponte de dados para as próximas etapas.
 
 [↑ Voltar ao sumário](#sumario-e-navegacao)
+
+
+<a id="impulsinho-versao-113"></a>
+### Impulsinho — Versão 113: balões de conversa e perguntas
+
+O Impulsinho agora apresenta **dois balões independentes**. O balão de fala exibe somente as mensagens do personagem. O pequeno botão **☰**, situado abaixo e à esquerda do avatar, abre o balão de perguntas e ações do usuário, com **Ver avisos**, **Atualizar Backup Geral** (quando necessário), **Conquistas**, **Meu projeto**, **Ajustes** e **Fechar**. O painel de conquistas aparece somente no balão de perguntas. Os controles permanentes continuam em **Sistema → Configurações → Controles do Impulsinho**.
+
+O repertório contextual inicial varia mensagens de apresentação do projeto, segurança de backups, Elixires e dicas sobre atalhos de teclado. Números exibidos na consulta **Meu projeto** são calculados pelo Impulso; o personagem não inventa estatísticas. A biblioteca completa de 1.200 falas permanece como expansão planejada, não incluída nesta versão.
+
+**Acessibilidade:** os balões respeitam o tema claro/escuro, podem ser fechados com Escape e o botão de perguntas possui rótulo acessível. Em telas pequenas, a posição é limitada à área visível.
+
+[↑ Voltar ao sumário](#sumario-e-navegacao)
