@@ -689,3 +689,17 @@ Os cálculos de tempo, Meu Dia e Arena reutilizam as funções já existentes no
 Uma ferramenta para transformar dedicação em registros, continuidade em progresso e objetivos em uma jornada visível.
 
 **Site:** https://magpe-stack.github.io/Impulso/ · **Repositório:** https://github.com/magpe-stack/Impulso
+
+
+---
+
+<a id="impulsinho-versao-108"></a>
+## Impulsinho — primeira aparição (v108)
+
+Na versão 108, o Impulsinho aparece no canto inferior direito com a expressão 3D original 🧐. Arraste-o para outro lugar da tela, toque para abrir ou fechar seu balão e utilize **Silenciar**, **Ocultar** e **Configurar**. A opção **Ocultar** mostra um pequeno controle para reexibir o personagem. A posição e as preferências são guardadas neste navegador.
+
+O controle **Silenciar** ainda não emite nem bloqueia sons, pois a síntese sonora será implementada em etapa futura. A animação pode ser desativada nas configurações do próprio personagem, e também respeita a preferência de movimento reduzido do sistema.
+
+**Limites desta etapa:** ainda não existem 1.200 falas, mudança automática das 109 expressões, consultas conversacionais ou migração de avisos. A versão 107 continua oferecendo a ponte de dados para as próximas etapas.
+
+[↑ Voltar ao sumário](#sumario-e-navegacao)
