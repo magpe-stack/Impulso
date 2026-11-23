@@ -40,3 +40,14 @@
 .impulsinho-lista button{display:block;width:100%;text-align:left;line-height:1.4}
 /* O cabeçalho mantém a lógica de conquistas, mas o acesso visual fica no avatar. */
 #impulsoBadgeIndicator,#impulsoNoticePopover{display:none!important}
+
+/* v112: controles integrados ao acordeão de Configurações */
+.impulsinho-configuracoes{display:grid;gap:12px;max-width:680px}
+.impulsinho-configuracoes fieldset{border:1px solid var(--border,#888);border-radius:12px;padding:12px}
+.impulsinho-configuracoes label{display:block;margin:7px 0;line-height:1.5}
+.impulsinho-configuracoes input{accent-color:var(--accent,#c04)}
+.impulsinho-configuracoes #impulsinho-expressoes{padding:12px;border:1px solid var(--border,#888);border-radius:12px}
+.impulsinho-configuracoes #impulsinho-expressoes[hidden]{display:none!important}
+.impulsinho-configuracoes #impulsinho-expressoes select{width:100%;padding:8px}
+.impulsinho-configuracoes #impulsinho-expressoes .impulsinho-acoes{display:flex;gap:8px;flex-wrap:wrap}
+.impulsinho-configuracoes #impulsinho-expressoes button{border:1px solid currentColor;border-radius:8px;padding:7px;background:transparent;color:inherit}
