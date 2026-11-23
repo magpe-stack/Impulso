@@ -25,7 +25,7 @@ function fileSignature(value){const raw=JSON.stringify(value);let h=2166136261;f
 let fileSyncedSignature=null;
 try{fileSyncedSignature=localStorage.getItem(FILE_SYNC_KEY)}catch{}
 function fileNeedsUpdate(){return !!state.projects.length&&fileSignature(state)!==fileSyncedSignature}
-function refreshFileNotice(){const bar=document.getElementById('filePendingNotice');if(!bar)return;bar.hidden=!fileNeedsUpdate()}
+function refreshFileNotice(){window.dispatchEvent(new CustomEvent('impulsinho:arquivo',{detail:{pendente:fileNeedsUpdate()}}))}
 function confirmExternalFileWrite(signature){fileSyncedSignature=signature;try{localStorage.setItem(FILE_SYNC_KEY,signature)}catch{}refreshFileNotice()}
 function invalidateExternalFileSync(){fileSyncedSignature=null;try{localStorage.removeItem(FILE_SYNC_KEY)}catch{}refreshFileNotice()}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state));queueMicrotask(()=>{updateBadges();refreshFileNotice();window.dispatchEvent(new CustomEvent("impulsinho:dados-alterados"))});return true}catch(e){alert('Não foi possível salvar. Verifique o armazenamento do navegador e exporte um backup.');return false}}
@@ -242,8 +242,15 @@ function updateBadges(){
  const count=badgeData.enabled?Math.min(unreadNotices().length,999):0;
  if('setAppBadge'in navigator&&'clearAppBadge'in navigator){try{Promise.resolve(count?navigator.setAppBadge(count):navigator.clearAppBadge()).catch(()=>{})}catch{}}
  const indicator=document.getElementById('impulsoBadgeIndicator');if(indicator){indicator.hidden=!count;indicator.textContent=count?String(count):'';indicator.setAttribute('aria-label',count+' novidades não visualizadas. Abrir lista de novidades.');indicator.setAttribute('aria-expanded',String(noticesOpen))}
- if(noticesOpen)renderNoticePopover();return count;
+ if(noticesOpen)renderNoticePopover();window.dispatchEvent(new CustomEvent('impulsinho:novidades',{detail:{total:count}}));return count;
 }
+// Ponte v111: avatar consulta conquistas sem duplicar ou modificar a base de dados.
+window.ImpulsinhoNovidades=Object.freeze({
+ listar:()=>badgeData.enabled?unreadNotices().map(x=>({...x})):[],
+ ativo:()=>Boolean(badgeData.enabled),
+ abrir:(projectId,itemId)=>{const item=unreadNotices().find(x=>x.projectId===projectId&&x.id===itemId);if(!item)return false;markNoticeRead(projectId,itemId);if(state.projects.some(p=>p.id===projectId)){state.active=projectId;save();page=item.page;render()}return true},
+ atualizarBackup:()=>{if(selectedBackupHandle)atualizarBackup();else guardarBackup()}
+});
 function markNoticeRead(projectId,itemId){const entry=badgeData.projects[projectId];if(!entry)return;entry.read??=[];if(!entry.read.includes(itemId)){entry.read.push(itemId);persistBadgeData()}updateBadges()}
 function setBadgeEnabled(enabled){badgeData.enabled=Boolean(enabled);persistBadgeData();if(!enabled){noticesOpen=false;renderNoticePopover()}updateBadges()}
 function toggleNotices(force){noticesOpen=typeof force==='boolean'?force:!noticesOpen;renderNoticePopover();updateBadges()}
@@ -1368,7 +1375,7 @@ noticePopover.addEventListener('mouseleave',()=>{noticeHoverClose=setTimeout(()=
 noticePopover.addEventListener('click',e=>{if(e.target.closest('#closeNoticePopover')){toggleNotices(false);noticeTrigger.focus();return}const item=e.target.closest('[data-notice-id]');if(!item)return;const pid=item.dataset.noticeProject,id=item.dataset.noticeId;markNoticeRead(pid,id);if(state.projects.some(p=>p.id===pid)){state.active=pid;save();const found=badgeItems(project()).find(x=>x.id===id);page=found?.page||'dashboard';render()}toggleNotices(false)});
 document.addEventListener('pointerdown',e=>{if(noticesOpen&&!noticePopover.contains(e.target)&&!noticeTrigger.contains(e.target))toggleNotices(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&noticesOpen){toggleNotices(false);noticeTrigger.focus()}});
-$('#filePendingUpdate').addEventListener('click',()=>{if(selectedBackupHandle)atualizarBackup();else guardarBackup()});refreshFileNotice();
+refreshFileNotice();
 $('#theme').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem(THEME,document.body.classList.contains('dark')?'dark':'light');$('#theme').setAttribute('aria-pressed',String(document.body.classList.contains('dark')));if(page==='configuracao')renderConfiguracao()};$('#fullscreen').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen?.();else document.documentElement.requestFullscreen?.().catch(()=>toast('Tela cheia indisponível neste navegador'))};if(localStorage.getItem(THEME)==='dark')document.body.classList.add('dark');$('#theme').setAttribute('aria-pressed',String(document.body.classList.contains('dark')));document.addEventListener('fullscreenchange',()=>$('#fullscreen').setAttribute('aria-label',document.fullscreenElement?'Sair da tela cheia':'Entrar em tela cheia'));modal.addEventListener('click',e=>{const btn=e.target.closest('button');if(btn?.hasAttribute('data-cancel')){e.preventDefault();e.stopPropagation();close();return}if(btn?.hasAttribute('data-replay-ceremony')){e.preventDefault();e.stopPropagation();restartCeremony();return}if(btn?.hasAttribute('data-enable-ceremony-motion')){e.preventDefault();e.stopPropagation();enableCeremonyMotion();return}if(e.target===modal)close()});$('#habitsAlertDismiss').addEventListener('click',hideHabitsAlert);
 $('#habitsAlertOpen').addEventListener('click',()=>{hideHabitsAlert();page=project()?'habitos':'projetos';render()});
 $('#backupAlertDismiss').addEventListener('click',hideBackupAlert);$('#backupAlertSave').addEventListener('click',()=>{backup();hideBackupAlert()});document.addEventListener('visibilitychange',()=>{checkBackupAlert();checkHabitsAlert()});setInterval(()=>{checkBackupAlert();checkHabitsAlert()},30000);render();consumeLaunchShortcut();

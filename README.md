@@ -333,6 +333,8 @@ A página **Visão** apresenta uma composição visual relacionada aos Elixires 
 <a id="9-arquivo-guardar-atualizar-abrir-e-imprimir"></a>
 ## 9. Arquivo: guardar, atualizar, abrir e imprimir
 
+**Avisos pelo Impulsinho:** a faixa persistente de alterações pendentes não aparece mais abaixo do cabeçalho. Quando o Backup Geral precisar ser atualizado, toque no Impulsinho e selecione **Atualizar Backup Geral**. A confirmação de sobrescrita e a proteção de saída continuam ativas. As conquistas não consultadas podem ser abertas no balão pela opção **Conquistas**, com leitura individual e acesso à seção correspondente.
+
 **O armazenamento principal do Impulso continua sendo local, no navegador.** Os arquivos JSON são cópias para segurança e transferência; não substituem automaticamente o estado salvo enquanto você trabalha.
 
 <a id="guardar-salvar-um-backup-geral"></a>
