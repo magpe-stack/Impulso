@@ -1,0 +1,20 @@
+/* Impulsinho v108: interface independente e acessível */
+#impulsinho-root{position:fixed;left:0;top:0;width:0;height:0;z-index:850;font-family:inherit}
+#impulsinho-root[hidden]{display:none!important}
+.impulsinho-avatar{position:fixed;width:78px;height:78px;border:0;background:transparent;padding:0;cursor:grab;touch-action:none;user-select:none;filter:drop-shadow(0 6px 9px rgba(0,0,0,.26));z-index:2}
+.impulsinho-avatar:active{cursor:grabbing}
+.impulsinho-avatar:focus-visible,.impulsinho-balao button:focus-visible,.impulsinho-reabrir:focus-visible{outline:3px solid #ffb400;outline-offset:3px}
+.impulsinho-avatar img{width:100%;height:100%;object-fit:contain;pointer-events:none;animation:impulsinho-flutuar 3.2s ease-in-out infinite}
+@keyframes impulsinho-flutuar{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.impulsinho-balao{position:fixed;box-sizing:border-box;width:min(310px,calc(100vw - 24px));max-height:min(65vh,460px);overflow:auto;padding:14px;border-radius:17px;border:1px solid var(--border,#9ba2ad);background:var(--card,#fff);color:var(--text,#17202b);box-shadow:0 10px 36px rgba(0,0,0,.25);z-index:3;line-height:1.45;font-size:14px}
+.impulsinho-balao[hidden]{display:none!important}
+.impulsinho-balao h2{font-size:16px;margin:0 0 6px}.impulsinho-balao p{margin:5px 0 12px;overflow-wrap:anywhere}
+.impulsinho-balao .impulsinho-acoes{display:flex;flex-wrap:wrap;gap:6px}
+.impulsinho-balao button,.impulsinho-reabrir{border:1px solid currentColor;border-radius:10px;background:transparent;color:inherit;font:inherit;padding:7px 9px;cursor:pointer}
+.impulsinho-balao button:hover{background:rgba(125,125,125,.12)}
+.impulsinho-balao label{display:block;margin:10px 0 5px}.impulsinho-balao select{width:100%;padding:8px;border:1px solid #888;border-radius:8px;background:var(--card,#fff);color:var(--text,#17202b)}
+.impulsinho-reabrir{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:2;background:var(--card,#fff);color:var(--text,#17202b);box-shadow:0 3px 12px rgba(0,0,0,.2)}
+.impulsinho-reabrir[hidden]{display:none!important}
+@media(max-width:600px){.impulsinho-avatar{width:65px;height:65px}}
+@media(prefers-reduced-motion:reduce){.impulsinho-avatar img{animation:none!important}}
+@media print{#impulsinho-root{display:none!important}}

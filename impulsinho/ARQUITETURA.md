@@ -45,3 +45,11 @@ Avatar flutuante, balões, arrastar, silenciar, ocultar, 1.200 falas, motor emoc
 ## Próxima etapa
 
 Etapa 2: personagem flutuante, balões e controles básicos, sem migrar ainda o sistema de avisos.
+
+## Versão 108 — Etapa 2 (interface visual)
+
+- `avatar.js` e `avatar.css`: personagem flutuante e arrastável, balão com abertura/fechamento, controles Silenciar, Ocultar, Configurar, retorno após ocultação e persistência local de preferências e posição.
+- A expressão inicial usa uma das imagens originais (`emoji_u1f9d0_3d.webp`). A catalogação das 109 facetas permanece intacta; a alternância emocional pertence à etapa 3.
+- Silenciar prepara a preferência para a futura síntese de áudio; **não existe reprodução sonora na v108**.
+- Não há análise espontânea de estatísticas nem migração de avisos nesta versão.
+- O avatar não escreve na base de projetos, não modifica backups e respeita redução de movimento.
