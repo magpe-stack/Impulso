@@ -1,4 +1,4 @@
-/* Impulsinho v113 — Etapa 7: balões de fala e painel de perguntas independentes. */
+/* Impulsinho v114 — Etapa 8: biblioteca contextual e respostas exclusivas no balão do personagem. */
 (()=>{'use strict';
 const KEY='impulsinho-avatar-v108',DEFAULT='impulsinho/facetas/emoji_u1f9d0_3d.webp';
 let pref={visivel:true,silenciado:false,flutuar:true,x:null,y:null};
@@ -37,12 +37,19 @@ root.append(questionButton,questions);
 function questionsOpen(value){questions.hidden=!value;questionButton.setAttribute('aria-expanded',String(value));if(value)requestAnimationFrame(position)}
 const headline=balloon.querySelector('h2');
 const achievementsButton=document.createElement('button');achievementsButton.type='button';achievementsButton.dataset.acao='conquistas';achievementsButton.textContent='Conquistas';actions.prepend(achievementsButton);
-const achievementsPanel=document.createElement('section');achievementsPanel.id='impulsinho-conquistas';achievementsPanel.hidden=true;achievementsPanel.setAttribute('aria-label','Conquistas não consultadas');questions.append(achievementsPanel);
+
+for(const [id,label] of [['hoje','Meu Dia'],['motor','Motor'],['arena','Arena'],['habitos','Hábitos e Elixires']]){const b=document.createElement('button');b.type='button';b.dataset.acao=id;b.textContent=label;actions.append(b)}
 const backupAction=document.createElement('button');backupAction.type='button';backupAction.dataset.acao='backup';backupAction.textContent='Atualizar Backup Geral';backupAction.hidden=true;actions.prepend(backupAction);
 const countIndicator=document.createElement('span');countIndicator.className='impulsinho-contador';countIndicator.hidden=true;avatar.append(countIndicator);
 function listAchievements(){try{return window.ImpulsinhoNovidades?.listar?.()||[]}catch{return []}}
-function updateAchievements(){const list=listAchievements();countIndicator.hidden=!list.length;countIndicator.textContent=list.length>99?'99+':String(list.length);avatar.setAttribute('aria-label',list.length?`Conversar com o Impulsinho; ${list.length} conquistas não consultadas`:'Conversar com o Impulsinho');if(!achievementsPanel.hidden)renderAchievements();return list}
-function renderAchievements(){const list=listAchievements();achievementsPanel.replaceChildren();const heading=document.createElement('h3');heading.textContent='Novidades e conquistas';achievementsPanel.append(heading);if(!list.length){const p=document.createElement('p');p.textContent='Nenhuma conquista pendente.';achievementsPanel.append(p);return}const ul=document.createElement('ul');ul.className='impulsinho-lista';for(const item of list.slice(0,100)){const li=document.createElement('li'),b=document.createElement('button');b.type='button';b.textContent=`${item.icon||'🏅'} ${item.title}: ${item.detail} — ${item.projectName}`;b.addEventListener('click',()=>{if(window.ImpulsinhoNovidades?.abrir?.(item.projectId,item.id)){updateAchievements();opened(false)}});li.append(b);ul.append(li)}achievementsPanel.append(ul);if(list.length>100){const p=document.createElement('p');p.textContent='Exibindo as primeiras 100 novidades.';achievementsPanel.append(p)}}
+function updateAchievements(){const list=listAchievements();countIndicator.hidden=!list.length;countIndicator.textContent=list.length>99?'99+':String(list.length);avatar.setAttribute('aria-label',list.length?`Conversar com o Impulsinho; ${list.length} conquistas não consultadas`:'Conversar com o Impulsinho');return list}
+function manualAchievements(){
+ const list=updateAchievements();
+ if(!list.length){reply('Novidades e conquistas','Não há conquistas pendentes de consulta. Quando surgirem novas conquistas, vou contar a você.','curiosidade');return}
+ const descriptions=list.slice(0,5).map((item,i)=>`${i+1}. ${item.title||'Conquista'}: ${item.detail||'Novo registro'}${item.projectName?' — '+item.projectName:''}.`);
+ const extra=list.length>5?` Existem mais ${list.length-5} novidades; consulte a Central de Novidades para abrir cada uma.`:'';
+ reply('Suas novidades',`Encontrei ${list.length} conquista${list.length===1?'':'s'} ainda não consultada${list.length===1?'':'s'}. ${descriptions.join(' ')}${extra} Para navegar até cada conquista e marcá-la como lida, use a Central de Novidades do Impulso.`,'alegria');
+}
 function updateBackupAction(){backupAction.hidden=!snapshot()?.backupPendente}
 window.addEventListener('impulsinho:novidades',updateAchievements);
 window.addEventListener('impulsinho:arquivo',updateBackupAction);
@@ -73,6 +80,8 @@ const FALAS={
  atalhos:["Uma dica: consulte os atalhos de teclado do Impulso para navegar mais rápido.","Você sabia que o Impulso tem atalhos de teclado? Veja a seção de atalhos no Manual.","Dica rápida: os atalhos de teclado estão documentados no Manual do Impulso."],
  geral:["Estou por aqui quando quiser consultar seu projeto.","Pode me perguntar sobre as estatísticas reais do projeto.","Os dados do seu projeto ficam no dispositivo. Cuide dos backups!"]
 };
+// Biblioteca v114: carrega 1.200 falas locais; o repertório embutido serve como fallback offline.
+fetch('impulsinho/falas.json?v=114').then(r=>{if(!r.ok)throw Error('Biblioteca indisponível');return r.json()}).then(data=>{if(data.total!==1200||!data.grupos)throw Error('Biblioteca incompleta');for(const [group,arr] of Object.entries(data.grupos))if(Array.isArray(arr)&&arr.length===100)FALAS[group]=arr}).catch(()=>{});
 let lastPhrase={};
 function phrase(group,values={}){const arr=FALAS[group]||FALAS.geral;const previous=lastPhrase[group]??-1;const offset=arr.length>1?1+Math.floor(Math.random()*(arr.length-1)):0;const i=(previous+offset)%arr.length;lastPhrase[group]=i;return arr[i].replace(/\{(\w+)\}/g,(_,k)=>String(values[k]??''))}
 function speak(event){headline.textContent=event.title;message.textContent=event.text;express(event.emotion);opened(true);eventState.lastSpoken=Date.now();eventState.seen[event.key]=Date.now();persistEvents()}
@@ -82,8 +91,8 @@ function notice(key,title,text,emotion='curiosidade',priority=1){enqueue({key,ti
 function evaluate(kind){const s=snapshot();if(!s)return;const p=s.projeto,projectKey=p?.id||'sem-projeto',today=new Date().toLocaleDateString('en-CA');
  if(p&&eventState.lastProject!==p.id){eventState.lastProject=p.id;persistEvents();notice('projeto:'+p.id+':'+today,'Impulsinho de olho!',phrase('projeto',{nome:p.nome}),'curiosidade',1)}
  if(kind==='dados'&&p){
-  const hours=Math.floor(p.tempoMs/3600000);for(const milestone of [1,5,10,25,50,100,250,500,1000])if(hours>=milestone)notice('horas:'+p.id+':'+milestone,'Marco de produtividade!','Este projeto já registrou pelo menos '+milestone+' hora'+(milestone===1?'':'s')+' de trabalho. Parabéns pela conquista!','alegria',2);
-  if(p.chefoesDerrotados>0)notice('arena:'+p.id+':'+p.chefoesDerrotados,'Vitória na Arena!','O projeto registra '+p.chefoesDerrotados+' chefão'+(p.chefoesDerrotados===1?' derrotado':'s derrotados')+'.','desafio',2);
+  const hours=Math.floor(p.tempoMs/3600000);for(const milestone of [1,5,10,25,50,100,250,500,1000])if(hours>=milestone)notice('horas:'+p.id+':'+milestone,'Marco de produtividade!','Este projeto já registrou pelo menos '+milestone+' hora'+(milestone===1?'':'s')+' de trabalho. '+phrase('conquista'),'alegria',2);
+  if(p.chefoesDerrotados>0)notice('arena:'+p.id+':'+p.chefoesDerrotados,'Vitória na Arena!','O projeto registra '+p.chefoesDerrotados+' chefão'+(p.chefoesDerrotados===1?' derrotado':'s derrotados')+'. '+phrase('arena'),'desafio',2);
  }
  if(p&&kind==='periodico'&&Math.random()<0.07)notice('atalhos:'+projectKey+':'+today,'Dica de teclado',phrase('atalhos'),'curiosidade',1);
  const alerts=alertPrefs();
@@ -96,9 +105,30 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden)dispatch()
 eventTimer=setInterval(()=>{dispatch();if(!document.hidden)evaluate('periodico')},30000);
 // Consulta manual, sem iniciar automaticamente uma conversa.
 const statusButton=document.createElement('button');statusButton.type='button';statusButton.textContent='Ver avisos';statusButton.dataset.acao='avisos';actions.prepend(statusButton);
-function manualStatus(){const s=snapshot(),p=s?.projeto,alerts=alertPrefs();let lines=[];if(p)lines.push('Projeto: '+p.nome+'.');else lines.push('Nenhum projeto ativo.');if(s?.backupPendente)lines.push('Arquivo externo com alterações pendentes.');if(alerts.backup)lines.push('Alerta de backup ativado.');if(alerts.habits)lines.push('Alerta de hábitos e Elixires ativado.');lines.push(eventQueue.length+' aviso(s) na fila.');headline.textContent='Situação do Impulso';message.textContent=lines.join(' ');express('curiosidade');opened(true)}
-
-function manualStats(){const s=snapshot(),p=s?.projeto;headline.textContent='Estatísticas reais do projeto';if(!p){message.textContent='Nenhum projeto ativo. Crie ou abra um projeto para consultar suas estatísticas.';express('curiosidade');opened(true);return}const hours=(p.tempoMs/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2});const today=(p.hojeMs/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2});const remain=(p.horasRestantesMs/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2});message.textContent=`${p.nome}: ${hours} horas acumuladas; ${today} horas registradas hoje; ${remain} horas restantes para 10.000 horas. ${p.chefoesDerrotados} de ${p.chefoesTotais} chefões derrotados. ${p.habitosConcluidos} execuções de hábitos registradas no histórico.`;express('surpresa');opened(true)}
+function reply(title,text,emotion='curiosidade'){questionsOpen(false);headline.textContent=title;message.textContent=text;express(emotion);opened(true)}
+function fmtHours(ms){return (Math.max(0,Number(ms)||0)/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2})}
+function manualStatus(){
+ const s=snapshot(),p=s?.projeto,alerts=alertPrefs();const lines=[];
+ lines.push(p?'Projeto ativo: '+p.nome+'.':'Nenhum projeto ativo.');
+ lines.push(s?.backupPendente?'Existem alterações pendentes no arquivo externo.':'Não há alterações pendentes indicadas no arquivo externo.');
+ lines.push('Alerta de backup: '+(alerts.backup?'ativado.':'desativado.'));
+ lines.push('Alerta de hábitos e Elixires: '+(alerts.habits?'ativado.':'desativado.'));
+ lines.push('Avisos na fila do Impulsinho: '+eventQueue.length+'.');
+ reply('Situação do Impulso',lines.join(' '),'curiosidade');
+}
+function manualStats(){
+ const s=snapshot(),p=s?.projeto;
+ if(!p){reply('Estatísticas reais','Nenhum projeto ativo. Crie ou abra um projeto para consultar suas estatísticas.');return}
+ reply('Estatísticas de '+p.nome,`${fmtHours(p.tempoMs)} horas acumuladas; ${fmtHours(p.hojeMs)} horas registradas hoje; ${fmtHours(p.horasRestantesMs)} horas restantes para a meta de 10.000 horas. ${p.chefoesDerrotados} de ${p.chefoesTotais} chefões derrotados. ${p.habitosConcluidos} execuções de hábitos registradas.`,'surpresa');
+}
+function manualTopic(topic){
+ const s=snapshot(),p=s?.projeto;
+ if(!p){reply('Consulta ao Impulso','Abra um projeto para que eu possa consultar seus registros reais.');return}
+ if(topic==='hoje')reply('Meu Dia',`No projeto ${p.nome}, o tempo registrado hoje é de ${fmtHours(p.hojeMs)} horas. Para conferir as atividades individualmente, abra Meu Dia.`,'curiosidade');
+ if(topic==='motor')reply('Motor do Impulso',`O projeto ${p.nome} acumula ${Math.floor((Number(p.tempoMs)||0)/10000).toLocaleString('pt-BR')} Graus completos e ${fmtHours(p.tempoMs)} horas de trabalho registrado. Cada Giro equivale a 360 Graus.`,'surpresa');
+ if(topic==='arena')reply('Arena',`O projeto ${p.nome} registra ${p.chefoesDerrotados} chefões derrotados, de ${p.chefoesTotais} no total. Consulte a Arena para ver o combate atual.`,'desafio');
+ if(topic==='habitos')reply('Hábitos e Elixires',`Há ${p.habitosConcluidos} execuções de hábitos registradas no histórico de ${p.nome}. Consulte Hábitos e Elixires para ver as atividades e recompensas.`, 'cuidado');
+}
 function scheduleAuto(){if(autoTimer)clearInterval(autoTimer);autoTimer=null;if(auto.checked&&pref.visivel){autoTimer=setInterval(()=>{if(!document.hidden&&balloon.hidden&&pref.visivel)randomFace()},20000)}}
 fetch('impulsinho/catalogo.json?v=109').then(res=>{if(!res.ok)throw Error('Catálogo indisponível');return res.json()}).then(data=>{faces=(data.facetas||[]).filter(f=>f.arquivo&&f.emocao);if(faces.length!==109)throw Error('Catálogo incompleto');showFace(Math.max(0,faces.findIndex(f=>f.id==='1f9d0')));info.textContent='109 expressões prontas. Use os controles para explorá-las.'}).catch(()=>{info.textContent='Não foi possível carregar o catálogo de expressões. Verifique os arquivos e atualize a página.'});
 family.addEventListener('change',()=>showFace(0));auto.addEventListener('change',()=>{try{localStorage.setItem('impulsinho-auto-v109',auto.checked?'1':'0')}catch{}scheduleAuto()});
@@ -126,7 +156,7 @@ avatar.addEventListener('pointerup',e=>{if(!drag||e.pointerId!==drag.id)return;c
 avatar.addEventListener('pointercancel',()=>{drag=null;save()});
 avatar.addEventListener('click',()=>{if(performance.now()-lastDragEnd<350)return;opened(balloon.hidden)});
 questionButton.addEventListener('click',()=>questionsOpen(questions.hidden));
-root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='avisos')manualStatus();if(action==='estatisticas')manualStats();if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas'){achievementsPanel.hidden=!achievementsPanel.hidden;if(!achievementsPanel.hidden)renderAchievements();requestAnimationFrame(position)}if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='fechar'){questionsOpen(false);opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
+root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='avisos')manualStatus();if(action==='estatisticas')manualStats();if(['hoje','motor','arena','habitos'].includes(action))manualTopic(action);if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas')manualAchievements();if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='fechar'){questionsOpen(false);opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
 reopen.addEventListener('click',()=>{visible(true);opened(true);avatar.focus()});
 
 window.addEventListener('resize',position);window.addEventListener('orientationchange',position);

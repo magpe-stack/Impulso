@@ -65,3 +65,8 @@
 .impulsinho-perguntas button[hidden]{display:none!important}
 .impulsinho-perguntas #impulsinho-conquistas{border-top:1px solid var(--theme-border,var(--line,#89939d));margin-top:12px;padding-top:12px}
 @media print{.impulsinho-perguntas,.impulsinho-perguntas-toggle{display:none!important}}
+
+/* v114: as respostas são exclusivamente texto do personagem, inclusive conquistas */
+#impulsinho-root .impulsinho-balao{max-height:min(65vh,520px);overflow-y:auto;overflow-wrap:anywhere}
+#impulsinho-root .impulsinho-balao p{white-space:pre-wrap;line-height:1.55}
+#impulsinho-root .impulsinho-perguntas #impulsinho-conquistas{display:none!important}
