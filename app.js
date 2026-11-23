@@ -1325,6 +1325,12 @@ function renderConfiguracao(){
 }
 
 window.addEventListener('impulsinho:abrir-configuracoes',()=>{settingsOpenSection='impulsinho';page='configuracao';render()});
+// v115 — navegação solicitada pelo Impulsinho: somente páginas conhecidas, sem alterar dados.
+window.addEventListener('impulsinho:ir-para',e=>{
+ const allowed=new Set(['dia','radar','arena','habitos','altar','insignias','estatisticas','armazenamento','configuracao','projetos','ponto','foco','calendario','dashboard']);
+ const target=e.detail?.pagina;if(!allowed.has(target))return;
+ page=target;render();
+});
 
 // Limpeza restrita ao Impulso: não apagar dados de outros PWAs do mesmo domínio.
 const IMPULSO_STORAGE_KEYS=[KEY,THEME,PALETTE_KEY,ALERTS_KEY,BADGE_KEY,SHORTCUT_PREF_KEY,INSTALL_PREF,STORAGE_BACKUP_DATE];

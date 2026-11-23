@@ -659,6 +659,13 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 
 <a id="impulsinho-v107-fundacao-tecnica"></a>
 
+
+### Perguntas digitadas e navegação contextual (Impulso 115)
+
+O botão discreto **☰** abre o **balão do usuário**, com perguntas prontas e um campo para escrever perguntas de até 180 caracteres. Ao enviar uma pergunta reconhecida, o Impulsinho abre a página correspondente do aplicativo e responde no **balão do personagem**, citando apenas dados calculados dos registros reais. São reconhecidos temas como **Meu Dia, Motor, Arena, Hábitos, Elixires, Conquistas, Estatísticas, Projetos, Ponto, Foco, Calendário, Dashboard, Backup e Configurações**. A navegação não inicia nem interrompe registros de tempo.
+
+A interpretação é local, baseada em palavras e expressões reconhecidas. Perguntas fora desse repertório recebem uma explicação honesta; **não há IA generativa externa**. O catálogo `impulsinho/facetas-falas.json` associa **quatro comentários emocionais a cada uma das 109 facetas**, com alternância por família emocional. Esses comentários não fornecem números: as estatísticas vêm exclusivamente do aplicativo.
+
 ### Impulsinho: perguntas, respostas e biblioteca contextual
 
 O **balão do personagem** contém exclusivamente suas respostas e comentários. O botão discreto **☰**, abaixo e à esquerda do avatar, abre o **balão de perguntas do usuário**. Ao selecionar **Conquistas**, **Ver avisos**, **Meu projeto**, **Meu Dia**, **Motor**, **Arena** ou **Hábitos e Elixires**, o painel de perguntas se recolhe e o Impulsinho responde no próprio balão. O comando **Conquistas** informa quantas novidades estão pendentes e descreve até cinco delas; a leitura individual e a navegação continuam na Central de Novidades original do Impulso.
