@@ -99,3 +99,7 @@
 #impulsinho-perguntas .impulsinho-form-row{display:flex;gap:8px;align-items:center;}
 #impulsinho-perguntas .impulsinho-form-row input{flex:1;min-width:0;}
 #impulsinho-perguntas .impulsinho-ajuda{margin:8px 0 0;font-size:12px;}
+
+/* v147: camada corporal independente, sem bloquear controles. */
+body > .ic-corporal{position:fixed;inset:0;z-index:849;pointer-events:none}
+body.dark #impulsinho-balao{background:#10141D!important;color:#fff!important}body.dark #impulsinho-balao p,body.dark #impulsinho-balao h2{color:#fff!important}

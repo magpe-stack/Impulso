@@ -161,7 +161,7 @@ actions.append(botaoFrase);
 botaoFrase.addEventListener('click',e=>{e.stopPropagation();if(!fraseMotivacional(true))reply('Frases motivacionais','A biblioteca de frases ainda está carregando. Tente novamente em instantes.','curiosidade')});
 
 function alertPrefs(){try{const p=JSON.parse(localStorage.getItem('impulso-alertas-v1')||'null');return {backup:p?.backup===true,habits:p?.habits===true}}catch{return {backup:false,habits:false}}}
-function isBusy(){return behavior.modo==='clique'||document.hidden||!pref.visivel||!balloon.hidden||!questions.hidden||document.querySelector('dialog[open]')!==null||document.activeElement?.matches('input,textarea,select,[contenteditable="true"]')||['foco','ponto'].includes(snapshot()?.pagina)}
+function isBusy(){return !!window.ImpulsinhoAtividade?.()||behavior.modo==='clique'||document.hidden||!pref.visivel||!balloon.hidden||!questions.hidden||document.querySelector('dialog[open]')!==null||document.activeElement?.matches('input,textarea,select,[contenteditable="true"]')||['foco','ponto'].includes(snapshot()?.pagina)}
 const FALAS={
  projeto:["Estou acompanhando o projeto {nome}.","Projeto {nome} aberto. Pronto para conferir seu progresso!","Vamos cuidar do progresso de {nome} com atenção."],
  backup:["Há alterações ainda não confirmadas no arquivo externo. Que tal atualizar o Backup Geral?","Seu Backup Geral precisa de atenção: existem mudanças pendentes.","Uma dica de segurança: confirme o Backup Geral antes de encerrar o trabalho."],
@@ -377,7 +377,7 @@ questionForm.addEventListener('submit',async e=>{e.preventDefault();const field=
  if(route.kind==='live'){answerLive(route.topic);field.value='';return}
  button.disabled=true;try{const r=await window.OraculoImpulso?.ask(value);stopTour();if(r?.text){reply('Oráculo do Impulso',r.text,'curiosidade',true);field.value=''}else {reply('Oráculo do Impulso',r?.unavailable?'Minha base de respostas não está disponível. Atualize o aplicativo com conexão.':r?.ambiguous?'Encontrei mais de uma interpretação. Pode especificar a função ou o que deseja saber?':'Não tenho uma resposta cadastrada com confiança suficiente. Reformule usando o nome da função ou consulte o Manual.','curiosidade',true);manualLink()}}catch{reply('Oráculo do Impulso','Não consegui consultar minha base de respostas agora.','cuidado',true);manualLink()}finally{button.disabled=false}
 });
-function scheduleAuto(){if(autoTimer)clearInterval(autoTimer);autoTimer=null;if(auto.checked&&pref.visivel){autoTimer=setInterval(()=>{if(!document.hidden&&balloon.hidden&&pref.visivel)randomFace()},20000)}}
+function scheduleAuto(){if(autoTimer)clearInterval(autoTimer);autoTimer=null;if(auto.checked&&pref.visivel){autoTimer=setInterval(()=>{if(!document.hidden&&balloon.hidden&&pref.visivel&&!window.ImpulsinhoAtividade?.())randomFace()},20000)}}
 fetch('impulsinho/catalogo.json?v=109').then(res=>{if(!res.ok)throw Error('Catálogo indisponível');return res.json()}).then(data=>{faces=(data.facetas||[]).filter(f=>f.arquivo&&f.emocao);if(faces.length!==109)throw Error('Catálogo incompleto');showFace(Math.max(0,faces.findIndex(f=>f.id==='1f9d0')));info.textContent='109 expressões prontas. Use os controles para explorá-las.'}).catch(()=>{info.textContent='Não foi possível carregar o catálogo de expressões. Verifique os arquivos e atualize a página.'});
 family.addEventListener('change',()=>showFace(0));auto.addEventListener('change',()=>{try{localStorage.setItem('impulsinho-auto-v109',auto.checked?'1':'0')}catch{}scheduleAuto()});
 try{auto.checked=localStorage.getItem('impulsinho-auto-v109')==='1'}catch{}
@@ -487,6 +487,28 @@ document.addEventListener('click',e=>{
  const radio=e.target.closest?.('.palette-option')?.querySelector('input[name="impulsoPalette"]');
  if(radio)window.ImpulsinhoOpinarPaleta(radio.value);
 },true);
+
+
+// v147: integração opcional, sem modificar os dados de produtividade.
+let motorPending=null, motor147=null, motorOwn=false, motorText='', motorPrev=null;
+const motorToggle=document.createElement('input');motorToggle.type='checkbox';motorToggle.checked=behavior.motor147===true;
+const motorLabel=document.createElement('label');motorLabel.append(motorToggle,' Ativar novo motor contextual do Impulsinho');configHost.append(motorLabel);
+const motorStatus=document.createElement('p');motorStatus.className='help';motorStatus.textContent='Motor contextual opcional.';configHost.append(motorStatus);
+const motorClear=document.createElement('button');motorClear.type='button';motorClear.textContent='Limpar memória comportamental';configHost.append(motorClear);motorClear.onclick=()=>{if(motor147&&confirm('Limpar apenas a memória comportamental do Impulsinho?'))motor147.limparMemoria()};
+const motorPages={dia:'meu_dia',entradas:'entrada_manual',altar:'elixires',visao:'cofre',configuracao:'configuracoes',armazenamento:'backup'};
+function motorState(){const a=alertPrefs();return {habilitado:behavior.motor147===true&&pref.visivel&&behavior.modo!=='clique',visivel:!document.hidden,foco:!!window.ImpulsinhoAtividade?.()||['ponto','foco'].includes(snapshot()?.pagina),silencio:false,dicas:true,espontaneo:behavior.motor147===true&&behavior.modo!=='clique',editando:!!document.activeElement?.matches('input,textarea,select,[contenteditable="true"]'),modal:!!document.querySelector('dialog[open]')||!questions.hidden||(!balloon.hidden&&!motorOwn),alertas:{backup:a.backup,elixir:a.habits}}}
+function motorNavigate(){const page=snapshot()?.pagina;motor147?.navegar(motorPages[page]||page);motor147?.atualizar()}
+function motorData(){const p=snapshot()?.projeto,prev=motorPrev;motorPrev=p;if(!p||!prev||p.id!==prev.id||!motor147||isBusy())return;const e=p.chefoesDerrotados>prev.chefoesDerrotados?null:p.habitosConcluidos>prev.habitosConcluidos?'habito_concluido':p.tempoMs>prev.tempoMs?'atividade_concluida':null;if(e)motor147.receber(e).catch(console.warn)}
+async function motorInit(){if(motor147)return;if(motorPending)return motorPending;motorPending=(async()=>{try{const [{criarOrquestrador},catalogo]=await Promise.all([import('./motores/orquestrador.mjs'),fetch('impulsinho/motores/catalogo-gestual.json').then(r=>{if(!r.ok)throw Error('Catálogo indisponível');return r.json()})]);
+catalogo.gestos=[];catalogo.combinacoes=[]; // Recursos corporais ausentes neste pacote.
+const palco=document.body;
+const faceMap={alegria:'alegria',satisfacao:'alegria',determinacao:'desafio',celebracao:'surpresa',atencao:'curiosidade',calma:'descanso',esperanca:'alegria'};
+motor147=criarOrquestrador({avatar,palco,catalogo,pasta:'impulsinho/gestos/',estado:motorState,expressao:k=>{if(k!=='neutra'&&!isBusy())express(faceMap[k]||'curiosidade',false)},balao:t=>{if(!t){if(motorOwn&&message.textContent===motorText)opened(false);motorOwn=false;return}if(isBusy()||motorState().modal)return;motorOwn=true;motorText=t;reminderSave.hidden=true;headline.textContent='Impulsinho';message.textContent=t;opened(true)},onErro:console.warn});motorPrev=snapshot()?.projeto;motorNavigate();if(behavior.motor147)motor147.iniciar();motorStatus.textContent='Motor contextual disponível. Gestos dependem dos arquivos corporais originais.';
+}catch(e){motorStatus.textContent='Motor contextual indisponível; assistente original preservado.';console.warn(e)}finally{motorPending=null}})();return motorPending}
+motorToggle.onchange=async()=>{behavior.motor147=motorToggle.checked;persistBehavior();if(behavior.motor147){await motorInit();if(behavior.motor147){motor147?.iniciar();motorNavigate()}}else motor147?.parar()};
+window.addEventListener('impulsinho:navegacao',motorNavigate);window.addEventListener('impulsinho:dados-alterados',motorData);window.addEventListener('impulsinho:atividade',()=>motor147?.atualizar());
+window.addEventListener('pagehide',()=>motor147?.parar());window.addEventListener('pageshow',()=>{if(behavior.motor147)motor147?.iniciar()});
+if(behavior.motor147)motorInit();
 
 sync();updateActivity(window.ImpulsinhoAtividade?.());scheduleAuto();mountSettings();setTimeout(()=>{updateAchievements();updateBackupAction();evaluate('inicio');startTour()},1800);
 })();
