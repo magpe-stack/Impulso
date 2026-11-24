@@ -1,4 +1,4 @@
-/* Impulsinho v115 — perguntas digitadas, navegação contextual e 109 facetas. */
+/* Impulsinho v116 — perguntas digitadas, navegação contextual e 109 facetas. */
 (()=>{'use strict';
 const KEY='impulsinho-avatar-v108',DEFAULT='impulsinho/facetas/emoji_u1f9d0_3d.webp';
 let pref={visivel:true,silenciado:false,flutuar:true,x:null,y:null};
@@ -11,13 +11,14 @@ const facePanel=root.querySelector('#impulsinho-expressoes'),family=root.querySe
 config.remove();
 let faces=[],current=0,lastFace=-1,autoTimer=null;
 const message=root.querySelector('#impulsinho-mensagem');
-const settingsKey='impulsinho-config-v112';let behavior={modo:'ambos'};try{behavior={...behavior,...JSON.parse(localStorage.getItem(settingsKey)||'{}')}}catch{}
+const settingsKey='impulsinho-config-v112';let behavior={modo:'ambos',volume:35,audio:true,tutorial:true};try{behavior={...behavior,...JSON.parse(localStorage.getItem(settingsKey)||'{}')}}catch{}
 const persistBehavior=()=>{try{localStorage.setItem(settingsKey,JSON.stringify(behavior))}catch{}};
-const configHost=document.createElement('section');configHost.className='impulsinho-configuracoes';configHost.innerHTML=`<h3>Controles do Impulsinho</h3><p class="help">Escolha quando o Impulsinho pode abrir conversas. No modo Ambos, avisos de alertas ativados e ações importantes são obrigatórios.</p><fieldset><legend>Abertura dos balões</legend><label><input type="radio" name="impulsinhoModo" value="espontaneo"> Espontaneamente</label><label><input type="radio" name="impulsinhoModo" value="clique"> Somente quando eu clicar</label><label><input type="radio" name="impulsinhoModo" value="ambos"> Ambos (avisos de alertas e ações obrigatórios)</label></fieldset><label><input type="checkbox" id="impulsinhoVisivel"> Exibir personagem</label><label><input type="checkbox" id="impulsinhoSilencio"> Silenciar efeitos do Impulsinho</label><label><input type="checkbox" id="impulsinhoFlutuar"> Flutuação suave</label><label><input type="checkbox" id="impulsinhoAlternar"> Alternar expressões automaticamente</label><button type="button" class="btn" id="impulsinhoExpressoesBtn">Explorar as 109 expressões</button><div id="impulsinhoFacetasConfig"></div><p class="help">A síntese de áudio será adicionada em uma etapa futura. Silenciar já guarda a preferência.</p>`;
+const configHost=document.createElement('section');configHost.className='impulsinho-configuracoes';configHost.innerHTML=`<h3>Controles do Impulsinho</h3><p class="help">Escolha quando o Impulsinho pode abrir conversas. No modo Ambos, avisos de alertas ativados e ações importantes são obrigatórios.</p><fieldset><legend>Abertura dos balões</legend><label><input type="radio" name="impulsinhoModo" value="espontaneo"> Espontaneamente</label><label><input type="radio" name="impulsinhoModo" value="clique"> Somente quando eu clicar</label><label><input type="radio" name="impulsinhoModo" value="ambos"> Ambos (avisos de alertas e ações obrigatórios)</label></fieldset><label><input type="checkbox" id="impulsinhoVisivel"> Exibir personagem</label><label><input type="checkbox" id="impulsinhoSilencio"> Silenciar efeitos do Impulsinho</label><label><input type="checkbox" id="impulsinhoFlutuar"> Flutuação suave</label><label><input type="checkbox" id="impulsinhoAlternar"> Alternar expressões automaticamente</label><label><input type="checkbox" id="impulsinhoAudio"> Sons emocionais sintetizados</label><label for="impulsinhoVolume">Volume dos sons (<output id="impulsinhoVolumeValue">35%</output>)</label><input id="impulsinhoVolume" type="range" min="0" max="100" step="5" value="35"><label><input type="checkbox" id="impulsinhoTutorial"> Tutorial guiado quando não há projeto</label><button type="button" class="btn" id="impulsinhoExpressoesBtn">Explorar as 109 expressões</button><div id="impulsinhoFacetasConfig"></div><p class="help">Os sons são gerados no dispositivo, sem arquivos externos. O navegador pode exigir um toque antes de reproduzi-los.</p>`;
 const settingsTarget=configHost.querySelector('#impulsinhoFacetasConfig');settingsTarget.append(facePanel);facePanel.hidden=true;
 function mountSettings(){const target=document.querySelector('[data-settings-section="impulsinho"] .settings-accordion-body');if(!target)return;target.replaceChildren(configHost);syncSettings()}
-function syncSettings(){configHost.querySelectorAll('input[name="impulsinhoModo"]').forEach(x=>x.checked=x.value===behavior.modo);configHost.querySelector('#impulsinhoVisivel').checked=pref.visivel;configHost.querySelector('#impulsinhoSilencio').checked=pref.silenciado;configHost.querySelector('#impulsinhoFlutuar').checked=pref.flutuar;configHost.querySelector('#impulsinhoAlternar').checked=auto.checked}
-configHost.addEventListener('change',e=>{const t=e.target;if(t.name==='impulsinhoModo'){behavior.modo=t.value;persistBehavior();if(t.value==='clique')eventQueue.length=0}if(t.id==='impulsinhoVisivel')visible(t.checked);if(t.id==='impulsinhoSilencio'){pref.silenciado=t.checked;save()}if(t.id==='impulsinhoFlutuar'){pref.flutuar=t.checked;avatar.querySelector('img').style.animationPlayState=t.checked?'running':'paused';save()}if(t.id==='impulsinhoAlternar'){auto.checked=t.checked;auto.dispatchEvent(new Event('change'))}});
+function syncSettings(){configHost.querySelectorAll('input[name="impulsinhoModo"]').forEach(x=>x.checked=x.value===behavior.modo);configHost.querySelector('#impulsinhoVisivel').checked=pref.visivel;configHost.querySelector('#impulsinhoSilencio').checked=pref.silenciado;configHost.querySelector('#impulsinhoFlutuar').checked=pref.flutuar;configHost.querySelector('#impulsinhoAlternar').checked=auto.checked;configHost.querySelector('#impulsinhoAudio').checked=behavior.audio!==false;configHost.querySelector('#impulsinhoVolume').value=Number(behavior.volume??35);configHost.querySelector('#impulsinhoVolumeValue').textContent=String(behavior.volume??35)+'%';configHost.querySelector('#impulsinhoTutorial').checked=behavior.tutorial!==false}
+configHost.addEventListener('change',e=>{const t=e.target;if(t.name==='impulsinhoModo'){behavior.modo=t.value;persistBehavior();if(t.value==='clique')eventQueue.length=0}if(t.id==='impulsinhoVisivel')visible(t.checked);if(t.id==='impulsinhoSilencio'){pref.silenciado=t.checked;save()}if(t.id==='impulsinhoFlutuar'){pref.flutuar=t.checked;avatar.querySelector('img').style.animationPlayState=t.checked?'running':'paused';save()}if(t.id==='impulsinhoAlternar'){auto.checked=t.checked;auto.dispatchEvent(new Event('change'))}if(t.id==='impulsinhoAudio'){behavior.audio=t.checked;persistBehavior()}if(t.id==='impulsinhoTutorial'){behavior.tutorial=t.checked;persistBehavior();if(!t.checked)stopTour()}});
+configHost.querySelector('#impulsinhoVolume').addEventListener('input',e=>{behavior.volume=Number(e.target.value);configHost.querySelector('#impulsinhoVolumeValue').textContent=behavior.volume+'%';persistBehavior()});
 configHost.querySelector('#impulsinhoExpressoesBtn').addEventListener('click',()=>{facePanel.hidden=!facePanel.hidden});
 window.addEventListener('impulsinho:navegacao',()=>queueMicrotask(mountSettings));
 // O balão principal contém exclusivamente o texto do Impulsinho.
@@ -29,9 +30,9 @@ questionButton.title='Perguntas e comandos do Impulsinho';questionButton.setAttr
 questionButton.setAttribute('aria-expanded','false');questionButton.setAttribute('aria-controls','impulsinho-perguntas');
 const questions=document.createElement('section');questions.id='impulsinho-perguntas';questions.className='impulsinho-perguntas';questions.hidden=true;
 questions.setAttribute('aria-label','Perguntas e ações para o Impulsinho');
-const qTitle=document.createElement('h2');qTitle.textContent='O que você quer perguntar?';questions.append(qTitle);
+const qTitle=document.createElement('h2');qTitle.textContent='O que você quer perguntar?';questions.append(qTitle);const menu=document.createElement('button');menu.type='button';menu.textContent='Perguntas rápidas ▾';menu.setAttribute('aria-expanded','true');menu.setAttribute('aria-controls','impulsinho-perguntas-acoes');questions.append(menu);
 const actions=balloon.querySelector('.impulsinho-acoes');
-questions.append(actions);
+actions.id='impulsinho-perguntas-acoes';questions.append(actions);menu.addEventListener('click',()=>{actions.hidden=!actions.hidden;menu.setAttribute('aria-expanded',String(!actions.hidden))});
 const questionForm=document.createElement('form');questionForm.className='impulsinho-formulario';questionForm.setAttribute('aria-label','Escrever pergunta ao Impulsinho');
 questionForm.innerHTML='<label for="impulsinho-pergunta-texto">Sua pergunta</label><div class="impulsinho-form-row"><input id="impulsinho-pergunta-texto" type="text" maxlength="180" autocomplete="off" placeholder="Ex.: Quanto trabalhei hoje?" required><button type="submit">Perguntar</button></div><p class="impulsinho-ajuda">Pergunte sobre Meu Dia, Motor, Arena, hábitos, conquistas, estatísticas, backup e configurações.</p>';
 questions.append(questionForm);
@@ -109,7 +110,7 @@ const FALAS={
 fetch('impulsinho/falas.json?v=114').then(r=>{if(!r.ok)throw Error('Biblioteca indisponível');return r.json()}).then(data=>{if(data.total!==1200||!data.grupos)throw Error('Biblioteca incompleta');for(const [group,arr] of Object.entries(data.grupos))if(Array.isArray(arr)&&arr.length===100)FALAS[group]=arr}).catch(()=>{});
 let lastPhrase={};
 function phrase(group,values={}){const arr=FALAS[group]||FALAS.geral;const previous=lastPhrase[group]??-1;const offset=arr.length>1?1+Math.floor(Math.random()*(arr.length-1)):0;const i=(previous+offset)%arr.length;lastPhrase[group]=i;return arr[i].replace(/\{(\w+)\}/g,(_,k)=>String(values[k]??''))}
-function speak(event){headline.textContent=event.title;message.textContent=event.text;express(event.emotion);opened(true);eventState.lastSpoken=Date.now();eventState.seen[event.key]=Date.now();persistEvents()}
+function speak(event){playEmotion(event.emotion);headline.textContent=event.title;message.textContent=event.text;express(event.emotion);opened(true);eventState.lastSpoken=Date.now();eventState.seen[event.key]=Date.now();persistEvents()}
 function enqueue(event){if(behavior.modo==='clique')return;if(!event||eventState.seen[event.key]||eventQueue.some(x=>x.key===event.key))return;eventQueue.push(event);eventQueue.sort((a,b)=>b.priority-a.priority);if(eventQueue.length>12)eventQueue.length=12;dispatch()}
 function dispatch(){if(isBusy()||!eventQueue.length)return;const now=Date.now();const next=eventQueue[0];if(next.priority<3&&now-eventState.lastSpoken<MIN_GAP)return;eventQueue.shift();speak(next)}
 function notice(key,title,text,emotion='curiosidade',priority=1){enqueue({key,title,text,emotion,priority})}
@@ -128,9 +129,68 @@ window.addEventListener('impulsinho:dados-alterados',()=>evaluate('dados'));
 window.addEventListener('impulsinho:navegacao',()=>evaluate('navegacao'));
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)dispatch()});
 eventTimer=setInterval(()=>{dispatch();if(!document.hidden)evaluate('periodico')},30000);
+
+// v116: síntese Web Audio, sem sons de terceiros ou carregamentos externos.
+let audioContext=null,audioUnlocked=false;
+const AudioEngine=window.AudioContext||window.webkitAudioContext;
+function unlockAudio(){audioUnlocked=true;}
+document.addEventListener('pointerdown',unlockAudio,{once:true,capture:true});
+document.addEventListener('keydown',unlockAudio,{once:true,capture:true});
+function playEmotion(emotion){
+ if(!audioUnlocked||!AudioEngine||pref.silenciado||behavior.audio===false||Number(behavior.volume)<=0)return;
+ try{
+  audioContext??=new AudioEngine();if(audioContext.state==='suspended')audioContext.resume().catch(()=>{});
+  const presets={alegria:[523,659,784],surpresa:[392,740],curiosidade:[440,554],preocupacao:[330,294],desafio:[196,262,330],cuidado:[392,440],descanso:[440,330],humor:[440,660,440]};
+  const notes=presets[emotion]||[392,523];const t=audioContext.currentTime+.02;
+  notes.forEach((hz,i)=>{const osc=audioContext.createOscillator(),gain=audioContext.createGain(),start=t+i*.105;
+   osc.type=['sine','triangle','sine'][i%3];osc.frequency.setValueAtTime(hz,start);
+   gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(Math.max(.0001,Number(behavior.volume)/100*.045),start+.018);
+   gain.gain.exponentialRampToValueAtTime(.0001,start+.15);osc.connect(gain);gain.connect(audioContext.destination);osc.start(start);osc.stop(start+.16);
+  });
+ }catch{}
+}
+// Passeio de boas-vindas: apenas quando não há projeto ativo, sem tocar nos dados.
+const tourSteps=[
+ {title:'Vamos começar?',text:'Ainda não há projeto ativo. Vou mostrar os primeiros passos! Abra o menu no canto superior esquerdo.',emotion:'curiosidade',x:.20,y:.24},
+ {title:'Crie ou abra um projeto',text:'Escolha Novo projeto para começar do zero, ou Projetos para continuar um trabalho existente.',emotion:'alegria',x:.50,y:.42},
+ {title:'Seu tempo conta!',text:'Depois de abrir um projeto, use Ponto ou Foco para registrar trabalho. Eu poderei comentar seus Giros, hábitos e conquistas.',emotion:'surpresa',x:.76,y:.65}
+];
+let tourTimer=null,tourIndex=-1;
+function stopTour(){if(tourTimer){clearTimeout(tourTimer);tourTimer=null}tourIndex=-1;avatar.classList.remove('impulsinho-passeio')}
+function tourStep(){
+ if(!behavior.tutorial||!pref.visivel||snapshot()?.projeto||document.hidden||document.querySelector('dialog[open]')||['clique'].includes(behavior.modo)){stopTour();return}
+ if(tourIndex>=tourSteps.length){stopTour();return}
+ const step=tourSteps[tourIndex];const width=avatar.getBoundingClientRect().width||78;
+ const tx=Math.max(8,Math.min(innerWidth-width-8,innerWidth*step.x));const ty=Math.max(8,Math.min(innerHeight-width-8,innerHeight*step.y));
+ avatar.classList.add('impulsinho-passeio');pref.x=tx;pref.y=ty;position();
+ headline.textContent=step.title;message.textContent=step.text;express(step.emotion);opened(true);
+ tourTimer=setTimeout(()=>{if(snapshot()?.projeto){stopTour();return}tourIndex++;tourStep()},8500);
+}
+function startTour(){if(tourTimer||tourIndex>=0||!behavior.tutorial||snapshot()?.projeto||behavior.modo==='clique'||!pref.visivel)return;
+ const key='impulsinho-tutorial-v116';try{if(localStorage.getItem(key)==='concluido')return;localStorage.setItem(key,'concluido')}catch{}
+ tourIndex=0;tourStep();
+}
+window.addEventListener('impulsinho:ignicao',e=>{
+ const d=e.detail||{},s=snapshot();if(!s?.projeto||s.projeto.id!==d.projetoId)return;
+ const giros=Math.max(0,Math.floor(Number(d.giros)||0)),streak=Math.max(0,Math.floor(Number(d.sequencia)||0)),best=Math.max(0,Math.floor(Number(d.recorde)||0));
+ const days=d.ultimoRegistro?Math.max(0,Math.floor((Date.now()-d.ultimoRegistro)/86400000)):null;
+ let emotion='curiosidade',comment='';
+ if(giros===0){emotion='cuidado';comment='Ainda não há Giros completos. Registre suas primeiras atividades para alimentar o Motor.'}
+ else if(streak>=7){emotion='alegria';comment=`${giros.toLocaleString('pt-BR')} Giros! Sua sequência atual é de ${streak} dias. Estou vibrando com essa constância!`}
+ else if(streak>=2){emotion='alegria';comment=`São ${giros.toLocaleString('pt-BR')} Giros e ${streak} dias na sequência atual. Muito bom!`}
+ else if(days!==null&&days>=7){emotion='surpresa';comment=`O Motor registra ${giros.toLocaleString('pt-BR')} Giros. Seu último registro foi há cerca de ${days} dias; que bom ver você por aqui!`}
+ else if(best>=3&&streak===0){emotion='cuidado';comment=`Você já alcançou uma sequência de ${best} dias. Hoje não há sequência ativa; podemos construir outra no seu ritmo.`}
+ else if(giros>=100){emotion='surpresa';comment=`Uau! ${giros.toLocaleString('pt-BR')} Giros completos! Esse Motor já tem uma bela história.`}
+ else{emotion='curiosidade';comment=`Seu Motor registra ${giros.toLocaleString('pt-BR')} Giros completos. Vamos acompanhar sua evolução!`}
+ // Ignição é um gesto explícito: responder mesmo com o Motor em execução, sem bloquear o botão Parar.
+ reply('Ignição do Motor!',comment,emotion);
+});
+window.addEventListener('impulsinho:dados-alterados',()=>{if(snapshot()?.projeto)stopTour()});
+window.addEventListener('impulsinho:navegacao',()=>{if(snapshot()?.projeto)stopTour()});
+
 // Consulta manual, sem iniciar automaticamente uma conversa.
 const statusButton=document.createElement('button');statusButton.type='button';statusButton.textContent='Ver avisos';statusButton.dataset.acao='avisos';actions.prepend(statusButton);
-function reply(title,text,emotion='curiosidade'){questionsOpen(false);headline.textContent=title;message.textContent=text;express(emotion);opened(true)}
+function reply(title,text,emotion='curiosidade'){playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=text;express(emotion);opened(true)}
 function fmtHours(ms){return (Math.max(0,Number(ms)||0)/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2})}
 function manualStatus(){
  const s=snapshot(),p=s?.projeto,alerts=alertPrefs();const lines=[];
@@ -150,7 +210,7 @@ function manualStats(){
 function goTo(topic){const pages={hoje:'dia',motor:'radar',arena:'arena',habitos:'habitos',elixires:'altar',conquistas:'insignias',estatisticas:'estatisticas',backup:'armazenamento',configuracoes:'configuracao',projetos:'projetos',ponto:'ponto',foco:'foco',calendario:'calendario',dashboard:'dashboard'};
  const pagina=pages[topic];if(pagina)window.dispatchEvent(new CustomEvent('impulsinho:ir-para',{detail:{pagina}}));
 }
-function manualTopic(topic){
+function manualTopic(topic){stopTour();
  const s=snapshot(),p=s?.projeto;
  if(topic==='conquistas'){goTo('conquistas');manualAchievements();return}
  if(topic==='backup'){goTo('backup');manualStatus();return}
@@ -213,17 +273,17 @@ function opened(v){if(v){updateAchievements();updateBackupAction()}balloon.hidde
 function visible(v){if(!v)questionsOpen(false);pref.visivel=v;avatar.hidden=!v;avatar.style.display=v?'':'none';questionButton.hidden=!v;reopen.hidden=v;opened(false);save();scheduleAuto()}
 function sync(){avatar.querySelector('img').style.animationPlayState=pref.flutuar?'running':'paused';visible(pref.visivel);position()}
 let drag=null,lastDragEnd=0;
-avatar.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag={id:e.pointerId,startX:e.clientX,startY:e.clientY,x:pref.x,y:pref.y,moved:false};avatar.setPointerCapture(e.pointerId)});
+avatar.addEventListener('pointerdown',e=>{if(e.button!==0)return;stopTour();drag={id:e.pointerId,startX:e.clientX,startY:e.clientY,x:pref.x,y:pref.y,moved:false};avatar.setPointerCapture(e.pointerId)});
 avatar.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.startX,dy=e.clientY-drag.startY;if(Math.hypot(dx,dy)>7)drag.moved=true;if(drag.moved){pref.x=drag.x+dx;pref.y=drag.y+dy;position()}});
 avatar.addEventListener('pointerup',e=>{if(!drag||e.pointerId!==drag.id)return;const moved=drag.moved;drag=null;if(moved){save();lastDragEnd=performance.now()}});
 avatar.addEventListener('pointercancel',()=>{drag=null;save()});
 avatar.addEventListener('click',()=>{if(performance.now()-lastDragEnd<350)return;opened(balloon.hidden)});
-questionButton.addEventListener('click',()=>questionsOpen(questions.hidden));
+questionButton.addEventListener('click',()=>{stopTour();questionsOpen(questions.hidden)});
 root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='avisos')manualStatus();if(action==='estatisticas')manualTopic('estatisticas');if(['hoje','motor','arena','habitos'].includes(action))manualTopic(action);if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas')manualTopic('conquistas');if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='fechar'){questionsOpen(false);opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
 reopen.addEventListener('click',()=>{visible(true);opened(true);avatar.focus()});
 
 window.addEventListener('resize',position);window.addEventListener('orientationchange',position);
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&(!balloon.hidden||!questions.hidden)){questionsOpen(false);opened(false);avatar.focus()}});
 window.addEventListener('impulsinho:navegacao',()=>{if(!balloon.hidden)requestAnimationFrame(position)});
-sync();scheduleAuto();mountSettings();setTimeout(()=>{updateAchievements();updateBackupAction();evaluate('inicio')},1500);
+sync();scheduleAuto();mountSettings();setTimeout(()=>{updateAchievements();updateBackupAction();evaluate('inicio');startTour()},1800);
 })();

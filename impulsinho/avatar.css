@@ -79,3 +79,9 @@
 #impulsinho-root .impulsinho-form-row button{flex:0 0 auto}
 #impulsinho-root .impulsinho-ajuda{font-size:12px;line-height:1.45;opacity:.85;margin:7px 0 0}
 #impulsinho-root .impulsinho-formulario input:focus-visible{outline:3px solid #ffb400;outline-offset:2px}
+
+/* v116: caminhada guiada, sem impedir arraste e com movimento reduzido. */
+.impulsinho-avatar.impulsinho-passeio{transition:left 1.4s ease-in-out,top 1.4s ease-in-out}
+#impulsinho-perguntas-acoes[hidden]{display:none!important}
+#impulsinho-perguntas>button{border:1px solid currentColor;border-radius:9px;background:transparent;color:inherit;padding:7px 10px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.impulsinho-avatar.impulsinho-passeio{transition:none!important}}
