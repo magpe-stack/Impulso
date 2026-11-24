@@ -1,3 +1,4 @@
+<a id="impulso-manual-completo-do-usuario"></a>
 # Impulso — Manual completo do usuário
 
 **Motor de Produtividade Pessoal — Manual integrado**  
@@ -14,36 +15,81 @@ O **Impulso** é um aplicativo web progressivo (PWA) de produtividade pessoal. N
 <a id="sumario-e-navegacao"></a>
 ## Sumário e navegação
 
-Selecione um capítulo para ir diretamente ao assunto. Ao terminar a leitura, utilize o link **Voltar ao sumário** para retornar a esta lista. As âncoras têm identificadores explícitos, estáveis e sem acentos, para funcionar no GitHub mesmo quando o título exibido mudar.
+Selecione um título ou subtítulo para navegar.
 
-1. [Conheça o Impulso](#1-conheca-o-impulso)
-2. [Primeiro acesso e instalação](#2-primeiro-acesso-e-instalacao)
-3. [Navegação e organização do aplicativo](#3-navegacao-e-organizacao-do-aplicativo)
-4. [Projetos e Central de Comando](#4-projetos-e-central-de-comando)
-5. [Ações: Ponto, Foco, Hábitos e Entradas](#5-acoes-ponto-foco-habitos-e-entradas)
-6. [Dados: Meu Dia, Calendário e Estatísticas](#6-dados-meu-dia-calendario-e-estatisticas)
-7. [Motor de Propulsão e metas](#7-motor-de-propulsao-e-metas)
-8. [Vitórias: Arena, Codex, Elixires, Insígnias, Cerimônias e Visão](#8-vitorias-arena-codex-elixires-insignias-cerimonias-e-visao)
-9. [Arquivo: guardar, atualizar, abrir e imprimir](#9-arquivo-guardar-atualizar-abrir-e-imprimir)
-   - [Guardar um Backup Geral](#guardar-salvar-um-backup-geral)
-   - [Atualizar um Backup Geral](#atualizar-sobrescrever-um-backup-existente)
-   - [Aviso de alterações pendentes](#aviso-de-alteracoes-pendentes-no-arquivo)
-   - [Abrir um backup](#abrir-restaurar-um-backup-geral)
-10. [Sistema: configurações, instalação e saída](#10-sistema-configuracoes-instalacao-e-saida)
-    - [Fechar com arquivo pendente](#fechar-o-impulso-com-arquivo-pendente)
-11. [Atalhos de teclado e de aplicativo](#11-atalhos-de-teclado-e-de-aplicativo)
-12. [Alertas, distintivos e área de transferência](#12-alertas-distintivos-e-area-de-transferencia)
-    - [Central de novidades](#distintivos-de-conquistas-badging-api)
-13. [Armazenamento e limpeza](#13-armazenamento-e-limpeza)
-14. [Temas, acessibilidade e privacidade](#14-temas-acessibilidade-e-privacidade)
-15. [Solução de problemas](#15-solucao-de-problemas)
-16. [Perguntas frequentes](#16-perguntas-frequentes)
-17. [Verificação de funcionamento](#17-verificacao-de-funcionamento)
-18. [Estrutura do projeto e glossário](#18-estrutura-do-projeto-e-glossario)
-
----
-
-[↑ Voltar ao sumário](#sumario-e-navegacao)
+- [1. Conheça o Impulso](#1-conheca-o-impulso)
+  - [Roteiro rápido: do primeiro registro ao primeiro backup](#roteiro-rapido-do-primeiro-registro-ao-primeiro-backup)
+- [2. Primeiro acesso e instalação](#2-primeiro-acesso-e-instalacao)
+  - [Abrir pela primeira vez](#abrir-pela-primeira-vez)
+  - [Instalar como aplicativo](#instalar-como-aplicativo)
+  - [Usar offline](#usar-offline)
+  - [Desinstalar](#desinstalar)
+- [3. Navegação e organização do aplicativo](#3-navegacao-e-organizacao-do-aplicativo)
+- [4. Projetos e Central de Comando](#4-projetos-e-central-de-comando)
+  - [Criar e administrar projetos](#criar-e-administrar-projetos)
+  - [Dashboard — Central de Comando](#dashboard-central-de-comando)
+- [5. Ações: Ponto, Foco, Hábitos e Entradas](#5-acoes-ponto-foco-habitos-e-entradas)
+  - [Ponto — registrar trabalho em andamento](#ponto-registrar-trabalho-em-andamento)
+  - [Foco — sessões planejadas](#foco-sessoes-planejadas)
+  - [Hábitos — prática recorrente](#habitos-pratica-recorrente)
+  - [Entradas — registrar trabalho anterior](#entradas-registrar-trabalho-anterior)
+  - [Como o Impulso calcula o tempo](#como-o-impulso-calcula-o-tempo)
+- [6. Dados: Meu Dia, Calendário e Estatísticas](#6-dados-meu-dia-calendario-e-estatisticas)
+  - [Meu Dia](#meu-dia)
+  - [Calendário](#calendario)
+  - [Estatísticas](#estatisticas)
+  - [Armazenamento](#armazenamento)
+- [7. Motor de Propulsão e metas](#7-motor-de-propulsao-e-metas)
+  - [Ignição do Motor](#ignicao-do-motor)
+  - [As 100 metas](#as-100-metas)
+- [8. Vitórias: Arena, Codex, Elixires, Insígnias, Cerimônias e Visão](#8-vitorias-arena-codex-elixires-insignias-cerimonias-e-visao)
+  - [Arena — 200 Chefões](#arena-200-chefoes)
+  - [Codex — bestiário da jornada](#codex-bestiario-da-jornada)
+  - [Elixires — recompensas por trabalho e hábito](#elixires-recompensas-por-trabalho-e-habito)
+  - [Insígnias — títulos e medalhas](#insignias-titulos-e-medalhas)
+  - [Cerimônias — marcos narrativos](#cerimonias-marcos-narrativos)
+  - [Visão — acompanhar a revelação do foguete](#visao-acompanhar-a-revelacao-do-foguete)
+- [9. Arquivo: guardar, atualizar, abrir e imprimir](#9-arquivo-guardar-atualizar-abrir-e-imprimir)
+  - [Guardar — salvar um Backup Geral](#guardar-salvar-um-backup-geral)
+  - [Atualizar — sobrescrever um backup existente](#atualizar-sobrescrever-um-backup-existente)
+  - [Aviso de alterações pendentes no arquivo](#aviso-de-alteracoes-pendentes-no-arquivo)
+  - [Abrir — restaurar um Backup Geral](#abrir-restaurar-um-backup-geral)
+  - [Projeto individual: exportar e importar](#projeto-individual-exportar-e-importar)
+  - [Abrir pelo explorador de arquivos](#abrir-pelo-explorador-de-arquivos)
+  - [Imprimir e salvar em PDF](#imprimir-e-salvar-em-pdf)
+- [10. Sistema: configurações, instalação e saída](#10-sistema-configuracoes-instalacao-e-saida)
+  - [Fechar o Impulso com um arquivo pendente](#fechar-o-impulso-com-um-arquivo-pendente)
+- [11. Atalhos de teclado e de aplicativo](#11-atalhos-de-teclado-e-de-aplicativo)
+  - [Atalhos de teclado](#atalhos-de-teclado)
+  - [Atalhos do aplicativo](#atalhos-do-aplicativo)
+- [12. Impulsinho — assistente emocional e motivacional](#12-impulsinho-assistente-emocional-e-motivacional)
+  - [Personagem e balões](#personagem-e-baloes)
+  - [Consultas e navegação contextual](#consultas-e-navegacao-contextual)
+  - [Tutorial e reações às ações](#tutorial-e-reacoes-as-acoes)
+  - [Expressões e bibliotecas de falas](#expressoes-e-bibliotecas-de-falas)
+  - [Frases motivacionais](#frases-motivacionais)
+  - [Personalidades](#personalidades)
+  - [Evolução por projeto](#evolucao-por-projeto)
+  - [Sons e vinheta de abertura](#sons-e-vinheta-de-abertura)
+  - [Controles e acessibilidade](#controles-e-acessibilidade)
+- [13. Alertas, distintivos e área de transferência](#13-alertas-distintivos-e-area-de-transferencia)
+  - [Alertas locais](#alertas-locais)
+  - [Central de novidades e distintivos — Badging API](#central-de-novidades-e-distintivos-badging-api)
+  - [Copiar resumos — Clipboard API](#copiar-resumos-clipboard-api)
+- [14. Armazenamento e limpeza](#14-armazenamento-e-limpeza)
+  - [Onde ficam os dados](#onde-ficam-os-dados)
+  - [Limpeza seletiva](#limpeza-seletiva)
+  - [Antes de limpar](#antes-de-limpar)
+- [15. Temas, acessibilidade e privacidade](#15-temas-acessibilidade-e-privacidade)
+  - [As sete identidades cromáticas](#as-sete-identidades-cromaticas)
+  - [Acessibilidade](#acessibilidade)
+  - [Privacidade](#privacidade)
+- [16. Solução de problemas](#16-solucao-de-problemas)
+- [17. Perguntas frequentes](#17-perguntas-frequentes)
+- [18. Verificação de funcionamento](#18-verificacao-de-funcionamento)
+- [19. Estrutura do projeto e glossário](#19-estrutura-do-projeto-e-glossario)
+  - [Arquivos principais](#arquivos-principais)
+  - [Glossário](#glossario)
 
 ---
 
@@ -333,7 +379,7 @@ A página **Visão** apresenta uma composição visual relacionada aos Elixires 
 <a id="9-arquivo-guardar-atualizar-abrir-e-imprimir"></a>
 ## 9. Arquivo: guardar, atualizar, abrir e imprimir
 
-**Avisos pelo Impulsinho:** a faixa persistente de alterações pendentes não aparece mais abaixo do cabeçalho. Quando o Backup Geral precisar ser atualizado, toque no Impulsinho e selecione **Atualizar Backup Geral**. A confirmação de sobrescrita e a proteção de saída continuam ativas. As conquistas não consultadas podem ser abertas no balão pela opção **Conquistas**, com leitura individual e acesso à seção correspondente.
+**Avisos pelo Impulsinho:** as pendências do arquivo externo podem ser consultadas pelo personagem. Quando o Backup Geral precisar ser atualizado, toque no Impulsinho e selecione **Atualizar Backup Geral**. A confirmação de sobrescrita e a proteção de saída continuam ativas. A opção **Conquistas** resume novidades; a leitura individual ocorre na Central de Novidades.
 
 **O armazenamento principal do Impulso continua sendo local, no navegador.** Os arquivos JSON são cópias para segurança e transferência; não substituem automaticamente o estado salvo enquanto você trabalha.
 
@@ -356,16 +402,11 @@ Em **Arquivo → Atualizar**, selecione um arquivo de Backup Geral existente ou 
 <a id="aviso-de-alteracoes-pendentes-no-arquivo"></a>
 ### Aviso de alterações pendentes no arquivo
 
-O Impulso guarda seus registros localmente durante o uso. Separadamente, a faixa **Alterações pendentes no arquivo** aparece abaixo dos controles do cabeçalho quando os dados atuais diferem do último arquivo externo cuja gravação foi confirmada.
+O Impulso guarda seus registros localmente durante o uso. O estado do arquivo externo é acompanhado separadamente. Quando houver alterações pendentes, consulte o Impulsinho e utilize **Atualizar Backup Geral**, ou acesse **Arquivo → Atualizar**. Se ainda não houver arquivo escolhido, utilize **Guardar**.
 
-1. Conclua ou confira a atividade em andamento, se necessário.
-2. Selecione **Atualizar arquivo** na faixa.
-3. Caso exista um arquivo associado à sessão, confira a confirmação de sobrescrita; caso contrário, use **Guardar** para escolher o destino.
-4. Aguarde a conclusão da gravação. A faixa desaparece apenas quando a gravação for confirmada e não houver novas alterações pendentes.
+Confirme o destino e aguarde a gravação. Em navegadores que apenas iniciam um download, o aplicativo não consegue confirmar que o arquivo foi efetivamente guardado. A associação ao arquivo pode precisar ser refeita após reiniciar o navegador.
 
-Em navegadores que apenas iniciam um **download**, o aplicativo não consegue verificar se o usuário efetivamente guardou o JSON. Por segurança, o aviso pode permanecer. A associação ao arquivo escolhido também pode precisar ser refeita após reiniciar o navegador.
-
-**Não confunda os avisos:** esta faixa trata do **arquivo externo**; o número de novidades no cabeçalho trata de **conquistas ainda não consultadas**.
+O aviso de backup não é o contador de conquistas do cabeçalho. Desativar alertas não atualiza o arquivo externo.
 
 <a id="abrir-restaurar-um-backup-geral"></a>
 ### Abrir — restaurar um Backup Geral
@@ -401,21 +442,21 @@ Acesse **Sistema → Configurações**. A página contém **cinco seções recol
 1. **Temas:** identidade cromática e modo claro/escuro.
 2. **Atalhos de Teclado:** combinações, chaves individuais e redefinição.
 3. **Atalhos do Aplicativo:** chaves para acessos rápidos internos.
-4. **Alertas:** lembretes locais e distintivos de conquistas.
+4. **Controles do Impulsinho:** comportamento, personalidade, expressões, áudio, tutorial, alertas e distintivos.
 5. **Limpeza:** manutenção seletiva ou completa dos dados identificados como pertencentes ao Impulso.
 
 Clique no título de uma seção para abri-la ou recolhê-la. A página permite concentrar as preferências sem multiplicar telas no menu.
 
 **Sistema → Instalar** e **Sistema → Desinstalar** são explicados no capítulo 2. **Sistema → Fechar** solicita confirmação e apresenta a saída do aplicativo; o navegador pode impedir que uma página feche a própria janela. Nesse caso, feche a aba ou janela manualmente. Os dados já salvos permanecem no armazenamento local, a menos que sejam removidos por outra operação.
 
-<a id="fechar-o-impulso-com-arquivo-pendente"></a>
+<a id="fechar-o-impulso-com-um-arquivo-pendente"></a>
 ### Fechar o Impulso com um arquivo pendente
 
 Ao escolher **Sistema → Fechar**, se o Backup Geral estiver desatualizado, o aplicativo oferece **Cancelar**, **Fechar sem atualizar** ou **Atualizar arquivo**. A gravação não encerra automaticamente uma sessão de trabalho em andamento.
 
 Se você clicar no **X da janela**, fechar a aba ou recarregar a página, o navegador **poderá** exibir sua confirmação nativa de saída. Esse aviso não é garantido em todas as plataformas; o Impulso não controla seu texto nem consegue aguardar uma gravação assíncrona durante o fechamento.
 
-Para evitar surpresas, confira a faixa de pendências e atualize seu backup **antes** de fechar o aplicativo.
+Para evitar surpresas, confira as pendências do backup e atualize seu backup **antes** de fechar o aplicativo.
 
 [↑ Voltar ao sumário](#sumario-e-navegacao)
 
@@ -444,22 +485,92 @@ Em **Configurações → Atalhos do Aplicativo**, configure as chaves dos **13 a
 
 ---
 
-<a id="12-alertas-distintivos-e-area-de-transferencia"></a>
-### Impulsinho — tutorial e respostas aos controles
+<a id="12-impulsinho-assistente-emocional-e-motivacional"></a>
+## 12. Impulsinho — assistente emocional e motivacional
 
-No balão de perguntas, o botão **Tutorial** reinicia a orientação inicial quando não existe projeto ativo. Em **Sistema → Configurações → Controles do Impulsinho**, o botão **Testar som do Impulsinho** ajuda a verificar a saída de áudio. Os botões do aplicativo podem provocar expressões e comentários curtos, com intervalos para evitar distrações. O navegador pode bloquear o áudio até uma interação explícita.
+O Impulsinho acompanha o projeto ativo com comentários, orientações, expressões e efeitos sonoros. Ele funciona localmente, sem IA generativa, sem enviar perguntas a servidores e sem inventar estatísticas. Seu repertório é composto por regras, eventos e textos preparados.
 
-## 12. Alertas, distintivos e área de transferência
+<a id="personagem-e-baloes"></a>
+### Personagem e balões
+
+Arraste o personagem para reposicioná-lo. Toque nele para abrir ou fechar seu balão de fala. O botão **☰** abre um painel separado de perguntas e comandos. As respostas aparecem no balão do personagem. Use Ajustes para acessar as preferências e, se ocultar o avatar, utilize Mostrar Impulsinho para recuperá-lo.
+
+<a id="consultas-e-navegacao-contextual"></a>
+### Consultas e navegação contextual
+
+Expanda **Perguntas rápidas** ou digite uma pergunta de até 180 caracteres. Experimente “Quanto tempo trabalhei hoje?”, “Como está meu Motor?”, “Quantos chefões derrotei?” ou “Qual é seu estágio?”. Os temas reconhecidos incluem Meu Dia, Motor, Arena, Hábitos, Elixires, Conquistas, Estatísticas, Projetos, Ponto, Foco, Calendário, Dashboard, Backup e Configurações. Quando aplicável, o assistente abre a página correspondente e comenta os dados disponíveis. Navegar não inicia nem encerra atividades. Perguntas não reconhecidas recebem orientação sobre o repertório disponível.
+
+A consulta Conquistas resume até cinco novidades pendentes; use a Central de Novidades para consultar cada item. O comando Atualizar Backup Geral encaminha ao fluxo de gravação, sem dispensar confirmações.
+
+<a id="tutorial-e-reacoes-as-acoes"></a>
+### Tutorial e reações às ações
+
+Sem projeto ativo, o passeio inicial pode apresentar três orientações sobre menu, criação de projeto e registro de atividades. O passeio automático depende das preferências e do histórico local. O botão **Tutorial** permite repetir a orientação; com projeto ativo, apresenta um resumo dos primeiros passos. O movimento respeita a preferência de redução de animações.
+
+Os controles do aplicativo podem provocar comentários, expressões e sons, sujeitos a intervalos e preferências. Na Ignição do Motor, o personagem considera Giros, sequência atual, recorde e tempo desde o último registro. Uma pausa não é tratada como falha pessoal. Reações gerais não significam que cada operação foi concluída com sucesso.
+
+<a id="expressoes-e-bibliotecas-de-falas"></a>
+### Expressões e bibliotecas de falas
+
+O catálogo reúne 109 facetas WebP, agrupadas em alegria, curiosidade, surpresa, desafio, preocupação, descanso, humor e cuidado. Explore as expressões nas configurações, avance ou volte no catálogo, escolha uma família ou ative a alternância automática. Há quatro comentários associados a cada faceta e 1.200 variações contextuais em doze temas. Os números apresentados nas consultas vêm dos registros, não dos textos preparados.
+
+<a id="frases-motivacionais"></a>
+### Frases motivacionais
+
+A biblioteca adicional contém 1.000 frases em sete categorias: hábitos, uso do tempo, estoicismo, motivação, positividade, foco e disciplina, crescimento e mentalidade. O comando **Uma frase** solicita uma mensagem. Intervenções ocasionais priorizam o contexto da página e evitam repetir os últimos 80 identificadores, quando há alternativas. A seleção automática respeita o modo de conversa e evita interromper a digitação ou sessões de trabalho. As frases são reflexões, não diagnósticos nem garantias de resultados.
+
+<a id="personalidades"></a>
+### Personalidades
+
+| Personalidade | Comportamento |
+| --- | --- |
+| Divertido | Tom descontraído, humor e intervenções mais frequentes. |
+| Mentor | Orientação equilibrada e reflexiva; perfil padrão. |
+| Guerreiro | Linguagem de desafio, energia e incentivo às conquistas. |
+| Discreto | Menos intervenções e efeitos mais suaves. |
+
+Escolha o perfil em Sistema → Configurações → Controles do Impulsinho. A personalidade modifica o tom, a frequência e a intensidade sonora, não as regras de produtividade.
+
+<a id="evolucao-por-projeto"></a>
+### Evolução por projeto
+
+A experiência é calculada com os registros atuais: um ponto por Giro completo, cinco por chefão derrotado, um por hábito concluído e dois por dia da sequência recorde.
+
+| Estágio | XP mínimo |
+| --- | ---: |
+| Aprendiz | 0 |
+| Companheiro | 25 |
+| Estrategista | 100 |
+| Mestre | 500 |
+| Guardião do Impulso | 2.000 |
+
+Use **Minha evolução** para consultar estágio, XP e distância até o próximo patamar. O personagem pode anunciar avanços e oferecer conselhos do estágio. A exclusão de registros pode reduzir a experiência. A evolução é independente da personalidade e não modifica a Arena.
+
+<a id="sons-e-vinheta-de-abertura"></a>
+### Sons e vinheta de abertura
+
+Os efeitos são sintetizados por famílias emocionais pela Web Audio API. Ajuste o volume, silencie ou desative os sons nas configurações. Use **Testar som do Impulsinho** para autorizar e verificar a reprodução. A vinheta do splash apresenta nove notas ascendentes e tem opção independente de ativação e botão **Testar vinheta**. Navegadores podem bloquear áudio automático antes de uma interação; o aplicativo deve abrir mesmo sem som. Comece com volume moderado.
+
+<a id="controles-e-acessibilidade"></a>
+### Controles e acessibilidade
+
+Em Sistema → Configurações → Controles do Impulsinho, escolha o modo Espontaneamente, Somente quando eu clicar ou Ambos. O modo por clique evita abertura espontânea dos balões; o modo Ambos admite avisos ativados e ações importantes. Ajuste visibilidade, flutuação, alternância de expressões, personalidade, áudio, volume, tutorial, vinheta, alertas de backup e Elixires e distintivos. Os distintivos não dependem da visibilidade do avatar. Os alertas desativados não devem gerar intervenções espontâneas correspondentes. Os balões possuem foco visível, mensagens anunciáveis por leitores de tela e alvos de toque ampliados.
+
+[↑ Voltar ao sumário](#sumario-e-navegacao)
+
+---
+
+<a id="13-alertas-distintivos-e-area-de-transferencia"></a>
+## 13. Alertas, distintivos e área de transferência
+
+Os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do Impulsinho**. Os distintivos não dependem da visibilidade do personagem. Alertas desativados são retirados também da fila de intervenções do assistente.
 
 <a id="alertas-locais"></a>
-
-Desde a v122, os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do Impulsinho**. Os distintivos não dependem da visibilidade do personagem. Alertas desativados são retirados também da fila de intervenções do assistente.
-
 ### Alertas locais
 
-Em **Configurações → Alertas**, ative ou desative os lembretes disponíveis, como avisos relacionados a backups e hábitos. Eles são **avisos locais enquanto o aplicativo executa**: não são notificações push garantidas com o PWA fechado, nem realizam backups automaticamente.
+Em **Configurações → Controles do Impulsinho**, ative ou desative os lembretes disponíveis, como avisos relacionados a backups e hábitos. Eles são **avisos locais enquanto o aplicativo executa**: não são notificações push garantidas com o PWA fechado, nem realizam backups automaticamente.
 
-<a id="distintivos-de-conquistas-badging-api"></a>
+<a id="central-de-novidades-e-distintivos-badging-api"></a>
 ### Central de novidades e distintivos — Badging API
 
 A opção **Distintivos de conquistas** solicita ao sistema operacional, quando compatível, a apresentação de um contador no ícone do PWA instalado. O número representa **novidades ainda não consultadas**, como títulos, medalhas, Chefões, Cerimônias e Elixires.
@@ -481,8 +592,8 @@ Elixires também podem oferecer ações de copiar e compartilhar. A cópia de re
 
 ---
 
-<a id="13-armazenamento-e-limpeza"></a>
-## 13. Armazenamento e limpeza
+<a id="14-armazenamento-e-limpeza"></a>
+## 14. Armazenamento e limpeza
 
 <a id="onde-ficam-os-dados"></a>
 ### Onde ficam os dados
@@ -517,8 +628,8 @@ Use **Limpar selecionados** para executar apenas as opções marcadas. **Limpar 
 
 ---
 
-<a id="14-temas-acessibilidade-e-privacidade"></a>
-## 14. Temas, acessibilidade e privacidade
+<a id="15-temas-acessibilidade-e-privacidade"></a>
+## 15. Temas, acessibilidade e privacidade
 
 <a id="as-sete-identidades-cromaticas"></a>
 ### As sete identidades cromáticas
@@ -543,8 +654,8 @@ O Impulso não exige conta nem envia automaticamente os registros a um servidor 
 
 ---
 
-<a id="15-solucao-de-problemas"></a>
-## 15. Solução de problemas
+<a id="16-solucao-de-problemas"></a>
+## 16. Solução de problemas
 
 | Problema | O que verificar |
 | --- | --- |
@@ -562,6 +673,10 @@ O Impulso não exige conta nem envia automaticamente os registros a um servidor 
 | O Motor não anima | Verifique redução de movimento e se há graus acumulados; a reprodução não é necessária para contabilizar tempo. |
 | O armazenamento está cheio | Exporte um backup e consulte Dados → Armazenamento; não apague projetos sem uma cópia válida. |
 | A impressão está cortada | Ajuste margens, orientação e escala no diálogo de impressão. |
+| O Impulsinho não emite sons | Confira silenciamento, volume, sons emocionais e Testar som; o navegador pode exigir interação. |
+| A vinheta não toca | Confira a opção de vinheta e use Testar vinheta; a reprodução automática pode ser bloqueada. |
+| O tutorial não aparece | Abra o painel de perguntas e selecione Tutorial; com projeto ativo, será exibido um resumo. |
+| O Impulsinho não responde à pergunta | Experimente uma pergunta curta sobre uma página ou comando reconhecido. |
 | A janela não fecha pelo botão Fechar | O navegador pode impedir o fechamento programático; feche a aba manualmente. |
 
 **Evite usar a limpeza completa como primeira tentativa de corrigir um problema visual.** Ela pode apagar seus projetos. Prefira primeiro atualizar a página e conferir as configurações.
@@ -570,8 +685,8 @@ O Impulso não exige conta nem envia automaticamente os registros a um servidor 
 
 ---
 
-<a id="16-perguntas-frequentes"></a>
-## 16. Perguntas frequentes
+<a id="17-perguntas-frequentes"></a>
+## 17. Perguntas frequentes
 
 **Preciso de internet para registrar trabalho?**  
 Depois que os arquivos necessários estiverem em cache, o PWA pode funcionar offline. A primeira abertura e atualizações exigem conexão.
@@ -610,8 +725,8 @@ Não. A meta é simbólica e motivacional. A qualidade e o resultado dependem de
 
 ---
 
-<a id="17-verificacao-de-funcionamento"></a>
-## 17. Verificação de funcionamento
+<a id="18-verificacao-de-funcionamento"></a>
+## 18. Verificação de funcionamento
 
 Após publicar ou atualizar o aplicativo, recomenda-se testar:
 
@@ -637,8 +752,8 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 
 ---
 
-<a id="18-estrutura-do-projeto-e-glossario"></a>
-## 18. Estrutura do projeto e glossário
+<a id="19-estrutura-do-projeto-e-glossario"></a>
+## 19. Estrutura do projeto e glossário
 
 <a id="arquivos-principais"></a>
 ### Arquivos principais
@@ -661,33 +776,9 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 | `LICENSE` | Termos de licenciamento do repositório. |
 | `README.md` | Este Manual. |
 | `impulsinho/catalogo.json` | Catálogo e hashes das 109 facetas. |
-| `impulsinho/facetas/` | Imagens originais do futuro personagem. |
-| `impulsinho/ARQUITETURA.md` | Auditoria e contrato técnico da versão 107. |
-
-<a id="impulsinho-v107-fundacao-tecnica"></a>
-
-
-### Perguntas digitadas e navegação contextual (Impulso 115)
-
-O botão discreto **☰** abre o **balão do usuário**, com perguntas prontas e um campo para escrever perguntas de até 180 caracteres. Ao enviar uma pergunta reconhecida, o Impulsinho abre a página correspondente do aplicativo e responde no **balão do personagem**, citando apenas dados calculados dos registros reais. São reconhecidos temas como **Meu Dia, Motor, Arena, Hábitos, Elixires, Conquistas, Estatísticas, Projetos, Ponto, Foco, Calendário, Dashboard, Backup e Configurações**. A navegação não inicia nem interrompe registros de tempo.
-
-A interpretação é local, baseada em palavras e expressões reconhecidas. Perguntas fora desse repertório recebem uma explicação honesta; **não há IA generativa externa**. O catálogo `impulsinho/facetas-falas.json` associa **quatro comentários emocionais a cada uma das 109 facetas**, com alternância por família emocional. Esses comentários não fornecem números: as estatísticas vêm exclusivamente do aplicativo.
-
-### Impulsinho: perguntas, respostas e biblioteca contextual
-
-O **balão do personagem** contém exclusivamente suas respostas e comentários. O botão discreto **☰**, abaixo e à esquerda do avatar, abre o **balão de perguntas do usuário**. Ao selecionar **Conquistas**, **Ver avisos**, **Meu projeto**, **Meu Dia**, **Motor**, **Arena** ou **Hábitos e Elixires**, o painel de perguntas se recolhe e o Impulsinho responde no próprio balão. O comando **Conquistas** informa quantas novidades estão pendentes e descreve até cinco delas; a leitura individual e a navegação continuam na Central de Novidades original do Impulso.
-
-A biblioteca local `impulsinho/falas.json` reúne **1.200 mensagens**, em doze temas, usadas como variações contextuais sem serviços externos. As estatísticas numéricas são calculadas em tempo real pela ponte de leitura do aplicativo e **não** são retiradas das frases. Se a biblioteca não carregar, o personagem mantém respostas básicas de segurança. Os alertas de backup e Elixires só são oferecidos espontaneamente quando ativados nas configurações.
-
-O Impulsinho não é uma IA generativa; interpreta os eventos e as perguntas pré-definidas e consulta os dados que o Impulso disponibiliza. A interpretação de perguntas digitadas livremente é uma etapa futura.
-
-### Impulsinho — fundação técnica da versão 107
-
-A versão 107 prepara a integração do futuro assistente emocional **Impulsinho**. Esta etapa **não exibe um personagem flutuante**, balões ou sons: esses recursos serão implementados nas etapas seguintes.
-
-O pacote inclui as 109 facetas WebP originais em `impulsinho/facetas/`, um catálogo com identificadores Unicode e verificações SHA-256 em `impulsinho/catalogo.json`, além de uma ponte de leitura (`window.Impulsinho.consultar()`) para consultar, sem alterar, estatísticas do projeto ativo. Os eventos `impulsinho:dados-alterados` e `impulsinho:navegacao` permitem que os módulos futuros reajam ao aplicativo sem criar um segundo armazenamento.
-
-Os cálculos de tempo, Meu Dia e Arena reutilizam as funções já existentes no Impulso. O sistema de backups, a Central de Novidades e os alertas atuais permanecem independentes e funcionais. Consulte `impulsinho/ARQUITETURA.md` para a especificação e os limites desta etapa.
+| `impulsinho/facetas/` | Imagens das expressões do personagem. |
+| `impulsinho/avatar.js`, `avatar.css` | Comportamento e apresentação do assistente. |
+| `impulsinho/falas.json`, `facetas-falas.json`, `motivacionais.json` | Bibliotecas de mensagens e comentários. |
 
 <a id="glossario"></a>
 ### Glossário
@@ -715,51 +806,3 @@ Uma ferramenta para transformar dedicação em registros, continuidade em progre
 
 **Site:** https://magpe-stack.github.io/Impulso/ · **Repositório:** https://github.com/magpe-stack/Impulso
 
-
----
-
-<a id="impulsinho-versao-108"></a>
-## Impulsinho — primeira aparição (v108)
-
-Na versão 108, o Impulsinho aparece no canto inferior direito com a expressão 3D original 🧐. Arraste-o para outro lugar da tela, toque para abrir ou fechar seu balão e utilize **Silenciar**, **Ocultar** e **Configurar**. A opção **Ocultar** mostra um pequeno controle para reexibir o personagem. A posição e as preferências são guardadas neste navegador.
-
-O controle **Silenciar** ainda não emite nem bloqueia sons, pois a síntese sonora será implementada em etapa futura. A animação pode ser desativada nas configurações do próprio personagem, e também respeita a preferência de movimento reduzido do sistema.
-
-**Limites desta etapa:** ainda não existem 1.200 falas, mudança automática das 109 expressões, consultas conversacionais ou migração de avisos. A versão 107 continua oferecendo a ponte de dados para as próximas etapas.
-
-[↑ Voltar ao sumário](#sumario-e-navegacao)
-
-
-<a id="impulsinho-versao-116"></a>
-### Impulsinho — passeio inicial, ignição e áudio (v116)
-
-Quando não existe projeto ativo, o assistente pode apresentar um passeio inicial de três mensagens, movendo-se discretamente pela tela. O passeio não altera dados e é exibido uma vez por navegador; pode ser desativado em **Configurações → Controles do Impulsinho**. No modo Somente quando eu clicar, ele não começa espontaneamente.
-
-Ao clicar em **Ignição** na página Motor, o Impulsinho comenta os Giros e a sequência de dias calculados a partir dos registros reais. A avaliação é encorajadora e não penaliza pausas. As respostas permanecem no balão do personagem.
-
-O áudio emocional é sintetizado localmente com Web Audio API, pode ser silenciado e tem controle de volume. Alguns navegadores exigem interação antes de permitir áudio. O botão **Perguntas rápidas** expande ou recolhe o menu de consultas do usuário.
-
-
-## Impulsinho — 1.000 frases motivacionais (v119)
-
-A biblioteca `impulsinho/motivacionais.json` reúne 1.000 frases fornecidas pelo autor, organizadas em sete categorias: hábitos, uso do tempo, estoicismo, motivação, positividade, foco e disciplina, crescimento e mentalidade. O Impulsinho pode apresentar frases ocasionalmente quando houver projeto ativo, respeitando o modo de intervenção, a visibilidade, intervalos mínimos e outras conversas. O comando **✨ Uma frase** permite solicitar uma frase a qualquer momento. A escolha tenta priorizar a categoria da página atual e evita repetir as 80 frases mais recentes, com histórico local. O conteúdo é pré-escrito e funciona offline depois de armazenado pelo service worker.
-
-
-### Personalidades e áudio de abertura (v120)
-
-Em Sistema → Configurações → Controles do Impulsinho, escolha Divertido, Mentor, Guerreiro ou Discreto. Os perfis alteram o tom das mensagens, a frequência de intervenções não prioritárias e a intensidade dos efeitos. O volume máximo dos efeitos foi elevado de 0,24 para 0,48 antes do ajuste por perfil. A vinheta opcional apresenta nove notas ascendentes durante o splash, quando o navegador autoriza áudio. Use Testar vinheta para ouvi-la sob demanda.
-
-
-## Evolução do Impulsinho (v121)
-
-Cada projeto possui um estágio calculado pelos registros atuais: 1 ponto por Giro completo, 5 por chefão derrotado, 1 por hábito concluído e 2 por dia da sequência recorde. Os estágios são Aprendiz (0), Companheiro (25), Estrategista (100), Mestre (500) e Guardião do Impulso (2.000). A evolução não altera os registros nem a progressão da Arena. Se os registros forem removidos, o estágio pode diminuir. A consulta **Minha evolução**, no menu de perguntas, apresenta o estágio, os pontos e a distância até o próximo. Também reconhece perguntas digitadas sobre evolução. O personagem apresenta conselhos específicos do estágio e pode anunciar avanços observados, respeitando o modo de intervenção. As quatro personalidades continuam independentes.
-
-
-# Impulso 123 — Estabilidade
-
-- Referências do manifesto e temas alinhadas ao cache offline.
-- Histórico transitório de intervenções limitado a 512 registros; marcos de horas e Arena preservados.
-- Consultas manuais atualizam o intervalo de intervenções.
-- Dados e regras dos projetos, estilos e recursos sonoros preservados.
-
-Validação: sintaxe JavaScript, caminhos de cache e bibliotecas locais. Teste Chromium bloqueado pela política do ambiente (ERR_BLOCKED_BY_ADMINISTRATOR); teste funcional no dispositivo permanece pendente.

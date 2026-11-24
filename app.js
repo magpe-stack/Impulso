@@ -1139,6 +1139,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
+ <p><strong>Versão estável: 124</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
@@ -1154,6 +1155,12 @@ function about(){
  <li><strong>Arquivo e segurança:</strong> backups gerais, abertura e atualização de arquivos, importação, impressão e controle de armazenamento.</li>
  <li><strong>Personalização:</strong> sete identidades cromáticas, modos claro e escuro, atalhos de teclado configuráveis, alertas, distintivos e limpeza seletiva.</li>
  </ul>
+ <h3>Impulsinho — assistente emocional e motivacional</h3>
+ <p>Companheiro flutuante e reposicionável, com 109 expressões, balões separados de perguntas e respostas, consultas digitadas, navegação contextual, tutorial inicial e reações às ações e à Ignição do Motor.</p>
+ <p>Reúne 1.200 variações contextuais, comentários associados às facetas e 1.000 frases motivacionais. Oferece quatro personalidades (Divertido, Mentor, Guerreiro e Discreto), cinco estágios de evolução por projeto e consultas de experiência. Seus efeitos sonoros e a vinheta ascendente de abertura são sintetizados localmente, com controles de áudio e testes nas configurações.</p>
+ <p>O assistente utiliza regras locais e dados reais, sem IA generativa externa. Os controles centralizam visibilidade, movimento, frequência das conversas, alertas de backup e Elixires e distintivos. A interface oferece navegação por teclado, indicadores de foco e suporte à redução de movimento.</p>
+ <h3>Integração com o dispositivo</h3>
+ <p>Instalação como PWA, cache offline, atalhos do aplicativo, cópia de resumos, impressão e integração com arquivos e distintivos quando suportados pelo navegador e pelo sistema operacional.</p>
  <h3>Privacidade, autonomia e limites</h3>
  <p>O Impulso funciona prioritariamente no próprio dispositivo, pode trabalhar offline após o carregamento dos arquivos necessários e não exige uma conta para registrar projetos. Os dados não são sincronizados automaticamente com uma nuvem. <strong>Guarde backups regularmente e mantenha cópias fora do navegador.</strong></p>
  <p>A jornada de 10.000 horas é uma referência motivacional, não uma certificação de maestria. O Impulso não substitui sistemas oficiais de controle de jornada.</p>
