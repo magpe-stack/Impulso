@@ -1,4 +1,4 @@
-/* Impulsinho v116 — perguntas digitadas, navegação contextual e 109 facetas. */
+/* Impulsinho v117 — tutorial sob demanda, diagnóstico de áudio e respostas a controles. */
 (()=>{'use strict';
 const KEY='impulsinho-avatar-v108',DEFAULT='impulsinho/facetas/emoji_u1f9d0_3d.webp';
 let pref={visivel:true,silenciado:false,flutuar:true,x:null,y:null};
@@ -13,7 +13,7 @@ let faces=[],current=0,lastFace=-1,autoTimer=null;
 const message=root.querySelector('#impulsinho-mensagem');
 const settingsKey='impulsinho-config-v112';let behavior={modo:'ambos',volume:35,audio:true,tutorial:true};try{behavior={...behavior,...JSON.parse(localStorage.getItem(settingsKey)||'{}')}}catch{}
 const persistBehavior=()=>{try{localStorage.setItem(settingsKey,JSON.stringify(behavior))}catch{}};
-const configHost=document.createElement('section');configHost.className='impulsinho-configuracoes';configHost.innerHTML=`<h3>Controles do Impulsinho</h3><p class="help">Escolha quando o Impulsinho pode abrir conversas. No modo Ambos, avisos de alertas ativados e ações importantes são obrigatórios.</p><fieldset><legend>Abertura dos balões</legend><label><input type="radio" name="impulsinhoModo" value="espontaneo"> Espontaneamente</label><label><input type="radio" name="impulsinhoModo" value="clique"> Somente quando eu clicar</label><label><input type="radio" name="impulsinhoModo" value="ambos"> Ambos (avisos de alertas e ações obrigatórios)</label></fieldset><label><input type="checkbox" id="impulsinhoVisivel"> Exibir personagem</label><label><input type="checkbox" id="impulsinhoSilencio"> Silenciar efeitos do Impulsinho</label><label><input type="checkbox" id="impulsinhoFlutuar"> Flutuação suave</label><label><input type="checkbox" id="impulsinhoAlternar"> Alternar expressões automaticamente</label><label><input type="checkbox" id="impulsinhoAudio"> Sons emocionais sintetizados</label><label for="impulsinhoVolume">Volume dos sons (<output id="impulsinhoVolumeValue">35%</output>)</label><input id="impulsinhoVolume" type="range" min="0" max="100" step="5" value="35"><label><input type="checkbox" id="impulsinhoTutorial"> Tutorial guiado quando não há projeto</label><button type="button" class="btn" id="impulsinhoExpressoesBtn">Explorar as 109 expressões</button><div id="impulsinhoFacetasConfig"></div><p class="help">Os sons são gerados no dispositivo, sem arquivos externos. O navegador pode exigir um toque antes de reproduzi-los.</p>`;
+const configHost=document.createElement('section');configHost.className='impulsinho-configuracoes';configHost.innerHTML=`<h3>Controles do Impulsinho</h3><p class="help">Escolha quando o Impulsinho pode abrir conversas. No modo Ambos, avisos de alertas ativados e ações importantes são obrigatórios.</p><fieldset><legend>Abertura dos balões</legend><label><input type="radio" name="impulsinhoModo" value="espontaneo"> Espontaneamente</label><label><input type="radio" name="impulsinhoModo" value="clique"> Somente quando eu clicar</label><label><input type="radio" name="impulsinhoModo" value="ambos"> Ambos (avisos de alertas e ações obrigatórios)</label></fieldset><label><input type="checkbox" id="impulsinhoVisivel"> Exibir personagem</label><label><input type="checkbox" id="impulsinhoSilencio"> Silenciar efeitos do Impulsinho</label><label><input type="checkbox" id="impulsinhoFlutuar"> Flutuação suave</label><label><input type="checkbox" id="impulsinhoAlternar"> Alternar expressões automaticamente</label><label><input type="checkbox" id="impulsinhoAudio"> Sons emocionais sintetizados</label><label for="impulsinhoVolume">Volume dos sons (<output id="impulsinhoVolumeValue">35%</output>)</label><input id="impulsinhoVolume" type="range" min="0" max="100" step="5" value="35"><label><input type="checkbox" id="impulsinhoTutorial"> Tutorial guiado quando não há projeto</label><button type="button" class="btn" id="impulsinhoExpressoesBtn">Explorar as 109 expressões</button><div id="impulsinhoFacetasConfig"></div><button type="button" class="btn" id="impulsinhoTesteSom">▶ Testar som do Impulsinho</button><p id="impulsinhoEstadoSom" role="status" aria-live="polite" class="help">Os sons são gerados no dispositivo. Clique em Testar som para autorizar o áudio.</p>`;
 const settingsTarget=configHost.querySelector('#impulsinhoFacetasConfig');settingsTarget.append(facePanel);facePanel.hidden=true;
 function mountSettings(){const target=document.querySelector('[data-settings-section="impulsinho"] .settings-accordion-body');if(!target)return;target.replaceChildren(configHost);syncSettings()}
 function syncSettings(){configHost.querySelectorAll('input[name="impulsinhoModo"]').forEach(x=>x.checked=x.value===behavior.modo);configHost.querySelector('#impulsinhoVisivel').checked=pref.visivel;configHost.querySelector('#impulsinhoSilencio').checked=pref.silenciado;configHost.querySelector('#impulsinhoFlutuar').checked=pref.flutuar;configHost.querySelector('#impulsinhoAlternar').checked=auto.checked;configHost.querySelector('#impulsinhoAudio').checked=behavior.audio!==false;configHost.querySelector('#impulsinhoVolume').value=Number(behavior.volume??35);configHost.querySelector('#impulsinhoVolumeValue').textContent=String(behavior.volume??35)+'%';configHost.querySelector('#impulsinhoTutorial').checked=behavior.tutorial!==false}
@@ -33,6 +33,7 @@ questions.setAttribute('aria-label','Perguntas e ações para o Impulsinho');
 const qTitle=document.createElement('h2');qTitle.textContent='O que você quer perguntar?';questions.append(qTitle);const menu=document.createElement('button');menu.type='button';menu.textContent='Perguntas rápidas ▾';menu.setAttribute('aria-expanded','true');menu.setAttribute('aria-controls','impulsinho-perguntas-acoes');questions.append(menu);
 const actions=balloon.querySelector('.impulsinho-acoes');
 actions.id='impulsinho-perguntas-acoes';questions.append(actions);menu.addEventListener('click',()=>{actions.hidden=!actions.hidden;menu.setAttribute('aria-expanded',String(!actions.hidden))});
+const tutorialButton=document.createElement('button');tutorialButton.type='button';tutorialButton.textContent='▶ Tutorial';tutorialButton.dataset.acao='tutorial';actions.prepend(tutorialButton);
 const questionForm=document.createElement('form');questionForm.className='impulsinho-formulario';questionForm.setAttribute('aria-label','Escrever pergunta ao Impulsinho');
 questionForm.innerHTML='<label for="impulsinho-pergunta-texto">Sua pergunta</label><div class="impulsinho-form-row"><input id="impulsinho-pergunta-texto" type="text" maxlength="180" autocomplete="off" placeholder="Ex.: Quanto trabalhei hoje?" required><button type="submit">Perguntar</button></div><p class="impulsinho-ajuda">Pergunte sobre Meu Dia, Motor, Arena, hábitos, conquistas, estatísticas, backup e configurações.</p>';
 questions.append(questionForm);
@@ -136,8 +137,8 @@ const AudioEngine=window.AudioContext||window.webkitAudioContext;
 function unlockAudio(){audioUnlocked=true;}
 document.addEventListener('pointerdown',unlockAudio,{once:true,capture:true});
 document.addEventListener('keydown',unlockAudio,{once:true,capture:true});
-function playEmotion(emotion){
- if(!audioUnlocked||!AudioEngine||pref.silenciado||behavior.audio===false||Number(behavior.volume)<=0)return;
+function playEmotion(emotion,force=false){
+ if(!AudioEngine||(!force&&!audioUnlocked)||(!force&&(pref.silenciado||behavior.audio===false))||Number(behavior.volume)<=0)return false;
  try{
   audioContext??=new AudioEngine();if(audioContext.state==='suspended')audioContext.resume().catch(()=>{});
   const presets={alegria:[523,659,784],surpresa:[392,740],curiosidade:[440,554],preocupacao:[330,294],desafio:[196,262,330],cuidado:[392,440],descanso:[440,330],humor:[440,660,440]};
@@ -147,29 +148,40 @@ function playEmotion(emotion){
    gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(Math.max(.0001,Number(behavior.volume)/100*.045),start+.018);
    gain.gain.exponentialRampToValueAtTime(.0001,start+.15);osc.connect(gain);gain.connect(audioContext.destination);osc.start(start);osc.stop(start+.16);
   });
- }catch{}
+  return true;
+ }catch{return false}
 }
+configHost.querySelector('#impulsinhoTesteSom').addEventListener('click',async()=>{
+ const status=configHost.querySelector('#impulsinhoEstadoSom');audioUnlocked=true;
+ if(!AudioEngine){status.textContent='Este navegador não oferece Web Audio API.';return}
+ try{audioContext??=new AudioEngine();await audioContext.resume();if(audioContext.state!=='running'){status.textContent='O navegador bloqueou o áudio. Verifique a permissão e o volume do dispositivo.';return}
+ const ok=playEmotion('alegria',true);status.textContent=ok?'Teste enviado! Se não ouviu, confira o volume do sistema, a aba e o dispositivo de saída.':'Não foi possível produzir o som.';
+ }catch{status.textContent='O áudio não pôde ser iniciado neste navegador.'}
+});
 // Passeio de boas-vindas: apenas quando não há projeto ativo, sem tocar nos dados.
 const tourSteps=[
  {title:'Vamos começar?',text:'Ainda não há projeto ativo. Vou mostrar os primeiros passos! Abra o menu no canto superior esquerdo.',emotion:'curiosidade',x:.20,y:.24},
  {title:'Crie ou abra um projeto',text:'Escolha Novo projeto para começar do zero, ou Projetos para continuar um trabalho existente.',emotion:'alegria',x:.50,y:.42},
  {title:'Seu tempo conta!',text:'Depois de abrir um projeto, use Ponto ou Foco para registrar trabalho. Eu poderei comentar seus Giros, hábitos e conquistas.',emotion:'surpresa',x:.76,y:.65}
 ];
-let tourTimer=null,tourIndex=-1;
-function stopTour(){if(tourTimer){clearTimeout(tourTimer);tourTimer=null}tourIndex=-1;avatar.classList.remove('impulsinho-passeio')}
+let tourTimer=null,tourIndex=-1,manualTour=false;
+function stopTour(){if(tourTimer){clearTimeout(tourTimer);tourTimer=null}tourIndex=-1;manualTour=false;avatar.classList.remove('impulsinho-passeio')}
 function tourStep(){
- if(!behavior.tutorial||!pref.visivel||snapshot()?.projeto||document.hidden||document.querySelector('dialog[open]')||['clique'].includes(behavior.modo)){stopTour();return}
+ if((!manualTour&&(!behavior.tutorial||behavior.modo==='clique'))||!pref.visivel||snapshot()?.projeto||document.hidden||document.querySelector('dialog[open]')){stopTour();return}
  if(tourIndex>=tourSteps.length){stopTour();return}
  const step=tourSteps[tourIndex];const width=avatar.getBoundingClientRect().width||78;
  const tx=Math.max(8,Math.min(innerWidth-width-8,innerWidth*step.x));const ty=Math.max(8,Math.min(innerHeight-width-8,innerHeight*step.y));
  avatar.classList.add('impulsinho-passeio');pref.x=tx;pref.y=ty;position();
- headline.textContent=step.title;message.textContent=step.text;express(step.emotion);opened(true);
+ headline.textContent=step.title;message.textContent=step.text;express(step.emotion);playEmotion(step.emotion);opened(true);
  tourTimer=setTimeout(()=>{if(snapshot()?.projeto){stopTour();return}tourIndex++;tourStep()},8500);
 }
 function startTour(){if(tourTimer||tourIndex>=0||!behavior.tutorial||snapshot()?.projeto||behavior.modo==='clique'||!pref.visivel)return;
  const key='impulsinho-tutorial-v116';try{if(localStorage.getItem(key)==='concluido')return;localStorage.setItem(key,'concluido')}catch{}
  tourIndex=0;tourStep();
 }
+function runTutorial(){stopTour();questionsOpen(false);if(!pref.visivel)visible(true);manualTour=true;tourIndex=0;
+ if(snapshot()?.projeto){reply('Tutorial do Impulso','Você já tem um projeto ativo! Vou explicar os primeiros passos: abra o menu para navegar; use Ponto ou Foco para registrar tempo; consulte Motor, Meu Dia e Arena para acompanhar o progresso.','curiosidade');stopTour();return}
+ tourStep();}
 window.addEventListener('impulsinho:ignicao',e=>{
  const d=e.detail||{},s=snapshot();if(!s?.projeto||s.projeto.id!==d.projetoId)return;
  const giros=Math.max(0,Math.floor(Number(d.giros)||0)),streak=Math.max(0,Math.floor(Number(d.sequencia)||0)),best=Math.max(0,Math.floor(Number(d.recorde)||0));
@@ -279,8 +291,47 @@ avatar.addEventListener('pointerup',e=>{if(!drag||e.pointerId!==drag.id)return;c
 avatar.addEventListener('pointercancel',()=>{drag=null;save()});
 avatar.addEventListener('click',()=>{if(performance.now()-lastDragEnd<350)return;opened(balloon.hidden)});
 questionButton.addEventListener('click',()=>{stopTour();questionsOpen(questions.hidden)});
-root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='avisos')manualStatus();if(action==='estatisticas')manualTopic('estatisticas');if(['hoje','motor','arena','habitos'].includes(action))manualTopic(action);if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas')manualTopic('conquistas');if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='fechar'){questionsOpen(false);opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
+root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='tutorial')runTutorial();if(action==='avisos')manualStatus();if(action==='estatisticas')manualTopic('estatisticas');if(['hoje','motor','arena','habitos'].includes(action))manualTopic(action);if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas')manualTopic('conquistas');if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='fechar'){questionsOpen(false);opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
 reopen.addEventListener('click',()=>{visible(true);opened(true);avatar.focus()});
+
+// Reações de interface: somente ações reais, com intervalo para não atrapalhar o trabalho.
+const reactionHints=[
+ [/menu|navega/i,'O menu é o mapa da missão. Vamos explorar!','curiosidade'],
+ [/tema|escuro|claro/i,'Mudança de visual! Continuo de olho nas suas conquistas.','surpresa'],
+ [/tela cheia|fullscreen/i,'Mais espaço para a missão!','alegria'],
+ [/novo projeto|criar projeto/i,'Uma nova missão está nascendo!','alegria'],
+ [/projetos|abrir projeto/i,'Vamos conferir seus projetos.','curiosidade'],
+ [/guardar|backup|atualizar arquivo/i,'Uma cópia de segurança ajuda a proteger seu trabalho.','cuidado'],
+ [/motor|igni[cç][aã]o/i,'Hora de conferir a energia do Motor!','surpresa'],
+ [/arena|chef[aã]o/i,'A Arena nos espera. Vamos descobrir o próximo desafio!','desafio'],
+ [/h[aá]bito|elixir/i,'Hábitos pequenos podem render grandes conquistas.','alegria'],
+ [/meu dia|calend[aá]rio|estat[ií]stica/i,'Vamos examinar os registros reais do projeto.','curiosidade'],
+ [/ponto|foco|iniciar|come[cç]ar/i,'Boa missão! Vou acompanhar sem interromper sua concentração.','cuidado'],
+ [/imprimir|exportar/i,'Hora de organizar e conferir seus registros.','curiosidade'],
+ [/configura[cç][oõ]es|ajustes/i,'Aqui você decide como quer que eu me comporte.','curiosidade']
+];
+let lastReactionAt=0,lastReactionLabel='';
+document.addEventListener('click',e=>{
+ const el=e.target.closest('button,[role="button"],input[type="button"],input[type="submit"]');
+ if(!el||root.contains(el)||configHost.contains(el)||el.disabled||el.hidden||el.closest('[hidden]'))return;
+ if(!pref.visivel||document.hidden||tourIndex>=0)return;
+ const label=(el.getAttribute('aria-label')||el.getAttribute('title')||el.textContent||el.value||el.id||'').trim().replace(/\s+/g,' ').slice(0,100);
+ if(!label)return;
+ const now=Date.now();if(now-lastReactionAt<2600||label===lastReactionLabel&&now-lastReactionAt<11000)return;
+ lastReactionAt=now;lastReactionLabel=label;
+ // Uma reação curta e relevante; os eventos específicos (como Ignição) têm prioridade.
+ const match=reactionHints.find(([pattern])=>pattern.test(label));
+ const emotion=match?.[2]||['curiosidade','alegria','humor','surpresa'][Math.floor(Math.random()*4)];
+ const comment=match?.[1]||`Você selecionou “${label}”. Vamos ver o que acontece!`;
+ playEmotion(emotion);
+ express(emotion);
+ // Modo clique respeita a preferência de não abrir balões automaticamente.
+ // Durante Foco/Ponto, não se sobrepõe aos controles de tempo.
+ if(behavior.modo!=='clique'&&!document.querySelector('dialog[open]')&&!document.activeElement?.matches('input,textarea,select,[contenteditable="true"]')&&!['foco','ponto'].includes(snapshot()?.pagina)){
+  headline.textContent='Impulsinho comenta';message.textContent=comment;opened(true);
+ }
+},false);
+
 
 window.addEventListener('resize',position);window.addEventListener('orientationchange',position);
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&(!balloon.hidden||!questions.hidden)){questionsOpen(false);opened(false);avatar.focus()}});
