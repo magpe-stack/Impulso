@@ -103,3 +103,5 @@
 /* v147: camada corporal independente, sem bloquear controles. */
 body > .ic-corporal{position:fixed;inset:0;z-index:849;pointer-events:none}
 body.dark #impulsinho-balao{background:#10141D!important;color:#fff!important}body.dark #impulsinho-balao p,body.dark #impulsinho-balao h2{color:#fff!important}
+
+.ic-test-buttons{display:flex;flex-wrap:wrap;gap:6px}.ic-test-preview{display:block;width:96px;height:96px;object-fit:contain;margin:8px auto}.ic-test-preview[hidden]{display:none}
