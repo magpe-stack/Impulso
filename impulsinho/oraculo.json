@@ -1,0 +1,4364 @@
+{
+  "idioma": "pt-BR",
+  "total": 271,
+  "perguntas": [
+    {
+      "id": "Q001",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "O que é o Impulso?",
+      "resposta": "O Impulso é um aplicativo de produtividade pessoal que transforma o tempo dedicado aos seus projetos em progresso mensurável, hábitos e conquistas.",
+      "palavras_chave": [
+        "definição impulso",
+        "que aplicativo é esse"
+      ],
+      "variacoes": [
+        "O que é o Impulso",
+        "definição impulso",
+        "que aplicativo é esse"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q002",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "Para que serve o Impulso?",
+      "resposta": "Ele ajuda você a organizar projetos, registrar trabalho, planejar sessões de foco, cultivar hábitos e acompanhar metas.",
+      "palavras_chave": [
+        "finalidade impulso",
+        "para que serve aplicativo"
+      ],
+      "variacoes": [
+        "Para que serve o Impulso",
+        "finalidade impulso",
+        "para que serve aplicativo"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q003",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "Para quem o Impulso foi criado?",
+      "resposta": "Foi criado para quem deseja acompanhar a dedicação a projetos pessoais, estudos ou trabalho e desenvolver constância.",
+      "palavras_chave": [
+        "público alvo",
+        "quem pode usar"
+      ],
+      "variacoes": [
+        "Para quem o Impulso foi criado",
+        "público alvo",
+        "quem pode usar"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q004",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "O Impulso é um jogo?",
+      "resposta": "Não exatamente. É uma ferramenta de produtividade com elementos de jogo, como Chefões, recompensas e metas. O progresso depende dos registros de trabalho.",
+      "palavras_chave": [
+        "jogo produtividade",
+        "gamificação"
+      ],
+      "variacoes": [
+        "O Impulso é um jogo",
+        "jogo produtividade",
+        "gamificação"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q005",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "O tempo registrado é real?",
+      "resposta": "Sim. Os temporizadores utilizam horários reais; as entradas manuais dependem dos horários que você informa.",
+      "palavras_chave": [
+        "tempo real",
+        "horários reais"
+      ],
+      "variacoes": [
+        "O tempo registrado é real",
+        "tempo real",
+        "horários reais"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q006",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "O Impulso substitui um controle oficial de jornada?",
+      "resposta": "Não. É uma ferramenta pessoal, não um sistema certificado de controle de jornada.",
+      "palavras_chave": [
+        "controle jornada",
+        "registro oficial trabalho"
+      ],
+      "variacoes": [
+        "O Impulso substitui um controle oficial de jornada",
+        "controle jornada",
+        "registro oficial trabalho"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q007",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "Preciso criar uma conta?",
+      "resposta": "Não. Você pode começar sem cadastro; os dados ficam no navegador.",
+      "palavras_chave": [
+        "cadastro",
+        "login",
+        "conta obrigatória"
+      ],
+      "variacoes": [
+        "Preciso criar uma conta",
+        "cadastro",
+        "login",
+        "conta obrigatória"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q008",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "Como começo a usar o Impulso?",
+      "resposta": "Abra Arquivo → Novo, crie um projeto e registre sua primeira atividade em Ações → Ponto.",
+      "palavras_chave": [
+        "primeiros passos",
+        "começar usar"
+      ],
+      "variacoes": [
+        "Como começo a usar o Impulso",
+        "primeiros passos",
+        "começar usar"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q009",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "Preciso conhecer a Arena para começar?",
+      "resposta": "Não. Comece registrando suas atividades; a Arena acompanha seu progresso automaticamente.",
+      "palavras_chave": [
+        "arena obrigatória",
+        "começar sem arena"
+      ],
+      "variacoes": [
+        "Preciso conhecer a Arena para começar",
+        "arena obrigatória",
+        "começar sem arena"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q010",
+      "categoria": "Conheça o Impulso",
+      "pergunta": "As 10.000 horas garantem domínio profissional?",
+      "resposta": "Não. As 10.000 horas são uma meta simbólica. Qualidade da prática e aprendizado também importam.",
+      "palavras_chave": [
+        "10000 horas garantia",
+        "domínio profissional"
+      ],
+      "variacoes": [
+        "As 10.000 horas garantem domínio profissional",
+        "10000 horas garantia",
+        "domínio profissional"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q011",
+      "categoria": "Instalação e navegação",
+      "pergunta": "O que é um PWA?",
+      "resposta": "PWA é um aplicativo web progressivo, que pode ser instalado e funcionar offline após armazenar os recursos necessários.",
+      "palavras_chave": [
+        "pwa",
+        "aplicativo web progressivo"
+      ],
+      "variacoes": [
+        "O que é um PWA",
+        "pwa",
+        "aplicativo web progressivo"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q012",
+      "categoria": "Instalação e navegação",
+      "pergunta": "Como acesso o Impulso pela primeira vez?",
+      "resposta": "Acesse https://magpe-stack.github.io/Impulso/ com internet e aguarde o carregamento inicial.",
+      "palavras_chave": [
+        "primeiro acesso",
+        "endereço aplicativo"
+      ],
+      "variacoes": [
+        "Como acesso o Impulso pela primeira vez",
+        "primeiro acesso",
+        "endereço aplicativo"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q013",
+      "categoria": "Instalação e navegação",
+      "pergunta": "O que é a abertura Ignição?",
+      "resposta": "É a apresentação visual de abertura, com foguete, anel luminoso e revelação do nome. Não mede a velocidade real de carregamento.",
+      "palavras_chave": [
+        "ignição abertura",
+        "splash"
+      ],
+      "variacoes": [
+        "O que é a abertura Ignição",
+        "ignição abertura",
+        "splash"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q014",
+      "categoria": "Instalação e navegação",
+      "pergunta": "Como instalo o Impulso?",
+      "resposta": "Abra Sistema → Instalar e confirme a instalação oferecida pelo navegador, quando disponível.",
+      "palavras_chave": [
+        "instalar impulso",
+        "instalação aplicativo"
+      ],
+      "variacoes": [
+        "Como instalo o Impulso",
+        "instalar impulso",
+        "instalação aplicativo"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q015",
+      "categoria": "Instalação e navegação",
+      "pergunta": "Como instalo no Windows?",
+      "resposta": "No Chrome ou Edge, abra Sistema → Instalar e siga a confirmação do navegador.",
+      "palavras_chave": [
+        "instalar windows",
+        "instalar computador"
+      ],
+      "variacoes": [
+        "Como instalo no Windows",
+        "instalar windows",
+        "instalar computador"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q016",
+      "categoria": "Instalação e navegação",
+      "pergunta": "Como instalo no Android?",
+      "resposta": "No navegador Android, use a opção de instalação ou de adicionar à tela inicial, conforme disponível.",
+      "palavras_chave": [
+        "instalar android",
+        "instalar celular"
+      ],
+      "variacoes": [
+        "Como instalo no Android",
+        "instalar android",
+        "instalar celular"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q017",
+      "categoria": "Instalação e navegação",
+      "pergunta": "O que acontece se eu escolher Agora não?",
+      "resposta": "Você continua usando normalmente. Os convites automáticos ficam adiados por 14 dias.",
+      "palavras_chave": [
+        "agora não",
+        "recusar instalação"
+      ],
+      "variacoes": [
+        "O que acontece se eu escolher Agora não",
+        "agora não",
+        "recusar instalação"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q018",
+      "categoria": "Instalação e navegação",
+      "pergunta": "Como desativo os convites de instalação?",
+      "resposta": "No convite de instalação, escolha Não mostrar novamente. O comando manual continua disponível.",
+      "palavras_chave": [
+        "desativar convite instalação",
+        "parar convite"
+      ],
+      "variacoes": [
+        "Como desativo os convites de instalação",
+        "desativar convite instalação",
+        "parar convite"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q019",
+      "categoria": "Instalação e navegação",
+      "pergunta": "Posso usar sem instalar?",
+      "resposta": "Sim. Você pode usar o Impulso diretamente no navegador.",
+      "palavras_chave": [
+        "usar sem instalar",
+        "usar navegador"
+      ],
+      "variacoes": [
+        "Posso usar sem instalar",
+        "usar sem instalar",
+        "usar navegador"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q020",
+      "categoria": "Instalação e navegação",
+      "pergunta": "Como uso o Impulso offline?",
+      "resposta": "Abra o aplicativo conectado uma vez e aguarde o cache dos recursos. Depois poderá registrar e consultar dados locais sem conexão.",
+      "palavras_chave": [
+        "usar offline",
+        "sem internet"
+      ],
+      "variacoes": [
+        "Como uso o Impulso offline",
+        "usar offline",
+        "sem internet"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q021",
+      "categoria": "Instalação e navegação",
+      "pergunta": "Preciso de internet na primeira abertura?",
+      "resposta": "Sim. A primeira abertura precisa carregar os arquivos necessários ao funcionamento offline.",
+      "palavras_chave": [
+        "primeira abertura internet",
+        "primeiro acesso conexão"
+      ],
+      "variacoes": [
+        "Preciso de internet na primeira abertura",
+        "primeira abertura internet",
+        "primeiro acesso conexão"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q022",
+      "categoria": "Instalação e navegação",
+      "pergunta": "Como desinstalo o Impulso?",
+      "resposta": "Abra Sistema → Desinstalar para consultar as instruções. A remoção é feita pelo navegador ou sistema operacional.",
+      "palavras_chave": [
+        "desinstalar aplicativo",
+        "remover instalação"
+      ],
+      "variacoes": [
+        "Como desinstalo o Impulso",
+        "desinstalar aplicativo",
+        "remover instalação"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q023",
+      "categoria": "Instalação e navegação",
+      "pergunta": "O que devo fazer antes de desinstalar?",
+      "resposta": "Guarde um Backup Geral e confira se o arquivo está íntegro antes de remover o aplicativo ou seus dados.",
+      "palavras_chave": [
+        "antes desinstalar",
+        "backup desinstalação"
+      ],
+      "variacoes": [
+        "O que devo fazer antes de desinstalar",
+        "antes desinstalar",
+        "backup desinstalação"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q024",
+      "categoria": "Menu e projetos",
+      "pergunta": "Como crio um projeto?",
+      "resposta": "Abra Arquivo → Novo, informe o nome e confirme.",
+      "palavras_chave": [
+        "criar projeto",
+        "novo projeto"
+      ],
+      "variacoes": [
+        "Como crio um projeto",
+        "criar projeto",
+        "novo projeto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q025",
+      "categoria": "Menu e projetos",
+      "pergunta": "Como abro um projeto existente?",
+      "resposta": "Abra Arquivo → Projetos e selecione o projeto desejado.",
+      "palavras_chave": [
+        "abrir projeto existente",
+        "selecionar projeto"
+      ],
+      "variacoes": [
+        "Como abro um projeto existente",
+        "abrir projeto existente",
+        "selecionar projeto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q026",
+      "categoria": "Menu e projetos",
+      "pergunta": "Como renomeio um projeto?",
+      "resposta": "Em Arquivo → Projetos, utilize a opção de alterar o nome do projeto.",
+      "palavras_chave": [
+        "renomear projeto",
+        "mudar nome projeto"
+      ],
+      "variacoes": [
+        "Como renomeio um projeto",
+        "renomear projeto",
+        "mudar nome projeto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q027",
+      "categoria": "Menu e projetos",
+      "pergunta": "Como excluo um projeto?",
+      "resposta": "Em Arquivo → Projetos, escolha a exclusão e confirme. Guarde um backup antes.",
+      "palavras_chave": [
+        "excluir projeto",
+        "apagar projeto"
+      ],
+      "variacoes": [
+        "Como excluo um projeto",
+        "excluir projeto",
+        "apagar projeto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q028",
+      "categoria": "Menu e projetos",
+      "pergunta": "O que acontece com os registros de um projeto excluído?",
+      "resposta": "Os registros, hábitos e conquistas desse projeto podem ser apagados definitivamente do armazenamento local.",
+      "palavras_chave": [
+        "registros projeto excluído",
+        "dados após exclusão projeto"
+      ],
+      "variacoes": [
+        "O que acontece com os registros de um projeto excluído",
+        "registros projeto excluído",
+        "dados após exclusão projeto"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q029",
+      "categoria": "Menu e projetos",
+      "pergunta": "Posso ter vários projetos?",
+      "resposta": "Sim. Cada projeto possui seus próprios dados e você pode alternar entre eles.",
+      "palavras_chave": [
+        "vários projetos",
+        "múltiplos projetos"
+      ],
+      "variacoes": [
+        "Posso ter vários projetos",
+        "vários projetos",
+        "múltiplos projetos"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q030",
+      "categoria": "Menu e projetos",
+      "pergunta": "O que é um projeto ativo?",
+      "resposta": "É o projeto selecionado no momento, utilizado pelas ferramentas de registro e acompanhamento.",
+      "palavras_chave": [
+        "projeto ativo",
+        "projeto selecionado"
+      ],
+      "variacoes": [
+        "O que é um projeto ativo",
+        "projeto ativo",
+        "projeto selecionado"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q031",
+      "categoria": "Menu e projetos",
+      "pergunta": "Os dados de projetos diferentes se misturam?",
+      "resposta": "Não. Registros, hábitos, metas e conquistas são separados por projeto.",
+      "palavras_chave": [
+        "isolamento projetos",
+        "misturar dados projetos"
+      ],
+      "variacoes": [
+        "Os dados de projetos diferentes se misturam",
+        "isolamento projetos",
+        "misturar dados projetos"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q032",
+      "categoria": "Menu e projetos",
+      "pergunta": "Trocar de projeto transfere minhas horas?",
+      "resposta": "Não. Alternar o projeto ativo não transfere horas automaticamente.",
+      "palavras_chave": [
+        "trocar projeto horas",
+        "transferir horas projetos"
+      ],
+      "variacoes": [
+        "Trocar de projeto transfere minhas horas",
+        "trocar projeto horas",
+        "transferir horas projetos"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q033",
+      "categoria": "Menu e projetos",
+      "pergunta": "O que é o Dashboard?",
+      "resposta": "É a Central de Comando: reúne tempo, metas, sequência, conquistas e atalhos do projeto ativo.",
+      "palavras_chave": [
+        "dashboard",
+        "central comando"
+      ],
+      "variacoes": [
+        "O que é o Dashboard",
+        "dashboard",
+        "central comando"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q034",
+      "categoria": "Menu e projetos",
+      "pergunta": "O que mostra o tempo de hoje no Dashboard?",
+      "resposta": "Mostra o tempo produtivo atribuído à data atual, sem duplicar intervalos sobrepostos.",
+      "palavras_chave": [
+        "tempo hoje dashboard",
+        "horas hoje painel"
+      ],
+      "variacoes": [
+        "O que mostra o tempo de hoje no Dashboard",
+        "tempo hoje dashboard",
+        "horas hoje painel"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q035",
+      "categoria": "Menu e projetos",
+      "pergunta": "O que é a sequência de produtividade?",
+      "resposta": "É a contagem de dias consecutivos com atividade registrada.",
+      "palavras_chave": [
+        "sequência produtividade",
+        "dias consecutivos"
+      ],
+      "variacoes": [
+        "O que é a sequência de produtividade",
+        "sequência produtividade",
+        "dias consecutivos"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q036",
+      "categoria": "Menu e projetos",
+      "pergunta": "O que é o Mapa de Atividade?",
+      "resposta": "É uma grade de dias cuja intensidade representa o tempo produtivo registrado em cada data.",
+      "palavras_chave": [
+        "mapa atividade",
+        "mapa calor"
+      ],
+      "variacoes": [
+        "O que é o Mapa de Atividade",
+        "mapa atividade",
+        "mapa calor"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q037",
+      "categoria": "Menu e projetos",
+      "pergunta": "Quantos dias aparecem no Mapa de Atividade?",
+      "resposta": "365 dias.",
+      "palavras_chave": [
+        "dias mapa atividade",
+        "quantidade dias mapa"
+      ],
+      "variacoes": [
+        "Quantos dias aparecem no Mapa de Atividade",
+        "dias mapa atividade",
+        "quantidade dias mapa"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q038",
+      "categoria": "Menu e projetos",
+      "pergunta": "Como vejo minha próxima meta?",
+      "resposta": "No Dashboard, consulte a próxima meta e sua barra de progresso.",
+      "palavras_chave": [
+        "próxima meta",
+        "ver meta seguinte"
+      ],
+      "variacoes": [
+        "Como vejo minha próxima meta",
+        "próxima meta",
+        "ver meta seguinte"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q039",
+      "categoria": "Menu e projetos",
+      "pergunta": "Como copio o resumo do Dashboard?",
+      "resposta": "Pressione Copiar resumo no Dashboard e cole o texto onde desejar.",
+      "palavras_chave": [
+        "copiar resumo dashboard",
+        "copiar painel"
+      ],
+      "variacoes": [
+        "Como copio o resumo do Dashboard",
+        "copiar resumo dashboard",
+        "copiar painel"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q040",
+      "categoria": "Menu e projetos",
+      "pergunta": "Por que o Dashboard não tem rodapé?",
+      "resposta": "Foi projetado como uma Central de Comando de tela única, sem rodapé.",
+      "palavras_chave": [
+        "rodapé dashboard",
+        "painel sem rodapé"
+      ],
+      "variacoes": [
+        "Por que o Dashboard não tem rodapé",
+        "rodapé dashboard",
+        "painel sem rodapé"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q041",
+      "categoria": "Ponto",
+      "pergunta": "O que é Ponto?",
+      "resposta": "Ponto registra uma atividade de trabalho com horário real de início e término.",
+      "palavras_chave": [
+        "definição ponto",
+        "registro trabalho livre"
+      ],
+      "variacoes": [
+        "O que é Ponto",
+        "definição ponto",
+        "registro trabalho livre",
+        "Para que serve o Ponto?"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q042",
+      "categoria": "Ponto",
+      "pergunta": "Como inicio um Ponto?",
+      "resposta": "Abra Ações → Ponto, informe o nome da atividade e acione o início.",
+      "palavras_chave": [
+        "iniciar ponto",
+        "bater ponto",
+        "começar ponto"
+      ],
+      "variacoes": [
+        "Como inicio um Ponto",
+        "iniciar ponto",
+        "bater ponto",
+        "começar ponto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q043",
+      "categoria": "Ponto",
+      "pergunta": "Como termino um Ponto?",
+      "resposta": "Volte à página Ponto e utilize o controle de término para concluir o registro.",
+      "palavras_chave": [
+        "terminar ponto",
+        "encerrar ponto",
+        "parar ponto"
+      ],
+      "variacoes": [
+        "Como termino um Ponto",
+        "terminar ponto",
+        "encerrar ponto",
+        "parar ponto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q044",
+      "categoria": "Ponto",
+      "pergunta": "Qual é o limite do nome de uma atividade de Ponto?",
+      "resposta": "Até 50 caracteres.",
+      "palavras_chave": [
+        "limite nome ponto",
+        "caracteres atividade ponto"
+      ],
+      "variacoes": [
+        "Qual é o limite do nome de uma atividade de Ponto",
+        "limite nome ponto",
+        "caracteres atividade ponto"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q045",
+      "categoria": "Ponto",
+      "pergunta": "Posso navegar enquanto o Ponto está ativo?",
+      "resposta": "Sim. A contagem utiliza horários reais, mesmo ao navegar por outras páginas.",
+      "palavras_chave": [
+        "navegar ponto ativo",
+        "trocar tela ponto"
+      ],
+      "variacoes": [
+        "Posso navegar enquanto o Ponto está ativo",
+        "navegar ponto ativo",
+        "trocar tela ponto"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q046",
+      "categoria": "Ponto",
+      "pergunta": "O Ponto funciona quando a atividade atravessa a meia-noite?",
+      "resposta": "Sim. O tempo é distribuído entre os dias correspondentes.",
+      "palavras_chave": [
+        "ponto meia noite",
+        "ponto atravessa dia"
+      ],
+      "variacoes": [
+        "O Ponto funciona quando a atividade atravessa a meia-noite",
+        "ponto meia noite",
+        "ponto atravessa dia"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q047",
+      "categoria": "Ponto",
+      "pergunta": "Onde vejo um Ponto concluído?",
+      "resposta": "Em Dados → Meu Dia e nas consultas de Calendário e Estatísticas.",
+      "palavras_chave": [
+        "ponto concluído",
+        "histórico ponto"
+      ],
+      "variacoes": [
+        "Onde vejo um Ponto concluído",
+        "ponto concluído",
+        "histórico ponto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q048",
+      "categoria": "Ponto",
+      "pergunta": "Como o Ponto calcula o tempo?",
+      "resposta": "Pela diferença entre os horários reais de início e término, não pela frequência de atualização da tela.",
+      "palavras_chave": [
+        "calcular tempo ponto",
+        "duração ponto"
+      ],
+      "variacoes": [
+        "Como o Ponto calcula o tempo",
+        "calcular tempo ponto",
+        "duração ponto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q049",
+      "categoria": "Ponto",
+      "pergunta": "O que devo conferir antes de fechar com Ponto ativo?",
+      "resposta": "Confira se há atividade em andamento e conclua o registro quando apropriado. Atualize também seu backup.",
+      "palavras_chave": [
+        "fechar ponto ativo",
+        "sair durante ponto"
+      ],
+      "variacoes": [
+        "O que devo conferir antes de fechar com Ponto ativo",
+        "fechar ponto ativo",
+        "sair durante ponto"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q050",
+      "categoria": "Foco",
+      "pergunta": "O que é Foco?",
+      "resposta": "Foco é uma sessão planejada de trabalho, com objetivo, duração, pausas e avaliação do resultado.",
+      "palavras_chave": [
+        "definição foco",
+        "sessão planejada"
+      ],
+      "variacoes": [
+        "O que é Foco",
+        "definição foco",
+        "sessão planejada",
+        "Para que serve o Foco?"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q051",
+      "categoria": "Foco",
+      "pergunta": "Como inicio uma sessão de Foco?",
+      "resposta": "Abra Ações → Foco, configure atividade, objetivo, compromisso e duração e inicie.",
+      "palavras_chave": [
+        "iniciar foco",
+        "começar sessão foco"
+      ],
+      "variacoes": [
+        "Como inicio uma sessão de Foco",
+        "iniciar foco",
+        "começar sessão foco"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q052",
+      "categoria": "Foco",
+      "pergunta": "Qual é a diferença entre Ponto e Foco?",
+      "resposta": "Ponto registra trabalho livre; Foco organiza uma sessão planejada com objetivo, duração e avaliação.",
+      "palavras_chave": [
+        "comparar ponto foco",
+        "diferença ponto foco"
+      ],
+      "variacoes": [
+        "Qual é a diferença entre Ponto e Foco",
+        "comparar ponto foco",
+        "diferença ponto foco"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q053",
+      "categoria": "Foco",
+      "pergunta": "O que são Entrega e Dedicação no Foco?",
+      "resposta": "São tipos de compromisso: Entrega enfatiza um resultado; Dedicação enfatiza o tempo dedicado.",
+      "palavras_chave": [
+        "entrega dedicação",
+        "modalidades foco"
+      ],
+      "variacoes": [
+        "O que são Entrega e Dedicação no Foco",
+        "entrega dedicação",
+        "modalidades foco"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q054",
+      "categoria": "Foco",
+      "pergunta": "Qual é a duração mínima de uma sessão de Foco?",
+      "resposta": "Um minuto.",
+      "palavras_chave": [
+        "duração mínima foco",
+        "tempo mínimo foco"
+      ],
+      "variacoes": [
+        "Qual é a duração mínima de uma sessão de Foco",
+        "duração mínima foco",
+        "tempo mínimo foco"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q055",
+      "categoria": "Foco",
+      "pergunta": "Qual é a duração máxima de uma sessão de Foco?",
+      "resposta": "1.440 minutos, ou 24 horas.",
+      "palavras_chave": [
+        "duração máxima foco",
+        "tempo máximo foco"
+      ],
+      "variacoes": [
+        "Qual é a duração máxima de uma sessão de Foco",
+        "duração máxima foco",
+        "tempo máximo foco"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q056",
+      "categoria": "Foco",
+      "pergunta": "Como pauso uma sessão de Foco?",
+      "resposta": "Na sessão ativa, pressione Pausar.",
+      "palavras_chave": [
+        "pausar foco",
+        "suspender sessão"
+      ],
+      "variacoes": [
+        "Como pauso uma sessão de Foco",
+        "pausar foco",
+        "suspender sessão"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q057",
+      "categoria": "Foco",
+      "pergunta": "Como retomo uma sessão de Foco?",
+      "resposta": "Na sessão pausada, pressione Retomar.",
+      "palavras_chave": [
+        "retomar foco",
+        "continuar sessão"
+      ],
+      "variacoes": [
+        "Como retomo uma sessão de Foco",
+        "retomar foco",
+        "continuar sessão"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q058",
+      "categoria": "Foco",
+      "pergunta": "O tempo pausado conta como produtividade?",
+      "resposta": "Não. As pausas são excluídas do tempo efetivo.",
+      "palavras_chave": [
+        "pausa conta tempo",
+        "tempo pausado"
+      ],
+      "variacoes": [
+        "O tempo pausado conta como produtividade",
+        "pausa conta tempo",
+        "tempo pausado"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q059",
+      "categoria": "Foco",
+      "pergunta": "Como avalio o resultado de uma sessão?",
+      "resposta": "Ao concluir, escolha alcançado integralmente, parcialmente ou não alcançado.",
+      "palavras_chave": [
+        "avaliar sessão foco",
+        "resultado foco"
+      ],
+      "variacoes": [
+        "Como avalio o resultado de uma sessão",
+        "avaliar sessão foco",
+        "resultado foco"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q060",
+      "categoria": "Foco",
+      "pergunta": "Posso escrever uma observação no Foco?",
+      "resposta": "Sim. Ao avaliar a sessão, você pode acrescentar uma observação opcional.",
+      "palavras_chave": [
+        "observação foco",
+        "anotação sessão"
+      ],
+      "variacoes": [
+        "Posso escrever uma observação no Foco",
+        "observação foco",
+        "anotação sessão"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q061",
+      "categoria": "Foco",
+      "pergunta": "Qual é o limite do objetivo de Foco?",
+      "resposta": "Até 200 caracteres.",
+      "palavras_chave": [
+        "limite objetivo foco",
+        "caracteres objetivo"
+      ],
+      "variacoes": [
+        "Qual é o limite do objetivo de Foco",
+        "limite objetivo foco",
+        "caracteres objetivo"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q062",
+      "categoria": "Foco",
+      "pergunta": "Qual é o limite da observação de Foco?",
+      "resposta": "Até 200 caracteres.",
+      "palavras_chave": [
+        "limite observação foco",
+        "caracteres observação"
+      ],
+      "variacoes": [
+        "Qual é o limite da observação de Foco",
+        "limite observação foco",
+        "caracteres observação"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q063",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "O que são Hábitos?",
+      "resposta": "São práticas recorrentes que você pode registrar para desenvolver constância e liberar recompensas.",
+      "palavras_chave": [
+        "definição hábitos",
+        "micro hábitos"
+      ],
+      "variacoes": [
+        "O que são Hábitos",
+        "definição hábitos",
+        "micro hábitos"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q064",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Como crio um hábito personalizado?",
+      "resposta": "Abra Ações → Hábitos e utilize a opção de criar um hábito personalizado.",
+      "palavras_chave": [
+        "criar hábito",
+        "novo hábito personalizado"
+      ],
+      "variacoes": [
+        "Como crio um hábito personalizado",
+        "criar hábito",
+        "novo hábito personalizado"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q065",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Como encontro hábitos no catálogo?",
+      "resposta": "Em Hábitos, explore as categorias do catálogo ou utilize a pesquisa.",
+      "palavras_chave": [
+        "buscar hábito catálogo",
+        "inventário hábitos"
+      ],
+      "variacoes": [
+        "Como encontro hábitos no catálogo",
+        "buscar hábito catálogo",
+        "inventário hábitos"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q066",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "O que significa equipar um hábito?",
+      "resposta": "É adicionar um hábito ao conjunto ativo, deixando-o disponível para execução.",
+      "palavras_chave": [
+        "equipar hábito",
+        "significado equipado"
+      ],
+      "variacoes": [
+        "O que significa equipar um hábito",
+        "equipar hábito",
+        "significado equipado"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q067",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Quantos hábitos posso equipar?",
+      "resposta": "Até seis simultaneamente.",
+      "palavras_chave": [
+        "limite hábitos equipados",
+        "quantos hábitos"
+      ],
+      "variacoes": [
+        "Quantos hábitos posso equipar",
+        "limite hábitos equipados",
+        "quantos hábitos"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q068",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Posso retirar um hábito equipado?",
+      "resposta": "Sim. Retire-o do conjunto ativo; se estiver em execução, conclua ou reinicie o temporizador antes.",
+      "palavras_chave": [
+        "retirar hábito equipado",
+        "desequipar hábito"
+      ],
+      "variacoes": [
+        "Posso retirar um hábito equipado",
+        "retirar hábito equipado",
+        "desequipar hábito"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q069",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Como registro um hábito com temporizador?",
+      "resposta": "Em Hábitos, escolha um hábito equipado, configure sua duração quando necessário e execute o temporizador até concluir.",
+      "palavras_chave": [
+        "temporizador hábito",
+        "registrar hábito cronometrado"
+      ],
+      "variacoes": [
+        "Como registro um hábito com temporizador",
+        "temporizador hábito",
+        "registrar hábito cronometrado"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q070",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "O que faço antes de alterar um hábito em execução?",
+      "resposta": "Conclua ou reinicie o temporizador antes de alterar a condição do hábito.",
+      "palavras_chave": [
+        "alterar hábito execução",
+        "editar hábito ativo"
+      ],
+      "variacoes": [
+        "O que faço antes de alterar um hábito em execução",
+        "alterar hábito execução",
+        "editar hábito ativo"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q071",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Onde aparecem os hábitos concluídos?",
+      "resposta": "Em Dados → Meu Dia, com nome e horários do registro.",
+      "palavras_chave": [
+        "hábitos concluídos",
+        "histórico hábitos"
+      ],
+      "variacoes": [
+        "Onde aparecem os hábitos concluídos",
+        "hábitos concluídos",
+        "histórico hábitos"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q072",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Como um hábito ajuda a liberar Elixires?",
+      "resposta": "Um hábito concluído depois da vitória pode liberar um cofre elegível, no máximo um por conclusão.",
+      "palavras_chave": [
+        "hábito liberar elixir",
+        "hábito recompensa"
+      ],
+      "variacoes": [
+        "Como um hábito ajuda a liberar Elixires",
+        "hábito liberar elixir",
+        "hábito recompensa"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q073",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "O que são Entradas manuais?",
+      "resposta": "São registros retroativos de trabalho que já aconteceu, sem precisar executar um temporizador.",
+      "palavras_chave": [
+        "entrada manual",
+        "registro retroativo"
+      ],
+      "variacoes": [
+        "O que são Entradas manuais",
+        "entrada manual",
+        "registro retroativo"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q074",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Como registro um trabalho que fiz ontem?",
+      "resposta": "Abra Ações → Entradas, informe a atividade e os horários de início e término de ontem e confirme.",
+      "palavras_chave": [
+        "trabalho ontem",
+        "registrar atividade passada"
+      ],
+      "variacoes": [
+        "Como registro um trabalho que fiz ontem",
+        "trabalho ontem",
+        "registrar atividade passada"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q075",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Posso lançar uma Entrada que termina no dia seguinte?",
+      "resposta": "Sim. Informe as datas e horários corretos; o tempo será distribuído entre os dias.",
+      "palavras_chave": [
+        "entrada dia seguinte",
+        "entrada meia noite"
+      ],
+      "variacoes": [
+        "Posso lançar uma Entrada que termina no dia seguinte",
+        "entrada dia seguinte",
+        "entrada meia noite"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q076",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "O que acontece se o término for anterior ao início?",
+      "resposta": "O formulário valida a ordem dos horários; corrija o término para que seja posterior ao início.",
+      "palavras_chave": [
+        "término anterior início",
+        "horário inválido"
+      ],
+      "variacoes": [
+        "O que acontece se o término for anterior ao início",
+        "término anterior início",
+        "horário inválido"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q077",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Entradas manuais contam para o Motor?",
+      "resposta": "Sim. O tempo válido contribui para o Motor e as estatísticas.",
+      "palavras_chave": [
+        "entrada conta motor",
+        "horas manuais motor"
+      ],
+      "variacoes": [
+        "Entradas manuais contam para o Motor",
+        "entrada conta motor",
+        "horas manuais motor"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q078",
+      "categoria": "Hábitos e entradas",
+      "pergunta": "Por que devo evitar registrar o mesmo intervalo duas vezes?",
+      "resposta": "Para evitar registros redundantes. O cálculo une intervalos sobrepostos, mas registros duplicados prejudicam a organização.",
+      "palavras_chave": [
+        "duplicar intervalo",
+        "registro duplicado"
+      ],
+      "variacoes": [
+        "Por que devo evitar registrar o mesmo intervalo duas vezes",
+        "duplicar intervalo",
+        "registro duplicado"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q079",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "O que é Meu Dia?",
+      "resposta": "É a página que apresenta as atividades do dia, seus tipos, horários e durações.",
+      "palavras_chave": [
+        "definição meu dia",
+        "relatório diário"
+      ],
+      "variacoes": [
+        "O que é Meu Dia",
+        "definição meu dia",
+        "relatório diário"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q080",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Como consulto as atividades de hoje?",
+      "resposta": "Abra Dados → Meu Dia.",
+      "palavras_chave": [
+        "consultar atividades hoje",
+        "ver registros hoje"
+      ],
+      "variacoes": [
+        "Como consulto as atividades de hoje",
+        "consultar atividades hoje",
+        "ver registros hoje"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q081",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Qual é o formato da data em Meu Dia?",
+      "resposta": "Dia-mês-ano, como Meu Dia 10-09-2027.",
+      "palavras_chave": [
+        "formato data meu dia",
+        "data título meu dia"
+      ],
+      "variacoes": [
+        "Qual é o formato da data em Meu Dia",
+        "formato data meu dia",
+        "data título meu dia"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q082",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Quais tipos de atividade aparecem em Meu Dia?",
+      "resposta": "Ponto, Foco, Hábitos concluídos e Entradas manuais.",
+      "palavras_chave": [
+        "tipos atividade meu dia",
+        "registros exibidos"
+      ],
+      "variacoes": [
+        "Quais tipos de atividade aparecem em Meu Dia",
+        "tipos atividade meu dia",
+        "registros exibidos"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q083",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Como excluo um registro?",
+      "resposta": "Em Meu Dia, utilize o controle de exclusão do registro desejado, conferindo antes de confirmar.",
+      "palavras_chave": [
+        "excluir registro",
+        "apagar atividade"
+      ],
+      "variacoes": [
+        "Como excluo um registro",
+        "excluir registro",
+        "apagar atividade"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q084",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Excluir um registro altera minhas conquistas?",
+      "resposta": "Pode alterar. A remoção reduz o tempo ou os hábitos que sustentam determinadas conquistas.",
+      "palavras_chave": [
+        "excluir registro conquistas",
+        "recalcular vitórias"
+      ],
+      "variacoes": [
+        "Excluir um registro altera minhas conquistas",
+        "excluir registro conquistas",
+        "recalcular vitórias"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q085",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Como copio o resumo de Meu Dia?",
+      "resposta": "Em Meu Dia, pressione Copiar resumo.",
+      "palavras_chave": [
+        "copiar resumo meu dia",
+        "copiar relatório diário"
+      ],
+      "variacoes": [
+        "Como copio o resumo de Meu Dia",
+        "copiar resumo meu dia",
+        "copiar relatório diário"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q086",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "O que é o Calendário?",
+      "resposta": "É a visualização mensal da produtividade, que permite consultar os registros por data.",
+      "palavras_chave": [
+        "definição calendário",
+        "agenda produtividade"
+      ],
+      "variacoes": [
+        "O que é o Calendário",
+        "definição calendário",
+        "agenda produtividade"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q087",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Como consulto a produtividade de outra data?",
+      "resposta": "Abra Dados → Calendário, navegue até o mês e selecione a data.",
+      "palavras_chave": [
+        "produtividade outra data",
+        "consultar dia anterior"
+      ],
+      "variacoes": [
+        "Como consulto a produtividade de outra data",
+        "produtividade outra data",
+        "consultar dia anterior"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q088",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Como uma sessão noturna aparece no Calendário?",
+      "resposta": "O tempo é distribuído pelos dias locais que a sessão atravessa.",
+      "palavras_chave": [
+        "sessão noturna calendário",
+        "atividade atravessa meia noite calendário"
+      ],
+      "variacoes": [
+        "Como uma sessão noturna aparece no Calendário",
+        "sessão noturna calendário",
+        "atividade atravessa meia noite calendário"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q089",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "O que são Estatísticas?",
+      "resposta": "É a área de análise de tempo produtivo, dias ativos, médias, sessões e outros indicadores.",
+      "palavras_chave": [
+        "definição estatísticas",
+        "análise produtividade"
+      ],
+      "variacoes": [
+        "O que são Estatísticas",
+        "definição estatísticas",
+        "análise produtividade"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q090",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Quais períodos posso analisar nas Estatísticas?",
+      "resposta": "Hoje, últimos sete dias, mês atual, ano atual ou todo o histórico.",
+      "palavras_chave": [
+        "períodos estatísticas",
+        "filtro datas"
+      ],
+      "variacoes": [
+        "Quais períodos posso analisar nas Estatísticas",
+        "períodos estatísticas",
+        "filtro datas"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q091",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Posso analisar mais de um projeto nas Estatísticas?",
+      "resposta": "Sim, quando disponível, selecione o conjunto de projetos no alcance da análise.",
+      "palavras_chave": [
+        "estatísticas vários projetos",
+        "análise conjunta"
+      ],
+      "variacoes": [
+        "Posso analisar mais de um projeto nas Estatísticas",
+        "estatísticas vários projetos",
+        "análise conjunta"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q092",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "O que é a média por dia ativo?",
+      "resposta": "É o tempo produtivo dividido pela quantidade de dias em que houve atividade.",
+      "palavras_chave": [
+        "média dia ativo",
+        "média dias trabalhados"
+      ],
+      "variacoes": [
+        "O que é a média por dia ativo",
+        "média dia ativo",
+        "média dias trabalhados"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q093",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "O que é a média por dia do período?",
+      "resposta": "É o tempo produtivo dividido por todos os dias do período, inclusive os sem atividade.",
+      "palavras_chave": [
+        "média dia período",
+        "média todos dias"
+      ],
+      "variacoes": [
+        "O que é a média por dia do período",
+        "média dia período",
+        "média todos dias"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q094",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Como o Impulso trata atividades sobrepostas?",
+      "resposta": "O Impulso une intervalos sobrepostos dentro do mesmo projeto para evitar contar o mesmo tempo duas vezes.",
+      "palavras_chave": [
+        "atividades sobrepostas",
+        "sobreposição horários"
+      ],
+      "variacoes": [
+        "Como o Impulso trata atividades sobrepostas",
+        "atividades sobrepostas",
+        "sobreposição horários"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q095",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Como recalculo as Estatísticas?",
+      "resposta": "Em Dados → Estatísticas, selecione os filtros e pressione Atualizar.",
+      "palavras_chave": [
+        "recalcular estatísticas",
+        "atualizar cálculo"
+      ],
+      "variacoes": [
+        "Como recalculo as Estatísticas",
+        "recalcular estatísticas",
+        "atualizar cálculo"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q096",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Como exporto as Estatísticas?",
+      "resposta": "Em Estatísticas, escolha os filtros e pressione Exportar.",
+      "palavras_chave": [
+        "exportar estatísticas",
+        "salvar estatísticas"
+      ],
+      "variacoes": [
+        "Como exporto as Estatísticas",
+        "exportar estatísticas",
+        "salvar estatísticas"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q097",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "Como imprimo as Estatísticas?",
+      "resposta": "Em Estatísticas, pressione Imprimir e ajuste as opções do navegador.",
+      "palavras_chave": [
+        "imprimir estatísticas",
+        "impressão análise"
+      ],
+      "variacoes": [
+        "Como imprimo as Estatísticas",
+        "imprimir estatísticas",
+        "impressão análise"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q098",
+      "categoria": "Dados e estatísticas",
+      "pergunta": "O resumo das Estatísticas respeita os filtros?",
+      "resposta": "Sim. Copiar resumo considera os filtros ativos.",
+      "palavras_chave": [
+        "resumo estatísticas filtros",
+        "copiar análise filtrada"
+      ],
+      "variacoes": [
+        "O resumo das Estatísticas respeita os filtros",
+        "resumo estatísticas filtros",
+        "copiar análise filtrada"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q099",
+      "categoria": "Motor e metas",
+      "pergunta": "O que é o Motor de Propulsão?",
+      "resposta": "É a representação simbólica do tempo produtivo em graus, Pulsos, Giros, Turnos, Fases e Propulsões.",
+      "palavras_chave": [
+        "motor propulsão",
+        "definição motor"
+      ],
+      "variacoes": [
+        "O que é o Motor de Propulsão",
+        "motor propulsão",
+        "definição motor"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q100",
+      "categoria": "Motor e metas",
+      "pergunta": "Quantos segundos equivalem a um grau?",
+      "resposta": "Dez segundos equivalem a um grau.",
+      "palavras_chave": [
+        "segundos grau",
+        "tempo por grau"
+      ],
+      "variacoes": [
+        "Quantos segundos equivalem a um grau",
+        "segundos grau",
+        "tempo por grau"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q101",
+      "categoria": "Motor e metas",
+      "pergunta": "O que é um Pulso?",
+      "resposta": "Um Pulso corresponde a 180 graus, ou 30 minutos.",
+      "palavras_chave": [
+        "definição pulso",
+        "duração pulso"
+      ],
+      "variacoes": [
+        "O que é um Pulso",
+        "definição pulso",
+        "duração pulso"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q102",
+      "categoria": "Motor e metas",
+      "pergunta": "O que é um Giro?",
+      "resposta": "Um Giro corresponde a 360 graus, ou uma hora.",
+      "palavras_chave": [
+        "definição giro",
+        "duração giro"
+      ],
+      "variacoes": [
+        "O que é um Giro",
+        "definição giro",
+        "duração giro"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q103",
+      "categoria": "Motor e metas",
+      "pergunta": "O que é um Turno?",
+      "resposta": "Um Turno corresponde a oito Giros, ou oito horas.",
+      "palavras_chave": [
+        "definição turno",
+        "duração turno"
+      ],
+      "variacoes": [
+        "O que é um Turno",
+        "definição turno",
+        "duração turno"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q104",
+      "categoria": "Motor e metas",
+      "pergunta": "O que é uma Fase?",
+      "resposta": "Uma Fase corresponde a 30 Turnos, ou 240 horas.",
+      "palavras_chave": [
+        "definição fase",
+        "duração fase"
+      ],
+      "variacoes": [
+        "O que é uma Fase",
+        "definição fase",
+        "duração fase"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q105",
+      "categoria": "Motor e metas",
+      "pergunta": "O que é uma Propulsão?",
+      "resposta": "Uma Propulsão corresponde a 42 Fases, ou 10.080 horas.",
+      "palavras_chave": [
+        "definição propulsão",
+        "duração propulsão"
+      ],
+      "variacoes": [
+        "O que é uma Propulsão",
+        "definição propulsão",
+        "duração propulsão"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q106",
+      "categoria": "Motor e metas",
+      "pergunta": "Quantos Pulsos formam um Giro?",
+      "resposta": "Dois Pulsos.",
+      "palavras_chave": [
+        "pulsos por giro",
+        "converter pulso giro"
+      ],
+      "variacoes": [
+        "Quantos Pulsos formam um Giro",
+        "pulsos por giro",
+        "converter pulso giro"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q107",
+      "categoria": "Motor e metas",
+      "pergunta": "Quantos Giros formam um Turno?",
+      "resposta": "Oito Giros.",
+      "palavras_chave": [
+        "giros por turno",
+        "converter giro turno"
+      ],
+      "variacoes": [
+        "Quantos Giros formam um Turno",
+        "giros por turno",
+        "converter giro turno"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q108",
+      "categoria": "Motor e metas",
+      "pergunta": "Quantos Turnos formam uma Fase?",
+      "resposta": "Trinta Turnos.",
+      "palavras_chave": [
+        "turnos por fase",
+        "converter turno fase"
+      ],
+      "variacoes": [
+        "Quantos Turnos formam uma Fase",
+        "turnos por fase",
+        "converter turno fase"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q109",
+      "categoria": "Motor e metas",
+      "pergunta": "Quantas Fases formam uma Propulsão?",
+      "resposta": "Quarenta e duas Fases.",
+      "palavras_chave": [
+        "fases por propulsão",
+        "converter fase propulsão"
+      ],
+      "variacoes": [
+        "Quantas Fases formam uma Propulsão",
+        "fases por propulsão",
+        "converter fase propulsão"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q110",
+      "categoria": "Motor e metas",
+      "pergunta": "Posso somar os contadores de unidades?",
+      "resposta": "Não. São representações diferentes do mesmo tempo acumulado.",
+      "palavras_chave": [
+        "somar unidades",
+        "somar contadores"
+      ],
+      "variacoes": [
+        "Posso somar os contadores de unidades",
+        "somar unidades",
+        "somar contadores"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q111",
+      "categoria": "Motor e metas",
+      "pergunta": "O que faz a Ignição do Motor?",
+      "resposta": "Reproduz visualmente a rotação correspondente aos graus acumulados.",
+      "palavras_chave": [
+        "ignição motor",
+        "iniciar animação motor"
+      ],
+      "variacoes": [
+        "O que faz a Ignição do Motor",
+        "ignição motor",
+        "iniciar animação motor"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q112",
+      "categoria": "Motor e metas",
+      "pergunta": "Como paro a animação do Motor?",
+      "resposta": "Pressione Parar na página Motor.",
+      "palavras_chave": [
+        "parar animação motor",
+        "desligar motor"
+      ],
+      "variacoes": [
+        "Como paro a animação do Motor",
+        "parar animação motor",
+        "desligar motor"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q113",
+      "categoria": "Motor e metas",
+      "pergunta": "A animação do Motor gera horas?",
+      "resposta": "Não. A animação apenas representa o progresso existente.",
+      "palavras_chave": [
+        "animação gera horas",
+        "motor conta tempo sozinho"
+      ],
+      "variacoes": [
+        "A animação do Motor gera horas",
+        "animação gera horas",
+        "motor conta tempo sozinho"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q114",
+      "categoria": "Motor e metas",
+      "pergunta": "Quantas metas existem?",
+      "resposta": "São 100 metas progressivas.",
+      "palavras_chave": [
+        "quantidade metas",
+        "total metas"
+      ],
+      "variacoes": [
+        "Quantas metas existem",
+        "quantidade metas",
+        "total metas"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q115",
+      "categoria": "Motor e metas",
+      "pergunta": "Como são calculadas as metas?",
+      "resposta": "A meta de número n exige n ao quadrado horas acumuladas. Por exemplo, a terceira exige nove horas.",
+      "palavras_chave": [
+        "cálculo metas",
+        "progressão metas"
+      ],
+      "variacoes": [
+        "Como são calculadas as metas",
+        "cálculo metas",
+        "progressão metas"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q116",
+      "categoria": "Motor e metas",
+      "pergunta": "Quantas horas exige a primeira meta?",
+      "resposta": "Uma hora acumulada.",
+      "palavras_chave": [
+        "primeira meta horas",
+        "meta inicial"
+      ],
+      "variacoes": [
+        "Quantas horas exige a primeira meta",
+        "primeira meta horas",
+        "meta inicial"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q117",
+      "categoria": "Motor e metas",
+      "pergunta": "Quantas horas exige a centésima meta?",
+      "resposta": "10.000 horas acumuladas.",
+      "palavras_chave": [
+        "centésima meta horas",
+        "meta 100"
+      ],
+      "variacoes": [
+        "Quantas horas exige a centésima meta",
+        "centésima meta horas",
+        "meta 100"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q118",
+      "categoria": "Motor e metas",
+      "pergunta": "Qual é a diferença entre 10.000 horas e uma Propulsão?",
+      "resposta": "10.000 horas completam a centésima meta; uma Propulsão exige 10.080 horas, ou 80 horas a mais.",
+      "palavras_chave": [
+        "10000 horas propulsão",
+        "diferença meta propulsão"
+      ],
+      "variacoes": [
+        "Qual é a diferença entre 10.000 horas e uma Propulsão",
+        "10000 horas propulsão",
+        "diferença meta propulsão"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q119",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "O que é a Arena?",
+      "resposta": "É a área de batalhas simbólicas em que seu tempo produtivo derrota Chefões progressivamente.",
+      "palavras_chave": [
+        "definição arena",
+        "combate produtividade"
+      ],
+      "variacoes": [
+        "O que é a Arena",
+        "definição arena",
+        "combate produtividade"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q120",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Quantos Chefões existem?",
+      "resposta": "200 Chefões.",
+      "palavras_chave": [
+        "quantidade chefões",
+        "total monstros"
+      ],
+      "variacoes": [
+        "Quantos Chefões existem",
+        "quantidade chefões",
+        "total monstros"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q121",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Como derroto um Chefão?",
+      "resposta": "Acumule o tempo produtivo exigido pelo Chefão. A vitória é calculada automaticamente.",
+      "palavras_chave": [
+        "derrotar chefão",
+        "vencer monstro"
+      ],
+      "variacoes": [
+        "Como derroto um Chefão",
+        "derrotar chefão",
+        "vencer monstro"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q122",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Posso declarar uma vitória manualmente?",
+      "resposta": "Não. É necessário atingir o requisito de tempo registrado.",
+      "palavras_chave": [
+        "vitória manual",
+        "declarar chefão vencido"
+      ],
+      "variacoes": [
+        "Posso declarar uma vitória manualmente",
+        "vitória manual",
+        "declarar chefão vencido"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q123",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "A resistência dos Chefões aumenta?",
+      "resposta": "Sim. Os desafios possuem resistência progressiva ao longo da jornada.",
+      "palavras_chave": [
+        "resistência chefões",
+        "dificuldade monstros"
+      ],
+      "variacoes": [
+        "A resistência dos Chefões aumenta",
+        "resistência chefões",
+        "dificuldade monstros"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q124",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Posso perder uma vitória ao excluir registros?",
+      "resposta": "Sim. Se a exclusão reduzir o tempo abaixo do requisito, a vitória pode ser revogada.",
+      "palavras_chave": [
+        "perder vitória",
+        "excluir registros chefão"
+      ],
+      "variacoes": [
+        "Posso perder uma vitória ao excluir registros",
+        "perder vitória",
+        "excluir registros chefão"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q125",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "O que é o Codex?",
+      "resposta": "É o bestiário que reúne nomes, descrições e informações dos Chefões.",
+      "palavras_chave": [
+        "definição codex",
+        "galeria monstros"
+      ],
+      "variacoes": [
+        "O que é o Codex",
+        "definição codex",
+        "galeria monstros"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q126",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Consultar o Codex altera meu tempo?",
+      "resposta": "Não. O Codex é uma área de consulta narrativa.",
+      "palavras_chave": [
+        "codex altera tempo",
+        "consultar galeria horas"
+      ],
+      "variacoes": [
+        "Consultar o Codex altera meu tempo",
+        "codex altera tempo",
+        "consultar galeria horas"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q127",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "O que são Elixires?",
+      "resposta": "São recompensas colecionáveis vinculadas aos Chefões, liberadas por trabalho e conclusão posterior de hábitos.",
+      "palavras_chave": [
+        "definição elixires",
+        "recompensas colecionáveis"
+      ],
+      "variacoes": [
+        "O que são Elixires",
+        "definição elixires",
+        "recompensas colecionáveis"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q128",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Quantos Elixires existem?",
+      "resposta": "200 Elixires colecionáveis.",
+      "palavras_chave": [
+        "quantidade elixires",
+        "total elixires"
+      ],
+      "variacoes": [
+        "Quantos Elixires existem",
+        "quantidade elixires",
+        "total elixires"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q129",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Como abro um cofre?",
+      "resposta": "Derrote um Chefão e conclua um hábito depois da vitória para liberar um cofre elegível.",
+      "palavras_chave": [
+        "abrir cofre",
+        "destrancar recompensa"
+      ],
+      "variacoes": [
+        "Como abro um cofre",
+        "abrir cofre",
+        "destrancar recompensa"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q130",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Por que meu cofre continua fechado após vencer um Chefão?",
+      "resposta": "A vitória é apenas a primeira condição. Você precisa concluir um hábito depois dela.",
+      "palavras_chave": [
+        "cofre fechado após vitória",
+        "cofre não abre"
+      ],
+      "variacoes": [
+        "Por que meu cofre continua fechado após vencer um Chefão",
+        "cofre fechado após vitória",
+        "cofre não abre",
+        "Por que o cofre não abre?"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q131",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Um hábito pode abrir vários cofres?",
+      "resposta": "Não. Cada conclusão libera no máximo um Elixir.",
+      "palavras_chave": [
+        "hábito vários cofres",
+        "um hábito múltiplos cofres"
+      ],
+      "variacoes": [
+        "Um hábito pode abrir vários cofres",
+        "hábito vários cofres",
+        "um hábito múltiplos cofres"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q132",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Um hábito anterior à vitória libera um cofre futuro?",
+      "resposta": "Não. A conclusão precisa ocorrer depois da vitória correspondente.",
+      "palavras_chave": [
+        "hábito antes vitória",
+        "hábito anterior cofre"
+      ],
+      "variacoes": [
+        "Um hábito anterior à vitória libera um cofre futuro",
+        "hábito antes vitória",
+        "hábito anterior cofre"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q133",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Posso perder um Elixir?",
+      "resposta": "Sim. A exclusão de registros que sustentam a recompensa pode revogá-la.",
+      "palavras_chave": [
+        "perder elixir",
+        "recompensa removida"
+      ],
+      "variacoes": [
+        "Posso perder um Elixir",
+        "perder elixir",
+        "recompensa removida"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q134",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Como compartilho uma frase de Elixir?",
+      "resposta": "Na página Elixires, utilize a ação de copiar ou compartilhar a frase, conforme o suporte do navegador.",
+      "palavras_chave": [
+        "compartilhar frase elixir",
+        "copiar recompensa"
+      ],
+      "variacoes": [
+        "Como compartilho uma frase de Elixir",
+        "compartilhar frase elixir",
+        "copiar recompensa"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q135",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Qual é a diferença entre hábitos equipados e Elixires colecionáveis?",
+      "resposta": "Hábitos equipados são práticas disponíveis para execução; Elixires colecionáveis são recompensas desbloqueadas.",
+      "palavras_chave": [
+        "hábitos equipados elixires",
+        "diferença hábito recompensa"
+      ],
+      "variacoes": [
+        "Qual é a diferença entre hábitos equipados e Elixires colecionáveis",
+        "hábitos equipados elixires",
+        "diferença hábito recompensa"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q136",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "O que são Insígnias?",
+      "resposta": "São títulos e medalhas que reconhecem a evolução do projeto.",
+      "palavras_chave": [
+        "definição insígnias",
+        "distinções produtividade"
+      ],
+      "variacoes": [
+        "O que são Insígnias",
+        "definição insígnias",
+        "distinções produtividade"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q137",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Quantos títulos existem?",
+      "resposta": "50 títulos automáticos.",
+      "palavras_chave": [
+        "quantidade títulos",
+        "total títulos"
+      ],
+      "variacoes": [
+        "Quantos títulos existem",
+        "quantidade títulos",
+        "total títulos"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q138",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Quantas medalhas existem?",
+      "resposta": "60 medalhas.",
+      "palavras_chave": [
+        "quantidade medalhas",
+        "total medalhas"
+      ],
+      "variacoes": [
+        "Quantas medalhas existem",
+        "quantidade medalhas",
+        "total medalhas"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q139",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Preciso equipar meu título manualmente?",
+      "resposta": "Não. O título atual é atribuído automaticamente.",
+      "palavras_chave": [
+        "equipar título manual",
+        "selecionar título"
+      ],
+      "variacoes": [
+        "Preciso equipar meu título manualmente",
+        "equipar título manual",
+        "selecionar título"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q140",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "As Insígnias são separadas por projeto?",
+      "resposta": "Sim. Cada projeto possui sua própria coleção.",
+      "palavras_chave": [
+        "insígnias por projeto",
+        "distinções isoladas"
+      ],
+      "variacoes": [
+        "As Insígnias são separadas por projeto",
+        "insígnias por projeto",
+        "distinções isoladas"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q141",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "O que são Cerimônias?",
+      "resposta": "São apresentações narrativas que celebram as metas alcançadas.",
+      "palavras_chave": [
+        "definição cerimônias",
+        "celebrações"
+      ],
+      "variacoes": [
+        "O que são Cerimônias",
+        "definição cerimônias",
+        "celebrações"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q142",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Quantas Cerimônias existem?",
+      "resposta": "100 Cerimônias.",
+      "palavras_chave": [
+        "quantidade cerimônias",
+        "total cerimônias"
+      ],
+      "variacoes": [
+        "Quantas Cerimônias existem",
+        "quantidade cerimônias",
+        "total cerimônias"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q143",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Como desbloqueio uma Cerimônia?",
+      "resposta": "Acumule o tempo exigido pela meta correspondente.",
+      "palavras_chave": [
+        "desbloquear cerimônia",
+        "liberar celebração"
+      ],
+      "variacoes": [
+        "Como desbloqueio uma Cerimônia",
+        "desbloquear cerimônia",
+        "liberar celebração"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q144",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "O que é a Consagração?",
+      "resposta": "É a apresentação culminante da jornada de Cerimônias.",
+      "palavras_chave": [
+        "consagração",
+        "significado consagração"
+      ],
+      "variacoes": [
+        "O que é a Consagração",
+        "consagração",
+        "significado consagração"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q145",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Posso rever uma Cerimônia?",
+      "resposta": "Sim, quando a galeria oferecer a reprodução da cerimônia desbloqueada.",
+      "palavras_chave": [
+        "rever cerimônia",
+        "repetir celebração"
+      ],
+      "variacoes": [
+        "Posso rever uma Cerimônia",
+        "rever cerimônia",
+        "repetir celebração"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q146",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Uma Cerimônia acrescenta tempo produtivo?",
+      "resposta": "Não. É uma apresentação visual, sem tempo ou recompensas extras.",
+      "palavras_chave": [
+        "cerimônia gera tempo",
+        "celebração conta horas"
+      ],
+      "variacoes": [
+        "Uma Cerimônia acrescenta tempo produtivo",
+        "cerimônia gera tempo",
+        "celebração conta horas"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q147",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "O que é a página Visão?",
+      "resposta": "É uma composição visual que revela partes de um foguete conforme sua coleção de Elixires avança.",
+      "palavras_chave": [
+        "página visão",
+        "definição visão"
+      ],
+      "variacoes": [
+        "O que é a página Visão",
+        "página visão",
+        "definição visão"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q148",
+      "categoria": "Vitórias e recompensas",
+      "pergunta": "Como revelo a imagem do foguete?",
+      "resposta": "Conquiste Elixires; a imagem será revelada progressivamente.",
+      "palavras_chave": [
+        "revelar foguete",
+        "imagem foguete"
+      ],
+      "variacoes": [
+        "Como revelo a imagem do foguete",
+        "revelar foguete",
+        "imagem foguete"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q149",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "O que é um Backup Geral?",
+      "resposta": "É um arquivo de segurança que reúne todos os projetos existentes no momento da gravação.",
+      "palavras_chave": [
+        "backup geral definição",
+        "cópia segurança geral"
+      ],
+      "variacoes": [
+        "O que é um Backup Geral",
+        "backup geral definição",
+        "cópia segurança geral"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q150",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Como guardo um Backup Geral?",
+      "resposta": "Abra Arquivo → Guardar, escolha o destino quando possível e confira o arquivo salvo.",
+      "palavras_chave": [
+        "guardar backup geral",
+        "salvar cópia segurança"
+      ],
+      "variacoes": [
+        "Como guardo um Backup Geral",
+        "guardar backup geral",
+        "salvar cópia segurança"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q151",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "O Backup Geral inclui todos os projetos?",
+      "resposta": "Sim. Inclui todos os projetos existentes, não apenas o ativo.",
+      "palavras_chave": [
+        "backup todos projetos",
+        "conteúdo backup geral"
+      ],
+      "variacoes": [
+        "O Backup Geral inclui todos os projetos",
+        "backup todos projetos",
+        "conteúdo backup geral"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q152",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Qual é a diferença entre Guardar e Atualizar?",
+      "resposta": "Guardar cria ou baixa uma cópia; Atualizar tenta sobrescrever um Backup Geral existente, com confirmação.",
+      "palavras_chave": [
+        "diferença guardar atualizar",
+        "comparar backup guardar atualizar"
+      ],
+      "variacoes": [
+        "Qual é a diferença entre Guardar e Atualizar",
+        "diferença guardar atualizar",
+        "comparar backup guardar atualizar"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q153",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Como sobrescrevo um Backup Geral existente?",
+      "resposta": "Abra Arquivo → Atualizar, selecione um Backup Geral válido e confirme a sobrescrita, se o navegador permitir.",
+      "palavras_chave": [
+        "sobrescrever backup",
+        "atualizar arquivo existente"
+      ],
+      "variacoes": [
+        "Como sobrescrevo um Backup Geral existente",
+        "sobrescrever backup",
+        "atualizar arquivo existente"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q154",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Atualizar acrescenta dados ao arquivo antigo ou substitui seu conteúdo?",
+      "resposta": "Substitui o conteúdo pelo estado atual de todos os projetos. Não acrescenta registros ao arquivo antigo.",
+      "palavras_chave": [
+        "atualizar acrescenta substitui",
+        "backup sobrescreve conteúdo"
+      ],
+      "variacoes": [
+        "Atualizar acrescenta dados ao arquivo antigo ou substitui seu conteúdo",
+        "atualizar acrescenta substitui",
+        "backup sobrescreve conteúdo"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q155",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Um projeto excluído permanece no backup atualizado?",
+      "resposta": "Não deve permanecer se já foi excluído do estado atual. Preserve uma cópia anterior se quiser recuperá-lo.",
+      "palavras_chave": [
+        "projeto excluído backup atualizado",
+        "backup após excluir projeto"
+      ],
+      "variacoes": [
+        "Um projeto excluído permanece no backup atualizado",
+        "projeto excluído backup atualizado",
+        "backup após excluir projeto"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q156",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "O que faço se o navegador não permitir sobrescrever?",
+      "resposta": "Use Arquivo → Guardar para gerar uma nova cópia.",
+      "palavras_chave": [
+        "navegador não sobrescreve",
+        "falha gravação direta"
+      ],
+      "variacoes": [
+        "O que faço se o navegador não permitir sobrescrever",
+        "navegador não sobrescreve",
+        "falha gravação direta"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q157",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "O que significa backup pendente?",
+      "resposta": "Significa que o arquivo externo está desatualizado em relação aos dados locais.",
+      "palavras_chave": [
+        "backup pendente",
+        "alterações não guardadas"
+      ],
+      "variacoes": [
+        "O que significa backup pendente",
+        "backup pendente",
+        "alterações não guardadas"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q158",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Salvar no navegador é o mesmo que guardar um backup?",
+      "resposta": "Não. O armazenamento local mantém o trabalho no navegador; o backup é uma cópia externa para segurança.",
+      "palavras_chave": [
+        "salvar navegador backup",
+        "diferença armazenamento backup"
+      ],
+      "variacoes": [
+        "Salvar no navegador é o mesmo que guardar um backup",
+        "salvar navegador backup",
+        "diferença armazenamento backup"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q159",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Como restauro um Backup Geral?",
+      "resposta": "Abra Arquivo → Abrir, selecione o Backup Geral e leia a confirmação. Guarde uma cópia do estado atual antes, pois a restauração pode substituí-lo.",
+      "palavras_chave": [
+        "restaurar backup",
+        "recuperar projetos",
+        "abrir backup"
+      ],
+      "variacoes": [
+        "Como restauro um Backup Geral",
+        "restaurar backup",
+        "recuperar projetos",
+        "abrir backup",
+        "Como recupero meus projetos?",
+        "Como restauro meus dados?"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q160",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Posso restaurar um backup em outro dispositivo?",
+      "resposta": "Sim. Transfira o arquivo e utilize Arquivo → Abrir no outro dispositivo, se compatível.",
+      "palavras_chave": [
+        "restaurar outro dispositivo",
+        "migrar backup"
+      ],
+      "variacoes": [
+        "Posso restaurar um backup em outro dispositivo",
+        "restaurar outro dispositivo",
+        "migrar backup"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q161",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Como exporto somente um projeto?",
+      "resposta": "Em Arquivo → Projetos, utilize a exportação individual, quando disponível, em vez do Backup Geral.",
+      "palavras_chave": [
+        "exportar projeto individual",
+        "salvar só projeto"
+      ],
+      "variacoes": [
+        "Como exporto somente um projeto",
+        "exportar projeto individual",
+        "salvar só projeto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q162",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Como importo um projeto individual?",
+      "resposta": "Utilize a importação individual na área de projetos, quando disponível, e confira a confirmação. Não restaure um arquivo individual como Backup Geral.",
+      "palavras_chave": [
+        "importar projeto individual",
+        "abrir projeto exportado"
+      ],
+      "variacoes": [
+        "Como importo um projeto individual",
+        "importar projeto individual",
+        "abrir projeto exportado"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q163",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Posso abrir um arquivo pelo explorador?",
+      "resposta": "Em plataformas compatíveis, use Abrir com → Impulso para arquivos JSON ou .impulso. Caso contrário, use o seletor interno.",
+      "palavras_chave": [
+        "abrir arquivo explorador",
+        "duplo clique arquivo"
+      ],
+      "variacoes": [
+        "Posso abrir um arquivo pelo explorador",
+        "abrir arquivo explorador",
+        "duplo clique arquivo"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q164",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Como imprimo um relatório?",
+      "resposta": "Abra Arquivo → Imprimir e configure o relatório no diálogo do navegador.",
+      "palavras_chave": [
+        "imprimir relatório",
+        "impressão relatório"
+      ],
+      "variacoes": [
+        "Como imprimo um relatório",
+        "imprimir relatório",
+        "impressão relatório"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q165",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Como salvo um relatório em PDF?",
+      "resposta": "Na janela de impressão, escolha Salvar como PDF, quando disponível.",
+      "palavras_chave": [
+        "salvar pdf",
+        "exportar relatório pdf"
+      ],
+      "variacoes": [
+        "Como salvo um relatório em PDF",
+        "salvar pdf",
+        "exportar relatório pdf"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q166",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "O Impulso faz backup na nuvem?",
+      "resposta": "Não. O backup é um arquivo local; você pode copiá-lo para outro local por conta própria.",
+      "palavras_chave": [
+        "backup nuvem",
+        "sincronização online"
+      ],
+      "variacoes": [
+        "O Impulso faz backup na nuvem",
+        "backup nuvem",
+        "sincronização online"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q167",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "Por que devo conservar uma cópia anterior do backup?",
+      "resposta": "Porque Atualizar substitui o conteúdo anterior. Uma cópia antiga pode ajudar a recuperar dados excluídos.",
+      "palavras_chave": [
+        "cópia anterior backup",
+        "backup redundante"
+      ],
+      "variacoes": [
+        "Por que devo conservar uma cópia anterior do backup",
+        "cópia anterior backup",
+        "backup redundante"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q168",
+      "categoria": "Arquivos e segurança",
+      "pergunta": "O que acontece se eu fechar com backup pendente?",
+      "resposta": "Sistema → Fechar oferece opções para cancelar, fechar sem atualizar ou atualizar. O aviso nativo ao fechar a janela não é garantido.",
+      "palavras_chave": [
+        "fechar backup pendente",
+        "sair sem guardar"
+      ],
+      "variacoes": [
+        "O que acontece se eu fechar com backup pendente",
+        "fechar backup pendente",
+        "sair sem guardar"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q169",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que é o Impulsinho?",
+      "resposta": "Sou o assistente emocional e motivacional do Impulso. Posso orientar você, consultar seu progresso e responder perguntas sobre o aplicativo.",
+      "palavras_chave": [
+        "definição impulsinho",
+        "quem é impulsinho"
+      ],
+      "variacoes": [
+        "O que é o Impulsinho",
+        "definição impulsinho",
+        "quem é impulsinho",
+        "Quem é você?"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q170",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como abro o balão de fala do Impulsinho?",
+      "resposta": "Clique ou toque no meu rosto para abrir ou fechar meu balão de fala.",
+      "palavras_chave": [
+        "abrir balão fala",
+        "clicar personagem"
+      ],
+      "variacoes": [
+        "Como abro o balão de fala do Impulsinho",
+        "abrir balão fala",
+        "clicar personagem"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q171",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como abro a caixa de perguntas?",
+      "resposta": "Clique no botão ☰ junto ao meu rosto.",
+      "palavras_chave": [
+        "abrir caixa perguntas",
+        "menu impulsinho"
+      ],
+      "variacoes": [
+        "Como abro a caixa de perguntas",
+        "abrir caixa perguntas",
+        "menu impulsinho"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q172",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Qual é a diferença entre os dois balões?",
+      "resposta": "Meu balão apresenta minhas falas; o painel de perguntas recebe suas consultas e comandos.",
+      "palavras_chave": [
+        "diferença dois balões",
+        "fala versus perguntas"
+      ],
+      "variacoes": [
+        "Qual é a diferença entre os dois balões",
+        "diferença dois balões",
+        "fala versus perguntas"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q173",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como fecho os balões?",
+      "resposta": "Clique fora dos balões ou utilize o controle de fechamento correspondente.",
+      "palavras_chave": [
+        "fechar balões",
+        "clicar fora balão"
+      ],
+      "variacoes": [
+        "Como fecho os balões",
+        "fechar balões",
+        "clicar fora balão"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q174",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como faço uma pergunta digitada?",
+      "resposta": "Abra ☰, digite até 180 caracteres no campo Sua pergunta e pressione Perguntar.",
+      "palavras_chave": [
+        "pergunta digitada",
+        "digitar pergunta"
+      ],
+      "variacoes": [
+        "Como faço uma pergunta digitada",
+        "pergunta digitada",
+        "digitar pergunta"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q175",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como consulto minhas conquistas pelo Impulsinho?",
+      "resposta": "Em ☰, selecione Conquistas nas Perguntas rápidas e pressione Abrir. Posso resumir até cinco novidades pendentes.",
+      "palavras_chave": [
+        "consultar conquistas impulsinho",
+        "ver vitórias assistente"
+      ],
+      "variacoes": [
+        "Como consulto minhas conquistas pelo Impulsinho",
+        "consultar conquistas impulsinho",
+        "ver vitórias assistente"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q176",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como solicito uma frase motivacional?",
+      "resposta": "Em ☰, selecione Uma frase nas Perguntas rápidas e pressione Abrir.",
+      "palavras_chave": [
+        "pedir frase motivacional",
+        "uma frase"
+      ],
+      "variacoes": [
+        "Como solicito uma frase motivacional",
+        "pedir frase motivacional",
+        "uma frase"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q177",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quantas frases motivacionais existem?",
+      "resposta": "Minha biblioteca contém 1.000 frases motivacionais.",
+      "palavras_chave": [
+        "quantidade frases motivacionais",
+        "total frases"
+      ],
+      "variacoes": [
+        "Quantas frases motivacionais existem",
+        "quantidade frases motivacionais",
+        "total frases"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q178",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quais são as categorias de frases motivacionais?",
+      "resposta": "Hábitos, uso do tempo, estoicismo, motivação, positividade, foco e disciplina, crescimento e mentalidade.",
+      "palavras_chave": [
+        "categorias frases motivacionais",
+        "tipos reflexões"
+      ],
+      "variacoes": [
+        "Quais são as categorias de frases motivacionais",
+        "categorias frases motivacionais",
+        "tipos reflexões"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q179",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quando o Impulsinho fala espontaneamente?",
+      "resposta": "Nos modos Espontaneamente e Ambos, uma frase fica elegível após cinco minutos e a cada cinco minutos, ou doze no perfil Discreto, quando a interface está livre.",
+      "palavras_chave": [
+        "fala espontânea",
+        "intervalo frases automáticas"
+      ],
+      "variacoes": [
+        "Quando o Impulsinho fala espontaneamente",
+        "fala espontânea",
+        "intervalo frases automáticas",
+        "Por que você não fala sozinho?"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q180",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que significa Somente quando eu clicar?",
+      "resposta": "É o modo que evita abrir meus balões espontaneamente. Você ainda pode solicitar respostas.",
+      "palavras_chave": [
+        "somente quando clicar",
+        "modo manual balões"
+      ],
+      "variacoes": [
+        "O que significa Somente quando eu clicar",
+        "somente quando clicar",
+        "modo manual balões"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q181",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que significa Ambos na abertura dos balões?",
+      "resposta": "Permite intervenções espontâneas e consultas manuais.",
+      "palavras_chave": [
+        "ambos abertura balões",
+        "modo ambos"
+      ],
+      "variacoes": [
+        "O que significa Ambos na abertura dos balões",
+        "ambos abertura balões",
+        "modo ambos"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q182",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O Impulsinho fala sem projeto aberto?",
+      "resposta": "Sim. Posso apresentar reflexões e orientações iniciais mesmo sem projeto ativo.",
+      "palavras_chave": [
+        "fala sem projeto",
+        "frase sem projeto ativo"
+      ],
+      "variacoes": [
+        "O Impulsinho fala sem projeto aberto",
+        "fala sem projeto",
+        "frase sem projeto ativo"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q183",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que é o Oráculo?",
+      "resposta": "É meu mecanismo de conhecimento sobre o Impulso, destinado a responder perguntas sobre suas funções.",
+      "palavras_chave": [
+        "definição oráculo",
+        "base conhecimento"
+      ],
+      "variacoes": [
+        "O que é o Oráculo",
+        "definição oráculo",
+        "base conhecimento",
+        "Para que serve o Oráculo?"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q184",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O Oráculo usa inteligência artificial generativa?",
+      "resposta": "Não. Ele utiliza regras e conteúdo preparado localmente, não um modelo generativo.",
+      "palavras_chave": [
+        "oráculo ia generativa",
+        "inteligência artificial oráculo"
+      ],
+      "variacoes": [
+        "O Oráculo usa inteligência artificial generativa",
+        "oráculo ia generativa",
+        "inteligência artificial oráculo"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q185",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O Oráculo altera meus registros?",
+      "resposta": "Não. Consultas de conhecimento não modificam seus registros.",
+      "palavras_chave": [
+        "oráculo altera registros",
+        "pergunta modifica dados"
+      ],
+      "variacoes": [
+        "O Oráculo altera meus registros",
+        "oráculo altera registros",
+        "pergunta modifica dados"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q186",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que faço se o Oráculo não entender minha pergunta?",
+      "resposta": "Reformule a pergunta usando o nome da função ou consulte o Manual em Ajuda → Manual.",
+      "palavras_chave": [
+        "oráculo não entende",
+        "pergunta sem resposta"
+      ],
+      "variacoes": [
+        "O que faço se o Oráculo não entender minha pergunta",
+        "oráculo não entende",
+        "pergunta sem resposta"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q187",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como inicio o tutorial?",
+      "resposta": "Em ☰, selecione Tutorial nas Perguntas rápidas e pressione Abrir.",
+      "palavras_chave": [
+        "iniciar tutorial",
+        "abrir tutorial"
+      ],
+      "variacoes": [
+        "Como inicio o tutorial",
+        "iniciar tutorial",
+        "abrir tutorial"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q188",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O tutorial funciona com projeto aberto?",
+      "resposta": "Sim. Com projeto ativo, apresento um resumo dos primeiros passos; sem projeto, posso orientar a criação e o registro inicial.",
+      "palavras_chave": [
+        "tutorial projeto aberto",
+        "tutorial com projeto"
+      ],
+      "variacoes": [
+        "O tutorial funciona com projeto aberto",
+        "tutorial projeto aberto",
+        "tutorial com projeto"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q189",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quantas facetas o Impulsinho possui?",
+      "resposta": "109 facetas.",
+      "palavras_chave": [
+        "quantidade facetas",
+        "total rostos"
+      ],
+      "variacoes": [
+        "Quantas facetas o Impulsinho possui",
+        "quantidade facetas",
+        "total rostos"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q190",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quais são as famílias de expressões?",
+      "resposta": "Alegria, curiosidade, surpresa, desafio, preocupação, descanso, humor e cuidado.",
+      "palavras_chave": [
+        "famílias expressões",
+        "tipos emoções"
+      ],
+      "variacoes": [
+        "Quais são as famílias de expressões",
+        "famílias expressões",
+        "tipos emoções"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q191",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como alterno as expressões?",
+      "resposta": "Em Sistema → Configurações → Controles do Impulsinho, explore o catálogo, escolha uma família ou ative a alternância automática.",
+      "palavras_chave": [
+        "alternar expressões",
+        "mudar rosto"
+      ],
+      "variacoes": [
+        "Como alterno as expressões",
+        "alternar expressões",
+        "mudar rosto"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q192",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quantas variações contextuais existem?",
+      "resposta": "1.200 variações contextuais em doze temas, além das demais bibliotecas.",
+      "palavras_chave": [
+        "variações contextuais",
+        "quantidade falas contextuais"
+      ],
+      "variacoes": [
+        "Quantas variações contextuais existem",
+        "variações contextuais",
+        "quantidade falas contextuais"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q193",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quais são as personalidades do Impulsinho?",
+      "resposta": "Divertido, Mentor, Guerreiro e Discreto.",
+      "palavras_chave": [
+        "personalidades impulsinho",
+        "tipos personalidade"
+      ],
+      "variacoes": [
+        "Quais são as personalidades do Impulsinho",
+        "personalidades impulsinho",
+        "tipos personalidade"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q194",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que caracteriza a personalidade Divertido?",
+      "resposta": "É um perfil descontraído, com humor e intervenções mais frequentes.",
+      "palavras_chave": [
+        "personalidade divertido",
+        "perfil divertido"
+      ],
+      "variacoes": [
+        "O que caracteriza a personalidade Divertido",
+        "personalidade divertido",
+        "perfil divertido"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q195",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que caracteriza a personalidade Mentor?",
+      "resposta": "É o perfil padrão, com orientação equilibrada e reflexiva.",
+      "palavras_chave": [
+        "personalidade mentor",
+        "perfil mentor"
+      ],
+      "variacoes": [
+        "O que caracteriza a personalidade Mentor",
+        "personalidade mentor",
+        "perfil mentor"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q196",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que caracteriza a personalidade Guerreiro?",
+      "resposta": "Utiliza linguagem de desafio, energia e incentivo às conquistas.",
+      "palavras_chave": [
+        "personalidade guerreiro",
+        "perfil guerreiro"
+      ],
+      "variacoes": [
+        "O que caracteriza a personalidade Guerreiro",
+        "personalidade guerreiro",
+        "perfil guerreiro"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q197",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que caracteriza a personalidade Discreto?",
+      "resposta": "Apresenta menos intervenções e efeitos sonoros mais suaves.",
+      "palavras_chave": [
+        "personalidade discreto",
+        "perfil discreto"
+      ],
+      "variacoes": [
+        "O que caracteriza a personalidade Discreto",
+        "personalidade discreto",
+        "perfil discreto"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q198",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "A personalidade altera as regras de produtividade?",
+      "resposta": "Não. Altera meu tom, frequência de intervenções e intensidade sonora, não o cálculo de produtividade.",
+      "palavras_chave": [
+        "personalidade regras produtividade",
+        "perfil altera cálculo"
+      ],
+      "variacoes": [
+        "A personalidade altera as regras de produtividade",
+        "personalidade regras produtividade",
+        "perfil altera cálculo"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q199",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que é XP do Impulsinho?",
+      "resposta": "É a experiência que representa minha evolução em cada projeto.",
+      "palavras_chave": [
+        "xp impulsinho",
+        "definição experiência"
+      ],
+      "variacoes": [
+        "O que é XP do Impulsinho",
+        "xp impulsinho",
+        "definição experiência"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q200",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como o XP é calculado?",
+      "resposta": "Um XP por Giro completo, cinco por Chefão derrotado, um por hábito concluído e dois por dia da sequência recorde.",
+      "palavras_chave": [
+        "calcular xp",
+        "fórmula experiência"
+      ],
+      "variacoes": [
+        "Como o XP é calculado",
+        "calcular xp",
+        "fórmula experiência"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q201",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quais são os estágios de evolução?",
+      "resposta": "Aprendiz, Companheiro, Estrategista, Mestre e Guardião do Impulso.",
+      "palavras_chave": [
+        "estágios evolução",
+        "níveis impulsinho"
+      ],
+      "variacoes": [
+        "Quais são os estágios de evolução",
+        "estágios evolução",
+        "níveis impulsinho"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q202",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quanto XP preciso para ser Companheiro?",
+      "resposta": "25 XP.",
+      "palavras_chave": [
+        "xp companheiro",
+        "requisito companheiro"
+      ],
+      "variacoes": [
+        "Quanto XP preciso para ser Companheiro",
+        "xp companheiro",
+        "requisito companheiro"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q203",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quanto XP preciso para ser Estrategista?",
+      "resposta": "100 XP.",
+      "palavras_chave": [
+        "xp estrategista",
+        "requisito estrategista"
+      ],
+      "variacoes": [
+        "Quanto XP preciso para ser Estrategista",
+        "xp estrategista",
+        "requisito estrategista"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q204",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quanto XP preciso para ser Mestre?",
+      "resposta": "500 XP.",
+      "palavras_chave": [
+        "xp mestre",
+        "requisito mestre"
+      ],
+      "variacoes": [
+        "Quanto XP preciso para ser Mestre",
+        "xp mestre",
+        "requisito mestre"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q205",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Quanto XP preciso para ser Guardião do Impulso?",
+      "resposta": "2.000 XP.",
+      "palavras_chave": [
+        "xp guardião",
+        "requisito guardião"
+      ],
+      "variacoes": [
+        "Quanto XP preciso para ser Guardião do Impulso",
+        "xp guardião",
+        "requisito guardião"
+      ],
+      "intencao": "quantidade"
+    },
+    {
+      "id": "Q206",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como consulto minha evolução?",
+      "resposta": "Em ☰, selecione Minha evolução nas Perguntas rápidas e pressione Abrir.",
+      "palavras_chave": [
+        "consultar evolução",
+        "ver nível impulsinho"
+      ],
+      "variacoes": [
+        "Como consulto minha evolução",
+        "consultar evolução",
+        "ver nível impulsinho"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q207",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Posso perder XP ao excluir registros?",
+      "resposta": "Sim. A experiência é calculada com os registros atuais e pode diminuir após exclusões.",
+      "palavras_chave": [
+        "perder xp",
+        "excluir registros experiência"
+      ],
+      "variacoes": [
+        "Posso perder XP ao excluir registros",
+        "perder xp",
+        "excluir registros experiência"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q208",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como desligo os sons do Impulsinho?",
+      "resposta": "Em Sistema → Configurações → Controles do Impulsinho, silencie ou desative os efeitos sonoros.",
+      "palavras_chave": [
+        "desligar sons impulsinho",
+        "silenciar personagem"
+      ],
+      "variacoes": [
+        "Como desligo os sons do Impulsinho",
+        "desligar sons impulsinho",
+        "silenciar personagem"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q209",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como testo os sons do Impulsinho?",
+      "resposta": "Nos Controles do Impulsinho, utilize Testar som do Impulsinho.",
+      "palavras_chave": [
+        "testar sons impulsinho",
+        "teste áudio personagem"
+      ],
+      "variacoes": [
+        "Como testo os sons do Impulsinho",
+        "testar sons impulsinho",
+        "teste áudio personagem"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q210",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "O que é a vinheta de abertura?",
+      "resposta": "É uma sequência de nove notas ascendentes durante a abertura Ignição.",
+      "palavras_chave": [
+        "vinheta abertura",
+        "som splash"
+      ],
+      "variacoes": [
+        "O que é a vinheta de abertura",
+        "vinheta abertura",
+        "som splash"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q211",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Como desativo a vinheta?",
+      "resposta": "Nos Controles do Impulsinho, desative Vinheta sonora na abertura.",
+      "palavras_chave": [
+        "desativar vinheta",
+        "silenciar abertura"
+      ],
+      "variacoes": [
+        "Como desativo a vinheta",
+        "desativar vinheta",
+        "silenciar abertura"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q212",
+      "categoria": "Impulsinho e Oráculo",
+      "pergunta": "Por que o Impulsinho pode ficar sem som?",
+      "resposta": "Confira o volume e as opções de áudio. O navegador pode exigir uma interação antes de liberar a reprodução; utilize Testar som.",
+      "palavras_chave": [
+        "impulsinho sem som",
+        "áudio personagem falha"
+      ],
+      "variacoes": [
+        "Por que o Impulsinho pode ficar sem som",
+        "impulsinho sem som",
+        "áudio personagem falha"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q213",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "O que é o R2D10?",
+      "resposta": "É meu assistente operacional, responsável pelos avisos e pelo monitoramento das atividades do Impulso.",
+      "palavras_chave": [
+        "definição r2d10",
+        "quem é robozinho",
+        "assistente operacional"
+      ],
+      "variacoes": [
+        "O que é o R2D10",
+        "definição r2d10",
+        "quem é robozinho",
+        "assistente operacional",
+        "Quem é o robozinho?",
+        "Para que serve aquele robô?",
+        "Quem é seu assistente?"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q214",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Qual é a diferença entre R2D10 e Impulsinho?",
+      "resposta": "Eu cuido da orientação, motivação e consultas; o R2D10 monitora atividades e apresenta avisos operacionais.",
+      "palavras_chave": [
+        "diferença r2d10 impulsinho",
+        "comparar assistentes"
+      ],
+      "variacoes": [
+        "Qual é a diferença entre R2D10 e Impulsinho",
+        "diferença r2d10 impulsinho",
+        "comparar assistentes"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q215",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Quais atividades o R2D10 monitora?",
+      "resposta": "Ponto, Foco e Hábitos, inclusive estados de pausa.",
+      "palavras_chave": [
+        "atividades r2d10 monitora",
+        "monitoramento robô"
+      ],
+      "variacoes": [
+        "Quais atividades o R2D10 monitora",
+        "atividades r2d10 monitora",
+        "monitoramento robô"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q216",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "O que significa manter R2D10 visível em repouso?",
+      "resposta": "Mantém o robô visível mesmo sem atividades ou alertas. Desativar não impede que apareça quando necessário.",
+      "palavras_chave": [
+        "r2d10 repouso",
+        "robô visível sem atividade"
+      ],
+      "variacoes": [
+        "O que significa manter R2D10 visível em repouso",
+        "r2d10 repouso",
+        "robô visível sem atividade"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q217",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Como desativo a voz do R2D10?",
+      "resposta": "Em Sistema → Configurações → Controles do R2D10, desative Sons de fala robótica.",
+      "palavras_chave": [
+        "desativar voz r2d10",
+        "silenciar robô"
+      ],
+      "variacoes": [
+        "Como desativo a voz do R2D10",
+        "desativar voz r2d10",
+        "silenciar robô"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q218",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Como ajusto o volume do R2D10?",
+      "resposta": "Nos Controles do R2D10, ajuste Volume da voz.",
+      "palavras_chave": [
+        "volume r2d10",
+        "ajustar voz robô"
+      ],
+      "variacoes": [
+        "Como ajusto o volume do R2D10",
+        "volume r2d10",
+        "ajustar voz robô"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q219",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Como testo a voz robótica?",
+      "resposta": "Nos Controles do R2D10, pressione Testar voz robótica.",
+      "palavras_chave": [
+        "testar voz robótica",
+        "teste som r2d10"
+      ],
+      "variacoes": [
+        "Como testo a voz robótica",
+        "testar voz robótica",
+        "teste som r2d10"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q220",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "O que é o alerta de backup?",
+      "resposta": "É um lembrete periódico para guardar uma cópia externa dos projetos e reduzir o risco de perda de dados.",
+      "palavras_chave": [
+        "alerta backup",
+        "lembrete cópia segurança"
+      ],
+      "variacoes": [
+        "O que é o alerta de backup",
+        "alerta backup",
+        "lembrete cópia segurança"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q221",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "O que é o alerta de hábitos e Elixires?",
+      "resposta": "É um lembrete para criar e concluir hábitos que podem liberar cofres de Chefões derrotados.",
+      "palavras_chave": [
+        "alerta hábitos elixires",
+        "lembrete recompensa"
+      ],
+      "variacoes": [
+        "O que é o alerta de hábitos e Elixires",
+        "alerta hábitos elixires",
+        "lembrete recompensa"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q222",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Como desligo os alertas?",
+      "resposta": "Em Sistema → Configurações → Controles do R2D10, desative os lembretes desejados.",
+      "palavras_chave": [
+        "desligar alertas",
+        "desativar lembretes"
+      ],
+      "variacoes": [
+        "Como desligo os alertas",
+        "desligar alertas",
+        "desativar lembretes"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q223",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Os alertas funcionam com o aplicativo fechado?",
+      "resposta": "Não conte com isso. São avisos locais enquanto o aplicativo está em execução, não notificações push garantidas.",
+      "palavras_chave": [
+        "alertas aplicativo fechado",
+        "avisos segundo plano"
+      ],
+      "variacoes": [
+        "Os alertas funcionam com o aplicativo fechado",
+        "alertas aplicativo fechado",
+        "avisos segundo plano"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q224",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Os alertas fazem backup automaticamente?",
+      "resposta": "Não. Você precisa executar a gravação do backup.",
+      "palavras_chave": [
+        "alertas backup automático",
+        "lembrete salva sozinho"
+      ],
+      "variacoes": [
+        "Os alertas fazem backup automaticamente",
+        "alertas backup automático",
+        "lembrete salva sozinho"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q225",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "O que são distintivos de conquistas?",
+      "resposta": "São indicadores de novidades não consultadas, como títulos, medalhas, Chefões, Cerimônias e Elixires.",
+      "palavras_chave": [
+        "distintivos conquistas",
+        "badge conquistas"
+      ],
+      "variacoes": [
+        "O que são distintivos de conquistas",
+        "distintivos conquistas",
+        "badge conquistas"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q226",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "O que significa o contador no cabeçalho?",
+      "resposta": "É a quantidade de novidades ainda não consultadas.",
+      "palavras_chave": [
+        "contador cabeçalho",
+        "número novidades"
+      ],
+      "variacoes": [
+        "O que significa o contador no cabeçalho",
+        "contador cabeçalho",
+        "número novidades"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q227",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Como abro a Central de Novidades?",
+      "resposta": "Clique ou toque no contador do cabeçalho; no computador, passar o mouse também pode abrir a lista.",
+      "palavras_chave": [
+        "abrir central novidades",
+        "ver avisos conquistas"
+      ],
+      "variacoes": [
+        "Como abro a Central de Novidades",
+        "abrir central novidades",
+        "ver avisos conquistas"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q228",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Como marco uma conquista como consultada?",
+      "resposta": "Selecione a novidade na Central de Novidades para visitar sua seção e registrá-la como consultada.",
+      "palavras_chave": [
+        "marcar conquista consultada",
+        "ler novidade"
+      ],
+      "variacoes": [
+        "Como marco uma conquista como consultada",
+        "marcar conquista consultada",
+        "ler novidade"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q229",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Abrir a lista marca todas as novidades como lidas?",
+      "resposta": "Não. A consulta é registrada individualmente.",
+      "palavras_chave": [
+        "lista marca todas lidas",
+        "abrir lista novidades"
+      ],
+      "variacoes": [
+        "Abrir a lista marca todas as novidades como lidas",
+        "lista marca todas lidas",
+        "abrir lista novidades"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q230",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Os distintivos são notificações push?",
+      "resposta": "Não. São indicadores visuais no ícone, quando o sistema oferece suporte à Badging API.",
+      "palavras_chave": [
+        "distintivos push",
+        "notificações push"
+      ],
+      "variacoes": [
+        "Os distintivos são notificações push",
+        "distintivos push",
+        "notificações push"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q231",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "O que é Copiar resumo?",
+      "resposta": "É um comando que copia os dados disponíveis em formato de texto para a área de transferência.",
+      "palavras_chave": [
+        "copiar resumo definição",
+        "área transferência"
+      ],
+      "variacoes": [
+        "O que é Copiar resumo",
+        "copiar resumo definição",
+        "área transferência"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q232",
+      "categoria": "R2D10 e notificações",
+      "pergunta": "Copiar resumo gera um arquivo?",
+      "resposta": "Não. Ele copia texto; você pode colá-lo em outro aplicativo.",
+      "palavras_chave": [
+        "copiar resumo arquivo",
+        "gera documento"
+      ],
+      "variacoes": [
+        "Copiar resumo gera um arquivo",
+        "copiar resumo arquivo",
+        "gera documento"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q233",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Onde ficam meus dados?",
+      "resposta": "No armazenamento local do navegador, associado ao ambiente em que você usa o Impulso.",
+      "palavras_chave": [
+        "local dados",
+        "onde armazenados"
+      ],
+      "variacoes": [
+        "Onde ficam meus dados",
+        "local dados",
+        "onde armazenados"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q234",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que acontece se eu limpar os dados do navegador?",
+      "resposta": "Você pode perder os projetos e preferências locais. Guarde um Backup Geral antes de limpar.",
+      "palavras_chave": [
+        "limpar dados navegador",
+        "apagar dados site"
+      ],
+      "variacoes": [
+        "O que acontece se eu limpar os dados do navegador",
+        "limpar dados navegador",
+        "apagar dados site"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q235",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que é armazenamento persistente?",
+      "resposta": "É uma permissão que pode reduzir o risco de remoção automática dos dados pelo navegador.",
+      "palavras_chave": [
+        "armazenamento persistente",
+        "persistência navegador"
+      ],
+      "variacoes": [
+        "O que é armazenamento persistente",
+        "armazenamento persistente",
+        "persistência navegador"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q236",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Como consulto o espaço utilizado?",
+      "resposta": "Abra Dados → Armazenamento para consultar as informações disponíveis.",
+      "palavras_chave": [
+        "espaço utilizado",
+        "medidor memória"
+      ],
+      "variacoes": [
+        "Como consulto o espaço utilizado",
+        "espaço utilizado",
+        "medidor memória"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q237",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Armazenamento persistente substitui backup?",
+      "resposta": "Não. Mesmo com persistência, mantenha cópias externas.",
+      "palavras_chave": [
+        "persistência substitui backup",
+        "segurança armazenamento"
+      ],
+      "variacoes": [
+        "Armazenamento persistente substitui backup",
+        "persistência substitui backup",
+        "segurança armazenamento"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q238",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que é limpeza seletiva?",
+      "resposta": "É a remoção apenas dos componentes escolhidos em Sistema → Configurações → Limpeza.",
+      "palavras_chave": [
+        "limpeza seletiva",
+        "limpar categorias"
+      ],
+      "variacoes": [
+        "O que é limpeza seletiva",
+        "limpeza seletiva",
+        "limpar categorias"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q239",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que acontece se eu limpar projetos e registros?",
+      "resposta": "Remove os projetos, atividades, hábitos e conquistas locais. Faça backup antes.",
+      "palavras_chave": [
+        "limpar projetos registros",
+        "apagar todos projetos"
+      ],
+      "variacoes": [
+        "O que acontece se eu limpar projetos e registros",
+        "limpar projetos registros",
+        "apagar todos projetos"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q240",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que acontece se eu limpar preferências e alertas?",
+      "resposta": "Redefine temas, atalhos, avisos e preferências relacionadas.",
+      "palavras_chave": [
+        "limpar preferências alertas",
+        "reset configurações"
+      ],
+      "variacoes": [
+        "O que acontece se eu limpar preferências e alertas",
+        "limpar preferências alertas",
+        "reset configurações"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q241",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que acontece se eu limpar o cache offline?",
+      "resposta": "Remove os recursos armazenados para uso offline. Pode ser necessário conectar-se para recriar o cache.",
+      "palavras_chave": [
+        "limpar cache offline",
+        "apagar recursos cache"
+      ],
+      "variacoes": [
+        "O que acontece se eu limpar o cache offline",
+        "limpar cache offline",
+        "apagar recursos cache"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q242",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que acontece se eu remover o Service Worker?",
+      "resposta": "Cancela seu registro no escopo do aplicativo e pode prejudicar o funcionamento offline até novo registro.",
+      "palavras_chave": [
+        "remover service worker",
+        "desregistrar worker"
+      ],
+      "variacoes": [
+        "O que acontece se eu remover o Service Worker",
+        "remover service worker",
+        "desregistrar worker"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q243",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Quais são os sete temas do Impulso?",
+      "resposta": "Original, Vinho, Blue Sky, Trinity (Triádico), Granfino, Ecológico e Místico.",
+      "palavras_chave": [
+        "sete temas",
+        "lista paletas"
+      ],
+      "variacoes": [
+        "Quais são os sete temas do Impulso",
+        "sete temas",
+        "lista paletas"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q244",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Como altero a paleta cromática?",
+      "resposta": "Abra Sistema → Configurações → Temas e selecione a paleta desejada.",
+      "palavras_chave": [
+        "alterar paleta",
+        "mudar tema cores"
+      ],
+      "variacoes": [
+        "Como altero a paleta cromática",
+        "alterar paleta",
+        "mudar tema cores",
+        "Como troco as cores do aplicativo?"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q245",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Qual é a diferença entre paleta e modo claro ou escuro?",
+      "resposta": "A paleta define a identidade cromática; o modo claro ou escuro altera a apresentação dessa mesma identidade.",
+      "palavras_chave": [
+        "diferença paleta modo escuro",
+        "tema versus claro escuro"
+      ],
+      "variacoes": [
+        "Qual é a diferença entre paleta e modo claro ou escuro",
+        "diferença paleta modo escuro",
+        "tema versus claro escuro"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q246",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que caracteriza o tema Original?",
+      "resposta": "Vermelho, preto e branco formam a identidade clássica do Impulso.",
+      "palavras_chave": [
+        "tema original",
+        "paleta clássica"
+      ],
+      "variacoes": [
+        "O que caracteriza o tema Original",
+        "tema original",
+        "paleta clássica"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q247",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que caracteriza o tema Vinho?",
+      "resposta": "Magenta, roxo e rosa criam uma atmosfera inspirada em RPG.",
+      "palavras_chave": [
+        "tema vinho",
+        "paleta magenta"
+      ],
+      "variacoes": [
+        "O que caracteriza o tema Vinho",
+        "tema vinho",
+        "paleta magenta"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q248",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que caracteriza o tema Blue Sky?",
+      "resposta": "Turquesa, azul-céu e azul intenso formam uma harmonia análoga.",
+      "palavras_chave": [
+        "tema blue sky",
+        "paleta azul"
+      ],
+      "variacoes": [
+        "O que caracteriza o tema Blue Sky",
+        "tema blue sky",
+        "paleta azul"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q249",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que caracteriza o tema Trinity?",
+      "resposta": "Laranja, verde e roxo compõem uma harmonia triádica.",
+      "palavras_chave": [
+        "tema trinity",
+        "paleta tríade"
+      ],
+      "variacoes": [
+        "O que caracteriza o tema Trinity",
+        "tema trinity",
+        "paleta tríade"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q250",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que caracteriza o tema Granfino?",
+      "resposta": "Grafite, prata e acentos discretos dão à interface uma aparência refinada.",
+      "palavras_chave": [
+        "tema granfino",
+        "paleta grafite"
+      ],
+      "variacoes": [
+        "O que caracteriza o tema Granfino",
+        "tema granfino",
+        "paleta grafite"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q251",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que caracteriza o tema Ecológico?",
+      "resposta": "Tons de verde em harmonia análoga, com acentos luminosos.",
+      "palavras_chave": [
+        "tema ecológico",
+        "paleta verde"
+      ],
+      "variacoes": [
+        "O que caracteriza o tema Ecológico",
+        "tema ecológico",
+        "paleta verde"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q252",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que caracteriza o tema Místico?",
+      "resposta": "Roxo e magenta criam uma atmosfera imersiva de RPG.",
+      "palavras_chave": [
+        "tema místico",
+        "paleta roxa"
+      ],
+      "variacoes": [
+        "O que caracteriza o tema Místico",
+        "tema místico",
+        "paleta roxa"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q253",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que significa WCAG?",
+      "resposta": "São diretrizes de acessibilidade para conteúdo web. O Impulso busca os critérios WCAG 2.2 AA, sem afirmar certificação integral.",
+      "palavras_chave": [
+        "wcag",
+        "diretrizes acessibilidade"
+      ],
+      "variacoes": [
+        "O que significa WCAG",
+        "wcag",
+        "diretrizes acessibilidade"
+      ],
+      "intencao": "definicao"
+    },
+    {
+      "id": "Q254",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O Impulso respeita redução de movimento?",
+      "resposta": "As animações são projetadas para respeitar a preferência de redução de movimento do sistema.",
+      "palavras_chave": [
+        "redução movimento",
+        "reduzir animações"
+      ],
+      "variacoes": [
+        "O Impulso respeita redução de movimento",
+        "redução movimento",
+        "reduzir animações"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q255",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O Impulso envia meus registros a um servidor?",
+      "resposta": "Não envia automaticamente registros a um servidor de produtividade. Exportações e compartilhamentos dependem de suas ações.",
+      "palavras_chave": [
+        "enviar registros servidor",
+        "privacidade dados"
+      ],
+      "variacoes": [
+        "O Impulso envia meus registros a um servidor",
+        "enviar registros servidor",
+        "privacidade dados"
+      ],
+      "intencao": "esclarecimento"
+    },
+    {
+      "id": "Q256",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que o aplicativo não abre offline?",
+      "resposta": "Confira se abriu conectado e se os recursos foram armazenados. O cache pode ter sido removido; reconecte-se antes de tentar novamente.",
+      "palavras_chave": [
+        "não abre offline",
+        "falha sem internet"
+      ],
+      "variacoes": [
+        "Por que o aplicativo não abre offline",
+        "não abre offline",
+        "falha sem internet"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q257",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que aparece uma versão antiga?",
+      "resposta": "Pode haver uma atualização do Service Worker pendente. Reabra conectado e aguarde; não apague dados sem backup.",
+      "palavras_chave": [
+        "versão antiga",
+        "cache desatualizado"
+      ],
+      "variacoes": [
+        "Por que aparece uma versão antiga",
+        "versão antiga",
+        "cache desatualizado"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q258",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que o convite de instalação não aparece?",
+      "resposta": "O navegador pode não oferecer o convite, ou o aplicativo já pode estar instalado. Tente Sistema → Instalar.",
+      "palavras_chave": [
+        "convite instalação não aparece",
+        "prompt ausente"
+      ],
+      "variacoes": [
+        "Por que o convite de instalação não aparece",
+        "convite instalação não aparece",
+        "prompt ausente"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q259",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que os atalhos de teclado não funcionam?",
+      "resposta": "Confira se estão habilitados em Configurações, se o aplicativo recebe o teclado e se há conflitos com o sistema ou navegador.",
+      "palavras_chave": [
+        "atalhos teclado não funcionam",
+        "teclas falham"
+      ],
+      "variacoes": [
+        "Por que os atalhos de teclado não funcionam",
+        "atalhos teclado não funcionam",
+        "teclas falham"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q260",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que os atalhos do ícone não aparecem?",
+      "resposta": "O sistema decide quais atalhos do manifesto exibir e pode limitar a quantidade. Confira a instalação e a compatibilidade.",
+      "palavras_chave": [
+        "atalhos ícone não aparecem",
+        "atalhos aplicativo ausentes"
+      ],
+      "variacoes": [
+        "Por que os atalhos do ícone não aparecem",
+        "atalhos ícone não aparecem",
+        "atalhos aplicativo ausentes"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q261",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que Guardar não abre o seletor de pasta?",
+      "resposta": "Seu navegador pode não suportar gravação direta. Nesse caso, Guardar utiliza o download convencional.",
+      "palavras_chave": [
+        "guardar não abre seletor",
+        "salvar pasta falha"
+      ],
+      "variacoes": [
+        "Por que Guardar não abre o seletor de pasta",
+        "guardar não abre seletor",
+        "salvar pasta falha"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q262",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que Abrir rejeita meu JSON?",
+      "resposta": "Confira se é um arquivo compatível do Impulso, íntegro e do tipo correto para a operação escolhida.",
+      "palavras_chave": [
+        "abrir rejeita json",
+        "backup inválido"
+      ],
+      "variacoes": [
+        "Por que Abrir rejeita meu JSON",
+        "abrir rejeita json",
+        "backup inválido"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q263",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que o contador não aparece no ícone?",
+      "resposta": "A Badging API depende da plataforma e da configuração de distintivos. Confira também o contador interno.",
+      "palavras_chave": [
+        "contador ícone não aparece",
+        "badge ausente"
+      ],
+      "variacoes": [
+        "Por que o contador não aparece no ícone",
+        "contador ícone não aparece",
+        "badge ausente"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q264",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que meu total de horas parece incorreto?",
+      "resposta": "Verifique sobreposições, pausas e sessões que atravessam a meia-noite. O total produtivo não soma intervalos duplicados.",
+      "palavras_chave": [
+        "total horas incorreto",
+        "divergência tempo"
+      ],
+      "variacoes": [
+        "Por que meu total de horas parece incorreto",
+        "total horas incorreto",
+        "divergência tempo"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q265",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que o Motor não anima?",
+      "resposta": "Confira se existem graus acumulados e se a redução de movimento está ativa. A animação não é necessária para registrar tempo.",
+      "palavras_chave": [
+        "motor não anima",
+        "animação parada"
+      ],
+      "variacoes": [
+        "Por que o Motor não anima",
+        "motor não anima",
+        "animação parada"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q266",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que faço se o armazenamento estiver cheio?",
+      "resposta": "Guarde um backup, consulte Dados → Armazenamento e só remova dados após conferir a cópia.",
+      "palavras_chave": [
+        "armazenamento cheio",
+        "quota excedida"
+      ],
+      "variacoes": [
+        "O que faço se o armazenamento estiver cheio",
+        "armazenamento cheio",
+        "quota excedida"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q267",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "O que faço se a impressão estiver cortada?",
+      "resposta": "Ajuste margens, orientação e escala no diálogo de impressão.",
+      "palavras_chave": [
+        "impressão cortada",
+        "relatório truncado"
+      ],
+      "variacoes": [
+        "O que faço se a impressão estiver cortada",
+        "impressão cortada",
+        "relatório truncado"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q268",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Por que o botão Fechar não fecha a janela?",
+      "resposta": "O navegador pode impedir que uma página feche sua própria janela. Feche a aba manualmente depois de conferir o backup.",
+      "palavras_chave": [
+        "fechar não fecha janela",
+        "sair aplicativo falha"
+      ],
+      "variacoes": [
+        "Por que o botão Fechar não fecha a janela",
+        "fechar não fecha janela",
+        "sair aplicativo falha"
+      ],
+      "intencao": "problema"
+    },
+    {
+      "id": "Q269",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Onde encontro o Manual oficial?",
+      "resposta": "Abra Ajuda → Manual ou consulte o README.md no repositório oficial.",
+      "palavras_chave": [
+        "manual oficial",
+        "documentação readme"
+      ],
+      "variacoes": [
+        "Onde encontro o Manual oficial",
+        "manual oficial",
+        "documentação readme"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q270",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Onde encontro a página Sobre?",
+      "resposta": "Abra Ajuda → Sobre ou utilize o link correspondente no rodapé.",
+      "palavras_chave": [
+        "página sobre",
+        "versão estável"
+      ],
+      "variacoes": [
+        "Onde encontro a página Sobre",
+        "página sobre",
+        "versão estável"
+      ],
+      "intencao": "procedimento"
+    },
+    {
+      "id": "Q271",
+      "categoria": "Armazenamento, temas e suporte",
+      "pergunta": "Onde encontro o código-fonte?",
+      "resposta": "Abra Ajuda → GitHub ou acesse https://github.com/magpe-stack/Impulso.",
+      "palavras_chave": [
+        "código fonte",
+        "repositório github"
+      ],
+      "variacoes": [
+        "Onde encontro o código-fonte",
+        "código fonte",
+        "repositório github"
+      ],
+      "intencao": "procedimento"
+    }
+  ]
+}
