@@ -443,15 +443,26 @@ activityBadge.onclick=()=>{if(activeActivity)window.dispatchEvent(new CustomEven
 window.addEventListener('impulsinho:atividade',e=>updateActivity(e.detail));
 const paletteOpinions={original:'Gosto do contraste clássico entre vermelho, preto e branco!',vinho:'Adoro o magenta e o roxo: parecem magia de RPG!', 'blue-sky':'Esses azuis me deixam tranquilo. Gostei!',trinity:'Que mistura ousada! O laranja e o verde me animam.',granfino:'Elegante! O grafite é discreto, embora eu prefira um pouco mais de cor.',ecologico:'Adoro esses verdes, parecem energia renovada!',mistico:'Roxo e magenta? Parece que entramos numa aventura mágica!'};
 let paletteReactionTimer;
-window.addEventListener('impulsinho:tema',e=>{
- const palette=e.detail;if(!pref.visivel||!paletteOpinions[palette])return;
+const paletteEmotions={original:'desafio',vinho:'alegria','blue-sky':'descanso',trinity:'surpresa',granfino:'curiosidade',ecologico:'cuidado',mistico:'humor'};
+function schedulePaletteOpinion(palette){
+ if(!pref.visivel||!Object.hasOwn(paletteOpinions,palette))return;
  clearTimeout(paletteReactionTimer);
- // Aguarda a conclusão do clique nativo do label/radio e dos fechamentos externos.
  paletteReactionTimer=setTimeout(()=>{
-  if(!pref.visivel||document.body.dataset.palette!==palette)return;
-  const emotion=palette==='granfino'?'curiosidade':palette==='blue-sky'?'cuidado':'alegria';
-  reply('Minha opinião sobre o tema',paletteOpinions[palette],emotion,true);
- },80);
-});
+  if(!pref.visivel)return;
+  reply('Minha opinião sobre o tema',paletteOpinions[palette],paletteEmotions[palette],true);
+ },150);
+}
+window.addEventListener('impulsinho:tema',e=>schedulePaletteOpinion(e.detail));
+// Captura a seleção nativa, inclusive por teclado e por clique no cartão já selecionado.
+document.addEventListener('change',e=>{
+ if(e.target.matches?.('input[name="impulsoPalette"]'))schedulePaletteOpinion(e.target.value);
+},true);
+document.addEventListener('click',e=>{
+ const radio=e.target.closest?.('.palette-option')?.querySelector('input[name="impulsoPalette"]');
+ if(radio)schedulePaletteOpinion(radio.value);
+},true);
+// Cobre alterações efetivas da paleta mesmo quando o evento de interface não chega.
+new MutationObserver(()=>schedulePaletteOpinion(document.body.dataset.palette)).observe(document.body,{attributes:true,attributeFilter:['data-palette']});
+
 sync();updateActivity(window.ImpulsinhoAtividade?.());scheduleAuto();mountSettings();setTimeout(()=>{updateAchievements();updateBackupAction();evaluate('inicio');startTour()},1800);
 })();
