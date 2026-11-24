@@ -11,12 +11,18 @@ const facePanel=root.querySelector('#impulsinho-expressoes'),family=root.querySe
 config.remove();
 let faces=[],current=0,lastFace=-1,autoTimer=null;
 const message=root.querySelector('#impulsinho-mensagem');
-const settingsKey='impulsinho-config-v112';let behavior={modo:'ambos',volume:35,audio:true,tutorial:true};try{behavior={...behavior,...JSON.parse(localStorage.getItem(settingsKey)||'{}')}}catch{}
+const settingsKey='impulsinho-config-v112';let behavior={modo:'ambos',volume:35,audio:true,tutorial:true,personalidade:"mentor",splashAudio:true};try{behavior={...behavior,...JSON.parse(localStorage.getItem(settingsKey)||'{}')}}catch{}
 const persistBehavior=()=>{try{localStorage.setItem(settingsKey,JSON.stringify(behavior))}catch{}};
 const configHost=document.createElement('section');configHost.className='impulsinho-configuracoes';configHost.innerHTML=`<h3>Controles do Impulsinho</h3><p class="help">Escolha quando o Impulsinho pode abrir conversas. No modo Ambos, avisos de alertas ativados e ações importantes são obrigatórios.</p><fieldset><legend>Abertura dos balões</legend><label><input type="radio" name="impulsinhoModo" value="espontaneo"> Espontaneamente</label><label><input type="radio" name="impulsinhoModo" value="clique"> Somente quando eu clicar</label><label><input type="radio" name="impulsinhoModo" value="ambos"> Ambos (avisos de alertas e ações obrigatórios)</label></fieldset><label><input type="checkbox" id="impulsinhoVisivel"> Exibir personagem</label><label><input type="checkbox" id="impulsinhoSilencio"> Silenciar efeitos do Impulsinho</label><label><input type="checkbox" id="impulsinhoFlutuar"> Flutuação suave</label><label><input type="checkbox" id="impulsinhoAlternar"> Alternar expressões automaticamente</label><label><input type="checkbox" id="impulsinhoAudio"> Sons emocionais sintetizados</label><label for="impulsinhoVolume">Volume dos sons (<output id="impulsinhoVolumeValue">35%</output>)</label><input id="impulsinhoVolume" type="range" min="0" max="100" step="5" value="35"><label><input type="checkbox" id="impulsinhoTutorial"> Tutorial guiado quando não há projeto</label><button type="button" class="btn" id="impulsinhoExpressoesBtn">Explorar as 109 expressões</button><div id="impulsinhoFacetasConfig"></div><button type="button" class="btn" id="impulsinhoTesteSom">▶ Testar som do Impulsinho</button><p id="impulsinhoEstadoSom" role="status" aria-live="polite" class="help">Os sons são gerados no dispositivo. Clique em Testar som para autorizar o áudio.</p>`;
+const profiles={divertido:{gap:65000,prob:.30,lead:'Vamos nessa! ',tone:'humor',gain:1},mentor:{gap:90000,prob:.22,lead:'Uma reflexão: ',tone:'curiosidade',gain:.9},guerreiro:{gap:75000,prob:.25,lead:'Avante! ',tone:'desafio',gain:1},discreto:{gap:240000,prob:.08,lead:'',tone:'cuidado',gain:.65}};
+const profile=()=>profiles[behavior.personalidade]||profiles.mentor;
+configHost.insertAdjacentHTML('beforeend',`<label for="impulsinhoPersonalidade">Personalidade</label><select id="impulsinhoPersonalidade"><option value="divertido">Divertido</option><option value="mentor">Mentor</option><option value="guerreiro">Guerreiro</option><option value="discreto">Discreto</option></select><label><input type="checkbox" id="impulsinhoSplashAudio"> Vinheta sonora na abertura</label><button type="button" class="btn" id="impulsinhoSplashTeste">▶ Testar vinheta</button>`);
+configHost.querySelector('#impulsinhoPersonalidade').addEventListener('change',e=>{behavior.personalidade=e.target.value;persistBehavior();reply('Personalidade alterada',profile().lead+'Estou pronto para acompanhar seu projeto.',profile().tone)});
+configHost.querySelector('#impulsinhoSplashAudio').addEventListener('change',e=>{behavior.splashAudio=e.target.checked;persistBehavior()});
+configHost.querySelector('#impulsinhoSplashTeste').addEventListener('click',()=>startJingle(true));
 const settingsTarget=configHost.querySelector('#impulsinhoFacetasConfig');settingsTarget.append(facePanel);facePanel.hidden=true;
 function mountSettings(){const target=document.querySelector('[data-settings-section="impulsinho"] .settings-accordion-body');if(!target)return;target.replaceChildren(configHost);syncSettings()}
-function syncSettings(){configHost.querySelectorAll('input[name="impulsinhoModo"]').forEach(x=>x.checked=x.value===behavior.modo);configHost.querySelector('#impulsinhoVisivel').checked=pref.visivel;configHost.querySelector('#impulsinhoSilencio').checked=pref.silenciado;configHost.querySelector('#impulsinhoFlutuar').checked=pref.flutuar;configHost.querySelector('#impulsinhoAlternar').checked=auto.checked;configHost.querySelector('#impulsinhoAudio').checked=behavior.audio!==false;configHost.querySelector('#impulsinhoVolume').value=Number(behavior.volume??35);configHost.querySelector('#impulsinhoVolumeValue').textContent=String(behavior.volume??35)+'%';configHost.querySelector('#impulsinhoTutorial').checked=behavior.tutorial!==false}
+function syncSettings(){configHost.querySelector("#impulsinhoPersonalidade").value=profiles[behavior.personalidade]?behavior.personalidade:"mentor";configHost.querySelector("#impulsinhoSplashAudio").checked=behavior.splashAudio!==false;configHost.querySelectorAll('input[name="impulsinhoModo"]').forEach(x=>x.checked=x.value===behavior.modo);configHost.querySelector('#impulsinhoVisivel').checked=pref.visivel;configHost.querySelector('#impulsinhoSilencio').checked=pref.silenciado;configHost.querySelector('#impulsinhoFlutuar').checked=pref.flutuar;configHost.querySelector('#impulsinhoAlternar').checked=auto.checked;configHost.querySelector('#impulsinhoAudio').checked=behavior.audio!==false;configHost.querySelector('#impulsinhoVolume').value=Number(behavior.volume??35);configHost.querySelector('#impulsinhoVolumeValue').textContent=String(behavior.volume??35)+'%';configHost.querySelector('#impulsinhoTutorial').checked=behavior.tutorial!==false}
 configHost.addEventListener('change',e=>{const t=e.target;if(t.name==='impulsinhoModo'){behavior.modo=t.value;persistBehavior();if(t.value==='clique')eventQueue.length=0}if(t.id==='impulsinhoVisivel')visible(t.checked);if(t.id==='impulsinhoSilencio'){pref.silenciado=t.checked;save()}if(t.id==='impulsinhoFlutuar'){pref.flutuar=t.checked;avatar.querySelector('img').style.animationPlayState=t.checked?'running':'paused';save()}if(t.id==='impulsinhoAlternar'){auto.checked=t.checked;auto.dispatchEvent(new Event('change'))}if(t.id==='impulsinhoAudio'){behavior.audio=t.checked;persistBehavior()}if(t.id==='impulsinhoTutorial'){behavior.tutorial=t.checked;persistBehavior();if(!t.checked)stopTour()}});
 configHost.querySelector('#impulsinhoVolume').addEventListener('input',e=>{behavior.volume=Number(e.target.value);configHost.querySelector('#impulsinhoVolumeValue').textContent=behavior.volume+'%';persistBehavior()});
 configHost.querySelector('#impulsinhoExpressoesBtn').addEventListener('click',()=>{facePanel.hidden=!facePanel.hidden});
@@ -139,7 +145,7 @@ setInterval(()=>{
  if(document.hidden||behavior.modo==='clique'||!snapshot()?.projeto||!pref.visivel||!motivCarregadas)return;
  if(Date.now()-motivUltimaHora<8*60*1000||Date.now()-eventState.lastSpoken<4*60*1000)return;
  if(isBusy()||!balloon.hidden||eventQueue.length)return;
- if(Math.random()<0.22)fraseMotivacional();
+ if(Math.random()<profile().prob)fraseMotivacional();
 },60000);
 const botaoFrase=document.createElement('button');
 botaoFrase.type='button';botaoFrase.textContent='✨ Uma frase';botaoFrase.dataset.acao='frase-motivacional';
@@ -160,9 +166,9 @@ const FALAS={
 fetch('impulsinho/falas.json?v=114').then(r=>{if(!r.ok)throw Error('Biblioteca indisponível');return r.json()}).then(data=>{if(data.total!==1200||!data.grupos)throw Error('Biblioteca incompleta');for(const [group,arr] of Object.entries(data.grupos))if(Array.isArray(arr)&&arr.length===100)FALAS[group]=arr}).catch(()=>{});
 let lastPhrase={};
 function phrase(group,values={}){const arr=FALAS[group]||FALAS.geral;const previous=lastPhrase[group]??-1;const offset=arr.length>1?1+Math.floor(Math.random()*(arr.length-1)):0;const i=(previous+offset)%arr.length;lastPhrase[group]=i;return arr[i].replace(/\{(\w+)\}/g,(_,k)=>String(values[k]??''))}
-function speak(event){playEmotion(event.emotion);headline.textContent=event.title;message.textContent=event.text;express(event.emotion);opened(true);eventState.lastSpoken=Date.now();eventState.seen[event.key]=Date.now();persistEvents()}
+function speak(event){playEmotion(event.emotion);headline.textContent=event.title;message.textContent=profile().lead+event.text;express(event.emotion);opened(true);eventState.lastSpoken=Date.now();eventState.seen[event.key]=Date.now();persistEvents()}
 function enqueue(event){if(behavior.modo==='clique')return;if(!event||eventState.seen[event.key]||eventQueue.some(x=>x.key===event.key))return;eventQueue.push(event);eventQueue.sort((a,b)=>b.priority-a.priority);if(eventQueue.length>12)eventQueue.length=12;dispatch()}
-function dispatch(){if(isBusy()||!eventQueue.length)return;const now=Date.now();const next=eventQueue[0];if(next.priority<3&&now-eventState.lastSpoken<MIN_GAP)return;eventQueue.shift();speak(next)}
+function dispatch(){if(isBusy()||!eventQueue.length)return;const now=Date.now();const next=eventQueue[0];if(next.priority<3&&now-eventState.lastSpoken<profile().gap)return;eventQueue.shift();speak(next)}
 function notice(key,title,text,emotion='curiosidade',priority=1){enqueue({key,title,text,emotion,priority})}
 function evaluate(kind){const s=snapshot();if(!s)return;const p=s.projeto,projectKey=p?.id||'sem-projeto',today=new Date().toLocaleDateString('en-CA');
  if(p&&eventState.lastProject!==p.id){eventState.lastProject=p.id;persistEvents();notice('projeto:'+p.id+':'+today,'Impulsinho de olho!',phrase('projeto',{nome:p.nome}),'curiosidade',1)}
@@ -183,7 +189,18 @@ eventTimer=setInterval(()=>{dispatch();if(!document.hidden)evaluate('periodico')
 // v116: síntese Web Audio, sem sons de terceiros ou carregamentos externos.
 let audioContext=null,audioUnlocked=false;
 const AudioEngine=window.AudioContext||window.webkitAudioContext;
-function unlockAudio(){audioUnlocked=true;}
+function unlockAudio(){audioUnlocked=true;try{if(AudioEngine){audioContext??=new AudioEngine();audioContext.resume().catch(()=>{})}}catch{}}
+let jinglePlayed=false;
+async function startJingle(test=false){
+ if(!AudioEngine||(!test&&(jinglePlayed||behavior.splashAudio===false||pref.silenciado||!document.getElementById('splash'))))return;
+ try{audioContext??=new AudioEngine();await audioContext.resume();if(audioContext.state!=='running'||(!test&&!document.getElementById('splash'))||(!test&&jinglePlayed))return;
+ if(!test)jinglePlayed=true;
+ const splash=document.getElementById('splash');const remaining=test?3.7:Math.max(.1,3.7-(performance.now()-(window.impulsoSplashStarted||performance.now()))/1000);
+ const notes=[261.63,293.66,329.63,392,440,523.25,659.25,783.99,1046.5];const step=remaining/notes.length;
+ notes.forEach((hz,i)=>{const t=audioContext.currentTime+.01+i*step,o=audioContext.createOscillator(),g=audioContext.createGain();o.type='sine';o.frequency.value=hz;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.12+i*.025,t+Math.min(.035,step*.2));g.gain.exponentialRampToValueAtTime(.0001,t+step*.94);o.connect(g);g.connect(audioContext.destination);o.start(t);o.stop(t+step)});
+ }catch{}
+}
+if(document.getElementById('splash')){startJingle();document.addEventListener('pointerdown',()=>startJingle(),{once:true,capture:true});document.addEventListener('keydown',()=>startJingle(),{once:true,capture:true})}
 document.addEventListener('pointerdown',unlockAudio,{once:true,capture:true});
 document.addEventListener('keydown',unlockAudio,{once:true,capture:true});
 function playEmotion(emotion,force=false){
@@ -194,7 +211,7 @@ function playEmotion(emotion,force=false){
   const notes=presets[emotion]||[392,523];const t=audioContext.currentTime+.02;
   notes.forEach((hz,i)=>{const osc=audioContext.createOscillator(),gain=audioContext.createGain(),start=t+i*.105;
    osc.type=['sine','triangle','sine'][i%3];osc.frequency.setValueAtTime(hz,start);
-   gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(Math.max(.0001,Number(behavior.volume)/100*.24),start+.018);
+   gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(Math.max(.0001,Number(behavior.volume)/100*.48*profile().gain),start+.018);
    gain.gain.exponentialRampToValueAtTime(.0001,start+.15);osc.connect(gain);gain.connect(audioContext.destination);osc.start(start);osc.stop(start+.16);
   });
   return true;
@@ -251,7 +268,7 @@ window.addEventListener('impulsinho:navegacao',()=>{if(snapshot()?.projeto)stopT
 
 // Consulta manual, sem iniciar automaticamente uma conversa.
 const statusButton=document.createElement('button');statusButton.type='button';statusButton.textContent='Ver avisos';statusButton.dataset.acao='avisos';actions.prepend(statusButton);
-function reply(title,text,emotion='curiosidade'){playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=text;express(emotion);opened(true)}
+function reply(title,text,emotion='curiosidade'){playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=profile().lead+text;express(emotion);opened(true)}
 function fmtHours(ms){return (Math.max(0,Number(ms)||0)/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2})}
 function manualStatus(){
  const s=snapshot(),p=s?.projeto,alerts=alertPrefs();const lines=[];

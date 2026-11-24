@@ -1,12 +1,5 @@
+# Impulso 118 — volume dos sons
 
-# Impulso 119 — Biblioteca motivacional
+Aumentada a amplitude dos sons sintetizados do Impulsinho de 0,045 para 0,24 no volume máximo (aproximadamente 5,3 vezes na amplitude), mantendo o controle de volume, o silenciamento e a duração das notas.
 
-1.000 frases originais do arquivo enviado pelo usuário, preservadas sem reescrita.
-
-## Funcionalidades
-
-- Reprodução contextual e ocasional.
-- Histórico das últimas 80 frases utilizadas.
-- Botão para solicitar uma frase manualmente.
-- Funcionamento offline.
-- Preservação dos dados dos projetos.
+A saída real depende do navegador, dispositivo e sistema operacional. Teste com volume moderado inicialmente.
