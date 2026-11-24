@@ -1,1 +1,0 @@
-# Impulso 119 — Biblioteca motivacional\n\n1.000 frases originais do arquivo enviado pelo usuário; sem reescrita. Reprodução contextual ocasional, histórico de 80 IDs e botão de consulta manual. Não altera dados dos projetos.\n
