@@ -745,3 +745,8 @@ A biblioteca `impulsinho/motivacionais.json` reúne 1.000 frases fornecidas pelo
 ### Personalidades e áudio de abertura (v120)
 
 Em Sistema → Configurações → Controles do Impulsinho, escolha Divertido, Mentor, Guerreiro ou Discreto. Os perfis alteram o tom das mensagens, a frequência de intervenções não prioritárias e a intensidade dos efeitos. O volume máximo dos efeitos foi elevado de 0,24 para 0,48 antes do ajuste por perfil. A vinheta opcional apresenta nove notas ascendentes durante o splash, quando o navegador autoriza áudio. Use Testar vinheta para ouvi-la sob demanda.
+
+
+## Evolução do Impulsinho (v121)
+
+Cada projeto possui um estágio calculado pelos registros atuais: 1 ponto por Giro completo, 5 por chefão derrotado, 1 por hábito concluído e 2 por dia da sequência recorde. Os estágios são Aprendiz (0), Companheiro (25), Estrategista (100), Mestre (500) e Guardião do Impulso (2.000). A evolução não altera os registros nem a progressão da Arena. Se os registros forem removidos, o estágio pode diminuir. A consulta **Minha evolução**, no menu de perguntas, apresenta o estágio, os pontos e a distância até o próximo. Também reconhece perguntas digitadas sobre evolução. O personagem apresenta conselhos específicos do estágio e pode anunciar avanços observados, respeitando o modo de intervenção. As quatro personalidades continuam independentes.
