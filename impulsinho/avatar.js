@@ -97,6 +97,55 @@ function express(emotion){const f=pickFacet(emotion);if(!f)return;
 }
 fetch('impulsinho/facetas-falas.json?v=115').then(r=>{if(!r.ok)throw Error('Facetas sem falas');return r.json()}).then(d=>{if(d.total!==109)throw Error('Catálogo de falas incompleto');facetPhrases=d.falas||{}}).catch(()=>{});
 function snapshot(){try{return window.Impulsinho?.consultar?.()||null}catch{return null}}
+// v119: frases motivacionais fornecidas pelo autor, 1000 textos originais.
+const MOTIV_KEY='impulsinho-motivacionais-v119';
+let motivacionais=[], motivUltimas=[], motivUltimaHora=Date.now(), motivCarregadas=false;
+try {
+ const state=JSON.parse(localStorage.getItem(MOTIV_KEY)||'null');
+ if(state&&Array.isArray(state.ids))motivUltimas=state.ids.filter(Number.isInteger).slice(-80);
+ if(state&&Number.isFinite(state.ultima))motivUltimaHora=state.ultima;
+}catch{}
+fetch('impulsinho/motivacionais.json?v=119').then(r=>{if(!r.ok)throw Error('Arquivo de frases indisponível');return r.json()})
+.then(d=>{if(!Array.isArray(d.frases)||d.frases.length!==1000)throw Error('Quantidade de frases inválida');
+ motivacionais=d.frases.filter(x=>Number.isInteger(x.id)&&typeof x.frase==='string'&&x.frase.trim()&&typeof x.categoria==='string');
+ motivCarregadas=motivacionais.length===1000;
+}).catch(()=>{motivCarregadas=false});
+function categoriaMotivacional(){
+ const page=String(snapshot()?.pagina||'').toLowerCase();
+ if(/h[aá]bit|elixir/.test(page))return 'hábitos';
+ if(/motor|radar|ponto|dia|calend/.test(page))return 'uso do tempo';
+ if(/foco|pomodoro/.test(page))return 'foco e disciplina';
+ if(/arena|chef|vit[oó]ria/.test(page))return 'motivação';
+ return null;
+}
+function fraseMotivacional(manual=false){
+ if(!motivCarregadas||!pref.visivel)return false;
+ const category=categoriaMotivacional();
+ const matching=motivacionais.filter(x=>!motivUltimas.includes(x.id)&&(!category||x.categoria===category));
+ const available=matching.length?matching:motivacionais.filter(x=>!motivUltimas.includes(x.id));
+ const pool=available.length?available:motivacionais;
+ if(!pool.length)return false;
+ const selected=pool[Math.floor(Math.random()*pool.length)];
+ motivUltimas.push(selected.id);motivUltimas=motivUltimas.slice(-80);
+ motivUltimaHora=Date.now();
+ try{localStorage.setItem(MOTIV_KEY,JSON.stringify({ids:motivUltimas,ultima:motivUltimaHora}))}catch{}
+ const emotion=selected.categoria==='estoicismo'?'cuidado':selected.categoria==='positividade'?'alegria':selected.categoria==='motivação'?'desafio':'curiosidade';
+ if(manual)reply('Uma ideia para você',selected.frase,emotion);
+ else speak({key:'motivacional:'+selected.id,title:'Uma ideia para você',text:selected.frase,emotion});
+ return true;
+}
+// Oferece uma frase apenas ocasionalmente e somente quando a conversa está livre.
+setInterval(()=>{
+ if(document.hidden||behavior.modo==='clique'||!snapshot()?.projeto||!pref.visivel||!motivCarregadas)return;
+ if(Date.now()-motivUltimaHora<8*60*1000||Date.now()-eventState.lastSpoken<4*60*1000)return;
+ if(isBusy()||!balloon.hidden||eventQueue.length)return;
+ if(Math.random()<0.22)fraseMotivacional();
+},60000);
+const botaoFrase=document.createElement('button');
+botaoFrase.type='button';botaoFrase.textContent='✨ Uma frase';botaoFrase.dataset.acao='frase-motivacional';
+actions.append(botaoFrase);
+botaoFrase.addEventListener('click',e=>{e.stopPropagation();if(!fraseMotivacional(true))reply('Frases motivacionais','A biblioteca de frases ainda está carregando. Tente novamente em instantes.','curiosidade')});
+
 function alertPrefs(){try{const p=JSON.parse(localStorage.getItem('impulso-alertas-v1')||'null');return {backup:p?.backup===true,habits:p?.habits===true}}catch{return {backup:false,habits:false}}}
 function isBusy(){return behavior.modo==='clique'||document.hidden||!pref.visivel||!balloon.hidden||document.querySelector('dialog[open]')!==null||document.activeElement?.matches('input,textarea,select,[contenteditable="true"]')||['foco','ponto'].includes(snapshot()?.pagina)}
 const FALAS={

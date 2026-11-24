@@ -1,0 +1,5015 @@
+{
+  "titulo": "1.000 Frases Limpas para Assistente Motivacional",
+  "total": 1000,
+  "categorias": [
+    "hábitos",
+    "uso do tempo",
+    "estoicismo",
+    "motivação",
+    "positividade",
+    "foco e disciplina",
+    "crescimento e mentalidade"
+  ],
+  "frases": [
+    {
+      "id": 1,
+      "categoria": "hábitos",
+      "frase": "Pequenos hábitos diários são os juros compostos do seu crescimento."
+    },
+    {
+      "id": 2,
+      "categoria": "hábitos",
+      "frase": "Você não sobe ao nível dos seus objetivos, você cai ao nível dos seus sistemas."
+    },
+    {
+      "id": 3,
+      "categoria": "hábitos",
+      "frase": "A excelência não é um ato isolado, mas um hábito repetido."
+    },
+    {
+      "id": 4,
+      "categoria": "hábitos",
+      "frase": "Os hábitos são a arquitetura invisível do seu dia a dia."
+    },
+    {
+      "id": 5,
+      "categoria": "hábitos",
+      "frase": "Primeiro construímos nossos hábitos, depois nossos hábitos nos constroem."
+    },
+    {
+      "id": 6,
+      "categoria": "hábitos",
+      "frase": "A mudança pode levar tempo, mas a decisão de começar leva apenas um segundo."
+    },
+    {
+      "id": 7,
+      "categoria": "hábitos",
+      "frase": "A consistência vence a intensidade quando o assunto é construir algo sólido."
+    },
+    {
+      "id": 8,
+      "categoria": "hábitos",
+      "frase": "Não quebre a corrente: faça um pouco hoje, mesmo que seja bem pouco."
+    },
+    {
+      "id": 9,
+      "categoria": "hábitos",
+      "frase": "Um novo hábito precisa de um gatilho claro, uma rotina simples e uma boa recompensa."
+    },
+    {
+      "id": 10,
+      "categoria": "hábitos",
+      "frase": "Cuide bem dos seus minutos e as horas cuidarão de si mesmas."
+    },
+    {
+      "id": 11,
+      "categoria": "hábitos",
+      "frase": "Disciplina é escolher entre o que você quer agora e o que você mais quer na vida."
+    },
+    {
+      "id": 12,
+      "categoria": "hábitos",
+      "frase": "Seus hábitos atuais estão silenciosamente desenhando o seu amanhã."
+    },
+    {
+      "id": 13,
+      "categoria": "hábitos",
+      "frase": "Comece tão pequeno que seja impossível dizer não."
+    },
+    {
+      "id": 14,
+      "categoria": "hábitos",
+      "frase": "A repetição paciente é a mãe da maestria."
+    },
+    {
+      "id": 15,
+      "categoria": "hábitos",
+      "frase": "Ajuste o seu ambiente e seus bons hábitos vão fluir sem esforço."
+    },
+    {
+      "id": 16,
+      "categoria": "hábitos",
+      "frase": "A força de vontade cansa; bons hábitos funcionam no piloto automático."
+    },
+    {
+      "id": 17,
+      "categoria": "hábitos",
+      "frase": "O progresso real é a soma de pequenos esforços repetidos dia após dia."
+    },
+    {
+      "id": 18,
+      "categoria": "hábitos",
+      "frase": "A qualidade dos seus dias depende da qualidade dos seus rituais."
+    },
+    {
+      "id": 19,
+      "categoria": "hábitos",
+      "frase": "Melhorar apenas 1% hoje já coloca você à frente de ontem."
+    },
+    {
+      "id": 20,
+      "categoria": "hábitos",
+      "frase": "O que você faz todos os dias importa muito mais do que o que faz de vez em quando."
+    },
+    {
+      "id": 21,
+      "categoria": "hábitos",
+      "frase": "Bons hábitos começam quando você decide facilitar o que importa."
+    },
+    {
+      "id": 22,
+      "categoria": "hábitos",
+      "frase": "Não espere vontade para agir; aja e a vontade vem logo atrás."
+    },
+    {
+      "id": 23,
+      "categoria": "hábitos",
+      "frase": "Cada vez que você cumpre uma pequena meta, você vota na pessoa que quer ser."
+    },
+    {
+      "id": 24,
+      "categoria": "hábitos",
+      "frase": "Rotina não é prisão, é liberdade para não gastar energia decidindo o básico."
+    },
+    {
+      "id": 25,
+      "categoria": "hábitos",
+      "frase": "Se falhar um dia, tudo bem. A única regra é nunca falhar dois dias seguidos."
+    },
+    {
+      "id": 26,
+      "categoria": "uso do tempo",
+      "frase": "Não falta tempo; o segredo está em parar de desperdiçá-lo com o que não importa."
+    },
+    {
+      "id": 27,
+      "categoria": "uso do tempo",
+      "frase": "O tempo é a moeda da sua vida. Escolha com carinho onde investir cada minuto."
+    },
+    {
+      "id": 28,
+      "categoria": "uso do tempo",
+      "frase": "Não basta priorizar a agenda; o segredo é agendar suas prioridades."
+    },
+    {
+      "id": 29,
+      "categoria": "uso do tempo",
+      "frase": "O melhor momento para começar foi há anos. O segundo melhor momento é agora."
+    },
+    {
+      "id": 30,
+      "categoria": "uso do tempo",
+      "frase": "Estar ocupado não significa ser produtivo; movimento nem sempre é avanço."
+    },
+    {
+      "id": 31,
+      "categoria": "uso do tempo",
+      "frase": "Dizer 'não' ao trivial é dizer 'sim' ao que realmente faz diferença."
+    },
+    {
+      "id": 32,
+      "categoria": "uso do tempo",
+      "frase": "Você pode adiar uma tarefa, mas o relógio não vai esperar por você."
+    },
+    {
+      "id": 33,
+      "categoria": "uso do tempo",
+      "frase": "Proteja suas horas de foco como se fossem o seu bem mais valioso."
+    },
+    {
+      "id": 34,
+      "categoria": "uso do tempo",
+      "frase": "A procrastinação rouba o seu tempo e adia as suas melhores conquistas."
+    },
+    {
+      "id": 35,
+      "categoria": "uso do tempo",
+      "frase": "Nunca confunda estar agitado com estar realizando algo importante."
+    },
+    {
+      "id": 36,
+      "categoria": "uso do tempo",
+      "frase": "O futuro chega para todo mundo na mesma velocidade: sessenta minutos por hora."
+    },
+    {
+      "id": 37,
+      "categoria": "uso do tempo",
+      "frase": "Quem não planeja o próprio tempo acaba vivendo na agenda dos outros."
+    },
+    {
+      "id": 38,
+      "categoria": "uso do tempo",
+      "frase": "Resolva a tarefa mais importante primeiro, antes que o mundo peça sua atenção."
+    },
+    {
+      "id": 39,
+      "categoria": "uso do tempo",
+      "frase": "Gerenciar o tempo é, na verdade, gerenciar a sua própria atenção."
+    },
+    {
+      "id": 40,
+      "categoria": "uso do tempo",
+      "frase": "Cada hora bem aproveitada hoje tira um peso enorme dos seus ombros amanhã."
+    },
+    {
+      "id": 41,
+      "categoria": "uso do tempo",
+      "frase": "Simplifique sua lista de tarefas para abrir espaço para o que move o ponteiro."
+    },
+    {
+      "id": 42,
+      "categoria": "uso do tempo",
+      "frase": "O tempo que passa não volta, mas o minuto presente está inteiro nas suas mãos."
+    },
+    {
+      "id": 43,
+      "categoria": "uso do tempo",
+      "frase": "Foque no que é importante, não apenas no que grita por urgência."
+    },
+    {
+      "id": 44,
+      "categoria": "uso do tempo",
+      "frase": "Saber o que não fazer economiza mais horas do que qualquer aplicativo."
+    },
+    {
+      "id": 45,
+      "categoria": "uso do tempo",
+      "frase": "Viva o dia de hoje com tanta presença como se ele valesse por uma vida inteira."
+    },
+    {
+      "id": 46,
+      "categoria": "uso do tempo",
+      "frase": "Uma tarefa concluída vale mais do que dez tarefas apenas começadas."
+    },
+    {
+      "id": 47,
+      "categoria": "uso do tempo",
+      "frase": "Feche as abas desnecessárias — no navegador e na mente."
+    },
+    {
+      "id": 48,
+      "categoria": "uso do tempo",
+      "frase": "Pausas estratégicas não atrasam o trabalho; elas recarregam sua clareza."
+    },
+    {
+      "id": 49,
+      "categoria": "uso do tempo",
+      "frase": "Se tudo é urgente, nada é realmente prioridade."
+    },
+    {
+      "id": 50,
+      "categoria": "uso do tempo",
+      "frase": "Cinco minutos de planejamento economizam uma hora de retrabalho."
+    },
+    {
+      "id": 51,
+      "categoria": "estoicismo",
+      "frase": "Você tem controle sobre sua mente, não sobre o mundo lá fora. Use essa força."
+    },
+    {
+      "id": 52,
+      "categoria": "estoicismo",
+      "frase": "Não são os fatos que nos perturbam, mas a forma como escolhemos interpretá-los."
+    },
+    {
+      "id": 53,
+      "categoria": "estoicismo",
+      "frase": "Sofremos muito mais na imaginação do que na vida real."
+    },
+    {
+      "id": 54,
+      "categoria": "estoicismo",
+      "frase": "O obstáculo no caminho pode se tornar o próprio caminho."
+    },
+    {
+      "id": 55,
+      "categoria": "estoicismo",
+      "frase": "Ninguém é verdadeiramente livre se não for mestre de si mesmo."
+    },
+    {
+      "id": 56,
+      "categoria": "estoicismo",
+      "frase": "A tranquilidade dos seus dias depende da qualidade dos seus pensamentos."
+    },
+    {
+      "id": 57,
+      "categoria": "estoicismo",
+      "frase": "Aceite o que não depende de você e coloque toda energia no que está ao seu alcance."
+    },
+    {
+      "id": 58,
+      "categoria": "estoicismo",
+      "frase": "A melhor resposta para qualquer provocação é manter a sua integridade."
+    },
+    {
+      "id": 59,
+      "categoria": "estoicismo",
+      "frase": "Enquanto adiamos o que importa, a vida segue acontecendo agora."
+    },
+    {
+      "id": 60,
+      "categoria": "estoicismo",
+      "frase": "Não exija que o mundo siga o seu roteiro; adapte-se com sabedoria ao que vier."
+    },
+    {
+      "id": 61,
+      "categoria": "estoicismo",
+      "frase": "A paz chega quando você para de medir seu valor pela opinião alheia."
+    },
+    {
+      "id": 62,
+      "categoria": "estoicismo",
+      "frase": "Os desafios fortalecem a mente assim como o treino fortalece o corpo."
+    },
+    {
+      "id": 63,
+      "categoria": "estoicismo",
+      "frase": "Seja compreensivo com os outros e firme nos seus próprios princípios."
+    },
+    {
+      "id": 64,
+      "categoria": "estoicismo",
+      "frase": "A verdadeira riqueza não está em acumular coisas, mas em precisar de pouco para estar bem."
+    },
+    {
+      "id": 65,
+      "categoria": "estoicismo",
+      "frase": "Nenhum vento ajuda quem ainda não decidiu para qual porto quer navegar."
+    },
+    {
+      "id": 66,
+      "categoria": "estoicismo",
+      "frase": "Lembre-se: todo momento difícil é natural e passageiro."
+    },
+    {
+      "id": 67,
+      "categoria": "estoicismo",
+      "frase": "Sua força aparece na serenidade que você mantém quando algo sai do planejado."
+    },
+    {
+      "id": 68,
+      "categoria": "estoicismo",
+      "frase": "Concentre-se em fazer o que está à sua frente agora com calma e capricho."
+    },
+    {
+      "id": 69,
+      "categoria": "estoicismo",
+      "frase": "Primeiro defina quem você quer ser; depois aja de acordo com essa escolha."
+    },
+    {
+      "id": 70,
+      "categoria": "estoicismo",
+      "frase": "A adversidade revela talentos que a facilidade deixaria adormecidos."
+    },
+    {
+      "id": 71,
+      "categoria": "estoicismo",
+      "frase": "Respire fundo antes de reagir: entre o estímulo e a resposta existe a sua liberdade."
+    },
+    {
+      "id": 72,
+      "categoria": "estoicismo",
+      "frase": "Não carregue o peso de amanhã com a energia que você precisa para hoje."
+    },
+    {
+      "id": 73,
+      "categoria": "estoicismo",
+      "frase": "O que não está sob seu controle não merece roubar a sua paz."
+    },
+    {
+      "id": 74,
+      "categoria": "estoicismo",
+      "frase": "Treine sua mente para encontrar calma mesmo no meio da agitação."
+    },
+    {
+      "id": 75,
+      "categoria": "estoicismo",
+      "frase": "A serenidade não é ausência de problemas, é domínio sobre si mesmo."
+    },
+    {
+      "id": 76,
+      "categoria": "motivação",
+      "frase": "Acredite que você dá conta e metade do caminho já estará percorrida."
+    },
+    {
+      "id": 77,
+      "categoria": "motivação",
+      "frase": "O jeito mais leve de fazer um ótimo trabalho é colocar carinho no que você faz."
+    },
+    {
+      "id": 78,
+      "categoria": "motivação",
+      "frase": "Não espere o cenário perfeito; comece onde você está com o que você tem agora."
+    },
+    {
+      "id": 79,
+      "categoria": "motivação",
+      "frase": "Grandes conquistas nascem da perseverança, não apenas da força."
+    },
+    {
+      "id": 80,
+      "categoria": "motivação",
+      "frase": "Cada tropeço é apenas uma chance de recomeçar com mais experiência."
+    },
+    {
+      "id": 81,
+      "categoria": "motivação",
+      "frase": "A ação simples e imediata é a chave que destrava qualquer projeto."
+    },
+    {
+      "id": 82,
+      "categoria": "motivação",
+      "frase": "Coragem não é não sentir medo, é seguir em frente apesar dele."
+    },
+    {
+      "id": 83,
+      "categoria": "motivação",
+      "frase": "Se você quer resultados diferentes, experimente dar um passo novo hoje."
+    },
+    {
+      "id": 84,
+      "categoria": "motivação",
+      "frase": "A persistência calma realiza o que parecia impossível."
+    },
+    {
+      "id": 85,
+      "categoria": "motivação",
+      "frase": "O segredo para avançar é dar o primeiro passo sem complicar."
+    },
+    {
+      "id": 86,
+      "categoria": "motivação",
+      "frase": "Transforme cada aprendizado difícil em degrau para o próximo nível."
+    },
+    {
+      "id": 87,
+      "categoria": "motivação",
+      "frase": "Nunca é tarde para construir uma nova versão de si mesmo."
+    },
+    {
+      "id": 88,
+      "categoria": "motivação",
+      "frase": "A diferença entre o comum e o extraordinário está naquele pequeno cuidado extra."
+    },
+    {
+      "id": 89,
+      "categoria": "motivação",
+      "frase": "A motivação dá a partida; o hábito mantém você na estrada."
+    },
+    {
+      "id": 90,
+      "categoria": "motivação",
+      "frase": "Quando você sabe o seu 'porquê', fica muito mais fácil descobrir o 'como'."
+    },
+    {
+      "id": 91,
+      "categoria": "motivação",
+      "frase": "Cada passo à frente, por menor que seja, já tira você do lugar."
+    },
+    {
+      "id": 92,
+      "categoria": "motivação",
+      "frase": "Não tenha medo de deixar o bom de lado para buscar o que faz mais sentido."
+    },
+    {
+      "id": 93,
+      "categoria": "motivação",
+      "frase": "O maior limite para o que você pode realizar amanhã são as dúvidas de hoje."
+    },
+    {
+      "id": 94,
+      "categoria": "motivação",
+      "frase": "Faça o seu melhor em silêncio e deixe os resultados falarem por você."
+    },
+    {
+      "id": 95,
+      "categoria": "motivação",
+      "frase": "A determinação que você pratica hoje constrói a liberdade de amanhã."
+    },
+    {
+      "id": 96,
+      "categoria": "motivação",
+      "frase": "Você já superou dias difíceis antes e tem tudo para vencer este também."
+    },
+    {
+      "id": 97,
+      "categoria": "motivação",
+      "frase": "Não compare seu bastidor com o palco iluminado de outra pessoa."
+    },
+    {
+      "id": 98,
+      "categoria": "motivação",
+      "frase": "Feito com dedicação hoje é muito melhor do que perfeito só na imaginação."
+    },
+    {
+      "id": 99,
+      "categoria": "motivação",
+      "frase": "Confie no processo: raízes crescem antes que os frutos apareçam."
+    },
+    {
+      "id": 100,
+      "categoria": "motivação",
+      "frase": "Um passo de cada vez ainda é movimento na direção certa."
+    },
+    {
+      "id": 101,
+      "categoria": "positividade",
+      "frase": "Mantenha o olhar voltado para a luz e as sombras ficarão para trás."
+    },
+    {
+      "id": 102,
+      "categoria": "positividade",
+      "frase": "A gratidão transforma o que você já tem em motivo de alegria suficiente."
+    },
+    {
+      "id": 103,
+      "categoria": "positividade",
+      "frase": "Uma mente leve enxerga saídas onde outros veem apenas muros."
+    },
+    {
+      "id": 104,
+      "categoria": "positividade",
+      "frase": "Cada novo dia chega como uma página em branco pronta para boas histórias."
+    },
+    {
+      "id": 105,
+      "categoria": "positividade",
+      "frase": "A verdadeira alegria não mora nas coisas, mora dentro de nós."
+    },
+    {
+      "id": 106,
+      "categoria": "positividade",
+      "frase": "Cultive bons pensamentos: eles viram palavras, atitudes e bons caminhos."
+    },
+    {
+      "id": 107,
+      "categoria": "positividade",
+      "frase": "Mesmo a noite mais longa termina quando o sol volta a brilhar."
+    },
+    {
+      "id": 108,
+      "categoria": "positividade",
+      "frase": "A gentileza é um idioma universal que todo coração entende."
+    },
+    {
+      "id": 109,
+      "categoria": "positividade",
+      "frase": "O otimismo realista é a confiança que impulsiona a ação."
+    },
+    {
+      "id": 110,
+      "categoria": "positividade",
+      "frase": "Escolha extrair uma boa lição de cada experiência do dia."
+    },
+    {
+      "id": 111,
+      "categoria": "positividade",
+      "frase": "A paz interior começa quando você decide não entregar o controle do seu humor a ninguém."
+    },
+    {
+      "id": 112,
+      "categoria": "positividade",
+      "frase": "Comemore as pequenas vitórias de hoje; elas pavimentam as grandes conquistas."
+    },
+    {
+      "id": 113,
+      "categoria": "positividade",
+      "frase": "Onde existe esperança, sempre existe fôlego para recomeçar."
+    },
+    {
+      "id": 114,
+      "categoria": "positividade",
+      "frase": "Sua boa energia chega ao ambiente antes mesmo da sua primeira palavra."
+    },
+    {
+      "id": 115,
+      "categoria": "positividade",
+      "frase": "Encare a vida com leveza e ela sempre mostrará bons motivos para sorrir."
+    },
+    {
+      "id": 116,
+      "categoria": "positividade",
+      "frase": "A serenidade é a arte de manter o coração tranquilo mesmo em dias corridos."
+    },
+    {
+      "id": 117,
+      "categoria": "positividade",
+      "frase": "Alimente sua mente com ideias que elevam seu ânimo."
+    },
+    {
+      "id": 118,
+      "categoria": "positividade",
+      "frase": "Boas oportunidades gostam de quem mantém a mente aberta e o coração disposto."
+    },
+    {
+      "id": 119,
+      "categoria": "positividade",
+      "frase": "A esperança é o combustível de quem segue caminhando de olhos abertos."
+    },
+    {
+      "id": 120,
+      "categoria": "positividade",
+      "frase": "Celebre cada avanço, sem exigir perfeição imediata."
+    },
+    {
+      "id": 121,
+      "categoria": "positividade",
+      "frase": "Um gesto simples de carinho pode mudar completamente o dia de alguém — inclusive o seu."
+    },
+    {
+      "id": 122,
+      "categoria": "positividade",
+      "frase": "Sempre há algo pelo qual agradecer neste exato momento."
+    },
+    {
+      "id": 123,
+      "categoria": "positividade",
+      "frase": "Sorria: você está vivo, aprendendo e evoluindo."
+    },
+    {
+      "id": 124,
+      "categoria": "positividade",
+      "frase": "Troque a autocrítica pesada pela curiosidade de aprender."
+    },
+    {
+      "id": 125,
+      "categoria": "positividade",
+      "frase": "Que o seu dia seja leve, produtivo e cheio de pequenas alegrias."
+    },
+    {
+      "id": 126,
+      "categoria": "foco e disciplina",
+      "frase": "Onde você coloca sua atenção, é para lá que vai sua energia."
+    },
+    {
+      "id": 127,
+      "categoria": "foco e disciplina",
+      "frase": "A disciplina é a ponte entre o que você planeja e o que você realiza."
+    },
+    {
+      "id": 128,
+      "categoria": "foco e disciplina",
+      "frase": "Ter foco é saber dizer não para dezenas de distrações atraentes."
+    },
+    {
+      "id": 129,
+      "categoria": "foco e disciplina",
+      "frase": "Domine seus impulsos e você será dono do seu próprio ritmo."
+    },
+    {
+      "id": 130,
+      "categoria": "foco e disciplina",
+      "frase": "A distração fragmenta sua energia; o foco multiplica seus resultados."
+    },
+    {
+      "id": 131,
+      "categoria": "foco e disciplina",
+      "frase": "Faça uma coisa de cada vez e dê a ela a sua presença inteira."
+    },
+    {
+      "id": 132,
+      "categoria": "foco e disciplina",
+      "frase": "A autodisciplina começa quando você escolhe quais pensamentos alimentar."
+    },
+    {
+      "id": 133,
+      "categoria": "foco e disciplina",
+      "frase": "Quem tenta abraçar tudo ao mesmo tempo acaba não concluindo nada."
+    },
+    {
+      "id": 134,
+      "categoria": "foco e disciplina",
+      "frase": "Compromisso é manter sua palavra consigo mesmo depois que a empolgação inicial passa."
+    },
+    {
+      "id": 135,
+      "categoria": "foco e disciplina",
+      "frase": "A clareza sobre o objetivo torna a execução muito mais leve."
+    },
+    {
+      "id": 136,
+      "categoria": "foco e disciplina",
+      "frase": "Diminua o ruído ao redor para ouvir suas melhores ideias."
+    },
+    {
+      "id": 137,
+      "categoria": "foco e disciplina",
+      "frase": "Paciência e constância dissolvem barreiras que pareciam enormes."
+    },
+    {
+      "id": 138,
+      "categoria": "foco e disciplina",
+      "frase": "Não negocie com a preguiça na hora em que você combinou começar."
+    },
+    {
+      "id": 139,
+      "categoria": "foco e disciplina",
+      "frase": "A constância silenciosa sempre supera o talento sem rotina."
+    },
+    {
+      "id": 140,
+      "categoria": "foco e disciplina",
+      "frase": "Treine sua mente para voltar gentilmente à tarefa atual sempre que ela divagar."
+    },
+    {
+      "id": 141,
+      "categoria": "crescimento e mentalidade",
+      "frase": "As melhores descobertas costumam morar logo depois do receio inicial."
+    },
+    {
+      "id": 142,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Uma mente aberta a novas ideias nunca volta ao tamanho anterior."
+    },
+    {
+      "id": 143,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Você não é definido pelos tropeços, mas pela disposição de levantar e aprender."
+    },
+    {
+      "id": 144,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Sair um pouco da zona de conforto é o ingresso para uma vida mais interessante."
+    },
+    {
+      "id": 145,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Aprenda com entusiasmo e viva o presente com inteireza."
+    },
+    {
+      "id": 146,
+      "categoria": "crescimento e mentalidade",
+      "frase": "A zona de conforto é aconchegante, mas é fora dela que o crescimento acontece."
+    },
+    {
+      "id": 147,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Seja mais curioso e menos apressado para julgar."
+    },
+    {
+      "id": 148,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Errar faz parte do treino de quem está tentando algo novo."
+    },
+    {
+      "id": 149,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Evoluir exige desapegar de hábitos antigos que já não servem mais."
+    },
+    {
+      "id": 150,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Investir no seu aprendizado é o único ativo que ninguém tira de você."
+    },
+    {
+      "id": 151,
+      "categoria": "crescimento e mentalidade",
+      "frase": "A sabedoria nasce quando você tira alguns minutos para refletir."
+    },
+    {
+      "id": 152,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Ler e aprender algo novo todos os dias mantém a mente jovem e ágil."
+    },
+    {
+      "id": 153,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Mude a qualidade das suas perguntas e você mudará suas respostas."
+    },
+    {
+      "id": 154,
+      "categoria": "crescimento e mentalidade",
+      "frase": "A humildade para aprender é o primeiro degrau de qualquer evolução."
+    },
+    {
+      "id": 155,
+      "categoria": "crescimento e mentalidade",
+      "frase": "Todo desafio traz escondida a semente de uma nova habilidade."
+    },
+    {
+      "id": 156,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 157,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 158,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 159,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 160,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 161,
+      "categoria": "hábitos",
+      "frase": "Cuidar bem do corpo e da mente todos os dias aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 162,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 163,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 164,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 165,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 166,
+      "categoria": "hábitos",
+      "frase": "Criar lembretes positivos no seu ambiente mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 167,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 168,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 169,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 170,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 171,
+      "categoria": "hábitos",
+      "frase": "Cultivar bons hábitos desde cedo aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 172,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 173,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 174,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 175,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 176,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 177,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 178,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 179,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 180,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 181,
+      "categoria": "hábitos",
+      "frase": "Buscar melhorar apenas 1% hoje garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 182,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 183,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 184,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 185,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 186,
+      "categoria": "hábitos",
+      "frase": "Manter o ritmo mesmo nos dias nublados fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 187,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 188,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 189,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 190,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 191,
+      "categoria": "hábitos",
+      "frase": "Buscar melhorar apenas 1% hoje aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 192,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 193,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 194,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 195,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 196,
+      "categoria": "hábitos",
+      "frase": "Cumprir os pequenos combinados consigo mesmo elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 197,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 198,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 199,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 200,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 201,
+      "categoria": "hábitos",
+      "frase": "Substituir um velho hábito de cada vez eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 202,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 203,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 204,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 205,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 206,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 207,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 208,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 209,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 210,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 211,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 212,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 213,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 214,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 215,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 216,
+      "categoria": "hábitos",
+      "frase": "Acompanhar seus hábitos com leveza libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 217,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 218,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 219,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 220,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 221,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 222,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 223,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 224,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 225,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 226,
+      "categoria": "hábitos",
+      "frase": "Praticar a constância sem pressa eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 227,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 228,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 229,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 230,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 231,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 232,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 233,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 234,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 235,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 236,
+      "categoria": "hábitos",
+      "frase": "Cuidar bem do corpo e da mente todos os dias garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 237,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 238,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 239,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 240,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 241,
+      "categoria": "hábitos",
+      "frase": "Repetir pequenas ações todos os dias poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 242,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 243,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 244,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 245,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 246,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 247,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 248,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 249,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 250,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 251,
+      "categoria": "hábitos",
+      "frase": "Manter um ritual matinal simples mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 252,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 253,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 254,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 255,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 256,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 257,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 258,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 259,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 260,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 261,
+      "categoria": "hábitos",
+      "frase": "Substituir um velho hábito de cada vez aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 262,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 263,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 264,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 265,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 266,
+      "categoria": "hábitos",
+      "frase": "Organizar o espaço ao seu redor transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 267,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 268,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 269,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 270,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 271,
+      "categoria": "hábitos",
+      "frase": "Organizar o espaço ao seu redor garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 272,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 273,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 274,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 275,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 276,
+      "categoria": "hábitos",
+      "frase": "Cuidar bem do corpo e da mente todos os dias transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 277,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 278,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 279,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 280,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 281,
+      "categoria": "hábitos",
+      "frase": "Manter o ritmo mesmo nos dias nublados aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 282,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 283,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 284,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 285,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 286,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 287,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 288,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 289,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 290,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 291,
+      "categoria": "hábitos",
+      "frase": "Manter o ritmo mesmo nos dias nublados poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 292,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 293,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 294,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 295,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 296,
+      "categoria": "hábitos",
+      "frase": "Buscar melhorar apenas 1% hoje aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 297,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 298,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 299,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 300,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 301,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 302,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 303,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 304,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 305,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 306,
+      "categoria": "hábitos",
+      "frase": "Manter um ritual matinal simples garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 307,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 308,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 309,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 310,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 311,
+      "categoria": "hábitos",
+      "frase": "Cumprir os pequenos combinados consigo mesmo eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 312,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 313,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 314,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 315,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 316,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 317,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 318,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 319,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 320,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 321,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 322,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 323,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 324,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 325,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 326,
+      "categoria": "hábitos",
+      "frase": "Buscar melhorar apenas 1% hoje mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 327,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 328,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 329,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 330,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 331,
+      "categoria": "hábitos",
+      "frase": "Buscar melhorar apenas 1% hoje libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 332,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 333,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 334,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 335,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 336,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 337,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 338,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 339,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 340,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 341,
+      "categoria": "hábitos",
+      "frase": "Criar lembretes positivos no seu ambiente cria uma vantagem silenciosa que cresce a cada semana."
+    },
+    {
+      "id": 342,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 343,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 344,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 345,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 346,
+      "categoria": "hábitos",
+      "frase": "Repetir pequenas ações todos os dias elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 347,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 348,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 349,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 350,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 351,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 352,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 353,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 354,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 355,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 356,
+      "categoria": "hábitos",
+      "frase": "Repetir pequenas ações todos os dias fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 357,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 358,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 359,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 360,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 361,
+      "categoria": "hábitos",
+      "frase": "Respeitar seus horários de foco e descanso transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 362,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 363,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 364,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 365,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 366,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 367,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 368,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 369,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 370,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 371,
+      "categoria": "hábitos",
+      "frase": "Criar lembretes positivos no seu ambiente transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 372,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 373,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 374,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 375,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 376,
+      "categoria": "hábitos",
+      "frase": "Organizar o espaço ao seu redor mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 377,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 378,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 379,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 380,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 381,
+      "categoria": "hábitos",
+      "frase": "Manter um ritual matinal simples libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 382,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 383,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 384,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 385,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 386,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 387,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 388,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 389,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 390,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 391,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 392,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 393,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 394,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 395,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 396,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 397,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 398,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 399,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 400,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 401,
+      "categoria": "hábitos",
+      "frase": "Dar o primeiro passo antes de se sentir pronto garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 402,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 403,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 404,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 405,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 406,
+      "categoria": "hábitos",
+      "frase": "Criar lembretes positivos no seu ambiente prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 407,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 408,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 409,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 410,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 411,
+      "categoria": "hábitos",
+      "frase": "Cultivar bons hábitos desde cedo mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 412,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 413,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 414,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 415,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 416,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 417,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 418,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 419,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 420,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 421,
+      "categoria": "hábitos",
+      "frase": "Acompanhar seus hábitos com leveza fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 422,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 423,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 424,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 425,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 426,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 427,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 428,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 429,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 430,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 431,
+      "categoria": "hábitos",
+      "frase": "Cuidar bem do corpo e da mente todos os dias prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 432,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 433,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 434,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 435,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 436,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 437,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 438,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 439,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 440,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 441,
+      "categoria": "hábitos",
+      "frase": "Respeitar seus horários de foco e descanso mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 442,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 443,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 444,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 445,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 446,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 447,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 448,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 449,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 450,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 451,
+      "categoria": "hábitos",
+      "frase": "Praticar a constância sem pressa constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 452,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 453,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 454,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 455,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 456,
+      "categoria": "hábitos",
+      "frase": "Cumprir os pequenos combinados consigo mesmo poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 457,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 458,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 459,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 460,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 461,
+      "categoria": "hábitos",
+      "frase": "Dar o primeiro passo antes de se sentir pronto prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 462,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 463,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 464,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 465,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 466,
+      "categoria": "hábitos",
+      "frase": "Dar o primeiro passo antes de se sentir pronto libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 467,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 468,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 469,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 470,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 471,
+      "categoria": "hábitos",
+      "frase": "Dar o primeiro passo antes de se sentir pronto elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 472,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 473,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 474,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 475,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 476,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 477,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 478,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 479,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 480,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 481,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 482,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 483,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 484,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 485,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 486,
+      "categoria": "hábitos",
+      "frase": "Caprichar nas tarefas mais simples do dia cria uma vantagem silenciosa que cresce a cada semana."
+    },
+    {
+      "id": 487,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 488,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 489,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 490,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 491,
+      "categoria": "hábitos",
+      "frase": "Repetir pequenas ações todos os dias mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 492,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 493,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 494,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 495,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 496,
+      "categoria": "hábitos",
+      "frase": "Cultivar bons hábitos desde cedo constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 497,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 498,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 499,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 500,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 501,
+      "categoria": "hábitos",
+      "frase": "Substituir um velho hábito de cada vez constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 502,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 503,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 504,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 505,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 506,
+      "categoria": "hábitos",
+      "frase": "Organizar o espaço ao seu redor eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 507,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 508,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 509,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 510,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 511,
+      "categoria": "hábitos",
+      "frase": "Caprichar nas tarefas mais simples do dia constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 512,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 513,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 514,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 515,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 516,
+      "categoria": "hábitos",
+      "frase": "Cumprir os pequenos combinados consigo mesmo aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 517,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 518,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 519,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 520,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 521,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 522,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 523,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 524,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 525,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 526,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 527,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 528,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 529,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 530,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 531,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 532,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 533,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 534,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 535,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 536,
+      "categoria": "hábitos",
+      "frase": "Dar o primeiro passo antes de se sentir pronto transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 537,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 538,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 539,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 540,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 541,
+      "categoria": "hábitos",
+      "frase": "Substituir um velho hábito de cada vez elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 542,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 543,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 544,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 545,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 546,
+      "categoria": "hábitos",
+      "frase": "Acompanhar seus hábitos com leveza prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 547,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 548,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 549,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 550,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 551,
+      "categoria": "hábitos",
+      "frase": "Cuidar bem do corpo e da mente todos os dias constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 552,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 553,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 554,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 555,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 556,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 557,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 558,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 559,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 560,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 561,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 562,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 563,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 564,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 565,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 566,
+      "categoria": "hábitos",
+      "frase": "Manter um ritual matinal simples constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 567,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 568,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 569,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 570,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 571,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 572,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 573,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 574,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 575,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 576,
+      "categoria": "hábitos",
+      "frase": "Organizar o espaço ao seu redor prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 577,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 578,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 579,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 580,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 581,
+      "categoria": "hábitos",
+      "frase": "Repetir pequenas ações todos os dias transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 582,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 583,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 584,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 585,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 586,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 587,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 588,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 589,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 590,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 591,
+      "categoria": "hábitos",
+      "frase": "Manter um ritual matinal simples eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 592,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 593,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 594,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 595,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 596,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 597,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 598,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 599,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 600,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 601,
+      "categoria": "hábitos",
+      "frase": "Eliminar pequenas distrações da rotina libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 602,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 603,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 604,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 605,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 606,
+      "categoria": "hábitos",
+      "frase": "Praticar a constância sem pressa fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 607,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 608,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 609,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 610,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 611,
+      "categoria": "hábitos",
+      "frase": "Praticar a constância sem pressa elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 612,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 613,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 614,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 615,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 616,
+      "categoria": "hábitos",
+      "frase": "Criar lembretes positivos no seu ambiente elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 617,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 618,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 619,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 620,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 621,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção cria uma vantagem silenciosa que cresce a cada semana."
+    },
+    {
+      "id": 622,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 623,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 624,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 625,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 626,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 627,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 628,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 629,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 630,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 631,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 632,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 633,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 634,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 635,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 636,
+      "categoria": "hábitos",
+      "frase": "Buscar melhorar apenas 1% hoje prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 637,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 638,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 639,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 640,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 641,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 642,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 643,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 644,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 645,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 646,
+      "categoria": "hábitos",
+      "frase": "Cumprir os pequenos combinados consigo mesmo fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 647,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 648,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 649,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 650,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 651,
+      "categoria": "hábitos",
+      "frase": "Criar lembretes positivos no seu ambiente prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 652,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 653,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 654,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 655,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 656,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 657,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 658,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 659,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 660,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 661,
+      "categoria": "hábitos",
+      "frase": "Acompanhar seus hábitos com leveza garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 662,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 663,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 664,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 665,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 666,
+      "categoria": "hábitos",
+      "frase": "Praticar a constância sem pressa poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 667,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 668,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 669,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 670,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 671,
+      "categoria": "hábitos",
+      "frase": "Cultivar bons hábitos desde cedo transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 672,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 673,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 674,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 675,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 676,
+      "categoria": "hábitos",
+      "frase": "Caprichar nas tarefas mais simples do dia libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 677,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 678,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 679,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 680,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 681,
+      "categoria": "hábitos",
+      "frase": "Acompanhar seus hábitos com leveza cria uma vantagem silenciosa que cresce a cada semana."
+    },
+    {
+      "id": 682,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 683,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 684,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 685,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 686,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 687,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 688,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 689,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 690,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 691,
+      "categoria": "hábitos",
+      "frase": "Cuidar bem do corpo e da mente todos os dias prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 692,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 693,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 694,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 695,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 696,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 697,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 698,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 699,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 700,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 701,
+      "categoria": "hábitos",
+      "frase": "Caprichar nas tarefas mais simples do dia garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 702,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 703,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 704,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 705,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 706,
+      "categoria": "hábitos",
+      "frase": "Acompanhar seus hábitos com leveza transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 707,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 708,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 709,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 710,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 711,
+      "categoria": "hábitos",
+      "frase": "Caprichar nas tarefas mais simples do dia transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 712,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 713,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 714,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 715,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 716,
+      "categoria": "hábitos",
+      "frase": "Substituir um velho hábito de cada vez prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 717,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 718,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 719,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 720,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 721,
+      "categoria": "hábitos",
+      "frase": "Acompanhar seus hábitos com leveza poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 722,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 723,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 724,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 725,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 726,
+      "categoria": "hábitos",
+      "frase": "Cultivar bons hábitos desde cedo aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 727,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 728,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 729,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 730,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 731,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 732,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 733,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 734,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 735,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 736,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 737,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 738,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 739,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 740,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 741,
+      "categoria": "hábitos",
+      "frase": "Caprichar nas tarefas mais simples do dia mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 742,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 743,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 744,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 745,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 746,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 747,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 748,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 749,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 750,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 751,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 752,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 753,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 754,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 755,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 756,
+      "categoria": "hábitos",
+      "frase": "Cultivar bons hábitos desde cedo cria uma vantagem silenciosa que cresce a cada semana."
+    },
+    {
+      "id": 757,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 758,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 759,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 760,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 761,
+      "categoria": "hábitos",
+      "frase": "Criar lembretes positivos no seu ambiente aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 762,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 763,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 764,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 765,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 766,
+      "categoria": "hábitos",
+      "frase": "Repetir pequenas ações todos os dias constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 767,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 768,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 769,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 770,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 771,
+      "categoria": "hábitos",
+      "frase": "Caprichar nas tarefas mais simples do dia aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 772,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 773,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 774,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 775,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 776,
+      "categoria": "hábitos",
+      "frase": "Repetir pequenas ações todos os dias garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 777,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 778,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 779,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 780,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 781,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 782,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 783,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 784,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 785,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 786,
+      "categoria": "hábitos",
+      "frase": "Manter o ritmo mesmo nos dias nublados elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 787,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma devolve o controle do seu dia e acalma a ansiedade."
+    },
+    {
+      "id": 788,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância mantém sua mente firme mesmo em dias turbulentos."
+    },
+    {
+      "id": 789,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos mostra que sua capacidade cresce a cada novo desafio."
+    },
+    {
+      "id": 790,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação fortalece o emocional e traz clareza para decidir."
+    },
+    {
+      "id": 791,
+      "categoria": "hábitos",
+      "frase": "Dar o primeiro passo antes de se sentir pronto transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 792,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 793,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 794,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 795,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 796,
+      "categoria": "hábitos",
+      "frase": "Organizar o espaço ao seu redor elimina a resistência entre planejar e agir."
+    },
+    {
+      "id": 797,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 798,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 799,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 800,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 801,
+      "categoria": "hábitos",
+      "frase": "Acompanhar seus hábitos com leveza aumenta sua autoconfiança a cada pequena tarefa concluída."
+    },
+    {
+      "id": 802,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 803,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 804,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 805,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 806,
+      "categoria": "hábitos",
+      "frase": "Repetir pequenas ações todos os dias transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 807,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 808,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 809,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 810,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 811,
+      "categoria": "hábitos",
+      "frase": "Repetir pequenas ações todos os dias cria uma vantagem silenciosa que cresce a cada semana."
+    },
+    {
+      "id": 812,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 813,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 814,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 815,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 816,
+      "categoria": "hábitos",
+      "frase": "Respeitar seus horários de foco e descanso transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 817,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 818,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 819,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 820,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 821,
+      "categoria": "hábitos",
+      "frase": "Manter o ritmo mesmo nos dias nublados aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 822,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 823,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 824,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 825,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 826,
+      "categoria": "hábitos",
+      "frase": "Praticar a constância sem pressa transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 827,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 828,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 829,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 830,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 831,
+      "categoria": "hábitos",
+      "frase": "Acompanhar seus hábitos com leveza mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 832,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 833,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 834,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 835,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 836,
+      "categoria": "hábitos",
+      "frase": "Manter o ritmo mesmo nos dias nublados libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 837,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 838,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 839,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 840,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 841,
+      "categoria": "hábitos",
+      "frase": "Revisar suas metas toda semana garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 842,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 843,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 844,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 845,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 846,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples cria uma vantagem silenciosa que cresce a cada semana."
+    },
+    {
+      "id": 847,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 848,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 849,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 850,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 851,
+      "categoria": "hábitos",
+      "frase": "Substituir um velho hábito de cada vez transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 852,
+      "categoria": "uso do tempo",
+      "frase": "Proteger seus minutos de concentração traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 853,
+      "categoria": "estoicismo",
+      "frase": "Aceitar a realidade como ela se apresenta agora ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 854,
+      "categoria": "motivação",
+      "frase": "Recusar-se a estacionar na zona de conforto coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 855,
+      "categoria": "positividade",
+      "frase": "Oferecer gentileza sem esperar retorno melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 856,
+      "categoria": "hábitos",
+      "frase": "Dar o primeiro passo antes de se sentir pronto eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 857,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje mostra que cuidar do tempo é cuidar da própria vida."
+    },
+    {
+      "id": 858,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia converte o desconforto em degrau de amadurecimento."
+    },
+    {
+      "id": 859,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência prova que o difícil só precisa de constância para acontecer."
+    },
+    {
+      "id": 860,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina cria um espaço mental fértil para boas ideias."
+    },
+    {
+      "id": 861,
+      "categoria": "hábitos",
+      "frase": "Praticar a constância sem pressa transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 862,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 863,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 864,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 865,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 866,
+      "categoria": "hábitos",
+      "frase": "Substituir um velho hábito de cada vez cria uma vantagem silenciosa que cresce a cada semana."
+    },
+    {
+      "id": 867,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 868,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 869,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 870,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 871,
+      "categoria": "hábitos",
+      "frase": "Substituir um velho hábito de cada vez poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 872,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 873,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 874,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 875,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 876,
+      "categoria": "hábitos",
+      "frase": "Manter o ritmo mesmo nos dias nublados mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 877,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 878,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 879,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 880,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 881,
+      "categoria": "hábitos",
+      "frase": "Cumprir os pequenos combinados consigo mesmo transforma metas distantes em conquistas naturais."
+    },
+    {
+      "id": 882,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 883,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 884,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 885,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 886,
+      "categoria": "hábitos",
+      "frase": "Manter o ritmo mesmo nos dias nublados transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 887,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo transforma horas comuns em momentos de alta realização."
+    },
+    {
+      "id": 888,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos garante que nada lá fora roube sua paz interior."
+    },
+    {
+      "id": 889,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras constrói uma trajetória da qual você vai se orgulhar."
+    },
+    {
+      "id": 890,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva mostra que bem-estar é uma escolha praticada hoje."
+    },
+    {
+      "id": 891,
+      "categoria": "hábitos",
+      "frase": "Criar lembretes positivos no seu ambiente garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 892,
+      "categoria": "uso do tempo",
+      "frase": "Observar para onde suas horas estão indo melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 893,
+      "categoria": "estoicismo",
+      "frase": "Respirar em silêncio antes de responder ao caos liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 894,
+      "categoria": "motivação",
+      "frase": "Buscar soluções criativas onde outros veem barreiras prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 895,
+      "categoria": "positividade",
+      "frase": "Acolher o momento presente sem cobrança excessiva sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 896,
+      "categoria": "hábitos",
+      "frase": "Organizar o espaço ao seu redor prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 897,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 898,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 899,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 900,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 901,
+      "categoria": "hábitos",
+      "frase": "Manter um ritual matinal simples prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 902,
+      "categoria": "uso do tempo",
+      "frase": "Cortar tarefas que só ocupam espaço multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 903,
+      "categoria": "estoicismo",
+      "frase": "Lembrar que o momento presente é o que temos é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 904,
+      "categoria": "motivação",
+      "frase": "Dedicar esforço sincero ao que você acredita abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 905,
+      "categoria": "positividade",
+      "frase": "Confiar que dias melhores estão sendo construídos ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 906,
+      "categoria": "hábitos",
+      "frase": "Manter um ritual matinal simples aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 907,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 908,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 909,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 910,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 911,
+      "categoria": "hábitos",
+      "frase": "Organizar o espaço ao seu redor poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 912,
+      "categoria": "uso do tempo",
+      "frase": "Equilibrar foco profundo e pausas reais evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 913,
+      "categoria": "estoicismo",
+      "frase": "Não depender de aplausos para fazer o que é certo permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 914,
+      "categoria": "motivação",
+      "frase": "Direcionar sua energia para uma meta clara mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 915,
+      "categoria": "positividade",
+      "frase": "Deixar ir os erros de ontem para viver bem hoje renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 916,
+      "categoria": "hábitos",
+      "frase": "Caprichar nas tarefas mais simples do dia poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 917,
+      "categoria": "uso do tempo",
+      "frase": "Usar cada hora com intenção livra você da armadilha das urgências dos outros."
+    },
+    {
+      "id": 918,
+      "categoria": "estoicismo",
+      "frase": "Separar o que você controla do que não controla lembra que a paz de espírito vale mais que ter razão."
+    },
+    {
+      "id": 919,
+      "categoria": "motivação",
+      "frase": "Ter coragem de dar o primeiro passo cria o impulso necessário para vencer a inércia inicial."
+    },
+    {
+      "id": 920,
+      "categoria": "positividade",
+      "frase": "Cultivar a gratidão pelas pequenas coisas lembra que sempre há um bom motivo para agradecer."
+    },
+    {
+      "id": 921,
+      "categoria": "hábitos",
+      "frase": "Manter o ritmo mesmo nos dias nublados prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 922,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma permite avançar com leveza, precisão e tranquilidade."
+    },
+    {
+      "id": 923,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância mostra que a verdadeira força vem do autodomínio."
+    },
+    {
+      "id": 924,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos supera qualquer talento que não tenha dedicação."
+    },
+    {
+      "id": 925,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação acalma o coração diante dos pequenos imprevistos."
+    },
+    {
+      "id": 926,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 927,
+      "categoria": "uso do tempo",
+      "frase": "Manter a atenção na tarefa atual multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 928,
+      "categoria": "estoicismo",
+      "frase": "Encontrar força na simplicidade do cotidiano é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 929,
+      "categoria": "motivação",
+      "frase": "Focar apenas no próximo passo possível agora abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 930,
+      "categoria": "positividade",
+      "frase": "Aprender algo positivo com cada experiência ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 931,
+      "categoria": "hábitos",
+      "frase": "Cumprir os pequenos combinados consigo mesmo constrói uma base firme para grandes realizações."
+    },
+    {
+      "id": 932,
+      "categoria": "uso do tempo",
+      "frase": "Dizer não ao que não é prioridade agora diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 933,
+      "categoria": "estoicismo",
+      "frase": "Manter a serenidade diante dos imprevistos dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 934,
+      "categoria": "motivação",
+      "frase": "Levantar com calma depois de cada tropeço transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 935,
+      "categoria": "positividade",
+      "frase": "Procurar oportunidades escondidas nos desafios atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 936,
+      "categoria": "hábitos",
+      "frase": "Dar o primeiro passo antes de se sentir pronto prepara você para aproveitar ótimas oportunidades."
+    },
+    {
+      "id": 937,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 938,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 939,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 940,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 941,
+      "categoria": "hábitos",
+      "frase": "Criar lembretes positivos no seu ambiente poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 942,
+      "categoria": "uso do tempo",
+      "frase": "Ter clareza sobre o que merece atenção hoje abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 943,
+      "categoria": "estoicismo",
+      "frase": "Fazer um balanço honesto e gentil do seu dia transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 944,
+      "categoria": "motivação",
+      "frase": "Continuar tentando com inteligência e paciência inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 945,
+      "categoria": "positividade",
+      "frase": "Encontrar alegria nas coisas simples da rotina transforma dias comuns em ótimas lembranças."
+    },
+    {
+      "id": 946,
+      "categoria": "hábitos",
+      "frase": "Caprichar nas tarefas mais simples do dia fortalece sua confiança muito antes dos grandes resultados."
+    },
+    {
+      "id": 947,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 948,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 949,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 950,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 951,
+      "categoria": "hábitos",
+      "frase": "Cumprir os pequenos combinados consigo mesmo prova que a constância sempre vence o esforço isolado."
+    },
+    {
+      "id": 952,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 953,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 954,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 955,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 956,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis garante evolução contínua mesmo nas semanas agitadas."
+    },
+    {
+      "id": 957,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar diferencia quem apenas corre de quem realmente avança."
+    },
+    {
+      "id": 958,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação dissolve preocupações sobre coisas que nem aconteceram."
+    },
+    {
+      "id": 959,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio transforma sonhos em conquistas reais e palpáveis."
+    },
+    {
+      "id": 960,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos atrai boas conexões e parcerias sinceras."
+    },
+    {
+      "id": 961,
+      "categoria": "hábitos",
+      "frase": "Substituir um velho hábito de cada vez libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 962,
+      "categoria": "uso do tempo",
+      "frase": "Fazer uma tarefa de cada vez com calma multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 963,
+      "categoria": "estoicismo",
+      "frase": "Agir com integridade em qualquer circunstância é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 964,
+      "categoria": "motivação",
+      "frase": "Superar aos poucos os próprios limites antigos abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 965,
+      "categoria": "positividade",
+      "frase": "Manter uma postura otimista baseada na ação ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 966,
+      "categoria": "hábitos",
+      "frase": "Respeitar seus horários de foco e descanso aproxima você da pessoa que deseja se tornar."
+    },
+    {
+      "id": 967,
+      "categoria": "uso do tempo",
+      "frase": "Ser pontual com seus próprios projetos traz aquela sensação boa de dever cumprido ao fim do dia."
+    },
+    {
+      "id": 968,
+      "categoria": "estoicismo",
+      "frase": "Desapegar do que é passageiro e superficial ilumina o próximo passo certo no momento presente."
+    },
+    {
+      "id": 969,
+      "categoria": "motivação",
+      "frase": "Unir entusiasmo com ação consistente coloca você no comando ativo da sua própria história."
+    },
+    {
+      "id": 970,
+      "categoria": "positividade",
+      "frase": "Compartilhar palavras de incentivo e bom ânimo melhora a forma como você vive cada instante."
+    },
+    {
+      "id": 971,
+      "categoria": "hábitos",
+      "frase": "Cuidar das pequenas escolhas invisíveis cria uma vantagem silenciosa que cresce a cada semana."
+    },
+    {
+      "id": 972,
+      "categoria": "uso do tempo",
+      "frase": "Lembrar que cada minuto é único melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 973,
+      "categoria": "estoicismo",
+      "frase": "Conservar a firmeza sem perder a gentileza liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 974,
+      "categoria": "motivação",
+      "frase": "Recomeçar quantas vezes forem necessárias prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 975,
+      "categoria": "positividade",
+      "frase": "Sorrir com sinceridade para aliviar a tensão sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 976,
+      "categoria": "hábitos",
+      "frase": "Manter um ritual matinal simples transforma boas intenções em progresso de verdade."
+    },
+    {
+      "id": 977,
+      "categoria": "uso do tempo",
+      "frase": "Simplificar compromissos desnecessários melhora a qualidade do que você faz sem exigir exaustão."
+    },
+    {
+      "id": 978,
+      "categoria": "estoicismo",
+      "frase": "Manter a mente clara diante das incertezas liberta você do peso de tentar controlar tudo."
+    },
+    {
+      "id": 979,
+      "categoria": "motivação",
+      "frase": "Transformar desafios em combustível para crescer prepara você para conquistas cada vez maiores."
+    },
+    {
+      "id": 980,
+      "categoria": "positividade",
+      "frase": "Confiar no seu próprio ritmo de crescimento sustenta o bom humor mesmo nos dias mais cheios."
+    },
+    {
+      "id": 981,
+      "categoria": "hábitos",
+      "frase": "Construir uma rotina com intenção eleva o padrão de qualidade do seu dia a dia."
+    },
+    {
+      "id": 982,
+      "categoria": "uso do tempo",
+      "frase": "Planejar o dia antes de começar evita a sensação de terminar o dia sem ter feito o essencial."
+    },
+    {
+      "id": 983,
+      "categoria": "estoicismo",
+      "frase": "Escolher com calma como reagir a cada situação permite viver com equilíbrio, dignidade e leveza."
+    },
+    {
+      "id": 984,
+      "categoria": "motivação",
+      "frase": "Manter vivo um propósito maior que o receio mantém sua energia acesa mesmo antes dos resultados."
+    },
+    {
+      "id": 985,
+      "categoria": "positividade",
+      "frase": "Nutrir pensamentos leves e construtivos renova suas energias para encarar qualquer tarefa."
+    },
+    {
+      "id": 986,
+      "categoria": "hábitos",
+      "frase": "Dar o primeiro passo antes de se sentir pronto mantém seu avanço firme mesmo quando falta empolgação."
+    },
+    {
+      "id": 987,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente multiplica sua capacidade de entregar bons resultados."
+    },
+    {
+      "id": 988,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente é o segredo da verdadeira liberdade interior."
+    },
+    {
+      "id": 989,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária abre caminhos que pareciam fechados no começo."
+    },
+    {
+      "id": 990,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia ilumina o ambiente e torna o seu dia muito mais leve."
+    },
+    {
+      "id": 991,
+      "categoria": "hábitos",
+      "frase": "Manter suas rotinas básicas bem simples poupa sua força de vontade nos momentos mais corridos."
+    },
+    {
+      "id": 992,
+      "categoria": "uso do tempo",
+      "frase": "Agir logo no que realmente importa garante que o mais importante nunca fique para depois."
+    },
+    {
+      "id": 993,
+      "categoria": "estoicismo",
+      "frase": "Encarar cada obstáculo como um treino mental mantém você centrado quando tudo ao redor parece agitado."
+    },
+    {
+      "id": 994,
+      "categoria": "motivação",
+      "frase": "Construir confiança através da prática constante marca a diferença entre apenas desejar e realizar."
+    },
+    {
+      "id": 995,
+      "categoria": "positividade",
+      "frase": "Enxergar o lado bom das pessoas e dos momentos eleva a energia de tudo o que você faz hoje."
+    },
+    {
+      "id": 996,
+      "categoria": "hábitos",
+      "frase": "Cumprir os pequenos combinados consigo mesmo libera sua mente para decisões realmente criativas."
+    },
+    {
+      "id": 997,
+      "categoria": "uso do tempo",
+      "frase": "Valorizar o tempo presente abre espaço para descansar e aprender sem culpa."
+    },
+    {
+      "id": 998,
+      "categoria": "estoicismo",
+      "frase": "Praticar a paciência e o equilíbrio diariamente transforma qualquer contratempo em aprendizado prático."
+    },
+    {
+      "id": 999,
+      "categoria": "motivação",
+      "frase": "Comprometer-se com a própria evolução diária inspira quem está por perto pelo seu próprio exemplo."
+    },
+    {
+      "id": 1000,
+      "categoria": "positividade",
+      "frase": "Celebrar cada pequeno avanço do seu dia transforma dias comuns em ótimas lembranças."
+    }
+  ]
+}
