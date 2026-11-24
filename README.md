@@ -499,7 +499,7 @@ Arraste o personagem para reposicioná-lo. Toque nele para abrir ou fechar seu b
 <a id="consultas-e-navegacao-contextual"></a>
 ### Consultas e navegação contextual
 
-Expanda **Perguntas rápidas** ou digite uma pergunta de até 180 caracteres. Experimente “Quanto tempo trabalhei hoje?”, “Como está meu Motor?”, “Quantos chefões derrotei?” ou “Qual é seu estágio?”. Os temas reconhecidos incluem Meu Dia, Motor, Arena, Hábitos, Elixires, Conquistas, Estatísticas, Projetos, Ponto, Foco, Calendário, Dashboard, Backup e Configurações. Quando aplicável, o assistente abre a página correspondente e comenta os dados disponíveis. Navegar não inicia nem encerra atividades. Perguntas não reconhecidas recebem orientação sobre o repertório disponível.
+Selecione uma opção em **Perguntas rápidas** e pressione **Abrir** ou digite uma pergunta de até 180 caracteres. Experimente “Quanto tempo trabalhei hoje?”, “Como está meu Motor?”, “Quantos chefões derrotei?” ou “Qual é seu estágio?”. Os temas reconhecidos incluem Meu Dia, Motor, Arena, Hábitos, Elixires, Conquistas, Estatísticas, Projetos, Ponto, Foco, Calendário, Dashboard, Backup e Configurações. Quando aplicável, o assistente abre a página correspondente e comenta os dados disponíveis. Navegar não inicia nem encerra atividades. Perguntas não reconhecidas recebem orientação sobre o repertório disponível.
 
 A consulta Conquistas resume até cinco novidades pendentes; use a Central de Novidades para consultar cada item. O comando Atualizar Backup Geral encaminha ao fluxo de gravação, sem dispensar confirmações.
 
@@ -523,7 +523,7 @@ O catálogo reúne 109 facetas WebP, agrupadas em alegria, curiosidade, surpresa
 <a id="frases-motivacionais"></a>
 ### Frases motivacionais
 
-A biblioteca adicional contém 1.000 frases em sete categorias: hábitos, uso do tempo, estoicismo, motivação, positividade, foco e disciplina, crescimento e mentalidade. O comando **Uma frase** solicita uma mensagem. Intervenções ocasionais priorizam o contexto da página e evitam repetir os últimos 80 identificadores, quando há alternativas. A seleção automática respeita o modo de conversa e evita interromper a digitação ou sessões de trabalho. As frases são reflexões, não diagnósticos nem garantias de resultados.
+A biblioteca adicional contém 1.000 frases em sete categorias: hábitos, uso do tempo, estoicismo, motivação, positividade, foco e disciplina, crescimento e mentalidade. O comando **Uma frase** solicita uma mensagem. Nos modos Espontaneamente e Ambos, uma frase automática fica elegível após cinco minutos de sessão e a cada cinco minutos (doze na personalidade Discreto), quando a interface está livre. Intervenções ocasionais priorizam o contexto da página e evitam repetir os últimos 80 identificadores, quando há alternativas. A seleção automática respeita o modo de conversa e evita interromper a digitação ou sessões de trabalho. As frases são reflexões, não diagnósticos nem garantias de resultados.
 
 <a id="personalidades"></a>
 ### Personalidades
@@ -560,7 +560,7 @@ Os efeitos são sintetizados por famílias emocionais pela Web Audio API. Ajuste
 <a id="controles-e-acessibilidade"></a>
 ### Controles e acessibilidade
 
-Em Sistema → Configurações → Controles do Impulsinho, escolha o modo Espontaneamente, Somente quando eu clicar ou Ambos. O modo por clique evita abertura espontânea dos balões; o modo Ambos admite avisos ativados e ações importantes. Ajuste visibilidade, flutuação, alternância de expressões, personalidade, áudio, volume, tutorial, vinheta, alertas de backup e Elixires e distintivos. Os distintivos não dependem da visibilidade do avatar. Os alertas desativados não devem gerar intervenções espontâneas correspondentes. Os balões possuem foco visível, mensagens anunciáveis por leitores de tela e alvos de toque ampliados.
+Em Sistema → Configurações → Controles do Impulsinho, escolha o modo Espontaneamente, Somente quando eu clicar ou Ambos. O modo por clique evita abertura espontânea dos balões; Espontaneamente e Ambos permitem intervenções automáticas e preservam consultas manuais. Ajuste visibilidade, flutuação, alternância de expressões, personalidade, áudio, volume, tutorial, vinheta, alertas de backup e Elixires e distintivos. Os distintivos não dependem da visibilidade do avatar. Os alertas desativados não devem gerar intervenções espontâneas correspondentes. Os balões possuem foco visível, mensagens anunciáveis por leitores de tela e alvos de toque ampliados.
 
 [↑ Voltar ao sumário](#sumario-e-navegacao)
 
@@ -569,7 +569,7 @@ Em Sistema → Configurações → Controles do Impulsinho, escolha o modo Espon
 <a id="13-alertas-distintivos-e-area-de-transferencia"></a>
 ## 13. Alertas, distintivos e área de transferência
 
-Os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do R2D10**. Os distintivos não dependem da visibilidade do personagem. O R2D10 apresenta os lembretes e monitora Ponto, Foco e Hábitos, inclusive pausas. Sua fala eletrônica é sintetizada localmente, com controle independente de volume, ativação e teste. O áudio depende da autorização do navegador.
+Os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do R2D10**. Os distintivos não dependem da visibilidade do personagem. O R2D10 apresenta os lembretes e monitora Ponto, Foco e Hábitos, inclusive pausas. A opção de presença em repouso mantém o robô visível mesmo sem atividades ou alertas. Sua fala eletrônica é sintetizada localmente, com controle independente de volume, ativação e teste. O áudio depende da autorização do navegador.
 
 <a id="alertas-locais"></a>
 ### Alertas locais
