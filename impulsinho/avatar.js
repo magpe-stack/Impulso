@@ -4,7 +4,7 @@ const KEY='impulsinho-avatar-v108',DEFAULT='impulsinho/facetas/emoji_u1f9d0_3d.w
 let pref={visivel:true,silenciado:false,flutuar:true,x:null,y:null};
 try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved&&typeof saved==='object')pref={...pref,...saved}}catch{}
 const root=document.createElement('div');root.id='impulsinho-root';root.setAttribute('aria-label','Assistente Impulsinho');
-root.innerHTML=`<button type="button" class="impulsinho-avatar" id="impulsinho-avatar" aria-label="Conversar com o Impulsinho" aria-expanded="false" aria-controls="impulsinho-balao"><img src="${DEFAULT}" alt="" draggable="false"></button><section class="impulsinho-balao" id="impulsinho-balao" aria-label="Conversa com o Impulsinho" hidden><h2>Olá! Sou o Impulsinho! 🧐</h2><p id="impulsinho-mensagem">Você pode me arrastar pela tela, fazer perguntas e consultar seu progresso. Abra meu menu de perguntas para começar.</p><div class="impulsinho-acoes"><button type="button" data-acao="estatisticas">Meu projeto</button><button type="button" data-acao="ajustes">⚙ Ajustes</button><button type="button" data-acao="fechar">Fechar</button></div><div id="impulsinho-expressoes" hidden><label for="impulsinho-familia">Família emocional</label><select id="impulsinho-familia"><option value="todas">Todas as expressões</option><option value="alegria">Alegria</option><option value="curiosidade">Curiosidade</option><option value="surpresa">Surpresa</option><option value="desafio">Desafio</option><option value="preocupacao">Preocupação</option><option value="descanso">Descanso</option><option value="humor">Humor</option><option value="cuidado">Cuidado</option></select><p id="impulsinho-faceta-info" aria-live="polite">Carregando facetas...</p><div class="impulsinho-acoes"><button type="button" data-acao="anterior">◀ Anterior</button><button type="button" data-acao="proxima">Próxima ▶</button><button type="button" data-acao="aleatoria">Surpreenda-me</button></div><label for="impulsinho-auto"><input type="checkbox" id="impulsinho-auto"> Alternar expressões suavemente</label></div><div id="impulsinho-config" hidden><label for="impulsinho-movimento">Animação</label><select id="impulsinho-movimento"><option value="sim">Flutuação suave</option><option value="nao">Sem movimento</option></select><p>Áudio: ajuste os efeitos sonoros nas configurações.</p></div></section><button type="button" class="impulsinho-reabrir" id="impulsinho-reabrir" hidden aria-label="Mostrar Impulsinho">🧐 Mostrar Impulsinho</button>`;
+root.innerHTML=`<button type="button" class="impulsinho-avatar" id="impulsinho-avatar" aria-label="Conversar com o Impulsinho" aria-expanded="false" aria-controls="impulsinho-balao"><img src="${DEFAULT}" alt="" draggable="false"></button><section class="impulsinho-balao" id="impulsinho-balao" aria-label="Conversa com o Impulsinho" hidden><h2>Olá! Sou o Impulsinho! 🧐</h2><p id="impulsinho-mensagem">Você pode me arrastar pela tela, fazer perguntas e consultar seu progresso. Abra meu menu de perguntas para começar.</p><div class="impulsinho-acoes"><button type="button" data-acao="estatisticas">Meu projeto</button><button type="button" data-acao="ajustes">⚙ Ajustes</button></div><div id="impulsinho-expressoes" hidden><label for="impulsinho-familia">Família emocional</label><select id="impulsinho-familia"><option value="todas">Todas as expressões</option><option value="alegria">Alegria</option><option value="curiosidade">Curiosidade</option><option value="surpresa">Surpresa</option><option value="desafio">Desafio</option><option value="preocupacao">Preocupação</option><option value="descanso">Descanso</option><option value="humor">Humor</option><option value="cuidado">Cuidado</option></select><p id="impulsinho-faceta-info" aria-live="polite">Carregando facetas...</p><div class="impulsinho-acoes"><button type="button" data-acao="anterior">◀ Anterior</button><button type="button" data-acao="proxima">Próxima ▶</button><button type="button" data-acao="aleatoria">Surpreenda-me</button></div><label for="impulsinho-auto"><input type="checkbox" id="impulsinho-auto"> Alternar expressões suavemente</label></div><div id="impulsinho-config" hidden><label for="impulsinho-movimento">Animação</label><select id="impulsinho-movimento"><option value="sim">Flutuação suave</option><option value="nao">Sem movimento</option></select><p>Áudio: ajuste os efeitos sonoros nas configurações.</p></div></section><button type="button" class="impulsinho-reabrir" id="impulsinho-reabrir" hidden aria-label="Mostrar Impulsinho">🧐 Mostrar Impulsinho</button>`;
 document.body.append(root);
 const avatar=root.querySelector('#impulsinho-avatar'),balloon=root.querySelector('#impulsinho-balao'),reopen=root.querySelector('#impulsinho-reabrir'),config=root.querySelector('#impulsinho-config'),motion=root.querySelector('#impulsinho-movimento'),silence=root.querySelector('[data-acao="silenciar"]');
 const facePanel=root.querySelector('#impulsinho-expressoes'),family=root.querySelector('#impulsinho-familia'),info=root.querySelector('#impulsinho-faceta-info'),auto=root.querySelector('#impulsinho-auto');
@@ -61,11 +61,11 @@ const countIndicator=document.createElement('span');countIndicator.className='im
 function listAchievements(){try{return window.ImpulsinhoNovidades?.listar?.()||[]}catch{return []}}
 function updateAchievements(){const list=listAchievements();countIndicator.hidden=!list.length;countIndicator.textContent=list.length>99?'99+':String(list.length);avatar.setAttribute('aria-label',list.length?`Conversar com o Impulsinho; ${list.length} conquistas não consultadas`:'Conversar com o Impulsinho');return list}
 function manualAchievements(){
- const list=updateAchievements();
+ const list=window.ImpulsinhoNovidades?.consultar?.()||updateAchievements();
  if(!list.length){reply('Novidades e conquistas','Não há conquistas pendentes de consulta. Quando surgirem novas conquistas, vou contar a você.','curiosidade');return}
- const descriptions=list.slice(0,5).map((item,i)=>`${i+1}. ${item.title||'Conquista'}: ${item.detail||'Novo registro'}${item.projectName?' — '+item.projectName:''}.`);
- const extra=list.length>5?` Existem mais ${list.length-5} novidades; consulte a Central de Novidades para abrir cada uma.`:'';
- reply('Suas novidades',`Encontrei ${list.length} conquista${list.length===1?'':'s'} ainda não consultada${list.length===1?'':'s'}. ${descriptions.join(' ')}${extra} Para navegar até cada conquista e marcá-la como lida, use a Central de Novidades do Impulso.`,'alegria');
+ const descriptions=list.map((item,i)=>`${i+1}. ${item.title||'Conquista'}: ${item.detail||'Novo registro'}${item.projectName?' — '+item.projectName:''}.`);
+ const extra='';
+ reply('Suas novidades',`Encontrei ${list.length} conquista${list.length===1?'':'s'} nova${list.length===1?'':'s'}. ${descriptions.join(' ')}${extra} Essas novidades foram marcadas como lidas.`,'alegria');
 }
 function updateBackupAction(){backupAction.hidden=!snapshot()?.backupPendente}
 window.addEventListener('impulsinho:novidades',updateAchievements);
@@ -88,7 +88,7 @@ const DAY=86400000, MIN_GAP=90000;
 const emotionalFace={alegria:'1f973',surpresa:'1f62e',curiosidade:'1f9d0',preocupacao:'1f628',desafio:'1f620',cuidado:'1f642'};
 // Cada uma das 109 facetas tem falas próprias em facetas-falas.json,
 // e cada família emocional percorre todas as suas expressões antes de repetir.
-const FACET_KEY='impulsinho-facetas-v115';
+const FACET_KEY='impulsinho-facetas-v136';
 let facetPhrases={},facetHistory={};
 try{facetHistory=JSON.parse(localStorage.getItem(FACET_KEY)||'{}')||{}}catch{}
 function saveFacetHistory(){try{localStorage.setItem(FACET_KEY,JSON.stringify(facetHistory))}catch{}}
@@ -107,7 +107,7 @@ function express(emotion,appendComment=true){const f=pickFacet(emotion);if(!f)re
  const addition=lines[next];if(appendComment&&addition&&message.textContent&&!message.textContent.includes(addition))message.textContent+=' '+addition;
  }
 }
-fetch('impulsinho/facetas-falas.json?v=115').then(r=>{if(!r.ok)throw Error('Facetas sem falas');return r.json()}).then(d=>{if(d.total!==109)throw Error('Catálogo de falas incompleto');facetPhrases=d.falas||{}}).catch(()=>{});
+fetch('impulsinho/facetas-falas.json?v=136').then(r=>{if(!r.ok)throw Error('Facetas sem falas');return r.json()}).then(d=>{if(d.total!==109)throw Error('Catálogo de falas incompleto');facetPhrases=d.falas||{}}).catch(()=>{});
 function snapshot(){try{return window.Impulsinho?.consultar?.()||null}catch{return null}}
 // v119: frases motivacionais fornecidas pelo autor, 1000 textos originais.
 const MOTIV_KEY='impulsinho-motivacionais-v119';
@@ -293,6 +293,7 @@ window.addEventListener('impulsinho:navegacao',()=>{if(snapshot()?.projeto)stopT
 // Consulta manual, sem iniciar automaticamente uma conversa.
 const statusButton=document.createElement('button');statusButton.type='button';statusButton.textContent='Ver avisos';statusButton.dataset.acao='avisos';actions.prepend(statusButton);
 function reply(title,text,emotion='curiosidade',documental=false){reminderSave.hidden=true;eventState.lastSpoken=Date.now();persistEvents();playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=(documental?'':profile().lead)+text;express(emotion,!documental);opened(true)}
+function manualLink(){const a=document.createElement('a');a.href='https://github.com/magpe-stack/Impulso/blob/main/README.md';a.target='_blank';a.rel='noopener noreferrer';a.textContent='Consultar o Manual do Impulso ↗';a.style.cssText='display:block;margin-top:10px;color:inherit;text-decoration:underline;font-weight:600';message.append(a);position();requestAnimationFrame(position)}
 function fmtHours(ms){return (Math.max(0,Number(ms)||0)/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2})}
 function manualStatus(){
  const s=snapshot(),p=s?.projeto,alerts=alertPrefs();const lines=[];
@@ -301,6 +302,7 @@ function manualStatus(){
  lines.push('Alerta de backup: '+(alerts.backup?'ativado.':'desativado.'));
  lines.push('Alerta de hábitos e Elixires: '+(alerts.habits?'ativado.':'desativado.'));
  lines.push('Avisos na fila do Impulsinho: '+eventQueue.length+'.');const activity=window.ImpulsinhoAtividade?.();if(activity)lines.push(activity.label+(activity.paused?' em pausa.':' em andamento.'));const pending=eventQueue.find(e=>/^(backup|elixir):/.test(e.key)&& (e.key.startsWith('backup:')?alerts.backup:alerts.habits));if(pending){eventQueue.splice(eventQueue.indexOf(pending),1);speak(pending);questionsOpen(false);return;}
+ const novidades=window.ImpulsinhoNovidades?.consultar?.()||[];if(novidades.length)lines.push('Conquistas consultadas: '+novidades.map(x=>x.detail+' — '+x.projectName).join('; ')+'.');
  reply('Situação do Impulso',lines.join(' '),'curiosidade');
 }
 function manualStats(){
@@ -315,7 +317,7 @@ function goTo(topic){const pages={hoje:'dia',motor:'radar',arena:'arena',habitos
 function manualTopic(topic){stopTour();
  if(topic==='evolucao'){manualEvolution();return}
  const s=snapshot(),p=s?.projeto;
- if(topic==='conquistas'){goTo('conquistas');manualAchievements();return}
+ if(topic==='conquistas'){manualAchievements();goTo('conquistas');return}
  if(topic==='backup'){goTo('backup');manualStatus();return}
  if(topic==='configuracoes'){goTo('configuracoes');reply('Configurações','Abri as Configurações. Aqui você escolhe temas, alertas, atalhos e como quer conversar comigo.','curiosidade');return}
  if(topic==='projetos'){goTo('projetos');reply('Projetos','Abri a lista de projetos. Escolha um projeto para que eu possa consultar seus dados reais.','curiosidade');return}
@@ -373,7 +375,7 @@ function answerLive(topic){
 questionForm.addEventListener('submit',async e=>{e.preventDefault();const field=questionForm.querySelector('input'),button=questionForm.querySelector('button');const value=field.value.trim();if(!value||button.disabled)return;const route=routeQuestion(value);
  if(route.kind==='navigation'){manualTopic(route.topic);field.value='';return}
  if(route.kind==='live'){answerLive(route.topic);field.value='';return}
- button.disabled=true;try{const r=await window.OraculoImpulso?.ask(value);stopTour();if(r?.text){reply('Oráculo do Impulso',r.text,'curiosidade',true);field.value=''}else reply('Oráculo do Impulso',r?.unavailable?'Minha base de respostas não está disponível. Atualize o aplicativo com conexão.':r?.ambiguous?'Encontrei mais de uma interpretação. Pode especificar a função ou o que deseja saber?':'Não tenho uma resposta cadastrada com confiança suficiente. Reformule usando o nome da função ou consulte o Manual.','curiosidade',true)}catch{reply('Oráculo do Impulso','Não consegui consultar minha base de respostas agora.','cuidado',true)}finally{button.disabled=false}
+ button.disabled=true;try{const r=await window.OraculoImpulso?.ask(value);stopTour();if(r?.text){reply('Oráculo do Impulso',r.text,'curiosidade',true);field.value=''}else {reply('Oráculo do Impulso',r?.unavailable?'Minha base de respostas não está disponível. Atualize o aplicativo com conexão.':r?.ambiguous?'Encontrei mais de uma interpretação. Pode especificar a função ou o que deseja saber?':'Não tenho uma resposta cadastrada com confiança suficiente. Reformule usando o nome da função ou consulte o Manual.','curiosidade',true);manualLink()}}catch{reply('Oráculo do Impulso','Não consegui consultar minha base de respostas agora.','cuidado',true);manualLink()}finally{button.disabled=false}
 });
 function scheduleAuto(){if(autoTimer)clearInterval(autoTimer);autoTimer=null;if(auto.checked&&pref.visivel){autoTimer=setInterval(()=>{if(!document.hidden&&balloon.hidden&&pref.visivel)randomFace()},20000)}}
 fetch('impulsinho/catalogo.json?v=109').then(res=>{if(!res.ok)throw Error('Catálogo indisponível');return res.json()}).then(data=>{faces=(data.facetas||[]).filter(f=>f.arquivo&&f.emocao);if(faces.length!==109)throw Error('Catálogo incompleto');showFace(Math.max(0,faces.findIndex(f=>f.id==='1f9d0')));info.textContent='109 expressões prontas. Use os controles para explorá-las.'}).catch(()=>{info.textContent='Não foi possível carregar o catálogo de expressões. Verifique os arquivos e atualize a página.'});
@@ -402,7 +404,7 @@ avatar.addEventListener('pointerup',e=>{if(!drag||e.pointerId!==drag.id)return;c
 avatar.addEventListener('pointercancel',()=>{drag=null;save()});
 avatar.addEventListener('click',()=>{if(performance.now()-lastDragEnd<350)return;opened(balloon.hidden)});
 questionButton.addEventListener('click',()=>{stopTour();questionsOpen(questions.hidden)});
-root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='tutorial')runTutorial();if(action==='avisos')manualStatus();if(action==='estatisticas')manualTopic('estatisticas');if(['hoje','motor','arena','habitos'].includes(action))manualTopic(action);if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas')manualTopic('conquistas');if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='fechar'){questionsOpen(false);opened(false);setTimeout(dispatch,250)}if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
+root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='tutorial')runTutorial();if(action==='avisos')manualStatus();if(action==='estatisticas')manualTopic('estatisticas');if(['hoje','motor','arena','habitos'].includes(action))manualTopic(action);if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas')manualTopic('conquistas');if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
 reopen.addEventListener('click',()=>{visible(true);opened(true);avatar.focus()});
 
 // Reações de interface: somente ações reais, com intervalo para não atrapalhar o trabalho.
