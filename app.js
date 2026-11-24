@@ -41,7 +41,7 @@ window.Impulsinho=Object.freeze({
   const p=project();
   if(!p)return Object.freeze({projeto:null,projetos:state.projects.length,pagina:page,backupPendente:fileNeedsUpdate()});
   const totalMs=total(p),hojeMs=dayTotal(p,dateKey(now())),chefes=bossStatus(p).done;
-  return Object.freeze({projeto:Object.freeze({id:p.id,nome:p.name,tempoMs:totalMs,hojeMs,horasRestantesMs:Math.max(0,36000000000-totalMs),habitosConcluidos:p.records.filter(r=>r.type==='habit').length,chefoesDerrotados:chefes,chefoesTotais:BOSS_COUNT}),projetos:state.projects.length,pagina:page,backupPendente:fileNeedsUpdate()});
+  return Object.freeze({projeto:Object.freeze({id:p.id,nome:p.name,tempoMs:totalMs,hojeMs,horasRestantesMs:Math.max(0,36000000000-totalMs),habitosConcluidos:p.records.filter(r=>r.type==='habit').length,sequenciaAtual:productivityStreaks(p).current,sequenciaRecorde:productivityStreaks(p).best,ultimoRegistro:Math.max(0,...p.records.map(r=>Number(r.end||r.start)||0)),chefoesDerrotados:chefes,chefoesTotais:BOSS_COUNT}),projetos:state.projects.length,pagina:page,backupPendente:fileNeedsUpdate()});
  }
 });
 
@@ -839,8 +839,9 @@ function igniteRadar(){
  if(ignitionRun)stopIgnition();
  const degrees=propulsionStats(total(p,true)).degrees;
  ignitionAngle(rotor,0);
- if(!degrees){feedback.textContent='Nenhum grau acumulado ainda. Registre trabalho para alimentar o motor.';return;}
+ if(!degrees){feedback.textContent='Nenhum grau acumulado ainda. Registre trabalho para alimentar o motor.';window.dispatchEvent(new CustomEvent('impulsinho:ignicao',{detail:{projetoId:p.id,giros:0,graus:0,sequencia:0,recorde:0,ultimoRegistro:0}}));return;}
  const turns=Math.floor(degrees/360),rest=degrees%360;
+ window.dispatchEvent(new CustomEvent('impulsinho:ignicao',{detail:{projetoId:p.id,giros:turns,graus:degrees,sequencia:productivityStreaks(p).current,recorde:productivityStreaks(p).best,ultimoRegistro:Math.max(0,...p.records.map(r=>Number(r.end||r.start)||0))}}));
  const summary=`${fmtNumber(degrees)} graus: ${fmtNumber(turns)} giro${turns===1?'':'s'} completo${turns===1?'':'s'} e ${rest} grau${rest===1?'':'s'}.`;
  // A Ignição é acionada expressamente pelo usuário: não suprimir silenciosamente
  // a animação em dispositivos configurados para movimento reduzido.

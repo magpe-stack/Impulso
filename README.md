@@ -721,3 +721,13 @@ O controle **Silenciar** ainda não emite nem bloqueia sons, pois a síntese son
 **Limites desta etapa:** ainda não existem 1.200 falas, mudança automática das 109 expressões, consultas conversacionais ou migração de avisos. A versão 107 continua oferecendo a ponte de dados para as próximas etapas.
 
 [↑ Voltar ao sumário](#sumario-e-navegacao)
+
+
+<a id="impulsinho-versao-116"></a>
+### Impulsinho — passeio inicial, ignição e áudio (v116)
+
+Quando não existe projeto ativo, o assistente pode apresentar um passeio inicial de três mensagens, movendo-se discretamente pela tela. O passeio não altera dados e é exibido uma vez por navegador; pode ser desativado em **Configurações → Controles do Impulsinho**. No modo Somente quando eu clicar, ele não começa espontaneamente.
+
+Ao clicar em **Ignição** na página Motor, o Impulsinho comenta os Giros e a sequência de dias calculados a partir dos registros reais. A avaliação é encorajadora e não penaliza pausas. As respostas permanecem no balão do personagem.
+
+O áudio emocional é sintetizado localmente com Web Audio API, pode ser silenciado e tem controle de volume. Alguns navegadores exigem interação antes de permitir áudio. O botão **Perguntas rápidas** expande ou recolhe o menu de consultas do usuário.
