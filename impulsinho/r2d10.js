@@ -3,7 +3,23 @@ const key='impulso-r2d10-preferencias';let prefs={sound:true,volume:55,visible:t
 const save=()=>{try{localStorage.setItem(key,JSON.stringify(prefs))}catch{}};
 let ctx,output,until=0;function unlock(){try{const A=window.AudioContext||window.webkitAudioContext;if(!A)return;if(!ctx){ctx=new A();output=ctx.createGain();output.connect(ctx.destination)}if(ctx.state==='suspended')ctx.resume().catch(()=>{})}catch{}}
 window.addEventListener('pointerdown',unlock,{passive:true});window.addEventListener('keydown',unlock);
-function voice(text,urgent=false){if(!prefs.sound||!ctx||ctx.state!=='running')return;try{const start=Math.max(ctx.currentTime+.025,until);if(start-ctx.currentTime>2)return;const words=text.split(/\s+/).slice(0,14);output.gain.value=Math.max(0,Math.min(1,Number(prefs.volume)/100))*.19;let t=start;for(const word of words){const hash=[...word].reduce((a,c)=>a+c.charCodeAt(0),0);const f=(urgent?210:280)+hash%230;const d=.075+hash%45/1000;const o=ctx.createOscillator(),g=ctx.createGain(),filter=ctx.createBiquadFilter(),mod=ctx.createOscillator(),mg=ctx.createGain();o.type='sawtooth';o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(f*(hash%2?1.55:.72),t+d);filter.type='bandpass';filter.frequency.value=900+hash%1400;filter.Q.value=1.4;mod.frequency.value=35+hash%35;mg.gain.value=45;mod.connect(mg).connect(o.frequency);o.connect(filter).connect(g).connect(output);g.gain.setValueAtTime(.001,t);g.gain.linearRampToValueAtTime(.8,t+.012);g.gain.exponentialRampToValueAtTime(.001,t+d);o.start(t);mod.start(t);o.stop(t+d+.01);mod.stop(t+d+.01);t+=d+.035}until=t}catch{}}
+function voice(text,urgent=false){
+ if(!prefs.sound||!ctx||ctx.state!=='running')return;
+ try{
+  const start=Math.max(ctx.currentTime+.025,until);if(start-ctx.currentTime>2)return;
+  output.gain.value=Math.max(0,Math.min(1,Number(prefs.volume)/100))*.30;
+  const hash=[...text].reduce((a,c)=>(Math.imul(a,31)+c.charCodeAt(0))>>>0,17);
+  const motifs=[[720,1420,1050],[1150,1900,1550],[1600,870,1120],[980,1750,2200],[2050,1350,750],[1250,1250,1850]];
+  let t=start;const count=Math.min(9,Math.max(4,Math.ceil(text.length/19)));
+  for(let i=0;i<count;i++){
+   const h=(hash>>>((i%4)*8))&255;const m=motifs[(h+i+(urgent?2:0))%motifs.length];
+   const d=.085+(h%6)*.025;const o=ctx.createOscillator(),g=ctx.createGain();
+   o.type='sine';o.frequency.setValueAtTime(m[0],t);o.frequency.exponentialRampToValueAtTime(m[1],t+d*.48);o.frequency.exponentialRampToValueAtTime(m[2],t+d);
+   g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(.85,t+.009);g.gain.setValueAtTime(.72,t+d*.68);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+   o.connect(g).connect(output);o.start(t);o.stop(t+d+.005);t+=d+(i%3===2?.095:.026);
+  }until=t;
+ }catch{}
+}
 const root=document.createElement('aside');root.id='r2d10';root.setAttribute('aria-label','R2D10');root.innerHTML='<section class="r2-panel" hidden><strong>R2D10 · Central operacional</strong><p class="r2-message" role="status" aria-live="polite" aria-atomic="true"></p><div class="r2-actions"></div><button type="button" class="r2-close">Entendi</button></section><button type="button" class="r2-avatar" aria-expanded="false" aria-label="Abrir avisos do R2D10"><img src="impulsinho/r2d10.webp" alt=""><span class="r2-status">R2D10</span></button>';document.body.append(root);
 const panel=root.querySelector('section'),message=root.querySelector('p'),actions=root.querySelector('.r2-actions'),avatar=root.querySelector('.r2-avatar'),status=root.querySelector('.r2-status');let active=[],current=null,queue=[];
 function open(v){panel.hidden=!v;avatar.setAttribute('aria-expanded',String(v));refresh()}
