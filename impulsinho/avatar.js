@@ -51,7 +51,7 @@ questions.append(questionForm);
 
 root.append(questionButton,questions);
 // O seletor de expressões já pertence às Configurações.
-function questionsOpen(value){questions.hidden=!value;questionButton.setAttribute('aria-expanded',String(value));if(value)requestAnimationFrame(position)}
+function questionsOpen(value){questions.hidden=!value;questionButton.setAttribute('aria-expanded',String(value));if(value){opened(false);position();requestAnimationFrame(position)}}
 const headline=balloon.querySelector('h2');
 const achievementsButton=document.createElement('button');achievementsButton.type='button';achievementsButton.dataset.acao='conquistas';achievementsButton.textContent='Conquistas';actions.prepend(achievementsButton);
 
@@ -361,18 +361,18 @@ family.addEventListener('change',()=>showFace(0));auto.addEventListener('change'
 try{auto.checked=localStorage.getItem('impulsinho-auto-v109')==='1'}catch{}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(pref))}catch{}};
 const clamp=(n,a,b)=>Math.max(a,Math.min(n,b));
-function position(){const size=avatar.getBoundingClientRect().width||78;pref.x=clamp(Number.isFinite(pref.x)?pref.x:innerWidth-size-14,8,Math.max(8,innerWidth-size-8));pref.y=clamp(Number.isFinite(pref.y)?pref.y:innerHeight-size-90,8,Math.max(8,innerHeight-size-8));avatar.style.left=pref.x+'px';avatar.style.top=pref.y+'px';activityBadge.style.left=clamp(pref.x+size/2-48,8,Math.max(8,innerWidth-104))+'px';activityBadge.style.top=clamp(pref.y-32,8,Math.max(8,innerHeight-36))+'px';if(!balloon.hidden){const width=Math.min(310,innerWidth-24),height=balloon.getBoundingClientRect().height;let left=clamp(pref.x+size/2-width/2,12,Math.max(12,innerWidth-width-12));let top=pref.y-height-10;if(top<12)top=Math.min(innerHeight-height-12,pref.y+size+10);balloon.style.left=left+'px';balloon.style.top=clamp(top,12,Math.max(12,innerHeight-height-12))+'px'}
+function position(){const size=avatar.getBoundingClientRect().width||78;pref.x=clamp(Number.isFinite(pref.x)?pref.x:innerWidth-size-14,8,Math.max(8,innerWidth-size-8));pref.y=clamp(Number.isFinite(pref.y)?pref.y:innerHeight-size-90,8,Math.max(8,innerHeight-size-8));avatar.style.left=pref.x+'px';avatar.style.top=pref.y+'px';if(!balloon.hidden){const width=balloon.getBoundingClientRect().width||Math.min(310,innerWidth-24),height=balloon.getBoundingClientRect().height;let left=clamp(pref.x+size/2-width/2,12,Math.max(12,innerWidth-width-12));let top=pref.y-height-10;if(top<12)top=Math.min(innerHeight-height-12,pref.y+size+10);balloon.style.left=left+'px';balloon.style.top=clamp(top,12,Math.max(12,innerHeight-height-12))+'px'}
  const qsize=questionButton.getBoundingClientRect();const toggleW=qsize.width||30,toggleH=qsize.height||30;
  questionButton.style.left=clamp(pref.x-12,8,Math.max(8,innerWidth-toggleW-8))+'px';
  questionButton.style.top=clamp(pref.y+size-18,8,Math.max(8,innerHeight-toggleH-8))+'px';
- if(!questions.hidden){const width=Math.min(330,innerWidth-24),height=questions.getBoundingClientRect().height;
+ if(!questions.hidden){const width=questions.getBoundingClientRect().width||Math.min(330,innerWidth-24),height=questions.getBoundingClientRect().height;
   let left=clamp(pref.x-width-12,12,Math.max(12,innerWidth-width-12));
   if(pref.x<width+20)left=clamp(pref.x+size+10,12,Math.max(12,innerWidth-width-12));
   let top=clamp(pref.y+size/2-height/2,12,Math.max(12,innerHeight-height-12));
   if(!balloon.hidden){const speech=balloon.getBoundingClientRect();if(left<speech.right&&left+width>speech.left&&top<speech.bottom&&top+height>speech.top){top=clamp(speech.bottom+10,12,Math.max(12,innerHeight-height-12));}}
   questions.style.left=left+'px';questions.style.top=top+'px';
  }}
-function opened(v){if(v){updateAchievements();updateBackupAction()}balloon.hidden=!v;avatar.setAttribute('aria-expanded',String(v));if(v)requestAnimationFrame(position)}
+function opened(v){if(v){updateAchievements();updateBackupAction()}balloon.hidden=!v;avatar.setAttribute('aria-expanded',String(v));if(v){questionsOpen(false);position();requestAnimationFrame(position)}}
 function visible(v){if(!v)questionsOpen(false);pref.visivel=v;avatar.hidden=!v;avatar.style.display=v?'':'none';questionButton.hidden=!v;reopen.hidden=v;opened(false);save();scheduleAuto();updateActivity(window.ImpulsinhoAtividade?.())}
 function sync(){avatar.querySelector('img').style.animationPlayState=pref.flutuar?'running':'paused';visible(pref.visivel);position()}
 let drag=null,lastDragEnd=0;
@@ -402,7 +402,13 @@ const reactionHints=[
  [/configura[cç][oõ]es|ajustes/i,'Aqui você decide como quer que eu me comporte.','curiosidade']
 ];
 let lastReactionAt=0,lastReactionLabel='';
+let dismissedClick=null;
 document.addEventListener('click',e=>{
+ if(root.contains(e.target)||configHost.contains(e.target))return;
+ if(!balloon.hidden||!questions.hidden){dismissedClick=e;questionsOpen(false);opened(false);}
+},true);
+document.addEventListener('click',e=>{
+ if(e===dismissedClick||e.target.closest?.('#r2d10,#r2-settings'))return;
  const el=e.target.closest('button,[role="button"],input[type="button"],input[type="submit"]');
  if(!el||root.contains(el)||configHost.contains(el)||el.disabled||el.hidden||el.closest('[hidden]'))return;
  if(!pref.visivel||document.hidden||tourIndex>=0)return;
