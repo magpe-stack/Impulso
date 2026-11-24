@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {criarMemoria} from './motor-memoria.mjs';
+import {criarPersonalidade} from './motor-personalidade.mjs';
+let t=1000000;const map=new Map();const armazenamento={getItem:k=>map.get(k),setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};const novo=()=>criarMemoria({armazenamento,agora:()=>t});let m=novo();
+assert.equal(m.indice('habito_concluido'),0);
+m.avancar('habito_concluido');assert.equal(novo().indice('habito_concluido'),1);
+assert.equal(m.registrar('invalido'),false);
+for(let i=0;i<60;i++)m.registrar('habito_concluido');assert.equal(m.snapshot().recentes.length,40);
+m.marcar('dica');t+=100;assert.equal(novo().decorrido('dica'),100);
+assert.equal(m.marcar('invalido'),false);
+const mensagens=[];let p=criarPersonalidade({memoria:m,coordenador:{receber:async(e,o)=>{mensagens.push(o.mensagem);return true;}}});await p.receber('habito_concluido');p=criarPersonalidade({memoria:novo(),coordenador:{receber:async(e,o)=>{mensagens.push(o.mensagem);return true;}}});await p.receber('habito_concluido');assert.notEqual(mensagens[0],mensagens[1]);
+assert.equal(await p.receber('dica_exibida'),false);
+t+=604800001;assert.equal(novo().snapshot().recentes.length,0);
+assert.equal(m.limpar(),true);assert.equal(novo().indice('habito_concluido'),0);
+map.set('impulso.impulsinho.memoria.v1','{');assert.equal(novo().indice('habito_concluido'),0);
+const falha=criarMemoria({armazenamento:{getItem(){throw Error()},setItem(){throw Error()}}});falha.avancar('habito_concluido');assert.equal(falha.indice('habito_concluido'),1);assert.equal(falha.status().persistente,false);
+console.log('Memória: testes aprovados');

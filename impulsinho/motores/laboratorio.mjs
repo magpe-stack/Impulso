@@ -1,0 +1,22 @@
+import {criarOrquestrador} from './orquestrador.mjs';
+import {criarMotor} from './motor-corporal.mjs';
+import {cenas} from './motor-emocional.mjs';
+import {ambientes} from './motor-contextual.mjs';
+const $=id=>document.getElementById(id), catalogo=await fetch('./catalogo-gestual.json').then(r=>{if(!r.ok)throw Error('Catálogo indisponível');return r.json()});
+const faces={neutra:'🙂',alegria:'😄',satisfacao:'😎',determinacao:'😤',celebracao:'🤩',atencao:'🤔',calma:'😌',esperanca:'😊'};
+const arquivos=new Map(); let orq, motor, revisao=0, inspecao;
+const estado={habilitado:true,dicas:true,espontaneo:false,foco:false,silencio:false,editando:false,modal:false,alertas:{backup:false,elixir:false}};
+const storage={getItem:k=>localStorage.getItem('laboratorio146.'+k),setItem:(k,v)=>localStorage.setItem('laboratorio146.'+k,v),removeItem:k=>localStorage.removeItem('laboratorio146.'+k)};
+function log(t){$('status').textContent=t;$('log').textContent=(`${new Date().toLocaleTimeString()} ${t}\n`+$('log').textContent).slice(0,6000)}
+function options(id,entries){for(const [v,t] of entries){const o=document.createElement('option');o.value=v;o.textContent=t;$(id).append(o)}}
+options('evento',Object.entries(cenas).map(([k,v])=>[k,`${k} • prioridade ${v[2]}`]));options('ambiente',Object.keys(ambientes).map(k=>[k,k]));options('gesto',catalogo.gestos.map(g=>[g.id,`${g.nome} (${g.politica})`]));options('emocao',Object.keys(faces).map(k=>[k,k]));
+function expressao(k){const token=++revisao, emoji=faces[k]||faces.neutra, id=emoji.codePointAt(0).toString(16), url=[...arquivos].find(([n])=>n.startsWith(`emoji_u${id}_3d`) )?.[1];$('avatar').removeAttribute('src');$('face').textContent=emoji;if(url){const img=new Image();img.onload=()=>{if(token===revisao){$('avatar').src=url;$('face').textContent=''}};img.src=url;}$('avatar').alt=`Expressão ${k}`;}
+function limparInspecao(){inspecao?.remove();inspecao=null}
+function iniciar(){limparInspecao();orq?.destruir();const copia=structuredClone(catalogo);for(const g of copia.gestos)if(arquivos.has(g.arquivo))g.arquivo=arquivos.get(g.arquivo);orq=criarOrquestrador({avatar:$('avatar'),palco:$('palco'),catalogo:copia,pasta:'./gestos/',expressao,balao:t=>$('balao').textContent=t,estado:()=>estado,armazenamento:storage,fabricaMotor:o=>(motor=criarMotor(o)),onErro:e=>log(String(e))});orq.navegar($('ambiente').value);orq.iniciar();expressao('neutra');log('Motores inicializados');}
+for(const [k,t] of Object.entries({habilitado:'Impulsinho habilitado',dicas:'Dicas',espontaneo:'Espontaneidade',foco:'Foco',silencio:'Silêncio',editando:'Editando',modal:'Modal aberta',backup:'Alerta de backup',elixir:'Alerta de Elixir'})){const l=document.createElement('label'),i=document.createElement('input');i.type='checkbox';const obj=k in estado?estado:estado.alertas;i.checked=obj[k];i.onchange=()=>{obj[k]=i.checked;orq.atualizar()};l.append(i,t);$('opcoes').append(l)}
+$('arquivos').onchange=()=>{orq?.destruir();for(const u of arquivos.values())URL.revokeObjectURL(u);arquivos.clear();for(const f of $('arquivos').files)if(/\.webp$/i.test(f.name))arquivos.set(f.name,URL.createObjectURL(f));iniciar();log(`${arquivos.size} imagens selecionadas`)};
+$('emitir').onclick=async()=>{limparInspecao();try{const ok=await orq.receber($('evento').value);log(ok?'Acontecimento aceito (gesto depende da imagem e espaço)':'Acontecimento bloqueado ou em intervalo')}catch(e){log(String(e))}};
+$('ambiente').onchange=()=>orq.navegar($('ambiente').value);
+$('verFace').onclick=()=>{orq.parar();expressao($('emocao').value);log('Inspeção facial; reinicie para retomar o ciclo automático')};
+$('verGesto').onclick=()=>{orq.parar();limparInspecao();const g=catalogo.gestos.find(g=>g.id===$('gesto').value);if(g.politica==='bloqueado'){log('Gesto bloqueado');return}const u=arquivos.get(g.arquivo);if(!u){log('Imagem original não selecionada');return}inspecao=new Image();inspecao.src=u;inspecao.alt=g.nome;Object.assign(inspecao.style,{position:'absolute',left:'12px',bottom:'12px',width:'64px',height:'64px',objectFit:'contain'});$('palco').append(inspecao);log('Inspeção estática isolada: '+g.nome)};
+$('tema').onclick=()=>document.body.classList.toggle('escuro');$('reiniciar').onclick=iniciar;$('limpar').onclick=()=>{orq.limparMemoria();iniciar();log('Memória experimental reiniciada')};window.addEventListener('pagehide',()=>{orq?.destruir();for(const u of arquivos.values())URL.revokeObjectURL(u)});iniciar();$('emitir').disabled=false;$('verGesto').disabled=false;

@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {quadros,criarAnimador} from './motor-animacao.mjs';
+assert.equal(quadros('sessao_iniciada').length,5);
+assert.equal(quadros('desconhecido').length,2);
+assert.notEqual(quadros('sessao_iniciada',1)[1].transform,quadros('sessao_iniciada',-1)[1].transform);
+let chamadas=0,canceladas=0,listener;const pref={matches:false,addEventListener(_,f){listener=f},removeEventListener(){listener=null}};
+const img={animate(){chamadas++;return {cancel(){canceladas++},finished:new Promise(()=>{})}}};
+const a=criarAnimador({preferencia:pref});a.animar([img,img],'chefao_derrotado');assert.equal(chamadas,2);
+pref.matches=true;listener();assert.equal(canceladas,2);a.animar([img],'sessao_iniciada');assert.equal(chamadas,2);
+pref.matches=false;a.animar([img],'sessao_iniciada');assert.equal(chamadas,3);a.destruir();assert.equal(canceladas,3);assert.equal(listener,null);a.animar([img],'sessao_iniciada');assert.equal(chamadas,3);
+console.log('10 verificações de animação aprovadas');

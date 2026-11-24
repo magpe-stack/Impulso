@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {criarContexto,ambientes} from './motor-contextual.mjs';
+let t=0,s={espontaneo:true}, chamadas=[];
+const c=criarContexto({personalidade:{receber:async (...a)=>{chamadas.push(a);return true;}},estado:()=>s,agora:()=>t});
+assert.equal(Object.keys(ambientes).length,12);
+assert.equal(c.navegar('arena'),true);
+assert.equal(await c.verificar(),false);
+t=900000;
+assert.equal(await c.verificar(),true);
+assert.equal(chamadas.at(-1)[1].mensagem,ambientes.arena);
+assert.equal(await c.verificar(),false);
+t+=900000;
+for(const k of ['foco','silencio','editando','modal']){s[k]=true;assert.equal(await c.verificar(),false);delete s[k];}
+for(const k of ['visivel','habilitado','dicas','espontaneo']){s[k]=false;assert.equal(await c.verificar(),false);delete s[k];}s.espontaneo=true;
+assert.equal(c.navegar('constructor'),false);
+assert.equal(await c.verificar(),false);
+assert.equal(await c.receber('inexistente'),false);
+assert.equal(await c.receber('chefao_derrotado'),true);
+c.destruir();assert.equal(await c.receber('chefao_derrotado'),false);
+console.log('19 verificações contextuais aprovadas');

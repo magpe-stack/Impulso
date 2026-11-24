@@ -1,1 +1,11 @@
-
+import assert from 'node:assert/strict';import fs from 'node:fs';import {selecionar} from './motor-corporal.mjs';
+const c=JSON.parse(fs.readFileSync(new URL('./catalogo-gestual.json',import.meta.url)));
+assert.equal(c.gestos.length,47);assert.equal(new Set(c.gestos.map(g=>g.id)).size,47);
+assert.equal(selecionar(c,'habito_concluido')[0].id,'u1f44d');
+assert.equal(selecionar(c,'tutorial_alvo_visivel').length,0);
+assert.equal(selecionar(c,'tutorial_alvo_visivel',{contexto:true,ids:['u1f446']}).length,1);
+assert.equal(selecionar(c,'cumprimento_explicito',{contexto:true}).length,2);
+assert.equal(selecionar(c,null,{contexto:true}).length,0);
+assert.equal(selecionar(c,'habito_concluido',{ids:['u1f595']}).length,0);
+assert.equal(selecionar(c,'habito_concluido',{ids:['u1f44d','u1f44d']}).length,0);
+console.log('8 verificações aprovadas');

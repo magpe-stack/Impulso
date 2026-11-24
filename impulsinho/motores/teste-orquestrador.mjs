@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {criarOrquestrador} from './orquestrador.mjs';
+let s={alertas:{backup:false}}, face='',texto='',destruicoes=0,t=0;
+const o=criarOrquestrador({expressao:v=>face=v,balao:v=>texto=v,estado:()=>s,agora:()=>t,documento:{hidden:false},fabricaMotor:()=>({mostrar:async()=>true,limpar(){},destruir(){destruicoes++;}})});
+assert.equal(o.iniciar(),true);assert.equal(o.iniciar(),false);
+assert.equal(o.navegar('arena'),true);assert.equal(o.snapshot().contexto.secao,'arena');
+assert.equal(await o.receber('alerta_backup'),false);
+assert.equal(await o.receber('habito_concluido'),true);assert.equal(face,'alegria');assert.ok(texto);
+assert.equal(await o.receber('chefao_derrotado'),true);assert.equal(face,'celebracao');
+s.habilitado=false;o.atualizar();assert.equal(face,'neutra');assert.equal(await o.receber('chefao_derrotado'),false);
+s.habilitado=true;s.alertas.backup=true;t=9000;assert.equal(await o.receber('alerta_backup'),true);s.alertas.backup=false;o.atualizar();assert.equal(texto,'');
+o.parar();assert.equal(o.snapshot().executando,false);o.destruir();o.destruir();assert.equal(destruicoes,1);assert.equal(await o.receber('habito_concluido'),false);assert.equal(o.iniciar(),false);
+console.log('Orquestrador: OK');
