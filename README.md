@@ -443,7 +443,7 @@ Acesse **Sistema → Configurações**. A página contém **cinco seções recol
 1. **Temas:** identidade cromática e modo claro/escuro.
 2. **Atalhos de Teclado:** combinações, chaves individuais e redefinição.
 3. **Atalhos do Aplicativo:** chaves para acessos rápidos internos.
-4. **Controles do Impulsinho:** comportamento, personalidade, expressões, áudio, tutorial, alertas e distintivos.
+4. **Controles do Impulsinho:** comportamento, personalidade, expressões, áudio e tutorial. Os controles do R2D10 reúnem alertas e distintivos.
 5. **Limpeza:** manutenção seletiva ou completa dos dados identificados como pertencentes ao Impulso.
 
 Clique no título de uma seção para abri-la ou recolhê-la. A página permite concentrar as preferências sem multiplicar telas no menu.
@@ -569,12 +569,12 @@ Em Sistema → Configurações → Controles do Impulsinho, escolha o modo Espon
 <a id="13-alertas-distintivos-e-area-de-transferencia"></a>
 ## 13. Alertas, distintivos e área de transferência
 
-Os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do Impulsinho**. Os distintivos não dependem da visibilidade do personagem. Alertas desativados são retirados também da fila de intervenções do assistente.
+Os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do R2D10**. Os distintivos não dependem da visibilidade do personagem. O R2D10 apresenta os lembretes e monitora Ponto, Foco e Hábitos, inclusive pausas. Sua fala eletrônica é sintetizada localmente, com controle independente de volume, ativação e teste. O áudio depende da autorização do navegador.
 
 <a id="alertas-locais"></a>
 ### Alertas locais
 
-Em **Configurações → Controles do Impulsinho**, ative ou desative os lembretes disponíveis, como avisos relacionados a backups e hábitos. Eles são **avisos locais enquanto o aplicativo executa**: não são notificações push garantidas com o PWA fechado, nem realizam backups automaticamente.
+Em **Configurações → Controles do R2D10**, ative ou desative os lembretes disponíveis, como avisos relacionados a backups e hábitos. Eles são **avisos locais enquanto o aplicativo executa**: não são notificações push garantidas com o PWA fechado, nem realizam backups automaticamente.
 
 <a id="central-de-novidades-e-distintivos-badging-api"></a>
 ### Central de novidades e distintivos — Badging API
