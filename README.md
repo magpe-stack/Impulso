@@ -65,7 +65,7 @@ Selecione um título ou subtítulo para navegar.
 - [12. Impulsinho — assistente emocional e motivacional](#12-impulsinho-assistente-emocional-e-motivacional)
   - [Personagem e balões](#personagem-e-baloes)
   - [Consultas e navegação contextual](#consultas-e-navegacao-contextual)
-  - [Oráculo — consulta ao Manual](#oraculo-consulta-ao-manual)
+  - [Oráculo — perguntas e respostas](#oraculo-consulta-ao-manual)
   - [Tutorial e reações às ações](#tutorial-e-reacoes-as-acoes)
   - [Expressões e bibliotecas de falas](#expressoes-e-bibliotecas-de-falas)
   - [Frases motivacionais](#frases-motivacionais)
@@ -504,9 +504,9 @@ Selecione uma opção em **Perguntas rápidas** e pressione **Abrir** ou digite 
 A consulta Conquistas resume até cinco novidades pendentes; use a Central de Novidades para consultar cada item. O comando Atualizar Backup Geral encaminha ao fluxo de gravação, sem dispensar confirmações.
 
 <a id="oraculo-consulta-ao-manual"></a>
-### Oráculo — consulta ao Manual
+### Oráculo — perguntas e respostas
 
-No painel ☰ do Impulsinho, digite uma pergunta sobre o funcionamento do aplicativo, como “Como restaurar um backup?” ou “Qual a diferença entre Guardar e Atualizar?”. O Oráculo pesquisa o próprio Manual armazenado localmente, considerando palavras-chave, sinônimos e pequenos erros de digitação. A resposta apresenta trechos documentais e identifica a seção consultada. Perguntas complementares curtas podem aproveitar o assunto anterior. Consultas de progresso e comandos explícitos continuam usando os mecanismos existentes. A pesquisa não altera projetos nem executa operações de arquivo. Se não encontrar correspondência suficiente, o assistente pede uma reformulação. Não se trata de IA generativa; a seleção de trechos pode ser imperfeita. O Manual é atualizado junto com os recursos do aplicativo e fica disponível offline após o cache inicial.
+No painel ☰ do Impulsinho, digite uma pergunta sobre o funcionamento do aplicativo. O Oráculo consulta uma base local de 271 perguntas e respostas preparadas, distribuídas em 13 categorias, com palavras-chave e formulações alternativas. Ele reconhece correspondências exatas e pequenas diferenças de escrita; quando a correspondência é ambígua ou insuficiente, pede uma reformulação. Consultas de progresso e comandos explícitos continuam utilizando os mecanismos de dados reais. A consulta não altera registros nem executa operações de arquivo. A base funciona offline após o cache inicial e não utiliza IA generativa. O Manual permanece disponível em Ajuda, independentemente do Oráculo.
 
 <a id="tutorial-e-reacoes-as-acoes"></a>
 ### Tutorial e reações às ações
