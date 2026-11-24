@@ -827,3 +827,7 @@ As 47 imagens WebP originais estão em `impulsinho/gestos/`, com nomes, dimensõ
 
 ## Versão 150 — diagnóstico corporal
 Em Configurações → Controles do Impulsinho, teste seis gestos ou percorra as 47 imagens, com diagnóstico de carregamento e botão Parar teste. A prévia é independente do motor automático. O posicionamento automático tenta quatro lados seguros e o evento de derrota de chefão foi conectado ao motor contextual. A homologação visual permanece necessária.
+
+
+## Versão 151 — teste corporal integrado
+Em Configurações → Controles do Impulsinho, mantenha o diagnóstico das 47 imagens e use Teste no personagem para executar seis gestos junto ao rosto real, com expressão e balão de demonstração. A coreografia percorre os seis gestos. Parar teste integrado restaura a conversa e a expressão anteriores. Não registra atividades ou conquistas. A homologação visual permanece necessária.
