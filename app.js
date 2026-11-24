@@ -1395,7 +1395,7 @@ $('#backupAlertDismiss').addEventListener('click',hideBackupAlert);$('#backupAle
  const ring=splash.querySelector('.splash-fill');
  const word=splash.querySelector('.splash-wordmark');
  const duration=3700; // Duração mínima uniforme, inclusive com movimento reduzido.
- const started=performance.now();
+ const started=performance.now();window.impulsoSplashStarted=started;
  function frame(time){
   if(!splash.isConnected)return;
   const progress=Math.max(0,Math.min(1,(time-started)/duration));

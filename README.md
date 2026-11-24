@@ -735,4 +735,13 @@ Quando não existe projeto ativo, o assistente pode apresentar um passeio inicia
 Ao clicar em **Ignição** na página Motor, o Impulsinho comenta os Giros e a sequência de dias calculados a partir dos registros reais. A avaliação é encorajadora e não penaliza pausas. As respostas permanecem no balão do personagem.
 
 O áudio emocional é sintetizado localmente com Web Audio API, pode ser silenciado e tem controle de volume. Alguns navegadores exigem interação antes de permitir áudio. O botão **Perguntas rápidas** expande ou recolhe o menu de consultas do usuário.
-\n\n## Impulsinho — 1.000 frases motivacionais (v119)\n\nA biblioteca `impulsinho/motivacionais.json` reúne 1.000 frases fornecidas pelo autor, organizadas em sete categorias: hábitos, uso do tempo, estoicismo, motivação, positividade, foco e disciplina, crescimento e mentalidade. O Impulsinho pode apresentar frases ocasionalmente quando houver projeto ativo, respeitando o modo de intervenção, a visibilidade, intervalos mínimos e outras conversas. O comando **✨ Uma frase** permite solicitar uma frase a qualquer momento. A escolha tenta priorizar a categoria da página atual e evita repetir as 80 frases mais recentes, com histórico local. O conteúdo é pré-escrito e funciona offline depois de armazenado pelo service worker.\n
+
+
+## Impulsinho — 1.000 frases motivacionais (v119)
+
+A biblioteca `impulsinho/motivacionais.json` reúne 1.000 frases fornecidas pelo autor, organizadas em sete categorias: hábitos, uso do tempo, estoicismo, motivação, positividade, foco e disciplina, crescimento e mentalidade. O Impulsinho pode apresentar frases ocasionalmente quando houver projeto ativo, respeitando o modo de intervenção, a visibilidade, intervalos mínimos e outras conversas. O comando **✨ Uma frase** permite solicitar uma frase a qualquer momento. A escolha tenta priorizar a categoria da página atual e evita repetir as 80 frases mais recentes, com histórico local. O conteúdo é pré-escrito e funciona offline depois de armazenado pelo service worker.
+
+
+### Personalidades e áudio de abertura (v120)
+
+Em Sistema → Configurações → Controles do Impulsinho, escolha Divertido, Mentor, Guerreiro ou Discreto. Os perfis alteram o tom das mensagens, a frequência de intervenções não prioritárias e a intensidade dos efeitos. O volume máximo dos efeitos foi elevado de 0,24 para 0,48 antes do ajuste por perfil. A vinheta opcional apresenta nove notas ascendentes durante o splash, quando o navegador autoriza áudio. Use Testar vinheta para ouvi-la sob demanda.
