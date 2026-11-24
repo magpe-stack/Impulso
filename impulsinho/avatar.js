@@ -145,7 +145,7 @@ function playEmotion(emotion,force=false){
   const notes=presets[emotion]||[392,523];const t=audioContext.currentTime+.02;
   notes.forEach((hz,i)=>{const osc=audioContext.createOscillator(),gain=audioContext.createGain(),start=t+i*.105;
    osc.type=['sine','triangle','sine'][i%3];osc.frequency.setValueAtTime(hz,start);
-   gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(Math.max(.0001,Number(behavior.volume)/100*.045),start+.018);
+   gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(Math.max(.0001,Number(behavior.volume)/100*.24),start+.018);
    gain.gain.exponentialRampToValueAtTime(.0001,start+.15);osc.connect(gain);gain.connect(audioContext.destination);osc.start(start);osc.stop(start+.16);
   });
   return true;
