@@ -569,7 +569,7 @@ Em Sistema → Configurações → Controles do Impulsinho, escolha o modo Espon
 <a id="13-alertas-distintivos-e-area-de-transferencia"></a>
 ## 13. Alertas, distintivos e área de transferência
 
-Os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do R2D10**. Os distintivos não dependem da visibilidade do personagem. O R2D10 apresenta os lembretes e monitora Ponto, Foco e Hábitos, inclusive pausas. A opção de presença em repouso mantém o robô visível mesmo sem atividades ou alertas. Sua fala eletrônica é sintetizada localmente, com controle independente de volume, ativação e teste. O áudio depende da autorização do navegador.
+Os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do R2D10**. Os distintivos não dependem da visibilidade do personagem. O R2D10 apresenta os lembretes e monitora Ponto, Foco e Hábitos, inclusive pausas. A opção de presença em repouso mantém o robô visível mesmo sem atividades ou alertas. Sua fala eletrônica, composta por assobios digitais e variações melódicas de frequência, é sintetizada localmente, com controle independente de volume, ativação e teste. O áudio depende da autorização do navegador.
 
 <a id="alertas-locais"></a>
 ### Alertas locais
@@ -642,7 +642,7 @@ Use **Limpar selecionados** para executar apenas as opções marcadas. **Limpar 
 
 O Impulso oferece **Original, Vinho, Blue Sky, Triádico, Granfino, Ecológico e Místico**, cada uma com modo **claro** e **escuro**. As paletas oficiais servem de base para tokens de superfícies, textos, bordas, botões, cabeçalho, rodapé e componentes especiais, incluindo o Motor.
 
-As amostras de cores em Configurações representam a identidade da paleta. As tonalidades auxiliares são ajustadas para diferentes funções, pois uma cor de destaque nem sempre pode ser usada diretamente como fundo de texto. O objetivo é manter coerência visual sem sacrificar a legibilidade.
+Ao selecionar uma paleta, o Impulsinho visível apresenta sua opinião sobre as cores e uma expressão correspondente. As amostras de cores em Configurações representam a identidade da paleta. As tonalidades auxiliares são ajustadas para diferentes funções, pois uma cor de destaque nem sempre pode ser usada diretamente como fundo de texto. O objetivo é manter coerência visual sem sacrificar a legibilidade.
 
 <a id="acessibilidade"></a>
 ### Acessibilidade
