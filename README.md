@@ -820,3 +820,7 @@ Em Configurações → Controles do Impulsinho, ative o novo motor contextual. O
 
 ## Versão 148 — auditoria estática
 Corrigida a inicialização concorrente do motor opcional e a reativação após desligamento durante carregamento. Gestos corporais desabilitados nesta distribuição por ausência dos WebP originais; catálogo preservado. Motor contextual continua opt-in. Sete suítes Node aprovadas; sintaxe e referências do cache verificadas. Teste Chromium bloqueado por política do ambiente (ERR_BLOCKED_BY_ADMINISTRATOR); offline e homologação visual pendentes. Não publicar como versão homologada.
+
+
+## Versão 149 — integração corporal
+As 47 imagens WebP originais estão em `impulsinho/gestos/`, com nomes, dimensões e hashes conferidos. O catálogo completo foi reativado e todas as imagens foram incluídas no cache v149. Ative o novo motor em Configurações → Controles do Impulsinho. Gestos são decorativos e podem ser omitidos quando não há espaço seguro ou quando o evento não é elegível. Homologação visual e offline no navegador ainda necessária. Faça Backup Geral antes de atualizar.
