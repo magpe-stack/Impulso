@@ -824,3 +824,6 @@ Corrigida a inicialização concorrente do motor opcional e a reativação após
 
 ## Versão 149 — integração corporal
 As 47 imagens WebP originais estão em `impulsinho/gestos/`, com nomes, dimensões e hashes conferidos. O catálogo completo foi reativado e todas as imagens foram incluídas no cache v149. Ative o novo motor em Configurações → Controles do Impulsinho. Gestos são decorativos e podem ser omitidos quando não há espaço seguro ou quando o evento não é elegível. Homologação visual e offline no navegador ainda necessária. Faça Backup Geral antes de atualizar.
+
+## Versão 150 — diagnóstico corporal
+Em Configurações → Controles do Impulsinho, teste seis gestos ou percorra as 47 imagens, com diagnóstico de carregamento e botão Parar teste. A prévia é independente do motor automático. O posicionamento automático tenta quatro lados seguros e o evento de derrota de chefão foi conectado ao motor contextual. A homologação visual permanece necessária.
