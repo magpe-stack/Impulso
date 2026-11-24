@@ -13,7 +13,7 @@ let faces=[],current=0,lastFace=-1,autoTimer=null;
 const message=root.querySelector('#impulsinho-mensagem');message.setAttribute('role','status');message.setAttribute('aria-live','polite');message.setAttribute('aria-atomic','true');
 const settingsKey='impulsinho-config-v112';let behavior={modo:'ambos',volume:35,audio:true,tutorial:true,personalidade:"mentor",splashAudio:true};try{behavior={...behavior,...JSON.parse(localStorage.getItem(settingsKey)||'{}')}}catch{}
 const persistBehavior=()=>{try{localStorage.setItem(settingsKey,JSON.stringify(behavior))}catch{}};
-const configHost=document.createElement('section');configHost.className='impulsinho-configuracoes';configHost.innerHTML=`<h3>Controles do Impulsinho</h3><p class="help">Escolha quando o Impulsinho pode abrir conversas. No modo Ambos, avisos de alertas ativados e ações importantes são obrigatórios.</p><fieldset><legend>Abertura dos balões</legend><label><input type="radio" name="impulsinhoModo" value="espontaneo"> Espontaneamente</label><label><input type="radio" name="impulsinhoModo" value="clique"> Somente quando eu clicar</label><label><input type="radio" name="impulsinhoModo" value="ambos"> Ambos</label></fieldset><label><input type="checkbox" id="impulsinhoVisivel"> Exibir personagem</label><label><input type="checkbox" id="impulsinhoSilencio"> Silenciar efeitos do Impulsinho</label><label><input type="checkbox" id="impulsinhoFlutuar"> Flutuação suave</label><label><input type="checkbox" id="impulsinhoAlternar"> Alternar expressões automaticamente</label><label><input type="checkbox" id="impulsinhoAudio"> Sons emocionais sintetizados</label><label for="impulsinhoVolume">Volume dos sons (<output id="impulsinhoVolumeValue">35%</output>)</label><input id="impulsinhoVolume" type="range" min="0" max="100" step="5" value="35"><label><input type="checkbox" id="impulsinhoTutorial"> Tutorial guiado quando não há projeto</label><button type="button" class="btn" id="impulsinhoExpressoesBtn">Explorar as 109 expressões</button><div id="impulsinhoFacetasConfig"></div><button type="button" class="btn" id="impulsinhoTesteSom">▶ Testar som do Impulsinho</button><p id="impulsinhoEstadoSom" role="status" aria-live="polite" class="help">Os sons são gerados no dispositivo. Clique em Testar som para autorizar o áudio.</p>`;
+const configHost=document.createElement('section');configHost.className='impulsinho-configuracoes';configHost.innerHTML=`<h3>Controles do Impulsinho</h3><p class="help">Escolha quando o Impulsinho pode abrir conversas. Espontaneamente e Ambos permitem frases automáticas; consultas manuais continuam disponíveis.</p><fieldset><legend>Abertura dos balões</legend><label><input type="radio" name="impulsinhoModo" value="espontaneo"> Espontaneamente</label><label><input type="radio" name="impulsinhoModo" value="clique"> Somente quando eu clicar</label><label><input type="radio" name="impulsinhoModo" value="ambos"> Ambos</label></fieldset><label><input type="checkbox" id="impulsinhoVisivel"> Exibir personagem</label><label><input type="checkbox" id="impulsinhoSilencio"> Silenciar efeitos do Impulsinho</label><label><input type="checkbox" id="impulsinhoFlutuar"> Flutuação suave</label><label><input type="checkbox" id="impulsinhoAlternar"> Alternar expressões automaticamente</label><label><input type="checkbox" id="impulsinhoAudio"> Sons emocionais sintetizados</label><label for="impulsinhoVolume">Volume dos sons (<output id="impulsinhoVolumeValue">35%</output>)</label><input id="impulsinhoVolume" type="range" min="0" max="100" step="5" value="35"><label><input type="checkbox" id="impulsinhoTutorial"> Tutorial guiado quando não há projeto</label><button type="button" class="btn" id="impulsinhoExpressoesBtn">Explorar as 109 expressões</button><div id="impulsinhoFacetasConfig"></div><button type="button" class="btn" id="impulsinhoTesteSom">▶ Testar som do Impulsinho</button><p id="impulsinhoEstadoSom" role="status" aria-live="polite" class="help">Os sons são gerados no dispositivo. Clique em Testar som para autorizar o áudio.</p>`;
 const profiles={divertido:{gap:65000,prob:.30,lead:'Vamos nessa! ',tone:'humor',gain:1},mentor:{gap:90000,prob:.22,lead:'Uma reflexão: ',tone:'curiosidade',gain:.9},guerreiro:{gap:75000,prob:.25,lead:'Avante! ',tone:'desafio',gain:1},discreto:{gap:240000,prob:.08,lead:'',tone:'cuidado',gain:.65}};
 const profile=()=>profiles[behavior.personalidade]||profiles.mentor;
 configHost.insertAdjacentHTML('beforeend',`<label for="impulsinhoPersonalidade">Personalidade</label><select id="impulsinhoPersonalidade"><option value="divertido">Divertido</option><option value="mentor">Mentor</option><option value="guerreiro">Guerreiro</option><option value="discreto">Discreto</option></select><label><input type="checkbox" id="impulsinhoSplashAudio"> Vinheta sonora na abertura</label><button type="button" class="btn" id="impulsinhoSplashTeste">▶ Testar vinheta</button>`);
@@ -41,9 +41,9 @@ questionButton.title='Perguntas e comandos do Impulsinho';questionButton.setAttr
 questionButton.setAttribute('aria-expanded','false');questionButton.setAttribute('aria-controls','impulsinho-perguntas');
 const questions=document.createElement('section');questions.id='impulsinho-perguntas';questions.className='impulsinho-perguntas';questions.hidden=true;
 questions.setAttribute('aria-label','Perguntas e ações para o Impulsinho');
-const qTitle=document.createElement('h2');qTitle.textContent='O que você quer perguntar?';questions.append(qTitle);const menu=document.createElement('button');menu.type='button';menu.textContent='Perguntas rápidas ▾';menu.setAttribute('aria-expanded','true');menu.setAttribute('aria-controls','impulsinho-perguntas-acoes');questions.append(menu);
+const qTitle=document.createElement('h2');qTitle.textContent='O que você quer perguntar?';questions.append(qTitle);const menu=document.createElement('button');menu.type='button';menu.textContent='Perguntas rápidas ▾';menu.hidden=true;
 const actions=balloon.querySelector('.impulsinho-acoes');
-actions.id='impulsinho-perguntas-acoes';questions.append(actions);menu.addEventListener('click',()=>{actions.hidden=!actions.hidden;menu.setAttribute('aria-expanded',String(!actions.hidden))});
+actions.id='impulsinho-perguntas-acoes';questions.append(actions);actions.hidden=true;const quick=document.createElement('select');quick.setAttribute('aria-label','Escolher pergunta rápida');const runQuick=document.createElement('button');runQuick.type='button';runQuick.textContent='Abrir';const quickRow=document.createElement('div');quickRow.className='impulsinho-form-row';quickRow.append(quick,runQuick);questions.append(quickRow);function refreshQuick(){quick.replaceChildren(new Option('Perguntas rápidas…',''));for(const [i,b] of [...actions.querySelectorAll('button')].entries()){if(!b.hidden)quick.add(new Option(b.textContent,String(i)))}runQuick.disabled=true}quick.addEventListener('change',()=>{runQuick.disabled=quick.value===''});runQuick.addEventListener('click',()=>{if(quick.value==='')return;const b=actions.querySelectorAll('button')[Number(quick.value)];if(b&&!b.hidden)b.click();if(!questions.hidden)refreshQuick()});
 const tutorialButton=document.createElement('button');tutorialButton.type='button';tutorialButton.textContent='▶ Tutorial';tutorialButton.dataset.acao='tutorial';actions.prepend(tutorialButton);
 const questionForm=document.createElement('form');questionForm.className='impulsinho-formulario';questionForm.setAttribute('aria-label','Escrever pergunta ao Impulsinho');
 questionForm.innerHTML='<label for="impulsinho-pergunta-texto">Sua pergunta</label><div class="impulsinho-form-row"><input id="impulsinho-pergunta-texto" type="text" maxlength="180" autocomplete="off" placeholder="Ex.: Quanto trabalhei hoje?" required><button type="submit">Perguntar</button></div><p class="impulsinho-ajuda">Pergunte sobre seu projeto ou consulte o Manual: como restaurar um backup?</p>';
@@ -51,7 +51,7 @@ questions.append(questionForm);
 
 root.append(questionButton,questions);
 // O seletor de expressões já pertence às Configurações.
-function questionsOpen(value){questions.hidden=!value;questionButton.setAttribute('aria-expanded',String(value));if(value){opened(false);position();requestAnimationFrame(position)}}
+function questionsOpen(value){questions.hidden=!value;questionButton.setAttribute('aria-expanded',String(value));if(value){updateBackupAction();refreshQuick();opened(false);position();requestAnimationFrame(position)}}
 const headline=balloon.querySelector('h2');
 const achievementsButton=document.createElement('button');achievementsButton.type='button';achievementsButton.dataset.acao='conquistas';achievementsButton.textContent='Conquistas';actions.prepend(achievementsButton);
 
@@ -146,13 +146,15 @@ function fraseMotivacional(manual=false){
  else speak({key:'motivacional:'+selected.id,title:'Uma ideia para você',text:selected.frase,emotion});
  return true;
 }
+const motivSessionStart=Date.now();
 // Oferece uma frase apenas ocasionalmente e somente quando a conversa está livre.
 setInterval(()=>{
- if(document.hidden||behavior.modo==='clique'||!snapshot()?.projeto||!pref.visivel||!motivCarregadas)return;
- if(Date.now()-motivUltimaHora<8*60*1000||Date.now()-eventState.lastSpoken<4*60*1000)return;
- if(isBusy()||!balloon.hidden||eventQueue.length)return;
- if(Math.random()<profile().prob)fraseMotivacional();
-},60000);
+ if(document.hidden||behavior.modo==='clique'||!pref.visivel||!motivCarregadas||tourIndex>=0)return;
+ const interval=behavior.personalidade==='discreto'?12*60000:5*60000;
+ if(Date.now()-Math.max(motivUltimaHora,motivSessionStart)<interval||Date.now()-eventState.lastSpoken<60000)return;
+ if(isBusy()||eventQueue.some(e=>e.priority>=2)||document.querySelector('#r2d10 .r2-panel:not([hidden])'))return;
+ fraseMotivacional();
+},15000);
 const botaoFrase=document.createElement('button');
 botaoFrase.type='button';botaoFrase.textContent='✨ Uma frase';botaoFrase.dataset.acao='frase-motivacional';
 actions.append(botaoFrase);
@@ -424,7 +426,7 @@ document.addEventListener('click',e=>{
  express(emotion,false);
  // Modo clique respeita a preferência de não abrir balões automaticamente.
  // Durante Foco/Ponto, não se sobrepõe aos controles de tempo.
- if(behavior.modo!=='clique'&&!document.querySelector('dialog[open]')&&!document.activeElement?.matches('input,textarea,select,[contenteditable="true"]')&&!['foco','ponto'].includes(snapshot()?.pagina)){
+ if(behavior.modo!=='clique'&&balloon.hidden&&questions.hidden&&!document.querySelector('dialog[open]')&&!document.activeElement?.matches('input,textarea,select,[contenteditable="true"]')&&!['foco','ponto'].includes(snapshot()?.pagina)){
   headline.textContent='Impulsinho comenta';message.textContent=comment;opened(true);
  }
 },false);
