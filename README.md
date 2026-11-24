@@ -380,7 +380,7 @@ A página **Visão** apresenta uma composição visual relacionada aos Elixires 
 <a id="9-arquivo-guardar-atualizar-abrir-e-imprimir"></a>
 ## 9. Arquivo: guardar, atualizar, abrir e imprimir
 
-**Avisos pelo Impulsinho:** as pendências do arquivo externo podem ser consultadas pelo personagem. Quando o Backup Geral precisar ser atualizado, toque no Impulsinho e selecione **Atualizar Backup Geral**. A confirmação de sobrescrita e a proteção de saída continuam ativas. A opção **Conquistas** resume novidades; a leitura individual ocorre na Central de Novidades.
+**Avisos pelo Impulsinho:** as pendências do arquivo externo podem ser consultadas pelo personagem. Quando o Backup Geral precisar ser atualizado, toque no Impulsinho e selecione **Atualizar Backup Geral**. A confirmação de sobrescrita e a proteção de saída continuam ativas. A opção **Conquistas** apresenta as novidades e as marca como lidas.
 
 **O armazenamento principal do Impulso continua sendo local, no navegador.** Os arquivos JSON são cópias para segurança e transferência; não substituem automaticamente o estado salvo enquanto você trabalha.
 
@@ -499,9 +499,9 @@ Arraste o personagem para reposicioná-lo. Toque nele para abrir ou fechar seu b
 <a id="consultas-e-navegacao-contextual"></a>
 ### Consultas e navegação contextual
 
-Selecione uma opção em **Perguntas rápidas** e pressione **Abrir** ou digite uma pergunta de até 180 caracteres. Experimente “Quanto tempo trabalhei hoje?”, “Como está meu Motor?”, “Quantos chefões derrotei?” ou “Qual é seu estágio?”. Os temas reconhecidos incluem Meu Dia, Motor, Arena, Hábitos, Elixires, Conquistas, Estatísticas, Projetos, Ponto, Foco, Calendário, Dashboard, Backup e Configurações. Quando aplicável, o assistente abre a página correspondente e comenta os dados disponíveis. Navegar não inicia nem encerra atividades. Perguntas não reconhecidas recebem orientação sobre o repertório disponível.
+Selecione uma opção em **Perguntas rápidas** e pressione **Abrir** ou digite uma pergunta de até 180 caracteres. Experimente “Quanto tempo trabalhei hoje?”, “Como está meu Motor?”, “Quantos chefões derrotei?” ou “Qual é seu estágio?”. Os temas reconhecidos incluem Meu Dia, Motor, Arena, Hábitos, Elixires, Conquistas, Estatísticas, Projetos, Ponto, Foco, Calendário, Dashboard, Backup e Configurações. Quando aplicável, o assistente abre a página correspondente e comenta os dados disponíveis. Navegar não inicia nem encerra atividades. Perguntas não reconhecidas recebem orientação e um link direto para o Manual oficial, que requer conexão.
 
-A consulta Conquistas resume até cinco novidades pendentes; use a Central de Novidades para consultar cada item. O comando Atualizar Backup Geral encaminha ao fluxo de gravação, sem dispensar confirmações.
+As consultas Conquistas e Ver avisos apresentam as novidades e as marcam como lidas. Visitar Insígnias, Codex, Cerimônias ou Elixires também marca as novidades daquela página e do projeto ativo como lidas. O comando Atualizar Backup Geral encaminha ao fluxo de gravação, sem dispensar confirmações.
 
 <a id="oraculo-consulta-ao-manual"></a>
 ### Oráculo — perguntas e respostas
