@@ -85,3 +85,11 @@
 #impulsinho-perguntas-acoes[hidden]{display:none!important}
 #impulsinho-perguntas>button{border:1px solid currentColor;border-radius:9px;background:transparent;color:inherit;padding:7px 10px;cursor:pointer}
 @media(prefers-reduced-motion:reduce){.impulsinho-avatar.impulsinho-passeio{transition:none!important}}
+
+/* v122: contraste, foco e alvos de toque */
+#impulsinho-root .impulsinho-balao,#impulsinho-root .impulsinho-perguntas{background:var(--theme-panel,var(--card,#fff));color:var(--theme-text,var(--text,#17202b));border-color:var(--theme-border,var(--border,#89939d));}
+#impulsinho-root .impulsinho-balao h2,#impulsinho-root .impulsinho-balao p,#impulsinho-root .impulsinho-perguntas label{color:inherit;opacity:1}
+#impulsinho-root .impulsinho-perguntas-toggle{width:44px;height:44px}
+#impulsinho-root .impulsinho-perguntas button,#impulsinho-root .impulsinho-form-row input{min-height:44px}
+#impulsinho-root button:focus-visible,#impulsinho-root input:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){#impulsinho-root *,#impulsinho-root *::before,#impulsinho-root *::after{animation:none!important;transition:none!important}}
