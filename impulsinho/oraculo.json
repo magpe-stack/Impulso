@@ -1,6 +1,6 @@
 {
   "idioma": "pt-BR",
-  "total": 271,
+  "total": 545,
   "perguntas": [
     {
       "id": "Q001",
@@ -4359,6 +4359,2472 @@
         "repositório github"
       ],
       "intencao": "procedimento"
+    },
+    {
+      "id": "Q272",
+      "categoria": "1. Conheça o Impulso",
+      "pergunta": "O que é um projeto?",
+      "resposta": "Um projeto é um ambiente independente que reúne seus registros, hábitos, metas, Chefões, Elixires e Insígnias.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q273",
+      "categoria": "1. Conheça o Impulso",
+      "pergunta": "Quais são as cinco dimensões do Impulso?",
+      "resposta": "Registro, Organização, Análise, Progressão e Autonomia.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q274",
+      "categoria": "1. Conheça o Impulso",
+      "pergunta": "Qual é a filosofia do Impulso?",
+      "resposta": "Transformar esforços dispersos em progresso consultável, valorizando a constância e a autonomia, sem vigiar o usuário.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q275",
+      "categoria": "1. Conheça o Impulso",
+      "pergunta": "Posso usar o Impulso para escrever um livro?",
+      "resposta": "Sim. Crie um projeto para seu livro e registre as sessões de escrita, pesquisa e revisão.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q276",
+      "categoria": "1. Conheça o Impulso",
+      "pergunta": "Posso usar o Impulso para estudar?",
+      "resposta": "Sim. Crie um projeto de estudos e registre sua dedicação com Ponto, Foco, Hábitos ou Entradas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q277",
+      "categoria": "1. Conheça o Impulso",
+      "pergunta": "O Impulso vigia meu trabalho?",
+      "resposta": "Não. O Impulso organiza os registros que você produz; não pretende vigiar seu trabalho.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q278",
+      "categoria": "1. Conheça o Impulso",
+      "pergunta": "Qual a diferença entre produtividade e tempo registrado?",
+      "resposta": "Tempo registrado mede duração da dedicação, não qualidade nem resultado profissional.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q279",
+      "categoria": "1. Conheça o Impulso",
+      "pergunta": "Como faço meu primeiro registro e backup?",
+      "resposta": "Crie um projeto em Arquivo → Novo, registre e conclua uma atividade em Ações → Ponto, confira Meu Dia e salve em Arquivo → Guardar.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q280",
+      "categoria": "2. Primeiro acesso e instalação",
+      "pergunta": "O que é beforeinstallprompt?",
+      "resposta": "É um evento do navegador que permite oferecer a instalação nativa do PWA quando disponível.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q281",
+      "categoria": "2. Primeiro acesso e instalação",
+      "pergunta": "O Impulso pode se instalar sozinho?",
+      "resposta": "Não. A instalação depende do navegador e da confirmação do usuário.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q282",
+      "categoria": "2. Primeiro acesso e instalação",
+      "pergunta": "O Impulso pode se desinstalar sozinho?",
+      "resposta": "Não. Use Sistema → Desinstalar para consultar as instruções de remoção pelo navegador ou sistema operacional.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q283",
+      "categoria": "2. Primeiro acesso e instalação",
+      "pergunta": "O que é o cache inicial?",
+      "resposta": "É o armazenamento inicial dos recursos essenciais pelo Service Worker para permitir novas aberturas offline.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q284",
+      "categoria": "2. Primeiro acesso e instalação",
+      "pergunta": "Como sei se posso usar offline?",
+      "resposta": "Depois do carregamento inicial com internet, teste uma nova abertura sem conexão. A disponibilidade depende do cache e do navegador.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q285",
+      "categoria": "2. Primeiro acesso e instalação",
+      "pergunta": "Preciso de internet para atualizar?",
+      "resposta": "Sim, para receber novos arquivos publicados é necessária conexão. Os registros locais podem continuar disponíveis offline.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q286",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é o menu principal?",
+      "resposta": "É o menu lateral que organiza os comandos em Arquivo, Ações, Vitórias, Dados, Sistema e Ajuda.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q287",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "Como abro o menu?",
+      "resposta": "Use o botão do menu lateral para abrir os grupos de comandos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q288",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "Como fecho o menu?",
+      "resposta": "Use o botão de fechamento, toque no fundo externo ou pressione Esc quando aplicável.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q289",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "Como expando um grupo do menu?",
+      "resposta": "Clique ou toque no nome do grupo desejado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q290",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "Como recolho um grupo do menu?",
+      "resposta": "Clique ou toque novamente no nome do grupo expandido.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q291",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é Arquivo?",
+      "resposta": "Arquivo reúne Novo, Projetos, Guardar, Atualizar, Abrir e Imprimir.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q292",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é Ações?",
+      "resposta": "Ações reúne Ponto, Foco, Hábitos e Entradas, ferramentas de registro da dedicação.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q293",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é Vitórias?",
+      "resposta": "Vitórias reúne Arena, Codex, Elixires, Insígnias, Cerimônias e Visão.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q294",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é Dados?",
+      "resposta": "Dados reúne Dashboard, Meu Dia, Calendário, Motor, Estatísticas e Armazenamento.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q295",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é Sistema?",
+      "resposta": "Sistema reúne Configurações, Instalar, Desinstalar e Fechar.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q296",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é Ajuda?",
+      "resposta": "Ajuda oferece acesso ao GitHub, ao Manual e à página Sobre.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q297",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que faz Projetos?",
+      "resposta": "Projetos permite abrir, renomear ou excluir projetos existentes. Faça backup antes de excluir.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q298",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que faz Configurações?",
+      "resposta": "Configurações reúne os controles de preferências e manutenção do aplicativo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q299",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que faz Fechar?",
+      "resposta": "Fechar solicita a saída do aplicativo, respeitando as proteções de alterações pendentes e as limitações do navegador.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q300",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é GitHub?",
+      "resposta": "É a plataforma que hospeda o repositório oficial do código-fonte do Impulso, acessível em Ajuda → GitHub.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q301",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é o Manual?",
+      "resposta": "É a documentação oficial do Impulso, disponível em Ajuda → Manual.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q302",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "O que é Sobre?",
+      "resposta": "É a ficha explicativa do aplicativo, com informações e versão estável, acessível em Ajuda → Sobre.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q303",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "Onde fica o rodapé?",
+      "resposta": "Fica no fim da janela ou após o conteúdo nas páginas longas. O Dashboard não possui rodapé.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q304",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "Por que o rodapé muda de cor?",
+      "resposta": "O rodapé acompanha as cores do tema selecionado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q305",
+      "categoria": "3. Navegação e organização",
+      "pergunta": "Como acesso Sobre pelo rodapé?",
+      "resposta": "Selecione Sobre no rodapé de uma página que o apresente.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q306",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "Onde administro meus projetos?",
+      "resposta": "Acesse Arquivo → Projetos para abrir, renomear ou excluir projetos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q307",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "O que significa tempo total?",
+      "resposta": "É o tempo produtivo acumulado no projeto, sem contar duas vezes intervalos sobrepostos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q308",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "O que significa Giros no Dashboard?",
+      "resposta": "É a quantidade de Giros acumulados; cada Giro equivale a uma hora de dedicação.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q309",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "O que significa progresso da Propulsão?",
+      "resposta": "É o avanço em direção à Propulsão completa de 10.080 horas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q310",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "O que significa metas concluídas?",
+      "resposta": "É a quantidade de metas da jornada já alcançadas pelo tempo acumulado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q311",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "Onde vejo uma atividade em andamento?",
+      "resposta": "O Dashboard apresenta a atividade em andamento quando houver.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q312",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "Onde vejo meu título atual?",
+      "resposta": "O Dashboard apresenta o título atual; a coleção completa fica em Vitórias → Insígnias.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q313",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "Onde vejo minha medalha recente?",
+      "resposta": "O Dashboard apresenta a medalha mais recente e permite acessar Insígnias.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q314",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "Quais são os oito atalhos do Dashboard?",
+      "resposta": "Ponto, Foco, Hábitos, Entradas, Projetos, Novo, Calendário e Configurações.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q315",
+      "categoria": "4. Projetos e Central de Comando",
+      "pergunta": "Como acesso Insígnias pelo Dashboard?",
+      "resposta": "Use o acesso às Insígnias junto ao título atual ou à medalha recente no Dashboard.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q316",
+      "categoria": "5. Ações",
+      "pergunta": "Onde fica Ponto?",
+      "resposta": "Acesse Ações → Ponto.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q317",
+      "categoria": "5. Ações",
+      "pergunta": "Onde fica Foco?",
+      "resposta": "Acesse Ações → Foco.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q318",
+      "categoria": "5. Ações",
+      "pergunta": "Onde ficam Hábitos?",
+      "resposta": "Acesse Ações → Hábitos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q319",
+      "categoria": "5. Ações",
+      "pergunta": "Onde ficam Entradas?",
+      "resposta": "Acesse Ações → Entradas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q320",
+      "categoria": "5. Ações",
+      "pergunta": "Qual o limite do nome da atividade de Foco?",
+      "resposta": "O nome da atividade de Foco aceita até 50 caracteres.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q321",
+      "categoria": "5. Ações",
+      "pergunta": "Como escolho a duração de Foco?",
+      "resposta": "Em Ações → Foco, informe a duração planejada entre 1 e 1.440 minutos antes de iniciar.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q322",
+      "categoria": "5. Ações",
+      "pergunta": "Quais são os resultados possíveis de Foco?",
+      "resposta": "Alcançado integralmente, alcançado parcialmente ou não alcançado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q323",
+      "categoria": "5. Ações",
+      "pergunta": "O que significa objetivo alcançado parcialmente?",
+      "resposta": "Indica que você atingiu parte do objetivo planejado. Registre uma observação se desejar.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q324",
+      "categoria": "5. Ações",
+      "pergunta": "O que significa objetivo não alcançado?",
+      "resposta": "Indica que o objetivo planejado não foi atingido. O resultado não apaga automaticamente o tempo efetivo dedicado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q325",
+      "categoria": "5. Ações",
+      "pergunta": "Como escolho um compromisso de Entrega?",
+      "resposta": "Em Ações → Foco, selecione Entrega no tipo de compromisso antes de iniciar a sessão.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q326",
+      "categoria": "5. Ações",
+      "pergunta": "Como escolho um compromisso de Dedicação?",
+      "resposta": "Em Ações → Foco, selecione Dedicação no tipo de compromisso antes de iniciar a sessão.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q327",
+      "categoria": "5. Ações",
+      "pergunta": "Como configuro a duração de um hábito?",
+      "resposta": "Em Ações → Hábitos, configure a duração do hábito antes de executar seu temporizador.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q328",
+      "categoria": "5. Ações",
+      "pergunta": "O que é o catálogo de hábitos?",
+      "resposta": "É a coleção de hábitos disponíveis para equipar, organizada por categorias e com pesquisa.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q329",
+      "categoria": "5. Ações",
+      "pergunta": "Como pesquiso hábitos por categoria?",
+      "resposta": "Em Hábitos, escolha a categoria desejada ou use o campo de pesquisa do catálogo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q330",
+      "categoria": "5. Ações",
+      "pergunta": "O que são Elixires Ativos?",
+      "resposta": "São os hábitos equipados para prática recorrente, até seis simultaneamente. Não são os Elixires colecionáveis.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q331",
+      "categoria": "5. Ações",
+      "pergunta": "Quais campos preencho em Entradas?",
+      "resposta": "Informe data, nome da atividade, horário de início e horário de término, respeitando a ordem cronológica.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q332",
+      "categoria": "5. Ações",
+      "pergunta": "Como registro uma atividade que começou ontem e terminou hoje?",
+      "resposta": "Use Ações → Entradas e informe os horários e datas correspondentes ao início e término da atividade.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q333",
+      "categoria": "5. Ações",
+      "pergunta": "Como o tempo é dividido à meia-noite?",
+      "resposta": "O tempo é distribuído pelos dias correspondentes. Uma atividade das 23h à 1h atribui uma hora a cada dia.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q334",
+      "categoria": "5. Ações",
+      "pergunta": "O que são intervalos sobrepostos?",
+      "resposta": "São intervalos de atividades que coincidem no tempo. O total produtivo une essas partes para evitar dupla contagem.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q335",
+      "categoria": "5. Ações",
+      "pergunta": "O tempo registrado mede qualidade do trabalho?",
+      "resposta": "Não. O tempo mede duração da dedicação, não qualidade do trabalho.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q336",
+      "categoria": "6. Dados",
+      "pergunta": "Onde fica Meu Dia?",
+      "resposta": "Acesse Dados → Meu Dia.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q337",
+      "categoria": "6. Dados",
+      "pergunta": "Onde fica Calendário?",
+      "resposta": "Acesse Dados → Calendário.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q338",
+      "categoria": "6. Dados",
+      "pergunta": "Onde ficam Estatísticas?",
+      "resposta": "Acesse Dados → Estatísticas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q339",
+      "categoria": "6. Dados",
+      "pergunta": "Onde fica Armazenamento?",
+      "resposta": "Acesse Dados → Armazenamento.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q340",
+      "categoria": "6. Dados",
+      "pergunta": "Quais horários aparecem em Meu Dia?",
+      "resposta": "Meu Dia apresenta os horários de início e término e a duração de cada atividade registrada.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q341",
+      "categoria": "6. Dados",
+      "pergunta": "Como navego entre meses?",
+      "resposta": "Em Dados → Calendário, use os controles de navegação entre meses e selecione a data desejada.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q342",
+      "categoria": "6. Dados",
+      "pergunta": "O que são dias ativos?",
+      "resposta": "São os dias em que houve atividade registrada no período analisado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q343",
+      "categoria": "6. Dados",
+      "pergunta": "O que é tempo produtivo nas Estatísticas?",
+      "resposta": "É a duração efetiva dos intervalos registrados, tratando sobreposições para evitar dupla contagem.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q344",
+      "categoria": "6. Dados",
+      "pergunta": "O que é quantidade de sessões?",
+      "resposta": "É a contagem de sessões registradas no alcance e período selecionados.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q345",
+      "categoria": "6. Dados",
+      "pergunta": "O que é maior intervalo contínuo?",
+      "resposta": "É a duração do maior intervalo contínuo de atividade no conjunto analisado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q346",
+      "categoria": "6. Dados",
+      "pergunta": "O que é frequência de atividade?",
+      "resposta": "É uma medida da regularidade das atividades no período analisado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q347",
+      "categoria": "6. Dados",
+      "pergunta": "Como seleciono o alcance das Estatísticas?",
+      "resposta": "Em Dados → Estatísticas, escolha o projeto ativo ou o conjunto de projetos, quando disponível.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q348",
+      "categoria": "6. Dados",
+      "pergunta": "Como seleciono o período das Estatísticas?",
+      "resposta": "Em Estatísticas, escolha hoje, últimos sete dias, mês atual, ano atual ou todo o histórico.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q349",
+      "categoria": "6. Dados",
+      "pergunta": "Como copio o resumo das Estatísticas?",
+      "resposta": "Use Copiar resumo em Estatísticas. O texto respeita os filtros selecionados.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q350",
+      "categoria": "6. Dados",
+      "pergunta": "Como solicito armazenamento persistente?",
+      "resposta": "Em Dados → Armazenamento, utilize a opção de solicitar persistência quando disponível.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q351",
+      "categoria": "6. Dados",
+      "pergunta": "O navegador pode negar persistência?",
+      "resposta": "Sim. A decisão é do navegador. Mesmo com persistência concedida, mantenha backups.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q352",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Onde fica o Motor?",
+      "resposta": "Acesse Dados → Motor.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q353",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Quantos graus tem um Giro?",
+      "resposta": "360 graus, equivalentes a uma hora.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q354",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Quantos graus tem um Turno?",
+      "resposta": "2.880 graus, equivalentes a oito horas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q355",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Quantos graus tem uma Fase?",
+      "resposta": "86.400 graus, equivalentes a 240 horas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q356",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Quantos graus tem uma Propulsão?",
+      "resposta": "3.628.800 graus, equivalentes a 10.080 horas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q357",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Quantas horas tem um Turno?",
+      "resposta": "Oito horas, ou oito Giros.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q358",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Quantas horas tem uma Fase?",
+      "resposta": "240 horas, ou 30 Turnos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q359",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Quantas horas tem uma Propulsão?",
+      "resposta": "10.080 horas, ou 42 Fases.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q360",
+      "categoria": "7. Motor e metas",
+      "pergunta": "O que representa o rotor?",
+      "resposta": "O rotor representa visualmente os graus acumulados pelo tempo produtivo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q361",
+      "categoria": "7. Motor e metas",
+      "pergunta": "O que representam os indicadores de 360 graus e 60 segundos?",
+      "resposta": "São escalas visuais de rotação e tempo do Motor; não acrescentam produtividade.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q362",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Qual a diferença entre Ignição do Motor e Ignição de abertura?",
+      "resposta": "A Ignição de abertura apresenta o aplicativo; a Ignição do Motor anima os graus acumulados.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q363",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Quantas horas exige a segunda meta?",
+      "resposta": "Quatro horas acumuladas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q364",
+      "categoria": "7. Motor e metas",
+      "pergunta": "Quantas horas exige a terceira meta?",
+      "resposta": "Nove horas acumuladas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q365",
+      "categoria": "7. Motor e metas",
+      "pergunta": "As metas exigem cada vez mais tempo?",
+      "resposta": "Sim. A meta de número n exige n² horas acumuladas; cada etapa acrescenta mais horas que a anterior.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q366",
+      "categoria": "7. Motor e metas",
+      "pergunta": "O Motor é uma simulação física?",
+      "resposta": "Não. É uma representação simbólica do tempo registrado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q367",
+      "categoria": "8. Vitórias",
+      "pergunta": "Onde fica Arena?",
+      "resposta": "Acesse Vitórias → Arena.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q368",
+      "categoria": "8. Vitórias",
+      "pergunta": "Onde fica Codex?",
+      "resposta": "Acesse Vitórias → Codex.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q369",
+      "categoria": "8. Vitórias",
+      "pergunta": "Onde ficam Elixires?",
+      "resposta": "Acesse Vitórias → Elixires.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q370",
+      "categoria": "8. Vitórias",
+      "pergunta": "Onde ficam Insígnias?",
+      "resposta": "Acesse Vitórias → Insígnias.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q371",
+      "categoria": "8. Vitórias",
+      "pergunta": "Onde ficam Cerimônias?",
+      "resposta": "Acesse Vitórias → Cerimônias.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q372",
+      "categoria": "8. Vitórias",
+      "pergunta": "Onde fica Visão?",
+      "resposta": "Acesse Vitórias → Visão.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q373",
+      "categoria": "8. Vitórias",
+      "pergunta": "O que é um Chefão?",
+      "resposta": "É um obstáculo simbólico à constância, derrotado pelo tempo produtivo acumulado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q374",
+      "categoria": "8. Vitórias",
+      "pergunta": "O que representa a resistência do Chefão?",
+      "resposta": "Representa o requisito de dedicação para derrotar o Chefão; a resistência cresce ao longo da jornada.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q375",
+      "categoria": "8. Vitórias",
+      "pergunta": "O que é um cofre?",
+      "resposta": "É o recipiente simbólico de um Elixir, liberado após derrotar um Chefão e concluir um hábito elegível.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q376",
+      "categoria": "8. Vitórias",
+      "pergunta": "O que é um Elixir colecionável?",
+      "resposta": "É uma recompensa vinculada a um Chefão, obtida após sua derrota e a conclusão posterior de um hábito elegível.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q377",
+      "categoria": "8. Vitórias",
+      "pergunta": "Como copio uma frase de Elixir?",
+      "resposta": "Em Vitórias → Elixires, use o controle de copiar a frase conquistada, quando disponível.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q378",
+      "categoria": "8. Vitórias",
+      "pergunta": "O que é um título?",
+      "resposta": "É uma distinção automática de evolução do projeto. Existem 50 títulos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q379",
+      "categoria": "8. Vitórias",
+      "pergunta": "O que é uma medalha?",
+      "resposta": "É uma conquista da coleção de Insígnias. Existem 60 medalhas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q380",
+      "categoria": "8. Vitórias",
+      "pergunta": "Quais são as categorias de medalhas?",
+      "resposta": "Produtividade, regularidade, hábitos e Chefões.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q381",
+      "categoria": "8. Vitórias",
+      "pergunta": "O que significa uma Insígnia bloqueada?",
+      "resposta": "Indica que os requisitos da conquista ainda não foram satisfeitos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q382",
+      "categoria": "8. Vitórias",
+      "pergunta": "Como copio o resumo de Insígnias?",
+      "resposta": "Em Vitórias → Insígnias, selecione Copiar resumo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q383",
+      "categoria": "8. Vitórias",
+      "pergunta": "Como as Cerimônias se relacionam com as metas?",
+      "resposta": "Cada uma das 100 Cerimônias corresponde a uma meta e é liberada pelo tempo acumulado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q384",
+      "categoria": "8. Vitórias",
+      "pergunta": "O que acontece a cada dez metas?",
+      "resposta": "Os marcos de dez em dez metas recebem apresentações especiais, culminando na Consagração.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q385",
+      "categoria": "8. Vitórias",
+      "pergunta": "A Visão acrescenta tempo produtivo?",
+      "resposta": "Não. A Visão é um acompanhamento simbólico, sem acrescentar tempo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q386",
+      "categoria": "8. Vitórias",
+      "pergunta": "Qual é a relação entre Visão e Elixires?",
+      "resposta": "À medida que você conquista Elixires, partes da imagem do foguete são reveladas na Visão.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q387",
+      "categoria": "Arquivo",
+      "pergunta": "O que é File System Access API?",
+      "resposta": "É uma API do navegador que permite selecionar e gravar arquivos locais com autorização do usuário.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q388",
+      "categoria": "Arquivo",
+      "pergunta": "O que é File Handling API?",
+      "resposta": "É a API que permite ao PWA instalado receber arquivos associados pelo sistema operacional, quando compatível.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q389",
+      "categoria": "Arquivo",
+      "pergunta": "Como escolho o destino do backup?",
+      "resposta": "Em Arquivo → Guardar, escolha nome e pasta no seletor; se indisponível, confira a pasta de downloads.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q390",
+      "categoria": "Arquivo",
+      "pergunta": "Como verifico se o backup foi salvo?",
+      "resposta": "Confira a existência, o tamanho e a integridade do JSON; teste a restauração em um ambiente separado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q391",
+      "categoria": "Arquivo",
+      "pergunta": "Por que devo guardar uma cópia fora do dispositivo?",
+      "resposta": "Uma cópia externa protege contra perda, defeito ou limpeza do dispositivo original.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q392",
+      "categoria": "Arquivo",
+      "pergunta": "O que acontece se eu criar outro projeto após guardar?",
+      "resposta": "O próximo Backup Geral incluirá também o novo projeto, desde que ele ainda exista na gravação.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q393",
+      "categoria": "Arquivo",
+      "pergunta": "Atualizar exige confirmação?",
+      "resposta": "Sim. O Impulso pede confirmação antes de sobrescrever o Backup Geral.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q394",
+      "categoria": "Arquivo",
+      "pergunta": "O que faço se ainda não escolhi um arquivo de backup?",
+      "resposta": "Use Arquivo → Guardar para criar uma cópia ou Atualizar para selecionar um Backup Geral existente.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q395",
+      "categoria": "Arquivo",
+      "pergunta": "Desativar o alerta atualiza o backup?",
+      "resposta": "Não. Desativar o alerta apenas silencia o lembrete.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q396",
+      "categoria": "Arquivo",
+      "pergunta": "O download confirma a gravação do arquivo?",
+      "resposta": "Não necessariamente. Confira se o navegador concluiu o download e se o arquivo está íntegro.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q397",
+      "categoria": "Arquivo",
+      "pergunta": "Por que preciso selecionar novamente o arquivo após reiniciar?",
+      "resposta": "O acesso ao arquivo depende das permissões e da associação disponível na sessão do navegador.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q398",
+      "categoria": "Arquivo",
+      "pergunta": "Abrir substitui os projetos atuais?",
+      "resposta": "Sim, a restauração geral substitui os projetos atuais pelos projetos do backup, após confirmação.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q399",
+      "categoria": "Arquivo",
+      "pergunta": "O que devo fazer antes de restaurar?",
+      "resposta": "Guarde um Backup Geral dos dados atuais e confira o arquivo que pretende restaurar.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q400",
+      "categoria": "Arquivo",
+      "pergunta": "Qual a diferença entre backup geral e projeto individual?",
+      "resposta": "O Backup Geral reúne todos os projetos; o arquivo individual contém somente o projeto escolhido.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q401",
+      "categoria": "Arquivo",
+      "pergunta": "Quais extensões o Impulso pode abrir pelo explorador?",
+      "resposta": "Em desktop compatível, o PWA instalado pode receber arquivos .json e .impulso.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q402",
+      "categoria": "Arquivo",
+      "pergunta": "Como abrir um JSON no Android?",
+      "resposta": "No Android, utilize o seletor de arquivos dentro do Impulso para escolher o JSON.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q403",
+      "categoria": "Arquivo",
+      "pergunta": "Como conferir um relatório antes de compartilhar?",
+      "resposta": "Em Arquivo → Imprimir, confira nomes, datas, totais e a prévia antes de imprimir ou salvar PDF.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q404",
+      "categoria": "Sistema",
+      "pergunta": "Onde ficam as Configurações?",
+      "resposta": "Acesse Sistema → Configurações.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q405",
+      "categoria": "Sistema",
+      "pergunta": "Quais seções existem em Configurações?",
+      "resposta": "Temas, Atalhos de Teclado, Atalhos do Aplicativo, Controles do Impulsinho e Limpeza; os controles do R2D10 também estão nas configurações.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q406",
+      "categoria": "Sistema",
+      "pergunta": "Como recolho uma seção de Configurações?",
+      "resposta": "Clique no título da seção para recolhê-la ou expandi-la.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q407",
+      "categoria": "Sistema",
+      "pergunta": "Como fecho o Impulso?",
+      "resposta": "Escolha Sistema → Fechar e confirme; se o navegador impedir, feche a aba manualmente.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q408",
+      "categoria": "Sistema",
+      "pergunta": "Fechar apaga os dados locais?",
+      "resposta": "Não. Os dados locais já salvos permanecem, salvo exclusão por outra operação.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q409",
+      "categoria": "Sistema",
+      "pergunta": "Quais opções aparecem ao fechar com backup pendente?",
+      "resposta": "Cancelar, Fechar sem atualizar e Atualizar arquivo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q410",
+      "categoria": "Sistema",
+      "pergunta": "Atualizar o backup encerra uma sessão ativa?",
+      "resposta": "Não. A gravação do backup não encerra automaticamente a atividade.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q411",
+      "categoria": "Sistema",
+      "pergunta": "O X da janela sempre avisa sobre backup?",
+      "resposta": "Não. O aviso nativo depende do navegador e não é garantido.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q412",
+      "categoria": "Sistema",
+      "pergunta": "O que fazer antes de fechar o aplicativo?",
+      "resposta": "Confira atividades em andamento e atualize o Backup Geral antes de sair.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q413",
+      "categoria": "Atalhos",
+      "pergunta": "O que são atalhos de teclado?",
+      "resposta": "São combinações de teclas que dão acesso rápido a funções do aplicativo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q414",
+      "categoria": "Atalhos",
+      "pergunta": "Onde configuro atalhos de teclado?",
+      "resposta": "Em Sistema → Configurações → Atalhos de Teclado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q415",
+      "categoria": "Atalhos",
+      "pergunta": "Como desativo todos os atalhos de teclado?",
+      "resposta": "Desative a chave global na seção Atalhos de Teclado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q416",
+      "categoria": "Atalhos",
+      "pergunta": "Como desativo um atalho individual?",
+      "resposta": "Desative a chave correspondente ao comando na seção Atalhos de Teclado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q417",
+      "categoria": "Atalhos",
+      "pergunta": "Como altero uma combinação de teclas?",
+      "resposta": "Use o controle de alteração ao lado do atalho e escolha uma combinação disponível.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q418",
+      "categoria": "Atalhos",
+      "pergunta": "Como restauro a combinação padrão?",
+      "resposta": "Use o comando de restaurar padrão do atalho desejado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q419",
+      "categoria": "Atalhos",
+      "pergunta": "O que acontece quando dois atalhos entram em conflito?",
+      "resposta": "O aplicativo verifica conflitos; escolha uma combinação diferente se houver incompatibilidade.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q420",
+      "categoria": "Atalhos",
+      "pergunta": "Quais funções possuem atalhos de teclado?",
+      "resposta": "Novo Projeto, Projetos, Ponto, Foco, Hábitos, Entradas, Dashboard, Meu Dia, Calendário, Motor, Estatísticas, Insígnias e Configurações.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q421",
+      "categoria": "Atalhos",
+      "pergunta": "Atalhos funcionam durante a digitação?",
+      "resposta": "Não devem interromper a digitação em campos de formulário.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q422",
+      "categoria": "Atalhos",
+      "pergunta": "Atalhos funcionam com o Impulso fechado?",
+      "resposta": "Não. O Impulso precisa estar aberto e receber os eventos de teclado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q423",
+      "categoria": "Atalhos",
+      "pergunta": "O que são atalhos do aplicativo?",
+      "resposta": "São acessos rápidos a páginas internas; o manifesto também declara atalhos para o ícone instalado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q424",
+      "categoria": "Atalhos",
+      "pergunta": "Onde configuro atalhos do aplicativo?",
+      "resposta": "Em Sistema → Configurações → Atalhos do Aplicativo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q425",
+      "categoria": "Atalhos",
+      "pergunta": "Qual a diferença entre atalhos de teclado e atalhos do ícone?",
+      "resposta": "Atalhos de teclado usam combinações de teclas; atalhos do ícone dependem do sistema operacional e do manifesto.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q426",
+      "categoria": "Impulsinho",
+      "pergunta": "Como arrasto o Impulsinho?",
+      "resposta": "Pressione o personagem e arraste-o para a posição desejada.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q427",
+      "categoria": "Impulsinho",
+      "pergunta": "Como oculto o Impulsinho?",
+      "resposta": "Use os controles de visibilidade do Impulsinho em Configurações.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q428",
+      "categoria": "Impulsinho",
+      "pergunta": "Como mostro o Impulsinho novamente?",
+      "resposta": "Use Mostrar Impulsinho para recuperar o personagem oculto.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q429",
+      "categoria": "Impulsinho",
+      "pergunta": "O que são Perguntas rápidas?",
+      "resposta": "São opções prontas no painel do Impulsinho para consultas e navegação contextual.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q430",
+      "categoria": "Impulsinho",
+      "pergunta": "Qual é o limite de uma pergunta digitada?",
+      "resposta": "Até 180 caracteres.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q431",
+      "categoria": "Impulsinho",
+      "pergunta": "Como navego usando Perguntas rápidas?",
+      "resposta": "Selecione o destino em Perguntas rápidas e pressione Abrir.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q432",
+      "categoria": "Impulsinho",
+      "pergunta": "Uma consulta inicia uma atividade?",
+      "resposta": "Não. Consultar ou navegar não inicia nem encerra atividades.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q433",
+      "categoria": "Impulsinho",
+      "pergunta": "Quantas novidades a consulta Conquistas resume?",
+      "resposta": "Até cinco novidades pendentes.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q434",
+      "categoria": "Impulsinho",
+      "pergunta": "Onde vejo todas as novidades?",
+      "resposta": "Abra a Central de Novidades pelo contador no cabeçalho.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q435",
+      "categoria": "Impulsinho",
+      "pergunta": "O Oráculo consulta o README?",
+      "resposta": "Não. O Oráculo consulta sua própria biblioteca local de perguntas e respostas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q436",
+      "categoria": "Impulsinho",
+      "pergunta": "O Oráculo funciona offline?",
+      "resposta": "Sim, após o armazenamento dos recursos necessários no cache inicial.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q437",
+      "categoria": "Impulsinho",
+      "pergunta": "O Oráculo pode executar comandos sozinho?",
+      "resposta": "Não. Perguntas de conhecimento não executam comandos; a navegação explícita é separada.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q438",
+      "categoria": "Impulsinho",
+      "pergunta": "O que é uma faceta?",
+      "resposta": "Uma faceta é uma expressão visual do Impulsinho que representa emoções ou reações.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q439",
+      "categoria": "Impulsinho",
+      "pergunta": "Como escolho uma família de facetas?",
+      "resposta": "Em Controles do Impulsinho, selecione a família de expressões desejada.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q440",
+      "categoria": "Impulsinho",
+      "pergunta": "Como avanço uma faceta?",
+      "resposta": "Use o controle de avançar na exploração de expressões.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q441",
+      "categoria": "Impulsinho",
+      "pergunta": "Como volto uma faceta?",
+      "resposta": "Use o controle de voltar na exploração de expressões.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q442",
+      "categoria": "Impulsinho",
+      "pergunta": "Como ativo a alternância automática?",
+      "resposta": "Ative a alternância automática de expressões nos Controles do Impulsinho.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q443",
+      "categoria": "Impulsinho",
+      "pergunta": "Quantos comentários existem por faceta?",
+      "resposta": "Quatro comentários por faceta.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q444",
+      "categoria": "Impulsinho",
+      "pergunta": "Quantos temas de falas contextuais existem?",
+      "resposta": "Doze temas de falas contextuais.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q445",
+      "categoria": "Impulsinho",
+      "pergunta": "Como escolho uma personalidade?",
+      "resposta": "Em Sistema → Configurações → Controles do Impulsinho, escolha o perfil desejado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q446",
+      "categoria": "Impulsinho",
+      "pergunta": "Qual é a personalidade padrão?",
+      "resposta": "Mentor, com orientação equilibrada e reflexiva.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q447",
+      "categoria": "Impulsinho",
+      "pergunta": "Qual é o intervalo de frases no modo Discreto?",
+      "resposta": "Doze minutos, quando a interface está livre e o modo permite intervenções.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q448",
+      "categoria": "Impulsinho",
+      "pergunta": "Quantas frases recentes são lembradas?",
+      "resposta": "Até 80 identificadores recentes, quando há alternativas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q449",
+      "categoria": "Impulsinho",
+      "pergunta": "O Impulsinho fala enquanto estou digitando?",
+      "resposta": "As intervenções automáticas procuram evitar interromper a digitação.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q450",
+      "categoria": "Impulsinho",
+      "pergunta": "O que é o modo Espontaneamente?",
+      "resposta": "É o modo que permite intervenções automáticas do personagem, preservando consultas manuais.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q451",
+      "categoria": "Impulsinho",
+      "pergunta": "Como desativo a flutuação?",
+      "resposta": "Desative a opção de flutuação nos Controles do Impulsinho.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q452",
+      "categoria": "Impulsinho",
+      "pergunta": "O que é o estágio Aprendiz?",
+      "resposta": "É o estágio inicial de evolução, a partir de zero XP.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q453",
+      "categoria": "Impulsinho",
+      "pergunta": "Qual a diferença entre personalidade e estágio?",
+      "resposta": "Personalidade define o tom e a frequência das intervenções; estágio representa a experiência acumulada no projeto.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q454",
+      "categoria": "Impulsinho",
+      "pergunta": "A evolução modifica a Arena?",
+      "resposta": "Não. A evolução do Impulsinho é independente das regras da Arena.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q455",
+      "categoria": "Impulsinho",
+      "pergunta": "Quantos XP vale um Giro?",
+      "resposta": "Um XP por Giro completo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q456",
+      "categoria": "Impulsinho",
+      "pergunta": "Quantos XP vale um Chefão?",
+      "resposta": "Cinco XP por Chefão derrotado.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q457",
+      "categoria": "Impulsinho",
+      "pergunta": "Quantos XP vale um hábito?",
+      "resposta": "Um XP por hábito concluído.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q458",
+      "categoria": "Impulsinho",
+      "pergunta": "Quantos XP vale um dia da sequência recorde?",
+      "resposta": "Dois XP por dia da sequência recorde.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q459",
+      "categoria": "Impulsinho",
+      "pergunta": "Como ajusto o volume do Impulsinho?",
+      "resposta": "Use o controle de volume nos Controles do Impulsinho.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q460",
+      "categoria": "Impulsinho",
+      "pergunta": "Quantas notas tem a vinheta?",
+      "resposta": "Nove notas ascendentes.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q461",
+      "categoria": "Impulsinho",
+      "pergunta": "Como testo a vinheta?",
+      "resposta": "Use Testar vinheta nos Controles do Impulsinho.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q462",
+      "categoria": "Impulsinho",
+      "pergunta": "O que acontece se o navegador bloquear o áudio?",
+      "resposta": "Interaja com a interface e teste o som; o aplicativo deve abrir mesmo sem áudio.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q463",
+      "categoria": "Impulsinho",
+      "pergunta": "O que o tutorial ensina?",
+      "resposta": "Apresenta o menu, a criação de projeto e o registro de atividades; com projeto ativo, oferece um resumo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q464",
+      "categoria": "Impulsinho",
+      "pergunta": "Como o Impulsinho reage à Ignição do Motor?",
+      "resposta": "Ele considera Giros, sequência, recorde e tempo desde o último registro para comentar seu progresso.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q465",
+      "categoria": "Impulsinho",
+      "pergunta": "O que acontece quando escolho uma paleta?",
+      "resposta": "O Impulsinho visível comenta a paleta e apresenta uma expressão correspondente.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q466",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Onde ficam os controles do R2D10?",
+      "resposta": "Em Sistema → Configurações → Controles do R2D10.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q467",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Como oculto o R2D10 em repouso?",
+      "resposta": "Desative a opção de presença em repouso nos Controles do R2D10.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q468",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "O R2D10 aparece quando há atividade?",
+      "resposta": "Sim. O robô monitora Ponto, Foco e Hábitos ativos, conforme as condições do aplicativo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q469",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "O R2D10 monitora pausas?",
+      "resposta": "Sim, o monitoramento inclui pausas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q470",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Como é produzida a voz do R2D10?",
+      "resposta": "Por síntese local de assobios digitais e variações melódicas de frequência.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q471",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "O volume do R2D10 é independente?",
+      "resposta": "Sim. A voz possui controle de volume independente.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q472",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Como ativo a voz do R2D10?",
+      "resposta": "Ative a voz nos Controles do R2D10 e utilize o teste de áudio.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q473",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Como ativo o alerta de backup?",
+      "resposta": "Ative o lembrete de backup nos Controles do R2D10.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q474",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Como ativo o alerta de hábitos?",
+      "resposta": "Ative o lembrete de hábitos e Elixires nos Controles do R2D10.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q475",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "O que é Badging API?",
+      "resposta": "É a API que solicita ao sistema um indicador numérico no ícone do PWA, quando compatível.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q476",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Onde ativo os distintivos?",
+      "resposta": "Nos Controles do R2D10, habilite Distintivos de conquistas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q477",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Os distintivos dependem da visibilidade do personagem?",
+      "resposta": "Não. O distintivo independe da visibilidade do personagem.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q478",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "O que aparece na Central de Novidades?",
+      "resposta": "Títulos, medalhas, Chefões, Cerimônias e Elixires ainda não consultados, com o projeto de origem.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q479",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Como fecho a Central de Novidades?",
+      "resposta": "Pressione Esc ou feche a lista pela interface.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q480",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Como sei de qual projeto é uma novidade?",
+      "resposta": "A Central de Novidades identifica o projeto de origem de cada item.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q481",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "As conquistas antigas aparecem como novas?",
+      "resposta": "As conquistas anteriores à ativação inicial não devem ser apresentadas como novidades artificiais.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q482",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "O que é Clipboard API?",
+      "resposta": "É a API do navegador que permite copiar conteúdo para a área de transferência, conforme permissões.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q483",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Em quais páginas existe Copiar resumo?",
+      "resposta": "Dashboard, Meu Dia, Estatísticas e Insígnias.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q484",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Como colo um resumo copiado?",
+      "resposta": "Use Colar no documento, mensagem ou editor de destino.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q485",
+      "categoria": "R2D10 e alertas",
+      "pergunta": "Copiar resumo altera registros?",
+      "resposta": "Não. Copiar resumo apenas copia texto com os dados disponíveis.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q486",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "O que é armazenamento local?",
+      "resposta": "É o espaço do navegador associado à origem e ao contexto do aplicativo, onde os projetos são mantidos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q487",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "Meus projetos aparecem em outro perfil de navegador?",
+      "resposta": "Não automaticamente. Outro perfil pode possuir armazenamento separado; transfira um backup.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q488",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "Onde fica Limpeza?",
+      "resposta": "Em Sistema → Configurações → Limpeza.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q489",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "O que faz Limpar selecionados?",
+      "resposta": "Remove apenas as categorias marcadas, após confirmação.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q490",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "O que faz Limpar tudo do Impulso?",
+      "resposta": "Solicita a remoção das quatro categorias de dados do Impulso, incluindo projetos e registros.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q491",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "Por que preciso digitar APAGAR?",
+      "resposta": "É uma confirmação adicional para evitar a exclusão acidental de projetos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q492",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "A limpeza remove arquivos JSON baixados?",
+      "resposta": "Não. Arquivos JSON já baixados ficam fora dessa limpeza.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q493",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "A limpeza apaga outros aplicativos do domínio?",
+      "resposta": "A limpeza foi projetada para atingir apenas chaves, caches e registros identificados como pertencentes ao Impulso.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q494",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "O que devo conferir antes de limpar?",
+      "resposta": "Confira um Backup Geral íntegro e decida se deseja remover dados ou somente recursos offline.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q495",
+      "categoria": "Armazenamento e limpeza",
+      "pergunta": "Qual a diferença entre limpar cache e apagar projetos?",
+      "resposta": "Limpar cache remove recursos offline; apagar projetos remove registros e conquistas locais.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q496",
+      "categoria": "Temas e privacidade",
+      "pergunta": "O que é uma paleta cromática?",
+      "resposta": "É um conjunto de cores que define a identidade visual e orienta as cores da interface.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q497",
+      "categoria": "Temas e privacidade",
+      "pergunta": "Onde ficam os Temas?",
+      "resposta": "Em Sistema → Configurações → Temas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q498",
+      "categoria": "Temas e privacidade",
+      "pergunta": "Como alterno entre claro e escuro?",
+      "resposta": "Use o controle de modo claro e escuro da interface.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q499",
+      "categoria": "Temas e privacidade",
+      "pergunta": "Quantas combinações de paleta e modo existem?",
+      "resposta": "Quatorze combinações: sete paletas, cada uma em dois modos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q500",
+      "categoria": "Temas e privacidade",
+      "pergunta": "O que é token cromático?",
+      "resposta": "É uma variável de cor usada para aplicar uma função visual de maneira consistente.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q501",
+      "categoria": "Temas e privacidade",
+      "pergunta": "Por que a cor de destaque nem sempre serve como fundo?",
+      "resposta": "Porque o contraste entre texto e fundo precisa ser suficiente para manter a legibilidade.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q502",
+      "categoria": "Temas e privacidade",
+      "pergunta": "Qual contraste é buscado para texto normal?",
+      "resposta": "Em geral, 4,5:1, conforme o objetivo WCAG 2.2 AA.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q503",
+      "categoria": "Temas e privacidade",
+      "pergunta": "Qual contraste é buscado para texto grande?",
+      "resposta": "Em geral, 3:1, conforme o objetivo WCAG 2.2 AA.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q504",
+      "categoria": "Temas e privacidade",
+      "pergunta": "Qual contraste é buscado para controles essenciais?",
+      "resposta": "Em geral, 3:1 para elementos visuais essenciais, quando aplicável.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q505",
+      "categoria": "Temas e privacidade",
+      "pergunta": "O Impulso possui certificação WCAG?",
+      "resposta": "Não há certificação integral declarada; o projeto busca os critérios WCAG 2.2 AA.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q506",
+      "categoria": "Temas e privacidade",
+      "pergunta": "O que é prefers-reduced-motion?",
+      "resposta": "É uma preferência do sistema que indica ao navegador que o usuário deseja reduzir movimentos e animações.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q507",
+      "categoria": "Temas e privacidade",
+      "pergunta": "O que fazer se uma tela estiver difícil de ler?",
+      "resposta": "Experimente outro tema e informe qual componente está difícil de ler.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q508",
+      "categoria": "Temas e privacidade",
+      "pergunta": "O Impulso sincroniza dispositivos automaticamente?",
+      "resposta": "Não. A transferência de dados é feita por arquivos de backup.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q509",
+      "categoria": "Temas e privacidade",
+      "pergunta": "O que acontece quando compartilho um arquivo?",
+      "resposta": "O arquivo pode sair do contexto local por sua ação de compartilhamento; confira o destino e o conteúdo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q510",
+      "categoria": "Solução de problemas",
+      "pergunta": "Por que Atualizar não sobrescreve meu backup?",
+      "resposta": "Confira suporte à gravação direta, permissões e validade do Backup Geral; use Guardar como alternativa.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q511",
+      "categoria": "Solução de problemas",
+      "pergunta": "Por que uma conquista desapareceu?",
+      "resposta": "Excluir registros pode reduzir o tempo acumulado e revogar conquistas dependentes dele.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q512",
+      "categoria": "Solução de problemas",
+      "pergunta": "Por que a vinheta não toca?",
+      "resposta": "Confira a opção de vinheta e use Testar vinheta; o navegador pode bloquear áudio automático.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q513",
+      "categoria": "Solução de problemas",
+      "pergunta": "Por que o tutorial não aparece?",
+      "resposta": "Abra o painel do Impulsinho e selecione Tutorial; com projeto ativo, aparece um resumo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q514",
+      "categoria": "Solução de problemas",
+      "pergunta": "Por que o Oráculo não responde?",
+      "resposta": "Reformule com o nome da função; se a base estiver indisponível, reabra conectado ou consulte o Manual.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q515",
+      "categoria": "Solução de problemas",
+      "pergunta": "Devo limpar todos os dados para corrigir um problema visual?",
+      "resposta": "Não. Primeiro atualize a página e confira as configurações; a limpeza completa pode apagar projetos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q516",
+      "categoria": "Solução de problemas",
+      "pergunta": "Por que a voz do R2D10 não toca?",
+      "resposta": "Confira ativação e volume da voz, interaja com a página e teste o áudio.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q517",
+      "categoria": "Solução de problemas",
+      "pergunta": "Como verifico se a atualização do PWA chegou?",
+      "resposta": "Reabra conectado, aguarde a atualização do Service Worker e confira a versão em Sobre.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q518",
+      "categoria": "Perguntas frequentes",
+      "pergunta": "O tempo continua quando a animação fica suspensa?",
+      "resposta": "O tempo das sessões compatíveis é recalculado pelos horários reais, mesmo se a animação for suspensa.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q519",
+      "categoria": "Perguntas frequentes",
+      "pergunta": "Transferir backup é sincronização automática?",
+      "resposta": "Não. Transferir um backup é uma operação manual de cópia e restauração.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q520",
+      "categoria": "Verificação de funcionamento",
+      "pergunta": "Como testo o isolamento de projetos?",
+      "resposta": "Crie dois projetos descartáveis, registre atividades em um e confira se o outro permanece independente.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q521",
+      "categoria": "Verificação de funcionamento",
+      "pergunta": "Como testo Ponto durante a navegação?",
+      "resposta": "Inicie Ponto em um projeto de teste, navegue para outra página, volte e conclua o registro.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q522",
+      "categoria": "Verificação de funcionamento",
+      "pergunta": "Como testo Foco com pausa?",
+      "resposta": "Inicie Foco, pause e retome; confira se o tempo pausado foi excluído do total efetivo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q523",
+      "categoria": "Verificação de funcionamento",
+      "pergunta": "Como testo uma Entrada noturna?",
+      "resposta": "Em Entradas, registre início antes da meia-noite e término no dia seguinte; confira Meu Dia nas duas datas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q524",
+      "categoria": "Verificação de funcionamento",
+      "pergunta": "Como verifico os totais após restaurar um backup?",
+      "resposta": "Compare projetos, registros e totais com os valores anteriores, em um ambiente de teste.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q525",
+      "categoria": "Verificação de funcionamento",
+      "pergunta": "Como testo os sete temas?",
+      "resposta": "Alterne as sete paletas nos modos claro e escuro, verificando textos, rodapé e Motor.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q526",
+      "categoria": "Verificação de funcionamento",
+      "pergunta": "Como testo o funcionamento offline?",
+      "resposta": "Abra conectado, aguarde o cache, desligue a conexão e reabra o aplicativo para verificar os recursos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q527",
+      "categoria": "Verificação de funcionamento",
+      "pergunta": "Como testo a limpeza sem arriscar meus projetos?",
+      "resposta": "Use um perfil de teste com dados descartáveis e backup prévio; confira as categorias antes de confirmar.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q528",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "O que é Service Worker?",
+      "resposta": "É um script do navegador que gerencia recursos offline e o ciclo de atualização do PWA.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q529",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve index.html?",
+      "resposta": "Define a estrutura da interface e carrega os recursos do aplicativo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q530",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve app.js?",
+      "resposta": "Contém a lógica de projetos, registros, cálculos, telas e interações.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q531",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve styles.css?",
+      "resposta": "Define os estilos gerais e a responsividade da interface.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q532",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve manifest.json?",
+      "resposta": "Declara identidade instalável, ícones, associação de arquivos e atalhos do PWA.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q533",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve sw.js?",
+      "resposta": "Gerencia o cache offline e a atualização dos recursos.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q534",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve README.md?",
+      "resposta": "Contém o Manual oficial do Impulso.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q535",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve catalogo.json?",
+      "resposta": "Contém o catálogo e os hashes das 109 facetas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q536",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve avatar.js?",
+      "resposta": "Controla o comportamento e as interações do Impulsinho.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q537",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve avatar.css?",
+      "resposta": "Define a apresentação visual do assistente.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q538",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve falas.json?",
+      "resposta": "Contém as falas contextuais do Impulsinho.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q539",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve facetas-falas.json?",
+      "resposta": "Contém os comentários associados às facetas.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q540",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve motivacionais.json?",
+      "resposta": "Contém a biblioteca de frases motivacionais.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q541",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve oraculo.json?",
+      "resposta": "Contém as perguntas e respostas locais do Oráculo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q542",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve conhecimento.js?",
+      "resposta": "Interpreta perguntas e seleciona respostas da biblioteca do Oráculo.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q543",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Para que serve r2d10.js?",
+      "resposta": "Controla os alertas, monitoramento e comportamento do R2D10.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q544",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "Onde ficam as imagens das facetas?",
+      "resposta": "Na pasta impulsinho/facetas/.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
+    },
+    {
+      "id": "Q545",
+      "categoria": "Estrutura e glossário",
+      "pergunta": "O que é LICENSE?",
+      "resposta": "É o arquivo que apresenta os termos de licenciamento do repositório.",
+      "palavras_chave": [],
+      "variacoes": [],
+      "intencao": ""
     }
   ]
 }

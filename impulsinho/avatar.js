@@ -334,29 +334,46 @@ function manualTopic(topic){stopTour();
 }
 // Interpretador offline: intenções explícitas e variações frequentes; sem IA remota.
 function normalizeQuestion(v){return v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
-function interpretQuestion(value){
- const q=normalizeQuestion(value);if(!q)return null;
- if(/\b(evolucao|experiencia|estagio|nivel do impulsinho)\b/.test(q))return 'evolucao';
- if(/\b(backup|copia de seguranca|guardar arquivo|arquivo externo|salvamento)\b/.test(q))return 'backup';
- if(/\b(configurac[a-z]*|ajustes?|preferencias?|temas?|alerta ativado)\b/.test(q))return 'configuracoes';
- if(/\b(elixir|cofre|altar)\b/.test(q))return 'elixires';
- if(/\b(habito|habitos|rotina)\b/.test(q))return 'habitos';
- if(/\b(chefao|chefoes|arena|monstro|combate)\b/.test(q))return 'arena';
- if(/\b(conquista|medalha|titulo|insignia|novidade|cerimonia)\b/.test(q))return 'conquistas';
- if(/\b(motor|grau|graus|giro|giros|pulso|propulsao)\b/.test(q))return 'motor';
- if(/\b(hoje|meu dia|dia atual|trabalhei hoje|fiz hoje)\b/.test(q))return 'hoje';
- if(/\b(estatistica|estatisticas|progresso|horas|tempo total|quanto tempo|meta|resumo|desempenho)\b/.test(q))return 'estatisticas';
- if(/\b(projeto|projetos|abrir projeto)\b/.test(q))return 'projetos';
- if(/\b(ponto|cronometro|registrar tempo)\b/.test(q))return 'ponto';
- if(/\b(foco|pomodoro|concentracao)\b/.test(q))return 'foco';
- if(/\b(calendario|agenda|dias trabalhados)\b/.test(q))return 'calendario';
- if(/\b(dashboard|painel|inicio)\b/.test(q))return 'dashboard';
- return null;
+function routeQuestion(value){
+ const q=normalizeQuestion(value);
+ const nav=q.match(/^(?:abrir|abra|ir para|mostrar|mostre) (?:o |a |os |as )?(motor|arena|habitos|elixires|conquistas|estatisticas|meu dia|projetos|ponto|foco|calendario|dashboard|configuracoes)$/);
+ if(nav)return {kind:'navigation',topic:nav[1]==='meu dia'?'hoje':nav[1]};
+ const rules=[
+ ['projetos',/^quantos projetos (?:eu )?(?:tenho|criei|cadastrei)$/],
+ ['hoje',/^(?:quantas horas (?:eu )?(?:trabalhei|registrei) hoje|quanto(?: tempo)? (?:eu )?trabalhei hoje|quanto tempo (?:eu )?registrei hoje)$/],
+ ['total',/^(?:quantas horas (?:eu )?(?:tenho|acumulei|trabalhei)|quanto tempo (?:eu )?(?:trabalhei|acumulei)|quanto tempo tenho registrado)$/],
+ ['arena',/^quantos chefoes (?:eu )?(?:derrotei|venci)$/],
+ ['habitos',/^quantos habitos (?:eu )?(?:conclui|completei|fiz)$/],
+ ['restante',/^quantas horas (?:me )?faltam (?:para (?:a meta|10000 horas|10 mil horas))$/],
+ ['motor',/^(?:quantos graus (?:eu )?tenho|meu motor)$/],
+ ['giros',/^quantos giros (?:eu )?tenho$/],
+ ['estatisticas',/^(?:meu progresso|minhas estatisticas|meu desempenho)$/]
+ ];
+ for(const [topic,re] of rules)if(re.test(q))return {kind:'live',topic};
+ return {kind:'knowledge'};
 }
-questionForm.addEventListener('submit',async e=>{e.preventDefault();const field=questionForm.querySelector('input'),button=questionForm.querySelector('button');const value=field.value.trim();if(!value||button.disabled)return;const topic=interpretQuestion(value),q=normalizeQuestion(value);
- const navigation=/^(?:abrir|mostre|mostrar|ir para|ver|consulte) (?:o |a |os |as )?(?:motor|arena|habitos|elixires|conquistas|estatisticas|meu dia|projetos|ponto|foco|calendario|dashboard|backup|configuracoes|evolucao)$/.test(q);
- const live=topic&&(navigation||/\b(meu progresso|meu motor|minha evolucao|seu estagio|trabalhei hoje|derrotei|acumulei|quanto tempo trabalhei|quantas horas tenho|quantos giros tenho)\b/.test(q)&&!/\b(como|por que|significa|funciona|equivale)\b/.test(q)||/^(motor|arena|habitos|elixires|conquistas|estatisticas|meu dia|projetos|ponto|foco|calendario|dashboard|backup|configuracoes|evolucao)$/.test(q));
- if(live){manualTopic(topic);field.value='';return}button.disabled=true;try{const r=await window.OraculoImpulso?.ask(value);stopTour();if(r?.text){reply('Oráculo do Impulso',r.text,'curiosidade',true);field.value=''}else reply('Oráculo do Impulso',r?.unavailable?'Minha base de respostas não está disponível. Atualize o aplicativo com conexão.':r?.ambiguous?'Encontrei mais de uma interpretação. Pode especificar a função ou o que deseja saber?':'Não tenho uma resposta cadastrada com confiança suficiente. Reformule usando o nome da função ou consulte o Manual.','curiosidade',true)}catch{reply('Oráculo do Impulso','Não consegui consultar minha base de respostas agora.','cuidado',true)}finally{button.disabled=false}
+function answerLive(topic){
+ stopTour();const s=snapshot(),p=s?.projeto;
+ const say=t=>reply('Consulta ao Impulso',t,'curiosidade',true);
+ if(!s)return say('Não consegui consultar os dados reais agora.');
+ if(topic==='projetos')return say(`Você tem ${s.projetos} projeto(s) cadastrado(s).`);
+ if(!p)return say('Nenhum projeto ativo. Abra um projeto para consultar seus registros.');
+ const prefix=`No projeto ${p.nome}, `;
+ switch(topic){
+ case 'hoje':return say(prefix+`você registrou ${fmtHours(p.hojeMs)} horas hoje.`);
+ case 'total':return say(prefix+`você acumula ${fmtHours(p.tempoMs)} horas registradas.`);
+ case 'arena':return say(prefix+`você derrotou ${p.chefoesDerrotados} de ${p.chefoesTotais} chefões.`);
+ case 'habitos':return say(prefix+`você registrou ${p.habitosConcluidos} conclusões de hábitos.`);
+ case 'restante':return say(prefix+`faltam ${fmtHours(p.horasRestantesMs)} horas para a meta de 10.000 horas.`);
+ case 'motor':return say(prefix+`você acumula ${Math.floor(p.tempoMs/10000).toLocaleString('pt-BR')} Graus completos.`);
+ case 'giros':return say(prefix+`você acumula ${Math.floor(p.tempoMs/3600000).toLocaleString('pt-BR')} Giros completos.`);
+ default:return manualStats();
+ }
+}
+questionForm.addEventListener('submit',async e=>{e.preventDefault();const field=questionForm.querySelector('input'),button=questionForm.querySelector('button');const value=field.value.trim();if(!value||button.disabled)return;const route=routeQuestion(value);
+ if(route.kind==='navigation'){manualTopic(route.topic);field.value='';return}
+ if(route.kind==='live'){answerLive(route.topic);field.value='';return}
+ button.disabled=true;try{const r=await window.OraculoImpulso?.ask(value);stopTour();if(r?.text){reply('Oráculo do Impulso',r.text,'curiosidade',true);field.value=''}else reply('Oráculo do Impulso',r?.unavailable?'Minha base de respostas não está disponível. Atualize o aplicativo com conexão.':r?.ambiguous?'Encontrei mais de uma interpretação. Pode especificar a função ou o que deseja saber?':'Não tenho uma resposta cadastrada com confiança suficiente. Reformule usando o nome da função ou consulte o Manual.','curiosidade',true)}catch{reply('Oráculo do Impulso','Não consegui consultar minha base de respostas agora.','cuidado',true)}finally{button.disabled=false}
 });
 function scheduleAuto(){if(autoTimer)clearInterval(autoTimer);autoTimer=null;if(auto.checked&&pref.visivel){autoTimer=setInterval(()=>{if(!document.hidden&&balloon.hidden&&pref.visivel)randomFace()},20000)}}
 fetch('impulsinho/catalogo.json?v=109').then(res=>{if(!res.ok)throw Error('Catálogo indisponível');return res.json()}).then(data=>{faces=(data.facetas||[]).filter(f=>f.arquivo&&f.emocao);if(faces.length!==109)throw Error('Catálogo incompleto');showFace(Math.max(0,faces.findIndex(f=>f.id==='1f9d0')));info.textContent='109 expressões prontas. Use os controles para explorá-las.'}).catch(()=>{info.textContent='Não foi possível carregar o catálogo de expressões. Verifique os arquivos e atualize a página.'});
