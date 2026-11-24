@@ -15,7 +15,7 @@ export function criarMotor({avatar, palco, catalogo, pasta, alertaPermitido=()=>
   const observer=new ResizeObserver(()=>{if(camada.childElementCount)limpar()}); observer.observe(avatar);
   window.addEventListener('scroll',limpar,true); window.addEventListener('resize',limpar);
   async function mostrar(evento, op={}) {
-    if(destruido || performance.now()-ultimo < (catalogo.regras.intervalo_minimo_ms||8000)) return false;
+    if(destruido || (!op.teste && performance.now()-ultimo < (catalogo.regras.intervalo_minimo_ms||8000))) return false;
     if((op.alerta || /backup|alerta|elixir/i.test(evento)) && !alertaPermitido(op.alerta||evento)) return false;
     const gestos=selecionar(catalogo,evento,op); if(!gestos.length) return false;
     limpar(); const token=geracao;
@@ -31,12 +31,13 @@ export function criarMotor({avatar, palco, catalogo, pasta, alertaPermitido=()=>
       if(g.ancora==='inferior')candidatos.unshift(candidatos.pop());
       const controles=[...document.querySelectorAll('button,a,input,select,textarea,[role="button"],[contenteditable="true"]')];
       const livre=([x,y])=>x>=Math.max(0,p.left)&&y>=Math.max(0,p.top)&&x+w<=Math.min(innerWidth,p.right)&&y+h<=Math.min(innerHeight,p.bottom)&&!controles.some(el=>{const r=el.getBoundingClientRect();return r.width&&r.height&&x<r.right&&x+w>r.left&&y<r.bottom&&y+h>r.top;})&&!pos.some(r=>x<r.x+r.w&&x+w>r.x&&y<r.y+r.h&&y+h>r.y);
-      const escolha=candidatos.find(livre);if(!escolha)return false;const [x,y]=escolha;
+      const escolha=candidatos.find(livre) || (op.teste ? candidatos.find(([x,y])=>x>=0&&y>=0&&x+w<=innerWidth&&y+h<=innerHeight&&!controles.some(el=>{if(!el.closest("#impulsinho-root"))return false;const r=el.getBoundingClientRect();return r.width&&r.height&&x<r.right&&x+w>r.left&&y<r.bottom&&y+h>r.top;})) : null);if(!escolha)return false;const [x,y]=escolha;
       pos.push({x,y,w,h});
     }
     imagens.forEach((img,i)=>{const {x,y,w,h}=pos[i];Object.assign(img.style,{left:`${x-p.left}px`,top:`${y-p.top}px`,width:`${w}px`,height:`${h}px`});camada.append(img);});
-    animador.animar(imagens,evento,Math.max(...gestos.map(g=>g.gesto.duracao_ms)));
-    ultimo=performance.now(); timer=setTimeout(limpar,Math.max(...gestos.map(g=>g.gesto.duracao_ms)));return true;
+    const duracao=op.teste?2600:Math.max(...gestos.map(g=>g.gesto.duracao_ms));
+    animador.animar(imagens,evento,duracao);
+    if(!op.teste)ultimo=performance.now(); timer=setTimeout(limpar,duracao);return true;
   }
   return {mostrar,limpar,destruir(){destruido=true;limpar();animador.destruir();observer.disconnect();window.removeEventListener('scroll',limpar,true);window.removeEventListener('resize',limpar);camada.remove();}};
 }
