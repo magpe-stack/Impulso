@@ -65,6 +65,7 @@ Selecione um título ou subtítulo para navegar.
 - [12. Impulsinho — assistente emocional e motivacional](#12-impulsinho-assistente-emocional-e-motivacional)
   - [Personagem e balões](#personagem-e-baloes)
   - [Consultas e navegação contextual](#consultas-e-navegacao-contextual)
+  - [Oráculo — consulta ao Manual](#oraculo-consulta-ao-manual)
   - [Tutorial e reações às ações](#tutorial-e-reacoes-as-acoes)
   - [Expressões e bibliotecas de falas](#expressoes-e-bibliotecas-de-falas)
   - [Frases motivacionais](#frases-motivacionais)
@@ -502,6 +503,11 @@ Expanda **Perguntas rápidas** ou digite uma pergunta de até 180 caracteres. Ex
 
 A consulta Conquistas resume até cinco novidades pendentes; use a Central de Novidades para consultar cada item. O comando Atualizar Backup Geral encaminha ao fluxo de gravação, sem dispensar confirmações.
 
+<a id="oraculo-consulta-ao-manual"></a>
+### Oráculo — consulta ao Manual
+
+No painel ☰ do Impulsinho, digite uma pergunta sobre o funcionamento do aplicativo, como “Como restaurar um backup?” ou “Qual a diferença entre Guardar e Atualizar?”. O Oráculo pesquisa o próprio Manual armazenado localmente, considerando palavras-chave, sinônimos e pequenos erros de digitação. A resposta apresenta trechos documentais e identifica a seção consultada. Perguntas complementares curtas podem aproveitar o assunto anterior. Consultas de progresso e comandos explícitos continuam usando os mecanismos existentes. A pesquisa não altera projetos nem executa operações de arquivo. Se não encontrar correspondência suficiente, o assistente pede uma reformulação. Não se trata de IA generativa; a seleção de trechos pode ser imperfeita. O Manual é atualizado junto com os recursos do aplicativo e fica disponível offline após o cache inicial.
+
 <a id="tutorial-e-reacoes-as-acoes"></a>
 ### Tutorial e reações às ações
 
@@ -676,7 +682,7 @@ O Impulso não exige conta nem envia automaticamente os registros a um servidor 
 | O Impulsinho não emite sons | Confira silenciamento, volume, sons emocionais e Testar som; o navegador pode exigir interação. |
 | A vinheta não toca | Confira a opção de vinheta e use Testar vinheta; a reprodução automática pode ser bloqueada. |
 | O tutorial não aparece | Abra o painel de perguntas e selecione Tutorial; com projeto ativo, será exibido um resumo. |
-| O Impulsinho não responde à pergunta | Experimente uma pergunta curta sobre uma página ou comando reconhecido. |
+| O Impulsinho não responde à pergunta | Reformule a pergunta com o nome da função ou consulte o Manual diretamente. |
 | A janela não fecha pelo botão Fechar | O navegador pode impedir o fechamento programático; feche a aba manualmente. |
 
 **Evite usar a limpeza completa como primeira tentativa de corrigir um problema visual.** Ela pode apagar seus projetos. Prefira primeiro atualizar a página e conferir as configurações.

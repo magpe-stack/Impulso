@@ -1139,7 +1139,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão estável: 124</strong></p>
+ <p><strong>Versão estável: 125</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
@@ -1164,6 +1164,7 @@ function about(){
  <h3>Privacidade, autonomia e limites</h3>
  <p>O Impulso funciona prioritariamente no próprio dispositivo, pode trabalhar offline após o carregamento dos arquivos necessários e não exige uma conta para registrar projetos. Os dados não são sincronizados automaticamente com uma nuvem. <strong>Guarde backups regularmente e mantenha cópias fora do navegador.</strong></p>
  <p>A jornada de 10.000 horas é uma referência motivacional, não uma certificação de maestria. O Impulso não substitui sistemas oficiais de controle de jornada.</p>
+ <p><strong>Oráculo do Impulso:</strong> consulta local ao Manual pelo painel de perguntas do Impulsinho, com recuperação de trechos e identificação da seção consultada.</p>
  <p><strong>Saiba mais:</strong> <a href="https://magpe-stack.github.io/Impulso/" target="_blank" rel="noopener noreferrer">Aplicativo</a> · <a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual completo</a></p>
  <div class="actions"><button class="btn primary" type="button" data-cancel>Fechar</button></div></div>`);
 }
