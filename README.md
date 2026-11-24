@@ -812,3 +812,11 @@ Uma ferramenta para transformar dedicação em registros, continuidade em progre
 
 **Site:** https://magpe-stack.github.io/Impulso/ · **Repositório:** https://github.com/magpe-stack/Impulso
 
+
+
+## Versão 147 — integração experimental do Impulsinho
+Em Configurações → Controles do Impulsinho, ative o novo motor contextual. O assistente original continua disponível. A memória comportamental é separada dos projetos. Os gestos exigem os WebP originais em `impulsinho/gestos/`; sem eles, o motor mantém as expressões faciais. O laboratório independente está em `impulsinho/motores/laboratorio.html`. Esta versão ainda requer homologação visual e offline.
+
+
+## Versão 148 — auditoria estática
+Corrigida a inicialização concorrente do motor opcional e a reativação após desligamento durante carregamento. Gestos corporais desabilitados nesta distribuição por ausência dos WebP originais; catálogo preservado. Motor contextual continua opt-in. Sete suítes Node aprovadas; sintaxe e referências do cache verificadas. Teste Chromium bloqueado por política do ambiente (ERR_BLOCKED_BY_ADMINISTRATOR); offline e homologação visual pendentes. Não publicar como versão homologada.
