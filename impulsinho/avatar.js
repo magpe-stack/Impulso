@@ -170,12 +170,28 @@ function speak(event){playEmotion(event.emotion);headline.textContent=event.titl
 function enqueue(event){if(behavior.modo==='clique')return;if(!event||eventState.seen[event.key]||eventQueue.some(x=>x.key===event.key))return;eventQueue.push(event);eventQueue.sort((a,b)=>b.priority-a.priority);if(eventQueue.length>12)eventQueue.length=12;dispatch()}
 function dispatch(){if(isBusy()||!eventQueue.length)return;const now=Date.now();const next=eventQueue[0];if(next.priority<3&&now-eventState.lastSpoken<profile().gap)return;eventQueue.shift();speak(next)}
 function notice(key,title,text,emotion='curiosidade',priority=1){enqueue({key,title,text,emotion,priority})}
+// v121: evolução calculada exclusivamente a partir dos registros do projeto.
+const evolutionStages=[
+ {name:'Aprendiz',min:0,emotion:'curiosidade',lines:['Vamos construir uma rotina simples.','Um registro de cada vez já é progresso.']},
+ {name:'Companheiro',min:25,emotion:'alegria',lines:['Já temos experiência juntos. Vamos consolidar os hábitos.','Que tal reconhecer o que funcionou nesta semana?']},
+ {name:'Estrategista',min:100,emotion:'curiosidade',lines:['Observe quais atividades rendem mais progresso.','Planeje o próximo passo com base nos seus registros.']},
+ {name:'Mestre',min:500,emotion:'surpresa',lines:['Experiência também significa saber quando descansar.','Revise suas prioridades antes de aumentar o ritmo.']},
+ {name:'Guardião do Impulso',min:2000,emotion:'alegria',lines:['Proteja o progresso que construiu, inclusive com backups.','A jornada continua: qualidade e equilíbrio também importam.']}
+];
+function evolution(p){if(!p)return null;const n=x=>Math.max(0,Number(x)||0);const giros=Math.floor(n(p.tempoMs)/3600000);const pontos=giros+5*n(p.chefoesDerrotados)+n(p.habitosConcluidos)+2*n(p.sequenciaRecorde);let index=0;for(let i=1;i<evolutionStages.length;i++)if(pontos>=evolutionStages[i].min)index=i;return {giros,pontos,index,stage:evolutionStages[index],next:evolutionStages[index+1]||null}}
+function evolutionText(e){return `${e.stage.name} — ${e.pontos.toLocaleString('pt-BR')} pontos de experiência. ${e.next?'Faltam '+(e.next.min-e.pontos).toLocaleString('pt-BR')+' pontos para '+e.next.name+'.':'Estágio máximo alcançado.'}`}
+function manualEvolution(){const e=evolution(snapshot()?.projeto);if(!e){reply('Minha evolução','Abra um projeto para consultar minha evolução.');return}reply('Minha evolução',evolutionText(e)+' '+e.stage.lines[Math.floor(Math.random()*e.stage.lines.length)],e.stage.emotion)}
+const evolutionButton=document.createElement('button');evolutionButton.type='button';evolutionButton.textContent='Minha evolução';actions.append(evolutionButton);evolutionButton.addEventListener('click',manualEvolution);
+let evolutionObserved=new Map();
+function observeEvolution(p){const e=evolution(p);if(!e)return;let previous=evolutionObserved.get(p.id);if(previous===undefined){try{const stored=localStorage.getItem('impulsinho-evolucao:'+p.id);if(stored!==null)previous=Number(stored)}catch{}}evolutionObserved.set(p.id,e.index);try{localStorage.setItem('impulsinho-evolucao:'+p.id,String(e.index))}catch{}if(Number.isInteger(previous)&&e.index>previous)notice('evolucao:'+p.id+':'+e.index,'Evoluí com você!',evolutionText(e)+' '+e.stage.lines[0],e.stage.emotion,2)}
 function evaluate(kind){const s=snapshot();if(!s)return;const p=s.projeto,projectKey=p?.id||'sem-projeto',today=new Date().toLocaleDateString('en-CA');
+ if(p)observeEvolution(p);
  if(p&&eventState.lastProject!==p.id){eventState.lastProject=p.id;persistEvents();notice('projeto:'+p.id+':'+today,'Impulsinho de olho!',phrase('projeto',{nome:p.nome}),'curiosidade',1)}
  if(kind==='dados'&&p){
   const hours=Math.floor(p.tempoMs/3600000);for(const milestone of [1,5,10,25,50,100,250,500,1000])if(hours>=milestone)notice('horas:'+p.id+':'+milestone,'Marco de produtividade!','Este projeto já registrou pelo menos '+milestone+' hora'+(milestone===1?'':'s')+' de trabalho. '+phrase('conquista'),'alegria',2);
   if(p.chefoesDerrotados>0)notice('arena:'+p.id+':'+p.chefoesDerrotados,'Vitória na Arena!','O projeto registra '+p.chefoesDerrotados+' chefão'+(p.chefoesDerrotados===1?' derrotado':'s derrotados')+'. '+phrase('arena'),'desafio',2);
  }
+ if(p&&kind==='periodico'&&Math.random()<0.08){const e=evolution(p);notice('conselho-evolucao:'+p.id+':'+today,'Conselho de '+e.stage.name,e.stage.lines[Math.floor(Math.random()*e.stage.lines.length)],e.stage.emotion,1)}
  if(p&&kind==='periodico'&&Math.random()<0.07)notice('atalhos:'+projectKey+':'+today,'Dica de teclado',phrase('atalhos'),'curiosidade',1);
  const alerts=alertPrefs();
  if(alerts.backup&&s.backupPendente)notice('backup:'+projectKey+':'+today,'Backup Geral pendente',phrase('backup'),'preocupacao',3);
@@ -289,6 +305,7 @@ function goTo(topic){const pages={hoje:'dia',motor:'radar',arena:'arena',habitos
  const pagina=pages[topic];if(pagina)window.dispatchEvent(new CustomEvent('impulsinho:ir-para',{detail:{pagina}}));
 }
 function manualTopic(topic){stopTour();
+ if(topic==='evolucao'){manualEvolution();return}
  const s=snapshot(),p=s?.projeto;
  if(topic==='conquistas'){goTo('conquistas');manualAchievements();return}
  if(topic==='backup'){goTo('backup');manualStatus();return}
@@ -311,6 +328,7 @@ function manualTopic(topic){stopTour();
 function normalizeQuestion(v){return v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
 function interpretQuestion(value){
  const q=normalizeQuestion(value);if(!q)return null;
+ if(/\b(evolucao|experiencia|estagio|nivel do impulsinho)\b/.test(q))return 'evolucao';
  if(/\b(backup|copia de seguranca|guardar arquivo|arquivo externo|salvamento)\b/.test(q))return 'backup';
  if(/\b(configurac[a-z]*|ajustes?|preferencias?|temas?|alerta ativado)\b/.test(q))return 'configuracoes';
  if(/\b(elixir|cofre|altar)\b/.test(q))return 'elixires';
