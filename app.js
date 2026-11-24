@@ -1321,7 +1321,7 @@ function renderConfiguracao(){
  const shortcutSections=renderShortcutPreferences();
  const [keyboardContent,appContent]=shortcutSections.split('</section><section class="settings-shortcuts">');
  const accordion=(id,title,body)=>`<details class="settings-accordion" data-settings-section="${id}" ${settingsOpenSection===id?'open':''}><summary>${title}</summary><div class="settings-accordion-body">${body}</div></details>`;
- main.innerHTML=header('Configurações','Personalize o Impulso.')+accordion('temas','Temas',settingsHtml.replace(/^.*?<section class="panel settings-palette">/s,'<section class="panel settings-palette">'))+accordion('teclado','Atalhos de Teclado',keyboardContent.replace('<section class="settings-shortcuts">','')+'</section>')+accordion('aplicativo','Atalhos do Aplicativo','<section class="settings-shortcuts">'+appContent)+accordion('alertas','Alertas',alertContent)+accordion('impulsinho','Controles do Impulsinho','<div id="impulsinho-settings-mount"></div>')+accordion('limpeza','Limpeza',renderLimpeza());
+ main.innerHTML=header('Configurações','Personalize o Impulso.')+accordion('temas','Temas',settingsHtml.replace(/^.*?<section class="panel settings-palette">/s,'<section class="panel settings-palette">'))+accordion('teclado','Atalhos de Teclado',keyboardContent.replace('<section class="settings-shortcuts">','')+'</section>')+accordion('aplicativo','Atalhos do Aplicativo','<section class="settings-shortcuts">'+appContent)+accordion('impulsinho','Controles do Impulsinho','<div id="impulsinho-settings-mount"></div>'+alertContent)+accordion('limpeza','Limpeza',renderLimpeza());
 
 }
 

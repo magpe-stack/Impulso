@@ -452,6 +452,9 @@ No balão de perguntas, o botão **Tutorial** reinicia a orientação inicial qu
 ## 12. Alertas, distintivos e área de transferência
 
 <a id="alertas-locais"></a>
+
+Desde a v122, os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do Impulsinho**. Os distintivos não dependem da visibilidade do personagem. Alertas desativados são retirados também da fila de intervenções do assistente.
+
 ### Alertas locais
 
 Em **Configurações → Alertas**, ative ou desative os lembretes disponíveis, como avisos relacionados a backups e hábitos. Eles são **avisos locais enquanto o aplicativo executa**: não são notificações push garantidas com o PWA fechado, nem realizam backups automaticamente.
