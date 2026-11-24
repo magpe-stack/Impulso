@@ -506,7 +506,7 @@ A consulta Conquistas resume até cinco novidades pendentes; use a Central de No
 <a id="oraculo-consulta-ao-manual"></a>
 ### Oráculo — perguntas e respostas
 
-No painel ☰ do Impulsinho, digite uma pergunta sobre o funcionamento do aplicativo. O Oráculo consulta uma base local de 271 perguntas e respostas preparadas, distribuídas em 13 categorias, com palavras-chave e formulações alternativas. Ele reconhece correspondências exatas e pequenas diferenças de escrita; quando a correspondência é ambígua ou insuficiente, pede uma reformulação. Consultas de progresso e comandos explícitos continuam utilizando os mecanismos de dados reais. A consulta não altera registros nem executa operações de arquivo. A base funciona offline após o cache inicial e não utiliza IA generativa. O Manual permanece disponível em Ajuda, independentemente do Oráculo.
+No painel ☰ do Impulsinho, digite uma pergunta sobre o funcionamento do aplicativo. O Oráculo consulta uma base local de 545 perguntas e respostas preparadas, com palavras-chave e formulações alternativas. Ele reconhece correspondências exatas, sinônimos, flexões verbais e algumas intenções; quando a correspondência é ambígua ou insuficiente, pede uma reformulação. Consultas de progresso e comandos explícitos continuam utilizando os mecanismos de dados reais. A consulta não altera registros nem executa operações de arquivo. A base funciona offline após o cache inicial e não utiliza IA generativa. O Manual permanece disponível em Ajuda, independentemente do Oráculo.
 
 <a id="tutorial-e-reacoes-as-acoes"></a>
 ### Tutorial e reações às ações
