@@ -445,6 +445,10 @@ Em **Configurações → Atalhos do Aplicativo**, configure as chaves dos **13 a
 ---
 
 <a id="12-alertas-distintivos-e-area-de-transferencia"></a>
+### Impulsinho — tutorial e respostas aos controles
+
+No balão de perguntas, o botão **Tutorial** reinicia a orientação inicial quando não existe projeto ativo. Em **Sistema → Configurações → Controles do Impulsinho**, o botão **Testar som do Impulsinho** ajuda a verificar a saída de áudio. Os botões do aplicativo podem provocar expressões e comentários curtos, com intervalos para evitar distrações. O navegador pode bloquear o áudio até uma interação explícita.
+
 ## 12. Alertas, distintivos e área de transferência
 
 <a id="alertas-locais"></a>
