@@ -1127,7 +1127,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão estável: 126</strong></p>
+ <p><strong>Versão estável: 127</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
