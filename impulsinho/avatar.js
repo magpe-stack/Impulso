@@ -75,7 +75,8 @@ function randomFace(){const list=faceList();if(!list.length)return;const offset=
 const EVENTS_KEY='impulsinho-eventos-v110';
 let eventState={seen:{},lastSpoken:0,lastProject:null,queue:[]};
 try{const v=JSON.parse(localStorage.getItem(EVENTS_KEY)||'null');if(v&&typeof v==='object')eventState={...eventState,...v,queue:[]}}catch{}
-const persistEvents=()=>{try{localStorage.setItem(EVENTS_KEY,JSON.stringify({seen:eventState.seen,lastSpoken:eventState.lastSpoken,lastProject:eventState.lastProject}))}catch{}};
+if(!eventState.seen||typeof eventState.seen!=='object'||Array.isArray(eventState.seen))eventState.seen={};
+const persistEvents=()=>{try{const keys=Object.keys(eventState.seen);const transient=keys.filter(k=>!k.startsWith('horas:')&&!k.startsWith('arena:'));if(transient.length>512){transient.sort((a,b)=>Number(eventState.seen[b])-Number(eventState.seen[a]));for(const k of transient.slice(512))delete eventState.seen[k]}localStorage.setItem(EVENTS_KEY,JSON.stringify({seen:eventState.seen,lastSpoken:eventState.lastSpoken,lastProject:eventState.lastProject}))}catch{}};
 const eventQueue=[];
 let eventTimer=null;
 const DAY=86400000, MIN_GAP=90000;
@@ -284,7 +285,7 @@ window.addEventListener('impulsinho:navegacao',()=>{if(snapshot()?.projeto)stopT
 
 // Consulta manual, sem iniciar automaticamente uma conversa.
 const statusButton=document.createElement('button');statusButton.type='button';statusButton.textContent='Ver avisos';statusButton.dataset.acao='avisos';actions.prepend(statusButton);
-function reply(title,text,emotion='curiosidade'){playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=profile().lead+text;express(emotion);opened(true)}
+function reply(title,text,emotion='curiosidade'){eventState.lastSpoken=Date.now();persistEvents();playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=profile().lead+text;express(emotion);opened(true)}
 function fmtHours(ms){return (Math.max(0,Number(ms)||0)/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2})}
 function manualStatus(){
  const s=snapshot(),p=s?.projeto,alerts=alertPrefs();const lines=[];
