@@ -41,7 +41,7 @@ const actions=balloon.querySelector('.impulsinho-acoes');
 actions.id='impulsinho-perguntas-acoes';questions.append(actions);menu.addEventListener('click',()=>{actions.hidden=!actions.hidden;menu.setAttribute('aria-expanded',String(!actions.hidden))});
 const tutorialButton=document.createElement('button');tutorialButton.type='button';tutorialButton.textContent='▶ Tutorial';tutorialButton.dataset.acao='tutorial';actions.prepend(tutorialButton);
 const questionForm=document.createElement('form');questionForm.className='impulsinho-formulario';questionForm.setAttribute('aria-label','Escrever pergunta ao Impulsinho');
-questionForm.innerHTML='<label for="impulsinho-pergunta-texto">Sua pergunta</label><div class="impulsinho-form-row"><input id="impulsinho-pergunta-texto" type="text" maxlength="180" autocomplete="off" placeholder="Ex.: Quanto trabalhei hoje?" required><button type="submit">Perguntar</button></div><p class="impulsinho-ajuda">Pergunte sobre Meu Dia, Motor, Arena, hábitos, conquistas, estatísticas, backup e configurações.</p>';
+questionForm.innerHTML='<label for="impulsinho-pergunta-texto">Sua pergunta</label><div class="impulsinho-form-row"><input id="impulsinho-pergunta-texto" type="text" maxlength="180" autocomplete="off" placeholder="Ex.: Quanto trabalhei hoje?" required><button type="submit">Perguntar</button></div><p class="impulsinho-ajuda">Pergunte sobre seu projeto ou consulte o Manual: como restaurar um backup?</p>';
 questions.append(questionForm);
 
 root.append(questionButton,questions);
@@ -285,7 +285,7 @@ window.addEventListener('impulsinho:navegacao',()=>{if(snapshot()?.projeto)stopT
 
 // Consulta manual, sem iniciar automaticamente uma conversa.
 const statusButton=document.createElement('button');statusButton.type='button';statusButton.textContent='Ver avisos';statusButton.dataset.acao='avisos';actions.prepend(statusButton);
-function reply(title,text,emotion='curiosidade'){eventState.lastSpoken=Date.now();persistEvents();playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=profile().lead+text;express(emotion);opened(true)}
+function reply(title,text,emotion='curiosidade',documental=false){eventState.lastSpoken=Date.now();persistEvents();playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=profile().lead+text;express(emotion,!documental);opened(true)}
 function fmtHours(ms){return (Math.max(0,Number(ms)||0)/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2})}
 function manualStatus(){
  const s=snapshot(),p=s?.projeto,alerts=alertPrefs();const lines=[];
@@ -346,8 +346,9 @@ function interpretQuestion(value){
  if(/\b(dashboard|painel|inicio)\b/.test(q))return 'dashboard';
  return null;
 }
-questionForm.addEventListener('submit',e=>{e.preventDefault();const field=questionForm.querySelector('input');const value=field.value.trim();if(!value)return;const topic=interpretQuestion(value);
- if(topic){manualTopic(topic);field.value=''}else reply('Ainda estou aprendendo','Não consegui identificar essa pergunta. Experimente perguntar sobre Meu Dia, Motor, Arena, estatísticas, hábitos, conquistas, backup ou configurações.','curiosidade');
+questionForm.addEventListener('submit',async e=>{e.preventDefault();const field=questionForm.querySelector('input'),button=questionForm.querySelector('button');const value=field.value.trim();if(!value||button.disabled)return;const topic=interpretQuestion(value),q=normalizeQuestion(value);
+ const live=topic&&(/^(abrir|mostre|mostrar|ir para|ver|consulte)\b/.test(q)||/\b(quanto|quantos|quantas|meu progresso|meu motor|meu projeto|minha evolucao|seu estagio|trabalhei hoje|derrotei|acumulei)\b/.test(q)&&!/\b(como|por que|significa|funciona|equivale)\b/.test(q)||/^(motor|arena|habitos|elixires|conquistas|estatisticas|meu dia|projetos|ponto|foco|calendario|dashboard|backup|configuracoes|evolucao)$/.test(q));
+ if(live){manualTopic(topic);field.value='';return}button.disabled=true;try{const r=await window.OraculoImpulso?.ask(value);stopTour();if(r&&!r.unavailable){reply('Oráculo do Impulso',r.text+' — Fonte: Manual, '+r.title+'.','curiosidade',true);field.value=''}else reply('Oráculo do Impulso',r?.unavailable?'O Manual não está disponível neste momento. Atualize o aplicativo com conexão.':'Não encontrei uma resposta suficientemente relacionada no Manual. Tente reformular com o nome da função.','curiosidade',true)}catch{reply('Oráculo do Impulso','Não consegui consultar o Manual agora.','cuidado',true)}finally{button.disabled=false}
 });
 function scheduleAuto(){if(autoTimer)clearInterval(autoTimer);autoTimer=null;if(auto.checked&&pref.visivel){autoTimer=setInterval(()=>{if(!document.hidden&&balloon.hidden&&pref.visivel)randomFace()},20000)}}
 fetch('impulsinho/catalogo.json?v=109').then(res=>{if(!res.ok)throw Error('Catálogo indisponível');return res.json()}).then(data=>{faces=(data.facetas||[]).filter(f=>f.arquivo&&f.emocao);if(faces.length!==109)throw Error('Catálogo incompleto');showFace(Math.max(0,faces.findIndex(f=>f.id==='1f9d0')));info.textContent='109 expressões prontas. Use os controles para explorá-las.'}).catch(()=>{info.textContent='Não foi possível carregar o catálogo de expressões. Verifique os arquivos e atualize a página.'});
