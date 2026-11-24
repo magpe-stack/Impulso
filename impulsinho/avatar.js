@@ -292,7 +292,7 @@ window.addEventListener('impulsinho:navegacao',()=>{if(snapshot()?.projeto)stopT
 
 // Consulta manual, sem iniciar automaticamente uma conversa.
 const statusButton=document.createElement('button');statusButton.type='button';statusButton.textContent='Ver avisos';statusButton.dataset.acao='avisos';actions.prepend(statusButton);
-function reply(title,text,emotion='curiosidade',documental=false){reminderSave.hidden=true;eventState.lastSpoken=Date.now();persistEvents();playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=profile().lead+text;express(emotion,!documental);opened(true)}
+function reply(title,text,emotion='curiosidade',documental=false){reminderSave.hidden=true;eventState.lastSpoken=Date.now();persistEvents();playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=(documental?'':profile().lead)+text;express(emotion,!documental);opened(true)}
 function fmtHours(ms){return (Math.max(0,Number(ms)||0)/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2})}
 function manualStatus(){
  const s=snapshot(),p=s?.projeto,alerts=alertPrefs();const lines=[];
