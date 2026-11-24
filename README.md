@@ -831,3 +831,7 @@ Em Configurações → Controles do Impulsinho, teste seis gestos ou percorra as
 
 ## Versão 151 — teste corporal integrado
 Em Configurações → Controles do Impulsinho, mantenha o diagnóstico das 47 imagens e use Teste no personagem para executar seis gestos junto ao rosto real, com expressão e balão de demonstração. A coreografia percorre os seis gestos. Parar teste integrado restaura a conversa e a expressão anteriores. Não registra atividades ou conquistas. A homologação visual permanece necessária.
+
+## Versão 152 — Backup das preferências
+
+Guardar, Atualizar e Backup Geral incluem preferências locais de aparência, alertas, atalhos, Impulsinho e R2D10. Restaurar um backup novo substitui as preferências incluídas e recarrega o aplicativo. Backups antigos preservam as preferências atuais. A exportação individual de projeto não inclui configurações globais. Permissões do navegador, instalação, histórico comportamental e vínculos com arquivos externos não são transferidos. Os alertas reiniciam sua contagem após a restauração.

@@ -20,11 +20,23 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const pad=n=>String(n).padStart(2,'0'),dateKey=t=>{const d=new Date(t);return `${pad(d.getDate())}-${pad(d.getMonth()+1)}-${d.getFullYear()}`},clock=t=>new Date(t).toLocaleTimeString('pt-BR',{hour12:false}),stamp=t=>`${dateKey(t)} · ${clock(t)}`,mins=ms=>`${Math.floor(ms/3600000)}h ${pad(Math.floor(ms%3600000/60000))}min`,hours=ms=>(ms/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2}),now=()=>Date.now();
 let state;try{state=JSON.parse(localStorage.getItem(KEY)||'null')}catch{}if(!state||!Array.isArray(state.projects))state={version:1,projects:[],active:null};let page='dashboard',order='asc';
 // Estado do arquivo externo: independente do salvamento local automático.
+const PORTABLE_PREFS={
+ 'impulso-theme':v=>['light','dark'].includes(v),
+ 'impulso-palette':v=>['original','vinho','blue-sky','trinity','granfino','ecologico','mistico'].includes(v),
+ 'impulsinho-auto-v109':v=>['0','1'].includes(v),
+ 'impulsinho-tutorial-v116':v=>v==='concluido',
+ 'impulso-badging-v1':v=>validPrefObject(v,{enabled:'bool'}),
+ 'impulso-alertas-v1':v=>validPrefObject(v,{backup:'bool',habits:'bool'}),
+ 'impulsinho-avatar-v108':v=>validPrefObject(v,{visivel:'bool',silenciado:'bool',flutuar:'bool',x:'coord',y:'coord'}),
+ 'impulsinho-config-v112':v=>validPrefObject(v,{modo:['ambos','clique','espontaneo'],volume:'volume',audio:'bool',tutorial:'bool',personalidade:['mentor','divertido','guerreiro','discreto'],splashAudio:'bool',motor147:'bool'}),
+ 'impulso-r2d10-preferencias':v=>validPrefObject(v,{sound:'bool',volume:'volume',visible:'bool'}),
+ 'impulso-atalhos-v98':v=>validPrefObject(v,{keyboardEnabled:'bool',appEnabled:'bool',keyboard:'boolMap',app:'boolMap',keys:'stringMap'})
+};
 const FILE_SYNC_KEY='impulso-external-file-sync-v1';
 function fileSignature(value){const raw=JSON.stringify(value);let h=2166136261;for(let i=0;i<raw.length;i++){h^=raw.charCodeAt(i);h=Math.imul(h,16777619)}return raw.length+':'+(h>>>0).toString(16)}
 let fileSyncedSignature=null;
 try{fileSyncedSignature=localStorage.getItem(FILE_SYNC_KEY)}catch{}
-function fileNeedsUpdate(){return !!state.projects.length&&fileSignature(state)!==fileSyncedSignature}
+function fileNeedsUpdate(){return (!!state.projects.length||Object.values(collectPreferences()).some(v=>v!==null))&&backupSignature()!==fileSyncedSignature}
 function refreshFileNotice(){window.dispatchEvent(new CustomEvent('impulsinho:arquivo',{detail:{pendente:fileNeedsUpdate()}}))}
 function confirmExternalFileWrite(signature){fileSyncedSignature=signature;try{localStorage.setItem(FILE_SYNC_KEY,signature)}catch{}refreshFileNotice()}
 function invalidateExternalFileSync(){fileSyncedSignature=null;try{localStorage.removeItem(FILE_SYNC_KEY)}catch{}refreshFileNotice()}
@@ -999,10 +1011,16 @@ window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;installIn
 modal.addEventListener('close',()=>{installInvitePending=false});
 
 const backupFileOptions={types:[{description:'Backup Geral do Impulso (JSON)',accept:{'application/json':['.json','.impulso']}}],excludeAcceptAllOption:true};
-function backupPayload(){return {app:'Impulso',version:1,exportedAt:new Date().toISOString(),data:state}}
+// Preferências portáveis: não inclui permissões, handles ou histórico de instalação.
+function validPrefObject(raw,schema){try{const o=JSON.parse(raw);return !!o&&typeof o==='object'&&!Array.isArray(o)&&Object.entries(o).every(([k,v])=>{if(!Object.hasOwn(schema,k))return false;const t=schema[k];return Array.isArray(t)?t.includes(v):t==='bool'?typeof v==='boolean':t==='volume'?Number.isFinite(v)&&v>=0&&v<=100:t==='coord'?v===null||Number.isFinite(v):!!v&&typeof v==='object'&&!Array.isArray(v)&&Object.entries(v).every(([a,b])=>!['__proto__','constructor','prototype'].includes(a)&&(t==='boolMap'?typeof b==='boolean':typeof b==='string'&&b.length<=100));});}catch{return false}}
+function collectPreferences(){const out={};for(const k of Object.keys(PORTABLE_PREFS)){let v=localStorage.getItem(k);if(v!==null&&['impulso-alertas-v1','impulso-badging-v1'].includes(k)){try{const a=JSON.parse(v);v=JSON.stringify(k==='impulso-alertas-v1'?{backup:a.backup===true,habits:a.habits===true}:{enabled:a.enabled!==false})}catch{v=null}}if(v!==null&&PORTABLE_PREFS[k](v))out[k]=v;else out[k]=null;}return out}
+function validatePreferences(o){if(o===undefined)return;if(!o||typeof o!=='object'||Array.isArray(o))throw Error('Preferências inválidas');for(const [k,v] of Object.entries(o)){if(!Object.hasOwn(PORTABLE_PREFS,k)||v!==null&&(typeof v!=='string'||v.length>65536||!PORTABLE_PREFS[k](v)))throw Error('Preferência inválida: '+k)}}
+function applyPreferences(o){if(o===undefined)return;for(const [k,v] of Object.entries(o)){if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}}
+function backupPayload(){return {app:'Impulso',version:1,exportedAt:new Date().toISOString(),data:state,preferences:collectPreferences()}}
+function backupSignature(){return fileSignature({data:state,preferences:collectPreferences()})}
 function markBackupSaved(){try{localStorage.setItem(STORAGE_BACKUP_DATE,new Date().toISOString())}catch{}}
 async function writeBackupHandle(handle){
- const snapshot=backupPayload(),signature=fileSignature(state);
+ const snapshot=backupPayload(),signature=fileSignature({data:snapshot.data,preferences:snapshot.preferences});
  const writable=await handle.createWritable();
  try{await writable.write(JSON.stringify(snapshot,null,2));await writable.close();markBackupSaved();confirmExternalFileWrite(signature)}
  catch(error){try{await writable.abort()}catch{}throw error}
@@ -1071,7 +1089,7 @@ async function installConfirm(){
 function uninstallImpulso(){
  show(`<h2>Desinstalar o Impulso</h2><p>Por segurança, páginas web <strong>não podem desinstalar PWAs automaticamente</strong>. A remoção deve ser feita pelo sistema ou navegador.</p><p><strong>Windows:</strong> abra o menu do aplicativo instalado e escolha Desinstalar, ou use Configurações → Aplicativos → Aplicativos instalados.</p><p><strong>Android:</strong> mantenha pressionado o ícone do Impulso e selecione Desinstalar ou Remover, conforme o navegador.</p><p class="help"><strong>Antes de desinstalar:</strong> use Arquivo → Guardar para preservar seus projetos. Dependendo do navegador, a remoção ou limpeza dos dados pode apagar os registros locais.</p><div class="modal-actions"><button class="btn primary" data-action="cancel">Entendi</button></div>`);
 }
-function backup(){const payload={app:'Impulso',version:1,exportedAt:new Date().toISOString(),data:state};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`impulso-backup-${dateKey(now())}.json`;a.click();try{localStorage.setItem(STORAGE_BACKUP_DATE,new Date().toISOString())}catch{}setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function backup(){const payload=backupPayload();const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`impulso-backup-${dateKey(now())}.json`;a.click();try{localStorage.setItem(STORAGE_BACKUP_DATE,new Date().toISOString())}catch{}setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function exportProject(){
  const p=project();
  if(!p){toast('Abra um projeto antes de exportar.');return}
@@ -1109,7 +1127,7 @@ function importProject(file){
  reader.readAsText(file);
 }
 function validate(o){if(o?.kind==='project')throw Error('Este arquivo contém apenas um projeto. Restaurar Backup aceita somente um Backup Geral.');if(!o||o.app!=='Impulso'||o.version!==1||!o.data||!Array.isArray(o.data.projects)||o.data.projects.length>10000)throw Error('Backup inválido ou incompatível');const ids=new Set;for(const p of o.data.projects){if(typeof p.id!=='string'||ids.has(p.id)||typeof p.name!=='string'||p.name.length>50||!Array.isArray(p.records)||!Array.isArray(p.habits))throw Error('Estrutura de projeto inválida');ids.add(p.id);if(p.records.length>200000||p.habits.length>20000)throw Error('Backup excede os limites');if(p.elixirs!==undefined&&(!Array.isArray(p.elixirs)||p.elixirs.length>200||p.elixirs.some(c=>!c||!Number.isInteger(c.bossId)||c.bossId<1||c.bossId>200||typeof c.recordId!=='string')))throw Error('Coleção de Elixires inválida');if(p.pointSession!==undefined){const q=p.pointSession;if(!q||typeof q.name!=='string'||!q.name.trim()||q.name.length>50||typeof(q.note??'')!=='string'||(q.note||'').length>50||!Number.isFinite(q.start)||q.start<0||!['running','stopped'].includes(q.status)||(q.status==='stopped'&&(!Number.isFinite(q.end)||q.end<=q.start)))throw Error('Ponto em andamento inválido')}if(p.focusSession!==undefined){const f=p.focusSession;if(!f||typeof f.name!=='string'||!f.name.trim()||f.name.length>50||typeof f.goal!=='string'||f.goal.length>200||!['delivery','dedication'].includes(f.mode)||!Number.isFinite(f.start)||!Number.isFinite(f.plannedMs)||f.plannedMs<60000||f.plannedMs>86400000||!Array.isArray(f.segments)||f.segments.length>100000||f.segments.some(x=>!Array.isArray(x)||x.length!==2||!Number.isFinite(x[0])||!Number.isFinite(x[1])||x[1]<=x[0])||(f.runningSince!=null&&!Number.isFinite(f.runningSince)))throw Error('Sessão de Foco inválida')}for(const r of p.records){if(typeof r.id!=='string'||!['start','end','habit','activity'].includes(r.type)||!Number.isFinite(r.start)||r.start<0||r.start>8640000000000000||(r.end!==undefined&&(!Number.isFinite(r.end)||r.end<r.start))||typeof(r.note??'')!=='string'||(r.note||'').length>50)throw Error('Registro inválido')}for(const h of p.habits){if(typeof h.id!=='string'||typeof h.name!=='string'||h.name.length>200||!Number.isInteger(h.minutes)||h.minutes<1||h.minutes>1440)throw Error('Hábito inválido')}}return o.data}
-function importBackup(file){if(!file)return;if(file.size>40*1024*1024){alert('Arquivo maior que 40 MB.');return}const reader=new FileReader;reader.onload=()=>{try{const data=validate(JSON.parse(reader.result));if(!ask('Restaurar este backup substituirá TODOS os projetos atuais. Deseja continuar?'))return;const old=state;state=data;state.projects.forEach(normalize);if(!project())state.active=state.projects[0]?.id||null;if(!save()){state=old;return}page='dashboard';render();toast('Backup restaurado')}catch(e){alert('Falha ao importar: '+e.message)}};reader.readAsText(file)}
+function importBackup(file){if(!file)return;if(file.size>40*1024*1024){alert('Arquivo maior que 40 MB.');return}const reader=new FileReader;reader.onload=()=>{try{const payload=JSON.parse(reader.result),data=validate(payload);validatePreferences(payload.preferences);if(!ask('Restaurar este backup substituirá TODOS os projetos atuais'+(payload.preferences!==undefined?' e as configurações incluídas':' (as configurações atuais serão mantidas)')+'. Deseja continuar?'))return;const old=state,previous=Object.fromEntries(Object.keys(PORTABLE_PREFS).map(k=>[k,localStorage.getItem(k)]));state=data;try{state.projects.forEach(normalize);if(!project())state.active=state.projects[0]?.id||null;applyPreferences(payload.preferences);if(payload.preferences!==undefined)localStorage.setItem(KEY,JSON.stringify(state));else if(!save())throw Error('Falha ao gravar projetos');}catch(e){state=old;applyPreferences(previous);throw e}if(payload.preferences!==undefined){confirmExternalFileWrite(backupSignature());location.reload();return}page='dashboard';render();toast('Backup restaurado')}catch(e){alert('Falha ao importar: '+e.message)}};reader.readAsText(file)}
 function printReport(projectsOnly=false,selectedDay=null){
  const previous=main.innerHTML,p=project();
  if(projectsOnly){main.innerHTML=header('Lista de projetos',`Emitido em ${stamp(now())}`)+`<section class="panel">${state.projects.map(x=>`<p><strong>${esc(x.name)}</strong> — ${stamp(x.created)} — ${mins(total(x))}</p>`).join('')}</section>`}
@@ -1129,7 +1147,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão: 151 (homologação)</strong></p>
+ <p><strong>Versão: 152 (homologação)</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
