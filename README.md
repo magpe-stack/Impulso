@@ -898,3 +898,7 @@ Painel não modal independente do cabeçalho. Ver Avisos e Ver Conquistas são a
 ### Versão 161 — Leitura individual de avisos
 
 O cartão inteiro abre o destino cadastrado no projeto correspondente. A leitura é gravada individualmente após a navegação; falhas mantêm o aviso pendente. O painel fecha após a leitura e o contador é atualizado. A abertura do painel permanece como na versão 160.
+
+
+### Versão 162 — Avisos sem repetição
+A leitura individual registra permanentemente a identidade do aviso extra (projeto e acontecimento) no armazenamento de avisos, incluído no Backup Geral. Conquistas lidas não perdem a marcação se temporariamente deixarem de ser válidas. Avisos lidos antes desta versão sem registro persistente podem reaparecer uma última vez.

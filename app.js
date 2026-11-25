@@ -211,8 +211,9 @@ function syncInsignias(p){
 // Badging API: somente novidades desde a primeira observação neste dispositivo.
 // Contadores locais são independentes dos backups e não geram conquistas fictícias.
 const BADGE_KEY='impulso-badging-v1';
-let badgeData={enabled:true,projects:{},extra:[]};
+let badgeData={enabled:true,projects:{},extra:[],extraRead:[]};
 try{const stored=JSON.parse(localStorage.getItem(BADGE_KEY)||'null');if(stored&&typeof stored==='object'){
+ badgeData.extraRead=Array.isArray(stored.extraRead)?stored.extraRead.filter(x=>typeof x==='string'):[];
  badgeData.enabled=stored.enabled!==false;badgeData.extra=Array.isArray(stored.extra)?stored.extra:[];
  badgeData.projects=stored.projects&&typeof stored.projects==='object'?stored.projects:{};
 }}catch{}
@@ -229,10 +230,11 @@ function persistBadgeData(){try{localStorage.setItem(BADGE_KEY,JSON.stringify(ba
 let noticesOpen=false;
 const noticePanel=document.createElement('section');
 noticePanel.id='impulsinhoAvisosPainel';noticePanel.className='impulso-notice-popover';noticePanel.hidden=true;noticePanel.setAttribute('aria-label','Central de Avisos');document.body.append(noticePanel);
+function extraNoticeKey(item){return JSON.stringify([String(item.projectId||''),String(item.id)])}
 function unreadNotices(){
  const result=[];for(const p of state.projects){const entry=badgeData.projects[p.id];if(!entry)continue;
   for(const item of badgeItems(p))if(!entry.read?.includes(item.id))result.push({...item,projectId:p.id,projectName:p.name,time:entry.times?.[item.id]||0});
- }return [...result,...badgeData.extra].sort((a,b)=>(b.time||0)-(a.time||0));
+ }return [...result,...badgeData.extra.filter(x=>!badgeData.extraRead.includes(extraNoticeKey(x)))].sort((a,b)=>(b.time||0)-(a.time||0));
 }
 let noticeMarkup=null;
 function renderNoticePopover(){
@@ -252,7 +254,7 @@ function updateBadges(){
    entry.read=[];for(const kind of badgeKinds){const oldSeen=kind==='elixirs'&&!Number.isFinite(entry.seen?.elixirs)?items.filter(x=>x.kind==='elixirs').length:Math.max(0,Number(entry.seen?.[kind])||0);entry.read.push(...items.filter(x=>x.kind===kind).slice(0,oldSeen).map(x=>x.id))}changed=true;
   }
   // Reconcilia itens que deixaram de existir, mantendo apenas conquistas válidas.
-  const valid=new Set(items.map(x=>x.id));const next=entry.read.filter(id=>valid.has(id));if(next.length!==entry.read.length){entry.read=next;changed=true}
+  // Preserve leituras mesmo quando uma conquista deixa temporariamente de ser válida.
   entry.times??={};for(const item of items)if(!entry.read.includes(item.id)&&!entry.times[item.id]){entry.times[item.id]=Date.now();changed=true;if(item.kind==='medals')gestoReal('medalha',p.id)}entry.high={...counts};entry.seen=Object.fromEntries(badgeKinds.map(k=>[k,items.filter(x=>x.kind===k&&entry.read.includes(x.id)).length]));
  }
  for(const id of Object.keys(badgeData.projects))if(!state.projects.some(p=>p.id===id)){delete badgeData.projects[id];changed=true}
@@ -269,7 +271,7 @@ window.ImpulsinhoNovidades=Object.freeze({
  consultar:()=>unreadNotices(),
  painel:()=>toggleNotices(true),
  conquistas:()=>{toggleNotices(false);page='insignias';render()},
- registrar:(item)=>{if(!badgeData.extra.some(x=>x.id===item.id)){badgeData.extra.push({...item,time:Date.now()});persistBadgeData();updateBadges()}},
+ registrar:(item)=>{if(!badgeData.extraRead.includes(extraNoticeKey(item))&&!badgeData.extra.some(x=>extraNoticeKey(x)===extraNoticeKey(item))){badgeData.extra.push({...item,time:Date.now()});persistBadgeData();updateBadges()}},
  abrir:openIndividualNotice,
  atualizarBackup:()=>{if(selectedBackupHandle)atualizarBackup();else guardarBackup()}
 });
@@ -292,11 +294,11 @@ function openIndividualNotice(projectId,itemId){
  }catch(error){state.active=previousActive;page=previousPage;try{render()}catch{}toast('Não foi possível abrir o destino. O aviso foi mantido.');return false;}
  const extraIndex=badgeData.extra.findIndex(x=>String(x.id)===String(item.id)&&String(x.projectId||'')===pid);
  const entry=badgeData.projects[pid];
- const oldExtra=badgeData.extra,oldRead=entry?.read;
- if(extraIndex>=0)badgeData.extra=oldExtra.filter((_,i)=>i!==extraIndex);
+ const oldExtra=badgeData.extra,oldRead=entry?.read,oldExtraRead=badgeData.extraRead;
+ if(extraIndex>=0){badgeData.extra=oldExtra.filter((_,i)=>i!==extraIndex);badgeData.extraRead=[...new Set([...oldExtraRead,extraNoticeKey(item)])];}
  else if(entry)entry.read=[...new Set([...(entry.read||[]),item.id])];
  else return false;
- try{localStorage.setItem(BADGE_KEY,JSON.stringify(badgeData))}catch{badgeData.extra=oldExtra;if(entry)entry.read=oldRead;toast('Não foi possível gravar a leitura. O aviso foi mantido.');return false;}
+ try{localStorage.setItem(BADGE_KEY,JSON.stringify(badgeData))}catch{badgeData.extra=oldExtra;badgeData.extraRead=oldExtraRead;if(entry)entry.read=oldRead;toast('Não foi possível gravar a leitura. O aviso foi mantido.');return false;}
  toggleNotices(false);updateBadges();return true;
 }
 function setBadgeEnabled(enabled){badgeData.enabled=Boolean(enabled);persistBadgeData();if(!enabled){noticesOpen=false;renderNoticePopover()}updateBadges()}
@@ -1047,7 +1049,7 @@ modal.addEventListener('close',()=>{installInvitePending=false});
 const backupFileOptions={types:[{description:'Backup Geral do Impulso (JSON)',accept:{'application/json':['.json','.impulso']}}],excludeAcceptAllOption:true};
 // Preferências portáveis: não inclui permissões, handles ou histórico de instalação.
 function validPrefObject(raw,schema){try{const o=JSON.parse(raw);return !!o&&typeof o==='object'&&!Array.isArray(o)&&Object.entries(o).every(([k,v])=>{if(!Object.hasOwn(schema,k))return false;const t=schema[k];return Array.isArray(t)?t.includes(v):t==='bool'?typeof v==='boolean':t==='volume'?Number.isFinite(v)&&v>=0&&v<=100:t==='coord'?v===null||Number.isFinite(v):!!v&&typeof v==='object'&&!Array.isArray(v)&&Object.entries(v).every(([a,b])=>!['__proto__','constructor','prototype'].includes(a)&&(t==='boolMap'?typeof b==='boolean':typeof b==='string'&&b.length<=100));});}catch{return false}}
-function validNoticePrefs(raw){try{const o=JSON.parse(raw);return typeof o.enabled==='boolean'&&(!o.projects||Object.entries(o.projects).every(([k,v])=>!['__proto__','constructor','prototype'].includes(k)&&Array.isArray(v.read)&&v.read.every(x=>typeof x==='string')))&&(!o.extra||Array.isArray(o.extra)&&o.extra.every(x=>typeof x.id==='string'&&typeof x.title==='string'&&typeof x.detail==='string'&&['armazenamento','habitos','radar','configuracao','projetos','dashboard'].includes(x.page)&&Number.isFinite(x.time)));}catch{return false}}
+function validNoticePrefs(raw){try{const o=JSON.parse(raw);return typeof o.enabled==='boolean'&&(o.extraRead===undefined||Array.isArray(o.extraRead)&&o.extraRead.every(x=>typeof x==='string'))&&(!o.projects||Object.entries(o.projects).every(([k,v])=>!['__proto__','constructor','prototype'].includes(k)&&Array.isArray(v.read)&&v.read.every(x=>typeof x==='string')))&&(!o.extra||Array.isArray(o.extra)&&o.extra.every(x=>typeof x.id==='string'&&typeof x.title==='string'&&typeof x.detail==='string'&&['armazenamento','habitos','radar','configuracao','projetos','dashboard'].includes(x.page)&&Number.isFinite(x.time)));}catch{return false}}
 function collectPreferences(){const out={};for(const k of Object.keys(PORTABLE_PREFS)){let v=localStorage.getItem(k);if(v!==null&&k==='impulso-alertas-v1'){try{const a=JSON.parse(v);v=JSON.stringify(k==='impulso-alertas-v1'?{backup:a.backup===true,habits:a.habits===true}:{enabled:a.enabled!==false})}catch{v=null}}if(v!==null&&PORTABLE_PREFS[k](v))out[k]=v;else out[k]=null;}return out}
 function validatePreferences(o){if(o===undefined)return;if(!o||typeof o!=='object'||Array.isArray(o))throw Error('Preferências inválidas');for(const [k,v] of Object.entries(o)){if(!Object.hasOwn(PORTABLE_PREFS,k)||v!==null&&(typeof v!=='string'||v.length>(k===BADGE_KEY?4000000:65536)||!PORTABLE_PREFS[k](v)))throw Error('Preferência inválida: '+k)}}
 function applyPreferences(o){if(o===undefined)return;for(const [k,v] of Object.entries(o)){if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}}
@@ -1182,7 +1184,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão: 161 (homologação)</strong></p>
+ <p><strong>Versão: 162 (homologação)</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
