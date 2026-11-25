@@ -44,7 +44,7 @@ const questions=document.createElement('section');questions.id='impulsinho-pergu
 questions.setAttribute('aria-label','Perguntas e ações para o Impulsinho');
 const qTitle=document.createElement('h2');qTitle.textContent='O que você quer perguntar?';questions.append(qTitle);const menu=document.createElement('button');menu.type='button';menu.textContent='Perguntas rápidas ▾';menu.hidden=true;
 const actions=balloon.querySelector('.impulsinho-acoes');
-actions.id='impulsinho-perguntas-acoes';questions.append(actions);actions.hidden=true;const quick=document.createElement('select');quick.setAttribute('aria-label','Escolher pergunta rápida');const runQuick=document.createElement('button');runQuick.type='button';runQuick.textContent='Abrir';const quickRow=document.createElement('div');quickRow.className='impulsinho-form-row';quickRow.append(quick,runQuick);questions.append(quickRow);function refreshQuick(){quick.replaceChildren(new Option('Perguntas rápidas…',''));for(const [i,b] of [...actions.querySelectorAll('button')].entries()){if(!b.hidden)quick.add(new Option(b.textContent,String(i)))}runQuick.disabled=true}quick.addEventListener('change',()=>{runQuick.disabled=quick.value===''});runQuick.addEventListener('click',()=>{if(quick.value==='')return;const b=actions.querySelectorAll('button')[Number(quick.value)];if(b&&!b.hidden)b.click();if(!questions.hidden)refreshQuick()});
+actions.id='impulsinho-perguntas-acoes';questions.append(actions);actions.hidden=true;const quick=document.createElement('select');quick.setAttribute('aria-label','Escolher pergunta rápida');const runQuick=document.createElement('button');runQuick.type='button';runQuick.textContent='Abrir';const quickRow=document.createElement('div');quickRow.className='impulsinho-form-row';quickRow.append(quick,runQuick);questions.append(quickRow);function refreshQuick(){quick.replaceChildren(new Option('Perguntas rápidas…',''));for(const [i,b] of [...actions.querySelectorAll('button')].entries()){if(!b.hidden)quick.add(new Option(b.textContent,String(i)))}runQuick.disabled=true}quick.addEventListener('change',()=>{runQuick.disabled=quick.value===''});runQuick.addEventListener('click',()=>{if(quick.value==='')return;const b=actions.querySelectorAll('button')[Number(quick.value)];if(b&&!b.hidden){if(b.dataset.acao==='avisos')manualStatus();else if(b.dataset.acao==='conquistas')manualTopic('conquistas');else b.click();}if(!questions.hidden)refreshQuick()});
 const tutorialButton=document.createElement('button');tutorialButton.type='button';tutorialButton.textContent='▶ Tutorial';tutorialButton.dataset.acao='tutorial';actions.prepend(tutorialButton);
 const questionForm=document.createElement('form');questionForm.className='impulsinho-formulario';questionForm.setAttribute('aria-label','Escrever pergunta ao Impulsinho');
 questionForm.innerHTML='<label for="impulsinho-pergunta-texto">Sua pergunta</label><div class="impulsinho-form-row"><input id="impulsinho-pergunta-texto" type="text" maxlength="180" autocomplete="off" placeholder="Ex.: Quanto trabalhei hoje?" required><button type="submit">Perguntar</button></div><p class="impulsinho-ajuda">Pergunte sobre seu projeto ou sobre o Impulso: como restaurar um backup?</p>';
@@ -61,7 +61,7 @@ const backupAction=document.createElement('button');backupAction.type='button';b
 const countIndicator=document.createElement('span');countIndicator.className='impulsinho-contador';countIndicator.hidden=true;avatar.append(countIndicator);
 function listAchievements(){try{return window.ImpulsinhoNovidades?.listar?.()||[]}catch{return []}}
 function updateAchievements(){const list=listAchievements();countIndicator.hidden=!list.length;countIndicator.textContent=list.length>99?'99+':String(list.length);avatar.setAttribute('aria-label',list.length?`Conversar com o Impulsinho; ${list.length} conquistas não consultadas`:'Conversar com o Impulsinho');return list}
-function manualAchievements(){questionsOpen(false);opened(false);window.ImpulsinhoNovidades.painel()}
+function manualAchievements(){questionsOpen(false);opened(false);window.ImpulsinhoNovidades?.painel?.()}
 function updateBackupAction(){backupAction.hidden=!snapshot()?.backupPendente}
 window.addEventListener('impulsinho:novidades',updateAchievements);
 window.addEventListener('impulsinho:arquivo',updateBackupAction);
@@ -303,7 +303,7 @@ function goTo(topic){const pages={hoje:'dia',motor:'radar',arena:'arena',habitos
 function manualTopic(topic){stopTour();
  if(topic==='evolucao'){manualEvolution();return}
  const s=snapshot(),p=s?.projeto;
- if(topic==='conquistas'){questionsOpen(false);opened(false);goTo('conquistas');return}
+ if(topic==='conquistas'){questionsOpen(false);opened(false);if(window.ImpulsinhoNovidades?.conquistas)window.ImpulsinhoNovidades.conquistas();else goTo('conquistas');return}
  if(topic==='backup'){goTo('backup');manualStatus();return}
  if(topic==='configuracoes'){goTo('configuracoes');reply('Configurações','Abri as Configurações. Aqui você escolhe temas, alertas, atalhos e como quer conversar comigo.','curiosidade');return}
  if(topic==='projetos'){goTo('projetos');reply('Projetos','Abri a lista de projetos. Escolha um projeto para que eu possa consultar seus dados reais.','curiosidade');return}
