@@ -61,13 +61,7 @@ const backupAction=document.createElement('button');backupAction.type='button';b
 const countIndicator=document.createElement('span');countIndicator.className='impulsinho-contador';countIndicator.hidden=true;avatar.append(countIndicator);
 function listAchievements(){try{return window.ImpulsinhoNovidades?.listar?.()||[]}catch{return []}}
 function updateAchievements(){const list=listAchievements();countIndicator.hidden=!list.length;countIndicator.textContent=list.length>99?'99+':String(list.length);avatar.setAttribute('aria-label',list.length?`Conversar com o Impulsinho; ${list.length} conquistas não consultadas`:'Conversar com o Impulsinho');return list}
-function manualAchievements(){
- const list=window.ImpulsinhoNovidades?.consultar?.()||updateAchievements();
- if(!list.length){reply('Novidades e conquistas','Não há conquistas pendentes de consulta. Quando surgirem novas conquistas, vou contar a você.','curiosidade');return}
- const descriptions=list.map((item,i)=>`${i+1}. ${item.title||'Conquista'}: ${item.detail||'Novo registro'}${item.projectName?' — '+item.projectName:''}.`);
- const extra='';
- reply('Suas novidades',`Encontrei ${list.length} conquista${list.length===1?'':'s'} nova${list.length===1?'':'s'}. ${descriptions.join(' ')}${extra} Essas novidades foram marcadas como lidas.`,'alegria');
-}
+function manualAchievements(){questionsOpen(false);opened(false);window.ImpulsinhoNovidades?.painel?.()}
 function updateBackupAction(){backupAction.hidden=!snapshot()?.backupPendente}
 window.addEventListener('impulsinho:novidades',updateAchievements);
 window.addEventListener('impulsinho:arquivo',updateBackupAction);
@@ -145,7 +139,7 @@ function fraseMotivacional(manual=false){
  const emotion=selected.categoria==='estoicismo'?'cuidado':selected.categoria==='positividade'?'alegria':selected.categoria==='motivação'?'desafio':'curiosidade';
  if(manual)reply('Uma ideia para você',selected.frase,emotion);
  else speak({key:'motivacional:'+selected.id,title:'Uma ideia para você',text:selected.frase,emotion});
- return true;
+ realReceive({tipo:manual?'frase-manual':'frase-espontanea'});return true;
 }
 const motivSessionStart=Date.now();
 // Oferece uma frase apenas ocasionalmente e somente quando a conversa está livre.
@@ -178,7 +172,7 @@ function phrase(group,values={}){const arr=FALAS[group]||FALAS.geral;const previ
 function speak(event){if(event.key.startsWith('atalhos:')||event.key.startsWith('conselho-evolucao:'))window.dispatchEvent(new CustomEvent('impulsinho:gesto-real',{detail:{tipo:'dica'}}));reminderSave.hidden=!event.key.startsWith('backup:');playEmotion(event.emotion);headline.textContent=event.title;message.textContent=profile().lead+event.text;express(event.emotion);opened(true);eventState.lastSpoken=Date.now();eventState.seen[event.key]=Date.now();persistEvents()}
 function enqueue(event){if(behavior.modo==='clique'&&!event?.key?.startsWith('backup:')&&!event?.key?.startsWith('elixir:'))return;if(!event||eventState.seen[event.key]||eventQueue.some(x=>x.key===event.key))return;eventQueue.push(event);eventQueue.sort((a,b)=>b.priority-a.priority);if(eventQueue.length>12)eventQueue.length=12;dispatch()}
 function dispatch(){const a=alertPrefs();for(let i=eventQueue.length-1;i>=0;i--){const k=eventQueue[i].key;if((k.startsWith('backup:')&&!a.backup)||(k.startsWith('elixir:')&&!a.habits))eventQueue.splice(i,1)}if(isBusy()||!eventQueue.length||window.__impulsoGestoRealOcupado)return;const now=Date.now();const next=eventQueue[0];if(next.priority<3&&now-eventState.lastSpoken<profile().gap)return;eventQueue.shift();speak(next)}
-function notice(key,title,text,emotion='curiosidade',priority=1){enqueue({key,title,text,emotion,priority})}
+function notice(key,title,text,emotion='curiosidade',priority=1){if(!eventState.seen[key]&&['horas','evolucao','atalhos','conselho-evolucao','projeto'].includes(key.split(':')[0]))window.ImpulsinhoNovidades?.registrar({id:key,kind:'extra',title,detail:text,page:({horas:'radar',evolucao:'radar',atalhos:'configuracao','conselho-evolucao':'radar',projeto:'projetos'})[key.split(':')[0]],icon:'🔔',projectId:snapshot()?.projeto?.id||''});enqueue({key,title,text,emotion,priority})}
 // v121: evolução calculada exclusivamente a partir dos registros do projeto.
 const evolutionStages=[
  {name:'Aprendiz',min:0,emotion:'curiosidade',lines:['Vamos construir uma rotina simples.','Um registro de cada vez já é progresso.']},
@@ -286,7 +280,7 @@ window.addEventListener('impulsinho:ignicao',e=>{
  else if(giros>=100){emotion='surpresa';comment=`Uau! ${giros.toLocaleString('pt-BR')} Giros completos! Esse Motor já tem uma bela história.`}
  else{emotion='curiosidade';comment=`Seu Motor registra ${giros.toLocaleString('pt-BR')} Giros completos. Vamos acompanhar sua evolução!`}
  // Ignição é um gesto explícito: responder mesmo com o Motor em execução, sem bloquear o botão Parar.
- reply('Ignição do Motor!',comment,emotion);
+ reply('Ignição do Motor!',comment,emotion);realReceive({tipo:'ignicao',projetoId:d.projetoId});
 });
 window.addEventListener('impulsinho:dados-alterados',()=>{if(snapshot()?.projeto)stopTour()});
 window.addEventListener('impulsinho:navegacao',()=>{if(snapshot()?.projeto)stopTour()});
@@ -296,16 +290,7 @@ const statusButton=document.createElement('button');statusButton.type='button';s
 function reply(title,text,emotion='curiosidade',documental=false){reminderSave.hidden=true;eventState.lastSpoken=Date.now();persistEvents();playEmotion(emotion);questionsOpen(false);headline.textContent=title;message.textContent=(documental?'':profile().lead)+text;express(emotion,!documental);opened(true)}
 function manualLink(){const a=document.createElement('a');a.href='https://github.com/magpe-stack/Impulso/blob/main/README.md';a.target='_blank';a.rel='noopener noreferrer';a.textContent='Consultar o Manual do Impulso ↗';a.style.cssText='display:block;margin-top:10px;color:inherit;text-decoration:underline;font-weight:600';message.append(a);position();requestAnimationFrame(position)}
 function fmtHours(ms){return (Math.max(0,Number(ms)||0)/3600000).toLocaleString('pt-BR',{maximumFractionDigits:2})}
-function manualStatus(){
- const s=snapshot(),p=s?.projeto,alerts=alertPrefs();const lines=[];
- lines.push(p?'Projeto ativo: '+p.nome+'.':'Nenhum projeto ativo.');
- lines.push(s?.backupPendente?'Existem alterações pendentes no arquivo externo.':'Não há alterações pendentes indicadas no arquivo externo.');
- lines.push('Alerta de backup: '+(alerts.backup?'ativado.':'desativado.'));
- lines.push('Alerta de hábitos e Elixires: '+(alerts.habits?'ativado.':'desativado.'));
- lines.push('Avisos na fila do Impulsinho: '+eventQueue.length+'.');const activity=window.ImpulsinhoAtividade?.();if(activity)lines.push(activity.label+(activity.paused?' em pausa.':' em andamento.'));const pending=eventQueue.find(e=>/^(backup|elixir):/.test(e.key)&& (e.key.startsWith('backup:')?alerts.backup:alerts.habits));if(pending){eventQueue.splice(eventQueue.indexOf(pending),1);speak(pending);questionsOpen(false);return;}
- const novidades=window.ImpulsinhoNovidades?.consultar?.()||[];if(novidades.length)lines.push('Conquistas consultadas: '+novidades.map(x=>x.detail+' — '+x.projectName).join('; ')+'.');
- reply('Situação do Impulso',lines.join(' '),'curiosidade');
-}
+function manualStatus(){manualAchievements()}
 function manualStats(){
  const s=snapshot(),p=s?.projeto;
  if(!p){reply('Estatísticas reais','Nenhum projeto ativo. Crie ou abra um projeto para consultar suas estatísticas.');return}
@@ -318,7 +303,7 @@ function goTo(topic){const pages={hoje:'dia',motor:'radar',arena:'arena',habitos
 function manualTopic(topic){stopTour();
  if(topic==='evolucao'){manualEvolution();return}
  const s=snapshot(),p=s?.projeto;
- if(topic==='conquistas'){manualAchievements();goTo('conquistas');return}
+ if(topic==='conquistas'){manualAchievements();return}
  if(topic==='backup'){goTo('backup');manualStatus();return}
  if(topic==='configuracoes'){goTo('configuracoes');reply('Configurações','Abri as Configurações. Aqui você escolhe temas, alertas, atalhos e como quer conversar comigo.','curiosidade');return}
  if(topic==='projetos'){goTo('projetos');reply('Projetos','Abri a lista de projetos. Escolha um projeto para que eu possa consultar seus dados reais.','curiosidade');return}
@@ -403,7 +388,7 @@ avatar.addEventListener('pointerdown',e=>{if(e.button!==0)return;stopTour();drag
 avatar.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.startX,dy=e.clientY-drag.startY;if(Math.hypot(dx,dy)>7)drag.moved=true;if(drag.moved){pref.x=drag.x+dx;pref.y=drag.y+dy;position()}});
 avatar.addEventListener('pointerup',e=>{if(!drag||e.pointerId!==drag.id)return;const moved=drag.moved;drag=null;if(moved){save();lastDragEnd=performance.now()}});
 avatar.addEventListener('pointercancel',()=>{drag=null;save()});
-avatar.addEventListener('click',()=>{if(performance.now()-lastDragEnd<350)return;opened(balloon.hidden)});
+avatar.addEventListener('click',e=>{if(e.target===countIndicator){manualAchievements();return}if(performance.now()-lastDragEnd<350)return;opened(balloon.hidden)});
 questionButton.addEventListener('click',()=>{stopTour();questionsOpen(questions.hidden)});
 root.addEventListener('click',e=>{const action=e.target.closest('[data-acao]')?.dataset.acao;if(!action)return;if(action==='tutorial')runTutorial();if(action==='avisos')manualStatus();if(action==='estatisticas')manualTopic('estatisticas');if(['hoje','motor','arena','habitos'].includes(action))manualTopic(action);if(action==='ajustes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))};if(action==='conquistas')manualTopic('conquistas');if(action==='backup')window.ImpulsinhoNovidades?.atualizarBackup?.();if(action==='ocultar')visible(false);if(action==='silenciar'){pref.silenciado=!pref.silenciado;save()}if(action==='configurar'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='expressoes'){questionsOpen(false);opened(false);window.dispatchEvent(new CustomEvent('impulsinho:abrir-configuracoes'))}if(action==='anterior')nextFace(-1);if(action==='proxima')nextFace(1);if(action==='aleatoria')randomFace()});
 reopen.addEventListener('click',()=>{visible(true);opened(true);avatar.focus()});
@@ -528,6 +513,8 @@ window.addEventListener('pagehide',()=>motor147?.parar());window.addEventListene
 const realPanel=document.createElement('section');realPanel.innerHTML='<h4>Diagnóstico de acontecimentos reais</h4><p class="help" role="status">Aguardando motor.</p>';configHost.append(realPanel);
 const realStatus=realPanel.querySelector('p');
 const realScenes={
+ ignicao:['u1f4aa','desafio','Motor em ação!'], 'frase-manual':['u261d','curiosidade',''], 'frase-espontanea':['u1f932','curiosidade',''], medalha:['u1f44f','alegria','Medalha conquistada!'],
+
 "projeto-renomeado":["u270d", "curiosidade", "Nome atualizado!"],
 "registro-excluido":["u1faf3", "descanso", "Registro removido."],
 "visao-revelada":["u1f450", "surpresa", "Uma nova parte da sua Visão!"],
@@ -562,14 +549,14 @@ function realReport(){const d=realFila?.status();realStatus.textContent=d?`Receb
 async function realInit(){if(realMotor)return;if(realLoading)return realLoading;realLoading=(async()=>{const [{criarFilaReal},{criarMotor},{criarRepertorio},r]=await Promise.all([import('./motores/fila-real.mjs'),import('./motores/motor-corporal.mjs'),import('./motores/repertorio-real.mjs'),fetch('impulsinho/motores/catalogo-gestual.json')]);if(!r.ok)throw Error('Catálogo indisponível');realCatalog=await r.json();realRepertorio=criarRepertorio(realCatalog);realFila=criarFilaReal();realMotor=criarMotor({avatar,palco:document.body,catalogo:realCatalog,pasta:'impulsinho/gestos/'});for(const e of realEarly.splice(0))realFila.inserir(e.tipo,e.projetoId);realReport()})().catch(e=>{realReason=e.message;realReport()}).finally(()=>{realLoading=null});return realLoading;}
 function realReceive(e){if(!realEnabled()||!realScenes[e?.tipo])return;if(realFila)realFila.inserir(e.tipo,e.projetoId);else{if(realEarly.length<24)realEarly.push(e);realInit()}realReport();}
 window.addEventListener('impulsinho:gesto-real',e=>realReceive(e.detail));
-window.addEventListener('impulsinho:lembrete',e=>{const a=alertPrefs();if((e.detail?.kind==='backup'&&a.backup)||(e.detail?.kind==='habits'&&a.habits))realReceive({tipo:'alerta-'+e.detail.kind})});
+window.addEventListener('impulsinho:lembrete',e=>{const a=alertPrefs();if((e.detail?.kind==='backup'&&a.backup)||(e.detail?.kind==='habits'&&a.habits)){const k=e.detail.kind;window.ImpulsinhoNovidades?.registrar({id:'alerta:'+k,kind:'extra',title:k==='backup'?'Backup recomendado':'Lembrete de hábitos',detail:k==='backup'?'Proteja seus projetos.':'Confira seus hábitos e Elixires.',page:k==='backup'?'armazenamento':'habitos',icon:'🔔'});realReceive({tipo:'alerta-'+k})}});
 async function realTick(){if(!realEnabled()){realFila?.limpar();realEarly.length=0;realReport();return}if(!realMotor){await realInit();return}if(realBusy||testeCorporalAtivo||Date.now()<realNext||!realFila.status().pendentes)return;
  if(document.hidden||document.querySelector('dialog[open]')||!questions.hidden||document.activeElement?.matches('input,textarea,select,[contenteditable="true"]')){realReason='Aguardando interface livre.';realReport();return}
  const i=realFila.retirar(snapshot()?.projeto?.id);if(!i){realReport();return}const activity=window.ImpulsinhoAtividade?.();const active=!!activity&&!activity.paused;if(i.tipo.startsWith('alerta-')&&!alertPrefs()[i.tipo.slice(7)]){realFila.resultado(false);realReport();return}
- if(active&&!['ponto-inicio','foco-inicio','foco-retomado','pomodoro-start','pomodoro-resume'].includes(i.tipo)){realFila.adiar(i);realNext=Date.now()+4000;realReason='Aguardando fim da atividade.';realReport();return}
+ if(active&&!['ponto-inicio','foco-inicio','foco-retomado','pomodoro-start','pomodoro-resume','ignicao'].includes(i.tipo)){realFila.adiar(i);realNext=Date.now()+4000;realReason='Aguardando fim da atividade.';realReport();return}
  const [id,emotion,text]=realScenes[i.tipo];realBusy=true;window.__impulsoGestoRealOcupado=true;let own=false,shown=false;const phrase=profile().lead+text;
  try{const passos=realRepertorio.planejar(i.tipo,id,behavior.personalidade,{ativo:active,reduzido:matchMedia('(prefers-reduced-motion: reduce)').matches,pendentes:realFila.status().pendentes});express(emotion,false);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
- for(const [n,p] of passos.entries()){if(!realEnabled()||testeCorporalAtivo||document.hidden||document.querySelector('dialog[open]')||(n&&window.ImpulsinhoAtividade?.()))break;const g=realCatalog.gestos.find(x=>x.id===p.id);if(!g)continue;let ok=await realMotor.mostrar(g.gesto.evento_proposto,{contexto:true,ids:[p.id],real:true,sequencia:n>0,duracao:p.duracao});if(!ok&&n===0&&p.id!==id){const fallback=realCatalog.gestos.find(x=>x.id===id);if(fallback)ok=await realMotor.mostrar(fallback.gesto.evento_proposto,{contexto:true,ids:[id],real:true,duracao:p.duracao});}if(!ok)continue;shown=true;if(!active&&balloon.hidden&&!own){headline.textContent='Impulsinho';message.textContent=phrase;reminderSave.hidden=true;opened(true);own=true;}await new Promise(r=>setTimeout(r,p.duracao+80));}
+ for(const [n,p] of passos.entries()){if(!realEnabled()||testeCorporalAtivo||document.hidden||document.querySelector('dialog[open]')||(n&&window.ImpulsinhoAtividade?.()&&i.tipo!=='ignicao'))break;const g=realCatalog.gestos.find(x=>x.id===p.id);if(!g)continue;let ok=await realMotor.mostrar(g.gesto.evento_proposto,{contexto:true,ids:[p.id],real:true,sequencia:n>0,duracao:p.duracao});if(!ok&&n===0&&p.id!==id){const fallback=realCatalog.gestos.find(x=>x.id===id);if(fallback)ok=await realMotor.mostrar(fallback.gesto.evento_proposto,{contexto:true,ids:[id],real:true,duracao:p.duracao});}if(!ok)continue;shown=true;if(!active&&text&&balloon.hidden&&!own){headline.textContent='Impulsinho';message.textContent=phrase;reminderSave.hidden=true;opened(true);own=true;}await new Promise(r=>setTimeout(r,p.duracao+80));}
  realReason=shown?'Gesto exibido no personagem.':'Sem espaço livre ou imagem indisponível.';
  }catch(e){realReason=e.message}finally{realFila.resultado(shown);realMotor.limpar();if(own&&message.textContent===phrase)opened(false);realBusy=false;window.__impulsoGestoRealOcupado=false;realNext=Date.now()+(behavior.personalidade==='discreto'?14000:8000);realReport()}}
 setInterval(()=>{realTick().catch(console.warn)},500);
