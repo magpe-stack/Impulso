@@ -283,13 +283,15 @@ function openIndividualNotice(projectId,itemId){
  const routes=new Set(['insignias','codex','cerimonias','altar','armazenamento','habitos','radar','configuracao','projetos','dashboard','inicio']);
  const needsProject=new Set(['codex','altar','habitos','radar','dashboard']);
  const target=item.page, previousPage=page, previousActive=state.active;
- if(!routes.has(target)){toast('Destino do aviso indisponível. O aviso foi mantido.');return false;}
- if(pid&&!state.projects.some(p=>String(p.id)===pid)){toast('O projeto deste aviso não está disponível. O aviso foi mantido.');return false;}
+ if(!routes.has(target)&&!Boolean(pid&&!state.projects.some(p=>String(p.id)===pid))){toast('Destino do aviso indisponível. O aviso foi mantido.');return false;}
+ const orphan=Boolean(pid&&!state.projects.some(p=>String(p.id)===pid));
  if(!pid&&needsProject.has(target)&&!project()){toast('Abra um projeto antes de consultar este aviso.');return false;}
  try{
+  if(!orphan){
   if(pid)state.active=state.projects.find(p=>String(p.id)===pid).id;
   page=target;render();
   if(page!==target)throw new Error('Destino não aberto');
+  }
   if(state.active!==previousActive&&!save())throw new Error('Projeto não gravado');
  }catch(error){state.active=previousActive;page=previousPage;try{render()}catch{}toast('Não foi possível abrir o destino. O aviso foi mantido.');return false;}
  const extraIndex=badgeData.extra.findIndex(x=>String(x.id)===String(item.id)&&String(x.projectId||'')===pid);
@@ -299,7 +301,7 @@ function openIndividualNotice(projectId,itemId){
  else if(entry)entry.read=[...new Set([...(entry.read||[]),item.id])];
  else return false;
  try{localStorage.setItem(BADGE_KEY,JSON.stringify(badgeData))}catch{badgeData.extra=oldExtra;badgeData.extraRead=oldExtraRead;if(entry)entry.read=oldRead;toast('Não foi possível gravar a leitura. O aviso foi mantido.');return false;}
- toggleNotices(false);updateBadges();return true;
+ if(orphan){updateBadges();toast('Projeto não disponível. Aviso removido.');}else{toggleNotices(false);updateBadges();}return true;
 }
 function setBadgeEnabled(enabled){badgeData.enabled=Boolean(enabled);persistBadgeData();if(!enabled){noticesOpen=false;renderNoticePopover()}updateBadges()}
 function toggleNotices(force){noticesOpen=typeof force==='boolean'?force:!noticesOpen;renderNoticePopover();document.getElementById('impulsoBadgeIndicator')?.setAttribute('aria-expanded',String(noticesOpen));}
@@ -486,7 +488,7 @@ function consumeLaunchShortcut(){
 }
 function renderMenu(){
  const groups=[
-  ['arquivo','Arquivo',[['new','Novo'],['projetos','Projetos'],['guardar','Guardar'],['atualizarBackup','Atualizar'],['abrirBackup','Abrir'],['print','Imprimir']]],
+  ['arquivo','Arquivo',[['new','Novo'],['projetos','Projetos'],['guardar','Salvar'],['abrirBackup','Abrir'],['print','Imprimir']]],
   ['acoes','Ações',[['point','Ponto'],['foco','Foco'],['habitPage','Hábitos'],['manual','Entradas']]],
   ['vitorias','Vitórias',[['arena','Arena'],['codex','Codex'],['altar','Elixires'],['insignias','Insígnias'],['cerimonias','Cerimônias'],['visao','Visão']]],
   ['dados','Dados',[['dashboard','Dashboard'],['dia','Meu Dia'],['calendario','Calendário'],['radar','Motor'],['estatisticas','Estatísticas'],['armazenamento','Armazenamento']]],
@@ -531,7 +533,7 @@ let storageRequestId=0;
 async function renderStorage(){const id=++storageRequestId;main.innerHTML=header('Armazenamento','Monitor de Armazenamento Local — informações aproximadas sobre os dados do Impulso.')+'<section class="panel"><p role="status">Calculando medições locais…</p></section>';const d=await storageSnapshot();if(id!==storageRequestId||page!=='armazenamento')return;
  const ratio=d.quota>0&&d.usage!==null?Math.min(100,100*d.usage/d.quota):null;
  const last=localStorage.getItem(STORAGE_BACKUP_DATE);let lastText='Nenhuma solicitação registrada neste navegador';if(last){const dt=new Date(last);if(Number.isFinite(dt.getTime()))lastText=dt.toLocaleString('pt-BR')+' (download solicitado; não confirma arquivo salvo)'}
- main.innerHTML=header('Armazenamento','Monitor de Armazenamento Local — estimativas do navegador, não da memória RAM.')+`<section class="panel"><div class="row between storage-toolbar"><div><h2>Saúde dos dados</h2><p class="muted">Medição em ${esc(new Date().toLocaleString('pt-BR'))}</p></div><button class="btn primary" id="storageRefresh" type="button">↻ Atualizar medições</button></div><div class="storage-grid">${storageCard('Uso estimado da origem',storageFormat(d.usage),'Inclui dados e caches desta origem, conforme estimativa do navegador.')}${storageCard('Cota estimada da origem',storageFormat(d.quota),'Não representa o espaço livre real do dispositivo.')}${storageCard('Dados do Impulso (localStorage)',storageFormat(d.appBytes),'Chave principal dos projetos e registros.')}${storageCard('Todo o localStorage da origem',storageFormat(d.localBytes),'Inclui preferências e outras chaves locais.')}${storageCard('Cache offline acessível',storageFormat(d.cacheBytes),'Soma aproximada dos corpos das respostas no Cache Storage.')}${storageCard('Backup Geral estimado',storageFormat(d.backupBytes),'Tamanho previsto do JSON antes de baixar.')}</div><div class="storage-usage"><div class="row between"><strong>Uso estimado da cota</strong><span>${ratio===null?'Não disponível':ratio.toLocaleString('pt-BR',{maximumFractionDigits:2})+'%'}</span></div><div class="storage-track" role="progressbar" aria-label="Uso estimado da cota" aria-valuemin="0" aria-valuemax="100" ${ratio===null?'':`aria-valuenow="${ratio}"`}><span style="width:${ratio??0}%"></span></div><p class="help">O navegador pode incluir IndexedDB, Cache Storage e outros dados na estimativa. Os valores não são necessariamente somáveis.</p></div></section><section class="panel"><h2>Persistência do armazenamento</h2><p><strong>${d.persisted===true?'Concedida':d.persisted===false?'Não concedida':'Não disponível'}</strong></p><p class="muted">A persistência reduz o risco de remoção automática por pressão de armazenamento, mas não impede limpeza manual, desinstalação ou troca de aparelho.</p><button class="btn" type="button" id="storagePersist" ${d.persisted===true?'disabled':''}>Solicitar persistência</button><p class="help">A decisão é do navegador; o pedido pode ser negado sem apresentar uma janela.</p></section><section class="panel"><h2>Espaço por projeto</h2>${d.projects.length?`<div class="storage-projects">${d.projects.map(x=>`<div class="storage-project"><span>${esc(x.name)}</span><strong>${storageFormat(x.size)}</strong></div>`).join('')}</div>`:'<p class="muted">Nenhum projeto cadastrado.</p>'}<p class="help">Tamanhos calculados pelo JSON serializado dos projetos; são aproximações, não uma partição da cota total.</p></section><section class="panel"><h2>Último Backup Geral</h2><p>${esc(lastText)}</p><p class="help">O registro marca apenas a solicitação de download pelo aplicativo. Confira se o arquivo realmente foi salvo e mantenha uma cópia externa.</p><div class="actions"><button class="btn primary" data-action="backup">Guardar Backup Geral</button></div></section><section class="panel"><h2>Limitações e segurança</h2><p>Estes medidores não medem RAM nem espaço livre do aparelho. As cotas são estimadas pelo navegador e podem mudar. Nenhum dado será apagado automaticamente por esta página.</p>${d.errors.length?`<p class="help">${esc(d.errors.join(' '))}</p>`:''}</section>`;
+ main.innerHTML=header('Armazenamento','Monitor de Armazenamento Local — estimativas do navegador, não da memória RAM.')+`<section class="panel"><div class="row between storage-toolbar"><div><h2>Saúde dos dados</h2><p class="muted">Medição em ${esc(new Date().toLocaleString('pt-BR'))}</p></div><button class="btn primary" id="storageRefresh" type="button">↻ Atualizar medições</button></div><div class="storage-grid">${storageCard('Uso estimado da origem',storageFormat(d.usage),'Inclui dados e caches desta origem, conforme estimativa do navegador.')}${storageCard('Cota estimada da origem',storageFormat(d.quota),'Não representa o espaço livre real do dispositivo.')}${storageCard('Dados do Impulso (localStorage)',storageFormat(d.appBytes),'Chave principal dos projetos e registros.')}${storageCard('Todo o localStorage da origem',storageFormat(d.localBytes),'Inclui preferências e outras chaves locais.')}${storageCard('Cache offline acessível',storageFormat(d.cacheBytes),'Soma aproximada dos corpos das respostas no Cache Storage.')}${storageCard('Backup Geral estimado',storageFormat(d.backupBytes),'Tamanho previsto do JSON antes de baixar.')}</div><div class="storage-usage"><div class="row between"><strong>Uso estimado da cota</strong><span>${ratio===null?'Não disponível':ratio.toLocaleString('pt-BR',{maximumFractionDigits:2})+'%'}</span></div><div class="storage-track" role="progressbar" aria-label="Uso estimado da cota" aria-valuemin="0" aria-valuemax="100" ${ratio===null?'':`aria-valuenow="${ratio}"`}><span style="width:${ratio??0}%"></span></div><p class="help">O navegador pode incluir IndexedDB, Cache Storage e outros dados na estimativa. Os valores não são necessariamente somáveis.</p></div></section><section class="panel"><h2>Persistência do armazenamento</h2><p><strong>${d.persisted===true?'Concedida':d.persisted===false?'Não concedida':'Não disponível'}</strong></p><p class="muted">A persistência reduz o risco de remoção automática por pressão de armazenamento, mas não impede limpeza manual, desinstalação ou troca de aparelho.</p><button class="btn" type="button" id="storagePersist" ${d.persisted===true?'disabled':''}>Solicitar persistência</button><p class="help">A decisão é do navegador; o pedido pode ser negado sem apresentar uma janela.</p></section><section class="panel"><h2>Espaço por projeto</h2>${d.projects.length?`<div class="storage-projects">${d.projects.map(x=>`<div class="storage-project"><span>${esc(x.name)}</span><strong>${storageFormat(x.size)}</strong></div>`).join('')}</div>`:'<p class="muted">Nenhum projeto cadastrado.</p>'}<p class="help">Tamanhos calculados pelo JSON serializado dos projetos; são aproximações, não uma partição da cota total.</p></section><section class="panel"><h2>Último Backup Geral</h2><p>${esc(lastText)}</p><p class="help">O registro marca apenas a solicitação de download pelo aplicativo. Confira se o arquivo realmente foi salvo e mantenha uma cópia externa.</p><div class="actions"><button class="btn primary" data-action="backup">Salvar Backup Geral</button></div></section><section class="panel"><h2>Limitações e segurança</h2><p>Estes medidores não medem RAM nem espaço livre do aparelho. As cotas são estimadas pelo navegador e podem mudar. Nenhum dado será apagado automaticamente por esta página.</p>${d.errors.length?`<p class="help">${esc(d.errors.join(' '))}</p>`:''}</section>`;
 }
 async function requestStoragePersistence(){if(!navigator.storage?.persist){toast('Persistência não disponível neste navegador.');return}try{const granted=await navigator.storage.persist();toast(granted?'Persistência concedida.':'O navegador não concedeu persistência.');renderStorage()}catch(e){toast('Não foi possível solicitar persistência.')}}
 
@@ -1062,34 +1064,30 @@ async function writeBackupHandle(handle){
  try{await writable.write(JSON.stringify(snapshot,null,2));await writable.close();markBackupSaved();confirmExternalFileWrite(signature);gestoReal('backup',null)}
  catch(error){try{await writable.abort()}catch{}throw error}
 }
+// Um único comando de salvamento; mantém o vínculo durante a sessão.
+let backupSaving=false;
 async function guardarBackup(){
- if(typeof window.showSaveFilePicker!=='function'){
-  backup();toast('Download solicitado. Confira o arquivo: o navegador não confirma que ele foi gravado.');return;
- }
+ if(backupSaving)return;
+ backupSaving=true;
  try{
-  const handle=await window.showSaveFilePicker({...backupFileOptions,suggestedName:`impulso-backup-${dateKey(now())}.json`});
-  await writeBackupHandle(handle);selectedBackupHandle=handle;toast('Backup salvo no arquivo escolhido');
- }catch(error){if(error.name!=='AbortError')alert('Não foi possível guardar o backup: '+error.message)}
-}
-async function atualizarBackup(){
- if(typeof window.showOpenFilePicker!=='function'){
-  alert('Atualizar um arquivo existente não está disponível neste navegador. Use Guardar para baixar um novo backup.');return;
- }
- try{
-  let handle=selectedBackupHandle;
-  if(!handle){
-   const handles=await window.showOpenFilePicker({...backupFileOptions,multiple:false});
-   handle=handles[0];
+  if(typeof window.showSaveFilePicker!=='function'){
+   backup();toast('Download solicitado. Confira o arquivo: o navegador não confirma a gravação.');return;
   }
-  if(!handle)return;
-  const file=await handle.getFile();
-  if(file.size>40*1024*1024)throw Error('O arquivo existente ultrapassa 40 MB.');
-  const old=JSON.parse(await file.text());
-  validate(old);
-  if(!ask(`Substituir o conteúdo de "${file.name}" por um NOVO Backup Geral de todos os projetos atuais? O backup anterior nesse arquivo será perdido.`))return;
-  await writeBackupHandle(handle);selectedBackupHandle=handle;toast('Backup existente atualizado');
- }catch(error){if(error.name!=='AbortError')alert('Não foi possível atualizar o backup: '+error.message)}
+  let handle=selectedBackupHandle;
+  if(handle){
+   try{
+    if(handle.queryPermission&&await handle.queryPermission({mode:'readwrite'})!=='granted')handle=null;
+    if(handle){const file=await handle.getFile();if(file.size>40*1024*1024)throw Error('Arquivo maior que 40 MB.');validate(JSON.parse(await file.text()));}
+   }catch{handle=null;}
+  }
+  if(!handle){
+   handle=await window.showSaveFilePicker({...backupFileOptions,suggestedName:`impulso-backup-${dateKey(now())}.json`});
+  }
+  await writeBackupHandle(handle);selectedBackupHandle=handle;toast('Backup Geral salvo no arquivo escolhido');
+ }catch(error){if(error.name!=='AbortError')alert('Não foi possível salvar o backup: '+error.message)}
+ finally{backupSaving=false;}
 }
+async function atualizarBackup(){return guardarBackup();}
 async function abrirBackup(){
  if(typeof window.showOpenFilePicker!=='function'){$('#importFile').click();return}
  try{
@@ -1124,7 +1122,7 @@ async function installConfirm(){
  }catch(error){toast('Não foi possível concluir a solicitação de instalação')}
 }
 function uninstallImpulso(){
- show(`<h2>Desinstalar o Impulso</h2><p>Por segurança, páginas web <strong>não podem desinstalar PWAs automaticamente</strong>. A remoção deve ser feita pelo sistema ou navegador.</p><p><strong>Windows:</strong> abra o menu do aplicativo instalado e escolha Desinstalar, ou use Configurações → Aplicativos → Aplicativos instalados.</p><p><strong>Android:</strong> mantenha pressionado o ícone do Impulso e selecione Desinstalar ou Remover, conforme o navegador.</p><p class="help"><strong>Antes de desinstalar:</strong> use Arquivo → Guardar para preservar seus projetos. Dependendo do navegador, a remoção ou limpeza dos dados pode apagar os registros locais.</p><div class="modal-actions"><button class="btn primary" data-action="cancel">Entendi</button></div>`);
+ show(`<h2>Desinstalar o Impulso</h2><p>Por segurança, páginas web <strong>não podem desinstalar PWAs automaticamente</strong>. A remoção deve ser feita pelo sistema ou navegador.</p><p><strong>Windows:</strong> abra o menu do aplicativo instalado e escolha Desinstalar, ou use Configurações → Aplicativos → Aplicativos instalados.</p><p><strong>Android:</strong> mantenha pressionado o ícone do Impulso e selecione Desinstalar ou Remover, conforme o navegador.</p><p class="help"><strong>Antes de desinstalar:</strong> use Arquivo → Salvar para preservar seus projetos. Dependendo do navegador, a remoção ou limpeza dos dados pode apagar os registros locais.</p><div class="modal-actions"><button class="btn primary" data-action="cancel">Entendi</button></div>`);
 }
 function backup(){const payload=backupPayload();const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`impulso-backup-${dateKey(now())}.json`;a.click();try{localStorage.setItem(STORAGE_BACKUP_DATE,new Date().toISOString())}catch{}setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function exportProject(){
@@ -1184,7 +1182,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão: 163 (homologação)</strong></p>
+ <p><strong>Versão: 164 (homologação)</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
@@ -1215,7 +1213,7 @@ function about(){
 }
 function requestAppExit(){
  if(fileNeedsUpdate()){
-  show(`<h2>Arquivo externo desatualizado</h2><p>Existem alterações no Impulso que ainda não foram gravadas em um arquivo externo. Os dados locais permanecem no navegador, mas seu backup pode estar desatualizado.</p><p class="help">Atualize o arquivo antes de fechar. Se ainda não tiver escolhido um arquivo, use Guardar. Uma sessão de trabalho em andamento não será concluída automaticamente.</p><div class="modal-actions"><button class="btn" type="button" data-action="cancel">Cancelar</button><button class="btn" type="button" data-action="exit-confirm">Fechar sem atualizar</button><button class="btn primary" type="button" data-action="exit-save">Atualizar arquivo</button></div>`);
+  show(`<h2>Arquivo externo desatualizado</h2><p>Existem alterações no Impulso que ainda não foram gravadas em um arquivo externo. Os dados locais permanecem no navegador, mas seu backup pode estar desatualizado.</p><p class="help">Atualize o arquivo antes de fechar. Se ainda não tiver escolhido um arquivo, use Salvar. Uma sessão de trabalho em andamento não será concluída automaticamente.</p><div class="modal-actions"><button class="btn" type="button" data-action="cancel">Cancelar</button><button class="btn" type="button" data-action="exit-confirm">Fechar sem atualizar</button><button class="btn primary" type="button" data-action="exit-save">Atualizar arquivo</button></div>`);
  }else show(`<h2>Sair do Impulso?</h2><p>Os registros permanecem salvos localmente neste navegador.</p><div class="modal-actions"><button class="btn" data-action="cancel">Cancelar</button><button class="btn primary" data-action="exit-confirm">Sair do aplicativo</button></div>`);
 }
 async function saveBeforeExit(){close();await (selectedBackupHandle?atualizarBackup():guardarBackup());if(!fileNeedsUpdate())requestAppExit();}
@@ -1229,7 +1227,7 @@ function confirmAppExit(){
  if(standalone){try{window.close()}catch(e){/* O navegador pode impedir o fechamento. */}}
 }
 function returnFromExit(){const screen=document.getElementById('impulsoExitScreen');if(screen)screen.hidden=true;document.body.classList.remove('impulso-exited');page='dashboard';render();document.querySelector('#main')?.focus()}
-function action(name){switch(name){case 'helpGithub':window.open('https://github.com/magpe-stack/Impulso','_blank','noopener,noreferrer');break;case 'helpManual':window.open('https://github.com/magpe-stack/Impulso/blob/main/README.md','_blank','noopener,noreferrer');break;case 'helpAbout':about();break;case 'exit':requestAppExit();break;case 'exit-confirm':confirmAppExit();break;case 'exit-save':saveBeforeExit();break;case 'exit-return':returnFromExit();break;case 'alerts':page='alertas';render();break;case 'storage':page='armazenamento';render();break;case 'statistics':page='estatisticas';render();break;case 'new':newProject();break;case 'projects':page='projetos';render();break;case 'day':page='dia';render();break;case 'radar':page='radar';render();break;case 'point':point();break;case 'foco':page='foco';render();break;case 'manual':page='entradas';render();break;case 'manualPoint':manual();break;case 'manualHabit':manualHabit();break;case 'habitPage':page='habitos';render();break;case 'guardar':guardarBackup();break;case 'atualizarBackup':atualizarBackup();break;case 'abrirBackup':abrirBackup();break;case 'installApp':installImpulso();break;case 'installConfirm':installConfirm();break;case 'installLater':installLater();break;case 'installNever':installNever();break;case 'uninstallApp':uninstallImpulso();break;case 'backup':backup();break;case 'export':exportProject();break;case 'import':$('#importFile').click();break;case 'importProject':$('#importProjectFile').click();break;case 'print':printReport();break;case 'printProjects':printReport(true);break;case 'newHabit':newHabit();break;case 'cancel':close();break}}
+function action(name){switch(name){case 'helpGithub':window.open('https://github.com/magpe-stack/Impulso','_blank','noopener,noreferrer');break;case 'helpManual':window.open('https://github.com/magpe-stack/Impulso/blob/main/README.md','_blank','noopener,noreferrer');break;case 'helpAbout':about();break;case 'exit':requestAppExit();break;case 'exit-confirm':confirmAppExit();break;case 'exit-save':saveBeforeExit();break;case 'exit-return':returnFromExit();break;case 'alerts':page='alertas';render();break;case 'storage':page='armazenamento';render();break;case 'statistics':page='estatisticas';render();break;case 'new':newProject();break;case 'projects':page='projetos';render();break;case 'day':page='dia';render();break;case 'radar':page='radar';render();break;case 'point':point();break;case 'foco':page='foco';render();break;case 'manual':page='entradas';render();break;case 'manualPoint':manual();break;case 'manualHabit':manualHabit();break;case 'habitPage':page='habitos';render();break;case 'guardar':guardarBackup();break;case 'atualizarBackup':atualizarBackup();break;case 'abrirBackup':abrirBackup();break;case 'installApp':installImpulso();break;case 'installConfirm':installConfirm();break;case 'installLater':installLater();break;case 'installNever':installNever();break;case 'uninstallApp':uninstallImpulso();break;case 'backup':guardarBackup();break;case 'export':exportProject();break;case 'import':$('#importFile').click();break;case 'importProject':$('#importProjectFile').click();break;case 'print':printReport();break;case 'printProjects':printReport(true);break;case 'newHabit':newHabit();break;case 'cancel':close();break}}
 const menuToggle=$('#menuToggle'),menuDrawer=$('#menuDrawer'),menuBackdrop=$('#menuBackdrop'),menuClose=$('#menuClose');
 function setMenu(open){menuDrawer.classList.toggle('open',open);menuDrawer.setAttribute('aria-hidden',String(!open));menuDrawer.inert=!open;menuBackdrop.hidden=!open;menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');document.body.classList.toggle('menu-open',open);if(open){menuDrawer.querySelector('nav button, .menu-section button')?.focus()}else if(menuDrawer.contains(document.activeElement))menuToggle.focus()}
 menuToggle.addEventListener('click',()=>setMenu(!menuDrawer.classList.contains('open')));menuBackdrop.addEventListener('click',()=>setMenu(false));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menuDrawer.classList.contains('open')){e.preventDefault();setMenu(false)}if(e.key==='Tab'&&menuDrawer.classList.contains('open')){const focusable=[...menuDrawer.querySelectorAll('button:not([disabled]),a[href]')];const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
@@ -1399,7 +1397,7 @@ const IMPULSO_STORAGE_OPTIONS=[
 ];
 function renderLimpeza(){
  const rows=IMPULSO_STORAGE_OPTIONS.map(([id,label,description])=>`<label class="cleanup-option"><input type="checkbox" data-clean-option="${id}"><span><strong>${label}</strong><small>${description}</small></span></label>`).join('');
- return `<section class="panel cleanup-panel"><h2>Limpeza do aplicativo</h2><p>Apague componentes separadamente ou reinicialize os dados do Impulso. <strong>Antes de apagar projetos, faça um Backup Geral em Arquivo → Guardar.</strong></p><p class="help">O GitHub Pages hospeda outros aplicativos no mesmo domínio. Por segurança, esta ferramenta remove apenas dados identificados como pertencentes ao Impulso. Não apaga cookies, dados de outros aplicativos, arquivos baixados ou bancos de dados desconhecidos.</p><div class="cleanup-options">${rows}</div><div class="cleanup-actions"><button type="button" class="btn" data-clean-selected>Limpar selecionados</button><button type="button" class="btn cleanup-danger" data-clean-all>Limpar tudo do Impulso</button></div><p id="cleanupResult" class="help" role="status" aria-live="polite">A limpeza exige confirmação e não pode ser desfeita sem um backup.</p></section>`;
+ return `<section class="panel cleanup-panel"><h2>Limpeza do aplicativo</h2><p>Apague componentes separadamente ou reinicialize os dados do Impulso. <strong>Antes de apagar projetos, faça um Backup Geral em Arquivo → Salvar.</strong></p><p class="help">O GitHub Pages hospeda outros aplicativos no mesmo domínio. Por segurança, esta ferramenta remove apenas dados identificados como pertencentes ao Impulso. Não apaga cookies, dados de outros aplicativos, arquivos baixados ou bancos de dados desconhecidos.</p><div class="cleanup-options">${rows}</div><div class="cleanup-actions"><button type="button" class="btn" data-clean-selected>Limpar selecionados</button><button type="button" class="btn cleanup-danger" data-clean-all>Limpar tudo do Impulso</button></div><p id="cleanupResult" class="help" role="status" aria-live="polite">A limpeza exige confirmação e não pode ser desfeita sem um backup.</p></section>`;
 }
 async function cleanImpulso(parts,all=false){
  const wantsData=parts.includes('projects');

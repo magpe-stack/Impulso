@@ -706,3 +706,5 @@ body > #impulsoNoticePopover{position:fixed;inset:auto 12px 90px auto;z-index:12
 /* v160: painel independente, sem âncora no cabeçalho. */
 body > #impulsinhoAvisosPainel{position:fixed;inset:auto 12px 90px auto;z-index:1200;width:min(350px,calc(100vw - 24px));max-height:min(65dvh,520px);margin:0;pointer-events:auto;box-sizing:border-box;}
 #impulsinhoAvisosPainel[hidden]{display:none!important}
+
+@media print{#r2d10,#impulsinho-root,#impulsinhoAvisosPainel,#toast{display:none!important;visibility:hidden!important}}
