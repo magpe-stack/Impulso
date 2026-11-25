@@ -916,3 +916,8 @@ Arquivo → Salvar gera o Backup Geral e reutiliza o arquivo escolhido durante a
 ## Impulso 165 — Falas naturais
 
 Removido o prefixo fixo da personalidade Mentor. As frases, gestos e demais preferências permanecem inalterados.
+
+
+## Impulso 166 — Salvamento unificado
+
+Os botões Salvar do R2D10, do Impulsinho, de Armazenamento e de Arquivo acionam a mesma rotina de salvamento integral. O arquivo escolhido é reutilizado durante a sessão quando autorizado; o download é alternativa apenas quando a API de gravação direta não está disponível.
