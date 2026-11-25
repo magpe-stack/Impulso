@@ -528,6 +528,30 @@ window.addEventListener('pagehide',()=>motor147?.parar());window.addEventListene
 const realPanel=document.createElement('section');realPanel.innerHTML='<h4>Diagnóstico de acontecimentos reais</h4><p class="help" role="status">Aguardando motor.</p>';configHost.append(realPanel);
 const realStatus=realPanel.querySelector('p');
 const realScenes={
+"projeto-renomeado":["u270d", "curiosidade", "Nome atualizado!"],
+"registro-excluido":["u1faf3", "descanso", "Registro removido."],
+"visao-revelada":["u1f450", "surpresa", "Uma nova parte da sua Visão!"],
+"visao-completa":["u1faf6", "alegria", "Sua Visão está completa!"],
+"projeto-importado":["u1f91d", "alegria", "Projeto recebido!"],
+"backup-restaurado":["u1f44c", "alegria", "Backup restaurado!"],
+"habito-novo":["u270d", "alegria", "Um novo hábito!"],
+"habito-equipado":["u1f44a", "desafio", "Elixir equipado!"],
+"habito-desequipado":["u1faf4", "descanso", "Elixir desequipado."],
+"projeto-excluido":["u1faf3", "descanso", "Projeto removido."],
+"habito-excluido":["u1faf3", "descanso", "Hábito removido."],
+"foco-retomado":["u270a", "desafio", "Vamos retomar!"],
+"foco-pausado":["u1faf4", "descanso", "Uma pausa."],
+"foco-descartado":["u1f450", "descanso", "Você pode recomeçar quando quiser."],
+"pomodoro-start":["u1f91b", "desafio", "Vamos ao Pomodoro!"],
+"pomodoro-pause":["u1faf4", "descanso", "Pausa registrada."],
+"pomodoro-resume":["u270a", "desafio", "De volta ao trabalho!"],
+"pomodoro-reset":["u1f450", "descanso", "Pronto para recomeçar."],
+"foco-resultado-yes":["u1f596", "alegria", "Objetivo alcançado!"],
+"foco-resultado-partial":["u1f90f", "curiosidade", "Cada avanço conta."],
+"foco-resultado-no":["u1f64f", "descanso", "Reavalie o objetivo com calma."],
+"elixir-copiado":["u1f44c", "alegria", "Frase copiada!"],
+"exportacao-solicitada":["u1faf1", "curiosidade", "Exportação solicitada."],
+
  abertura:['u1f44b','alegria','Olá!'], 'projeto-novo':['u1f44d','alegria','Projeto criado!'], 'projeto-aberto':['u1f44b','alegria','Vamos continuar!'],
  'ponto-inicio':['u1f4aa','desafio','Bom trabalho!'], 'foco-inicio':['u1f4aa','desafio','Bom foco!'], 'ponto-fim':['u1f44f','alegria','Trabalho concluído!'], 'foco-fim':['u1f44f','alegria','Sessão registrada!'],
  entrada:['u1f44d','alegria','Registro salvo!'],habito:['u1f44f','alegria','Hábito concluído!'],elixir:['u270c','alegria','Elixir conquistado!'],cofre:['u1f64c','alegria','Cofre aberto!'],chefao:['u1f4aa','desafio','Chefão derrotado!'],backup:['u1f44d','alegria','Backup gravado!'],dica:['u261d','curiosidade','Uma dica!'],'alerta-backup':['u270b','curiosidade','Atenção!'], 'alerta-habits':['u270b','curiosidade','Atenção!'],meta:['u1f64c','alegria','Meta alcançada!']};
@@ -541,8 +565,8 @@ window.addEventListener('impulsinho:gesto-real',e=>realReceive(e.detail));
 window.addEventListener('impulsinho:lembrete',e=>{const a=alertPrefs();if((e.detail?.kind==='backup'&&a.backup)||(e.detail?.kind==='habits'&&a.habits))realReceive({tipo:'alerta-'+e.detail.kind})});
 async function realTick(){if(!realEnabled()){realFila?.limpar();realEarly.length=0;realReport();return}if(!realMotor){await realInit();return}if(realBusy||testeCorporalAtivo||Date.now()<realNext||!realFila.status().pendentes)return;
  if(document.hidden||document.querySelector('dialog[open]')||!questions.hidden||document.activeElement?.matches('input,textarea,select,[contenteditable="true"]')){realReason='Aguardando interface livre.';realReport();return}
- const i=realFila.retirar(snapshot()?.projeto?.id);if(!i){realReport();return}const active=!!window.ImpulsinhoAtividade?.();if(i.tipo.startsWith('alerta-')&&!alertPrefs()[i.tipo.slice(7)]){realFila.resultado(false);realReport();return}
- if(active&&!['ponto-inicio','foco-inicio'].includes(i.tipo)){realFila.adiar(i);realNext=Date.now()+4000;realReason='Aguardando fim da atividade.';realReport();return}
+ const i=realFila.retirar(snapshot()?.projeto?.id);if(!i){realReport();return}const activity=window.ImpulsinhoAtividade?.();const active=!!activity&&!activity.paused;if(i.tipo.startsWith('alerta-')&&!alertPrefs()[i.tipo.slice(7)]){realFila.resultado(false);realReport();return}
+ if(active&&!['ponto-inicio','foco-inicio','foco-retomado','pomodoro-start','pomodoro-resume'].includes(i.tipo)){realFila.adiar(i);realNext=Date.now()+4000;realReason='Aguardando fim da atividade.';realReport();return}
  const [id,emotion,text]=realScenes[i.tipo],g=realCatalog.gestos.find(x=>x.id===id);realBusy=true;window.__impulsoGestoRealOcupado=true;let own=false;
  try{if(!g)throw Error('Gesto ausente');express(emotion,false);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const ok=realEnabled()&&!testeCorporalAtivo&&await realMotor.mostrar(g.gesto.evento_proposto,{contexto:true,ids:[id],real:true});if(ok&&!active&&balloon.hidden){headline.textContent='Impulsinho';message.textContent=profile().lead+text;reminderSave.hidden=true;opened(true);own=true;}realFila.resultado(ok);realReason=ok?'Gesto exibido no personagem.':'Sem espaço livre ou imagem indisponível.';await new Promise(r=>setTimeout(r,2600));}catch(e){realFila.resultado(false);realReason=e.message}finally{realMotor.limpar();if(own&&message.textContent===profile().lead+text)opened(false);realBusy=false;window.__impulsoGestoRealOcupado=false;realNext=Date.now()+8000;realReport()}}
 setInterval(()=>{realTick().catch(console.warn)},500);
