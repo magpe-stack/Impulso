@@ -835,3 +835,7 @@ Em Configurações → Controles do Impulsinho, mantenha o diagnóstico das 47 i
 ## Versão 152 — Backup das preferências
 
 Guardar, Atualizar e Backup Geral incluem preferências locais de aparência, alertas, atalhos, Impulsinho e R2D10. Restaurar um backup novo substitui as preferências incluídas e recarrega o aplicativo. Backups antigos preservam as preferências atuais. A exportação individual de projeto não inclui configurações globais. Permissões do navegador, instalação, histórico comportamental e vínculos com arquivos externos não são transferidos. Os alertas reiniciam sua contagem após a restauração.
+
+## Versão 153 — Gestos em acontecimentos reais
+
+Com o motor contextual ativado e o modo espontâneo ou ambos, o Impulsinho recebe eventos emitidos após gravações reais: criação e abertura de projeto, Ponto, Foco, entradas, hábitos, Elixires, cofres, chefões e backup gravado pela API de arquivos. A fila é temporária (até 24 eventos, validade de dois minutos), aguarda diálogos e edição e evita interromper sessões ativas, exceto por um gesto discreto de início. O download convencional não confirma gravação e não dispara aprovação de backup. O diagnóstico de acontecimentos reais mostra recebidos, exibidos, pendentes e não exibidos. Os testes manuais continuam independentes. A posição respeita controles e limites da tela; não há garantia de espaço livre em todas as telas. As preferências do Backup Geral da versão 152 permanecem intactas.
