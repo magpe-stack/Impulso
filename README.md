@@ -883,3 +883,6 @@ Central de avisos: clique no contador do Impulsinho ou em Ver avisos. Cada item 
 - Ver Conquistas abre Insígnias diretamente.
 - Tema claro/escuro usa uma rotina única de aplicação e armazenamento local, também incluído no Backup Geral.
 - Atualização do cache offline.
+
+## Versão 158
+Central de Avisos em diálogo nativo, botão direto no menu do Impulsinho e contador sem captura de ponteiro. Fechar não marca avisos como lidos.

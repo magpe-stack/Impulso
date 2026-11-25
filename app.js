@@ -271,7 +271,7 @@ window.ImpulsinhoNovidades=Object.freeze({
 });
 function markNoticeRead(projectId,itemId){const entry=badgeData.projects[projectId];if(!entry)return;entry.read??=[];if(!entry.read.includes(itemId)){entry.read.push(itemId);persistBadgeData()}updateBadges()}
 function setBadgeEnabled(enabled){badgeData.enabled=Boolean(enabled);persistBadgeData();if(!enabled){noticesOpen=false;renderNoticePopover()}updateBadges()}
-function toggleNotices(force){noticesOpen=typeof force==='boolean'?force:!noticesOpen;renderNoticePopover();updateBadges()}
+function toggleNotices(force){noticesOpen=typeof force==='boolean'?force:!noticesOpen;const pop=document.getElementById('impulsoNoticePopover');renderNoticePopover();if(noticesOpen){if(!pop.open)pop.showModal()}else if(pop.open)pop.close();const trigger=document.getElementById('impulsoBadgeIndicator');trigger.setAttribute('aria-expanded',String(noticesOpen));}
 function renderInsignias(p){
  if(!p){main.innerHTML=header('Insígnias','Títulos e medalhas')+'<section class="panel"><p>Abra um projeto para consultar suas conquistas.</p><button class="btn primary" data-page="projetos">Projetos</button></section>';return}
  syncInsignias(p);const a=p.insignias;const unlocked=INSIGNIA_MEDALS.filter(([id])=>a.medals[id]).length;
@@ -1153,7 +1153,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão: 157 (homologação)</strong></p>
+ <p><strong>Versão: 158 (homologação)</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
@@ -1399,9 +1399,9 @@ const noticeTrigger=document.getElementById('impulsoBadgeIndicator');
 const noticePopover=document.getElementById('impulsoNoticePopover');
 let noticeHoverClose;
 noticeTrigger.addEventListener('click',()=>toggleNotices(true));
-noticePopover.addEventListener('mouseenter',()=>clearTimeout(noticeHoverClose));
+noticePopover.addEventListener('cancel',e=>{e.preventDefault();toggleNotices(false)});
 noticePopover.addEventListener('click',e=>{if(e.target.closest('#closeNoticePopover')){toggleNotices(false);noticeTrigger.focus();return}const item=e.target.closest('[data-notice-id]');if(!item)return;const pid=item.dataset.noticeProject,id=item.dataset.noticeId;window.ImpulsinhoNovidades.abrir(pid,id);toggleNotices(false)});
-document.addEventListener('pointerdown',e=>{if(noticesOpen&&!noticePopover.contains(e.target)&&!noticeTrigger.contains(e.target))toggleNotices(false)});
+noticePopover.addEventListener('click',e=>{if(e.target===noticePopover){const r=noticePopover.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)toggleNotices(false)}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&noticesOpen){toggleNotices(false);noticeTrigger.focus()}});
 refreshFileNotice();
 function setAppearance(value,persist=true){const dark=value==='dark';document.body.classList.toggle('dark',dark);$('#theme').setAttribute('aria-pressed',String(dark));document.querySelectorAll('input[name=impulsoAppearance]').forEach(el=>el.checked=el.value===(dark?'dark':'light'));if(persist){try{localStorage.setItem(THEME,dark?'dark':'light');refreshFileNotice()}catch{toast('Não foi possível salvar a preferência de tema.')}}}

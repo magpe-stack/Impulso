@@ -696,3 +696,6 @@ button.impulso-badge-indicator:focus-visible,.impulso-notice-popover button:focu
 @media print{.impulso-notice-popover{display:none!important}}
 
 body > .impulso-notice-popover{position:fixed;z-index:950;top:72px;right:12px;left:auto;width:min(350px,calc(100vw - 24px));box-sizing:border-box;background:var(--theme-panel,var(--panel,#fff));color:var(--theme-text,var(--text,#18212f))}
+
+body > dialog.impulso-notice-popover{position:fixed;inset:0;margin:auto;width:min(350px,calc(100vw - 24px));max-height:75dvh;box-sizing:border-box;}
+body > dialog.impulso-notice-popover::backdrop{background:rgba(0,0,0,.45)}
