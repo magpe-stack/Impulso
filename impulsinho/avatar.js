@@ -303,7 +303,7 @@ function goTo(topic){const pages={hoje:'dia',motor:'radar',arena:'arena',habitos
 function manualTopic(topic){stopTour();
  if(topic==='evolucao'){manualEvolution();return}
  const s=snapshot(),p=s?.projeto;
- if(topic==='conquistas'){manualAchievements();return}
+ if(topic==='conquistas'){questionsOpen(false);opened(false);goTo('conquistas');return}
  if(topic==='backup'){goTo('backup');manualStatus();return}
  if(topic==='configuracoes'){goTo('configuracoes');reply('Configurações','Abri as Configurações. Aqui você escolhe temas, alertas, atalhos e como quer conversar comigo.','curiosidade');return}
  if(topic==='projetos'){goTo('projetos');reply('Projetos','Abri a lista de projetos. Escolha um projeto para que eu possa consultar seus dados reais.','curiosidade');return}
