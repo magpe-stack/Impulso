@@ -35,7 +35,7 @@ export function criarMotor({avatar, palco, catalogo, pasta, alertaPermitido=()=>
       pos.push({x,y,w,h});
     }
     imagens.forEach((img,i)=>{const {x,y,w,h}=pos[i];Object.assign(img.style,{left:`${x-p.left}px`,top:`${y-p.top}px`,width:`${w}px`,height:`${h}px`});camada.append(img);});
-    const duracao=op.teste?2600:Math.max(...gestos.map(g=>g.gesto.duracao_ms));
+    const duracao=(op.teste||op.real)?2600:Math.max(...gestos.map(g=>g.gesto.duracao_ms));
     animador.animar(imagens,evento,duracao);
     if(!op.teste)ultimo=performance.now(); timer=setTimeout(limpar,duracao);return true;
   }
