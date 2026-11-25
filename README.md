@@ -872,3 +872,6 @@ Com o motor contextual ativado e o modo espontâneo ou ambos, o Impulsinho receb
 
 ## Versão 155 — Repertório adaptativo
 Os acontecimentos reais mantêm os vínculos da v154. Gestos alternam por acontecimento e personalidade durante a sessão; conquistas maiores podem executar dois movimentos consecutivos. O perfil Discreto, atividades em curso e a preferência por movimento reduzido limitam as coreografias. O catálogo mantém suas restrições de produção. Não há novas imagens nem alteração no formato de backup.
+
+## Versão 156
+Central de avisos: clique no contador do Impulsinho ou em Ver avisos. Cada item abre seu destino e somente ele é marcado como lido. O backup inclui o estado dos avisos. Novas coreografias para ignição, frases e tarefas, conforme personalidade e disponibilidade da interface.

@@ -25,7 +25,7 @@ const PORTABLE_PREFS={
  'impulso-palette':v=>['original','vinho','blue-sky','trinity','granfino','ecologico','mistico'].includes(v),
  'impulsinho-auto-v109':v=>['0','1'].includes(v),
  'impulsinho-tutorial-v116':v=>v==='concluido',
- 'impulso-badging-v1':v=>validPrefObject(v,{enabled:'bool'}),
+ 'impulso-badging-v1':validNoticePrefs,
  'impulso-alertas-v1':v=>validPrefObject(v,{backup:'bool',habits:'bool'}),
  'impulsinho-avatar-v108':v=>validPrefObject(v,{visivel:'bool',silenciado:'bool',flutuar:'bool',x:'coord',y:'coord'}),
  'impulsinho-config-v112':v=>validPrefObject(v,{modo:['ambos','clique','espontaneo'],volume:'volume',audio:'bool',tutorial:'bool',personalidade:['mentor','divertido','guerreiro','discreto'],splashAudio:'bool',motor147:'bool'}),
@@ -211,9 +211,9 @@ function syncInsignias(p){
 // Badging API: somente novidades desde a primeira observação neste dispositivo.
 // Contadores locais são independentes dos backups e não geram conquistas fictícias.
 const BADGE_KEY='impulso-badging-v1';
-let badgeData={enabled:true,projects:{}};
+let badgeData={enabled:true,projects:{},extra:[]};
 try{const stored=JSON.parse(localStorage.getItem(BADGE_KEY)||'null');if(stored&&typeof stored==='object'){
- badgeData.enabled=stored.enabled!==false;
+ badgeData.enabled=stored.enabled!==false;badgeData.extra=Array.isArray(stored.extra)?stored.extra:[];
  badgeData.projects=stored.projects&&typeof stored.projects==='object'?stored.projects:{};
 }}catch{}
 const badgeKinds=['titles','medals','bosses','ceremonies','elixirs'];
@@ -229,16 +229,16 @@ function persistBadgeData(){try{localStorage.setItem(BADGE_KEY,JSON.stringify(ba
 let noticesOpen=false;
 function unreadNotices(){
  const result=[];for(const p of state.projects){const entry=badgeData.projects[p.id];if(!entry)continue;
-  for(const item of badgeItems(p))if(!entry.read?.includes(item.id))result.push({...item,projectId:p.id,projectName:p.name});
- }return result;
+  for(const item of badgeItems(p))if(!entry.read?.includes(item.id))result.push({...item,projectId:p.id,projectName:p.name,time:entry.times?.[item.id]||0});
+ }return [...result,...badgeData.extra].sort((a,b)=>(b.time||0)-(a.time||0));
 }
 function renderNoticePopover(){
  const pop=document.getElementById('impulsoNoticePopover');if(!pop)return;
  const items=unreadNotices();pop.hidden=!noticesOpen;
  if(!noticesOpen)return;
  pop.innerHTML='<div class="impulso-notice-heading"><strong>Novidades do Impulso</strong><button type="button" id="closeNoticePopover" aria-label="Fechar novidades">×</button></div>'+
- (items.length?'<div class="impulso-notice-list">'+items.slice(0,100).map(item=>`<button type="button" class="impulso-notice-item" data-notice-id="${esc(item.id)}" data-notice-project="${esc(item.projectId)}"><span aria-hidden="true">${item.icon}</span><span><strong>${esc(item.title)}</strong><small>${esc(item.detail)}</small><small>Projeto: ${esc(item.projectName)} · Abrir ${esc(item.page==='altar'?'Elixires':item.page==='codex'?'Codex':item.page==='insignias'?'Insígnias':'Cerimônias')}</small></span></button>`).join('')+'</div>':'<p class="impulso-notice-empty">Nenhuma novidade pendente.</p>')+
- (items.length>100?'<p class="impulso-notice-empty">Exibindo as primeiras 100 novidades.</p>':'');
+ (items.length?'<div class="impulso-notice-list">'+items.map(item=>`<button type="button" class="impulso-notice-item" data-notice-id="${esc(item.id)}" data-notice-project="${esc(item.projectId||'')}"><span aria-hidden="true">${esc(item.icon||'🔔')}</span><span><strong>${esc(item.title)}</strong><small>${esc(item.detail)}</small><small>Projeto: ${esc(item.projectName||state.projects.find(p=>p.id===item.projectId)?.name||'Geral')} · Abrir ${esc(item.page==='altar'?'Elixires':item.page==='codex'?'Codex':item.page==='insignias'?'Insígnias':item.page==='cerimonias'?'Cerimônias':item.page==='armazenamento'?'Armazenamento':item.page==='habitos'?'Hábitos':item.page==='radar'?'Motor':item.page==='configuracao'?'Configurações':item.page==='projetos'?'Projetos':'Início')}</small></span></button>`).join('')+'</div>':'<p class="impulso-notice-empty">Nenhuma novidade pendente.</p>')+
+ '';
 }
 function updateBadges(){
  let changed=false;
@@ -249,7 +249,7 @@ function updateBadges(){
   }
   // Reconcilia itens que deixaram de existir, mantendo apenas conquistas válidas.
   const valid=new Set(items.map(x=>x.id));const next=entry.read.filter(id=>valid.has(id));if(next.length!==entry.read.length){entry.read=next;changed=true}
-  entry.high={...counts};entry.seen=Object.fromEntries(badgeKinds.map(k=>[k,items.filter(x=>x.kind===k&&entry.read.includes(x.id)).length]));
+  entry.times??={};for(const item of items)if(!entry.read.includes(item.id)&&!entry.times[item.id]){entry.times[item.id]=Date.now();changed=true;if(item.kind==='medals')gestoReal('medalha',p.id)}entry.high={...counts};entry.seen=Object.fromEntries(badgeKinds.map(k=>[k,items.filter(x=>x.kind===k&&entry.read.includes(x.id)).length]));
  }
  for(const id of Object.keys(badgeData.projects))if(!state.projects.some(p=>p.id===id)){delete badgeData.projects[id];changed=true}
  if(changed)persistBadgeData();
@@ -262,8 +262,10 @@ function updateBadges(){
 window.ImpulsinhoNovidades=Object.freeze({
  listar:()=>badgeData.enabled?unreadNotices().map(x=>({...x})):[],
  ativo:()=>Boolean(badgeData.enabled),
- consultar:()=>{const items=unreadNotices();for(const item of items){const entry=badgeData.projects[item.projectId];if(entry&&!entry.read.includes(item.id))entry.read.push(item.id)}persistBadgeData();updateBadges();return items},
- abrir:(projectId,itemId)=>{const item=unreadNotices().find(x=>x.projectId===projectId&&x.id===itemId);if(!item)return false;markNoticeRead(projectId,itemId);if(state.projects.some(p=>p.id===projectId)){state.active=projectId;save();page=item.page;render()}return true},
+ consultar:()=>unreadNotices(),
+ painel:()=>toggleNotices(true),
+ registrar:(item)=>{if(!badgeData.extra.some(x=>x.id===item.id)){badgeData.extra.push({...item,time:Date.now()});persistBadgeData();updateBadges()}},
+ abrir:(projectId,itemId)=>{const item=unreadNotices().find(x=>(x.projectId||'')===(projectId||'')&&x.id===itemId);if(!item)return false;if(item.projectId&&state.projects.some(p=>p.id===item.projectId)){state.active=item.projectId;save()}page=item.page;render();if(item.kind==='extra'){badgeData.extra=badgeData.extra.filter(x=>x.id!==itemId);persistBadgeData();updateBadges()}else markNoticeRead(projectId,itemId);return true},
  atualizarBackup:()=>{if(selectedBackupHandle)atualizarBackup();else guardarBackup()}
 });
 function markNoticeRead(projectId,itemId){const entry=badgeData.projects[projectId];if(!entry)return;entry.read??=[];if(!entry.read.includes(itemId)){entry.read.push(itemId);persistBadgeData()}updateBadges()}
@@ -1015,8 +1017,9 @@ modal.addEventListener('close',()=>{installInvitePending=false});
 const backupFileOptions={types:[{description:'Backup Geral do Impulso (JSON)',accept:{'application/json':['.json','.impulso']}}],excludeAcceptAllOption:true};
 // Preferências portáveis: não inclui permissões, handles ou histórico de instalação.
 function validPrefObject(raw,schema){try{const o=JSON.parse(raw);return !!o&&typeof o==='object'&&!Array.isArray(o)&&Object.entries(o).every(([k,v])=>{if(!Object.hasOwn(schema,k))return false;const t=schema[k];return Array.isArray(t)?t.includes(v):t==='bool'?typeof v==='boolean':t==='volume'?Number.isFinite(v)&&v>=0&&v<=100:t==='coord'?v===null||Number.isFinite(v):!!v&&typeof v==='object'&&!Array.isArray(v)&&Object.entries(v).every(([a,b])=>!['__proto__','constructor','prototype'].includes(a)&&(t==='boolMap'?typeof b==='boolean':typeof b==='string'&&b.length<=100));});}catch{return false}}
-function collectPreferences(){const out={};for(const k of Object.keys(PORTABLE_PREFS)){let v=localStorage.getItem(k);if(v!==null&&['impulso-alertas-v1','impulso-badging-v1'].includes(k)){try{const a=JSON.parse(v);v=JSON.stringify(k==='impulso-alertas-v1'?{backup:a.backup===true,habits:a.habits===true}:{enabled:a.enabled!==false})}catch{v=null}}if(v!==null&&PORTABLE_PREFS[k](v))out[k]=v;else out[k]=null;}return out}
-function validatePreferences(o){if(o===undefined)return;if(!o||typeof o!=='object'||Array.isArray(o))throw Error('Preferências inválidas');for(const [k,v] of Object.entries(o)){if(!Object.hasOwn(PORTABLE_PREFS,k)||v!==null&&(typeof v!=='string'||v.length>65536||!PORTABLE_PREFS[k](v)))throw Error('Preferência inválida: '+k)}}
+function validNoticePrefs(raw){try{const o=JSON.parse(raw);return typeof o.enabled==='boolean'&&(!o.projects||Object.entries(o.projects).every(([k,v])=>!['__proto__','constructor','prototype'].includes(k)&&Array.isArray(v.read)&&v.read.every(x=>typeof x==='string')))&&(!o.extra||Array.isArray(o.extra)&&o.extra.every(x=>typeof x.id==='string'&&typeof x.title==='string'&&typeof x.detail==='string'&&['armazenamento','habitos','radar','configuracao','projetos','dashboard'].includes(x.page)&&Number.isFinite(x.time)));}catch{return false}}
+function collectPreferences(){const out={};for(const k of Object.keys(PORTABLE_PREFS)){let v=localStorage.getItem(k);if(v!==null&&k==='impulso-alertas-v1'){try{const a=JSON.parse(v);v=JSON.stringify(k==='impulso-alertas-v1'?{backup:a.backup===true,habits:a.habits===true}:{enabled:a.enabled!==false})}catch{v=null}}if(v!==null&&PORTABLE_PREFS[k](v))out[k]=v;else out[k]=null;}return out}
+function validatePreferences(o){if(o===undefined)return;if(!o||typeof o!=='object'||Array.isArray(o))throw Error('Preferências inválidas');for(const [k,v] of Object.entries(o)){if(!Object.hasOwn(PORTABLE_PREFS,k)||v!==null&&(typeof v!=='string'||v.length>(k===BADGE_KEY?4000000:65536)||!PORTABLE_PREFS[k](v)))throw Error('Preferência inválida: '+k)}}
 function applyPreferences(o){if(o===undefined)return;for(const [k,v] of Object.entries(o)){if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}}
 function backupPayload(){return {app:'Impulso',version:1,exportedAt:new Date().toISOString(),data:state,preferences:collectPreferences()}}
 function backupSignature(){return fileSignature({data:state,preferences:collectPreferences()})}
@@ -1149,7 +1152,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão: 155 (homologação)</strong></p>
+ <p><strong>Versão: 156 (homologação)</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
@@ -1399,7 +1402,7 @@ noticeTrigger.addEventListener('mouseenter',()=>{clearTimeout(noticeHoverClose);
 noticeTrigger.addEventListener('mouseleave',()=>{clearTimeout(noticeHoverClose);noticeHoverClose=setTimeout(()=>{if(!noticePopover.matches(':hover')&&!noticePopover.contains(document.activeElement))toggleNotices(false)},250)});
 noticePopover.addEventListener('mouseenter',()=>clearTimeout(noticeHoverClose));
 noticePopover.addEventListener('mouseleave',()=>{noticeHoverClose=setTimeout(()=>{if(!noticeTrigger.matches(':hover')&&!noticePopover.contains(document.activeElement))toggleNotices(false)},250)});
-noticePopover.addEventListener('click',e=>{if(e.target.closest('#closeNoticePopover')){toggleNotices(false);noticeTrigger.focus();return}const item=e.target.closest('[data-notice-id]');if(!item)return;const pid=item.dataset.noticeProject,id=item.dataset.noticeId;markNoticeRead(pid,id);if(state.projects.some(p=>p.id===pid)){state.active=pid;save();const found=badgeItems(project()).find(x=>x.id===id);page=found?.page||'dashboard';render()}toggleNotices(false)});
+noticePopover.addEventListener('click',e=>{if(e.target.closest('#closeNoticePopover')){toggleNotices(false);noticeTrigger.focus();return}const item=e.target.closest('[data-notice-id]');if(!item)return;const pid=item.dataset.noticeProject,id=item.dataset.noticeId;window.ImpulsinhoNovidades.abrir(pid,id);toggleNotices(false)});
 document.addEventListener('pointerdown',e=>{if(noticesOpen&&!noticePopover.contains(e.target)&&!noticeTrigger.contains(e.target))toggleNotices(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&noticesOpen){toggleNotices(false);noticeTrigger.focus()}});
 refreshFileNotice();
