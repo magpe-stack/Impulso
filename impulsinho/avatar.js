@@ -441,7 +441,7 @@ document.addEventListener('click',e=>{
 window.addEventListener('resize',position);window.addEventListener('orientationchange',position);
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&(!balloon.hidden||!questions.hidden)){questionsOpen(false);opened(false);avatar.focus()}});
 window.addEventListener('impulsinho:navegacao',()=>{if(!balloon.hidden)requestAnimationFrame(position)});
-const reminderSave=document.createElement('button');reminderSave.type='button';reminderSave.textContent='Guardar Backup Geral';reminderSave.hidden=true;balloon.append(reminderSave);reminderSave.onclick=()=>window.dispatchEvent(new CustomEvent('impulsinho:guardar-backup'));
+const reminderSave=document.createElement('button');reminderSave.type='button';reminderSave.textContent='Salvar';reminderSave.hidden=true;balloon.append(reminderSave);reminderSave.onclick=()=>window.dispatchEvent(new CustomEvent('impulsinho:guardar-backup'));
 const activityBadge=document.createElement('button');activityBadge.type='button';activityBadge.className='impulsinho-atividade';activityBadge.hidden=true;root.append(activityBadge);
 let activeActivity=null;
 function updateActivity(status){activeActivity=status;activityBadge.hidden=true;if(status){activityBadge.textContent=(status.paused?'⏸ ':'● ')+status.label;activityBadge.setAttribute('aria-label',status.label+(status.paused?' em pausa':' em andamento')+' — abrir atividade');}position()}
