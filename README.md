@@ -875,3 +875,11 @@ Os acontecimentos reais mantêm os vínculos da v154. Gestos alternam por aconte
 
 ## Versão 156
 Central de avisos: clique no contador do Impulsinho ou em Ver avisos. Cada item abre seu destino e somente ele é marcado como lido. O backup inclui o estado dos avisos. Novas coreografias para ignição, frases e tarefas, conforme personalidade e disponibilidade da interface.
+
+
+### Versão 157 — Correções
+
+- Ver Avisos abre o painel independente do cabeçalho, por clique ou toque; fechar não marca itens como lidos.
+- Ver Conquistas abre Insígnias diretamente.
+- Tema claro/escuro usa uma rotina única de aplicação e armazenamento local, também incluído no Backup Geral.
+- Atualização do cache offline.
