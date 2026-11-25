@@ -234,13 +234,15 @@ function unreadNotices(){
   for(const item of badgeItems(p))if(!entry.read?.includes(item.id))result.push({...item,projectId:p.id,projectName:p.name,time:entry.times?.[item.id]||0});
  }return [...result,...badgeData.extra].sort((a,b)=>(b.time||0)-(a.time||0));
 }
+let noticeMarkup=null;
 function renderNoticePopover(){
  const pop=noticePanel;
  const items=unreadNotices();pop.hidden=!noticesOpen;
  if(!noticesOpen)return;
- pop.innerHTML='<div class="impulso-notice-heading"><strong>Novidades do Impulso</strong><button type="button" id="closeNoticePopover" aria-label="Fechar novidades">×</button></div>'+
+ const markup='<div class="impulso-notice-heading"><strong>Novidades do Impulso</strong><button type="button" id="closeNoticePopover" aria-label="Fechar novidades">×</button></div>'+
  (items.length?'<div class="impulso-notice-list">'+items.map(item=>`<button type="button" class="impulso-notice-item" data-notice-id="${esc(item.id)}" data-notice-project="${esc(item.projectId||'')}"><span aria-hidden="true">${esc(item.icon||'🔔')}</span><span><strong>${esc(item.title)}</strong><small>${esc(item.detail)}</small><small>Projeto: ${esc(item.projectName||state.projects.find(p=>p.id===item.projectId)?.name||'Geral')} · Abrir ${esc(item.page==='altar'?'Elixires':item.page==='codex'?'Codex':item.page==='insignias'?'Insígnias':item.page==='cerimonias'?'Cerimônias':item.page==='armazenamento'?'Armazenamento':item.page==='habitos'?'Hábitos':item.page==='radar'?'Motor':item.page==='configuracao'?'Configurações':item.page==='projetos'?'Projetos':'Início')}</small></span></button>`).join('')+'</div>':'<p class="impulso-notice-empty">Nenhuma novidade pendente.</p>')+
  '';
+ if(markup!==noticeMarkup){pop.innerHTML=markup;noticeMarkup=markup;}
 }
 function updateBadges(){
  let changed=false;
@@ -268,10 +270,35 @@ window.ImpulsinhoNovidades=Object.freeze({
  painel:()=>toggleNotices(true),
  conquistas:()=>{toggleNotices(false);page='insignias';render()},
  registrar:(item)=>{if(!badgeData.extra.some(x=>x.id===item.id)){badgeData.extra.push({...item,time:Date.now()});persistBadgeData();updateBadges()}},
- abrir:(projectId,itemId)=>{const item=unreadNotices().find(x=>(x.projectId||'')===(projectId||'')&&x.id===itemId);if(!item)return false;if(item.projectId&&state.projects.some(p=>p.id===item.projectId)){state.active=item.projectId;save()}page=item.page;render();if(item.kind==='extra'){badgeData.extra=badgeData.extra.filter(x=>x.id!==itemId);persistBadgeData();updateBadges()}else markNoticeRead(projectId,itemId);return true},
+ abrir:openIndividualNotice,
  atualizarBackup:()=>{if(selectedBackupHandle)atualizarBackup();else guardarBackup()}
 });
-function markNoticeRead(projectId,itemId){const entry=badgeData.projects[projectId];if(!entry)return;entry.read??=[];if(!entry.read.includes(itemId)){entry.read.push(itemId);persistBadgeData()}updateBadges()}
+// A leitura é confirmada apenas depois da navegação e da gravação individual.
+function openIndividualNotice(projectId,itemId){
+ const pid=String(projectId||'');
+ const item=unreadNotices().find(x=>String(x.projectId||'')===pid&&String(x.id)===String(itemId));
+ if(!item)return false;
+ const routes=new Set(['insignias','codex','cerimonias','altar','armazenamento','habitos','radar','configuracao','projetos','dashboard','inicio']);
+ const needsProject=new Set(['codex','altar','habitos','radar','dashboard']);
+ const target=item.page, previousPage=page, previousActive=state.active;
+ if(!routes.has(target)){toast('Destino do aviso indisponível. O aviso foi mantido.');return false;}
+ if(pid&&!state.projects.some(p=>String(p.id)===pid)){toast('O projeto deste aviso não está disponível. O aviso foi mantido.');return false;}
+ if(!pid&&needsProject.has(target)&&!project()){toast('Abra um projeto antes de consultar este aviso.');return false;}
+ try{
+  if(pid)state.active=state.projects.find(p=>String(p.id)===pid).id;
+  page=target;render();
+  if(page!==target)throw new Error('Destino não aberto');
+  if(state.active!==previousActive&&!save())throw new Error('Projeto não gravado');
+ }catch(error){state.active=previousActive;page=previousPage;try{render()}catch{}toast('Não foi possível abrir o destino. O aviso foi mantido.');return false;}
+ const extraIndex=badgeData.extra.findIndex(x=>String(x.id)===String(item.id)&&String(x.projectId||'')===pid);
+ const entry=badgeData.projects[pid];
+ const oldExtra=badgeData.extra,oldRead=entry?.read;
+ if(extraIndex>=0)badgeData.extra=oldExtra.filter((_,i)=>i!==extraIndex);
+ else if(entry)entry.read=[...new Set([...(entry.read||[]),item.id])];
+ else return false;
+ try{localStorage.setItem(BADGE_KEY,JSON.stringify(badgeData))}catch{badgeData.extra=oldExtra;if(entry)entry.read=oldRead;toast('Não foi possível gravar a leitura. O aviso foi mantido.');return false;}
+ toggleNotices(false);updateBadges();return true;
+}
 function setBadgeEnabled(enabled){badgeData.enabled=Boolean(enabled);persistBadgeData();if(!enabled){noticesOpen=false;renderNoticePopover()}updateBadges()}
 function toggleNotices(force){noticesOpen=typeof force==='boolean'?force:!noticesOpen;renderNoticePopover();document.getElementById('impulsoBadgeIndicator')?.setAttribute('aria-expanded',String(noticesOpen));}
 function renderInsignias(p){
@@ -1155,7 +1182,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão: 160 (homologação)</strong></p>
+ <p><strong>Versão: 161 (homologação)</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
@@ -1402,7 +1429,7 @@ const noticePopover=noticePanel;
 let noticeHoverClose;
 noticeTrigger?.addEventListener('click',()=>toggleNotices());
 noticePopover.addEventListener('cancel',e=>{e.preventDefault();toggleNotices(false)});
-noticePopover.addEventListener('click',e=>{if(e.target.closest('#closeNoticePopover')){toggleNotices(false);document.querySelector('.impulsinho-perguntas-toggle')?.focus();return}const item=e.target.closest('[data-notice-id]');if(!item)return;const pid=item.dataset.noticeProject,id=item.dataset.noticeId;toggleNotices(false);window.ImpulsinhoNovidades.abrir(pid,id)});
+noticePopover.addEventListener('click',e=>{if(e.target.closest('#closeNoticePopover')){toggleNotices(false);document.querySelector('.impulsinho-perguntas-toggle')?.focus();return}const item=e.target.closest('[data-notice-id]');if(!item)return;const pid=item.dataset.noticeProject,id=item.dataset.noticeId;e.preventDefault();e.stopPropagation();window.ImpulsinhoNovidades.abrir(pid,id)});
 noticePopover.addEventListener('click',e=>{if(e.target===noticePopover){const r=noticePopover.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)toggleNotices(false)}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&noticesOpen){toggleNotices(false);document.querySelector('.impulsinho-perguntas-toggle')?.focus()}});
 refreshFileNotice();

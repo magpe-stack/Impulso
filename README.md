@@ -893,3 +893,8 @@ Central de Avisos não modal, acionada pelo comando Ver Avisos no menu original.
 
 ### Versão 160 — Central de Avisos
 Painel não modal independente do cabeçalho. Ver Avisos e Ver Conquistas são acionados diretamente pelo seletor de perguntas rápidas. O armazenamento e a leitura individual dos avisos permanecem os mesmos.
+
+
+### Versão 161 — Leitura individual de avisos
+
+O cartão inteiro abre o destino cadastrado no projeto correspondente. A leitura é gravada individualmente após a navegação; falhas mantêm o aviso pendente. O painel fecha após a leitura e o contador é atualizado. A abertura do painel permanece como na versão 160.
