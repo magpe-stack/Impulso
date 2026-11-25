@@ -902,3 +902,8 @@ O cartão inteiro abre o destino cadastrado no projeto correspondente. A leitura
 
 ### Versão 162 — Avisos sem repetição
 A leitura individual registra permanentemente a identidade do aviso extra (projeto e acontecimento) no armazenamento de avisos, incluído no Backup Geral. Conquistas lidas não perdem a marcação se temporariamente deixarem de ser válidas. Avisos lidos antes desta versão sem registro persistente podem reaparecer uma última vez.
+
+
+## Impulso 163 — Coleções Cromáticas
+
+Configurações → Temas: 23 paletas em quatro coleções sanfonadas. A seleção é independente do modo claro/escuro e integra o Backup Geral. Temas antigos sem equivalente retornam ao Original. As cinco amostras preservam os HEX fornecidos; tokens semânticos são derivados para contraste.
