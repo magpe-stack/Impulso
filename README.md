@@ -839,3 +839,32 @@ Guardar, Atualizar e Backup Geral incluem preferências locais de aparência, al
 ## Versão 153 — Gestos em acontecimentos reais
 
 Com o motor contextual ativado e o modo espontâneo ou ambos, o Impulsinho recebe eventos emitidos após gravações reais: criação e abertura de projeto, Ponto, Foco, entradas, hábitos, Elixires, cofres, chefões e backup gravado pela API de arquivos. A fila é temporária (até 24 eventos, validade de dois minutos), aguarda diálogos e edição e evita interromper sessões ativas, exceto por um gesto discreto de início. O download convencional não confirma gravação e não dispara aprovação de backup. O diagnóstico de acontecimentos reais mostra recebidos, exibidos, pendentes e não exibidos. Os testes manuais continuam independentes. A posição respeita controles e limites da tela; não há garantia de espaço livre em todas as telas. As preferências do Backup Geral da versão 152 permanecem intactas.
+
+
+## Versão 154 — Repertório gestual ampliado
+
+23 novos acontecimentos reais, mantendo a fila e as preferências da versão anterior. Ações de exclusão usam gestos neutros; exportação sinaliza solicitação, não confirmação de gravação. Pausas permitem manifestações discretas.
+
+- `projeto-renomeado`: Nome atualizado!
+- `registro-excluido`: Registro removido.
+- `visao-revelada`: Uma nova parte da sua Visão!
+- `visao-completa`: Sua Visão está completa!
+- `projeto-importado`: Projeto recebido!
+- `backup-restaurado`: Backup restaurado!
+- `habito-novo`: Um novo hábito!
+- `habito-equipado`: Elixir equipado!
+- `habito-desequipado`: Elixir desequipado.
+- `projeto-excluido`: Projeto removido.
+- `habito-excluido`: Hábito removido.
+- `foco-retomado`: Vamos retomar!
+- `foco-pausado`: Uma pausa.
+- `foco-descartado`: Você pode recomeçar quando quiser.
+- `pomodoro-start`: Vamos ao Pomodoro!
+- `pomodoro-pause`: Pausa registrada.
+- `pomodoro-resume`: De volta ao trabalho!
+- `pomodoro-reset`: Pronto para recomeçar.
+- `foco-resultado-yes`: Objetivo alcançado!
+- `foco-resultado-partial`: Cada avanço conta.
+- `foco-resultado-no`: Reavalie o objetivo com calma.
+- `elixir-copiado`: Frase copiada!
+- `exportacao-solicitada`: Exportação solicitada.
