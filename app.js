@@ -1182,32 +1182,23 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão: 166 (homologação)</strong></p>
- <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
- <h3>Como o Impulso pode ajudar você?</h3>
- <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
- <h3>Ferramentas para trabalhar e evoluir</h3>
- <ul>
- <li><strong>Projetos e Dashboard:</strong> organização independente de objetivos, indicadores, mapa de atividade de 365 dias, progresso e atalhos rápidos.</li>
- <li><strong>Ponto:</strong> registro de início e término de trabalhos, inclusive quando atravessam a meia-noite.</li>
- <li><strong>Foco:</strong> sessões planejadas com objetivo, pausas, tempo efetivo e avaliação do resultado.</li>
- <li><strong>Hábitos e Entradas:</strong> prática recorrente com temporizadores e lançamento de atividades anteriores.</li>
- <li><strong>Meu Dia, Calendário e Estatísticas:</strong> consulta dos registros, análise de períodos e acompanhamento da produtividade.</li>
- <li><strong>Motor de Propulsão:</strong> representação do tempo em graus, Pulsos, Giros, Turnos, Fases e Propulsões.</li>
- <li><strong>Vitórias:</strong> 100 metas, 200 Chefões, Codex, Elixires, 50 títulos, 60 medalhas, Cerimônias e Visão.</li>
- <li><strong>Arquivo e segurança:</strong> backups gerais, abertura e atualização de arquivos, importação, impressão e controle de armazenamento.</li>
- <li><strong>Personalização:</strong> sete identidades cromáticas, modos claro e escuro, atalhos de teclado configuráveis, alertas, distintivos e limpeza seletiva.</li>
- </ul>
- <h3>Impulsinho — assistente emocional e motivacional</h3>
- <p>Companheiro flutuante e reposicionável, com 109 expressões, balões separados de perguntas e respostas, consultas digitadas, navegação contextual, tutorial inicial e reações às ações e à Ignição do Motor.</p>
- <p>Reúne 1.200 variações contextuais, comentários associados às facetas e 1.000 frases motivacionais. Oferece quatro personalidades (Divertido, Mentor, Guerreiro e Discreto), cinco estágios de evolução por projeto e consultas de experiência. Seus efeitos sonoros e a vinheta ascendente de abertura são sintetizados localmente, com controles de áudio e testes nas configurações.</p>
- <p>O assistente utiliza regras locais e dados reais, sem IA generativa externa. Os controles centralizam visibilidade, movimento, frequência das conversas, alertas de backup e Elixires e distintivos. A interface oferece navegação por teclado, indicadores de foco e suporte à redução de movimento.</p>
- <h3>R2D10 — assistente operacional</h3><p>Monitora Ponto, Foco e Hábitos, apresenta alertas de backup e Elixires e utiliza fala eletrônica sintetizada, com volume e ativação independentes.</p><h3>Integração com o dispositivo</h3>
- <p>Instalação como PWA, cache offline, atalhos do aplicativo, cópia de resumos, impressão e integração com arquivos e distintivos quando suportados pelo navegador e pelo sistema operacional.</p>
- <h3>Privacidade, autonomia e limites</h3>
- <p>O Impulso funciona prioritariamente no próprio dispositivo, pode trabalhar offline após o carregamento dos arquivos necessários e não exige uma conta para registrar projetos. Os dados não são sincronizados automaticamente com uma nuvem. <strong>Guarde backups regularmente e mantenha cópias fora do navegador.</strong></p>
- <p>A jornada de 10.000 horas é uma referência motivacional, não uma certificação de maestria. O Impulso não substitui sistemas oficiais de controle de jornada.</p>
- <p><strong>Oráculo do Impulso:</strong> base local de 271 perguntas e respostas, com reconhecimento de palavras-chave, variações e pequenas diferenças ortográficas.</p>
+ <p><strong>Versão: 166</strong></p>
+ <p>Aplicativo web progressivo (PWA) para organizar projetos independentes, registrar dedicação e transformar esforço em progresso mensurável. A jornada de 10.000 horas é uma referência motivacional, não uma certificação de maestria.</p>
+ <h3>Organização e execução</h3><ul>
+ <li><strong>Projetos e Dashboard:</strong> objetivos independentes, indicadores, sequência, mapa de atividade de 365 dias e atalhos.</li>
+ <li><strong>Ponto:</strong> registro de início e término, inclusive entre dias diferentes.</li>
+ <li><strong>Foco:</strong> planejamento, pausas, retomada e avaliação de objetivos.</li>
+ <li><strong>Hábitos e Pomodoro:</strong> inventário em 25 categorias, hábitos personalizados e até seis equipados.</li>
+ <li><strong>Entradas:</strong> lançamento retroativo de atividades.</li></ul>
+ <h3>Análise e evolução</h3><ul>
+ <li><strong>Meu Dia, Calendário e Estatísticas:</strong> histórico, filtros, totais, médias e resumos.</li>
+ <li><strong>Motor de Propulsão:</strong> graus, Pulsos, Giros, Turnos, Fases, Propulsões e Ignição.</li>
+ <li><strong>Vitórias:</strong> 100 metas, 200 Chefões, Codex, 200 Elixires, 50 títulos, 60 medalhas, 100 Cerimônias e Visão.</li></ul>
+ <h3>Assistentes e avisos</h3><p><strong>Impulsinho:</strong> assistente local com 109 expressões, 47 imagens corporais, gestos, coreografias, quatro personalidades, cinco estágios de evolução, frases motivacionais, tutorial, consultas contextuais e Oráculo com 545 perguntas e respostas. A Central de Avisos permite consultar individualmente acontecimentos e navegar aos destinos correspondentes.</p>
+ <p><strong>R2D10:</strong> assistente operacional para Ponto, Foco, Hábitos e lembretes de backup e Elixires, com presença, voz sintetizada e volume configuráveis.</p>
+ <h3>Personalização e acessibilidade</h3><p>23 temas em quatro coleções (Tradicionais, Quatro Estações, Sete Mares e Diversos), modos claro e escuro independentes, atalhos configuráveis, controles de áudio e movimento, alertas e distintivos. A interface utiliza recursos de navegação por teclado e adaptação a diferentes telas.</p>
+ <h3>Arquivos, segurança e integração</h3><p>Salvar reúne projetos e preferências em um Backup Geral e reutiliza o arquivo vinculado quando autorizado. Abrir restaura os dados. Impressão, cópia de resumos, armazenamento, limpeza seletiva, instalação, atalhos e funcionamento offline dependem dos recursos do navegador.</p>
+ <h3>Privacidade e limites</h3><p>Os dados permanecem no navegador; não há conta obrigatória, IA generativa externa ou sincronização automática em nuvem. Mantenha cópias de segurança fora do navegador. O Impulso não substitui sistemas oficiais de controle de jornada.</p>
  <p><strong>Saiba mais:</strong> <a href="https://magpe-stack.github.io/Impulso/" target="_blank" rel="noopener noreferrer">Aplicativo</a> · <a href="https://github.com/magpe-stack/Impulso" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://github.com/magpe-stack/Impulso/blob/main/README.md" target="_blank" rel="noopener noreferrer">Manual completo</a></p>
  <div class="actions"><button class="btn primary" type="button" data-cancel>Fechar</button></div></div>`);
 }

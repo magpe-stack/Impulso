@@ -1,4 +1,3 @@
-<a id="impulso-manual-completo-do-usuario"></a>
 # Impulso — Manual completo do usuário
 
 **Motor de Produtividade Pessoal — Manual integrado**  
@@ -12,10 +11,8 @@ O **Impulso** é um aplicativo web progressivo (PWA) de produtividade pessoal. N
 
 > **Antes de começar:** seus projetos ficam armazenados neste navegador e dispositivo, sem sincronização automática com uma conta ou nuvem. O armazenamento local e o arquivo externo são coisas diferentes: faça **backups regulares** e conserve cópias fora do navegador. A jornada de 10.000 horas é uma referência motivacional, não uma certificação de domínio profissional. O Impulso não substitui um sistema oficial de controle de jornada.
 
-<a id="sumario-e-navegacao"></a>
+<a id="sumario-e-navegacao" name="sumario-e-navegacao"></a>
 ## Sumário e navegação
-
-Selecione um título ou subtítulo para navegar.
 
 - [1. Conheça o Impulso](#1-conheca-o-impulso)
   - [Roteiro rápido: do primeiro registro ao primeiro backup](#roteiro-rapido-do-primeiro-registro-ao-primeiro-backup)
@@ -49,12 +46,12 @@ Selecione um título ou subtítulo para navegar.
   - [Insígnias — títulos e medalhas](#insignias-titulos-e-medalhas)
   - [Cerimônias — marcos narrativos](#cerimonias-marcos-narrativos)
   - [Visão — acompanhar a revelação do foguete](#visao-acompanhar-a-revelacao-do-foguete)
-- [9. Arquivo: guardar, atualizar, abrir e imprimir](#9-arquivo-guardar-atualizar-abrir-e-imprimir)
-  - [Guardar — salvar um Backup Geral](#guardar-salvar-um-backup-geral)
-  - [Atualizar — sobrescrever um backup existente](#atualizar-sobrescrever-um-backup-existente)
+- [9. Arquivo: salvamento, restauração e impressão](#9-arquivo-salvamento-restauracao-e-impressao)
+  - [Salvar — backup integral](#salvar-backup-integral)
+  - [Conteúdo e preferências do backup](#conteudo-e-preferencias-do-backup)
   - [Aviso de alterações pendentes no arquivo](#aviso-de-alteracoes-pendentes-no-arquivo)
   - [Abrir — restaurar um Backup Geral](#abrir-restaurar-um-backup-geral)
-  - [Projeto individual: exportar e importar](#projeto-individual-exportar-e-importar)
+  - [Projeto individual e transferência](#projeto-individual-e-transferencia)
   - [Abrir pelo explorador de arquivos](#abrir-pelo-explorador-de-arquivos)
   - [Imprimir e salvar em PDF](#imprimir-e-salvar-em-pdf)
 - [10. Sistema: configurações, instalação e saída](#10-sistema-configuracoes-instalacao-e-saida)
@@ -65,24 +62,27 @@ Selecione um título ou subtítulo para navegar.
 - [12. Impulsinho — assistente emocional e motivacional](#12-impulsinho-assistente-emocional-e-motivacional)
   - [Personagem e balões](#personagem-e-baloes)
   - [Consultas e navegação contextual](#consultas-e-navegacao-contextual)
-  - [Oráculo — perguntas e respostas](#oraculo-consulta-ao-manual)
+  - [Oráculo — perguntas e respostas](#oraculo-perguntas-e-respostas)
   - [Tutorial e reações às ações](#tutorial-e-reacoes-as-acoes)
   - [Expressões e bibliotecas de falas](#expressoes-e-bibliotecas-de-falas)
   - [Frases motivacionais](#frases-motivacionais)
   - [Personalidades](#personalidades)
   - [Evolução por projeto](#evolucao-por-projeto)
   - [Sons e vinheta de abertura](#sons-e-vinheta-de-abertura)
+  - [Motor contextual, gestos e coreografias](#motor-contextual-gestos-e-coreografias)
+  - [Diagnóstico e testes corporais](#diagnostico-e-testes-corporais)
   - [Controles e acessibilidade](#controles-e-acessibilidade)
 - [13. Alertas, distintivos e área de transferência](#13-alertas-distintivos-e-area-de-transferencia)
+  - [R2D10 — assistente operacional](#r2d10-assistente-operacional)
   - [Alertas locais](#alertas-locais)
-  - [Central de novidades e distintivos — Badging API](#central-de-novidades-e-distintivos-badging-api)
+  - [Central de Avisos e distintivos](#central-de-avisos-e-distintivos)
   - [Copiar resumos — Clipboard API](#copiar-resumos-clipboard-api)
 - [14. Armazenamento e limpeza](#14-armazenamento-e-limpeza)
   - [Onde ficam os dados](#onde-ficam-os-dados)
   - [Limpeza seletiva](#limpeza-seletiva)
   - [Antes de limpar](#antes-de-limpar)
 - [15. Temas, acessibilidade e privacidade](#15-temas-acessibilidade-e-privacidade)
-  - [As sete identidades cromáticas](#as-sete-identidades-cromaticas)
+  - [Coleções cromáticas](#colecoes-cromaticas)
   - [Acessibilidade](#acessibilidade)
   - [Privacidade](#privacidade)
 - [16. Solução de problemas](#16-solucao-de-problemas)
@@ -94,7 +94,7 @@ Selecione um título ou subtítulo para navegar.
 
 ---
 
-<a id="1-conheca-o-impulso"></a>
+<a id="1-conheca-o-impulso" name="1-conheca-o-impulso"></a>
 ## 1. Conheça o Impulso
 
 O Impulso ajuda a transformar esforço disperso em um histórico consultável. Você pode registrar trabalhos, organizar sessões de concentração, praticar hábitos, consultar dias anteriores, acompanhar metas e visualizar conquistas. Tudo é separado por **projeto**, para que uma atividade não se misture às demais.
@@ -109,7 +109,7 @@ O aplicativo combina cinco dimensões:
 
 A proposta não é vigiar o usuário, mas ajudá-lo a perceber a continuidade de seus próprios esforços. Um projeto pode ser um livro, uma formação, um empreendimento, uma pesquisa ou qualquer objetivo que demande dedicação consistente.
 
-<a id="roteiro-rapido-do-primeiro-registro-ao-primeiro-backup"></a>
+<a id="roteiro-rapido-do-primeiro-registro-ao-primeiro-backup" name="roteiro-rapido-do-primeiro-registro-ao-primeiro-backup"></a>
 ### Roteiro rápido: do primeiro registro ao primeiro backup
 
 1. Abra o aplicativo e escolha **Arquivo → Novo**. Dê um nome ao seu projeto.
@@ -117,7 +117,7 @@ A proposta não é vigiar o usuário, mas ajudá-lo a perceber a continuidade de
 3. Ao terminar, volte a **Ponto** e conclua a atividade.
 4. Consulte **Dados → Meu Dia** para conferir horários e duração.
 5. Acompanhe o progresso em **Dados → Dashboard** e **Dados → Motor**.
-6. Escolha **Arquivo → Guardar** e salve uma cópia de segurança.
+6. Escolha **Arquivo → Salvar** e salve uma cópia de segurança.
 
 **Dica:** não é necessário conhecer a Arena ou as Cerimônias para começar. Elas acompanham naturalmente o tempo que você registra.
 
@@ -127,20 +127,20 @@ A proposta não é vigiar o usuário, mas ajudá-lo a perceber a continuidade de
 
 ---
 
-<a id="2-primeiro-acesso-e-instalacao"></a>
+<a id="2-primeiro-acesso-e-instalacao" name="2-primeiro-acesso-e-instalacao"></a>
 ## 2. Primeiro acesso e instalação
 
-<a id="abrir-pela-primeira-vez"></a>
+<a id="abrir-pela-primeira-vez" name="abrir-pela-primeira-vez"></a>
 ### Abrir pela primeira vez
 
 1. Acesse **https://magpe-stack.github.io/Impulso/** com conexão à internet.
 2. Aguarde a abertura **Ignição**, com o foguete, o anel luminoso e a revelação do nome.
 3. Na Central de Comando, escolha **Novo** para criar um projeto ou **Projetos** para abrir um já existente.
-4. Comece a registrar atividades. Quando houver dados importantes, use **Arquivo → Guardar** para produzir um backup.
+4. Comece a registrar atividades. Quando houver dados importantes, use **Arquivo → Salvar** para produzir um backup.
 
 A abertura Ignição é uma apresentação visual, não um indicador real da velocidade de carregamento. Os efeitos podem ser simplificados quando o sistema solicita redução de movimento.
 
-<a id="instalar-como-aplicativo"></a>
+<a id="instalar-como-aplicativo" name="instalar-como-aplicativo"></a>
 ### Instalar como aplicativo
 
 Abra **Sistema → Instalar**. Quando o navegador disponibilizar `beforeinstallprompt`, o Impulso pode mostrar um convite com a identidade visual do aplicativo e encaminhar o pedido à confirmação **nativa** do navegador. A instalação depende da plataforma: o Impulso não instala a si mesmo.
@@ -149,12 +149,12 @@ O convite oferece **Instalar**, **Agora não** (adiamento de novos convites auto
 
 No Windows, Chrome e Edge podem permitir a instalação como aplicativo. No Android, use a opção de instalação ou adição à tela inicial oferecida pelo navegador. A apresentação varia entre plataformas.
 
-<a id="usar-offline"></a>
+<a id="usar-offline" name="usar-offline"></a>
 ### Usar offline
 
 O **Service Worker** armazena os arquivos essenciais do PWA para permitir novas aberturas sem internet, depois que o cache tiver sido preenchido. Registros e consultas locais também podem funcionar offline. A disponibilidade depende das políticas de armazenamento do navegador; **offline não significa backup**.
 
-<a id="desinstalar"></a>
+<a id="desinstalar" name="desinstalar"></a>
 ### Desinstalar
 
 Em **Sistema → Desinstalar**, consulte as orientações para remover o PWA pelo navegador ou sistema operacional. Uma página web não pode desinstalar a si mesma. Antes de remover o aplicativo ou apagar seus dados, **guarde um backup**.
@@ -163,14 +163,14 @@ Em **Sistema → Desinstalar**, consulte as orientações para remover o PWA pel
 
 ---
 
-<a id="3-navegacao-e-organizacao-do-aplicativo"></a>
+<a id="3-navegacao-e-organizacao-do-aplicativo" name="3-navegacao-e-organizacao-do-aplicativo"></a>
 ## 3. Navegação e organização do aplicativo
 
 O menu lateral é organizado em seis grupos recolhíveis:
 
 | Grupo | Comandos |
 | --- | --- |
-| **Arquivo** | Novo · Projetos · Guardar · Atualizar · Abrir · Imprimir |
+| **Arquivo** | Novo · Projetos · Salvar · Abrir · Imprimir |
 | **Ações** | Ponto · Foco · Hábitos · Entradas |
 | **Vitórias** | Arena · Codex · Elixires · Insígnias · Cerimônias · Visão |
 | **Dados** | Dashboard · Meu Dia · Calendário · Motor · Estatísticas · Armazenamento |
@@ -187,17 +187,17 @@ O rodapé acompanha as cores do tema selecionado e permanece no fim da janela na
 
 ---
 
-<a id="4-projetos-e-central-de-comando"></a>
+<a id="4-projetos-e-central-de-comando" name="4-projetos-e-central-de-comando"></a>
 ## 4. Projetos e Central de Comando
 
-<a id="criar-e-administrar-projetos"></a>
+<a id="criar-e-administrar-projetos" name="criar-e-administrar-projetos"></a>
 ### Criar e administrar projetos
 
 Escolha **Arquivo → Novo**, informe um nome e confirme. Em **Arquivo → Projetos**, abra outro projeto, altere seu nome ou exclua um projeto quando necessário. A exclusão exige confirmação e pode apagar definitivamente seus registros, hábitos e conquistas; exporte um backup antes.
 
 Cada projeto possui seus próprios registros, hábitos, metas, chefões, Elixires e Insígnias. O aplicativo mantém um **projeto ativo**, utilizado pelas ferramentas de registro. Alternar entre projetos não transfere automaticamente o tempo de um para outro.
 
-<a id="dashboard-central-de-comando"></a>
+<a id="dashboard-central-de-comando" name="dashboard-central-de-comando"></a>
 ### Dashboard — Central de Comando
 
 O Dashboard é a página inicial do Impulso. Ele reúne:
@@ -216,10 +216,10 @@ Os indicadores usam os registros reais do projeto. Intervalos simultâneos não 
 
 ---
 
-<a id="5-acoes-ponto-foco-habitos-e-entradas"></a>
+<a id="5-acoes-ponto-foco-habitos-e-entradas" name="5-acoes-ponto-foco-habitos-e-entradas"></a>
 ## 5. Ações: Ponto, Foco, Hábitos e Entradas
 
-<a id="ponto-registrar-trabalho-em-andamento"></a>
+<a id="ponto-registrar-trabalho-em-andamento" name="ponto-registrar-trabalho-em-andamento"></a>
 ### Ponto — registrar trabalho em andamento
 
 Em **Ações → Ponto**, informe o nome do trabalho e utilize os controles de início e término da atividade. O formulário fica na própria página, permitindo navegar por outras áreas enquanto o trabalho continua sendo contabilizado. Ao concluir, o registro passa a integrar as consultas diárias e estatísticas.
@@ -229,30 +229,32 @@ Em **Ações → Ponto**, informe o nome do trabalho e utilize os controles de i
 - Uma atividade pode atravessar a meia-noite; o tempo é atribuído aos dias correspondentes.
 - Antes de encerrar ou apagar dados, confira se há uma atividade ativa.
 
-<a id="foco-sessoes-planejadas"></a>
+<a id="foco-sessoes-planejadas" name="foco-sessoes-planejadas"></a>
 ### Foco — sessões planejadas
 
 Em **Ações → Foco**, configure uma atividade de até **50 caracteres**, um objetivo de até **200 caracteres**, o tipo de compromisso (**Entrega** ou **Dedicação**) e a duração planejada, de **1 a 1.440 minutos**. Inicie a sessão e, quando necessário, utilize **Pausar** e **Retomar**.
 
 Ao concluir, avalie o resultado como **alcançado integralmente**, **parcialmente** ou **não alcançado**. Uma observação opcional de até **200 caracteres** permite registrar o aprendizado. As pausas são excluídas do tempo efetivo. A sessão pertence ao projeto ativo e é considerada nos indicadores correspondentes.
 
-<a id="habitos-pratica-recorrente"></a>
+<a id="habitos-pratica-recorrente" name="habitos-pratica-recorrente"></a>
 ### Hábitos — prática recorrente
 
 Em **Ações → Hábitos**, escolha hábitos do catálogo ou crie hábitos personalizados. Os hábitos podem ter uma duração configurada e ser executados por temporizador. A conclusão gera um registro com o nome do hábito e os horários correspondentes.
 
 O aplicativo permite manter até **seis hábitos equipados** simultaneamente. O catálogo possui categorias e pesquisa; hábitos personalizados podem ser equipados ou retirados do conjunto ativo. Para evitar inconsistências, conclua ou reinicie um temporizador antes de alterar a condição de um hábito em execução.
 
+O Inventário de Elixires organiza os hábitos em 25 categorias. Use a busca, selecione Equipar ou Desequipar e acompanhe o limite de seis. Em Elixires Ativos, o Pomodoro de cada hábito oferece Iniciar, Pausar, Retomar, Concluir e Reiniciar. Concluir registra o tempo efetivamente decorrido até o limite estipulado; Reiniciar descarta a contagem em curso.
+
 A área de Hábitos também se relaciona com o sistema de Elixires: concluir um hábito pode abrir um cofre de Chefão previamente derrotado, de acordo com as regras da coleção.
 
-<a id="entradas-registrar-trabalho-anterior"></a>
+<a id="entradas-registrar-trabalho-anterior" name="entradas-registrar-trabalho-anterior"></a>
 ### Entradas — registrar trabalho anterior
 
-Em **Ações → Entradas**, informe a data, o nome da atividade, o horário de início e o horário de término. O formulário valida a ordem dos horários e permite atividades que terminam em outro dia. Utilize essa função quando o trabalho já tiver ocorrido e não tiver sido registrado pelo temporizador.
+Em **Ações → Entradas**, escolha **Entrada de Ponto** ou **Entrada de Hábito**. Na primeira, informe o nome da atividade; na segunda, selecione um hábito já cadastrado. Preencha as datas e horários de início e término, confirme e consulte Meu Dia. O término deve ser posterior ao início e não pode estar no futuro. O formulário valida a ordem dos horários e permite atividades que terminam em outro dia. Utilize essa função quando o trabalho já tiver ocorrido e não tiver sido registrado pelo temporizador.
 
 Entradas retroativas contribuem para o histórico, o Motor e as estatísticas conforme o tempo efetivamente registrado. Evite lançar novamente um intervalo que já exista, para não criar registros redundantes.
 
-<a id="como-o-impulso-calcula-o-tempo"></a>
+<a id="como-o-impulso-calcula-o-tempo" name="como-o-impulso-calcula-o-tempo"></a>
 ### Como o Impulso calcula o tempo
 
 O aplicativo trabalha com intervalos de tempo. Ao somar a produtividade, **une intervalos sobrepostos** dentro do mesmo projeto, evitando contagem dupla. Para a apresentação diária, divide intervalos que atravessam a meia-noite. Por exemplo, uma atividade das 23h às 1h distribui uma hora para cada dia.
@@ -263,22 +265,22 @@ O tempo registrado não deve ser confundido com qualidade, resultado profissiona
 
 ---
 
-<a id="6-dados-meu-dia-calendario-e-estatisticas"></a>
+<a id="6-dados-meu-dia-calendario-e-estatisticas" name="6-dados-meu-dia-calendario-e-estatisticas"></a>
 ## 6. Dados: Meu Dia, Calendário e Estatísticas
 
-<a id="meu-dia"></a>
+<a id="meu-dia" name="meu-dia"></a>
 ### Meu Dia
 
 Em **Dados → Meu Dia**, consulte as atividades do dia, com nome, tipo, horários de início e término e duração. O título identifica a data no formato **dd-mm-aaaa**, por exemplo **Meu Dia 10-09-2027**. Hábitos concluídos e atividades de Ponto, Foco ou Entradas aparecem conforme os registros existentes. Utilize os controles de exclusão com atenção: apagar um registro pode modificar totais e conquistas.
 
-O comando **Copiar resumo** gera texto com os registros e totais disponíveis, sem alterar os dados.
+Escolha a ordem dos dias e use Imprimir em um dia específico para gerar seu relatório. O comando **Copiar resumo** gera texto com os registros e totais disponíveis, sem alterar os dados.
 
-<a id="calendario"></a>
+<a id="calendario" name="calendario"></a>
 ### Calendário
 
 Em **Dados → Calendário**, navegue entre meses e selecione datas para consultar a produtividade. A visualização ajuda a identificar dias ativos, lacunas e distribuição do trabalho. O calendário utiliza as datas locais dos registros; uma sessão que atravessa a meia-noite pode contribuir para dois dias.
 
-<a id="estatisticas"></a>
+<a id="estatisticas" name="estatisticas"></a>
 ### Estatísticas
 
 Em **Dados → Estatísticas**, escolha o **alcance** da análise (projeto ativo ou conjunto de projetos, quando disponível) e o **período**: hoje, últimos sete dias, mês atual, ano atual ou todo o histórico. A página apresenta medidas como tempo produtivo, dias ativos, médias, quantidade de sessões, maior intervalo contínuo e frequência de atividade, além de indicadores complementares de progresso.
@@ -287,16 +289,16 @@ Use **Atualizar** para recalcular a apresentação, **Exportar** para obter os d
 
 A média por dia ativo é diferente da média por dia do período: a primeira considera apenas os dias com atividade; a segunda considera todos os dias do intervalo escolhido. Registros simultâneos são tratados para não duplicar o tempo produtivo.
 
-<a id="armazenamento"></a>
+<a id="armazenamento" name="armazenamento"></a>
 ### Armazenamento
 
-Em **Dados → Armazenamento**, acompanhe informações sobre os dados locais e, quando disponível, solicite armazenamento persistente ao navegador. O navegador pode negar a solicitação; persistência reduz alguns riscos de remoção automática, mas **não substitui um backup**.
+Em **Dados → Armazenamento**, acompanhe uso e cota estimados da origem, tamanho dos dados do Impulso, localStorage, cache offline e tamanho previsto do backup. Use Atualizar medições para recalcular e, quando disponível, solicite armazenamento persistente ao navegador. As estimativas não representam memória RAM nem espaço livre real do dispositivo. O navegador pode negar a solicitação; persistência reduz alguns riscos de remoção automática, mas **não substitui um backup**.
 
 [↑ Voltar ao sumário](#sumario-e-navegacao)
 
 ---
 
-<a id="7-motor-de-propulsao-e-metas"></a>
+<a id="7-motor-de-propulsao-e-metas" name="7-motor-de-propulsao-e-metas"></a>
 ## 7. Motor de Propulsão e metas
 
 O **Motor** transforma tempo produtivo em uma linguagem simbólica de movimento. Cada **10 segundos equivalem a 1 grau**. O rotor e os indicadores representam progresso acumulado; não são uma simulação física de motor nem produzem tempo adicional.
@@ -311,12 +313,12 @@ O **Motor** transforma tempo produtivo em uma linguagem simbólica de movimento.
 
 Os contadores de unidades são diferentes maneiras de representar o mesmo tempo: **não devem ser somados entre si**. Por exemplo, 8 horas correspondem a 16 Pulsos, 8 Giros ou 1 Turno.
 
-<a id="ignicao-do-motor"></a>
+<a id="ignicao-do-motor" name="ignicao-do-motor"></a>
 ### Ignição do Motor
 
 O botão **Ignição** reproduz visualmente a rotação correspondente aos graus acumulados. **Parar** interrompe a animação; reiniciá-la não acrescenta horas, Giros ou recompensas. Em sistemas com preferência por movimento reduzido, a representação pode ser simplificada. O Motor também exibe indicadores de rotação e tempo em escalas de 360 graus e 60 segundos.
 
-<a id="as-100-metas"></a>
+<a id="as-100-metas" name="as-100-metas"></a>
 ### As 100 metas
 
 A jornada simbólica possui **100 metas progressivas**, culminando em **10.000 horas**. O total necessário para a meta de número *n* é **n² horas**: a primeira exige 1 hora acumulada; a segunda, 4; a terceira, 9; e a centésima, 10.000. Cada etapa exige mais horas adicionais que a anterior.
@@ -327,20 +329,20 @@ A **primeira Propulsão completa**, com 10.080 horas, é um marco próprio do Mo
 
 ---
 
-<a id="8-vitorias-arena-codex-elixires-insignias-cerimonias-e-visao"></a>
+<a id="8-vitorias-arena-codex-elixires-insignias-cerimonias-e-visao" name="8-vitorias-arena-codex-elixires-insignias-cerimonias-e-visao"></a>
 ## 8. Vitórias: Arena, Codex, Elixires, Insígnias, Cerimônias e Visão
 
-<a id="arena-200-chefoes"></a>
+<a id="arena-200-chefoes" name="arena-200-chefoes"></a>
 ### Arena — 200 Chefões
 
 A **Arena** transforma a trajetória de 10.000 horas em **200 batalhas progressivas**. Os Chefões representam obstáculos simbólicos à constância. O avanço é calculado a partir do tempo produtivo registrado, com resistência crescente. Não existe botão para declarar uma vitória sem cumprir o tempo exigido. Excluir registros pode alterar a situação das batalhas.
 
-<a id="codex-bestiario-da-jornada"></a>
+<a id="codex-bestiario-da-jornada" name="codex-bestiario-da-jornada"></a>
 ### Codex — bestiário da jornada
 
 O **Codex** apresenta os Chefões, seus nomes, descrições e informações associadas. É uma área de consulta narrativa: ajuda a dar significado à progressão, mas não altera os registros de tempo.
 
-<a id="elixires-recompensas-por-trabalho-e-habito"></a>
+<a id="elixires-recompensas-por-trabalho-e-habito" name="elixires-recompensas-por-trabalho-e-habito"></a>
 ### Elixires — recompensas por trabalho e hábito
 
 Existem **200 Elixires colecionáveis**, vinculados aos Chefões. O processo tem duas condições:
@@ -352,21 +354,21 @@ Cada hábito concluído libera **no máximo um Elixir**; vencer um Chefão não 
 
 **Não confunda:** os hábitos equipados, por vezes chamados de Elixires Ativos, não são as mesmas coisas que os Elixires colecionáveis.
 
-<a id="insignias-titulos-e-medalhas"></a>
+<a id="insignias-titulos-e-medalhas" name="insignias-titulos-e-medalhas"></a>
 ### Insígnias — títulos e medalhas
 
 Cada projeto pode conquistar **50 títulos automáticos** relacionados à evolução e **60 medalhas permanentes**, distribuídas entre produtividade, regularidade, hábitos e Chefões. O título atual é atribuído automaticamente: não há necessidade de equipá-lo manualmente. A coleção distingue itens desbloqueados e bloqueados. O Dashboard apresenta o título atual e a medalha mais recente.
 
 O botão **Copiar resumo** permite copiar as conquistas registradas. A coleção é individual por projeto.
 
-<a id="cerimonias-marcos-narrativos"></a>
+<a id="cerimonias-marcos-narrativos" name="cerimonias-marcos-narrativos"></a>
 ### Cerimônias — marcos narrativos
 
 Existem **100 Cerimônias**, correspondentes às metas da jornada. Elas são liberadas pelo tempo acumulado; marcos de dez em dez metas recebem apresentações especiais, culminando na **Consagração**. Na galeria, escolha uma cerimônia disponível para abrir sua apresentação e, quando oferecido, reproduzi-la novamente. Cerimônias bloqueadas indicam o requisito de horas.
 
 A apresentação é visual e não concede tempo ou recompensas extras. A disponibilidade depende do progresso real; se registros forem excluídos, uma cerimônia poderá voltar a ficar bloqueada. O usuário pode fechar a apresentação; preferências de movimento reduzido devem ser respeitadas.
 
-<a id="visao-acompanhar-a-revelacao-do-foguete"></a>
+<a id="visao-acompanhar-a-revelacao-do-foguete" name="visao-acompanhar-a-revelacao-do-foguete"></a>
 ### Visão — acompanhar a revelação do foguete
 
 A página **Visão** apresenta uma composição visual relacionada aos Elixires conquistados. À medida que a coleção evolui, partes da imagem do foguete são reveladas. É um recurso de acompanhamento simbólico, não um cálculo adicional de produtividade.
@@ -377,80 +379,85 @@ A página **Visão** apresenta uma composição visual relacionada aos Elixires 
 
 ---
 
-<a id="9-arquivo-guardar-atualizar-abrir-e-imprimir"></a>
-## 9. Arquivo: guardar, atualizar, abrir e imprimir
+<a id="9-arquivo-salvamento-restauracao-e-impressao" name="9-arquivo-salvamento-restauracao-e-impressao"></a>
+## 9. Arquivo: salvamento, restauração e impressão
 
-**Avisos pelo Impulsinho:** as pendências do arquivo externo podem ser consultadas pelo personagem. Quando o Backup Geral precisar ser atualizado, toque no Impulsinho e selecione **Atualizar Backup Geral**. A confirmação de sobrescrita e a proteção de saída continuam ativas. A opção **Conquistas** apresenta as novidades e as marca como lidas.
+O Impulso mantém os registros no navegador durante o uso. O arquivo externo é uma cópia independente, destinada à segurança e à transferência de dados. Salvar localmente não significa que o arquivo externo esteja atualizado.
 
-**O armazenamento principal do Impulso continua sendo local, no navegador.** Os arquivos JSON são cópias para segurança e transferência; não substituem automaticamente o estado salvo enquanto você trabalha.
+<a id="salvar-backup-integral" name="salvar-backup-integral"></a>
+### Salvar — backup integral
 
-<a id="guardar-salvar-um-backup-geral"></a>
-### Guardar — salvar um Backup Geral
+Use **Arquivo → Salvar**, ou o botão **Salvar** do Impulsinho, do R2D10 ou da página Armazenamento. Todos acionam a mesma rotina.
 
-Abra **Arquivo → Guardar**. Em navegadores compatíveis com a **File System Access API**, escolha o nome e o destino do arquivo. Nos demais, o navegador utiliza o download convencional. Confira se o arquivo foi efetivamente salvo e mantenha uma cópia fora do dispositivo.
+1. Na primeira gravação, escolha nome e destino, se o navegador oferecer gravação direta.
+2. Aguarde a confirmação de salvamento.
+3. Continue trabalhando normalmente. Ao clicar novamente em Salvar, o arquivo vinculado à sessão será atualizado se continuar acessível e autorizado.
+4. Se o vínculo não estiver disponível, escolha novamente o destino. Após fechar o aplicativo, pode ser necessário refazer essa associação.
 
-O **Backup Geral contém todos os projetos existentes no Impulso no momento da gravação**, e não somente o projeto aberto. Por exemplo: se você guardou o arquivo quando existia apenas o Projeto A e depois criou o Projeto B, a próxima atualização do Backup Geral incluirá **A e B**. Se um projeto foi excluído do aplicativo, ele poderá deixar de constar na versão atualizada do backup.
+Sem suporte à File System Access API, o comando solicita um download JSON. Nesse caso, o navegador não confirma a gravação: confira a pasta de destino. Cancelar o seletor não significa que o backup foi salvo.
 
-A função não envia dados para uma nuvem e não garante, por si só, que o arquivo tenha sido copiado para outro local.
+**Atenção:** a atualização do arquivo substitui seu conteúdo pelo estado atual do aplicativo. Mantenha cópias independentes, especialmente antes de excluir projetos ou restaurar dados.
 
-<a id="atualizar-sobrescrever-um-backup-existente"></a>
-### Atualizar — sobrescrever um backup existente
+<a id="conteudo-e-preferencias-do-backup" name="conteudo-e-preferencias-do-backup"></a>
+### Conteúdo e preferências do backup
 
-Em **Arquivo → Atualizar**, selecione um arquivo de Backup Geral existente ou utilize o arquivo selecionado na sessão, quando aplicável. O Impulso verifica se ele é compatível e **solicita confirmação antes de sobrescrevê-lo** com os dados atuais. A operação depende do suporte do navegador à gravação direta. Se não houver suporte, utilize **Guardar** para gerar um novo arquivo.
+O Backup Geral inclui todos os projetos, registros, hábitos, sessões e dados de progresso, além das preferências portáveis: tema cromático, modo claro/escuro, atalhos, alertas, distintivos, avisos pendentes e lidos, controles de aparência, posição, áudio, personalidade, motor contextual e tutorial do Impulsinho e preferências do R2D10.
 
-**Atenção à sobrescrita:** Atualizar substitui o conteúdo anterior do arquivo escolhido pelo **estado atual de todos os projetos**. Não significa que o projeto recém-criado apagará os demais; significa que o backup anterior será substituído por um novo retrato do conjunto. Verifique o destino e mantenha pelo menos uma cópia anterior de segurança.
+Permissões do navegador, vínculo com o arquivo externo, histórico de instalação e memória comportamental não são transferidos. Os intervalos dos alertas reiniciam após a restauração. O arquivo não é uma sincronização automática com a nuvem.
 
-<a id="aviso-de-alteracoes-pendentes-no-arquivo"></a>
+<a id="aviso-de-alteracoes-pendentes-no-arquivo" name="aviso-de-alteracoes-pendentes-no-arquivo"></a>
 ### Aviso de alterações pendentes no arquivo
 
-O Impulso guarda seus registros localmente durante o uso. O estado do arquivo externo é acompanhado separadamente. Quando houver alterações pendentes, consulte o Impulsinho e utilize **Atualizar Backup Geral**, ou acesse **Arquivo → Atualizar**. Se ainda não houver arquivo escolhido, utilize **Guardar**.
+Quando o arquivo externo estiver desatualizado, utilize **Salvar**. Desativar o lembrete não grava o arquivo. A confirmação de gravação direta é diferente da solicitação de download. Acompanhe o estado em Armazenamento e mantenha uma cópia fora do navegador.
 
-Confirme o destino e aguarde a gravação. Em navegadores que apenas iniciam um download, o aplicativo não consegue confirmar que o arquivo foi efetivamente guardado. A associação ao arquivo pode precisar ser refeita após reiniciar o navegador.
-
-O aviso de backup não é o contador de conquistas do cabeçalho. Desativar alertas não atualiza o arquivo externo.
-
-<a id="abrir-restaurar-um-backup-geral"></a>
+<a id="abrir-restaurar-um-backup-geral" name="abrir-restaurar-um-backup-geral"></a>
 ### Abrir — restaurar um Backup Geral
 
-Em **Arquivo → Abrir**, escolha o arquivo e leia a confirmação. **A restauração geral substitui os projetos atuais** pelos contidos no backup. Faça um backup do estado atual antes de confirmar. O arquivo é validado, mas ainda é necessário conferir os dados depois da restauração.
+1. Antes de restaurar, salve os dados atuais em uma cópia independente.
+2. Acesse **Arquivo → Abrir** e selecione o JSON ou arquivo `.impulso` compatível.
+3. Leia a confirmação: a restauração substitui **todos os projetos atuais** e as preferências incluídas no arquivo.
+4. Confirme e confira os projetos, registros, tema e avisos recuperados. O aplicativo pode recarregar para aplicar as preferências.
 
-<a id="projeto-individual-exportar-e-importar"></a>
-### Projeto individual: exportar e importar
+Arquivos sem preferências preservam as configurações atuais. O limite de leitura é de 40 MB. Não restaure arquivos desconhecidos ou corrompidos.
 
-O **Backup Geral** reúne todos os projetos; um arquivo de **projeto individual** contém somente o projeto escolhido. Se o aplicativo oferecer controles de exportação ou importação individual na área de projetos, use-os para transportar apenas esse projeto. Antes de importar, confira o tipo do arquivo e leia a confirmação apresentada. **Não utilize a restauração geral para importar um único projeto.**
+<a id="projeto-individual-e-transferencia" name="projeto-individual-e-transferencia"></a>
+### Projeto individual e transferência
 
-<a id="abrir-pelo-explorador-de-arquivos"></a>
+Um arquivo de projeto individual não é um Backup Geral. Em Dados → Meu Dia, utilize **Exportar** para gerar o arquivo do projeto ativo e **Importar** para selecionar um projeto individual. A integração de abertura de arquivos distingue os dois formatos e encaminha arquivos individuais ao fluxo próprio de importação quando disponível. Não use a restauração geral para importar apenas um projeto. Para transportar o conjunto completo, utilize Salvar e Abrir.
+
+<a id="abrir-pelo-explorador-de-arquivos" name="abrir-pelo-explorador-de-arquivos"></a>
 ### Abrir pelo explorador de arquivos
 
-Em versões compatíveis do Chrome e Edge para desktop, o PWA instalado pode receber arquivos `.json` e `.impulso` por meio da **File Handling API**. O sistema pode oferecer **Abrir com → Impulso**. O aplicativo identifica se o arquivo contém um projeto individual ou um Backup Geral e encaminha para o fluxo apropriado, sempre com confirmação. A associação não é universal e pode exigir reinstalar o PWA após mudanças no manifesto.
+Em edições compatíveis do Chrome e Edge para desktop, o PWA instalado pode receber arquivos `.json` e `.impulso` por meio da **File Handling API**. O sistema pode oferecer **Abrir com → Impulso**. O aplicativo identifica se o arquivo contém um projeto individual ou um Backup Geral e encaminha para o fluxo apropriado, sempre com confirmação. A associação não é universal e pode exigir reinstalar o PWA após mudanças no manifesto.
 
 No Android e em navegadores sem suporte, use os seletores de arquivos dentro do Impulso.
 
-<a id="imprimir-e-salvar-em-pdf"></a>
+<a id="imprimir-e-salvar-em-pdf" name="imprimir-e-salvar-em-pdf"></a>
 ### Imprimir e salvar em PDF
 
-Em **Arquivo → Imprimir**, prepare o relatório disponibilizado pelo aplicativo. Na janela de impressão do navegador, escolha uma impressora ou **Salvar como PDF**, quando disponível. Revise datas, nomes e totais antes de compartilhar. Os relatórios não são sincronizados automaticamente com serviços externos.
+Em **Arquivo → Imprimir**, prepare o relatório disponibilizado pelo aplicativo. Na janela de impressão do navegador, escolha uma impressora ou **Salvar como PDF**, quando disponível. Revise datas, nomes e totais antes de compartilhar. Os relatórios não são sincronizados automaticamente com serviços externos. Impulsinho, R2D10 e controles flutuantes são ocultados na impressão. Também é possível imprimir a lista de projetos e relatórios diários ou estatísticos nas respectivas páginas.
 
 [↑ Voltar ao sumário](#sumario-e-navegacao)
 
 ---
 
-<a id="10-sistema-configuracoes-instalacao-e-saida"></a>
+<a id="10-sistema-configuracoes-instalacao-e-saida" name="10-sistema-configuracoes-instalacao-e-saida"></a>
 ## 10. Sistema: configurações, instalação e saída
 
-Acesse **Sistema → Configurações**. A página contém **cinco seções recolhíveis**, para facilitar a navegação:
+Acesse **Sistema → Configurações**. A página contém **seis seções recolhíveis**, para facilitar a navegação:
 
 1. **Temas:** identidade cromática e modo claro/escuro.
 2. **Atalhos de Teclado:** combinações, chaves individuais e redefinição.
 3. **Atalhos do Aplicativo:** chaves para acessos rápidos internos.
-4. **Controles do Impulsinho:** comportamento, personalidade, expressões, áudio e tutorial. Os controles do R2D10 reúnem alertas e distintivos.
-5. **Limpeza:** manutenção seletiva ou completa dos dados identificados como pertencentes ao Impulso.
+4. **Controles do Impulsinho:** comportamento, personalidade, expressões, áudio, tutorial e diagnóstico corporal.
+5. **Controles do R2D10:** presença, voz robótica, alertas e distintivos.
+6. **Limpeza:** manutenção seletiva ou completa dos dados identificados como pertencentes ao Impulso.
 
 Clique no título de uma seção para abri-la ou recolhê-la. A página permite concentrar as preferências sem multiplicar telas no menu.
 
 **Sistema → Instalar** e **Sistema → Desinstalar** são explicados no capítulo 2. **Sistema → Fechar** solicita confirmação e apresenta a saída do aplicativo; o navegador pode impedir que uma página feche a própria janela. Nesse caso, feche a aba ou janela manualmente. Os dados já salvos permanecem no armazenamento local, a menos que sejam removidos por outra operação.
 
-<a id="fechar-o-impulso-com-um-arquivo-pendente"></a>
+<a id="fechar-o-impulso-com-um-arquivo-pendente" name="fechar-o-impulso-com-um-arquivo-pendente"></a>
 ### Fechar o Impulso com um arquivo pendente
 
 Ao escolher **Sistema → Fechar**, se o Backup Geral estiver desatualizado, o aplicativo oferece **Cancelar**, **Fechar sem atualizar** ou **Atualizar arquivo**. A gravação não encerra automaticamente uma sessão de trabalho em andamento.
@@ -463,10 +470,10 @@ Para evitar surpresas, confira as pendências do backup e atualize seu backup **
 
 ---
 
-<a id="11-atalhos-de-teclado-e-de-aplicativo"></a>
+<a id="11-atalhos-de-teclado-e-de-aplicativo" name="11-atalhos-de-teclado-e-de-aplicativo"></a>
 ## 11. Atalhos de teclado e de aplicativo
 
-<a id="atalhos-de-teclado"></a>
+<a id="atalhos-de-teclado" name="atalhos-de-teclado"></a>
 ### Atalhos de teclado
 
 Em **Configurações → Atalhos de Teclado**, ative ou desative os comandos globalmente ou de forma individual. Cada atalho possui um comando para **alterar a combinação de teclas** e outro para **restaurar o padrão**. O aplicativo verifica conflitos entre combinações cadastradas.
@@ -475,7 +482,7 @@ Os comandos disponíveis incluem **Novo Projeto, Projetos, Ponto, Foco, Hábitos
 
 Os atalhos só atuam quando o Impulso está aberto e recebe eventos do teclado. Não devem interromper a digitação em campos de formulário. Algumas combinações podem ser reservadas pelo sistema operacional, pelo idioma do teclado ou pelo navegador; nesses casos, escolha outra combinação.
 
-<a id="atalhos-do-aplicativo"></a>
+<a id="atalhos-do-aplicativo" name="atalhos-do-aplicativo"></a>
 ### Atalhos do aplicativo
 
 Em **Configurações → Atalhos do Aplicativo**, configure as chaves dos **13 acessos rápidos internos**. Os mesmos destinos são declarados no manifesto para sistemas que oferecem **App Shortcuts** ao pressionar o ícone instalado.
@@ -486,46 +493,46 @@ Em **Configurações → Atalhos do Aplicativo**, configure as chaves dos **13 a
 
 ---
 
-<a id="12-impulsinho-assistente-emocional-e-motivacional"></a>
+<a id="12-impulsinho-assistente-emocional-e-motivacional" name="12-impulsinho-assistente-emocional-e-motivacional"></a>
 ## 12. Impulsinho — assistente emocional e motivacional
 
 O Impulsinho acompanha o projeto ativo com comentários, orientações, expressões e efeitos sonoros. Ele funciona localmente, sem IA generativa, sem enviar perguntas a servidores e sem inventar estatísticas. Seu repertório é composto por regras, eventos e textos preparados.
 
-<a id="personagem-e-baloes"></a>
+<a id="personagem-e-baloes" name="personagem-e-baloes"></a>
 ### Personagem e balões
 
 Arraste o personagem para reposicioná-lo. Toque nele para abrir ou fechar seu balão de fala. O botão **☰** abre um painel separado de perguntas e comandos. As respostas aparecem no balão do personagem. Use Ajustes para acessar as preferências e, se ocultar o avatar, utilize Mostrar Impulsinho para recuperá-lo.
 
-<a id="consultas-e-navegacao-contextual"></a>
+<a id="consultas-e-navegacao-contextual" name="consultas-e-navegacao-contextual"></a>
 ### Consultas e navegação contextual
 
 Selecione uma opção em **Perguntas rápidas** e pressione **Abrir** ou digite uma pergunta de até 180 caracteres. Experimente “Quanto tempo trabalhei hoje?”, “Como está meu Motor?”, “Quantos chefões derrotei?” ou “Qual é seu estágio?”. Os temas reconhecidos incluem Meu Dia, Motor, Arena, Hábitos, Elixires, Conquistas, Estatísticas, Projetos, Ponto, Foco, Calendário, Dashboard, Backup e Configurações. Quando aplicável, o assistente abre a página correspondente e comenta os dados disponíveis. Navegar não inicia nem encerra atividades. Perguntas não reconhecidas recebem orientação e um link direto para o Manual oficial, que requer conexão.
 
-As consultas Conquistas e Ver avisos apresentam as novidades e as marcam como lidas. Visitar Insígnias, Codex, Cerimônias ou Elixires também marca as novidades daquela página e do projeto ativo como lidas. O comando Atualizar Backup Geral encaminha ao fluxo de gravação, sem dispensar confirmações.
+**Ver Avisos** abre a lista de notificações pendentes; **Ver Conquistas** abre Insígnias. Consultar uma página não elimina coletivamente os avisos. O comando **Salvar** aciona a mesma rotina do menu Arquivo.
 
-<a id="oraculo-consulta-ao-manual"></a>
+<a id="oraculo-perguntas-e-respostas" name="oraculo-perguntas-e-respostas"></a>
 ### Oráculo — perguntas e respostas
 
 No painel ☰ do Impulsinho, digite uma pergunta sobre o funcionamento do aplicativo. O Oráculo consulta uma base local de 545 perguntas e respostas preparadas, com palavras-chave e formulações alternativas. Ele reconhece correspondências exatas, sinônimos, flexões verbais e algumas intenções; quando a correspondência é ambígua ou insuficiente, pede uma reformulação. Consultas de progresso e comandos explícitos continuam utilizando os mecanismos de dados reais. A consulta não altera registros nem executa operações de arquivo. A base funciona offline após o cache inicial e não utiliza IA generativa. O Manual permanece disponível em Ajuda, independentemente do Oráculo.
 
-<a id="tutorial-e-reacoes-as-acoes"></a>
+<a id="tutorial-e-reacoes-as-acoes" name="tutorial-e-reacoes-as-acoes"></a>
 ### Tutorial e reações às ações
 
 Sem projeto ativo, o passeio inicial pode apresentar três orientações sobre menu, criação de projeto e registro de atividades. O passeio automático depende das preferências e do histórico local. O botão **Tutorial** permite repetir a orientação; com projeto ativo, apresenta um resumo dos primeiros passos. O movimento respeita a preferência de redução de animações.
 
 Os controles do aplicativo podem provocar comentários, expressões e sons, sujeitos a intervalos e preferências. Na Ignição do Motor, o personagem considera Giros, sequência atual, recorde e tempo desde o último registro. Uma pausa não é tratada como falha pessoal. Reações gerais não significam que cada operação foi concluída com sucesso.
 
-<a id="expressoes-e-bibliotecas-de-falas"></a>
+<a id="expressoes-e-bibliotecas-de-falas" name="expressoes-e-bibliotecas-de-falas"></a>
 ### Expressões e bibliotecas de falas
 
 O catálogo reúne 109 facetas WebP, agrupadas em alegria, curiosidade, surpresa, desafio, preocupação, descanso, humor e cuidado. Explore as expressões nas configurações, avance ou volte no catálogo, escolha uma família ou ative a alternância automática. Há quatro comentários associados a cada faceta e 1.200 variações contextuais em doze temas. Os números apresentados nas consultas vêm dos registros, não dos textos preparados.
 
-<a id="frases-motivacionais"></a>
+<a id="frases-motivacionais" name="frases-motivacionais"></a>
 ### Frases motivacionais
 
 A biblioteca adicional contém 1.000 frases em sete categorias: hábitos, uso do tempo, estoicismo, motivação, positividade, foco e disciplina, crescimento e mentalidade. O comando **Uma frase** solicita uma mensagem. Nos modos Espontaneamente e Ambos, uma frase automática fica elegível após cinco minutos de sessão e a cada cinco minutos (doze na personalidade Discreto), quando a interface está livre. Intervenções ocasionais priorizam o contexto da página e evitam repetir os últimos 80 identificadores, quando há alternativas. A seleção automática respeita o modo de conversa e evita interromper a digitação ou sessões de trabalho. As frases são reflexões, não diagnósticos nem garantias de resultados.
 
-<a id="personalidades"></a>
+<a id="personalidades" name="personalidades"></a>
 ### Personalidades
 
 | Personalidade | Comportamento |
@@ -537,7 +544,7 @@ A biblioteca adicional contém 1.000 frases em sete categorias: hábitos, uso do
 
 Escolha o perfil em Sistema → Configurações → Controles do Impulsinho. A personalidade modifica o tom, a frequência e a intensidade sonora, não as regras de produtividade.
 
-<a id="evolucao-por-projeto"></a>
+<a id="evolucao-por-projeto" name="evolucao-por-projeto"></a>
 ### Evolução por projeto
 
 A experiência é calculada com os registros atuais: um ponto por Giro completo, cinco por chefão derrotado, um por hábito concluído e dois por dia da sequência recorde.
@@ -552,12 +559,26 @@ A experiência é calculada com os registros atuais: um ponto por Giro completo,
 
 Use **Minha evolução** para consultar estágio, XP e distância até o próximo patamar. O personagem pode anunciar avanços e oferecer conselhos do estágio. A exclusão de registros pode reduzir a experiência. A evolução é independente da personalidade e não modifica a Arena.
 
-<a id="sons-e-vinheta-de-abertura"></a>
+<a id="sons-e-vinheta-de-abertura" name="sons-e-vinheta-de-abertura"></a>
 ### Sons e vinheta de abertura
 
 Os efeitos são sintetizados por famílias emocionais pela Web Audio API. Ajuste o volume, silencie ou desative os sons nas configurações. Use **Testar som do Impulsinho** para autorizar e verificar a reprodução. A vinheta do splash apresenta nove notas ascendentes e tem opção independente de ativação e botão **Testar vinheta**. Navegadores podem bloquear áudio automático antes de uma interação; o aplicativo deve abrir mesmo sem som. Comece com volume moderado.
 
-<a id="controles-e-acessibilidade"></a>
+<a id="motor-contextual-gestos-e-coreografias" name="motor-contextual-gestos-e-coreografias"></a>
+### Motor contextual, gestos e coreografias
+
+Em Controles do Impulsinho, ative **Ativar novo motor contextual do Impulsinho** para habilitar o repertório corporal. O catálogo contém 47 imagens WebP, incluindo recursos reservados ao diagnóstico. O motor combina expressões, gestos, movimento e falas; seleciona alternativas conforme personalidade e contexto, evitando repetições consecutivas quando possível.
+
+Acontecimentos reais incluem criação, abertura, renomeação e exclusão de projetos; Ponto; Foco e sua avaliação; Entradas; criação, execução e equipamento de hábitos; Pomodoro; Elixires, cofres, chefões, conquistas, Visão, salvamento confirmado, dicas e alertas. A Ignição do Motor e as frases solicitadas ou espontâneas também podem provocar combos. As coreografias podem encadear até três gestos; o perfil Discreto limita a intensidade e a duração.
+
+A fila temporária comporta até 24 eventos, com validade de dois minutos. O motor pode aguardar ou omitir manifestações durante edição, diálogos, concentração ou falta de espaço seguro. Nem todo acontecimento produz uma mãozinha imediatamente. O modo Somente quando eu clicar restringe manifestações automáticas. O download convencional não confirma gravação e não equivale a uma comemoração de salvamento confirmado.
+
+<a id="diagnostico-e-testes-corporais" name="diagnostico-e-testes-corporais"></a>
+### Diagnóstico e testes corporais
+
+Em Controles corporais, teste Acenar, Aplaudir, Aprovar, Força, Vitória e Apontar, ou percorra as 47 imagens. A prévia dentro do menu verifica o carregamento dos recursos. Em Teste no personagem, os gestos aparecem junto ao rosto; use os comandos individuais ou a coreografia completa. Os testes não registram trabalho nem concedem conquistas. O diagnóstico de acontecimentos reais apresenta recebidos, exibidos, pendentes e não exibidos. Limpar memória comportamental redefine a memória do assistente, não os projetos.
+
+<a id="controles-e-acessibilidade" name="controles-e-acessibilidade"></a>
 ### Controles e acessibilidade
 
 Em Sistema → Configurações → Controles do Impulsinho, escolha o modo Espontaneamente, Somente quando eu clicar ou Ambos. O modo por clique evita abertura espontânea dos balões; Espontaneamente e Ambos permitem intervenções automáticas e preservam consultas manuais. Ajuste visibilidade, flutuação, alternância de expressões, personalidade, áudio, volume, tutorial, vinheta, alertas de backup e Elixires e distintivos. Os distintivos não dependem da visibilidade do avatar. Os alertas desativados não devem gerar intervenções espontâneas correspondentes. Os balões possuem foco visível, mensagens anunciáveis por leitores de tela e alvos de toque ampliados.
@@ -566,28 +587,46 @@ Em Sistema → Configurações → Controles do Impulsinho, escolha o modo Espon
 
 ---
 
-<a id="13-alertas-distintivos-e-area-de-transferencia"></a>
+<a id="13-alertas-distintivos-e-area-de-transferencia" name="13-alertas-distintivos-e-area-de-transferencia"></a>
 ## 13. Alertas, distintivos e área de transferência
 
 Os controles de alertas de backup, hábitos e Elixires e distintivos estão reunidos em **Sistema → Configurações → Controles do R2D10**. Os distintivos não dependem da visibilidade do personagem. O R2D10 apresenta os lembretes e monitora Ponto, Foco e Hábitos, inclusive pausas. A opção de presença em repouso mantém o robô visível mesmo sem atividades ou alertas. Sua fala eletrônica, composta por assobios digitais e variações melódicas de frequência, é sintetizada localmente, com controle independente de volume, ativação e teste. O áudio depende da autorização do navegador.
 
-<a id="alertas-locais"></a>
+<a id="r2d10-assistente-operacional" name="r2d10-assistente-operacional"></a>
+### R2D10 — assistente operacional
+
+O R2D10 acompanha atividades em andamento e apresenta lembretes operacionais. Em Controles do R2D10, ajuste presença em repouso, sons e volume e utilize o teste de voz. Quando houver pendência de backup, o botão Salvar utiliza o mesmo fluxo de Arquivo. O robô não deve aparecer em relatórios impressos.
+
+<a id="alertas-locais" name="alertas-locais"></a>
 ### Alertas locais
 
 Em **Configurações → Controles do R2D10**, ative ou desative os lembretes disponíveis, como avisos relacionados a backups e hábitos. Eles são **avisos locais enquanto o aplicativo executa**: não são notificações push garantidas com o PWA fechado, nem realizam backups automaticamente.
 
-<a id="central-de-novidades-e-distintivos-badging-api"></a>
-### Central de novidades e distintivos — Badging API
+<a id="central-de-avisos-e-distintivos" name="central-de-avisos-e-distintivos"></a>
+### Central de Avisos e distintivos
 
-A opção **Distintivos de conquistas** solicita ao sistema operacional, quando compatível, a apresentação de um contador no ícone do PWA instalado. O número representa **novidades ainda não consultadas**, como títulos, medalhas, Chefões, Cerimônias e Elixires.
+O contador sobre o Impulsinho indica novidades pendentes. Clique nele ou abra o menu do personagem e escolha **Ver Avisos**. O painel Novidades do Impulso não bloqueia o restante da interface.
 
-O Impulso também apresenta um **contador interno no cabeçalho**. No computador, passe o mouse sobre ele ou clique; no celular, toque no contador. Abre-se a **Central de Novidades**, que apresenta individualmente títulos, medalhas, Chefões, Cerimônias e Elixires, incluindo o projeto de origem.
+- Clique em um cartão para abrir o projeto e a página associados. Após a navegação bem-sucedida, somente aquele aviso é removido e o contador diminui.
+- Abrir ou fechar o painel, ou visitar uma página por outro caminho, não marca todos os avisos como lidos.
+- Se o projeto foi excluído, clicar no aviso remove a pendência individual e informa que o projeto não está disponível. Avisos gerais podem abrir destinos sem projeto específico; alguns destinos exigem um projeto ativo.
+- Se a navegação ou a gravação da leitura falhar, o aviso permanece pendente.
 
-Selecione uma novidade para visitar a seção correspondente e registrá-la como consultada. **Abrir a lista, por si só, não elimina as demais novidades.** A leitura é individual, e o estado consultado é mantido localmente por projeto. A lista também pode ser utilizada por teclado; **Esc** a fecha.
+| Acontecimento | Destino habitual |
+| --- | --- |
+| Título ou medalha | Insígnias |
+| Chefão | Codex |
+| Cerimônia | Cerimônias |
+| Elixir | Elixires |
+| Marco de produtividade | Motor |
+| Lembrete de backup | Armazenamento |
+| Lembrete de hábito | Hábitos |
+| Dica de teclado | Configurações |
+| Aviso geral de projeto | Projetos |
 
-As conquistas existentes antes da ativação inicial não devem aparecer como novidades artificiais. A Badging API não é uma notificação push e não garante atualização enquanto o aplicativo estiver fechado.
+A identidade dos avisos lidos é mantida localmente e integra o Backup Geral, evitando que o mesmo acontecimento seja recriado continuamente. A opção de distintivos também pode solicitar um contador no ícone instalado via Badging API, quando suportada pelo sistema. Não se trata de notificações push.
 
-<a id="copiar-resumos-clipboard-api"></a>
+<a id="copiar-resumos-clipboard-api" name="copiar-resumos-clipboard-api"></a>
 ### Copiar resumos — Clipboard API
 
 O comando **Copiar resumo** aparece em **Dashboard, Meu Dia, Estatísticas e Insígnias**. Ele copia texto com os dados reais disponíveis; em Estatísticas, respeita os filtros ativos. A cópia não modifica registros e pode ser colada em documentos, mensagens e editores. A disponibilidade depende das permissões e do suporte do navegador.
@@ -598,15 +637,15 @@ Elixires também podem oferecer ações de copiar e compartilhar. A cópia de re
 
 ---
 
-<a id="14-armazenamento-e-limpeza"></a>
+<a id="14-armazenamento-e-limpeza" name="14-armazenamento-e-limpeza"></a>
 ## 14. Armazenamento e limpeza
 
-<a id="onde-ficam-os-dados"></a>
+<a id="onde-ficam-os-dados" name="onde-ficam-os-dados"></a>
 ### Onde ficam os dados
 
 Os projetos são mantidos no armazenamento local do navegador, associados à origem e ao contexto do aplicativo. Isso não equivale a um banco de dados em nuvem. Apagar os dados do site, usar outro perfil de navegador ou trocar de dispositivo pode fazer os projetos desaparecerem naquele ambiente.
 
-<a id="limpeza-seletiva"></a>
+<a id="limpeza-seletiva" name="limpeza-seletiva"></a>
 ### Limpeza seletiva
 
 Em **Configurações → Limpeza**, escolha os componentes que deseja remover:
@@ -622,10 +661,10 @@ Use **Limpar selecionados** para executar apenas as opções marcadas. **Limpar 
 
 **Atenção:** o domínio GitHub Pages pode hospedar outros aplicativos. A limpeza foi projetada para atuar sobre chaves, caches e registro identificados como pertencentes ao Impulso, **não como uma limpeza indiscriminada de todos os dados do domínio**. Não apaga arquivos JSON já baixados nem garante remover bancos desconhecidos de outros aplicativos.
 
-<a id="antes-de-limpar"></a>
+<a id="antes-de-limpar" name="antes-de-limpar"></a>
 ### Antes de limpar
 
-1. Faça **Arquivo → Guardar**.
+1. Faça **Arquivo → Salvar**.
 2. Confira se o arquivo existe e está íntegro.
 3. Guarde outra cópia em local seguro.
 4. Confirme se realmente deseja excluir dados ou apenas atualizar o cache.
@@ -634,24 +673,31 @@ Use **Limpar selecionados** para executar apenas as opções marcadas. **Limpar 
 
 ---
 
-<a id="15-temas-acessibilidade-e-privacidade"></a>
+<a id="15-temas-acessibilidade-e-privacidade" name="15-temas-acessibilidade-e-privacidade"></a>
 ## 15. Temas, acessibilidade e privacidade
 
-<a id="as-sete-identidades-cromaticas"></a>
-### As sete identidades cromáticas
+<a id="colecoes-cromaticas" name="colecoes-cromaticas"></a>
+### Coleções cromáticas
 
-O Impulso oferece **Original, Vinho, Blue Sky, Triádico, Granfino, Ecológico e Místico**, cada uma com modo **claro** e **escuro**. As paletas oficiais servem de base para tokens de superfícies, textos, bordas, botões, cabeçalho, rodapé e componentes especiais, incluindo o Motor.
+Em **Sistema → Configurações → Temas**, abra uma coleção e escolha uma das 23 paletas. A prévia mostra o tema aplicado; a seleção é imediata e não altera os dados do projeto.
 
-Ao selecionar uma paleta, o Impulsinho visível apresenta sua opinião sobre as cores e uma expressão correspondente. As amostras de cores em Configurações representam a identidade da paleta. As tonalidades auxiliares são ajustadas para diferentes funções, pois uma cor de destaque nem sempre pode ser usada diretamente como fundo de texto. O objetivo é manter coerência visual sem sacrificar a legibilidade.
+| Coleção | Temas |
+| --- | --- |
+| Tradicionais | Original, Terracota, Neon, Vintage, Retrô, Caramelo, Místico |
+| Quatro Estações | Primavera, Verão, Outono, Inverno |
+| Sete Mares | Pacífico Norte, Pacífico Sul, Atlântico Norte, Atlântico Sul, Índico, Ártico, Antártico |
+| Diversos | Café, Espacial, Prisma, Creme, Natureza |
 
-<a id="acessibilidade"></a>
+Cada paleta possui cinco cores de referência. Os tokens funcionais podem usar tonalidades derivadas para legibilidade. O modo claro ou escuro é independente da paleta: escolha-o no cabeçalho ou em Modo de aparência. São 46 combinações possíveis. As preferências são gravadas localmente e incluídas no backup. Uma paleta não reconhecida retorna ao Original. O Impulsinho pode comentar a escolha quando estiver visível.
+
+<a id="acessibilidade" name="acessibilidade"></a>
 ### Acessibilidade
 
 A interface utiliza controles com rótulos, navegação por teclado, indicadores de foco e layouts adaptáveis. Para contraste, o projeto busca os critérios **WCAG 2.2 AA**: em geral, **4,5:1 para texto normal**, **3:1 para texto grande** e **3:1 para elementos visuais essenciais de interface**, quando aplicável. Os contrastes calculados de pares de cores não equivalem, por si só, à certificação integral de todas as telas e estados.
 
 Animações devem respeitar `prefers-reduced-motion`. A informação importante não deve depender apenas de cor ou movimento. Caso encontre uma tela difícil de ler, experimente outro tema e informe o componente afetado.
 
-<a id="privacidade"></a>
+<a id="privacidade" name="privacidade"></a>
 ### Privacidade
 
 O Impulso não exige conta nem envia automaticamente os registros a um servidor de produtividade. Arquivos exportados, compartilhamentos e links externos só saem do contexto local por uma ação do usuário ou pelas funções do navegador. O aplicativo não promete sincronização automática entre dispositivos, backup remoto ou recuperação de dados apagados.
@@ -660,18 +706,18 @@ O Impulso não exige conta nem envia automaticamente os registros a um servidor 
 
 ---
 
-<a id="16-solucao-de-problemas"></a>
+<a id="16-solucao-de-problemas" name="16-solucao-de-problemas"></a>
 ## 16. Solução de problemas
 
 | Problema | O que verificar |
 | --- | --- |
 | O aplicativo não abre offline | Abra conectado uma vez e aguarde o cache; confira se o armazenamento não foi limpo. |
-| Aparece uma versão antiga | Reabra com conexão e aguarde a atualização do Service Worker; evite apagar dados antes do backup. |
+| A interface não reflete a atualização | Reabra com conexão e aguarde a atualização do Service Worker; evite apagar dados antes do backup. |
 | O convite de instalação não aparece | O navegador pode não oferecer `beforeinstallprompt`, ou o PWA já pode estar instalado. Use Sistema → Instalar. |
 | Atalhos não funcionam | Confira as chaves em Configurações e possíveis conflitos com o navegador ou sistema. |
 | Atalhos não aparecem no ícone | O sistema pode limitar o manifesto; às vezes é necessário reinstalar o PWA. |
-| Guardar não abre seletor de pasta | O navegador pode não suportar gravação direta; utilize o download convencional. |
-| Atualizar não sobrescreve o arquivo | Verifique compatibilidade, permissões e seleção de um Backup Geral válido; use Guardar como alternativa. |
+| Salvar não abre seletor de pasta | O navegador pode não suportar gravação direta; utilize o download convencional. |
+| Salvar não atualiza o arquivo | Confira o vínculo e a permissão de gravação; selecione novamente o destino se necessário. |
 | Abrir rejeita o JSON | Verifique se é um backup do Impulso e se não está corrompido ou incompleto. |
 | O contador do ícone não aparece | A Badging API depende do sistema operacional; confira o contador interno. |
 | Um total parece incorreto | Confira registros sobrepostos, sessões pausadas e atividades que atravessam a meia-noite. |
@@ -691,7 +737,7 @@ O Impulso não exige conta nem envia automaticamente os registros a um servidor 
 
 ---
 
-<a id="17-perguntas-frequentes"></a>
+<a id="17-perguntas-frequentes" name="17-perguntas-frequentes"></a>
 ## 17. Perguntas frequentes
 
 **Preciso de internet para registrar trabalho?**  
@@ -712,8 +758,8 @@ Não. O tempo pausado é excluído do cálculo efetivo.
 **Posso restaurar um backup em outro dispositivo?**  
 Sim, transferindo o arquivo e utilizando o fluxo de abertura/restauração, desde que seja compatível. Isso não é sincronização automática.
 
-**Atualizar é a mesma coisa que Guardar?**  
-Não. **Guardar** cria ou baixa uma cópia; **Atualizar** tenta sobrescrever um Backup Geral existente, com confirmação e suporte do navegador.
+**Salvar atualiza o mesmo arquivo?**  
+Sim, quando o vínculo da sessão e a permissão de gravação continuam válidos. Caso contrário, será necessário escolher um destino ou utilizar o download convencional.
 
 **O PWA pode desinstalar a si mesmo?**  
 Não. A remoção é feita pelo usuário no navegador ou sistema operacional.
@@ -731,7 +777,7 @@ Não. A meta é simbólica e motivacional. A qualidade e o resultado dependem de
 
 ---
 
-<a id="18-verificacao-de-funcionamento"></a>
+<a id="18-verificacao-de-funcionamento" name="18-verificacao-de-funcionamento"></a>
 ## 18. Verificação de funcionamento
 
 Após publicar ou atualizar o aplicativo, recomenda-se testar:
@@ -745,9 +791,9 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 - [ ] Conferir Calendário, Estatísticas, Motor e progresso de metas.
 - [ ] Consultar Arena, Codex, Elixires, Insígnias, Cerimônias e Visão.
 - [ ] Testar **Copiar resumo** nas páginas correspondentes.
-- [ ] Guardar backup, abrir o arquivo em ambiente de teste e conferir o resultado.
+- [ ] Salvar backup, abrir o arquivo em ambiente de teste e conferir o resultado.
 - [ ] Testar as seções recolhíveis de Configurações e atalhos de teclado.
-- [ ] Conferir os sete temas nos modos claro e escuro, incluindo rodapé e Motor.
+- [ ] Conferir os 23 temas nos modos claro e escuro, incluindo rodapé e Motor.
 - [ ] Testar instalação e atalhos do ícone em sistemas compatíveis.
 - [ ] Verificar o contador interno de novidades e, se suportado, o distintivo do PWA.
 - [ ] Conferir o posicionamento do rodapé em páginas curtas e longas.
@@ -758,10 +804,10 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 
 ---
 
-<a id="19-estrutura-do-projeto-e-glossario"></a>
+<a id="19-estrutura-do-projeto-e-glossario" name="19-estrutura-do-projeto-e-glossario"></a>
 ## 19. Estrutura do projeto e glossário
 
-<a id="arquivos-principais"></a>
+<a id="arquivos-principais" name="arquivos-principais"></a>
 ### Arquivos principais
 
 | Arquivo | Função |
@@ -783,13 +829,17 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 | `README.md` | Este Manual. |
 | `impulsinho/catalogo.json` | Catálogo e hashes das 109 facetas. |
 | `impulsinho/facetas/` | Imagens das expressões do personagem. |
+| `impulsinho/gestos/` | 47 imagens corporais. |
+| `impulsinho/motores/` | Catálogo gestual, animação, emoção, personalidade, memória, contexto, fila e orquestração. |
+| `impulsinho/r2d10.js` | Assistente operacional. |
+| `impulsinho/oraculo.json`, `conhecimento.js` | Base de perguntas e mecanismo local de consulta. |
 | `impulsinho/avatar.js`, `avatar.css` | Comportamento e apresentação do assistente. |
 | `impulsinho/falas.json`, `facetas-falas.json`, `motivacionais.json` | Bibliotecas de mensagens e comentários. |
 
-<a id="glossario"></a>
+<a id="glossario" name="glossario"></a>
 ### Glossário
 
-**Backup Geral:** cópia de segurança que reúne todos os projetos.  
+**Backup Geral:** cópia de segurança que reúne todos os projetos e preferências portáveis.  
 **Chefão:** desafio simbólico superado pelo tempo registrado.  
 **Codex:** coleção de informações dos Chefões.  
 **Elixir:** recompensa colecionável associada à vitória e à conclusão posterior de um hábito.  
@@ -810,114 +860,4 @@ Após publicar ou atualizar o aplicativo, recomenda-se testar:
 **Impulso — Motor de Produtividade Pessoal**  
 Uma ferramenta para transformar dedicação em registros, continuidade em progresso e objetivos em uma jornada visível.
 
-**Site:** https://magpe-stack.github.io/Impulso/ · **Repositório:** https://github.com/magpe-stack/Impulso
-
-
-
-## Versão 147 — integração experimental do Impulsinho
-Em Configurações → Controles do Impulsinho, ative o novo motor contextual. O assistente original continua disponível. A memória comportamental é separada dos projetos. Os gestos exigem os WebP originais em `impulsinho/gestos/`; sem eles, o motor mantém as expressões faciais. O laboratório independente está em `impulsinho/motores/laboratorio.html`. Esta versão ainda requer homologação visual e offline.
-
-
-## Versão 148 — auditoria estática
-Corrigida a inicialização concorrente do motor opcional e a reativação após desligamento durante carregamento. Gestos corporais desabilitados nesta distribuição por ausência dos WebP originais; catálogo preservado. Motor contextual continua opt-in. Sete suítes Node aprovadas; sintaxe e referências do cache verificadas. Teste Chromium bloqueado por política do ambiente (ERR_BLOCKED_BY_ADMINISTRATOR); offline e homologação visual pendentes. Não publicar como versão homologada.
-
-
-## Versão 149 — integração corporal
-As 47 imagens WebP originais estão em `impulsinho/gestos/`, com nomes, dimensões e hashes conferidos. O catálogo completo foi reativado e todas as imagens foram incluídas no cache v149. Ative o novo motor em Configurações → Controles do Impulsinho. Gestos são decorativos e podem ser omitidos quando não há espaço seguro ou quando o evento não é elegível. Homologação visual e offline no navegador ainda necessária. Faça Backup Geral antes de atualizar.
-
-## Versão 150 — diagnóstico corporal
-Em Configurações → Controles do Impulsinho, teste seis gestos ou percorra as 47 imagens, com diagnóstico de carregamento e botão Parar teste. A prévia é independente do motor automático. O posicionamento automático tenta quatro lados seguros e o evento de derrota de chefão foi conectado ao motor contextual. A homologação visual permanece necessária.
-
-
-## Versão 151 — teste corporal integrado
-Em Configurações → Controles do Impulsinho, mantenha o diagnóstico das 47 imagens e use Teste no personagem para executar seis gestos junto ao rosto real, com expressão e balão de demonstração. A coreografia percorre os seis gestos. Parar teste integrado restaura a conversa e a expressão anteriores. Não registra atividades ou conquistas. A homologação visual permanece necessária.
-
-## Versão 152 — Backup das preferências
-
-Guardar, Atualizar e Backup Geral incluem preferências locais de aparência, alertas, atalhos, Impulsinho e R2D10. Restaurar um backup novo substitui as preferências incluídas e recarrega o aplicativo. Backups antigos preservam as preferências atuais. A exportação individual de projeto não inclui configurações globais. Permissões do navegador, instalação, histórico comportamental e vínculos com arquivos externos não são transferidos. Os alertas reiniciam sua contagem após a restauração.
-
-## Versão 153 — Gestos em acontecimentos reais
-
-Com o motor contextual ativado e o modo espontâneo ou ambos, o Impulsinho recebe eventos emitidos após gravações reais: criação e abertura de projeto, Ponto, Foco, entradas, hábitos, Elixires, cofres, chefões e backup gravado pela API de arquivos. A fila é temporária (até 24 eventos, validade de dois minutos), aguarda diálogos e edição e evita interromper sessões ativas, exceto por um gesto discreto de início. O download convencional não confirma gravação e não dispara aprovação de backup. O diagnóstico de acontecimentos reais mostra recebidos, exibidos, pendentes e não exibidos. Os testes manuais continuam independentes. A posição respeita controles e limites da tela; não há garantia de espaço livre em todas as telas. As preferências do Backup Geral da versão 152 permanecem intactas.
-
-
-## Versão 154 — Repertório gestual ampliado
-
-23 novos acontecimentos reais, mantendo a fila e as preferências da versão anterior. Ações de exclusão usam gestos neutros; exportação sinaliza solicitação, não confirmação de gravação. Pausas permitem manifestações discretas.
-
-- `projeto-renomeado`: Nome atualizado!
-- `registro-excluido`: Registro removido.
-- `visao-revelada`: Uma nova parte da sua Visão!
-- `visao-completa`: Sua Visão está completa!
-- `projeto-importado`: Projeto recebido!
-- `backup-restaurado`: Backup restaurado!
-- `habito-novo`: Um novo hábito!
-- `habito-equipado`: Elixir equipado!
-- `habito-desequipado`: Elixir desequipado.
-- `projeto-excluido`: Projeto removido.
-- `habito-excluido`: Hábito removido.
-- `foco-retomado`: Vamos retomar!
-- `foco-pausado`: Uma pausa.
-- `foco-descartado`: Você pode recomeçar quando quiser.
-- `pomodoro-start`: Vamos ao Pomodoro!
-- `pomodoro-pause`: Pausa registrada.
-- `pomodoro-resume`: De volta ao trabalho!
-- `pomodoro-reset`: Pronto para recomeçar.
-- `foco-resultado-yes`: Objetivo alcançado!
-- `foco-resultado-partial`: Cada avanço conta.
-- `foco-resultado-no`: Reavalie o objetivo com calma.
-- `elixir-copiado`: Frase copiada!
-- `exportacao-solicitada`: Exportação solicitada.
-
-
-## Versão 155 — Repertório adaptativo
-Os acontecimentos reais mantêm os vínculos da v154. Gestos alternam por acontecimento e personalidade durante a sessão; conquistas maiores podem executar dois movimentos consecutivos. O perfil Discreto, atividades em curso e a preferência por movimento reduzido limitam as coreografias. O catálogo mantém suas restrições de produção. Não há novas imagens nem alteração no formato de backup.
-
-## Versão 156
-Central de avisos: clique no contador do Impulsinho ou em Ver avisos. Cada item abre seu destino e somente ele é marcado como lido. O backup inclui o estado dos avisos. Novas coreografias para ignição, frases e tarefas, conforme personalidade e disponibilidade da interface.
-
-
-### Versão 157 — Correções
-
-- Ver Avisos abre o painel independente do cabeçalho, por clique ou toque; fechar não marca itens como lidos.
-- Ver Conquistas abre Insígnias diretamente.
-- Tema claro/escuro usa uma rotina única de aplicação e armazenamento local, também incluído no Backup Geral.
-- Atualização do cache offline.
-
-## Versão 158
-Central de Avisos em diálogo nativo, botão direto no menu do Impulsinho e contador sem captura de ponteiro. Fechar não marca avisos como lidos.
-
-
-### Versão 159
-Central de Avisos não modal, acionada pelo comando Ver Avisos no menu original. Removido o botão avulso. A seleção individual continua direcionando à página correspondente.
-
-### Versão 160 — Central de Avisos
-Painel não modal independente do cabeçalho. Ver Avisos e Ver Conquistas são acionados diretamente pelo seletor de perguntas rápidas. O armazenamento e a leitura individual dos avisos permanecem os mesmos.
-
-
-### Versão 161 — Leitura individual de avisos
-
-O cartão inteiro abre o destino cadastrado no projeto correspondente. A leitura é gravada individualmente após a navegação; falhas mantêm o aviso pendente. O painel fecha após a leitura e o contador é atualizado. A abertura do painel permanece como na versão 160.
-
-
-### Versão 162 — Avisos sem repetição
-A leitura individual registra permanentemente a identidade do aviso extra (projeto e acontecimento) no armazenamento de avisos, incluído no Backup Geral. Conquistas lidas não perdem a marcação se temporariamente deixarem de ser válidas. Avisos lidos antes desta versão sem registro persistente podem reaparecer uma última vez.
-
-
-## Impulso 163 — Coleções Cromáticas
-
-Configurações → Temas: 23 paletas em quatro coleções sanfonadas. A seleção é independente do modo claro/escuro e integra o Backup Geral. Temas antigos sem equivalente retornam ao Original. As cinco amostras preservam os HEX fornecidos; tokens semânticos são derivados para contraste.
-
-## Impulso 164 — Salvar, impressão e avisos órfãos
-
-Arquivo → Salvar gera o Backup Geral e reutiliza o arquivo escolhido durante a sessão, quando autorizado pelo navegador. Após reabrir o aplicativo, pode ser necessário escolher o destino novamente. Em navegadores sem gravação direta, solicita download. Avisos de projetos indisponíveis são removidos individualmente ao clicar, mantendo o registro de leitura. R2D10 e Impulsinho não aparecem na impressão.
-
-
-## Impulso 165 — Falas naturais
-
-Removido o prefixo fixo da personalidade Mentor. As frases, gestos e demais preferências permanecem inalterados.
-
-
-## Impulso 166 — Salvamento unificado
-
-Os botões Salvar do R2D10, do Impulsinho, de Armazenamento e de Arquivo acionam a mesma rotina de salvamento integral. O arquivo escolhido é reutilizado durante a sessão quando autorizado; o download é alternativa apenas quando a API de gravação direta não está disponível.
+**Site:** [Abrir o Impulso](https://magpe-stack.github.io/Impulso/) · **Repositório:** [GitHub](https://github.com/magpe-stack/Impulso)
