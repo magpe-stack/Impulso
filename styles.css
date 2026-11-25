@@ -699,3 +699,6 @@ body > .impulso-notice-popover{position:fixed;z-index:950;top:72px;right:12px;le
 
 body > dialog.impulso-notice-popover{position:fixed;inset:0;margin:auto;width:min(350px,calc(100vw - 24px));max-height:75dvh;box-sizing:border-box;}
 body > dialog.impulso-notice-popover::backdrop{background:rgba(0,0,0,.45)}
+
+/* Central de avisos não modal: nunca bloqueia o restante da interface. */
+body > #impulsoNoticePopover{position:fixed;inset:auto 12px 90px auto;z-index:1200;max-height: min(65dvh,520px);margin:0;pointer-events:auto;}

@@ -886,3 +886,7 @@ Central de avisos: clique no contador do Impulsinho ou em Ver avisos. Cada item 
 
 ## Versão 158
 Central de Avisos em diálogo nativo, botão direto no menu do Impulsinho e contador sem captura de ponteiro. Fechar não marca avisos como lidos.
+
+
+### Versão 159
+Central de Avisos não modal, acionada pelo comando Ver Avisos no menu original. Removido o botão avulso. A seleção individual continua direcionando à página correspondente.
