@@ -227,14 +227,15 @@ function badgeItems(p){
 }
 function persistBadgeData(){try{localStorage.setItem(BADGE_KEY,JSON.stringify(badgeData))}catch{}}
 let noticesOpen=false;
-document.body.append(document.getElementById("impulsoNoticePopover"));
+const noticePanel=document.createElement('section');
+noticePanel.id='impulsinhoAvisosPainel';noticePanel.className='impulso-notice-popover';noticePanel.hidden=true;noticePanel.setAttribute('aria-label','Central de Avisos');document.body.append(noticePanel);
 function unreadNotices(){
  const result=[];for(const p of state.projects){const entry=badgeData.projects[p.id];if(!entry)continue;
   for(const item of badgeItems(p))if(!entry.read?.includes(item.id))result.push({...item,projectId:p.id,projectName:p.name,time:entry.times?.[item.id]||0});
  }return [...result,...badgeData.extra].sort((a,b)=>(b.time||0)-(a.time||0));
 }
 function renderNoticePopover(){
- const pop=document.getElementById('impulsoNoticePopover');if(!pop)return;
+ const pop=noticePanel;
  const items=unreadNotices();pop.hidden=!noticesOpen;
  if(!noticesOpen)return;
  pop.innerHTML='<div class="impulso-notice-heading"><strong>Novidades do Impulso</strong><button type="button" id="closeNoticePopover" aria-label="Fechar novidades">×</button></div>'+
@@ -265,13 +266,14 @@ window.ImpulsinhoNovidades=Object.freeze({
  ativo:()=>Boolean(badgeData.enabled),
  consultar:()=>unreadNotices(),
  painel:()=>toggleNotices(true),
+ conquistas:()=>{toggleNotices(false);page='insignias';render()},
  registrar:(item)=>{if(!badgeData.extra.some(x=>x.id===item.id)){badgeData.extra.push({...item,time:Date.now()});persistBadgeData();updateBadges()}},
  abrir:(projectId,itemId)=>{const item=unreadNotices().find(x=>(x.projectId||'')===(projectId||'')&&x.id===itemId);if(!item)return false;if(item.projectId&&state.projects.some(p=>p.id===item.projectId)){state.active=item.projectId;save()}page=item.page;render();if(item.kind==='extra'){badgeData.extra=badgeData.extra.filter(x=>x.id!==itemId);persistBadgeData();updateBadges()}else markNoticeRead(projectId,itemId);return true},
  atualizarBackup:()=>{if(selectedBackupHandle)atualizarBackup();else guardarBackup()}
 });
 function markNoticeRead(projectId,itemId){const entry=badgeData.projects[projectId];if(!entry)return;entry.read??=[];if(!entry.read.includes(itemId)){entry.read.push(itemId);persistBadgeData()}updateBadges()}
 function setBadgeEnabled(enabled){badgeData.enabled=Boolean(enabled);persistBadgeData();if(!enabled){noticesOpen=false;renderNoticePopover()}updateBadges()}
-function toggleNotices(force){noticesOpen=typeof force==='boolean'?force:!noticesOpen;renderNoticePopover();document.getElementById('impulsoBadgeIndicator').setAttribute('aria-expanded',String(noticesOpen));}
+function toggleNotices(force){noticesOpen=typeof force==='boolean'?force:!noticesOpen;renderNoticePopover();document.getElementById('impulsoBadgeIndicator')?.setAttribute('aria-expanded',String(noticesOpen));}
 function renderInsignias(p){
  if(!p){main.innerHTML=header('Insígnias','Títulos e medalhas')+'<section class="panel"><p>Abra um projeto para consultar suas conquistas.</p><button class="btn primary" data-page="projetos">Projetos</button></section>';return}
  syncInsignias(p);const a=p.insignias;const unlocked=INSIGNIA_MEDALS.filter(([id])=>a.medals[id]).length;
@@ -1153,7 +1155,7 @@ function printReport(projectsOnly=false,selectedDay=null){
 function about(){
  show(`<div class="about-content"><h2>Sobre o Impulso</h2>
  <p><strong>Impulso — Motor de Produtividade Pessoal</strong></p>
- <p><strong>Versão: 159 (homologação)</strong></p>
+ <p><strong>Versão: 160 (homologação)</strong></p>
  <p>O Impulso é um aplicativo progressivo (PWA) para quem deseja transformar dedicação em progresso visível. Ele reúne registro de trabalho, sessões de concentração, hábitos, estatísticas e conquistas em um ambiente pessoal, organizado por projetos independentes.</p>
  <h3>Como o Impulso pode ajudar você?</h3>
  <p>Ao registrar o que faz e por quanto tempo, você constrói um histórico concreto de esforço. O Dashboard, o Calendário e as Estatísticas ajudam a perceber sua regularidade, compreender a distribuição do tempo e acompanhar metas sem depender apenas da memória ou de estimativas.</p>
@@ -1396,13 +1398,13 @@ document.addEventListener('change',e=>{const t=e.target;if(t.id==='badgeEnabledT
 document.addEventListener('toggle',e=>{const d=e.target;if(d.matches?.('details[data-settings-section]')&&d.open){settingsOpenSection=d.dataset.settingsSection;document.querySelectorAll('details[data-settings-section]').forEach(other=>{if(other!==d)other.open=false})}},true);
 // Central de novidades: hover no desktop, clique/toque e teclado em todas as plataformas.
 const noticeTrigger=document.getElementById('impulsoBadgeIndicator');
-const noticePopover=document.getElementById('impulsoNoticePopover');
+const noticePopover=noticePanel;
 let noticeHoverClose;
-noticeTrigger.addEventListener('click',()=>toggleNotices());
+noticeTrigger?.addEventListener('click',()=>toggleNotices());
 noticePopover.addEventListener('cancel',e=>{e.preventDefault();toggleNotices(false)});
-noticePopover.addEventListener('click',e=>{if(e.target.closest('#closeNoticePopover')){toggleNotices(false);noticeTrigger.focus();return}const item=e.target.closest('[data-notice-id]');if(!item)return;const pid=item.dataset.noticeProject,id=item.dataset.noticeId;toggleNotices(false);window.ImpulsinhoNovidades.abrir(pid,id)});
+noticePopover.addEventListener('click',e=>{if(e.target.closest('#closeNoticePopover')){toggleNotices(false);document.querySelector('.impulsinho-perguntas-toggle')?.focus();return}const item=e.target.closest('[data-notice-id]');if(!item)return;const pid=item.dataset.noticeProject,id=item.dataset.noticeId;toggleNotices(false);window.ImpulsinhoNovidades.abrir(pid,id)});
 noticePopover.addEventListener('click',e=>{if(e.target===noticePopover){const r=noticePopover.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)toggleNotices(false)}});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&noticesOpen){toggleNotices(false);noticeTrigger.focus()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&noticesOpen){toggleNotices(false);document.querySelector('.impulsinho-perguntas-toggle')?.focus()}});
 refreshFileNotice();
 function setAppearance(value,persist=true){const dark=value==='dark';document.body.classList.toggle('dark',dark);$('#theme').setAttribute('aria-pressed',String(dark));document.querySelectorAll('input[name=impulsoAppearance]').forEach(el=>el.checked=el.value===(dark?'dark':'light'));if(persist){try{localStorage.setItem(THEME,dark?'dark':'light');refreshFileNotice()}catch{toast('Não foi possível salvar a preferência de tema.')}}}
 $('#theme').onclick=()=>setAppearance(document.body.classList.contains('dark')?'light':'dark');$('#fullscreen').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen?.();else document.documentElement.requestFullscreen?.().catch(()=>toast('Tela cheia indisponível neste navegador'))};setAppearance(localStorage.getItem(THEME),false);document.addEventListener('fullscreenchange',()=>$('#fullscreen').setAttribute('aria-label',document.fullscreenElement?'Sair da tela cheia':'Entrar em tela cheia'));modal.addEventListener('click',e=>{const btn=e.target.closest('button');if(btn?.hasAttribute('data-cancel')){e.preventDefault();e.stopPropagation();close();return}if(btn?.hasAttribute('data-replay-ceremony')){e.preventDefault();e.stopPropagation();restartCeremony();return}if(btn?.hasAttribute('data-enable-ceremony-motion')){e.preventDefault();e.stopPropagation();enableCeremonyMotion();return}if(e.target===modal)close()});

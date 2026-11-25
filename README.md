@@ -890,3 +890,6 @@ Central de Avisos em diálogo nativo, botão direto no menu do Impulsinho e cont
 
 ### Versão 159
 Central de Avisos não modal, acionada pelo comando Ver Avisos no menu original. Removido o botão avulso. A seleção individual continua direcionando à página correspondente.
+
+### Versão 160 — Central de Avisos
+Painel não modal independente do cabeçalho. Ver Avisos e Ver Conquistas são acionados diretamente pelo seletor de perguntas rápidas. O armazenamento e a leitura individual dos avisos permanecem os mesmos.
