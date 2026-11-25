@@ -4,7 +4,7 @@ import {criarRepertorio} from './repertorio-real.mjs';
 import {selecionar} from './motor-corporal.mjs';
 const c=JSON.parse(readFileSync(new URL('./catalogo-gestual.json',import.meta.url)));const r=criarRepertorio(c);
 const a=Array.from({length:5},()=>r.planejar('habito','u1f44f')[0].id);assert.equal(new Set(a).size,5);
-assert.equal(r.planejar('chefao','u1f4aa','guerreiro').length,2);
+assert.equal(r.planejar('chefao','u1f4aa','guerreiro').length,3);
 for(const op of [{ativo:true},{reduzido:true},{pendentes:3}])assert.equal(r.planejar('chefao','u1f4aa','mentor',op).length,1);
 assert.equal(r.planejar('chefao','u1f4aa','discreto').length,1);
 assert.notEqual(criarRepertorio(c).planejar('habito','u1f44f','mentor')[0].id,criarRepertorio(c).planejar('habito','u1f44f','guerreiro')[0].id);
