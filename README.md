@@ -911,3 +911,8 @@ Configurações → Temas: 23 paletas em quatro coleções sanfonadas. A seleç�
 ## Impulso 164 — Salvar, impressão e avisos órfãos
 
 Arquivo → Salvar gera o Backup Geral e reutiliza o arquivo escolhido durante a sessão, quando autorizado pelo navegador. Após reabrir o aplicativo, pode ser necessário escolher o destino novamente. Em navegadores sem gravação direta, solicita download. Avisos de projetos indisponíveis são removidos individualmente ao clicar, mantendo o registro de leitura. R2D10 e Impulsinho não aparecem na impressão.
+
+
+## Impulso 165 — Falas naturais
+
+Removido o prefixo fixo da personalidade Mentor. As frases, gestos e demais preferências permanecem inalterados.
