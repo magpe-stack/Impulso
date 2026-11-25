@@ -868,3 +868,7 @@ Com o motor contextual ativado e o modo espontâneo ou ambos, o Impulsinho receb
 - `foco-resultado-no`: Reavalie o objetivo com calma.
 - `elixir-copiado`: Frase copiada!
 - `exportacao-solicitada`: Exportação solicitada.
+
+
+## Versão 155 — Repertório adaptativo
+Os acontecimentos reais mantêm os vínculos da v154. Gestos alternam por acontecimento e personalidade durante a sessão; conquistas maiores podem executar dois movimentos consecutivos. O perfil Discreto, atividades em curso e a preferência por movimento reduzido limitam as coreografias. O catálogo mantém suas restrições de produção. Não há novas imagens nem alteração no formato de backup.
